@@ -1,5 +1,4 @@
 .main-navigation {
-    min-width: 270px;
     top: 0;
     margin-left: auto;
 
@@ -23,13 +22,12 @@
         min-width: initial;
         width: 100%;
         position: fixed;
-        transition: .4s;
+        transition: 0.4s;
         left: 0;
         top: 0;
         z-index: 999;
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         overflow: auto;
-        height: 100vh;
 
         .menu-opened & {
             transform: none;
@@ -38,6 +36,33 @@
 }
 
 .main-menu-container {
+    @include max-mq($responsive-toggle-breakpoint) {
+        position: relative;
+        padding-top: 52px;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #222222;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+        }
+
+        &::after {
+            left: calc(100% + 10px);
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            right: calc(100% + 10px);
+            transform: translateX(50%);
+        }
+    }
+
     ul {
         margin: 0;
         padding: 0;
@@ -46,40 +71,47 @@
             display: inline-block;
             margin-left: 20px;
             position: relative;
-            color: $secondary-color;
+            color: $gray-400;
             transition: color 0.4s ease;
-            
+
             &:first-of-type {
                 margin-left: 0;
             }
 
-            &.current-menu-item, &.current-menu-parent{
-                color: $primary-color;
+            &.current-menu-item,
+            &.current-menu-parent {
+                color: $gray-200;
             }
-            
-            &:hover{
-                color: $primary-color;
+
+            &:hover {
+                color: $gray-200;
             }
-            
-            @include max-mq($lg) {
+
+            @include max-mq($responsive-toggle-breakpoint) {
                 display: block;
                 margin-left: 0;
                 margin-bottom: 10px;
+
+                &:not(:last-child) {
+                    padding-bottom: 5px;
+                    border-bottom: 1px dashed $gray;
+                }
 
                 &:last-of-type {
                     margin-bottom: 0;
                 }
             }
-            
+
             a {
                 display: block;
                 position: relative;
                 font-weight: 600;
                 color: inherit;
                 width: 100%;
-                
-                @include max-mq($mac) {
-                    font-size: $font-size-small;
+
+                @include max-mq($responsive-toggle-breakpoint) {
+                    padding: 12px 10px;
+                    font-size: 28px;
                 }
             }
 
@@ -101,10 +133,10 @@
                     margin: 0;
                     padding: 0 0 0 25px;
                 }
-    
+
                 @include min-mq($lg) {
                     background-color: #fff;
-                    box-shadow: 0 5px 20px rgba(#000, .1);
+                    box-shadow: 0 5px 20px rgba(#000, 0.1);
                     left: 0;
                     margin: auto;
                     opacity: 0;
@@ -115,28 +147,28 @@
                     width: 200px;
                     z-index: 10;
                 }
-    
+
                 li {
                     display: block;
                     margin-left: 0;
-    
+
                     a {
                         padding: 10px 20px;
-    
+
                         @include max-mq($lg - 1) {
                             padding: 10px 0;
                         }
                     }
-    
+
                     &:not(:last-child) {
                         @include min-mq($lg) {
-                            border-bottom: 1px solid rgba(#000, .1);
+                            border-bottom: 1px solid rgba(#000, 0.1);
                         }
                     }
                 }
             }
-            
-            &.sub-menu-open{
+
+            &.sub-menu-open {
                 @include max-mq($responsive-toggle-breakpoint) {
                     > a {
                         background-color: $primary-color;
@@ -147,11 +179,37 @@
 
             &.menu-item-has-children {
                 &:hover {
-                    >.sub-menu {
+                    > .sub-menu {
                         opacity: 1;
                         visibility: visible;
                     }
                 }
+            }
+        }
+    }
+}
+
+@include max-mq($responsive-toggle-breakpoint) {
+    body {
+        &::before {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: #3a3a3a;
+            opacity: 0;
+            transition: height 5ms linear $dur, opacity $dur ease 10ms;
+            z-index: 9;
+        }
+
+        &.menu-opened {
+            &::before {
+                transition: height 5ms, opacity $dur ease 10ms;
+                opacity: 0.8;
+                height: 100%;
             }
         }
     }

@@ -1,6 +1,7 @@
 body {
-    color: $primary-color;
+    color: $gray-100;
     font-family: $primary-font;
     font-size: $font-size-base;
+    line-height: calc(24 / 17);
     margin: 0;
 }

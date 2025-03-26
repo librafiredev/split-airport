@@ -44,6 +44,22 @@
 				<?php endif; ?>
 			
 				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php if( function_exists('get_field') ): ?>
+
+						<?php $logo = get_field('logo','option'); ?>
+
+						<?php if( $logo ): ?>
+
+							<div class="mobile-nav-logo">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<img src="<?php echo( esc_url( $logo ) ); ?>" alt="<?php echo( esc_attr( get_bloginfo( 'title' ) ) ); ?>"/>
+								</a>
+							</div>
+							
+						<?php endif; ?>
+
+					<?php endif; ?>
+					
 					<?php
 
 						wp_nav_menu(

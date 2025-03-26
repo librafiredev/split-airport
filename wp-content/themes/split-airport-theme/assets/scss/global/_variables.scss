@@ -1,29 +1,35 @@
 // Container widths
-$container-width: 1170px;
+$container-width: 1220px;
 
 // Colors
-$primary-color:		#000;
-$secondary-color:	blue;
-$tertiary-color:	red;
+$primary-color:		#213859;
+$primary-color-100: #084983;
+$secondary-color:	#E49D68;
 $white:				#fff;
 $black:				#000;
-$gray:				#aeaeae;
+$gray:              #DDE5ED;
+$gray-100:          #939393;
+$gray-200:			#6F6F6F;
+$gray-300:          #505050;
+$gray-400:  		#2D2D2D;
+$green:             #31A045;
+$red:               #D35A5A;
 
 // Fonts
-$primary-font: serif;
+$primary-font: 'Zurich BT', sans-serif;
 $secondary-font: sans-serif;
 
 // Font Sizes
 $font-size-xsmall:	12px;
 $font-size-small:	14px;
-$font-size-base:	16px;
+$font-size-base:	17px;
 $font-size-large:	18px;
 $font-size-xlarge:	20px;
 
 // Heading sizes
-$font-size-h1: 50px;
-$font-size-h2: 36px;
-$font-size-h3: 24px;
+$font-size-h1: 48px;
+$font-size-h2: 40px;
+$font-size-h3: 26px;
 $font-size-h4: 20px;
 $font-size-h5: 18px;
 $font-size-h6: 15px;
@@ -40,9 +46,13 @@ $ip: 420px;
 $xs: 350px;
 
 // Navigation config
-$responsive-toggle-breakpoint: $lg;
+$responsive-toggle-breakpoint: $sm;
 $toggle-menu-height: 20px;
 $toggle-menu-width: 25px;
 $toggle-menu-bar-height: 3px;
 $toggle-menu-bar-color: $primary-color;
 $toggle-menu-bar-active-color: transparent;
+
+// Misc vars
+$header-height: 84px;
+$dur: 400ms;
