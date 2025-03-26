@@ -11,7 +11,12 @@ else: ?>
     <?php 
 
         $title = get_field('title');
-        $background = get_field('background');
+        
+        if( wp_is_mobile() ):
+            $background = get_field('background_mobile');
+        else:
+            $background = get_field('background');
+        endif;
 
     ?>
 
