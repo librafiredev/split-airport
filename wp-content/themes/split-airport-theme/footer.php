@@ -11,6 +11,23 @@
 			</div><!-- #content -->
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
+
+				<?php $logo = get_field('logo','option'); ?>
+
+				<?php if( $logo ): ?>
+
+					<div class="footer-top">
+						<div class="container">
+							<div class="footer-logo">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<img src="<?php echo( esc_url( $logo ) ); ?>" alt="<?php echo( esc_attr( get_bloginfo( 'title' ) ) ); ?>"/>
+								</a>
+							</div><!-- .footer-logo -->
+						</div><!-- .container -->
+					</div><!-- .footer-top -->
+
+				<?php endif; ?>
+
 				<div class="widget-wrapper">
 					<div class="container">
 						<div class="row footer-widgets-wrapper">
