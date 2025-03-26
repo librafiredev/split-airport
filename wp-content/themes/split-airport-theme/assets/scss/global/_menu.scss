@@ -37,7 +37,30 @@
 
 .main-menu-container {
     @include max-mq($responsive-toggle-breakpoint) {
+        position: relative;
         padding-top: 52px;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #222222;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+        }
+
+        &::after {
+            left: calc(100% + 10px);
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            right: calc(100% + 10px);
+            transform: translateX(50%);
+        }
     }
 
     ul {
