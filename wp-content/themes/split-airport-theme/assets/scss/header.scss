@@ -1,6 +1,81 @@
 @import "global/variables";
 @import "global/mixins";
 
-/* critical:start */ 
+/* critical:start */
 
-/* critical:end */ 
+.site-branding {
+    a {
+        display: block;
+        max-width: 250px;
+    }
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 400ms, box-shadow 400ms;
+    z-index: 10;
+}
+
+.site-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: $header-height;
+
+    @include max-mq($responsive-toggle-breakpoint) {
+        min-height: 74px;
+    }
+}
+
+.sticky {
+    background-color: $white;
+    box-shadow: 0 -5px 50px 10px rgba($black, 0.12);
+}
+
+@include min-mq($responsive-toggle-breakpoint) {
+    .mobile-nav-logo {
+        display: none;
+    }
+}
+
+@include max-mq($responsive-toggle-breakpoint) {
+    .main-navigation {
+        padding: 10px;
+        padding-top: 75px;
+        padding-bottom: 16px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .site-branding {
+        a {
+            @include max-mq($responsive-toggle-breakpoint) {
+                max-width: 226px;
+            }
+        }
+    }
+
+    .mobile-nav-logo {
+        display: flex;
+        justify-content: center;
+
+        a {
+            display: block;
+            width: 90%;
+            max-width: 275px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .site-header-inner {
+        padding: 10px;
+    }
+}
+
+/* critical:end */
