@@ -1,0 +1,6 @@
+{
+    "name": "split-theme/theme-classes",
+    "description": "Split Theme Composer",
+    "minimum-stability": "stable",
+    "require": {}
+}

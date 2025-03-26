@@ -1,0 +1,48 @@
+// Container widths
+$container-width: 1170px;
+
+// Colors
+$primary-color:		#000;
+$secondary-color:	blue;
+$tertiary-color:	red;
+$white:				#fff;
+$black:				#000;
+$gray:				#aeaeae;
+
+// Fonts
+$primary-font: serif;
+$secondary-font: sans-serif;
+
+// Font Sizes
+$font-size-xsmall:	12px;
+$font-size-small:	14px;
+$font-size-base:	16px;
+$font-size-large:	18px;
+$font-size-xlarge:	20px;
+
+// Heading sizes
+$font-size-h1: 50px;
+$font-size-h2: 36px;
+$font-size-h3: 24px;
+$font-size-h4: 20px;
+$font-size-h5: 18px;
+$font-size-h6: 15px;
+
+// Breakpoints
+$mac: 1440px;
+$lt: 1366px;
+$ls: 1280px;
+$lg: 1199px;
+$md: 991px;
+$sm: 767px;
+$mb: 480px;
+$ip: 420px;
+$xs: 350px;
+
+// Navigation config
+$responsive-toggle-breakpoint: $lg;
+$toggle-menu-height: 20px;
+$toggle-menu-width: 25px;
+$toggle-menu-bar-height: 3px;
+$toggle-menu-bar-color: $primary-color;
+$toggle-menu-bar-active-color: transparent;

@@ -1,0 +1,22 @@
+@mixin min-mq($var) {
+  @media (min-width: #{$var}) {
+    @content;
+  }
+}
+
+@mixin max-mq($var) {
+  @media (max-width: #{$var}) {
+    @content;
+  }
+}
+
+@mixin min-max-mq($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+@mixin use-font($family, $weight) {
+  font-family: $family;
+  font-weight: $weight;
+}

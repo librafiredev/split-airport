@@ -1,0 +1,12 @@
+# Env Config
+.htaccess
+wp-config.php
+wp-admin/google-web-fonts.txt
+ 
+# Cache
+wp-content/advanced-cache.php
+wp-content/cache/
+wp-content/db.php
+wp-content/object-cache.php
+wp-content/w3tc-config/
+wp-content/wp-rocket-config/*
