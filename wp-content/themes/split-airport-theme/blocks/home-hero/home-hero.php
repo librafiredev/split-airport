@@ -19,7 +19,13 @@ else: ?>
     ?>
 
     <div class="hero-home-overflow">
-        <section class="home-hero-wrapper" <?php echo ( $background )? 'style="background-image:url('. $background .')"':''; ?>>
+        <section class="home-hero-wrapper">
+            <picture>
+                <source srcset="<?php echo $background_mobile; ?>" media="(max-width: 767px)">
+                <img class="home-hero-bg" src="<?php echo $background; ?>">
+            </picture>
+
+            
             <div class="container">
                 <div class="home-hero-inner">
 
@@ -38,7 +44,7 @@ else: ?>
 
                     <?php if( have_rows('items') ): ?>
                     
-                        <div class="home-hero-items">
+                        <div class="home-hero-items" style="max-width: <?php echo 182.5 * (count( get_field('items') ) - 1); ?>px;">
                             <svg width="186" height="176" version="1.2" viewBox="0 0 186 176" xmlns="http://www.w3.org/2000/svg" class="svg-hero-cutout-bg"><path class="s0" d="m0 0v176h197.4v-2h-10.8c-4.5 0-9.1-1.9-12.2-5.2l-148.4-163.6c-3.1-3.3-7.4-5.2-11.9-5.2z"/></svg>
                     
                             <div class="home-hero-items-inner">
@@ -63,7 +69,7 @@ else: ?>
                                                 <?php if ( $index == count( get_field('items') ) ): ?>
                                                     <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 148" width="128" height="148" class="svg-hero-cutout-item"><path id="path2" d="m0.3 0v148h119.7c6.9 0 10.6-8.2 6-13.4l-119.1-132c-1.5-1.6-3.7-2.6-6-2.6z"/></svg>
                                                 <?php endif; ?>
-                                                
+
                                                 <?php if( !empty($icon) ): ?>
                                 
                                                     <div class="home-hero-item-icon">
