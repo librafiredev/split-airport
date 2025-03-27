@@ -21,8 +21,7 @@ else: ?>
     
     ?>
 
-    <section class="text-links-wrapper">
-
+    <section class="text-links-wrapper" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
         <div class="text-links-top">
             <div class="container">
                 <div class="text-links-top-inner">
@@ -53,36 +52,34 @@ else: ?>
 
                     <?php if( have_rows('items') ): ?>
 
-                        <div class="text-links-items">
+                        <div class="text-links-right">
 
-                            <?php while ( have_rows('items') ) : the_row(); 
-                            
-                                $link = get_sub_field('link');
-                            ?>
-
-                            <?php if( $link ): 
-                                $link_url = $link['url'];
-                                $link_title = $link['title'];
-                                $link_target = $link['target'] ? $link['target'] : '_self';
-                            ?>
-
-                                    <div class="text-links-item">
-                                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-                                            <div class="text-links-item-icon">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/info.svg" alt="info" />
-                                            </div><!-- .text-links-item-icon -->
-                                            <div class="text-links-item-text">
-                                                <span><?php echo esc_html($link_title); ?></span>
-                                            </div><!-- .text-links-item-text -->
-                                            <div class="text-links-item-arrow">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="arrow" />
-                                            </div><!-- .text-links-item-arrow -->
-                                        </a>
-                                    </div><!-- .text-links-item -->
-
-                                <?php endif; ?>
-
-                            <?php endwhile; ?>
+                            <div class="text-links-items">
+                                <?php while ( have_rows('items') ) : the_row();
+                                
+                                    $link = get_sub_field('link');
+                                ?>
+                                <?php if( $link ):
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                                        <div class="text-links-item">
+                                            <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                                                <div class="text-links-item-icon">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/info.svg" alt="info" />
+                                                </div><!-- .text-links-item-icon -->
+                                                <div class="text-links-item-text">
+                                                    <span><?php echo esc_html($link_title); ?></span>
+                                                </div><!-- .text-links-item-text -->
+                                                <div class="text-links-item-arrow">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="arrow" />
+                                                </div><!-- .text-links-item-arrow -->
+                                            </a>
+                                        </div><!-- .text-links-item -->
+                                    <?php endif; ?>
+                                <?php endwhile; ?>
+                            </div>
 
                         </div><!-- .text-links-items -->
 
