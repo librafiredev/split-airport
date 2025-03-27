@@ -19,6 +19,12 @@
     z-index: 10;
 }
 
+body:has(div#wpadminbar) {
+    .site-header {
+        top: 32px;
+    }
+}
+
 .site-header-inner {
     display: flex;
     justify-content: space-between;
