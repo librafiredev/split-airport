@@ -22,7 +22,15 @@
 body:has(div#wpadminbar) {
     .site-header {
         top: 32px;
+
+        @include max-mq(782px) {
+            top: 46px;
+        }
     }
+}
+
+#wpadminbar {
+    position: fixed;
 }
 
 .site-header-inner {
@@ -54,6 +62,10 @@ body:has(div#wpadminbar) {
         padding-bottom: 16px;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
+
+        @include max-mq(782px) {
+            padding-top: 75px + 50px;
+        }
     }
 
     .site-branding {
