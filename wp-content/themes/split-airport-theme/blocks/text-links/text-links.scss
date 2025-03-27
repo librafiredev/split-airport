@@ -16,21 +16,38 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
     padding-top: 186px;
     background-repeat: repeat-x;
     background-position: center 15px;
+
+    @include max-mq($sm) {
+        background: none !important;
+        padding-top: 103px;
+    }
 }
 
 .text-links-top-inner {
     display: flex;
     margin-right: -10px;
     margin-left: -10px;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+    }
 }
 
 .text-links-title {
     margin-bottom: 20px;
 
+    @include max-mq($sm) {
+        margin-bottom: 13px;
+    }
+
     h2 {
         font-size: $font-size-h1;
         letter-spacing: -0.05em;
         color: $primary-color;
+
+        @include max-mq($sm) {
+            font-size: $responsive-size-h1;
+        }
     }
 }
 
@@ -40,6 +57,12 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
     max-width: 49%;
     padding-left: 10px;
     padding-right: 10px;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-bottom: 3px;
+    }
 }
 
 .text-links-right {
@@ -47,11 +70,21 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
     z-index: 1;
     flex: 0 0 51%;
     max-width: 51%;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .text-links-image {
     padding: 0 20px;
     margin-top: calc($text-links-img-shift * -1);
+
+    @include max-mq($sm) {
+        margin-top: 0;
+        padding: 0;
+    }
 
     img {
         width: 100%;
@@ -66,6 +99,16 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
     padding-bottom: $text-links-r-bot-padding;
     background-color: $white;
     border-radius: 15px;
+
+    @include max-mq($lg) {
+        --text-links-r-bot-padding: 84px;
+        // stylelint-disable-next-line declaration-empty-line-before
+        padding-left: 40px;
+    }
+
+    @include max-mq($sm) {
+        padding-left: 0;
+    }
 
     &::after {
         content: "";
@@ -93,6 +136,12 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
         border-bottom: 1px solid #ededed;
     }
 
+    &:last-child {
+        &::after {
+            content: none;
+        }
+    }
+
     a {
         display: flex;
         align-items: center;
@@ -101,11 +150,19 @@ $text-links-r-bot-padding: var(--text-links-r-bot-padding);
         letter-spacing: -0.03em;
         transition: $dur;
 
+        @include max-mq($sm) {
+            padding-right: 20px;
+        }
+
         &:hover {
             background-color: #f6f6f6;
 
             .text-links-item-arrow {
                 transform: translateX(90%);
+
+                @include max-mq($sm) {
+                    transform: translateX(50%);
+                }
             }
         }
     }

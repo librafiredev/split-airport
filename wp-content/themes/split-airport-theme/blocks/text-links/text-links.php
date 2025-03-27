@@ -13,11 +13,12 @@ else: ?>
         $title = get_field('title');
         $text = get_field('text');
 
-        if( wp_is_mobile() ):
-            $image = get_field('image_mobile');
-        else:
-            $image = get_field('image');
-        endif;
+        $image = get_field('image');
+        $image_mobile = get_field('image_mobile');
+
+        if ( empty($image_mobile) ) {
+            $image_mobile = $image;
+        }
     
     ?>
 
@@ -89,13 +90,18 @@ else: ?>
             </div><!-- .container -->
         </div><!-- .text-links-top -->
 
-        <?php if( !empty($image) ): ?>
+        <?php if( !empty($image) && !empty($image_mobile) ): ?>
         
             <div class="text-links-image">
-                <?php echo ( isset($image['ID']) )? wp_get_attachment_image($image['ID'], 'full'):''; ?>
-            </div><!-- .text-links-image -->
+                <picture>
+                    <source srcset="<?php echo $image_mobile['url']; ?>" media="(max-width: 767px)">
+                    <img src="<?php echo $image['url']; ?>">
+                </picture>
+            </div>
         
         <?php endif; ?>
+
+        
 
     </section><!-- .text-links-wrapper -->
     

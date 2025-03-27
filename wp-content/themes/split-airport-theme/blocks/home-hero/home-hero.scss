@@ -47,7 +47,7 @@ $hero-res-switch: $grid-gutter-breakpoint;
     padding-top: 131px;
 
     @include max-mq($sm) {
-        padding-top: 78px;
+        padding-top: 88px;
     }
 }
 
@@ -63,7 +63,7 @@ $hero-res-switch: $grid-gutter-breakpoint;
         letter-spacing: -0.05em;
 
         @include max-mq($sm) {
-            font-size: 36px;
+            font-size: $responsive-size-h1;
             text-align: center;
             letter-spacing: -0.07em;
         }
