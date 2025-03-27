@@ -72,6 +72,15 @@
 						);
 
 						?>
+
+					<div class="language-menu">
+						<div class="current-lang">Eng</div>
+						<ul>
+							<li><a href="#">English</a></li>
+							<li><a href="#">Hrvatski</a></li>
+						</ul>
+
+					</div>
 				</nav><!-- #site-navigation -->
 
 				<div class="menu-toggle-wrapper">

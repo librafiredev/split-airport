@@ -1,6 +1,17 @@
+@include min-mq($responsive-toggle-breakpoint + 1) {
+    .language-menu {
+        margin-left: 30px;
+    }
+}
+
 .main-navigation {
     top: 0;
     margin-left: auto;
+
+    @include min-mq($responsive-toggle-breakpoint + 1) {
+        display: flex;
+        align-items: center;
+    }
 
     .arrow-toggle {
         position: absolute;
@@ -27,7 +38,9 @@
         top: 0;
         z-index: 999;
         transform: translateY(-100%);
-        overflow: auto;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
 
         .menu-opened & {
             transform: none;
@@ -35,10 +48,88 @@
     }
 }
 
+@include min-mq($responsive-toggle-breakpoint + 1px) {
+    .language-menu {
+        position: relative;
+        color: $gray-400;
+
+        a {
+            display: block;
+            padding: 10px 15px;
+
+            &:hover {
+                color: $gray-200;
+            }
+        }
+
+        ul {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: $white;
+            text-align: right;
+            border-radius: 10px;
+        }
+
+        &:hover {
+            ul {
+                display: block;
+            }
+        }
+
+        ul {
+            display: none;
+        }
+    }
+
+    .current-lang {
+        padding: 10px 20px;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            margin-left: 10px;
+            height: 0.35em;
+            width: 0.35em;
+            border-bottom: 1px solid currentColor;
+            border-right: 1px solid currentColor;
+            transform: translateY(-0.15em) rotate(45deg);
+        }
+    }
+}
+
+@include max-mq($responsive-toggle-breakpoint) {
+    .current-lang {
+        display: none;
+    }
+    .language-menu {
+        padding-top: 50px;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            font-size: 20px;
+
+            li:not(:last-child)::after {
+                content: "";
+                border-right: 1px solid $gray;
+                height: 0.8em;
+                display: inline-block;
+            }
+
+            a {
+                display: inline-block;
+                padding: 11px 14px;
+            }
+        }
+    }
+}
+
+.language-menu,
 .main-menu-container {
     @include max-mq($responsive-toggle-breakpoint) {
         position: relative;
-        padding-top: 52px;
 
         &::after,
         &::before {
@@ -61,6 +152,18 @@
             right: calc(100% + 10px);
             transform: translateX(50%);
         }
+    }
+}
+
+.main-menu-container {
+    @include min-mq($responsive-toggle-breakpoint + 1px) {
+        a {
+            padding: 10px 11px;
+        }
+    }
+
+    @include max-mq($responsive-toggle-breakpoint) {
+        padding-top: 52px;
     }
 
     ul {

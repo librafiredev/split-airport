@@ -35,7 +35,7 @@
     box-shadow: 0 -5px 50px 10px rgba($black, 0.12);
 }
 
-@include min-mq($responsive-toggle-breakpoint) {
+@include min-mq($responsive-toggle-breakpoint + 1) {
     .mobile-nav-logo {
         display: none;
     }
