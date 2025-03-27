@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 
@@ -161,6 +162,13 @@ $hero-res-switch: $grid-gutter-breakpoint;
     }
 }
 
+.svg-hero-cutout-item {
+    fill: $gray;
+    height: 100%;
+    width: auto;
+    transition: $dur;
+}
+
 .home-hero-item {
     position: relative;
     display: flex;
@@ -173,6 +181,15 @@ $hero-res-switch: $grid-gutter-breakpoint;
         color: $primary-color;
         padding: 19px 18px;
         letter-spacing: -0.03em;
+        transition: $dur;
+
+        &:hover {
+            background-color: $gray-50;
+
+            .svg-hero-cutout-item {
+                fill: $gray-50;
+            }
+        }
 
         @include max-mq($hero-res-switch) {
             padding: 15px 13px;
@@ -253,10 +270,4 @@ $hero-res-switch: $grid-gutter-breakpoint;
     fill: $white;
     height: calc(100% + 2px);
     width: 188px;
-}
-
-.svg-hero-cutout-item {
-    fill: $gray;
-    height: 100%;
-    width: auto;
 }
