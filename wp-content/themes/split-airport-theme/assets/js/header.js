@@ -8,8 +8,10 @@ $(function () {
         }
     }
 
-    $(window).on('scroll ready init', function () {
+    $(window).on('scroll', function () {
         updateHeaderScroll();
     });
+
+    updateHeaderScroll();
 
 });
