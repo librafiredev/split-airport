@@ -1,0 +1,69 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+$page-hero-svg-h: 71px;
+$page-hero-svg-w: 1439px;
+
+.page-hero-wrapper {
+    position: relative;
+    height: 290px;
+
+    & + * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.page-hero-img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    img {
+        min-width: 100%;
+        max-width: none;
+        display: block;
+        min-height: $header-height + 300px;
+    }
+}
+
+.page-hero-cutout {
+    display: block;
+    fill: $white;
+    height: $page-hero-svg-h;
+    width: $page-hero-svg-w;
+    min-width: $page-hero-svg-w;
+    flex: 0 0 $page-hero-svg-w;
+
+    path {
+        fill: $white;
+    }
+}
+
+.page-hero-cutout-wrap {
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    overflow: hidden;
+    height: $page-hero-svg-h;
+    display: flex;
+    justify-content: center;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        right: 60%;
+        background-color: $white;
+    }
+
+    @include max-mq($mac) {
+        justify-content: flex-start;
+    }
+}
