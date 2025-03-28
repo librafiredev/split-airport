@@ -1,6 +1,7 @@
 @import "global/variables";
 @import "global/mixins";
 
+$footer-primary-bp: $sm;
 $footer-svg-height: 517px;
 
 .site-footer {
@@ -16,11 +17,20 @@ $footer-svg-height: 517px;
         line-height: inherit;
         margin-bottom: 30px;
         color: $primary-color;
+
+        @include max-mq($footer-primary-bp) {
+            text-transform: uppercase;
+            font-size: $font-size-xsmall;
+        }
     }
 
     .menu {
         li {
             margin-bottom: 16px;
+
+            @include max-mq($footer-primary-bp) {
+                margin-bottom: 18px;
+            }
         }
 
         a {
@@ -103,6 +113,10 @@ $footer-svg-height: 517px;
     position: relative;
     z-index: 2;
     margin-bottom: 57px;
+
+    @include max-mq($footer-primary-bp) {
+        margin-bottom: 12px;
+    }
 }
 
 .footer-logo {
@@ -115,6 +129,11 @@ $footer-svg-height: 517px;
     font-size: 12px;
     color: $gray-400;
 
+    @include max-mq($sm) {
+        padding-top: 40px;
+        font-size: 15px;
+    }
+
     strong {
         font-weight: bold;
     }
@@ -124,8 +143,22 @@ $footer-svg-height: 517px;
     flex: 0 0 210px;
     margin-right: auto;
 
+    @include max-mq($footer-primary-bp) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 37px;
+
+        > * {
+            max-width: 290px;
+        }
+    }
+
     :nth-child(2) {
         margin-bottom: 20px;
+
+        @include max-mq($footer-primary-bp) {
+            margin-bottom: 12px;
+        }
     }
 
     :nth-child(3) {
@@ -136,10 +169,21 @@ $footer-svg-height: 517px;
     .menu li {
         margin-bottom: 10px;
     }
+
+    @include max-mq($footer-primary-bp) {
+        .widget:last-child {
+            display: none;
+        }
+    }
 }
 
 .footer-column-2 {
     flex: 0 0 406px;
+
+    @include max-mq($footer-primary-bp) {
+        flex: 0 0 100%;
+        margin-bottom: 54px;
+    }
 
     .menu {
         column-count: 2;
@@ -148,9 +192,35 @@ $footer-svg-height: 517px;
 
 .footer-column-3 {
     flex: 0 0 204px;
+
+    @include max-mq($footer-primary-bp) {
+        flex: 0 0 100%;
+        margin-bottom: 39px;
+    }
 }
 
 .site-info {
     position: relative;
     z-index: 2;
+}
+
+.footer-mobile-col {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 1px solid #cdcdcd;
+    padding-top: 17px;
+
+    @include min-mq($footer-primary-bp + 1) {
+        display: none;
+    }
+
+    .widget {
+        &:not(:last-child) {
+            display: none;
+        }
+    }
 }

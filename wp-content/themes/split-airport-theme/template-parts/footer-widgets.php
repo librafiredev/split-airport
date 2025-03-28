@@ -26,3 +26,9 @@ for( $i=0; $i < $footer_layout_number; $i++ ):
 endfor;
 
 ?>
+
+<?php if( array_key_exists(1, $footer_elem_class) ): ?>
+	<div class="footer-mobile-col">
+		<?php dynamic_sidebar('footer-1'); ?>
+	</div>
+<?php endif; ?>
