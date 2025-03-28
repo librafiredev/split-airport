@@ -2,16 +2,28 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 
+$text-card-first-bp: $md;
+$text-card-mixed-bp: $sm;
+
 .text-cards-wrapper {
     background-repeat: repeat-x;
     background-position: center bottom;
     margin-bottom: 59px;
     padding-bottom: 210px;
+
+    @include max-mq($text-card-first-bp) {
+        background: none !important;
+        padding-bottom: 49px;
+    }
 }
 
 .text-cards-inner {
     position: relative;
     padding-top: 207px;
+
+    @include max-mq($text-card-first-bp) {
+        padding-top: 98px;
+    }
 }
 
 .text-cards-title {
@@ -19,18 +31,32 @@
         font-size: $font-size-h1;
         letter-spacing: -0.05em;
         margin-bottom: 22px;
+
+        @include max-mq($text-card-first-bp) {
+            font-size: $responsive-size-h1;
+            letter-spacing: -0.07em;
+            margin-bottom: 15px;
+        }
     }
 }
 
 .text-cards-text {
     letter-spacing: -0.03em;
     margin-bottom: 20px;
+
+    @include max-mq($text-card-first-bp) {
+        margin-bottom: 72px;
+    }
 }
 
 .text-cards-air-line {
     position: absolute;
     top: 0;
     left: 26.9%;
+
+    @include max-mq($text-card-first-bp) {
+        display: none;
+    }
 }
 
 .text-card-item-bg {
@@ -59,6 +85,11 @@
         padding: 20px 26px;
         border-radius: 10px;
         overflow: hidden;
+
+        @include max-mq($text-card-mixed-bp) {
+            padding: 16px 12px;
+            padding-right: 16px;
+        }
 
         > * {
             z-index: 2;
@@ -136,6 +167,16 @@
     letter-spacing: -0.04em;
     color: $white;
     justify-content: space-between;
+    align-items: flex-end;
+
+    @include max-mq($text-card-first-bp) {
+        font-size: $font-size-h4;
+        line-height: calc(24 / 20);
+    }
+
+    @include max-mq($xs) {
+        font-size: $font-size-base;
+    }
 }
 
 .text-cards-top,
@@ -143,14 +184,39 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    @include max-mq($text-card-first-bp) {
+        gap: 14px;
+    }
+
+    @include max-mq($xs) {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+}
+
+.text-cards-top {
+    @include max-mq($text-card-first-bp) {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
 }
 
 .text-cards-items {
     grid-template-rows: 105px 175px 115px 240px;
+
+    @include max-mq($text-card-first-bp) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 6px 205px 27px 138px 138px;
+    }
 }
 
 .text-cards-top-item {
     grid-column: 2 / 3;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 1 / 2;
+    }
 
     > * {
         max-width: 375px;
@@ -162,25 +228,49 @@
     grid-column: 2 / 3;
     grid-row: 1 / 4;
 
+    @include max-mq($text-card-first-bp) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+
     &::after {
         background-color: $primary-color;
         height: 84%;
+
+        @include max-mq($text-card-first-bp) {
+            height: 100%;
+        }
     }
 }
 
 .text-card-item-2 {
     grid-column: 1 / 2;
     grid-row: 3 / 5;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
 }
 
 .text-card-item-3 {
     grid-column: 2 / 3;
     grid-row: 4 / 5;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
 }
 
 .text-card-item-4 {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
 
     a {
         background-color: $secondary-color;
@@ -191,15 +281,29 @@
 .text-card-item-5 {
     grid-column: 3 / 4;
     grid-row: 3 / 5;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 1 / 3;
+        grid-row: 5 / 6;
+    }
 }
 
 .text-card-item-image {
     display: flex;
     justify-content: center;
     transition: $dur;
+
+    @include max-mq($text-card-first-bp) {
+        display: none;
+    }
 }
 
 .text-card-item-arrow {
     transition: $dur * 0.9;
     max-width: 20px;
+    margin-bottom: 10px;
+
+    @include max-mq($text-card-first-bp) {
+        margin-bottom: 2px;
+    }
 }
