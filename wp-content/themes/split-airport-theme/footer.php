@@ -11,6 +11,11 @@
 			</div><!-- #content -->
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="footer-bg">
+					<div class="footer-bg-svg-wrap">
+						<svg width="1440" height="517" viewBox="0 0 1440 517" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer-bg-svg"><path d="M487.105 0H0V517H1440V68.7394H619.322C613.098 68.7394 606.993 67.0309 601.673 63.8L504.754 4.93946C499.434 1.70856 493.329 0 487.105 0Z" fill="#F3F8FC"/></svg>
+					</div>
+				</div>
 
 				<?php $logo = get_field('logo','option'); ?>
 
@@ -47,7 +52,7 @@
 				if( $footer_copyright_text ): ?>
 					<div class="site-info">
 						<div class="container">
-							<div class="footer-copyright col-md-12 align-center"><?php echo $footer_copyright_text; ?></div>
+							<div class="footer-copyright"><?php echo $footer_copyright_text; ?></div>
 						</div>
 					</div><!-- .site-info -->
 				<?php endif; ?>

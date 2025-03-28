@@ -1,3 +1,156 @@
 @import "global/variables";
 @import "global/mixins";
 
+$footer-svg-height: 517px;
+
+.site-footer {
+    position: relative;
+    padding-bottom: 20px;
+    font-size: $font-size-h6;
+    letter-spacing: -0.02em;
+    line-height: calc(20 / 15);
+
+    .wp-block-heading {
+        font-size: inherit;
+        letter-spacing: -0.02em;
+        line-height: inherit;
+        margin-bottom: 30px;
+        color: $primary-color;
+    }
+
+    .menu {
+        li {
+            margin-bottom: 16px;
+        }
+
+        a {
+            transition: $dur;
+
+            &:hover {
+                color: $gray-200;
+            }
+        }
+    }
+}
+
+.footer-bg {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: $footer-svg-height - 2px;
+        left: 0;
+        background-color: $footer-bgc;
+        height: 100%;
+        width: 100%;
+    }
+
+    @include max-mq($mac) {
+        justify-content: flex-start;
+    }
+}
+
+.footer-bg-svg {
+    flex: 0 0 1440px;
+    width: 1440px;
+    height: $footer-svg-height;
+    max-width: 1440px;
+    min-height: $footer-svg-height;
+    min-width: 1440px;
+    max-height: $footer-svg-height;
+    fill: $footer-bgc;
+
+    path {
+        fill: $footer-bgc;
+    }
+}
+
+.footer-bg-svg-wrap {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        background-color: $footer-bgc;
+    }
+
+    &::before {
+        right: 99%;
+        top: 0;
+    }
+
+    &::after {
+        left: 99%;
+        top: 70px;
+    }
+}
+
+.footer-top {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 57px;
+}
+
+.footer-logo {
+    padding: 26px 5px;
+}
+
+.footer-copyright {
+    font-family: Roobert, sans-serif;
+    padding-top: 70px;
+    font-size: 12px;
+    color: $gray-400;
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+.footer-column-1 {
+    flex: 0 0 210px;
+    margin-right: auto;
+
+    :nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    :nth-child(3) {
+        margin-bottom: 30px;
+        opacity: 0.6;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+}
+
+.footer-column-2 {
+    flex: 0 0 406px;
+
+    .menu {
+        column-count: 2;
+    }
+}
+
+.footer-column-3 {
+    flex: 0 0 204px;
+}
+
+.site-info {
+    position: relative;
+    z-index: 2;
+}
