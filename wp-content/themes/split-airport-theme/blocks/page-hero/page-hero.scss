@@ -3,10 +3,15 @@
 
 $page-hero-svg-h: 71px;
 $page-hero-svg-w: 1439px;
+$page-hero-mobile-bdrad: 16px;
 
 .page-hero-wrapper {
     position: relative;
     height: 290px;
+
+    @include max-mq($sm) {
+        height: 126px;
+    }
 
     & + * {
         position: relative;
@@ -52,6 +57,14 @@ $page-hero-svg-w: 1439px;
     display: flex;
     justify-content: center;
 
+    @include max-mq($sm) {
+        height: $page-hero-mobile-bdrad + 2px;
+
+        svg {
+            display: none;
+        }
+    }
+
     &::before {
         content: "";
         display: block;
@@ -61,6 +74,13 @@ $page-hero-svg-w: 1439px;
         top: 0;
         right: 60%;
         background-color: $white;
+
+        @include max-mq($sm) {
+            right: 0;
+            width: 100%;
+            border-top-left-radius: $page-hero-mobile-bdrad;
+            border-top-right-radius: $page-hero-mobile-bdrad;
+        }
     }
 
     @include max-mq($mac) {
