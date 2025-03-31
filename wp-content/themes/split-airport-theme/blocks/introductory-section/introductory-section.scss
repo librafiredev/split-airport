@@ -1,6 +1,140 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+.introductory-section-col {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .entry-content {
+        font-size: $font-size-h3;
+        line-height: calc(30 / 26);
+        letter-spacing: -0.04em;
+        max-width: 460px;
+        margin-bottom: 57px;
+
+        @include max-mq($sm) {
+            font-size: $font-size-base;
+        }
+
+        @include max-mq($mb) {
+            max-width: 310px;
+            letter-spacing: -0.04em;
+            line-height: calc(24 / 17);
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.introductory-section-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 15px;
+}
+
+.introductory-section-img {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-left: 15px;
+
+    @include max-mq($sm) {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+.introductory-section-txt-col {
+    padding-top: 30px;
+
+    @include max-mq($sm) {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+}
+
+.introductory-section-img-col {
+    @include max-mq($sm) {
+        padding-top: 49px;
+    }
+
+    @include max-mq($xs) {
+        padding-top: 0;
+    }
+}
+
+.introductory-section-badge {
+    display: block;
+    background-color: $footer-bgc;
+    padding: 10px 17px;
+    border-radius: 50px;
+    letter-spacing: -0.03em;
+
+    @include max-mq($sm) {
+        font-size: $font-size-h6;
+    }
+}
+
+.introductory-section-badge-dot {
+    &::before {
+        content: "";
+        display: inline-block;
+        margin-right: 6px;
+        height: 4px;
+        width: 4px;
+        background-color: $primary-color;
+        position: relative;
+        margin-bottom: calc(0.5em - 4px);
+        left: 0;
+    }
+}
 
 .introductory-section-wrapper {
-    
+    padding-top: 18px;
+    padding-bottom: 30px;
+
+    @include max-mq($sm) {
+        padding-top: 3px;
+    }
+}
+
+.introductory-section-mobile-links {
+    display: none;
+
+    @include max-mq($sm) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.introductory-section-additional-link {
+    display: flex;
+    background-color: $footer-bgc;
+    color: $primary-color;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 17px;
+    letter-spacing: 0.03em;
+    font-size: $font-size-xsmall;
+
+    @include max-mq($mb) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    svg {
+        margin-right: 10px;
+    }
 }
