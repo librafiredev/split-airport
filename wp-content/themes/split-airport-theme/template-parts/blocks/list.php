@@ -6,7 +6,7 @@ extract($args);
 
     <?php if($list_section_fields['title']): ?>
 
-    <p class="list__title"><?php echo $list_section_fields['title']; ?> </p>
+    <h3 class="list__title heading-third"><?php echo $list_section_fields['title']; ?> </h3>
 
     <?php endif; ?>
 

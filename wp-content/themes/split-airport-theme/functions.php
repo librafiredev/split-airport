@@ -30,3 +30,8 @@ require get_template_directory() . '/includes/custom_image_sizes.php';
  * Require file where we can write custom functions per project
  */
 require get_template_directory() . '/includes/theme_functions.php';
+
+/**
+ * Require file where we can write custom shortcodes per project
+ */
+require get_template_directory() . '/includes/shortcodes.php';

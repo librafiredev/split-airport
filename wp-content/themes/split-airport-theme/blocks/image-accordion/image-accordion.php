@@ -54,7 +54,7 @@ else:
 
                                 <?php if ($checkin_section['title']): ?>
 
-                                    <p class="image-accordion__checkin-title"><?php echo $checkin_section['title']; ?></p>
+                                    <h3 class="image-accordion__checkin-title heading-third"><?php echo $checkin_section['title']; ?></h3>
 
                                 <?php endif; ?>
 
@@ -112,13 +112,8 @@ else:
                                 <?php endif; ?>
 
                                 <?php if ($checkin_section['visibility'] === 'button' && $checkin_section['button']):
-                                ?>
-
-                                    <div class="image-accordion__checkin-button-wrapper">
-                                        <a <?php if ($checkin_section['button']['target']) echo 'target="' . $checkin_section['button']['target'] . '"'; ?> href="<?php echo $checkin_section['button']['url']; ?>" class="image-accordion__checkin-button"><?php echo $checkin_section['button']['title']; ?></a>
-                                    </div>
-
-                                <?php endif; ?>
+                                    echo do_shortcode('[button title="' . $checkin_section['button']['title'] . '" url="' . $checkin_section['button']['url'] . '" newTab="' . (isset($checkin_section['button']['target']) && $checkin_section['button']['target'] === '_blank' ? 'yes' : 'no') . '"]');
+                                endif; ?>
 
                                 <?php if ($checkin_section['warning_message']): ?>
 
@@ -134,13 +129,13 @@ else:
 
                         <?php if ($visibility['accordion_section_visibility']): ?>
 
-                            <?php get_template_part('template-parts/accordions', null, ['accordions_section_fields' => $accordions_section]); ?>
+                            <?php get_template_part('template-parts/blocks/accordions', null, ['accordions_section_fields' => $accordions_section]); ?>
 
                         <?php endif; ?>
 
                         <?php if ($visibility['list_section_visibility']): ?>
 
-                            <?php get_template_part('template-parts/list', null, ['list_section_fields' => $list_section]); ?>
+                            <?php get_template_part('template-parts/blocks/list', null, ['list_section_fields' => $list_section]); ?>
 
                         <?php endif; ?>
 
@@ -150,7 +145,7 @@ else:
 
                                 <?php if ($bottom_title): ?>
 
-                                    <p class="image-accordion__bottom-section-title"><?php echo $bottom_title; ?></p>
+                                    <h3 class="image-accordion__bottom-section-title heading-third"><?php echo $bottom_title; ?></h3>
 
                                 <?php endif; ?>
 

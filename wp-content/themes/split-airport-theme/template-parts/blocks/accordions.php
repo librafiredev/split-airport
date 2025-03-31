@@ -6,7 +6,7 @@ extract($args);
 
     <?php if($accordions_section_fields['title']): ?>
 
-    <p class="accordions__title"><?php echo $accordions_section_fields['title']; ?> </p>
+    <h3 class="accordions__title heading-third"><?php echo $accordions_section_fields['title']; ?> </h3>
 
     <?php endif; ?>
 
