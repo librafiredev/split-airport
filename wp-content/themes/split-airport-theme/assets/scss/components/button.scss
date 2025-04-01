@@ -1,0 +1,22 @@
+.content-button {
+    a {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: $footer-bgc;
+        text-transform: uppercase;
+        font-size: $font-size-xsmall;
+        letter-spacing: 0.03em;
+        font-weight: bold;
+        color: $primary-color-100;
+        transition: $dur;
+
+        &:hover {
+            background-color: $gray;
+        }
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+}

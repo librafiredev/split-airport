@@ -2,5 +2,8 @@
 ?>
 
 <div class="content-button">
-    <a <?php if ($newTab === 'yes') echo 'target="_blank"'; ?> href="<?php echo $url; ?>"><?php echo $title; ?></a>
+    <a <?php if ($newTab === 'yes') echo 'target="_blank"'; ?> href="<?php echo $url; ?>">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12L12 4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 4H12V10.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <?php echo $title; ?>
+    </a>
 </div>

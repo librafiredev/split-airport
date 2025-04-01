@@ -1,43 +1,72 @@
 h1 {
-	font-size: $font-size-h1;
+    font-size: $font-size-h1;
 }
 
 h2 {
-	font-size: $font-size-h2;
+    font-size: $font-size-h2;
 }
 
 h3 {
-	font-size: $font-size-h3;
+    font-size: $font-size-h3;
 }
 
 h4 {
-	font-size: $font-size-h4;
+    font-size: $font-size-h4;
 }
 
 h5 {
-	font-size: $font-size-h5;
+    font-size: $font-size-h5;
 }
 
 h6 {
-	font-size: $font-size-h6;
+    font-size: $font-size-h6;
 }
 
-/* stylelint-disable */ /* remove this comments on project setup */
-// .entry-content {
-// 	p {
+.entry-content {
+    line-height: calc(24 / 17);
 
-// 	}
+    ul,
+    ol {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 
-// 	a {
-			
-// 	}
+    ul {
+        li {
+            &::before {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                left: 0;
+                top: 0.5em;
+                height: 4px;
+                width: 4px;
+                background-color: $primary-color;
+            }
+        }
+    }
 
-// 	ul {
+    ol {
+        counter-reset: ord-list;
 
-// 	}
+        li {
+            list-style: decimal;
+            padding-left: 2em;
+        }
+    }
 
-// 	ol {
+    li {
+        counter-increment: ord-list;
+        position: relative;
+        display: flex;
+        margin-bottom: 4px;
+        padding-left: 24px;
 
-// 	}
-// }
-/* stylelint-enable */
+        &::before {
+            content: counter(ord-list) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
