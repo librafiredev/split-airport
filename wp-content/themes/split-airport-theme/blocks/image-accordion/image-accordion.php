@@ -75,7 +75,7 @@ else:
 
                                                 <?php if ($checkin_section['box_1_title']): ?>
 
-                                                    <p class="image-accordion-secondary-title"><?php echo $checkin_section['box_1_title']; ?></p>
+                                                    <p class="image-accordion__checkin-box-title"><?php echo $checkin_section['box_1_title']; ?></p>
 
                                                 <?php endif; ?>
 
@@ -95,7 +95,7 @@ else:
 
                                                 <?php if ($checkin_section['box_2_title']): ?>
 
-                                                    <p class="image-accordion-secondary-title"><?php echo $checkin_section['box_2_title']; ?></p>
+                                                    <p class="image-accordion__checkin-box-title"><?php echo $checkin_section['box_2_title']; ?></p>
 
                                                 <?php endif; ?>
 

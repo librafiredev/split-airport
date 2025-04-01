@@ -3,6 +3,10 @@
 
 .list__items {
     margin-bottom: 45px;
+
+    @include max-mq($sm) {
+        margin-top: 25px;
+    }
 }
 
 .list__item {

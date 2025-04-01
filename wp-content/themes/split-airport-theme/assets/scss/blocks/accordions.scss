@@ -1,6 +1,12 @@
 @import "../global/variables";
 @import "../global/mixins";
 
+.accordions__items {
+    @include max-mq($sm) {
+        margin-top: 19px;
+    }
+}
+
 .accordions__item {
     &:not(:last-child) {
         .accordions__item-title {
