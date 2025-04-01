@@ -115,13 +115,7 @@ else:
                                     echo do_shortcode('[button title="' . $checkin_section['button']['title'] . '" url="' . $checkin_section['button']['url'] . '" newTab="' . (isset($checkin_section['button']['target']) && $checkin_section['button']['target'] === '_blank' ? 'yes' : 'no') . '"]');
                                 endif; ?>
 
-                                <?php if ($checkin_section['warning_message']): ?>
-
-                                    <div class="image-accordion__checkin-warning">
-                                        <?php echo $checkin_section['warning_message']; ?>
-                                    </div>
-
-                                <?php endif; ?>
+                                <?php get_template_part('template-parts/blocks/warning-message', null, ['warning_message' => $checkin_section['warning_message']]); ?>
 
                             </div>
 
