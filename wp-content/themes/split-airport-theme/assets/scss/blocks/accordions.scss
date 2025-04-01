@@ -1,3 +1,6 @@
+@import "../global/variables";
+@import "../global/mixins";
+
 .accordions__item {
     &:not(:last-child) {
         .accordions__item-title {
