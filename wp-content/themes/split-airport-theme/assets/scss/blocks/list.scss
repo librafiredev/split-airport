@@ -1,0 +1,15 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.list__items {
+    margin-bottom: 45px;
+}
+
+.list__item {
+    letter-spacing: -0.03em;
+    padding: 12px 17px 13px 5px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $gray;
+    }
+}

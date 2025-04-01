@@ -1,0 +1,28 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.accordions__item {
+    &:not(:last-child) {
+        .accordions__item-title {
+            border-bottom: 1px solid $gray;
+        }
+    }
+}
+
+.accordions__item-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: $dur;
+    padding: 13px 17px 13px 5px;
+    letter-spacing: -0.03em;
+
+    &:hover {
+        background-color: #f6f6f6;
+    }
+}
+
+.accordions__item-text-inner {
+    padding: 20px 14px;
+}

@@ -22,7 +22,7 @@ extract($args);
             <?php if($accordion['text']): ?>
 
             <div style="display: none;" class="accordions__item-text">
-                <?php echo $accordion['text']; ?>
+                <div class="accordions__item-text-inner entry-content"><?php echo $accordion['text']; ?></div>
             </div>
 
             <?php endif; ?>
