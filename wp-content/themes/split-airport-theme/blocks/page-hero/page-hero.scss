@@ -59,7 +59,7 @@ $page-hero-back-btn-bp: 1330px;
 }
 
 .page-hero-title {
-    max-width: 500px;
+    max-width: 480px;
 
     @include max-mq($sm) {
         font-size: $responsive-size-h2;

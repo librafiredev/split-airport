@@ -1,6 +1,130 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/heading-third";
+@import "../../assets/scss/blocks/accordions";
 
-.image-box-wrapper {
-    display: block;
+.image-box {
+    padding-top: 87px;
+
+    .list {
+        max-width: 488px;
+        margin-bottom: 10px;
+    }
+
+    .list__items {
+        margin-bottom: 10px;
+
+        strong {
+            font-weight: normal;
+            color: $primary-color-100;
+        }
+
+        em {
+            font-style: normal;
+        }
+    }
+
+    .list__item {
+        margin-top: 14px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray;
+        }
+    }
+
+    .heading-third {
+        margin-top: 50px;
+        max-width: 450px;
+    }
+
+    &:last-child {
+        margin-bottom: 100px;
+    }
+}
+
+.image-box__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.image-box__right,
+.image-box__left {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.image-box__left {
+    padding-top: 10px;
+}
+
+.title-secondary {
+    color: $primary-color;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.image-box__right {
+    padding-top: 1px;
+
+    .title-secondary {
+        margin-bottom: 35px;
+    }
+}
+
+.image-box__section-box {
+    border: 1px solid $gray;
+    margin-top: 30px;
+}
+
+.image-box__section-box-items {
+    display: flex;
+}
+
+.image-box__section-box-item {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 19px 18px;
+
+    &:not(:first-child) {
+        border-left: 1px solid $gray;
+    }
+}
+
+.image-box__section-box-item-image {
+    min-width: 24px;
+    margin-right: 10px;
+}
+
+.image-box__section-box-item-main-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: $font-size-xsmall;
+    letter-spacing: 0.03em;
+    color: $primary-color;
+}
+
+.image-box__section-box-item-text {
+    color: $gray-100;
+}
+
+.image-box__section-box-title {
+    background-color: $gray;
+    padding: 11px 19px;
+    border-bottom: 1px solid $gray;
+}
+
+.image-box__bottom-section {
+    max-width: 480px;
 }
