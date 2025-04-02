@@ -1,0 +1,32 @@
+.phone {
+    display: flex;
+    align-items: center;
+    margin: 23px 0;
+    max-width: 387px;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    padding: 16px;
+}
+
+.phone__left {
+    margin-right: 17px;
+
+    * {
+        vertical-align: middle;
+    }
+}
+
+.phone__label {
+    text-transform: uppercase;
+    font-size: $font-size-xsmall;
+    line-height: calc(16 / 12);
+    letter-spacing: 0.03em;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.phone__number {
+    a {
+        letter-spacing: -0.03em;
+    }
+}

@@ -29,11 +29,13 @@ $page-hero-back-btn-bp: 1330px;
 }
 
 .page-hero-back-btn {
+    cursor: pointer;
     padding: 0 9px;
     border: none;
     background: none;
     appearance: none;
     transform: translateY(-0.05em);
+    transition: $dur;
 
     @include min-mq($page-hero-back-btn-bp + 1px) {
         position: absolute;
@@ -50,10 +52,14 @@ $page-hero-back-btn-bp: 1330px;
             max-width: 18px;
         }
     }
+
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
 .page-hero-title {
-    max-width: 500px;
+    max-width: 480px;
 
     @include max-mq($sm) {
         font-size: $responsive-size-h2;
