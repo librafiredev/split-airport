@@ -6,6 +6,10 @@
 .image-box {
     padding-top: 87px;
 
+    @include max-mq($sm) {
+        padding-top: 30px;
+    }
+
     .list {
         max-width: 488px;
         margin-bottom: 10px;
@@ -37,6 +41,10 @@
     .heading-third {
         margin-top: 50px;
         max-width: 450px;
+
+        @include max-mq($sm) {
+            margin-top: 37px;
+        }
     }
 
     &:last-child {
@@ -64,7 +72,17 @@
 }
 
 .image-box__left {
-    padding-top: 10px;
+    @include max-mq($sm) {
+        order: 2;
+    }
+}
+
+.image-box__image {
+    margin-top: 10px;
+
+    @include max-mq($sm) {
+        margin-top: 45px;
+    }
 }
 
 .title-secondary {
@@ -72,13 +90,25 @@
     letter-spacing: -0.05em;
     line-height: 1;
     margin-top: 10px;
+
+    @include max-mq($sm) {
+        font-size: $responsive-size-h3;
+    }
 }
 
 .image-box__right {
     padding-top: 1px;
 
+    @include max-mq($sm) {
+        order: 1;
+    }
+
     .title-secondary {
         margin-bottom: 35px;
+
+        @include max-mq($sm) {
+            margin-bottom: 25px;
+        }
     }
 }
 
@@ -89,6 +119,10 @@
 
 .image-box__section-box-items {
     display: flex;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+    }
 }
 
 .image-box__section-box-item {
@@ -97,8 +131,20 @@
     flex-grow: 1;
     padding: 19px 18px;
 
-    &:not(:first-child) {
-        border-left: 1px solid $gray;
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 10px 18px;
+
+        &:not(:first-child) {
+            border-top: 1px solid $gray;
+        }
+    }
+
+    @include min-mq($sm + 1px) {
+        &:not(:first-child) {
+            border-left: 1px solid $gray;
+        }
     }
 }
 
@@ -123,6 +169,10 @@
     background-color: $gray;
     padding: 11px 19px;
     border-bottom: 1px solid $gray;
+
+    @include max-mq($sm) {
+        padding: 15px 19px;
+    }
 }
 
 .image-box__bottom-section {
