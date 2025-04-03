@@ -1,6 +1,27 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+@import "../../assets/scss/blocks/accordions";
 
-.faq-wrapper {
-    
+.faq {
+    padding: 90px 0;
+}
+
+.faq__inner {
+    display: flex;
+    gap: 20px;
+}
+
+.faq__left {
+    .heading-secondary,
+    h2 {
+        font-size: $font-size-h3;
+        color: $primary-color;
+        letter-spacing: -0.04em;
+    }
+}
+
+.faq__right {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-left: auto;
 }
