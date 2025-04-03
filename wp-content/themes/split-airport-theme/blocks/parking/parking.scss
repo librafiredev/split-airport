@@ -1,6 +1,244 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/heading-third";
 
-.parking-wrapper {
-    
+.parking {
+    padding: 57px 0;
+
+    @include max-mq($sm) {
+        padding: 22px 0;
+    }
+}
+
+.parking__item-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 26px;
+
+    @include max-mq($sm) {
+        margin-bottom: 39px;
+    }
+
+    h2 {
+        font-size: $font-size-h3;
+        margin-right: 30px;
+        letter-spacing: -0.04em;
+
+        @include max-mq($sm) {
+            margin-right: 5px;
+        }
+    }
+}
+
+.parking__item-vehicle-name {
+    font-size: $font-size-h3;
+    letter-spacing: -0.04em;
+    margin-bottom: 22px;
+
+    @include max-mq($sm) {
+        font-size: 22px;
+    }
+}
+
+.parking__item {
+    border-top: 1px solid $gray;
+    margin-top: 66px;
+    padding-top: 17px;
+
+    @include max-mq($sm) {
+        margin-top: 30px;
+    }
+
+    &:first-child {
+        margin-top: 26px;
+
+        @include max-mq($sm) {
+            margin-top: 17px;
+        }
+    }
+}
+
+.parking__item-vehicles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.parking__item-vehicle-rates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px 10px;
+
+    @include max-mq($sm) {
+        margin-bottom: 20px;
+    }
+}
+
+.parking__bottom-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 25px 3px;
+    margin-top: 54px;
+    border-top: 1px solid $gray;
+    gap: 10px;
+
+    @include max-mq($sm) {
+        margin-top: 15px;
+        padding: 19px 3px;
+    }
+}
+
+.parking__bottom-info-wrapper {
+    @include max-mq($sm) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $gray;
+        margin-bottom: 15px;
+    }
+
+    > * {
+        display: inline-block;
+    }
+}
+
+.parking__item-vehicle-rate {
+    width: 168px;
+
+    @include max-mq($mb) {
+        flex: 0 0 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+    }
+}
+
+.parking__item-vehicle {
+    max-width: 530px;
+}
+
+.parking__item-vehicle-rate-time {
+    @extend %heading-third;
+}
+
+.parking__item-vehicle-rate-time.parking__item-vehicle-rate-time {
+    margin-bottom: 0;
+}
+
+.parking__bottom-info-left {
+    margin-right: 22px;
+}
+
+.parking__download {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    border-top: 1px solid $gray;
+    padding-top: 51px;
+
+    @include max-mq($sm) {
+        padding-top: 41px;
+    }
+}
+
+.parking__download-text {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    color: $gray-100;
+    font-size: 15px;
+    line-height: calc(20 / 15);
+    letter-spacing: -0.02em;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    > * {
+        max-width: 440px;
+    }
+}
+
+.parking__download-file {
+    margin-left: auto;
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 10px;
+    }
+
+    a {
+        margin-left: auto;
+        padding: 14px 40px;
+        background-color: #f6f6f6;
+        border-radius: 50px;
+        transition: $dur;
+
+        @include max-mq($sm) {
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        &:hover {
+            background-color: #d8d8d8;
+        }
+    }
+}
+
+.parking__item-button {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    background-color: $footer-bgc;
+    padding: 10px 13px;
+    border-radius: 50px;
+    letter-spacing: -0.02em;
+    color: $primary-color-100;
+    font-size: $font-size-h6;
+    transition: $dur;
+
+    @include max-mq($sm) {
+        margin-left: auto;
+    }
+
+    svg {
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background-color: $gray;
+    }
+}
+
+.parking__download-file-icon {
+    margin-right: 12px;
+}
+
+.parking__download-file-info {
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    padding-right: 10px;
+
+    @include max-mq($sm) {
+        width: calc(100% - 50px);
+        padding-right: 0;
+    }
+}
+
+.parking__download-file-name {
+    color: $primary-color;
+}
+
+.parking__download-file-type {
+    color: $gray-100;
 }
