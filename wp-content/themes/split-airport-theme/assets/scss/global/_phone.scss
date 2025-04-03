@@ -1,4 +1,4 @@
-.phone {
+.phone-card {
     display: flex;
     align-items: center;
     margin: 23px 0;
@@ -8,7 +8,7 @@
     padding: 16px;
 }
 
-.phone__left {
+.phone-card__left {
     margin-right: 17px;
 
     * {
@@ -16,7 +16,7 @@
     }
 }
 
-.phone__label {
+.phone-card__label {
     text-transform: uppercase;
     font-size: $font-size-xsmall;
     line-height: calc(16 / 12);
@@ -25,7 +25,7 @@
     color: $primary-color;
 }
 
-.phone__number {
+.phone-card__number {
     a {
         letter-spacing: -0.03em;
     }
