@@ -6,6 +6,10 @@
 .transportation {
     padding: 30px 0;
 
+    @include max-mq($sm) {
+        padding: 15px 0;
+    }
+
     &:last-child {
         margin-bottom: 91px;
     }
@@ -13,6 +17,12 @@
     .warning-message {
         line-height: calc(20 / 15);
         font-size: $font-size-h6;
+
+        @include max-mq($sm) {
+            line-height: calc(24 / 17);
+            font-size: $font-size-base;
+            margin-bottom: 26px;
+        }
     }
 }
 
@@ -33,6 +43,17 @@
     max-width: (100% / 3 * 2);
     column-gap: 20px;
     row-gap: 16px;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        column-gap: 15px;
+        row-gap: 13px;
+    }
+
+    @include max-mq($mb) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .transportation__sidebar {
@@ -40,6 +61,10 @@
     padding-right: 10px;
     flex: 0 0 (100% / 3 * 1);
     max-width: (100% / 3 * 1);
+
+    @include max-mq($sm) {
+        display: none;
+    }
 }
 
 .transportation__sidebar-inner {
@@ -122,6 +147,7 @@
 
 .transportation__item-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px 10px;
     margin-bottom: 41px;
 }
