@@ -4,11 +4,20 @@
 
 .faq {
     padding: 90px 0;
+
+    @include max-mq($sm) {
+        padding: 40px 0;
+    }
 }
 
 .faq__inner {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+
+    @include max-mq($sm) {
+        gap: 4px;
+    }
 }
 
 .faq__left {
@@ -24,4 +33,9 @@
     flex: 0 0 50%;
     max-width: 50%;
     margin-left: auto;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
