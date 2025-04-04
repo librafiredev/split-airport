@@ -1,6 +1,41 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 
-.raw-content-wrapper {
-    display: block;
+.raw-content {
+    padding: 48px 0;
+
+    &:last-child {
+        margin-bottom: 50px;
+    }
+}
+
+.raw-content__inner {
+    max-width: 590px;
+    margin: 0 auto;
+
+    p {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+
+    ol,
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    li {
+        margin-bottom: 8px;
+        padding-left: 25px;
+    }
+
+    ul {
+        li {
+            &::before {
+                border-radius: 50%;
+                left: 10px;
+            }
+        }
+    }
 }
