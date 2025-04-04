@@ -1,6 +1,42 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
 
-.rent-car-wrapper {
-    
+.rent-car {
+    padding: 76px 0;
+
+    &:last-child {
+        margin-bottom: 90px;
+    }
+}
+
+.rent-car__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.rent-car__item {
+    border: 1px solid $gray;
+    padding: 19px 24px;
+}
+
+.rent-car__item-image {
+    margin-bottom: 92px;
+}
+
+.rent-car__item-title {
+    font-size: $font-size-base;
+    letter-spacing: -0.03em;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 9px;
+}
+
+.rent-car__item-info {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: $gray-300;
+    }
 }

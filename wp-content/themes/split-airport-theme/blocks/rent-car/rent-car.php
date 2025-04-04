@@ -34,7 +34,7 @@ else:
 
                                     <?php if ($company['name']): ?>
 
-                                        <h3 class="heading-third"><?php echo $company['name']; ?></h3>
+                                        <h3 class="rent-car__item-title"><?php echo $company['name']; ?></h3>
 
                                     <?php endif; ?>
 
