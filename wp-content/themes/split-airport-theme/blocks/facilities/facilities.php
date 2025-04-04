@@ -29,32 +29,26 @@ else:
 
                                 <?php endif; ?>
 
-                                <?php if ($facility['title']): ?>
-
-                                    <h2 class="heading-secondary"><?php echo $facility['title']; ?></h2>
-
-                                <?php endif; ?>
-
-                                <?php if ($facility['description']): ?>
-
-                                    <div class="facilities__item-description"><?php echo $facility['description']; ?></div>
-
-                                <?php endif; ?>
-
-                                <?php if ($facility['button']): ?>
-
-                                    <a
-                                        <?php if (!empty($facility['button'])): ?>
-                                        target="<?php echo esc_attr($facility['button']['target']); ?>"
-                                        <?php endif; ?>
-                                        class="parking__item-button"
-                                        href="<?php echo esc_url($facility['button']['url']); ?>">
-                                        <?php
-                                        echo esc_html($facility['button']['title']) . file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg');
-                                        ?>
-                                    </a>
-
-                                <?php endif; ?>
+                                <div class="facilities__item-content">
+                                    <?php if ($facility['title']): ?>
+                                        <h2 class="heading-secondary"><?php echo $facility['title']; ?></h2>
+                                    <?php endif; ?>
+                                    <?php if ($facility['description']): ?>
+                                        <div class="facilities__item-description"><?php echo $facility['description']; ?></div>
+                                    <?php endif; ?>
+                                    <?php if ($facility['button']): ?>
+                                        <a
+                                            <?php if (!empty($facility['button'])): ?>
+                                            target="<?php echo esc_attr($facility['button']['target']); ?>"
+                                            <?php endif; ?>
+                                            class="parking__item-button"
+                                            href="<?php echo esc_url($facility['button']['url']); ?>">
+                                            <?php
+                                            echo esc_html($facility['button']['title']) . file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg');
+                                            ?>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
 
                             </div>
                         <?php endforeach; ?>

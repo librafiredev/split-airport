@@ -90,6 +90,11 @@
     align-items: center;
     font-size: 15px;
     color: $primary-color-100;
+    transition: $dur;
+
+    &:hover {
+        background-color: $gray;
+    }
 
     svg {
         max-width: 16px;

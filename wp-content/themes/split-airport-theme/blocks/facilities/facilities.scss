@@ -1,6 +1,73 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
 
-.facilities-wrapper {
-    
+.facilities {
+    padding: 26px 0 30px;
+
+    &:last-child {
+        margin-bottom: 100px;
+    }
+}
+
+.facilities__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.facilities__item {
+    border-radius: 2px;
+    border: 1px solid $gray;
+    display: flex;
+    flex-direction: column;
+
+    h2,
+    .heading-secondary {
+        color: $primary-color;
+        letter-spacing: -0.04em;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        margin-bottom: 23px;
+    }
+}
+
+.facilities__item-image {
+    img {
+        border-radius: 2px;
+    }
+}
+
+.facilities__item-content {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.parking__item-button {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    color: $primary-color-100;
+    transition: $dur;
+    background-color: $footer-bgc;
+    padding: 10px 17px;
+    border-radius: 50px;
+    margin-top: auto;
+    font-size: 15px;
+    letter-spacing: -0.02em;
+
+    svg {
+        margin-left: 9px;
+    }
+
+    &:hover {
+        background-color: $gray;
+    }
+}
+
+.facilities__item-description {
+    min-height: 61px;
+    margin-bottom: 30px;
 }
