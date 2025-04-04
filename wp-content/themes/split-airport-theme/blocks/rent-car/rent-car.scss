@@ -1,11 +1,15 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 
+$rent-car-shared-bp: $mb;
+
 .rent-car {
     padding: 76px 0;
 
-    &:last-child {
-        margin-bottom: 90px;
+    @include min-mq($rent-car-shared-bp + 1px) {
+        &:last-child {
+            margin-bottom: 90px;
+        }
     }
 }
 
@@ -13,15 +17,37 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @include max-mq($sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include max-mq($rent-car-shared-bp) {
+        grid-template-columns: 1fr;
+        gap: 23px;
+    }
 }
 
 .rent-car__item {
-    border: 1px solid $gray;
-    padding: 19px 24px;
+    @include min-mq($rent-car-shared-bp + 1px) {
+        border: 1px solid $gray;
+        padding: 19px 24px;
+    }
+
+    @include max-mq($rent-car-shared-bp) {
+        display: flex;
+        gap: 23px;
+    }
 }
 
 .rent-car__item-image {
-    margin-bottom: 92px;
+    @include min-mq($rent-car-shared-bp + 1px) {
+        margin-bottom: 92px;
+    }
+
+    @include max-mq($rent-car-shared-bp) {
+        max-width: 50px;
+    }
 }
 
 .rent-car__item-title {
@@ -35,6 +61,12 @@
 .rent-car__item-info {
     display: flex;
     flex-direction: column;
+
+    @include max-mq($rent-car-shared-bp) {
+        flex-grow: 1;
+        border-bottom: 1px solid $gray;
+        padding-bottom: 22px;
+    }
 
     a {
         color: $gray-300;
