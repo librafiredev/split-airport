@@ -26,7 +26,7 @@ else:
                             <?php if (!empty($button)): ?>
                             target="<?php echo esc_attr($button['target']); ?>"
                             <?php endif; ?>
-                            class="parking__item-button"
+                            class="introductory-section-button"
                             href="<?php echo esc_url($button['url']); ?>">
                             <?php
                             echo esc_html($button['title']) . file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg');

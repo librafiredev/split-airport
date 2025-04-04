@@ -72,6 +72,7 @@
     }
 }
 
+.introductory-section-button,
 .introductory-section-badge {
     display: block;
     background-color: $footer-bgc;
@@ -81,6 +82,19 @@
 
     @include max-mq($sm) {
         font-size: $font-size-h6;
+    }
+}
+
+.introductory-section-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    color: $primary-color-100;
+
+    svg {
+        max-width: 16px;
+        max-height: 16px;
+        margin-left: 10px;
     }
 }
 
