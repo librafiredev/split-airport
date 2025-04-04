@@ -4,6 +4,10 @@
 .raw-content {
     padding: 48px 0;
 
+    @include max-mq($sm) {
+        padding: 30px 0;
+    }
+
     &:last-child {
         margin-bottom: 50px;
     }
@@ -28,6 +32,10 @@
     li {
         margin-bottom: 8px;
         padding-left: 25px;
+
+        @include max-mq($sm) {
+            margin-bottom: 0;
+        }
     }
 
     ul {
