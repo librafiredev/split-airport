@@ -42,11 +42,15 @@
     width: 100%;
     max-width: 1025px;
     border-radius: 6px;
-    padding: 20px 30px 40px 57px;
+    padding: 20px 30px 50px 57px;
     overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(100% - 20px);
     display: none;
+
+    @include max-mq($sm) {
+        padding: 28px 9px 50px 20px;
+    }
 
     .flight-popup-wrapper.open & {
         display: block;
@@ -78,6 +82,13 @@
     order: 1;
     font-size: $font-size-h2;
     letter-spacing: -0.05em;
+
+    @include max-mq($sm) {
+        font-size: 28px;
+        line-height: calc(30 / 28);
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .flight-popup-header-btn {
@@ -97,6 +108,11 @@
     &:hover {
         background-color: $gray;
     }
+
+    @include max-mq($sm) {
+        order: 5;
+        margin-top: 16px;
+    }
 }
 
 .flight-popup-header-text {
@@ -108,15 +124,24 @@
     line-height: calc(20 / 15);
     margin-top: 2px;
     letter-spacing: -0.02em;
+
+    @include max-mq($sm) {
+        margin-top: 12px;
+    }
 }
 
 .flight-popup-details {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     padding: 23px 2px;
     position: relative;
     font-size: 15px;
+
+    @include max-mq($sm) {
+        gap: 26px 10px;
+    }
 
     &::before,
     &::after {
@@ -139,15 +164,29 @@
 
 .flight-popup-main {
     padding-top: 50px;
+
+    @include max-mq($sm) {
+        padding-top: 34px;
+    }
 }
 
 .flight-popup-main-title,
 .flight-popup-main-text {
     padding-left: 60px;
+
+    @include max-mq($sm) {
+        padding-left: 32px;
+    }
 }
 
 .flight-popup-main-text {
     letter-spacing: -0.03em;
+
+    @include max-mq($sm) {
+        font-size: 15px;
+        line-height: calc(20 / 15);
+        letter-spacing: -0.02em;
+    }
 
     p {
         margin-bottom: 23px;
@@ -159,6 +198,7 @@
 }
 
 $flight-popup-left-pos: 14px;
+$flight-popup-left-pos-responsive: 8px;
 
 .flight-popup-main-item,
 .flight-popup-main-title {
@@ -173,6 +213,10 @@ $flight-popup-left-pos: 14px;
         top: 8px;
         transform: translate(-50%, -50%);
         z-index: 1;
+
+        @include max-mq($sm) {
+            left: $flight-popup-left-pos-responsive;
+        }
     }
 }
 
@@ -180,6 +224,10 @@ $flight-popup-left-pos: 14px;
     color: $primary-color;
     letter-spacing: -0.03em;
     margin-bottom: 9px;
+
+    @include max-mq($sm) {
+        margin-bottom: 7px;
+    }
 
     &::after,
     &::before {
@@ -212,6 +260,10 @@ $flight-popup-left-pos: 14px;
         left: $flight-popup-left-pos;
         transform: translate(-50%, -50%);
         z-index: 1;
+
+        @include max-mq($sm) {
+            left: $flight-popup-left-pos-responsive;
+        }
     }
 
     &::before {
@@ -245,6 +297,10 @@ $flight-popup-left-pos: 14px;
     font-weight: bold;
     display: flex;
     padding-top: 23px;
+
+    @include max-mq($sm) {
+        padding-top: 12px;
+    }
 }
 
 .flight-popup-flight-id {
@@ -269,6 +325,10 @@ $flight-popup-left-pos: 14px;
 }
 
 .flight-popup-details-img-col {
+    @include max-mq($sm) {
+        display: none;
+    }
+
     img {
         object-fit: contain;
         width: 32px;
@@ -277,16 +337,23 @@ $flight-popup-left-pos: 14px;
 }
 
 .flight-popup-details-col {
-    &:not(.flight-popup-details-img-col) {
-        flex: 0 0 92px;
+    @include min-mq($sm + 1px) {
+        &:not(.flight-popup-details-img-col) {
+            flex: 0 0 92px;
 
-        &:nth-child(2) {
-            flex: 0 0 207px;
-        }
+            &:nth-child(2) {
+                flex: 0 0 207px;
+            }
 
-        &:last-child {
-            flex: 0 0 110px;
+            &:last-child {
+                flex: 0 0 110px;
+            }
         }
+    }
+
+    @include max-mq($sm) {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
     }
 }
 
