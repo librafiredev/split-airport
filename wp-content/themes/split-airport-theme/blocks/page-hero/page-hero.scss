@@ -17,6 +17,7 @@ $page-hero-back-btn-bp: 1330px;
 
         @include min-max-mq($sm, $page-hero-back-btn-bp) {
             display: flex;
+            flex-wrap: wrap;
         }
     }
 }
@@ -60,6 +61,10 @@ $page-hero-back-btn-bp: 1330px;
 
 .page-hero-title {
     max-width: 480px;
+
+    @include min-max-mq($sm, $page-hero-back-btn-bp) {
+        flex-grow: 0;
+    }
 
     @include max-mq($sm) {
         font-size: $responsive-size-h2;
@@ -147,5 +152,18 @@ $page-hero-back-btn-bp: 1330px;
 
     @include max-mq($mac) {
         justify-content: flex-start;
+    }
+}
+
+.page-hero-working-hours {
+    margin-top: 13px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: $gray-300;
+    letter-spacing: -0.02em;
+
+    @include min-max-mq($sm, $page-hero-back-btn-bp) {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
