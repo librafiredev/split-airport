@@ -1,0 +1,1 @@
+<p class="no-posts"><?php esc_html_e('There are no posts matching your search criteria.', 'split-airport'); ?></p>

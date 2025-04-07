@@ -35,3 +35,8 @@ require get_template_directory() . '/includes/theme_functions.php';
  * Require file where we can write custom shortcodes per project
  */
 require get_template_directory() . '/includes/shortcodes.php';
+
+/**
+ * Require file where we can write ajax responses
+ */
+require get_template_directory() . '/includes/ajax.php';
