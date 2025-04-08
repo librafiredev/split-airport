@@ -36,4 +36,13 @@ $(function () {
     };
 
     search(request);
+
+
+    $('.airlines-mobile-sidebar-btn').on('click', function () {
+        $('.airlines__sidebar').toggleClass('open');
+    });
+
+    $('.airlines-mobile-sidebar-close-btn').on('click', function () {
+        $('.airlines__sidebar').removeClass('open');
+    });
 });

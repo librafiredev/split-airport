@@ -15,7 +15,19 @@ $type = get_field('type', get_the_ID());
 
         <?php endif;  ?>
 
-        <h3 class="airline__title"><?php the_title(); ?></h3>
+        <div>
+            <h3 class="airline__title"><?php the_title(); ?></h3>
+            <?php if ($type === 'unsupported'): ?>
+                <a
+                    <?php if (!empty($url)): ?>
+                    target="<?php echo esc_attr($url['target']); ?>"
+                    <?php endif; ?>
+                    class="airlline__url-mobile"
+                    href="<?php echo esc_url($url['url']); ?>">
+                    <?php esc_html_e('Unsupported, visit airlines website', 'split-airport'); ?>
+                </a>
+            <?php endif; ?>
+        </div>
     </div>
 
     <div class="airline__right">
@@ -29,8 +41,7 @@ $type = get_field('type', get_the_ID());
             
             <?php if ($type === 'unsupported'): ?>
 
-                <p class="airline__text"><?php esc_html_e('Unsupported, visit airlines website', 'split-airport');
-                                            echo file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg'); ?></p>
+                <p class="airline__text"><span class="airline-external"><?php esc_html_e('Unsupported, visit airlines website', 'split-airport'); ?></span><?php echo file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg'); ?></p>
 
             <?php else:
                 echo file_get_contents(get_template_directory() . '/assets/images/arrow-right.svg');

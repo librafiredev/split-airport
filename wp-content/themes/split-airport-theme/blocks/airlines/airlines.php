@@ -51,6 +51,11 @@ else:
                         <?php echo file_get_contents(get_template_directory() . '/assets/images/search-icon.svg');  ?>
                         <input placeholder="<?php esc_html_e('Find your airline', 'split-airport');  ?>" type="text" name="search" />
                     </label>
+                    <button type="button" class="airlines-mobile-sidebar-btn">
+                        <?php echo file_get_contents(get_template_directory() . '/assets/images/info.svg'); ?>
+                        <span class="heading-third"><?php esc_html_e('Required identification & limitations', 'split-airport');  ?></span>
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chevron-right"><path d="M1 1L6 6L1 11" stroke="#084983" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                     <div class="airlines__items">
 
                         <h3 class="heading-third"><?php esc_html_e('Supported airlines', 'split-airport'); ?></h3>
@@ -91,6 +96,11 @@ else:
                 <?php if ($sidebar): ?>
 
                     <div class="airlines__sidebar">
+                        <div class="airlines-mobile-sidebar-close-btn-wrap">
+                            <button type="button" class="airlines-mobile-sidebar-close-btn">
+                                <?php echo file_get_contents(get_template_directory() . '/assets/images/x.svg'); ?>
+                            </button>
+                        </div>
 
                         <?php foreach ($sidebar as $section): ?>
 
