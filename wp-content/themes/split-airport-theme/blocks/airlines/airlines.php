@@ -47,10 +47,10 @@ else:
         <div class="container">
             <div class="airlines__inner">
                 <div class="airlines__main">
-                    <div class="airlines__top">
+                    <label class="airlines__top">
                         <?php echo file_get_contents(get_template_directory() . '/assets/images/search-icon.svg');  ?>
                         <input placeholder="<?php esc_html_e('Find your airline', 'split-airport');  ?>" type="text" name="search" />
-                    </div>
+                    </label>
                     <div class="airlines__items">
 
                         <h3 class="heading-third"><?php esc_html_e('Supported airlines', 'split-airport'); ?></h3>

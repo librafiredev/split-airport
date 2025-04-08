@@ -1,7 +1,149 @@
-@import '../../assets/scss/global/variables';
-@import '../../assets/scss/global/mixins';
-@import '../../assets/scss/components/loader';
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/loader";
+@import "../../assets/scss/components/heading-third";
 
-.airlines-wrapper {
-    
+.airlines {
+    position: relative;
+    z-index: 1;
+    padding: 40px 0;
+}
+
+.airlines__top {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-bottom: 15px;
+
+    input {
+        border: none;
+        font-size: 17px;
+        padding: 10px;
+        width: 100%;
+        max-width: 560px;
+
+        &::placeholder {
+            color: $gray;
+        }
+    }
+
+    svg {
+        margin-right: 5px;
+    }
+}
+
+.airlines__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.airlines__main {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex: 0 0 calc(100% / 3 * 2);
+    max-width: calc(100% / 3 * 2);
+}
+
+.airlines__sidebar {
+    padding: 100px 10px 80px;
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+}
+
+.airlines__items {
+    max-width: 690px;
+    padding-top: 50px;
+}
+
+.airline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 9px;
+    position: relative;
+    padding-right: 0;
+
+    &:not(:last-child) {
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 90%;
+            border-bottom: 1px solid $gray;
+        }
+    }
+}
+
+.airline__left {
+    display: flex;
+    align-items: center;
+}
+
+.airline__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid $gray;
+    width: 55px;
+    height: 55px;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.airline__title {
+    font-size: $font-size-base;
+    letter-spacing: -0.03em;
+    font-weight: normal;
+}
+
+.airlines__supported {
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.airlline__url {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+
+    svg {
+        margin-left: 10px;
+    }
+}
+
+.airlines__section-title {
+    background-color: $secondary-color-50;
+    color: $secondary-color;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+.entry-content .airlines__section-content {
+    padding-right: 10px;
+    padding-bottom: 36px;
+
+    ul {
+        margin-top: 25px;
+    }
+
+    li {
+        padding: 9px 23px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $gray;
+        }
+
+        &::before {
+            top: 20px;
+            left: 8px;
+        }
+    }
 }

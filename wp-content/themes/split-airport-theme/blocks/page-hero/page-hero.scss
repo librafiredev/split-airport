@@ -1,5 +1,6 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/heading-third";
 
 $page-hero-svg-h: 71px;
 $page-hero-svg-w: 1439px;
@@ -13,6 +14,10 @@ $page-hero-back-btn-bp: 1330px;
 
         @include min-mq($sm) {
             margin-top: -22px;
+
+            .site-main:has(section.airlines) & {
+                margin-top: -155px;
+            }
         }
 
         @include min-max-mq($sm, $page-hero-back-btn-bp) {
@@ -152,6 +157,20 @@ $page-hero-back-btn-bp: 1330px;
 
     @include max-mq($mac) {
         justify-content: flex-start;
+    }
+
+    @include min-mq($sm + 1px) {
+        .site-main:has(section.airlines) & {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                border-bottom: 1px dashed #cdcdcd;
+                bottom: 2px;
+                left: 0;
+            }
+        }
     }
 }
 
