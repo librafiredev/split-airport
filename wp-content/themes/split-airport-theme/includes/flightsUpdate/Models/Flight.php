@@ -25,18 +25,16 @@ class Flight
         }
 
         // Delete this, just example test
-        
+
         $date = '2025-02-12';
 
         if ($term) {
             $searchWhere = " AND flights_search MATCH :term";
         }
 
-        if($queryType === 'search') {
+        if ($queryType === 'search') {
             $pagination = ' limit ' . self::$searchPerPage;
-        }
-
-        else {
+        } else {
             $pagination = ' limit ' . self::$postsPerPage . ' ' . 'offset ' . $offset;
         }
 
@@ -60,32 +58,35 @@ class Flight
         FROM flights_search fs
         JOIN flights fm ON fs.rowid = fm.ID
         WHERE date(fm.schdate) = date(:schdate)
-        AND fm.AD = :type" . $searchWhere . $pagination ."  
+        AND fm.AD = :type" . $searchWhere . $pagination . "  
     ");
-        if ($term) {
-            $sql->bindValue(':term', $ftsTerm);
+
+        if ($sql) {
+            if ($term) {
+                $sql->bindValue(':term', $ftsTerm);
+            }
+
+            $sql->bindValue(':schdate', $date);
+            $sql->bindValue(':type', strtoupper($type));
+
+            $result = $sql->execute();
+
+            $rows = [];
+            while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+                $totalCount = $row['total_results'];
+                unset($row['total_results']);
+                $rows[] = $row;
+            }
+
+            $db->closeConnestion();
+
+            return [
+                'posts'             => $rows,
+                'total_posts'       => isset($totalCount) ?: 0,
+                'total_pages'       => isset($totalCount) ? ceil($totalCount / self::$postsPerPage) : 0,
+                'current_page'      => isset($totalCount) ?  floor($offset / self::$postsPerPage) + 1 : 1,
+            ];
         }
-
-        $sql->bindValue(':schdate', $date);
-        $sql->bindValue(':type', strtoupper($type));
-
-        $result = $sql->execute();
-
-        $rows = [];
-        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-            $totalCount = $row['total_results'];
-            unset($row['total_results']);
-            $rows[] = $row;
-        }
-
-        $db->closeConnestion();
-
-        return [
-            'posts'             => $rows,
-            'total_posts'       => isset($totalCount) ?: 0,
-            'total_pages'       => isset($totalCount) ? ceil($totalCount / self::$postsPerPage) : 0,
-            'current_page'      => isset($totalCount) ?  floor($offset / self::$postsPerPage) + 1 : 1,
-        ];
     }
 
     public static function insertData()
