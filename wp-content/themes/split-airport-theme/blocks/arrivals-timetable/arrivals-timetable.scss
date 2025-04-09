@@ -33,6 +33,7 @@
     }
 }
 
+.arrivals-timetable-search__radio-input,
 .arrivals-timetable__radio-input {
     position: relative;
 
@@ -112,4 +113,131 @@
     display: flex;
     justify-content: space-between;
     background-color: #f6f6f6;
+}
+
+.arrivals-timetable-search__input-wrap {
+    max-width: 560px;
+    border-radius: 26px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 0 0 4px rgba(#0c477f, 0.2);
+}
+
+.arrivals-timetable-search__input {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    width: 100%;
+
+    & > svg {
+        width: 24px;
+        margin-left: 25px;
+        margin-right: 3px;
+    }
+
+    input {
+        height: 70px;
+        padding-left: 10px;
+        width: calc(100% - (24px + 25px + 3px));
+        border: none;
+        outline: none;
+        font-size: $font-size-base;
+    }
+}
+
+.arrivals-timetable-search__bottom-filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 28px;
+    background-color: $footer-bgc;
+}
+
+.arrivals-timetable-search__radio-inputs {
+    display: flex;
+}
+
+.arrivals-timetable-search__date {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        border-bottom: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+        right: 17px;
+        top: 50%;
+        transform: translateY(-65%) rotate(45deg);
+    }
+
+    select {
+        appearance: none;
+        outline: none;
+        border: none;
+        font-size: $font-size-base;
+        background: none;
+        text-align: right;
+        color: $gray-300;
+        padding-right: 32px;
+    }
+
+    option:checked {
+        background: $footer-bgc !important;
+        box-shadow: 0 0 10px 100px $footer-bgc inset;
+    }
+}
+
+.search-data__flight {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 30px;
+    border-bottom: 1px dashed $gray;
+}
+
+.search-data__flight-number {
+    color: $gray-300;
+}
+
+.search-data__flight-company {
+    color: $gray-100;
+}
+
+.search-data__flight-time {
+    margin-right: 10px;
+}
+
+.search-data__airline-title,
+.search-data__from-to-title {
+    background-color: $footer-bgc;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    color: #8fa9c0;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+}
+
+.search-data__term {
+    color: $primary-color;
+
+    &::before,
+    &::after {
+        content: '"';
+    }
+}
+
+.search-data__more {
+    display: block;
+
+    svg {
+        margin-right: 10px;
+    }
+}
+
+.search-data__airline-companies,
+.search-data__from-to-destinations,
+.search-data__more {
+    padding: 10px 30px;
 }
