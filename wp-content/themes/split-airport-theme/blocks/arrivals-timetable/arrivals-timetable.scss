@@ -89,19 +89,20 @@
 
 .arrivals-timetable__table {
     position: relative;
-    padding-top: 30px;
+    padding-top: 116px;
+    padding-bottom: 80px;
     z-index: 2;
 
     &::before {
         content: "";
         display: block;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: calc(50% - 20px);
         top: 0;
+        transform: translateX(-50%);
         border-top: 1px dashed #cdcdcd;
         z-index: 2;
-        width: 100vw;
+        width: calc(100vw - 20px);
     }
 }
 
@@ -110,8 +111,6 @@
 }
 
 .arrivals-timetable__table-header {
-    display: flex;
-    justify-content: space-between;
     background-color: #f6f6f6;
 }
 
@@ -240,4 +239,77 @@
 .search-data__from-to-destinations,
 .search-data__more {
     padding: 10px 30px;
+}
+
+.flight,
+.arrivals-timetable__table-header {
+    display: flex;
+    padding: 16px 11px;
+
+    > span {
+        &:not(:last-child) {
+            padding-right: 10px;
+        }
+
+        &:nth-child(1) {
+            flex: 0 0 89px;
+            max-width: 89px;
+        }
+
+        &:nth-child(2) {
+            flex: 0 0 100px;
+            max-width: 100px;
+        }
+
+        &:nth-child(3) {
+            flex: 0 0 165px;
+            max-width: 165px;
+        }
+
+        &:nth-child(4) {
+            flex-grow: 1;
+        }
+
+        &:nth-child(5) {
+            margin-left: auto;
+            flex: 0 0 190px;
+            max-width: 190px;
+        }
+
+        &:nth-child(6) {
+            flex: 0 0 98px;
+            max-width: 98px;
+        }
+    }
+}
+
+.flight {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px dashed $gray;
+    transition: $dur;
+
+    &:hover {
+        background-color: $footer-bgc;
+    }
+}
+
+.load-more {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    display: inline-block;
+    padding: 10px;
+}
+
+.arrivals-timetable__table-flights {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.loader-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
