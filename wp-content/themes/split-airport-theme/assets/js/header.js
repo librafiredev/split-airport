@@ -58,7 +58,6 @@ $(function () {
 
         let currentWarningType = $('.site-warning-item.current-warning').attr('data-warning');
         $('.shared-warning').attr('data-warning', currentWarningType);
-        console.log($('[data-warning]'));
 
     }
 

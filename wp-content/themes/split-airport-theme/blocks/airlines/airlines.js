@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import search from "../../assets/components/search";
 
 $(function () {
@@ -22,12 +23,12 @@ $(function () {
 
             loader.hide();
 
-            if (response?.success === true) {
+            if (response.success === true) {
                 supportedAirlinesWrapper.html(
-                    response?.data?.supported_airlines
+                    response.data.supported_airlines
                 );
                 unsupportedAirlinesWrapper.html(
-                    response?.data?.unsupported_airlines
+                    response.data.unsupported_airlines
                 );
             }
         } catch (e) {
@@ -36,4 +37,13 @@ $(function () {
     };
 
     search(request);
+
+
+    $('.airlines-mobile-sidebar-btn').on('click', function () {
+        $('.airlines__sidebar').toggleClass('open');
+    });
+
+    $('.airlines-mobile-sidebar-close-btn').on('click', function () {
+        $('.airlines__sidebar').removeClass('open');
+    });
 });

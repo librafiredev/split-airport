@@ -1,6 +1,13 @@
 @import "global/variables";
 @import "global/mixins";
 
-/* critical:start */ 
+/* critical:start */
 
-/* critical:end */ 
+.error-404 {
+    padding-top: $header-height + 100px;
+    padding-bottom: 30px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+/* critical:end */
