@@ -120,6 +120,10 @@
     overflow-x: hidden;
     overflow-y: auto;
     box-shadow: 0 0 0 4px rgba(#0c477f, 0.2);
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    background: $white;
 }
 
 .arrivals-timetable-search__input {
