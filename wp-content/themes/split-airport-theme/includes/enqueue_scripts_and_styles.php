@@ -27,7 +27,9 @@ function global_js_object()
 
 	$global_js_object = array(
 		'ajaxUrl' 			        => admin_url('admin-ajax.php'),
-		'nonce'						=> wp_create_nonce('security')
+		'searchRestUrl' 			=>  get_site_url( ) . '/wp-json/splitAirport/v1/search',
+		'nonce'						=> wp_create_nonce('security'),
+		'restNonce' 				=> wp_create_nonce( 'wp_rest' )
 	);
 
 	$global_js_object = json_encode($global_js_object);

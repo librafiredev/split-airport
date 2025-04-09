@@ -10,8 +10,9 @@ const _this = {
         callback: undefined,
     },
 
-    init: function (callback) {
+    init: function (callback, urlParams = true) {
         _this.vars.callback = callback;
+        _this.vars.urlParams = urlParams;
         _this.$dom.searchInput.on("keyup", _this.search);
     },
 
@@ -30,13 +31,16 @@ const _this = {
         clearInterval(_this.vars.searchTimeout);
         _this.vars.searchTimeout = setTimeout(() => {
             const searchValue = currentSearch.val();
-            if (searchValue != "") {
-                urlApiSingle("search", searchValue);
-            } else {
-                urlApiSingle("search", searchValue, true);
+
+            if (_this.vars.urlParams) {
+                if (searchValue != "") {
+                    urlApiSingle("search", searchValue);
+                } else {
+                    urlApiSingle("search", searchValue, true);
+                }
             }
 
-            _this.vars.callback(term);
+            _this.vars.callback(term, true);
         }, 1200);
     },
 };

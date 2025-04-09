@@ -1,0 +1,10 @@
+@import '../../assets/scss/global/variables';
+@import '../../assets/scss/global/mixins';
+@import '../../assets/scss/components/loader';
+
+.arrivals-timetable {
+    
+    input[name="search"]:focus + .arrivals-timetable-search__bottom {
+        display: block;
+    }
+}

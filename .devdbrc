@@ -1,0 +1,10 @@
+[
+  {
+    "type": "sqlite",
+    "path": "/Users/ivannikolic/Sites/split-airport/wp-content/themes/split-airport-theme/includes/flightsUpdate/db/search.db"
+  },
+  {
+    "type": "sqlite",
+    "path": "/Users/ivannikolic/Sites/split-airport/wp-content/themes/split-airport-theme/includes/flightsUpdate/dbStorage/search.db"
+  }
+]

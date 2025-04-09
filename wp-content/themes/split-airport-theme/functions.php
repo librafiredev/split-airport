@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/includes/flightsUpdate/vendor/autoload.php';
+
 /**
  * Require file where we can set theme config values
  */
@@ -40,3 +42,4 @@ require get_template_directory() . '/includes/shortcodes.php';
  * Require file where we can write ajax responses
  */
 require get_template_directory() . '/includes/ajax.php';
+

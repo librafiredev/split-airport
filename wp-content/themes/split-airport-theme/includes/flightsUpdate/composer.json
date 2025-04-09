@@ -1,0 +1,15 @@
+{
+    "name": "split/airport",
+    "autoload": {
+        "psr-4": {
+            "SplitAirport\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "librafireIvan",
+            "email": "ivan.nikolic@librafire.com"
+        }
+    ],
+    "require": {}
+}
