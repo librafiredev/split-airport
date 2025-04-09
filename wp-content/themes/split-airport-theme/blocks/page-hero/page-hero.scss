@@ -18,6 +18,10 @@ $page-hero-back-btn-bp: 1330px;
             .site-main:has(section.airlines) & {
                 margin-top: -155px;
             }
+
+            .site-main:has(section.arrivals-timetable) & {
+                margin-top: -251px;
+            }
         }
 
         @include min-max-mq($sm, $page-hero-back-btn-bp) {
@@ -80,6 +84,12 @@ $page-hero-back-btn-bp: 1330px;
 .page-hero-wrapper-inner {
     position: relative;
     height: 290px;
+
+    @include min-mq($sm + 1px) {
+        .site-main:has(section.arrivals-timetable) & {
+            height: 384px;
+        }
+    }
 
     @include max-mq($sm) {
         height: 126px;
