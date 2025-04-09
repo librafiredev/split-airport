@@ -58,7 +58,7 @@ extract($args);
         </div>
 
         <div class="search-data__airline">
-            <p class="search-data__airline-title"><?php echo $flights[0]['AD'] === 'DEPARTURE' ? __('All flights to', 'split-airport') : __('All flights from', 'split-airport')  ?></p>
+            <p class="search-data__airline-title"><?php echo  __('All flights with', 'split-airport'); ?></p>
             <div class="search-data__airline-companies">
 
                 <?php foreach ($airlines as $airline): ?>
