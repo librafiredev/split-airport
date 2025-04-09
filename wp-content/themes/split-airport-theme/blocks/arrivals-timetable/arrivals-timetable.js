@@ -13,7 +13,7 @@ $(function () {
     const searchInput = $('input[name="search"]');
     const searchFiltersElement = $(".arrivals-timetable-search__bottom");
     const datesSelectSearch = $('select[name="flightDateSearch"]');
-    let switcher = 0;
+    //let switcher = 0;
     const flightTypeInput = $('input[name="flightsInit"]');
     const loadMore = ".load-more";
 
@@ -39,13 +39,13 @@ $(function () {
         let flightsType, flightDate, search, queryType, offset;
 
         if (!isSearch) {
-            flightsType = getParams.get("flightType") ?? "arrival";
-            flightDate = getParams.get("flightDate") ?? now();
-            search = getParams.get("search") ?? "";
+            flightsType = getParams.get("flightType") || "arrival";
+            flightDate = getParams.get("flightDate") || now();
+            search = getParams.get("search") || "";
             queryType = "query";
 
             if (isLoadMore) {
-                offset = $(".flight").length ?? 0;
+                offset = $(".flight").length || 0;
             } else {
                 offset = 0;
             }
@@ -130,6 +130,8 @@ $(function () {
     const dateSwitcher = (e) => {
         const limit = dates.length - 1;
         const direction = $(e.currentTarget).data("direction");
+
+        let switcher = datesSelect[0].selectedIndex
 
         if (direction === "left" && switcher > 0) {
             switcher--;

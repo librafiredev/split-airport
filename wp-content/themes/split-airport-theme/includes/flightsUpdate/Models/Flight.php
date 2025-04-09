@@ -1,8 +1,6 @@
 <?php
 
 namespace SplitAirport\Models;
-
-use SimplePie\Parse\Date;
 use SplitAirport\Storage\Database;
 use SplitAirport\Storage\Files;
 
@@ -19,6 +17,7 @@ class Flight
         $connection = $db->getConnection();
         $ftsTerm = $term . '*';
         $searchWhere = "";
+        $pagination = "";
 
         if (!$date) {
             $date = (new \DateTime('now'))->format('Y-m-d');

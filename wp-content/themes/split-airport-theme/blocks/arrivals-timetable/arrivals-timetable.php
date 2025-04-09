@@ -4,6 +4,8 @@
 * Post Type: page 
 */
 
+use SplitAirport\Helpers\Page;
+
 if (isset($block['data']['preview_image_help'])) :
     echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
 else:
@@ -13,6 +15,11 @@ else:
         $dates[date('Y-m-d', strtotime("+$i days"))] = date('M d', strtotime("+$i days"));
     }
 
+    $flightType = isset($_GET['flightType']) ? wp_strip_all_tags($_GET['flightType']) : "";
+    $search = isset($_GET['search']) ? wp_strip_all_tags($_GET['search']) : "";
+    $flightDate = isset($_GET['flightDate']) ? wp_strip_all_tags($_GET['flightDate']) : "";
+    $destination = isset($_GET['destination']) ? wp_strip_all_tags($_GET['destination']) : "";
+
 ?>
 
     <section class="arrivals-timetable">
@@ -21,13 +28,37 @@ else:
         </div>
         <div class="container">
             <div class="arrivals-timetable__inner">
+
+                <?php if ($search || $destination): ?>
+
+                    <p class="search-notice">
+                        <?php
+                        $notices = [];
+
+                        if ($search) {
+                            $notices[] = sprintf(__('Search term: <strong>%s</strong>', 'split-airport'), esc_html($search));
+                        }
+
+                        if ($destination) {
+                            $notices[] = sprintf(__('Flights for Destination: <strong>%s</strong>', 'split-airport'), esc_html($destination));
+                        }
+
+                        echo implode(' &nbsp;|&nbsp; ', $notices);
+                        ?>.
+                        <a href="<?php echo Page::getSearchPage(); ?>">
+                            <?php esc_html_e('Clear all filters and start a new search', 'split-airport'); ?>
+                        </a>
+                    </p>
+
+                <?php endif; ?>
+
                 <div class="arrivals-timetable__filters">
                     <div class="arrivals-timetable__radio-input">
                         <input id="arrivals" type="radio" name="flightsInit" value="arrival" checked="checked" />
                         <label for="arrivals"><?php esc_html_e('Arrivals', 'split-airport'); ?></label><br>
                     </div>
                     <div class="arrivals-timetable__radio-input">
-                        <input id="departures" type="radio" name="flightsInit" value="departure" />
+                        <input id="departures" type="radio" name="flightsInit" value="departure" <?php if ($flightType === 'departure') echo 'checked=checked'; ?> />
                         <label for="departures"><?php esc_html_e('Departures', 'split-airport'); ?></label><br>
                     </div>
                     <div class="arrivals-timetable__radio-input">
@@ -37,7 +68,14 @@ else:
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-left.svg');  ?>
                             </div>
                             <div class="date-switcher__view">
-                                <?php echo __('Today, ', 'split-airport') . $dates[date('Y-m-d')]; ?>
+                                <?php
+                                if ($flightDate) {
+                                    echo ($flightDate === date('Y-m-d') ? __('Today, ', 'split-airport') : '') . $dates[$flightDate];
+                                } else {
+                                    echo __('Today, ', 'split-airport') . $dates[date('Y-m-d')];
+                                }
+
+                                ?>
                             </div>
                             <div data-direction="right" class="date-switcher__right">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-right.svg');  ?>
@@ -45,10 +83,10 @@ else:
                         </div>
                         <?php if ($dates): ?>
 
-                            <select style="display: none;" name="flightDate">
+                            <select style="display:none;" name="flightDate">
                                 <?php foreach ($dates as $value => $date): ?>
 
-                                    <option value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? 'Today, ' : "") . $date; ?></option>
+                                    <option <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? 'Today, ' : "") . $date; ?></option>
 
                                 <?php endforeach; ?>
 

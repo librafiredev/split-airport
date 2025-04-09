@@ -43,8 +43,9 @@ class SearchAPI
 
                 if ($term) {
                     get_template_part('template-parts/blocks/search-data', null, [
-                        'flights' => $flights['posts'],
-                        'term'    => $term
+                        'flights'       => $flights['posts'],
+                        'term'          => $term,
+                        'flightType'    => $type
                     ]);
                 }
             } else {
@@ -54,7 +55,6 @@ class SearchAPI
                     ]);
                 }
 
-               
                 if ($flights['total_pages'] > $flights['current_page']):
 
 

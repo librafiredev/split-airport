@@ -16,7 +16,7 @@ for ($i = 0; $i < 5; $i++) {
             <div class="arrivals-timetable-search__bottom-filters">
                 <div class="arrivals-timetable-search__radio-inputs">
                     <div class="arrivals-timetable-search__radio-input">
-                        <input id="arrivals-search" type="radio" name="flightsSearch" value="arrival" checked="checked" />
+                        <input id="arrivals-search" type="radio" name="flightsSearch" value="arrival"  checked="checked"/>
                         <label for="arrivals-search"><?php esc_html_e('Arrivals', 'split-airport'); ?></label><br>
                     </div>
                     <div class="arrivals-timetable-search__radio-input">

@@ -1,5 +1,11 @@
 <?php
+
+use SplitAirport\Helpers\Page;
+
 extract($args);
+
+//echo '<pre>'; print_r(Page::getSearchPage()); echo '</pre>'; exit();
+
 ?>
 
 <div class="search-data">
@@ -44,7 +50,7 @@ extract($args);
             <?php endforeach; ?>
         </div>
 
-        <a class="search-data__more" href="#"><?php esc_html_e('Show more flights with', 'split-airport') ?> <span class="search-data__term"><?php echo $term; ?></span></a>
+        <a class="search-data__more" href="<?php echo Page::getSearchPage() . '?search=' . $term . '&' . 'flightType=' . $flightType ?>"><?php esc_html_e('Show more flights with', 'split-airport') ?> <span class="search-data__term"><?php echo $term; ?></span></a>
 
 
         <div class="search-data__from-to">
@@ -52,7 +58,7 @@ extract($args);
             <div class="search-data__from-to-destinations">
 
                 <?php foreach ($destinations as $destination): ?>
-                    <a href=""><?php echo $destination; ?></a>
+                    <a href="<?php echo Page::getSearchPage() . '?destination=' . $destination ?>"><?php echo $destination; ?></a>
                 <?php endforeach; ?>
             </div>
         </div>

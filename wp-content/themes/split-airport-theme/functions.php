@@ -43,3 +43,6 @@ require get_template_directory() . '/includes/shortcodes.php';
  */
 require get_template_directory() . '/includes/ajax.php';
 
+
+
+
