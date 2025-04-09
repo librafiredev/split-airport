@@ -97,16 +97,12 @@ else:
                 </div>
                 <div class="arrivals-timetable__table">
                     <div class="arrivals-timetable__table-header">
-                        <div class="arrivals-timetable__table-header-left">
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Planned', 'split-airport') ?></span>
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Expected', 'split-airport') ?></span>
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Arriving from', 'split-airport') ?></span>
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Flight', 'split-airport') ?></span>
-                        </div>
-                        <div class="arrivals-timetable__table-header-right">
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Baggage claim', 'split-airport') ?></span>
-                            <span class="arrivals-timetable__table-name"><?php esc_html_e('Status', 'split-airport') ?></span>
-                        </div>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Planned', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Expected', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Arriving from', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Flight', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Baggage claim', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Status', 'split-airport') ?></span>
                     </div>
 
                     <div class="arrivals-timetable__table-flights">
@@ -115,7 +111,9 @@ else:
                 </div>
             </div>
         </div>
-        <div class="loader"></div>
+        <div class="loader-wrap">
+            <div class="loader"></div>
+        </div>
     </section><!-- .arrivals-timetable-->
 
 <?php endif; ?>
