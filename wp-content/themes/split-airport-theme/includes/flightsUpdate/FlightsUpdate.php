@@ -5,9 +5,12 @@ namespace SplitAirport;
 use SplitAirport\Migrations\Flight;
 use SplitAirport\Models\Flight as ModelFlight;
 use SplitAirport\SearchAPI;
+use SplitAirport\Storage\Files;
 
 class FlightsUpdate
 {
+
+    const FLIGHTS_UDPATE_API = 'https://as.int.split-airport.hr/as-frontend/schedule/current';
 
     public static function init()
     {
@@ -36,5 +39,35 @@ class FlightsUpdate
     {
         Flight::createTables();
         ModelFlight::insertData();
+    }
+
+    private static function fetchNewData()
+    {
+
+        // Today Flights
+
+        try {
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API);
+
+            if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
+                $responseBody = $response['body'];
+                Files::manageUpdateFiles($responseBody, 'current_flights.json');
+            }
+        } catch (\Exception $e) {
+            error_log('Fetch flights error: ' . $e->getMessage());
+        }
+
+        // Flights for period
+
+        try {
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API);
+
+            if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
+                $responseBody = $response['body'];
+                Files::manageUpdateFiles($responseBody, 'current_flights.json');
+            }
+        } catch (\Exception $e) {
+            error_log('Fetch flights error: ' . $e->getMessage());
+        }
     }
 }
