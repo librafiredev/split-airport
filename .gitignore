@@ -12,3 +12,5 @@ wp-content/w3tc-config/
 wp-content/wp-rocket-config/*
 
 error_log
+ai1wm-backups/
+error-log-*
