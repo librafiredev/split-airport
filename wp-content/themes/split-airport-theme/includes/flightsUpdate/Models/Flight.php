@@ -71,7 +71,7 @@ class Flight
     }
 
 
-    public static function getSearchData(string $term = "", string $date, string $type = 'arrivals', string $destination = "", string $airline = "", string $queryType = 'query', int $offset = 0)
+    public static function getSearchData(string $term = "", string $date, string $type = 'arrivals', string $destination = "", string $airline = "", string $earlierFlights = "", string $queryType = 'query', int $offset = 0)
     {
         $db = new Database();
         $connection = $db->getConnection();
@@ -80,6 +80,8 @@ class Flight
         $pagination = "";
         $destinationWhere = "";
         $airlineWhere = "";
+        $flightsTimeWhere = " date(fm.schtime) = date(:schdate)
+        AND time(fm.schtime) >= time(:schtime) ";
 
 
         if (!$date) {
@@ -106,6 +108,11 @@ class Flight
             if ($airline) {
                 $airlineWhere = ' AND fs.airline= :airline';
             }
+
+            if($earlierFlights === 'show') {
+                $flightsTimeWhere = " date(fm.schtime) = date(:schdate)
+                AND time(fm.schtime) < time(:schtime) ";
+            }
         }
 
         $sql = $connection->prepare(
@@ -129,8 +136,7 @@ class Flight
             COUNT(*) OVER () AS total_results
         FROM flights_search fs
         JOIN flights fm ON fs.rowid = fm.ID
-        WHERE date(fm.schtime) = date(:schdate)
-        AND time(fm.schtime) >= time(:schtime)  
+        WHERE ". $flightsTimeWhere . "  
         AND fm.AD = :type"
                 . $searchWhere
                 . $destinationWhere

@@ -60,9 +60,10 @@ class SearchAPI
         $queryType = wp_strip_all_tags($request->get_param('queryType'));
         $destination =  wp_strip_all_tags($request->get_param('destination'));
         $airline =  wp_strip_all_tags($request->get_param('airlineCompany'));
+        $earlierFlights =  wp_strip_all_tags($request->get_param('earlierFlights'));
         $offset =  wp_strip_all_tags($request->get_param('offset')) ?: 0;
 
-        $flights = Flight::getSearchData($term, $date, $type, $destination, $airline, $queryType, $offset);
+        $flights = Flight::getSearchData($term, $date, $type, $destination, $airline, $earlierFlights, $queryType, $offset);
 
         if ($flights['posts']) {
 

@@ -14,8 +14,7 @@ $(function () {
     const searchInput = $('input[name="search"]');
     const flightTypeInput = $('input[name="flightsInit"]');
     const loadMore = ".load-more";
-
-
+    
     const loadMoreAction = (e) => {
         e.preventDefault();
         request("", false, true);
@@ -40,8 +39,6 @@ $(function () {
         urlApiSingle("flightDate", $(e.currentTarget).val());
         request("");
     };
-
-    
 
     const dateSwitcher = (e) => {
         const limit = dates.length - 1;

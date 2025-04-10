@@ -70,6 +70,8 @@ else:
                     </div>
                     <div class="arrivals-timetable__radio-input">
 
+                        <?php if(!isset($_GET['earlierFlights'])): ?>
+
                         <div class="date-switcher">
                             <div data-direction="left" class="date-switcher__left">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-left.svg');  ?>
@@ -88,6 +90,13 @@ else:
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-right.svg');  ?>
                             </div>
                         </div>
+
+                        <?php else: ?>
+                            <p><?php echo __('Earlier flights for today, ', 'split-airport')  . $dates[date('Y-m-d')];  ?></p>
+                        <?php ?>
+
+                        <?php endif; ?>
+
                         <?php if ($dates): ?>
 
                             <select style="display:none;" name="flightDate">
@@ -103,6 +112,16 @@ else:
                     </div>
                 </div>
                 <div class="arrivals-timetable__table">
+                    <a href="<?php echo Page::getSearchPage() . (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show' ? '' : '?earlierFlights=show'); ?>" class="arrivals-timetable__earlier">
+                        <?php
+                        if (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show') {
+                            esc_html_e('Back to current flights', 'split-airport');
+                        } else {
+                            esc_html_e('Show earlier flights', 'split-airport');
+                        }
+                        echo file_get_contents(get_template_directory() . '/assets/images/arrow-up.svg');
+                        ?>
+                    </a>
                     <div class="arrivals-timetable__table-header">
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Planned', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Expected', 'split-airport') ?></span>
@@ -126,4 +145,3 @@ else:
     <?php get_template_part('template-parts/blocks/flight-popup'); ?>
 
 <?php endif; ?>
-

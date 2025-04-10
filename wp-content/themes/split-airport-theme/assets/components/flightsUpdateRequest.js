@@ -18,6 +18,7 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         queryType,
         offset,
         destination,
+        earlierFlights,
         airline;
 
     if (!isSearch) {
@@ -26,6 +27,7 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         search = getParams.get("search") || "";
         destination = getParams.get("destination") || "";
         airline = getParams.get("airlineCompany") || "";
+        earlierFlights = getParams.get("earlierFlights") || "";
         queryType = "query";
 
         if (isLoadMore) {
@@ -52,6 +54,10 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         requestParams.append("queryType", queryType);
         requestParams.append("destination", destination || "");
         requestParams.append("airlineCompany", airline || "");
+        if (earlierFlights === "show") {
+            requestParams.append("earlierFlights", earlierFlights);
+        }
+
         requestParams.append("offset", offset || 0);
 
         const request = await fetch(

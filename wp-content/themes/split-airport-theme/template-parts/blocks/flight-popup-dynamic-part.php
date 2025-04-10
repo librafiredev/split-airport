@@ -53,7 +53,7 @@ if (isset($airline) && $airline) {
 
     <div class="flight-popup-details">
         <div class="flight-popup-details-col flight-popup-details-img-col">
-           <?php if($airlineIcon) echo $airlineIcon; ?>
+           <?php if(isset($airlineIcon) && $airlineIcon) echo $airlineIcon; ?>
         </div>
 
         <div class="flight-popup-details-col flight-popup-details-lg-col">
