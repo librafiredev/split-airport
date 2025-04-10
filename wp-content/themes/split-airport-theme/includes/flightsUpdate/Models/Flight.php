@@ -2,6 +2,7 @@
 
 namespace SplitAirport\Models;
 
+use SplitAirport\Helpers\DateTimeFlight;
 use SplitAirport\Storage\Database;
 use SplitAirport\Storage\Files;
 
@@ -9,7 +10,29 @@ class Flight
 {
 
     private static $searchPerPage = 3;
-    private static $postsPerPage = 11;
+    private static $postsPerPage = 7;
+
+    public static function getAirlineByTitle($title)
+    {
+        global $wpdb;
+
+        $airline = $wpdb->get_row(
+            $wpdb->prepare(
+                "
+                SELECT *
+                FROM {$wpdb->prefix}posts
+                WHERE post_title = %s
+                AND post_type = 'airline'
+                AND post_status = 'publish'
+                LIMIT 1
+                ",
+                $title
+            ),
+            ARRAY_A
+        );
+
+        return $airline;
+    }
 
 
     public static function getFlightByID($ID)
@@ -60,7 +83,7 @@ class Flight
 
 
         if (!$date) {
-            $date = (new \DateTime('now'))->format('Y-m-d');
+            $date = DateTimeFlight::todayDate();
         }
 
         // Delete this, just example test
@@ -85,7 +108,8 @@ class Flight
             }
         }
 
-        $sql = $connection->prepare("
+        $sql = $connection->prepare(
+            "
         SELECT
             fs.flight_number,
             fs.destination,
@@ -105,9 +129,15 @@ class Flight
             COUNT(*) OVER () AS total_results
         FROM flights_search fs
         JOIN flights fm ON fs.rowid = fm.ID
-        WHERE date(fm.schdate) = date(:schdate)
-        AND fm.AD = :type" . $searchWhere . $destinationWhere . $airlineWhere . $pagination . "  
-    ");
+        WHERE date(fm.schtime) = date(:schdate)
+        AND time(fm.schtime) >= time(:schtime)  
+        AND fm.AD = :type"
+                . $searchWhere
+                . $destinationWhere
+                . $airlineWhere . "
+        ORDER BY fm.schtime
+        " . $pagination
+        );
 
         if ($sql) {
             if ($term) {
@@ -123,6 +153,7 @@ class Flight
             }
 
             $sql->bindValue(':schdate', $date);
+            $sql->bindValue(':schtime', DateTimeFlight::todayTime());
             $sql->bindValue(':type', strtoupper($type));
 
             $result = $sql->execute();

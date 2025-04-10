@@ -1,4 +1,19 @@
-<?php extract($args); ?>
+<?php
+
+use SplitAirport\Models\Flight;
+use SplitAirport\Helpers\DateTimeFlight;
+
+extract($args);
+
+if (isset($airline) && $airline) {
+    $airlinePost = Flight::getAirlineByTitle($airline);
+
+    if ($airlinePost) {
+        $airlineIcon = get_the_post_thumbnail($airlinePost['ID']);
+    }
+}
+
+?>
 
 <div class="flight-popup">
     <div class="flight-popup-header-top">
@@ -38,8 +53,7 @@
 
     <div class="flight-popup-details">
         <div class="flight-popup-details-col flight-popup-details-img-col">
-            <!-- Placeholder logo -->
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/airline-logo-placeholder.svg'); ?>" alt="Airline logo" />
+           <?php if($airlineIcon) echo $airlineIcon; ?>
         </div>
 
         <div class="flight-popup-details-col flight-popup-details-lg-col">
@@ -54,8 +68,7 @@
             <div class="flight-popup-details-text">
                 <?php
                 if (!empty($schdate)) {
-                    $date = date_create($schdate);
-                    echo date_format($date, 'd.m.');
+                    echo DateTimeFlight::formatDateTableView($schdate);
                 } else {
                     echo 'N/A';
                 }
@@ -68,8 +81,7 @@
             <div class="flight-popup-details-text">
                 <?php
                 if (!empty($schtime)) {
-                    $time = date_create($schtime);
-                    echo date_format($time, 'H:i');
+                    echo DateTimeFlight::formatTimeTableView($schtime);
                 } else {
                     echo 'N/A';
                 }
@@ -82,8 +94,7 @@
             <div class="flight-popup-details-text">
                 <?php
                 if (!empty($esttime)) {
-                    $time = date_create($esttime);
-                    echo date_format($time, 'H:i');
+                    echo DateTimeFlight::formatTimeTableView($esttime);
                 } else {
                     echo 'N/A';
                 }

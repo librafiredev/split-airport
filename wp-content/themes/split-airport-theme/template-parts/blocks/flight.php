@@ -1,15 +1,26 @@
 <?php
+
+use SplitAirport\Helpers\DateTimeFlight;
+use SplitAirport\Models\Flight;
+
 extract($args);
 
 if (!empty($flight['schtime'])) {
-    $schTime = new DateTime($flight['schtime']);
-    $schTime = $schTime->format('H:i');
+    $schTime = DateTimeFlight::formatTimeTableView($flight['schtime']);
 }
 
 if (!empty($flight['esttime'])) {
-    $esttime = new DateTime($flight['esttime']);
-    $esttime = $esttime->format('H:i');
+    $estTime = DateTimeFlight::formatTimeTableView($flight['esttime']);
 }
+
+if ($flight['airline']) {
+    $airline = Flight::getAirlineByTitle($flight['airline']);
+
+    if ($airline) {
+        $icon = get_the_post_thumbnail($airline['ID']);
+    }
+}
+
 ?>
 
 <div data-id="<?php echo $flight['ID']; ?>" class="flight">
@@ -18,7 +29,7 @@ if (!empty($flight['esttime'])) {
     </span>
 
     <span class="flight__expected">
-        <?php echo isset($esttime) ? htmlspecialchars($esttime) : '' ?>
+        <?php echo isset($estTime) ? htmlspecialchars($estTime) : '' ?>
     </span>
 
     <span class="flight__arriving-from">
@@ -26,16 +37,22 @@ if (!empty($flight['esttime'])) {
     </span>
 
     <span class="flight__flight">
-        <div class="flight__icon">
+        <?php if (isset($icon)): ?>
 
-        </div>
+            <span class="flight__icon">
+                <?php echo $icon; ?>
+            </span>
+
+        <?php endif; ?>
+
         <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
             ? '<span class="flight__flight-num">' . htmlspecialchars($flight['flight_number']) . '</span> <span class="flight__flight-airline"> – ' . htmlspecialchars($flight['airline']) . '</span>'
             : '' ?>
     </span>
 
     <span class="flight__baggage-claim">
-        <?php //echo !empty($flight['parkingPosition']) ? htmlspecialchars($flight['parkingPosition']) : '' ?>
+        <?php //echo !empty($flight['parkingPosition']) ? htmlspecialchars($flight['parkingPosition']) : '' 
+        ?>
     </span>
 
     <span class="flight__baggage-status <?php echo strtolower(str_replace(" ", "-", $flight['comment'])); ?>">

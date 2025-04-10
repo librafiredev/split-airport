@@ -12,7 +12,7 @@ class Database
     {
 
         $this->connection = new \SQLite3(self::getDbPath());
-        $this->connection->busyTimeout(1000);
+        $this->connection->busyTimeout(5000);
     }
 
     public static function getDbPath()
