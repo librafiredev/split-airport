@@ -1,13 +1,9 @@
 // stylelint-disable no-descending-specificity
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/search-form";
 
-$hero-res-switch: $grid-gutter-breakpoint;
-
-.hero-home-overflow {
-    overflow: hidden;
-    padding-bottom: 2px;
-}
+$hero-res-switch: $md;
 
 .home-hero-bg {
     object-fit: cover;
@@ -46,7 +42,7 @@ $hero-res-switch: $grid-gutter-breakpoint;
 .home-hero-inner {
     padding-top: 131px;
 
-    @include max-mq($sm) {
+    @include max-mq($hero-res-switch) {
         padding-top: 88px;
     }
 }
@@ -55,14 +51,14 @@ $hero-res-switch: $grid-gutter-breakpoint;
     color: $gray-400;
     margin-bottom: 19px;
 
-    @include max-mq($sm) {
+    @include max-mq($hero-res-switch) {
         margin-bottom: 11px;
     }
 
     h1 {
         letter-spacing: -0.05em;
 
-        @include max-mq($sm) {
+        @include max-mq($hero-res-switch) {
             font-size: $responsive-size-h1;
             text-align: center;
             letter-spacing: -0.07em;
@@ -74,7 +70,7 @@ $hero-res-switch: $grid-gutter-breakpoint;
     min-height: 74px;
     margin-bottom: 120px;
 
-    @include max-mq($sm) {
+    @include max-mq($hero-res-switch) {
         min-height: 58px;
         margin-bottom: 177px;
     }
@@ -97,6 +93,7 @@ $hero-res-switch: $grid-gutter-breakpoint;
 
     @include max-mq($hero-res-switch) {
         padding-top: 20px;
+        max-width: 100% !important;
     }
 
     &::after,
@@ -126,6 +123,11 @@ $hero-res-switch: $grid-gutter-breakpoint;
             width: calc(100% + 40px);
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
+        }
+
+        @include max-mq($xs) {
+            right: -10px;
+            width: calc(100% + 20px);
         }
     }
 }

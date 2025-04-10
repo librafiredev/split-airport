@@ -25,7 +25,9 @@ else:
 
     <section class="arrivals-timetable">
         <div class="arrivals-timetable__top">
-            <?php get_template_part('template-parts/blocks/arrivals-timetable', 'search'); ?>
+            <div class="container">
+                <?php get_template_part('template-parts/blocks/arrivals-timetable', 'search'); ?>
+            </div>
         </div>
         <div class="container">
             <div class="arrivals-timetable__inner">

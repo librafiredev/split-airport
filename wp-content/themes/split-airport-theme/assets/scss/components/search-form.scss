@@ -1,0 +1,230 @@
+@import "../global/variables";
+@import "../global/mixins";
+@import "../components/loader";
+
+$arrivals-item-side-adding: 30px;
+$arrivals-item-side-adding-responsive: 10px;
+
+.arrivals-timetable {
+    input[name="search"]:focus + .arrivals-timetable-search__bottom {
+        display: block;
+    }
+}
+
+.arrivals-timetable-search__input-wrap {
+    max-width: 560px;
+    border-radius: 26px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 0 0 4px rgba(#0c477f, 0.2);
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    background: $white;
+
+    @include max-mq($sm) {
+        max-width: calc(100vw - 40px);
+        border-radius: 10px;
+    }
+}
+
+.arrivals-timetable-search__input {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    width: 100%;
+
+    & > svg {
+        width: 24px;
+        margin-left: 25px;
+        margin-right: 3px;
+
+        @include max-mq($sm) {
+            margin-left: 6px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    input {
+        height: 70px;
+        padding-left: 10px;
+        width: calc(100% - (24px + 25px + 3px));
+        border: none;
+        outline: none;
+        font-size: $font-size-base;
+
+        @include max-mq($sm) {
+            height: 40px;
+            padding-left: 5px;
+        }
+    }
+}
+
+.arrivals-timetable-search__bottom-filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 28px;
+    background-color: $footer-bgc;
+
+    @include max-mq($sm) {
+        padding: 10px 5px;
+    }
+}
+
+.arrivals-timetable-search__radio-input,
+.arrivals-timetable__radio-input {
+    position: relative;
+
+    br {
+        display: none;
+    }
+
+    input[type="radio"] {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        & + label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+
+            @include max-mq($sm) {
+                margin-right: 10px;
+            }
+
+            &::before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 2px $secondary-color;
+                margin-right: 10px;
+                border: 3px solid $white;
+            }
+        }
+
+        &:checked {
+            & + label {
+                &::before {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+.arrivals-timetable-search__date {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        border-bottom: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+        right: 17px;
+        top: 50%;
+        transform: translateY(-65%) rotate(45deg);
+
+        @include max-mq($sm) {
+            right: 0;
+        }
+    }
+
+    select {
+        appearance: none;
+        outline: none;
+        border: none;
+        font-size: $font-size-base;
+        background: none;
+        text-align: right;
+        color: $gray-300;
+        padding-right: 32px;
+
+        @include max-mq($sm) {
+            padding-right: 10px;
+        }
+    }
+
+    option:checked {
+        background: $footer-bgc !important;
+        box-shadow: 0 0 10px 100px $footer-bgc inset;
+    }
+}
+
+.search-data__flight {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px $arrivals-item-side-adding;
+    border-bottom: 1px dashed $gray;
+
+    @include max-mq($sm) {
+        padding: 5px $arrivals-item-side-adding-responsive;
+    }
+}
+
+.search-data__flight-number {
+    color: $gray-300;
+}
+
+.search-data__flight-company {
+    color: $gray-100;
+}
+
+.search-data__flight-time {
+    margin-right: 10px;
+}
+
+.search-data__airline-title,
+.search-data__from-to-title {
+    background-color: $footer-bgc;
+    padding: 8px $arrivals-item-side-adding;
+    text-transform: uppercase;
+    color: #8fa9c0;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+
+    @include max-mq($sm) {
+        padding: 5px $arrivals-item-side-adding-responsive;
+    }
+}
+
+.search-data__term {
+    color: $primary-color;
+
+    &::before,
+    &::after {
+        content: '"';
+    }
+}
+
+.search-data__more {
+    display: block;
+
+    svg {
+        margin-right: 10px;
+    }
+}
+
+.search-data__airline-companies,
+.search-data__from-to-destinations,
+.search-data__more {
+    padding: 10px $arrivals-item-side-adding;
+
+    @include max-mq($sm) {
+        padding: 5px $arrivals-item-side-adding-responsive;
+    }
+}
+
+.arrivals-timetable-search__radio-inputs {
+    display: flex;
+}
