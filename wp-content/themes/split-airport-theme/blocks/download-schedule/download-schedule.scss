@@ -1,0 +1,149 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+.download-schedule-wrapper {
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    padding-top: 39px;
+    padding-bottom: 210px;
+    margin-bottom: 59px;
+
+    @include max-mq($md) {
+        background: none !important;
+        padding-bottom: 49px;
+    }
+
+    @include max-mq($sm) {
+        padding-top: 11px;
+        margin-bottom: 21px;
+    }
+}
+
+.download-schedule-top {
+    display: flex;
+    padding-bottom: 100px;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+    }
+}
+
+.download-schedule-top-left,
+.download-schedule-top-right {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.download-schedule-top-left {
+    padding-right: 10px;
+    padding-top: 18px;
+
+    @include max-mq($sm) {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        max-width: 358px;
+        color: $primary-color;
+        letter-spacing: -0.05em;
+        font-size: $font-size-h2;
+        line-height: 1;
+
+        @include max-mq($sm) {
+            font-size: 28px;
+            line-height: calc(30 / 28);
+            max-width: 290px;
+        }
+    }
+}
+
+.download-schedule-tr-item {
+    display: flex;
+    align-items: center;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
+
+.download-schedule-tri-main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 22px 0;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+    }
+
+    .download-schedule-tr-item:not(:last-child) & {
+        border-bottom: 1px solid $gray;
+    }
+}
+
+.download-schedule-item-dl {
+    display: block;
+    margin-left: auto;
+    border-radius: 30px;
+    background-color: $footer-bgc;
+    color: $primary-color;
+    padding: 10px 30px;
+    transition: $dur;
+    letter-spacing: -0.02em;
+    font-size: 15px;
+
+    @include max-mq($sm) {
+        margin-left: 0;
+        margin-top: 19px;
+    }
+
+    &:hover {
+        background-color: $gray;
+    }
+}
+
+.download-schedule-tri-title {
+    color: $primary-color;
+}
+
+.download-schedule-tri-subtitle {
+    font-size: 15px;
+    color: $gray-300;
+}
+
+.download-schedule-tri-icon-wrap {
+    flex-shrink: 0;
+    padding-right: 12px;
+    padding-left: 11px;
+
+    @include max-mq($sm) {
+        padding-left: 0;
+        margin-top: 28px;
+    }
+
+    svg {
+        width: 32px;
+    }
+}
+
+.download-schedule-bottom {
+    font-size: 15px;
+    letter-spacing: -0.02em;
+    padding-top: 23px;
+    border-top: 1px solid $gray;
+    line-height: calc(20 / 15);
+}
+
+.download-schedule-tri-main-l {
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

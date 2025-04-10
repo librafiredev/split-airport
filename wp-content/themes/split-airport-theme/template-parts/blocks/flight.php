@@ -29,11 +29,9 @@ if (!empty($flight['esttime'])) {
         <div class="flight__icon">
 
         </div>
-        <div class="flight__info">
-            <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
-                ? htmlspecialchars($flight['flight_number'] . ' – ' . $flight['airline'])
-                : '' ?>
-        </div>
+        <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
+            ? '<span class="flight__flight-num">' . htmlspecialchars($flight['flight_number']) . '</span> <span class="flight__flight-airline"> – ' . htmlspecialchars($flight['airline']) . '</span>'
+            : '' ?>
     </span>
 
     <span class="flight__baggage-claim">
