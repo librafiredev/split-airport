@@ -161,10 +161,16 @@ $arrivals-item-side-adding-responsive: 10px;
 }
 
 .search-data__flight {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     padding: 13px $arrivals-item-side-adding;
     border-bottom: 1px dashed $gray;
+    transition: $dur;
+
+    &:hover {
+        background-color: $gray;
+    }
 
     @include max-mq($sm) {
         padding: 5px $arrivals-item-side-adding-responsive;
@@ -209,6 +215,11 @@ $arrivals-item-side-adding-responsive: 10px;
 
 .search-data__more {
     display: block;
+    transition: $dur;
+
+    &:hover {
+        background-color: $gray;
+    }
 
     svg {
         margin-right: 10px;
@@ -216,7 +227,20 @@ $arrivals-item-side-adding-responsive: 10px;
 }
 
 .search-data__airline-companies,
-.search-data__from-to-destinations,
+.search-data__from-to-destinations {
+    a {
+        display: block;
+        transition: $dur;
+
+        &:hover {
+            background-color: $gray;
+        }
+    }
+}
+
+.arrivals-timetable-search__bottom-results .no-flight,
+.search-data__airline-companies a,
+.search-data__from-to-destinations a,
 .search-data__more {
     padding: 10px $arrivals-item-side-adding;
 
