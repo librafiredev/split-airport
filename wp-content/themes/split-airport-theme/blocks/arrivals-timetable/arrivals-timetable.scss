@@ -105,6 +105,10 @@ $arrivals-item-side-adding-responsive: 10px;
     padding-bottom: 80px;
     z-index: 2;
 
+    @include max-mq($sm) {
+        padding-top: 78px;
+    }
+
     &::before {
         content: "";
         display: block;
@@ -120,18 +124,6 @@ $arrivals-item-side-adding-responsive: 10px;
 
 .date-switcher__view {
     padding: 0 7px;
-}
-
-.arrivals-timetable__table-header {
-    background-color: #f6f6f6;
-
-    @include max-mq(1024px) {
-        font-size: 14px;
-    }
-
-    @include max-mq($sm) {
-        display: none;
-    }
 }
 
 .arrivals-timetable-search__input-wrap {
@@ -355,11 +347,29 @@ $arrivals-item-side-adding-responsive: 10px;
     }
 }
 
+.arrivals-timetable__table-header {
+    background-color: #f6f6f6;
+
+    @include max-mq(1024px) {
+        font-size: 14px;
+    }
+
+    @include max-mq($sm) {
+        display: none;
+    }
+}
+
 .flight {
     padding-top: 22px;
     padding-bottom: 22px;
     border-bottom: 1px dashed $gray;
     transition: $dur;
+
+    @include max-mq($sm) {
+        display: grid;
+        grid-template-columns: 55px auto 100px;
+        padding: 13px 0;
+    }
 
     &:hover {
         background-color: $footer-bgc;
@@ -384,4 +394,56 @@ $arrivals-item-side-adding-responsive: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flight__flight-airline {
+    @include max-mq($sm) {
+        display: none;
+    }
+}
+
+.flight__baggage-claim {
+    @include max-mq($sm) {
+        display: none;
+    }
+}
+
+.flight__baggage-status {
+    @include max-mq($sm) {
+        text-align: right;
+    }
+}
+
+@include max-mq($sm) {
+    .flight__planned {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        color: $gray-400;
+    }
+
+    .flight__expected {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        font-weight: bold;
+        color: $gray-300;
+    }
+
+    .flight__arriving-from {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .flight__flight {
+        grid-column: 2/3;
+        grid-row: 2/2;
+        color: #aeaeae;
+    }
+
+    .flight__baggage-status {
+        grid-column: 3/4;
+        grid-row: 1/3;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
