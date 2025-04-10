@@ -107,5 +107,6 @@ else: ?>
             </div><!-- .container -->
         </section><!-- .home-hero-wrapper-->
     </div>
+    <?php get_template_part('template-parts/blocks/flight-popup'); ?>
     
 <?php endif; ?>

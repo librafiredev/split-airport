@@ -30,8 +30,8 @@
             echo $type === 'landing' ? "{$destinationDisplay} to Split" : "Split to {$destinationDisplay}";
             ?>
         </div>
-        <div class="flight-popup-header-text">
-            <?php echo $comment ?: 'Scheduled'; ?>
+        <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
+            <?php echo $comment; ?>
         </div>
         <a class="flight-popup-header-btn" href="#">Follow this flight</a>
     </div>

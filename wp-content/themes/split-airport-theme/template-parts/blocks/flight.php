@@ -37,10 +37,10 @@ if (!empty($flight['esttime'])) {
     </span>
 
     <span class="flight__baggage-claim">
-        <?php echo !empty($flight['parkingPosition']) ? htmlspecialchars($flight['parkingPosition']) : '' ?>
+        <?php //echo !empty($flight['parkingPosition']) ? htmlspecialchars($flight['parkingPosition']) : '' ?>
     </span>
 
-    <span class="flight__baggage-status">
+    <span class="flight__baggage-status <?php echo strtolower(str_replace(" ", "-", $flight['comment'])); ?>">
         <?php echo !empty($flight['comment']) ? htmlspecialchars($flight['comment']) : '' ?>
     </span>
 </div>
