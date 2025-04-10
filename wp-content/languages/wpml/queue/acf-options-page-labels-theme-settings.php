@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Theme Settings'=>['urls'=>[],'names'=>['options-page-theme-settings-page_title-e873d89b2c012e5f3d22f8540180bd0e','options-page-theme-settings-menu_title-e873d89b2c012e5f3d22f8540180bd0e'],'cmp'=>['wpml-string-translation',1]],'Update'=>['urls'=>[],'names'=>['options-page-theme-settings-update_button-06933067aafd48425d67bcb01bba5cb6'],'cmp'=>['wpml-string-translation',1]],'Options Updated'=>['urls'=>[],'names'=>['options-page-theme-settings-updated_message-175309035a73fe39362540d67a497553'],'cmp'=>['wpml-string-translation',1]]]];
