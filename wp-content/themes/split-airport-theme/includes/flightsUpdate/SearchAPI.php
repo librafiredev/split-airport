@@ -10,6 +10,7 @@ class SearchAPI
     public static function init()
     {
         add_action('rest_api_init', [static::class, 'registerSearchRestAPI']);
+        add_action('rest_api_init', [static::class, 'registerFlightAPI']);
     }
 
     public static function registerSearchRestAPI()
@@ -23,6 +24,33 @@ class SearchAPI
         ));
     }
 
+    public static function registerFlightAPI()
+    {
+        register_rest_route('splitAirport/v1', '/flight/', array(
+            'methods' => 'GET',
+            'callback' => [static::class, 'flightRestAPI'],
+            'permission_callback' => function (\WP_REST_Request $request) {
+                return true;
+            }
+        ));
+    }
+
+    public static function flightRestAPI(\WP_REST_Request $request)
+    {
+        $ID = wp_strip_all_tags($request->get_param('ID'));
+        $flight = Flight::getFlightByID($ID);
+
+        if ($flight) {
+
+            ob_start();
+            get_template_part('template-parts/blocks/flight-popup-dynamic-part', null, $flight);
+            $popupHTML = ob_get_clean();
+            wp_send_json_success($popupHTML);
+        } else {
+            wp_send_json_error('No flight with provided ID');
+        }
+    }
+
     public static function searchRestAPI(\WP_REST_Request $request)
     {
 
@@ -30,10 +58,11 @@ class SearchAPI
         $type = wp_strip_all_tags($request->get_param('flightType'));
         $date = wp_strip_all_tags($request->get_param('flightDate'));
         $queryType = wp_strip_all_tags($request->get_param('queryType'));
+        $destination =  wp_strip_all_tags($request->get_param('destination'));
+        $airline =  wp_strip_all_tags($request->get_param('airlineCompany'));
         $offset =  wp_strip_all_tags($request->get_param('offset')) ?: 0;
 
-        $flights = Flight::getSearchData($term, $date, $type, $queryType, $offset);
-
+        $flights = Flight::getSearchData($term, $date, $type, $destination, $airline, $queryType, $offset);
 
         if ($flights['posts']) {
 
@@ -74,7 +103,7 @@ class SearchAPI
 
             ob_start();
 
-            get_template_part('template-parts/blocks/no-flights');
+            get_template_part('template-parts/blocks/no-flight');
 
             $NoFlightsHTML = ob_get_clean();
             wp_send_json_success($NoFlightsHTML);

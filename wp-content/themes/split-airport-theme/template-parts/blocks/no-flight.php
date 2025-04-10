@@ -1,0 +1,1 @@
+<p class="no-flight"><?php esc_html_e('No results found for your search or filter criteria. Please try again with different keywords or filters.', 'split-airport'); ?></p>

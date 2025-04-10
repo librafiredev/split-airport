@@ -1,102 +1,20 @@
 import search from "../../assets/components/search";
 import urlApiSingle from "../../assets/components/urlApiSingle";
+import { searchFiltersOpen, searchFiltersClose } from "../../assets/components/searchUtils";
+import request from "../../assets/components/flightsUpdateRequest";
+import flightPopup from "../../assets/components/flightPopup";
 
 $(function () {
-    const searchWrapper = $(".arrivals-timetable-search__bottom-results");
-    const initWrapper = $(".arrivals-timetable__table-flights");
-    const loader = $(".loader");
+  
     const dateSwitcherLeft = $(".date-switcher__left");
     const dateSwitcherRight = $(".date-switcher__right");
     const dateSwitcherView = $(".date-switcher__view");
     const dates = $('select[name="flightDate"] option');
     const datesSelect = $('select[name="flightDate"]');
     const searchInput = $('input[name="search"]');
-    const searchFiltersElement = $(".arrivals-timetable-search__bottom");
-    const datesSelectSearch = $('select[name="flightDateSearch"]');
-    //let switcher = 0;
     const flightTypeInput = $('input[name="flightsInit"]');
     const loadMore = ".load-more";
 
-    const now = () => {
-        const today = new Date();
-        const formattedDate =
-            today.getFullYear() +
-            "-" +
-            String(today.getMonth() + 1).padStart(2, "0") +
-            "-" +
-            String(today.getDate()).padStart(2, "0");
-
-        return formattedDate;
-    };
-    const request = async (term = "", isSearch = false, isLoadMore = false) => {
-        loader.show();
-
-        // Get Params
-
-        const urlParams = new URL(window.location.href);
-        const getParams = urlParams.searchParams;
-
-        let flightsType, flightDate, search, queryType, offset;
-
-        if (!isSearch) {
-            flightsType = getParams.get("flightType") || "arrival";
-            flightDate = getParams.get("flightDate") || now();
-            search = getParams.get("search") || "";
-            queryType = "query";
-
-            if (isLoadMore) {
-                offset = $(".flight").length || 0;
-            } else {
-                offset = 0;
-            }
-        } else {
-            const flightTypeInputSearch = $(
-                'input[name="flightsSearch"]:checked'
-            );
-            flightsType = flightTypeInputSearch.val();
-            flightDate = datesSelectSearch.val();
-            search = searchInput.val();
-            queryType = "search";
-            offset = 0;
-        }
-
-        try {
-            const requestParams = new URLSearchParams();
-
-            requestParams.append("term", search);
-            requestParams.append("flightType", flightsType);
-            requestParams.append("flightDate", flightDate);
-            requestParams.append("_wpnonce", theme.restNonce);
-            requestParams.append("queryType", queryType);
-            requestParams.append("offset", offset);
-
-            const request = await fetch(
-                `${theme.searchRestUrl}?${requestParams.toString()}`,
-                {
-                    method: "GET",
-                }
-            );
-
-            const response = await request.json();
-
-            loader.hide();
-
-            if (response?.success === true) {
-                if (!isSearch) {
-                    if (isLoadMore) {
-                        $(loadMore).remove();
-                        initWrapper.append(response?.data);
-                    } else {
-                        initWrapper.html(response?.data);
-                    }
-                } else {
-                    searchWrapper.html(response?.data);
-                }
-            }
-        } catch (e) {
-            console.error(e.message);
-        }
-    };
 
     const loadMoreAction = (e) => {
         e.preventDefault();
@@ -105,6 +23,16 @@ $(function () {
 
     const flightTypeFilter = (e) => {
         urlApiSingle("flightType", $(e.currentTarget).val());
+        const tableTypeTitle = $('.flight-type');
+
+        if($(e.currentTarget).val() === 'arrival') {
+            tableTypeTitle.text(theme.FlightTypeTableStingArrival);
+        }
+
+        else {
+            tableTypeTitle.text(theme.FlightTypeTableStingDeparture);
+        }
+       
         request("");
     };
 
@@ -113,19 +41,7 @@ $(function () {
         request("");
     };
 
-    const searchFiltersOpen = (e) => {
-        searchFiltersElement.stop(true, true).slideDown();
-    };
-
-    const searchFiltersClose = (e) => {
-        const isInsideFilters =
-            $(e.target).closest(searchFiltersElement).length > 0;
-        const isInsideInput = $(e.target).closest(searchInput).length > 0;
-
-        if (!isInsideFilters && !isInsideInput) {
-            searchFiltersElement.stop(true, true).slideUp();
-        }
-    };
+    
 
     const dateSwitcher = (e) => {
         const limit = dates.length - 1;
@@ -146,6 +62,10 @@ $(function () {
         dateSwitcherView.text(selectedDate.text());
     };
 
+    // Init Flight popup
+
+    flightPopup.init()
+
     // Call after search
 
     search(request, false);
@@ -161,3 +81,8 @@ $(function () {
     dateSwitcherLeft.on("click", dateSwitcher);
     dateSwitcherRight.on("click", dateSwitcher);
 });
+
+
+
+
+

@@ -40,6 +40,7 @@ else: ?>
                     <?php endif; ?>
 
                     <div class="home-hero-search">
+                        <?php get_template_part('template-parts/blocks/arrivals-timetable', 'search'); ?>
                     </div><!-- .home-hero-search -->
 
                     <?php if( have_rows('items') ): ?>

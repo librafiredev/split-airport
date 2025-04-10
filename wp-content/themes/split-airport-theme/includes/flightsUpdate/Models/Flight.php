@@ -1,6 +1,7 @@
 <?php
 
 namespace SplitAirport\Models;
+
 use SplitAirport\Storage\Database;
 use SplitAirport\Storage\Files;
 
@@ -11,13 +12,52 @@ class Flight
     private static $postsPerPage = 11;
 
 
-    public static function getSearchData(string $term = "", string $date, string $type = 'arrivals', string $queryType = 'query', int $offset = 0)
+    public static function getFlightByID($ID)
+    {
+        $db = new Database();
+        $connection = $db->getConnection();
+
+        $sql = $connection->prepare("
+        SELECT
+            fs.flight_number,
+            fs.destination,
+            fs.airline,
+            fm.ID,
+            fm.AD,
+            fm.acttime,
+            fm.comment,
+            fm.esttime,
+            fm.gate,
+            fm.parkingPosition,
+            fm.schdate,
+            fm.schtime,
+            fm.sifFromto,
+            fm.sifVia,    
+            fm.via
+        FROM flights_search fs
+        JOIN flights fm ON fs.rowid = fm.ID
+        WHERE fm.ID = :ID  
+    ");
+
+        $sql->bindValue(':ID', $ID);
+        $result = $sql->execute();
+        $row = $result->fetchArray(SQLITE3_ASSOC);
+        $db->closeConnestion();
+
+        return $row;
+    }
+
+
+    public static function getSearchData(string $term = "", string $date, string $type = 'arrivals', string $destination = "", string $airline = "", string $queryType = 'query', int $offset = 0)
     {
         $db = new Database();
         $connection = $db->getConnection();
         $ftsTerm = $term . '*';
         $searchWhere = "";
         $pagination = "";
+        $destinationWhere = "";
+        $airlineWhere = "";
+
 
         if (!$date) {
             $date = (new \DateTime('now'))->format('Y-m-d');
@@ -35,13 +75,22 @@ class Flight
             $pagination = ' limit ' . self::$searchPerPage;
         } else {
             $pagination = ' limit ' . self::$postsPerPage . ' ' . 'offset ' . $offset;
+
+            if ($destination) {
+                $destinationWhere = ' AND fs.destination= :destination';
+            }
+
+            if ($airline) {
+                $airlineWhere = ' AND fs.airline= :airline';
+            }
         }
 
         $sql = $connection->prepare("
-        SELECT 
+        SELECT
             fs.flight_number,
             fs.destination,
             fs.airline,
+            fm.ID,
             fm.AD,
             fm.acttime,
             fm.comment,
@@ -57,12 +106,20 @@ class Flight
         FROM flights_search fs
         JOIN flights fm ON fs.rowid = fm.ID
         WHERE date(fm.schdate) = date(:schdate)
-        AND fm.AD = :type" . $searchWhere . $pagination . "  
+        AND fm.AD = :type" . $searchWhere . $destinationWhere . $airlineWhere . $pagination . "  
     ");
 
         if ($sql) {
             if ($term) {
                 $sql->bindValue(':term', $ftsTerm);
+            }
+
+            if ($destination) {
+                $sql->bindValue(':destination', $destination);
+            }
+
+            if ($airline) {
+                $sql->bindValue(':airline', $airline);
             }
 
             $sql->bindValue(':schdate', $date);

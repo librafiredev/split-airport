@@ -12,7 +12,7 @@ if (!empty($flight['esttime'])) {
 }
 ?>
 
-<div class="flight">
+<div data-id="<?php echo $flight['ID']; ?>" class="flight">
     <span class="flight__planned">
         <?php echo isset($schTime) ? htmlspecialchars($schTime) : '' ?>
     </span>
@@ -26,9 +26,14 @@ if (!empty($flight['esttime'])) {
     </span>
 
     <span class="flight__flight">
-        <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
-            ? htmlspecialchars($flight['flight_number'] . ' – ' . $flight['airline'])
-            : '' ?>
+        <div class="flight__icon">
+
+        </div>
+        <div class="flight__info">
+            <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
+                ? htmlspecialchars($flight['flight_number'] . ' – ' . $flight['airline'])
+                : '' ?>
+        </div>
     </span>
 
     <span class="flight__baggage-claim">

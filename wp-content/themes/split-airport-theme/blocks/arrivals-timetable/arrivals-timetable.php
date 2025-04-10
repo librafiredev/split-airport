@@ -19,6 +19,7 @@ else:
     $search = isset($_GET['search']) ? wp_strip_all_tags($_GET['search']) : "";
     $flightDate = isset($_GET['flightDate']) ? wp_strip_all_tags($_GET['flightDate']) : "";
     $destination = isset($_GET['destination']) ? wp_strip_all_tags($_GET['destination']) : "";
+    $airline = isset($_GET['airlineCompany']) ? wp_strip_all_tags($_GET['airlineCompany']) : "";
 
 ?>
 
@@ -29,7 +30,7 @@ else:
         <div class="container">
             <div class="arrivals-timetable__inner">
 
-                <?php if ($search || $destination): ?>
+                <?php if ($search || $destination || $airline): ?>
 
                     <p class="search-notice">
                         <?php
@@ -41,6 +42,10 @@ else:
 
                         if ($destination) {
                             $notices[] = sprintf(__('Flights for Destination: <strong>%s</strong>', 'split-airport'), esc_html($destination));
+                        }
+
+                        if ($airline) {
+                            $notices[] = sprintf(__('Filtered by Airline: <strong>%s</strong>', 'split-airport'), esc_html($airline));
                         }
 
                         echo implode(' &nbsp;|&nbsp; ', $notices);
@@ -99,7 +104,7 @@ else:
                     <div class="arrivals-timetable__table-header">
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Planned', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Expected', 'split-airport') ?></span>
-                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Arriving from', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name flight-type"><?php echo $flightType === 'arrival' ? __('Arriving from', 'split-airport') :  __('Going to', 'split-airport')  ?></span>
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Flight', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Baggage claim', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Status', 'split-airport') ?></span>
@@ -116,4 +121,7 @@ else:
         </div>
     </section><!-- .arrivals-timetable-->
 
+    <?php get_template_part('template-parts/blocks/flight-popup'); ?>
+
 <?php endif; ?>
+
