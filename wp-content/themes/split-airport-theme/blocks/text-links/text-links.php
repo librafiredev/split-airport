@@ -57,7 +57,7 @@ else: ?>
 
                             <div class="text-links-items">
                                 <?php while ( have_rows('items') ) : the_row();
-                                
+                                    $icon = get_sub_field('icon');
                                     $link = get_sub_field('link');
                                 ?>
                                 <?php if( $link ):
@@ -67,9 +67,12 @@ else: ?>
                                 ?>
                                         <div class="text-links-item">
                                             <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-                                                <div class="text-links-item-icon">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/info.svg" alt="info" />
-                                                </div><!-- .text-links-item-icon -->
+                                                
+                                                <?php if( !empty($icon) ): ?>
+                                                    <div class="text-links-item-icon">
+                                                        <?php echo ( isset($icon['ID']) )? wp_get_attachment_image($icon['ID'], 'full'):''; ?>
+                                                    </div>
+                                                <?php endif; ?>
                                                 <div class="text-links-item-text">
                                                     <span><?php echo esc_html($link_title); ?></span>
                                                 </div><!-- .text-links-item-text -->
