@@ -115,6 +115,22 @@
     }
 }
 
+.flight-popup-header-text,
+.flight__baggage-status {
+    &.landed {
+        color: $green;
+    }
+
+    &.cancelled {
+        color: $red;
+    }
+
+    &.boarding,
+    &.delayed {
+        color: $secondary-color;
+    }
+}
+
 .flight-popup-header-text {
     order: 3;
     flex: 0 0 100%;
