@@ -31,6 +31,7 @@ $text-card-mixed-bp: $sm;
         font-size: $font-size-h1;
         letter-spacing: -0.05em;
         margin-bottom: 22px;
+        color: $primary-color;
 
         @include max-mq($text-card-first-bp) {
             font-size: $responsive-size-h1;
