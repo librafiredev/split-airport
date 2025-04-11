@@ -48,7 +48,7 @@ $hero-res-switch: $md;
 }
 
 .home-hero-title {
-    color: $gray-400;
+    color: $gray-300;
     margin-bottom: 19px;
 
     @include max-mq($hero-res-switch) {
