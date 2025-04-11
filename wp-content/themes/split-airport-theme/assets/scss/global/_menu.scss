@@ -55,7 +55,7 @@
 @include min-mq($responsive-toggle-breakpoint + 1px) {
     .language-menu {
         position: relative;
-        color: $gray-400;
+        color: $gray-300;
 
         a {
             display: block;
@@ -179,7 +179,7 @@
             display: inline-block;
             margin-left: 20px;
             position: relative;
-            color: $gray-400;
+            color: $gray-300;
             transition: color 0.4s ease;
 
             &:first-of-type {

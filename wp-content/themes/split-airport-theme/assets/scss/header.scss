@@ -29,6 +29,12 @@ body:has(div#wpadminbar) {
             top: 46px;
         }
     }
+
+    .main-navigation {
+        @include max-mq(782px) {
+            padding-top: 75px + 50px;
+        }
+    }
 }
 
 #wpadminbar {
@@ -65,8 +71,8 @@ body:has(div#wpadminbar) {
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
 
-        @include max-mq(782px) {
-            padding-top: 75px + 50px;
+        @include max-mq($sm) {
+            padding-top: 75px;
         }
     }
 
