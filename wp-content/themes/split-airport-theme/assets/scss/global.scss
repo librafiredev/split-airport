@@ -361,4 +361,15 @@ $flight-popup-left-pos-responsive: 8px;
     opacity: 0.5;
 }
 
+html,
+body {
+    &:has(div.flight-popup-wrapper.open) {
+        width: 100%;
+        position: fixed;
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
 /* critical:end */
