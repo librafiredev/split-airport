@@ -14,3 +14,4 @@ wp-content/wp-rocket-config/*
 error_log
 ai1wm-backups/
 error-log-*
+wp-content/uploads/cache/wpml/
