@@ -103,6 +103,10 @@
     max-width: 690px;
     padding-top: 50px;
 
+    .heading-third {
+        color: $gray-300;
+    }
+
     @include max-mq($sm) {
         padding-top: 30px;
     }
