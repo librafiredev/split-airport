@@ -82,17 +82,24 @@ $page-hero-back-btn-bp: 1330px;
 }
 
 .page-hero-wrapper-inner {
+    // stylelint-disable-next-line length-zero-no-unit
+    --additional-padding: 0px;
+
     position: relative;
-    height: 290px;
+    height: calc(290px + var(--additional-padding));
+
+    body:has(div.site-warning-item) & {
+        --additional-padding: 50px;
+    }
 
     @include min-mq($sm + 1px) {
         .site-main:has(section.arrivals-timetable) & {
-            height: 384px;
+            height: calc(384px + var(--additional-padding));
         }
     }
 
     @include max-mq($sm) {
-        height: 126px;
+        height: calc(126px + var(--additional-padding));
     }
 
     & + * {
