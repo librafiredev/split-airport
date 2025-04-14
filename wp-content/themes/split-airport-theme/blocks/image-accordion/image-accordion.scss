@@ -37,13 +37,6 @@
     }
 }
 
-.image-accordion__right {
-    @include max-mq($sm) {
-        order: 1;
-        margin-bottom: 44px;
-    }
-}
-
 .image-accordion__image {
     max-width: 490px;
 
@@ -73,6 +66,17 @@
     @include max-mq($sm) {
         font-size: $responsive-size-h3;
         line-height: calc(30 / 28);
+    }
+}
+
+.image-accordion__right {
+    .heading-secondary {
+        color: $primary-color;
+    }
+
+    @include max-mq($sm) {
+        order: 1;
+        margin-bottom: 44px;
     }
 }
 
@@ -166,6 +170,7 @@
 
 .image-accordion__checkin-box-text {
     letter-spacing: -0.03em;
+    color: $gray-400;
 }
 
 .image-accordion__checkin-warning {
@@ -198,4 +203,10 @@
 .image-accordion__bottom-section {
     max-width: 470px;
     letter-spacing: -0.03em;
+}
+
+.image-accordion__checkin-box-title {
+    margin-bottom: 0;
+    color: $primary-color;
+    @extend %heading-third;
 }
