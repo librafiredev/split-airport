@@ -2,6 +2,7 @@
 
 namespace SplitAirport;
 
+use SplitAirport\Helpers\DateTimeFlight;
 use SplitAirport\Migrations\Flight;
 use SplitAirport\Models\Flight as ModelFlight;
 use SplitAirport\SearchAPI;
@@ -38,16 +39,19 @@ class FlightsUpdate
     public static function UpdateFlightsData()
     {
         Flight::createTables();
+        self::fetchNewData();
         ModelFlight::insertData();
     }
 
     private static function fetchNewData()
     {
 
+        $flightTimeWindow =  DateTimeFlight::getFlightTimeWindow();
+
         // Today Flights
 
         try {
-            $response = wp_remote_get(self::FLIGHTS_UDPATE_API);
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?before=' . $flightTimeWindow['before'] . '&after=' . $flightTimeWindow['after']);
 
             if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
                 $responseBody = $response['body'];
@@ -55,19 +59,6 @@ class FlightsUpdate
             }
         } catch (\Exception $e) {
             error_log('Fetch flights error: ' . $e->getMessage());
-        }
-
-        // Flights for period
-
-        try {
-            $response = wp_remote_get(self::FLIGHTS_UDPATE_API);
-
-            if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
-                $responseBody = $response['body'];
-                Files::manageUpdateFiles($responseBody, 'current_flights.json');
-            }
-        } catch (\Exception $e) {
-            error_log('Fetch flights error: ' . $e->getMessage());
-        }
+        }    
     }
 }

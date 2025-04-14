@@ -109,7 +109,7 @@ class Flight
                 $airlineWhere = ' AND fs.airline= :airline';
             }
 
-            if($earlierFlights === 'show') {
+            if ($earlierFlights === 'show') {
                 $flightsTimeWhere = " date(fm.schtime) = date(:schdate)
                 AND time(fm.schtime) < time(:schtime) ";
             }
@@ -136,7 +136,7 @@ class Flight
             COUNT(*) OVER () AS total_results
         FROM flights_search fs
         JOIN flights fm ON fs.rowid = fm.ID
-        WHERE ". $flightsTimeWhere . "  
+        WHERE " . $flightsTimeWhere . "  
         AND fm.AD = :type"
                 . $searchWhere
                 . $destinationWhere
@@ -202,14 +202,10 @@ class Flight
         ");
 
         $flights = Files::parseFiles();
+        $currentFlights = $flights['current_flights'] ?? [];
 
-        $currentFlights = $flights['current_flights'][0] ?? [];
-        $periodFlights = $flights['flights_for_period'][0] ?? [];
-
-        $allFlights = array_merge($currentFlights, $periodFlights);
-
-        if ($allFlights) {
-            foreach ($allFlights as $flight) {
+        if ($currentFlights) {
+            foreach ($currentFlights as $flight) {
                 $flightSearchSQLPrepare->bindValue(':flight_number', $flight->brlet);
                 $flightSearchSQLPrepare->bindValue(':destination', $flight->fromto);
                 $flightSearchSQLPrepare->bindValue(':airline', $flight->operlong);

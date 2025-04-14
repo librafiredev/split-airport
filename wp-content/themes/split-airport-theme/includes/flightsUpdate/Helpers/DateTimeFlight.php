@@ -17,6 +17,21 @@ class DateTimeFlight
         return $date->format('Y-m-d');
     }
 
+    public static function getFlightTimeWindow(int $daysAhead = 4): array
+    {
+        $timezone = new DateTimeZone(self::$timezone);
+        $now = new DateTime('now', $timezone);
+        $startOfDay = (clone $now)->setTime(0, 0, 0);
+        $endOfWindow = (clone $startOfDay)->modify("+{$daysAhead} days")->setTime(23, 59, 59);
+        $before = floor(($now->getTimestamp() - $startOfDay->getTimestamp()) / 60);
+        $after = floor(($endOfWindow->getTimestamp() - $now->getTimestamp()) / 60);
+
+        return [
+            'after' => max(0, $after),
+            'before' => max(0, $before),
+        ];
+    }
+
     public static function todayTime(): string
     {
         return (new DateTime('now', new DateTimeZone(self::$timezone)))->format('H:i:s');

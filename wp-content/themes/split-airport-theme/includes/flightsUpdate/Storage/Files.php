@@ -39,7 +39,7 @@ class Files
                 $file = json_decode(file_get_contents(self::getFilesPath() . '/' . $filePath));
 
                 if ($file) {
-                    $fligts[basename($filePath, '.json')][] = $file;
+                    $fligts[basename($filePath, '.json')] = $file;
                 }
             }
         }
