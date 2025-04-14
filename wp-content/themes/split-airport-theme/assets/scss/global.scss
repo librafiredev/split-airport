@@ -66,11 +66,22 @@
 }
 
 .flight-popup-close-btn {
+    cursor: pointer;
     appearance: none;
     padding: 6px 10px;
     display: inline-block;
     border: none;
     background: none;
+
+    path {
+        transition: $dur;
+    }
+
+    &:hover {
+        path {
+            stroke: $secondary-color;
+        }
+    }
 }
 
 .flight-popup-header-top {
