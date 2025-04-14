@@ -104,7 +104,10 @@ class SearchAPI
 
             ob_start();
 
-            get_template_part('template-parts/blocks/no-flight');
+            get_template_part('template-parts/blocks/no-flight', null, [
+                'term'          => $term,
+            ]);
+
 
             $NoFlightsHTML = ob_get_clean();
             wp_send_json_success($NoFlightsHTML);

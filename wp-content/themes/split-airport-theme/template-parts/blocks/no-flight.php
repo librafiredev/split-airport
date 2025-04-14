@@ -1,1 +1,2 @@
-<p class="no-flight"><?php esc_html_e('No results found for your search or filter criteria. Please try again with different keywords or filters.', 'split-airport'); ?></p>
+<?php extract($args); ?>
+<p class="no-flight"><?php esc_html_e('No flights found for', 'split-airport'); ?> <span class="search-data__term"><?php echo $term; ?></span></p>
