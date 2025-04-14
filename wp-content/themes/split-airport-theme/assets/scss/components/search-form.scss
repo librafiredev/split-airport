@@ -207,6 +207,7 @@ $arrivals-item-side-adding-responsive: 10px;
 
 .search-data__term {
     color: $primary-color;
+    font-weight: bold;
 
     &::before,
     &::after {
