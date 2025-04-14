@@ -41,9 +41,10 @@
         padding: 10px;
         width: 100%;
         max-width: 560px;
+        color: $gray-300;
 
         &::placeholder {
-            color: $gray;
+            color: $gray-300;
         }
     }
 
