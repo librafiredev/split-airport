@@ -202,10 +202,12 @@ class Flight
         ");
 
         $flights = Files::parseFiles();
+        $oldFlights = $flights['old_flights'] ?? [];
         $currentFlights = $flights['current_flights'] ?? [];
+        $all_flights = array_merge($oldFlights, $currentFlights);
 
-        if ($currentFlights) {
-            foreach ($currentFlights as $flight) {
+        if ($all_flights) {
+            foreach ($all_flights as $flight) {
                 $flightSearchSQLPrepare->bindValue(':flight_number', $flight->brlet);
                 $flightSearchSQLPrepare->bindValue(':destination', $flight->fromto);
                 $flightSearchSQLPrepare->bindValue(':airline', $flight->operlong);

@@ -22,7 +22,7 @@ class DateTimeFlight
         $timezone = new DateTimeZone(self::$timezone);
         $now = new DateTime('now', $timezone);
         $startOfDay = (clone $now)->setTime(0, 0, 0);
-        $endOfWindow = (clone $startOfDay)->modify("+{$daysAhead} days")->setTime(23, 59, 59);
+        $endOfWindow = (clone $startOfDay)->modify("+{$daysAhead} days")->setTime(23, 59, 59); // Maybe goes now ()
         $before = floor(($now->getTimestamp() - $startOfDay->getTimestamp()) / 60);
         $after = floor(($endOfWindow->getTimestamp() - $now->getTimestamp()) / 60);
 

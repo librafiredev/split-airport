@@ -48,10 +48,24 @@ class FlightsUpdate
 
         $flightTimeWindow =  DateTimeFlight::getFlightTimeWindow();
 
-        // Today Flights
+        // Old flights
 
         try {
-            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?before=' . $flightTimeWindow['before'] . '&after=' . $flightTimeWindow['after']);
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?before=' . $flightTimeWindow['before']);
+
+            if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
+                $responseBody = $response['body'];
+                Files::manageUpdateFiles($responseBody, 'old_flights.json');
+            }
+        } catch (\Exception $e) {
+            error_log('Fetch flights error: ' . $e->getMessage());
+        }
+
+        // New flights + 4 days
+        
+        
+        try {
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?after=' . $flightTimeWindow['after']);
 
             if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
                 $responseBody = $response['body'];
