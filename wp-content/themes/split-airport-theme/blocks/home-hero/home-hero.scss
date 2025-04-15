@@ -8,7 +8,7 @@ $hero-res-switch: $md;
 .home-hero-bg {
     object-fit: cover;
     position: absolute;
-    object-position: top center;
+    object-position: 50% 60%;
     width: 100%;
     height: 100%;
     top: 0;
@@ -40,7 +40,11 @@ $hero-res-switch: $md;
 }
 
 .home-hero-inner {
-    padding-top: 131px;
+    display: flex;
+    flex-direction: column;
+    height: 37vw;
+    min-height: 585px;
+    max-height: 900px;
 
     @include max-mq($hero-res-switch) {
         padding-top: 88px;
@@ -50,6 +54,7 @@ $hero-res-switch: $md;
 .home-hero-title {
     color: $gray-300;
     margin-bottom: 19px;
+    margin-top: auto;
 
     @include max-mq($hero-res-switch) {
         margin-bottom: 11px;
@@ -68,7 +73,6 @@ $hero-res-switch: $md;
 
 .home-hero-search {
     min-height: 74px;
-    margin-bottom: 120px;
 
     @include max-mq($hero-res-switch) {
         min-height: 58px;
@@ -86,6 +90,7 @@ $hero-res-switch: $md;
     position: relative;
     display: flex;
     align-items: flex-end;
+    margin-top: auto;
 
     @include min-mq($hero-res-switch + 1px) {
         height: 175px;
