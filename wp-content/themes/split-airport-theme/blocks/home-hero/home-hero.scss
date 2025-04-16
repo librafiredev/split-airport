@@ -16,7 +16,7 @@ $hero-res-switch: $md;
 
     @include max-mq($hero-res-switch) {
         height: 530px;
-        object-position: bottom center;
+        object-position: center center;
     }
 }
 
@@ -47,21 +47,42 @@ $hero-res-switch: $md;
     max-height: 900px;
 
     @include max-mq($hero-res-switch) {
-        padding-top: 88px;
+        min-height: 685px;
+    }
+
+    .hero-home-has-search & {
+        @include max-mq($hero-res-switch) {
+            padding-top: 88px;
+        }
     }
 }
 
 .home-hero-title {
     color: $gray-300;
-    margin-bottom: 19px;
+    margin-bottom: 29px;
     margin-top: auto;
+    max-width: 430px;
+
+    .hero-home-no-search & {
+        @include max-mq($hero-res-switch) {
+            margin-top: 100px;
+            max-width: 340px;
+        }
+
+        @include max-mq($xs) {
+            margin-top: 70px;
+        }
+    }
 
     @include max-mq($hero-res-switch) {
         margin-bottom: 11px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h1 {
         letter-spacing: -0.05em;
+        line-height: 1;
 
         @include max-mq($hero-res-switch) {
             font-size: $responsive-size-h1;
@@ -124,15 +145,15 @@ $hero-res-switch: $md;
         width: calc(100% + 2px);
 
         @include max-mq($hero-res-switch) {
-            right: -20px;
-            width: calc(100% + 40px);
+            right: -10px;
+            width: calc(100% + 20px);
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
 
-        @include max-mq($xs) {
-            right: -10px;
-            width: calc(100% + 20px);
+        @include min-max-mq($xs + 1px, $sm) {
+            right: -20px;
+            width: calc(100% + 40px);
         }
     }
 }
@@ -161,6 +182,13 @@ $hero-res-switch: $md;
         @include max-mq($hero-res-switch) {
             flex: 0 0 calc(50% - 9px);
             max-width: calc(50% - 9px);
+
+            .hero-home-odd-items & {
+                &:last-child {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
         }
     }
 
