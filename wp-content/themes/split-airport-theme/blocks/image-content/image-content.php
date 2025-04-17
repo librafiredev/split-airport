@@ -9,9 +9,10 @@ if (isset($block['data']['preview_image_help'])) :
 else:
     $content = get_field('content');
     $image = get_field('image');
+    $reduce_spacing = get_field('reduce_spacing');
 ?>
 
-    <section class="image-content">
+    <section class="image-content <?php echo $reduce_spacing ? 'image-content-reduced-spacing' : 'image-content-larger-spacing'; ?>">
         <div class="container">
             <div class="image-content__inner">
                 <div class="image-content__items">
