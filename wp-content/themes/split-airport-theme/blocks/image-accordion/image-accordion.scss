@@ -83,6 +83,7 @@
 .image-accordion__subtitle {
     color: $gray-100;
     margin-bottom: 52px;
+    max-width: 460px;
 
     @include max-mq($sm) {
         margin-bottom: 43px;
@@ -209,4 +210,10 @@
     margin-bottom: 0;
     color: $primary-color;
     @extend %heading-third;
+}
+
+.image-accordion__bottom-section-text {
+    p {
+        margin-bottom: 25px;
+    }
 }

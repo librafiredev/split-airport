@@ -145,7 +145,7 @@ else:
 
                                 <?php if ($bottom_text): ?>
 
-                                    <p class="image-accordion__bottom-section-text"><?php echo $bottom_text; ?></p>
+                                    <div class="image-accordion__bottom-section-text"><?php echo $bottom_text; ?></div>
 
                                 <?php endif; ?>
 
