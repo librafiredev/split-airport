@@ -24,7 +24,7 @@ if ($flight['airline']) {
 ?>
 
 <div data-id="<?php echo $flight['ID']; ?>" class="flight">
-    <span class="flight__planned <?php if($flight['esttime']) echo 'strikethrough'; ?>">
+    <span class="flight__planned <?php if($flight['esttime'] && $flight['esttime'] != $flight['schtime']) echo 'strikethrough'; ?>">
         <?php echo isset($schTime) ? htmlspecialchars($schTime) : '' ?>
     </span>
 
