@@ -7,6 +7,10 @@
 .image-content {
     padding: 10px 0 20px;
 
+    &:last-child {
+        margin-bottom: 80px;
+    }
+
     li {
         padding: 11px 24px;
         margin-bottom: 0;
@@ -69,17 +73,68 @@
     max-width: 455px;
 
     h2 {
+        color: $primary-color;
         font-size: $font-size-h3;
         margin-top: 70px;
         letter-spacing: -0.03em;
         margin-bottom: 14px;
         max-width: 289px;
+
+        .image-content-spacing-alt-1 & {
+            margin-top: 60px;
+            margin-bottom: 5px;
+
+            @include max-mq($sm) {
+                font-size: 20px;
+            }
+        }
+
+        .image-content-spacing-alt-2 & {
+            margin-bottom: 0;
+            margin-top: 60px;
+        }
+
+        &:first-child {
+            margin-top: 30px;
+
+            .image-content-spacing-alt-1 & {
+                margin-top: 30px;
+
+                @include max-mq($sm) {
+                    margin-top: 0;
+                }
+            }
+        }
     }
 
     h3,
     h4,
     h5 {
-        margin-top: 50px;
         @extend %heading-third;
+
+        .image-content-spacing-default & {
+            margin-top: 50px;
+        }
+
+        .image-content-spacing-alt-1 & {
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+    }
+
+    p {
+        .image-content-spacing-alt-1 & {
+            margin-bottom: 18px;
+        }
+
+        .image-content-spacing-alt-2 & {
+            margin: 8px 0;
+        }
+    }
+
+    hr {
+        .image-content-spacing-alt-2 & {
+            margin-bottom: 15px;
+        }
     }
 }

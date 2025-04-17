@@ -1,2 +1,2 @@
 <?php
-return ['items'=>[]];
+return ['items'=>['Split First Two Items'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-560-label-36e755ee2a2b141e8c1eeb43d6c2d34a'],'urls'=>[]],'Show Search Form'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-559-label-5f1daf2998a8983e8f2d9dff4df9a9ad'],'urls'=>[]],'Add Row'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-40-button_label-03e0c5bbd5488f1e5ec282529dac9635'],'urls'=>[]]]];

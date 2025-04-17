@@ -19,15 +19,17 @@ else: ?>
         if ( empty($image_mobile) ) {
             $image_mobile = $image;
         }
+
+        $has_left_items = count(get_field('items_left') ?: []) > 0 ? true : false;
     
     ?>
 
-    <section class="text-links-wrapper" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
+    <section class="text-links-wrapper <?php echo $has_left_items ? "text-links-has-left" : "text-links-no-left" ?>" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
         <div class="text-links-top">
             <div class="container">
                 <div class="text-links-top-inner">
 
-                    <div class="text-links-left">
+                    <div class="<?php echo $has_left_items ? 'text-links-full' : 'text-links-left'; ?>">
 
                         <?php if( $title ): ?>
 
@@ -49,7 +51,39 @@ else: ?>
                             
                         <?php endif; ?>
 
-                    </div><!-- .text-links-left -->
+                    </div>
+
+                    <?php if( have_rows('items_left') ): ?>
+                        <div class="text-links-left-items">
+                            <?php while ( have_rows('items_left') ) : the_row(); 
+                                $icon = get_sub_field('icon');
+                                    $link = get_sub_field('link');
+                                ?>
+                                <?php if( $link ):
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                                ?>
+                                    <div class="text-links-item">
+                                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                                            
+                                            <?php if( !empty($icon) ): ?>
+                                                <div class="text-links-item-icon">
+                                                    <?php echo ( isset($icon['ID']) )? wp_get_attachment_image($icon['ID'], 'full'):''; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="text-links-item-text">
+                                                <span><?php echo esc_html($link_title); ?></span>
+                                            </div><!-- .text-links-item-text -->
+                                            <div class="text-links-item-arrow">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="arrow" />
+                                            </div><!-- .text-links-item-arrow -->
+                                        </a>
+                                    </div><!-- .text-links-item -->
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <?php if( have_rows('items') ): ?>
 

@@ -16,9 +16,17 @@ else: ?>
         
         $background = get_field('background');
 
+        $split_first_two_items = get_field('split_first_two_items');
+
+        $show_search_form = get_field('show_search_form');
+
+        $count_correction = $split_first_two_items ? 1 : 0;
+
+        $corrected_count = count( get_field('items') ) - $count_correction;
+
     ?>
 
-    <div class="hero-home-overflow">
+    <div class="hero-home-overflow <?php echo $show_search_form ? 'hero-home-has-search' : 'hero-home-no-search'; ?> <?php echo $corrected_count % 2 == 0 ? 'hero-home-even-items' : 'hero-home-odd-items' ?>">
         <section class="home-hero-wrapper">
             <picture>
                 <source srcset="<?php echo $background_mobile; ?>" media="(max-width: 991px)">
@@ -39,13 +47,15 @@ else: ?>
                         
                     <?php endif; ?>
 
-                    <div class="home-hero-search">
-                        <?php get_template_part('template-parts/blocks/arrivals-timetable', 'search'); ?>
-                    </div><!-- .home-hero-search -->
+                    <?php if ( $show_search_form ): ?>
+                        <div class="home-hero-search">
+                            <?php get_template_part('template-parts/blocks/arrivals-timetable', 'search'); ?>
+                        </div><!-- .home-hero-search -->
+                    <?php endif; ?>
 
                     <?php if( have_rows('items') ): ?>
                     
-                        <div class="home-hero-items" style="max-width: <?php echo 182.5 * (count( get_field('items') ) - 1); ?>px;">
+                        <div class="home-hero-items" style="max-width: <?php echo 182.5 * $corrected_count; ?>px;">
                             <svg width="186" height="176" version="1.2" viewBox="0 0 186 176" xmlns="http://www.w3.org/2000/svg" class="svg-hero-cutout-bg"><path class="s0" d="m0 0v176h197.4v-2h-10.8c-4.5 0-9.1-1.9-12.2-5.2l-148.4-163.6c-3.1-3.3-7.4-5.2-11.9-5.2z"/></svg>
                     
                             <div class="home-hero-items-inner">
@@ -59,12 +69,12 @@ else: ?>
                                         $link_title = $link['title'];
                                         $link_target = $link['target'] ? $link['target'] : '_self';
                                         ?>
-                                        <?php if( $index == 1 ):
+                                        <?php if( $index == 1 and $split_first_two_items ):
                                             $index_open = true;
                                         ?>
                                             <div class="home-hero-item-two">
                                         <?php endif; ?>
-                                        <div class="home-hero-item <?php echo $index > 2 ? 'home-hero-item-one' : ''; ?>">
+                                        <div class="home-hero-item <?php echo ($index > 2 || !$split_first_two_items) ? 'home-hero-item-one' : ''; ?>">
 
                                             <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
                                                 <?php if ( $index == count( get_field('items') ) ): ?>
@@ -83,7 +93,7 @@ else: ?>
                                                 <?php endif; ?>
                                             </a>
                                         </div><!-- .home-hero-item -->
-                                        <?php if( $index == 2 ):
+                                        <?php if( $index == 2 && $split_first_two_items ):
                                             $index_open = false;
                                         ?>
                                             </div><!-- .home-hero-item-two -->
@@ -91,7 +101,7 @@ else: ?>
                                 
                                     <?php endif; ?>
                                 <?php endwhile; ?>
-                                <?php if( $index_open ):
+                                <?php if( $index_open && $split_first_two_items ):
                                     $index_open = false;
                                 ?>
                                     </div><!-- .home-hero-item-two -->

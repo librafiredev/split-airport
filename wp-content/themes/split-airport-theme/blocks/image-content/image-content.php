@@ -9,9 +9,15 @@ if (isset($block['data']['preview_image_help'])) :
 else:
     $content = get_field('content');
     $image = get_field('image');
+    $spacing_suffix = 'default';
+    $spacing_type = get_field('spacing_type');
+
+    if ( !empty($spacing_type) ) {
+        $spacing_suffix = $spacing_type;
+    }
 ?>
 
-    <section class="image-content">
+    <section class="image-content <?php echo 'image-content-spacing-' . $spacing_suffix; ?>">
         <div class="container">
             <div class="image-content__inner">
                 <div class="image-content__items">
