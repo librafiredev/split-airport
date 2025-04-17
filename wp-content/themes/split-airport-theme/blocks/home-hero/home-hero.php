@@ -101,7 +101,7 @@ else: ?>
                                 
                                     <?php endif; ?>
                                 <?php endwhile; ?>
-                                <?php if( $index_open && $split_first_two_items ):
+                                <?php if( isset($index_open) && $index_open && $split_first_two_items ):
                                     $index_open = false;
                                 ?>
                                     </div><!-- .home-hero-item-two -->
