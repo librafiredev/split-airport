@@ -11,7 +11,7 @@ use SplitAirport\Storage\Files;
 class FlightsUpdate
 {
 
-    const FLIGHTS_UDPATE_API = 'https://as.int.split-airport.hr/as-frontend/schedule/current';
+    const FLIGHTS_UDPATE_API = 'https://restapi.split-airport.hr/as-frontend/schedule/current';
 
     public static function init()
     {
@@ -36,10 +36,11 @@ class FlightsUpdate
     }
 
 
+
     public static function UpdateFlightsData()
     {
-        Flight::createTables();
         self::fetchNewData();
+        Flight::createTables();
         ModelFlight::insertData();
     }
 
@@ -47,25 +48,11 @@ class FlightsUpdate
     {
 
         $flightTimeWindow =  DateTimeFlight::getFlightTimeWindow();
-
-        // Old flights
+        
+        // Old flights + current flights + 4 days flights
 
         try {
-            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?before=' . $flightTimeWindow['before']);
-
-            if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
-                $responseBody = $response['body'];
-                Files::manageUpdateFiles($responseBody, 'old_flights.json');
-            }
-        } catch (\Exception $e) {
-            error_log('Fetch flights error: ' . $e->getMessage());
-        }
-
-        // New flights + 4 days
-        
-        
-        try {
-            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?after=' . $flightTimeWindow['after']);
+            $response = wp_remote_get(self::FLIGHTS_UDPATE_API . '?before=' . $flightTimeWindow['before'] . '&after=' . $flightTimeWindow['after']);
 
             if (!is_wp_error($response) && (200 === wp_remote_retrieve_response_code($response))) {
                 $responseBody = $response['body'];
@@ -73,6 +60,6 @@ class FlightsUpdate
             }
         } catch (\Exception $e) {
             error_log('Fetch flights error: ' . $e->getMessage());
-        }    
+        }
     }
 }

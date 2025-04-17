@@ -4,22 +4,21 @@ namespace SplitAirport\Storage;
 
 class Files
 {
-    private static $filesPath;
 
     public static function getFilesPath()
     {
-        return self::$filesPath = get_template_directory() . '/includes/flightsUpdate/files';
+        return get_template_directory() . '/includes/flightsUpdate/files';
     }
 
     public static function manageUpdateFiles($file, $fileName)
     {
         if ($file) {
-            
-            if (!file_exists(self::$filesPath)) {
-                mkdir(self::$filesPath, 0755, true); 
+
+            if (!file_exists(self::getFilesPath())) {
+                mkdir(self::getFilesPath(), 0755, true);
             }
 
-            return file_put_contents(self::$filesPath . '/' . $fileName, $file);
+            return file_put_contents(self::getFilesPath() . '/' . $fileName, $file);
         }
 
         return false;

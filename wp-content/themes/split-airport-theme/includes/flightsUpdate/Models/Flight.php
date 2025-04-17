@@ -88,10 +88,6 @@ class Flight
             $date = DateTimeFlight::todayDate();
         }
 
-        // Delete this, just example test
-
-        $date = '2025-02-12';
-
         if ($term) {
             $searchWhere = " AND flights_search MATCH :term";
         }
@@ -202,12 +198,11 @@ class Flight
         ");
 
         $flights = Files::parseFiles();
-        $oldFlights = $flights['old_flights'] ?? [];
-        $currentFlights = $flights['current_flights'] ?? [];
-        $all_flights = array_merge($oldFlights, $currentFlights);
 
-        if ($all_flights) {
-            foreach ($all_flights as $flight) {
+        $currentFlights = $flights['current_flights'] ?? [];
+      
+        if ( $currentFlights) {
+            foreach ( $currentFlights as $flight) {
                 $flightSearchSQLPrepare->bindValue(':flight_number', $flight->brlet);
                 $flightSearchSQLPrepare->bindValue(':destination', $flight->fromto);
                 $flightSearchSQLPrepare->bindValue(':airline', $flight->operlong);
