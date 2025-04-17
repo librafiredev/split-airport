@@ -3,9 +3,9 @@ import urlApiSingle from "../../assets/components/urlApiSingle";
 import { searchFiltersOpen, searchFiltersClose } from "../../assets/components/searchUtils";
 import request from "../../assets/components/flightsUpdateRequest";
 import flightPopup from "../../assets/components/flightPopup";
+import  "../../assets/components/searchEvents";
 
 $(function () {
-  
     const dateSwitcherLeft = $(".date-switcher__left");
     const dateSwitcherRight = $(".date-switcher__right");
     const dateSwitcherView = $(".date-switcher__view");
@@ -77,6 +77,7 @@ $(function () {
     flightTypeInput.on("change", flightTypeFilter);
     dateSwitcherLeft.on("click", dateSwitcher);
     dateSwitcherRight.on("click", dateSwitcher);
+
 });
 
 

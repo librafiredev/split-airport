@@ -85,6 +85,14 @@
         }
     }
 
+    .strikethrough {
+        text-decoration: line-through;
+    }
+
+    .flight__expected {
+        font-weight: 700;
+    }
+
     @include min-mq($sm + 1px) {
         > span {
             &:not(:last-child) {

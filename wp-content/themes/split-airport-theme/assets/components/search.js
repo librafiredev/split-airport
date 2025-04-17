@@ -22,7 +22,7 @@ const _this = {
 
         // Term needs to be at least 3 chars
 
-        if (term.length < 3 && term != "") {
+        if (term.length < 3 && !term) {
             clearInterval(_this.vars.searchTimeout);
             return false;
         }
