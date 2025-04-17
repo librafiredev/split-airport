@@ -4,8 +4,12 @@
 @import "../../assets/scss/components/heading-third";
 @import "../../assets/scss/components/button";
 
-.image-content {
-    padding: 10px 0 20px;
+.categorized-content-wrapper {
+    margin-top: 40px;
+
+    &:nth-child(2) {
+        margin-top: 70px;
+    }
 
     &:last-child {
         margin-bottom: 80px;
@@ -32,55 +36,15 @@
             }
         }
     }
-}
-
-.image-content__items {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-}
-
-.image-content__right,
-.image-content__left {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 10px;
-
-    @include max-mq($sm) {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-.image-content__left {
-    padding-top: 20px;
-
-    @include max-mq($sm) {
-        margin-bottom: 30px;
-    }
-}
-
-.image-content__right {
-    text-align: right;
-
-    @include max-mq($sm) {
-        text-align: left;
-    }
-}
-
-.image-content__text {
-    max-width: 455px;
 
     h2 {
         color: $primary-color;
         font-size: $font-size-h3;
-        margin-top: 70px;
         letter-spacing: -0.03em;
         margin-bottom: 14px;
         max-width: 289px;
 
-        .image-content-reduced-spacing & {
+        .categorized-content-reduced-spacing & {
             margin-top: 60px;
             margin-bottom: 5px;
 
@@ -92,7 +56,7 @@
         &:first-child {
             margin-top: 30px;
 
-            .image-content-reduced-spacing & {
+            .categorized-content-reduced-spacing & {
                 margin-top: 30px;
 
                 @include max-mq($sm) {
@@ -105,22 +69,39 @@
     h3,
     h4,
     h5 {
+        margin-top: 20px;
+        margin-bottom: 6px;
         @extend %heading-third;
-
-        .image-content-larger-spacing & {
-            margin-top: 50px;
-        }
-
-        .image-content-reduced-spacing & {
-            margin-top: 20px;
-            margin-bottom: 6px;
-        }
     }
 
     p {
-        .image-content-reduced-spacing & {
-            margin-bottom: 18px;
-            margin-top: 18px;
-        }
+        margin-bottom: 20px;
+        margin-top: 18px;
     }
+}
+
+.categorized-content__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.categorized-content__left {
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.categorized-content__text {
+    max-width: 460px;
+}
+
+.categorized-content__item {
+    margin-bottom: 39px;
 }

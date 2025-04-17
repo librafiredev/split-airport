@@ -1,2 +1,2 @@
 <?php
-return ['items'=>[]];
+return ['items'=>['Translators'=>['saveStringInDb'=>true,'cmp'=>['sitepress-multilingual-cms',1],'names'=>[],'urls'=>[]],'Review %s language'=>['saveStringInDb'=>true,'cmp'=>['sitepress-multilingual-cms',1],'names'=>[],'urls'=>[]],'WPML Translation Management will send the email address and name of each manager and assigned translator as well as the content itself to Advanced Translation Editor and to the translation services which are used.'=>['saveStringInDb'=>true,'cmp'=>['sitepress-multilingual-cms',1],'names'=>[],'urls'=>[]]]];
