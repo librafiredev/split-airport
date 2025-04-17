@@ -80,7 +80,7 @@
         margin-bottom: 14px;
         max-width: 289px;
 
-        .image-content-reduced-spacing & {
+        .image-content-spacing-alt-1 & {
             margin-top: 60px;
             margin-bottom: 5px;
 
@@ -89,10 +89,15 @@
             }
         }
 
+        .image-content-spacing-alt-2 & {
+            margin-bottom: 0;
+            margin-top: 60px;
+        }
+
         &:first-child {
             margin-top: 30px;
 
-            .image-content-reduced-spacing & {
+            .image-content-spacing-alt-1 & {
                 margin-top: 30px;
 
                 @include max-mq($sm) {
@@ -107,20 +112,29 @@
     h5 {
         @extend %heading-third;
 
-        .image-content-larger-spacing & {
+        .image-content-spacing-default & {
             margin-top: 50px;
         }
 
-        .image-content-reduced-spacing & {
+        .image-content-spacing-alt-1 & {
             margin-top: 20px;
             margin-bottom: 6px;
         }
     }
 
     p {
-        .image-content-reduced-spacing & {
+        .image-content-spacing-alt-1 & {
             margin-bottom: 18px;
-            margin-top: 18px;
+        }
+
+        .image-content-spacing-alt-2 & {
+            margin: 8px 0;
+        }
+    }
+
+    hr {
+        .image-content-spacing-alt-2 & {
+            margin-bottom: 15px;
         }
     }
 }
