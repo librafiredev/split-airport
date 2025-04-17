@@ -1,0 +1,78 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.document-item {
+    display: flex;
+    align-items: center;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+}
+
+.document-item-main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 22px 0;
+
+    @include max-mq($sm) {
+        flex-wrap: wrap;
+    }
+
+    .document-item:not(:last-child) & {
+        border-bottom: 1px solid $gray;
+    }
+}
+
+.document-item-title {
+    color: $primary-color;
+}
+
+.document-item-subtitle {
+    font-size: 15px;
+    color: $gray-300;
+}
+
+.document-item-icon-wrap {
+    flex-shrink: 0;
+    padding-right: 12px;
+
+    @include max-mq($sm) {
+        padding-left: 0;
+        margin-top: 28px;
+    }
+
+    svg {
+        width: 32px;
+    }
+}
+
+.document-item-main-l {
+    @include max-mq($sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.document-item-dl {
+    display: block;
+    margin-left: auto;
+    border-radius: 30px;
+    background-color: $footer-bgc;
+    color: $primary-color;
+    padding: 10px 30px;
+    transition: $dur;
+    letter-spacing: -0.02em;
+    font-size: 15px;
+
+    @include max-mq($sm) {
+        margin-left: 0;
+        margin-top: 19px;
+    }
+
+    &:hover {
+        background-color: $gray;
+    }
+}

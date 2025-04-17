@@ -1,0 +1,26 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/document-item";
+
+.document-group-wrapper {
+    margin-top: 75px;
+
+    & ~ .document-group-wrapper {
+        margin-top: 40px;
+    }
+
+    &:last-child {
+        margin-bottom: 80px;
+    }
+
+    h2,
+    h3 {
+        color: $primary-color;
+        font-size: $font-size-h3;
+        letter-spacing: -0.04em;
+    }
+}
+
+.document-group-inner {
+    max-width: 490px;
+}
