@@ -44,4 +44,60 @@ function custom_language_selector() {
     }
 }
 
+if ( ! function_exists( 'cpt_flexible_pagination' ) ) :
+
+    function cpt_flexible_pagination( $paged = '', $max_page = '' ) {
+        $big = 999999999; // need an unlikely integer
+        if( ! $paged ) {
+            $paged = get_query_var('paged');
+        }
+
+        if( ! $max_page ) {
+            global $wp_query;
+            $max_page = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+        }
+        ?>
+        <div class="flexible-post-nav">
+            <div class="nav-links">
+            <?php
+            
+            echo paginate_links( array(
+                'base'       => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format'     => '?paged=%#%',
+                'current'    => max( 1, $paged ),
+                'total'      => $max_page,
+                'prev_text'          => __('<i class="icon icon-arrow-left" aria-hidden="true"></i>'),
+                'next_text'          => __('<i class="icon icon-arrow-right" aria-hidden="true"></i>')
+            ) );
+            ?>
+            </div>
+        </div>
+        <?php
+    }
+endif;
+
+
+if ( ! function_exists( 'get_distinct_year_values_in' ) ) :
+
+    function get_distinct_year_values_in( $meta_key = '', $meta_key_2 = '', $post_type = 'post', $post_status = 'publish' ) {
+        global $wpdb;
+        
+        if( empty( $meta_key ) || empty( $meta_key_2 ) ) {
+            return array();
+        }
+        
+        $meta_values = $wpdb->get_col( $wpdb->prepare("
+            SELECT DISTINCT SUBSTRING(pm.meta_value, 1, 4) FROM {$wpdb->postmeta} pm 
+            LEFT JOIN {$wpdb->posts} p ON p.ID = pm.post_id 
+            WHERE (pm.meta_key = %s or pm.meta_key = %s)
+            AND p.post_type = %s 
+            AND p.post_status = %s 
+            ORDER BY meta_value ASC
+        ", $meta_key, $meta_key_2, $post_type, $post_status ) );
+        
+        return $meta_values;
+    }
+
+endif;
+
 ?>

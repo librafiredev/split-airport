@@ -1,2 +1,2 @@
 <?php
-return ['items'=>['Block: Page Hero'=>['urls'=>[],'names'=>['group-99-title-3a81ca0e20db6d194260c23df7f3abcc'],'cmp'=>['wpml-string-translation',1]]]];
+return ['items'=>['Block: Page Hero'=>['urls'=>[],'names'=>['group-99-title-3a81ca0e20db6d194260c23df7f3abcc'],'cmp'=>['wpml-string-translation',1]],'Working Hours'=>['urls'=>[],'names'=>['field-329-label-801d05b047770d83236ef51202832f6b'],'cmp'=>['wpml-string-translation',1]],'Background'=>['urls'=>[],'names'=>['field-100-label-a9ded1e5ce5d75814730bb4caaf49419'],'cmp'=>['wpml-string-translation',1]],'Title'=>['urls'=>[],'names'=>['field-105-label-b78a3223503896721cca1303f776159b'],'cmp'=>['wpml-string-translation',1]]]];

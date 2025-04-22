@@ -1,2 +1,0 @@
-<?php
-return ['items'=>['Working Hours'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-329-label-801d05b047770d83236ef51202832f6b'],'urls'=>[]],'Background'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-100-label-a9ded1e5ce5d75814730bb4caaf49419'],'urls'=>[]],'Title'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-105-label-b78a3223503896721cca1303f776159b'],'urls'=>[]]]];
