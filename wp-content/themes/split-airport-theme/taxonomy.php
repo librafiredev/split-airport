@@ -7,9 +7,7 @@ get_header();
 	<main id="main" class="site-main" role="main">
 
         <?php 
-        $title_prefix = get_field('tender_category_prefix', 'option');
-        $base_title = !empty($title_prefix) ? strtolower(split_archive_title()) : split_archive_title();
-        $full_title = (!empty($title_prefix) ? ($title_prefix . ' ') : '') . $base_title;
+        $full_title = get_finished_tenders_title(split_archive_title());
         
         get_template_part('template-parts/blocks/page-hero-generic', null, [
             'background' => get_field('tender_archive_hero', 'option'),
@@ -92,7 +90,6 @@ get_header();
                     $args = array(
                         'paged' => $paged,
                         'post_type' => 'tender',
-                        'posts_per_page' => 9,
                         'post_status' => 'publish',
                         'order' => 'DESC',
                         'orderby' => 'meta_value',

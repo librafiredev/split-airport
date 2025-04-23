@@ -1,0 +1,21 @@
+@import "global/variables";
+@import "global/mixins";
+@import "blocks/page-hero-generic";
+@import "components/button";
+@import "blocks/tender-generics";
+
+/* critical:start */
+
+.tenders-cat-title {
+    font-size: 26px;
+    line-height: calc(30 / 26);
+    color: $primary-color;
+    letter-spacing: -0.04em;
+    margin-bottom: 30px;
+}
+
+.tenders-cat-wrap {
+    margin-bottom: 60px;
+}
+
+/* critical:end */

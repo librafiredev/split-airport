@@ -1,2 +1,2 @@
 <?php
-return ['items'=>['Tender'=>['urls'=>[],'names'=>['group-752-title-6c9a3c787e970c5d509f1cd2c240d52d'],'cmp'=>['wpml-string-translation',1]]]];
+return ['items'=>['Tender'=>['urls'=>[],'names'=>['group-752-title-6c9a3c787e970c5d509f1cd2c240d52d'],'cmp'=>['wpml-string-translation',1]],'Start Date'=>['urls'=>[],'names'=>['field-753-label-db3794c7d704611ce61c9d8cc09cd806'],'cmp'=>['wpml-string-translation',1]],'End Date'=>['urls'=>[],'names'=>['field-754-label-3c1429dca1ae285353b112dfacae5fe5'],'cmp'=>['wpml-string-translation',1]]]];

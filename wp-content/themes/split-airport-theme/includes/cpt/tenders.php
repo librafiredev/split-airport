@@ -59,7 +59,7 @@ function split_register_tenders_post_type() {
         'public'              => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
-        'has_archive'         => false,
+        'has_archive'         => true,
         'rewrite'             => array('slug' => $slug),
         'menu_icon'           => 'dashicons-feedback',
         'supports'            => array( 'title', 'thumbnail', 'editor' ),

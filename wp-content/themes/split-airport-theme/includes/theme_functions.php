@@ -66,8 +66,8 @@ if ( ! function_exists( 'cpt_flexible_pagination' ) ) :
                 'format'     => '?paged=%#%',
                 'current'    => max( 1, $paged ),
                 'total'      => $max_page,
-                'prev_text'          => __('<i class="icon icon-arrow-left" aria-hidden="true"></i>'),
-                'next_text'          => __('<i class="icon icon-arrow-right" aria-hidden="true"></i>')
+                'prev_text'          => __('<'),
+                'next_text'          => __('>')
             ) );
             ?>
             </div>
@@ -89,7 +89,7 @@ if ( ! function_exists( 'get_distinct_year_values_in' ) ) :
         $meta_values = $wpdb->get_col( $wpdb->prepare("
             SELECT DISTINCT SUBSTRING(pm.meta_value, 1, 4) FROM {$wpdb->postmeta} pm 
             LEFT JOIN {$wpdb->posts} p ON p.ID = pm.post_id 
-            WHERE (pm.meta_key = %s or pm.meta_key = %s)
+            WHERE (pm.meta_key = %s OR pm.meta_key = %s)
             AND p.post_type = %s 
             AND p.post_status = %s 
             ORDER BY meta_value ASC
@@ -106,4 +106,29 @@ function new_excerpt_more($more) {
 
 add_filter('excerpt_more', 'new_excerpt_more');
 
+add_action( 'pre_get_posts', function( $query ) {
+  if ( is_post_type_archive( 'tender' ) && $query->is_main_query() && !is_admin() ) {
+    $dateNow = date('Y-m-d');
+    // this has to be done to make sure categories don't repeat on different pages
+    $query->set('posts_per_page', -1);
+    $query->set('meta_query', array(
+        array(
+            'key'           => 'end_date',
+            'compare'       => '>=',
+            'value'         => $dateNow,
+            'type'          => 'DATE',
+        ),
+    ));
+  }
+});
+
+if( ! function_exists('get_finished_tenders_title') ) :
+
+    function get_finished_tenders_title($term_name) {
+        $title_prefix = get_field('tender_category_prefix', 'option');
+        $base_title = !empty($title_prefix) ? strtolower($term_name) : $term_name;
+        return (!empty($title_prefix) ? ($title_prefix . ' ') : '') . $base_title;
+    }
+
+endif;
 ?>
