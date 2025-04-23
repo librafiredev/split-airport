@@ -1,11 +1,45 @@
 @import "global/variables";
 @import "global/mixins";
 @import "blocks/page-hero-generic";
+@import "components/basic-select";
 
 /* critical:start */
 
-.tenders-category-archive-wrapper {
-    padding: 10px 0 15px;
+.tenders-wrapper {
+    padding: 70px 0 15px;
+    margin-bottom: 100px;
+}
+
+.tenders-year-from {
+    margin-bottom: 27px;
+}
+
+.tender-item {
+    border-bottom: 1px solid $gray;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.tenders-inner {
+    max-width: 560px;
+}
+
+.tender-item-dates {
+    font-weight: bold;
+    font-size: $font-size-xsmall;
+    line-height: calc(16 / 12);
+    color: $gray-300;
+    margin-bottom: 24px;
+}
+
+.tender-item-excerpt {
+    line-height: calc(24 / 17);
+}
+
+.tender-item-title {
+    color: $gray-300;
+    margin-bottom: 10px;
+    line-height: calc(30 / 26);
 }
 
 /* critical:end */

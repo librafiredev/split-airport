@@ -1,2 +1,2 @@
 <?php
-return ['items'=>['Tender Archive Hero'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-761-label-23a84fd13b1d27a8b3b3b31222266677'],'urls'=>[]]]];
+return ['items'=>['Tender Archive Hero'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-761-label-23a84fd13b1d27a8b3b3b31222266677'],'urls'=>[]],'Tender Category Prefix'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-791-label-efb309cd390d0efe7ae3bf01aa8121d0'],'urls'=>[]],'All Tenders Select Label'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>['field-795-label-a919de78fa3808c7084631864bd42709'],'urls'=>[]]]];

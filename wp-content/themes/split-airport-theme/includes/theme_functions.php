@@ -100,4 +100,10 @@ if ( ! function_exists( 'get_distinct_year_values_in' ) ) :
 
 endif;
 
+function new_excerpt_more($more) {
+    return '...';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
 ?>

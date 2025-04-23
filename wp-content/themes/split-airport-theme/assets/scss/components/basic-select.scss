@@ -1,0 +1,52 @@
+@import "../global/variables";
+@import "../global/mixins";
+@import "../blocks/page-hero-generic";
+
+.basic-select-wrap {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        border-bottom: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+        right: 17px;
+        top: 50%;
+        transform: translateY(-65%) rotate(45deg);
+
+        @include max-mq($sm) {
+            right: 0;
+        }
+    }
+
+    select {
+        cursor: pointer;
+        appearance: none;
+        outline: none;
+        border: none;
+        font-size: $font-size-base;
+        background: none;
+        text-align: center;
+        color: $gray-300;
+        background-color: $footer-bgc;
+        padding: 10px 38px 10px 15px;
+
+        @include max-mq($sm) {
+            padding-right: 10px;
+        }
+    }
+
+    option {
+        cursor: pointer;
+        padding: 10px 15px;
+
+        &:checked {
+            background: $footer-bgc !important;
+            box-shadow: 0 0 10px 100px $footer-bgc inset;
+        }
+    }
+}
