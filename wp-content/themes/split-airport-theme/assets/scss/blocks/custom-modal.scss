@@ -70,6 +70,10 @@
     }
 }
 
+.custom-modal-close-btn-wrap {
+    text-align: right;
+}
+
 html,
 body {
     &:has(div.custom-modal-wrapper.open) {

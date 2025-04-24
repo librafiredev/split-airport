@@ -1,6 +1,7 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/components/document-item";
+@import "../../assets/scss/components/heading-third";
 
 .document-group-wrapper {
     margin-top: 75px;
@@ -12,15 +13,42 @@
     &:last-child {
         margin-bottom: 80px;
     }
-
-    h2,
-    h3 {
-        color: $primary-color;
-        font-size: $font-size-h3;
-        letter-spacing: -0.04em;
-    }
 }
 
 .document-group-inner {
     max-width: 490px;
+}
+
+.document-group-title {
+    color: $primary-color;
+    font-size: $font-size-h3;
+    letter-spacing: -0.04em;
+    margin-top: 70px;
+}
+
+.document-group-title,
+.document-group-content h2 {
+    color: $primary-color;
+    font-size: $font-size-h3;
+    letter-spacing: -0.03em;
+    margin-bottom: 25px;
+    line-height: calc(30 / 26);
+}
+
+.document-group-content {
+    p {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    h3,
+    h4,
+    h5 {
+        margin-top: 40px;
+        @extend %heading-third;
+    }
 }

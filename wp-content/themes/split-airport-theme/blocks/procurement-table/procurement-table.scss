@@ -1,0 +1,21 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+@import "../../assets/scss/components/button";
+@import "../../assets/scss/blocks/custom-modal";
+@import "../../assets/scss/components/heading-third";
+
+.procurement-table-wrapper {
+    &:last-child {
+        margin-bottom: 100px;
+    }
+}
+
+.procurement-table-inner {
+    max-width: 490px;
+}
+
+.request-doc-modal {
+    fieldset {
+        border: none;
+    }
+}

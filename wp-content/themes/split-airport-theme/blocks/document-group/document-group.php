@@ -12,7 +12,10 @@ else: ?>
         <div class="container">
             <div class="document-group-inner">
                 <?php if ( get_field('title') ) : ?>
-                    <h2><?php the_field('title'); ?></h2>
+                    <h2 class="document-group-title"><?php the_field('title'); ?></h2>
+                <?php endif; ?>
+                <?php if ( get_field('content') ) : ?>
+                    <div class="document-group-content"><?php the_field('content'); ?></div>
                 <?php endif; ?>
                 <?php if( have_rows('documents') ): ?>
                     <?php while ( have_rows('documents') ) : the_row(); ?>
