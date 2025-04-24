@@ -1,5 +1,7 @@
 @import "../global/variables";
 @import "../global/mixins";
+@import "custom-modal";
+@import "../components/document-item";
 
 .tenders-wrapper {
     padding: 70px 0 15px;
@@ -20,6 +22,7 @@
     max-width: 560px;
 }
 
+.tender-modal-dates,
 .tender-item-dates {
     font-weight: bold;
     font-size: $font-size-xsmall;
@@ -28,12 +31,52 @@
     margin-bottom: 24px;
 }
 
+.tender-modal-content,
 .tender-item-excerpt {
     line-height: calc(24 / 17);
 }
 
+.tender-modal-title,
 .tender-item-title {
     color: $gray-300;
     margin-bottom: 10px;
     line-height: calc(30 / 26);
+}
+
+.tender-item-title {
+    cursor: pointer;
+    transition: $dur;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.tender-modal-title {
+    margin-bottom: 24px;
+}
+
+.tender-modal-dates {
+    margin-bottom: 12px;
+}
+
+.tender-modal-content {
+    margin-bottom: 30px;
+}
+
+.custom-modal-close-btn-wrap {
+    text-align: right;
+}
+
+.tender-modal-documents {
+    max-width: 500px;
+}
+
+.custom-modal.tenders-modal {
+    max-width: 590px;
+    padding: 24px 24px 24px 40px;
+
+    @include max-mq($sm) {
+        padding: 24px;
+    }
 }

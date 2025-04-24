@@ -1,0 +1,82 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.custom-modal-wrapper {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    &.open {
+        display: flex;
+    }
+}
+
+.custom-modal-close-area {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    opacity: 0.8;
+    display: none;
+
+    .custom-modal-wrapper.open & {
+        display: block;
+    }
+}
+
+.custom-modal {
+    position: relative;
+    background-color: $white;
+    width: 100%;
+    max-width: 1025px;
+    border-radius: 6px;
+    padding: 20px 30px 50px 57px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100% - 20px);
+    display: none;
+
+    @include max-mq($sm) {
+        padding: 28px 9px 50px 20px;
+    }
+
+    .custom-modal-wrapper.open & {
+        display: block;
+    }
+}
+
+.custom-modal-close-btn {
+    cursor: pointer;
+    appearance: none;
+    padding: 6px 10px;
+    display: inline-block;
+    border: none;
+    background: none;
+
+    path {
+        transition: $dur;
+    }
+
+    &:hover {
+        path {
+            stroke: $secondary-color;
+        }
+    }
+}
+
+html,
+body {
+    &:has(div.custom-modal-wrapper.open) {
+        width: 100%;
+        position: fixed;
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+}

@@ -4,6 +4,8 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
+    <?php get_template_part('template-parts/blocks/tender-modal-scaffold'); ?>
+    
 	<main id="main" class="site-main" role="main">
 
         <?php 
