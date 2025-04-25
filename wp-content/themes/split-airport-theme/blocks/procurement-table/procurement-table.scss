@@ -1,6 +1,5 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
-@import "../../assets/scss/components/button";
 @import "../../assets/scss/blocks/custom-modal";
 @import "../../assets/scss/components/heading-third";
 
@@ -54,8 +53,13 @@
 
 .procurement-table-rows {
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid $gray;
     border-top: none;
+
+    @include max-mq($sm) {
+        border-bottom: none;
+    }
 }
 
 .procurement-table-row {
@@ -63,6 +67,16 @@
     max-width: 25%;
     padding: 15px;
     border-right: 1px solid $gray;
+
+    @include max-mq($sm) {
+        flex: 0 0 50%;
+        max-width: 50%;
+        border-bottom: 1px solid $gray;
+
+        &:nth-child(2n) {
+            border-right: none;
+        }
+    }
 
     &:last-child {
         border-right: none;
@@ -199,6 +213,7 @@
 
 .request-doc-items {
     display: flex;
+    flex-wrap: wrap;
     padding: 24px 0;
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;
@@ -208,6 +223,11 @@
 .request-doc-item {
     flex: 0 0 25%;
     max-width: 25%;
+
+    @include max-mq($sm) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
 
 .custom-modal-close-btn-wrap {
