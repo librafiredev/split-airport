@@ -8,11 +8,15 @@ if (isset($block['data']['preview_image_help'])) :
     echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
 else:
     $companies = get_field('companies');
+    $should_prefix = get_field('should_add_prefixes');
 ?>
 
     <section class="rent-car">
         <div class="container">
             <div class="rent-car__inner">
+                <?php if ( get_field('title') ) : ?>
+                    <h2 class="rent-car-title"><?php the_field('title') ?></h2>
+                <?php endif; ?>
 
                 <?php if ($companies): ?>
 
@@ -38,11 +42,30 @@ else:
 
                                     <?php endif; ?>
 
-                                    <?php if ($company['phone']): ?>
+                                    <?php if (!empty($company['info'])): ?>
 
-                                        <a href="tel:<?php echo $company['phone']; ?>" class="rent-car__item-phone"><?php echo $company['phone']; ?></a>
+                                        <span class="rent-car__item-phone"><?php echo $company['info']; ?></span>
 
                                     <?php endif; ?>
+
+                                    <?php if ($company['phone']): ?>
+
+                                        <div><?php echo $should_prefix ? __('Tel.:') : ''; ?> <a href="tel:<?php echo $company['phone']; ?>" class="rent-car__item-phone"><?php echo $company['phone']; ?></a></div>
+
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($company['fax'])): ?>
+
+                                        <div><?php echo $should_prefix ? __('Fax.:') : ''; ?> <a href="tel:<?php echo $company['fax']; ?>" class="rent-car__item-fax"><?php echo $company['fax']; ?></a></div>
+
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($company['mobile'])): ?>
+
+                                        <div><?php echo $should_prefix ? __('Mob.:') : ''; ?> <a href="tel:<?php echo $company['mobile']; ?>" class="rent-car__item-mobile"><?php echo $company['mobile']; ?></a></div>
+
+                                    <?php endif; ?>
+
 
                                     <?php if ($company['email']): ?>
 
