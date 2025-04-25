@@ -6,6 +6,10 @@
 .document-group-wrapper {
     margin-top: 75px;
 
+    .sc-card {
+        max-width: initial;
+    }
+
     & ~ .document-group-wrapper {
         margin-top: 40px;
     }

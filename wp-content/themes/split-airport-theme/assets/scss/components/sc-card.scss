@@ -1,0 +1,55 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+$sc-margin: 23px;
+
+.sc-card {
+    display: flex;
+    align-items: center;
+    max-width: 387px;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    padding: 16px;
+    margin: $sc-margin 0;
+
+    a {
+        transition: $dur;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    & + .sc-card {
+        margin-top: -$sc-margin;
+        border-top: none;
+    }
+
+    p {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+}
+
+.sc-card__left {
+    margin-right: 17px;
+
+    * {
+        vertical-align: middle;
+    }
+}
+
+.sc-card__label {
+    text-transform: uppercase;
+    font-size: $font-size-xsmall;
+    line-height: calc(16 / 12);
+    letter-spacing: 0.03em;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.sc-card__value {
+    a {
+        letter-spacing: -0.03em;
+    }
+}

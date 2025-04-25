@@ -10,6 +10,28 @@ function phone_number_callback($atts)
     return ob_get_clean();
 }
 
+add_shortcode('address', 'address_sc_card_callback');
+
+function address_sc_card_callback($atts)
+{
+    ob_start();
+
+    get_template_part('template-parts/shortcodes/address', null, ['address' => isset($atts['address']) ? $atts['address'] : "", 'link' => isset($atts['link']) ? $atts['link'] : ""]);
+
+    return ob_get_clean();
+}
+
+add_shortcode('email', 'email_sc_card_callback');
+
+function email_sc_card_callback($atts)
+{
+    ob_start();
+
+    get_template_part('template-parts/shortcodes/email', null, ['email' => isset($atts['email']) ? $atts['email'] : ""]);
+
+    return ob_get_clean();
+}
+
 add_shortcode('button', 'button_callback');
 
 function button_callback($atts)
