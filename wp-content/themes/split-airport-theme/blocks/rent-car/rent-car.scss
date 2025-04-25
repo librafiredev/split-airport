@@ -44,9 +44,6 @@ $rent-car-shared-bp: $mb;
 }
 
 .rent-car__item-image {
-    @include min-mq($rent-car-shared-bp + 1px) {
-    }
-
     @include max-mq($rent-car-shared-bp) {
         max-width: 50px;
     }
