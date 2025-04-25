@@ -5,6 +5,8 @@
 @import "../../assets/scss/components/heading-third";
 
 .procurement-table-wrapper {
+    padding-top: 25px;
+
     &:last-child {
         margin-bottom: 100px;
     }
@@ -14,8 +16,214 @@
     max-width: 490px;
 }
 
+.procurement-table-header {
+    background-color: $footer-bgc;
+    padding: 12px 14px;
+    border: 1px solid $gray;
+
+    .heading-third {
+        margin-bottom: 4px;
+        color: #213859;
+    }
+}
+
+.request-doc-modal-btn {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $primary-color;
+    background: none;
+    appearance: none;
+    border: none;
+    font-size: $font-size-base;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    svg {
+        margin-left: 5px;
+    }
+}
+
+.procurement-table-subtitle {
+    margin-bottom: 20px;
+}
+
+.procurement-table-rows {
+    display: flex;
+    border: 1px solid $gray;
+    border-top: none;
+}
+
+.procurement-table-row {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 15px;
+    border-right: 1px solid $gray;
+
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.procurement-table-row-title.heading-third {
+    margin-bottom: 0;
+    color: #213859;
+}
+
+.procurement-table {
+    margin-bottom: 50px;
+}
+
 .request-doc-modal {
+    max-width: 590px;
+    padding: 30px;
+    padding-left: 40px;
+
     fieldset {
         border: none;
     }
+
+    .frm_fields_container {
+        font-size: $font-size-base;
+    }
+
+    .frm_html_container {
+        margin-bottom: 20px;
+
+        h4 {
+            color: $primary-color;
+            margin-bottom: 5px;
+            font-size: $font-size-base;
+            letter-spacing: -0.03em;
+            font-weight: normal;
+        }
+
+        ul {
+            margin-top: 5px;
+
+            li {
+                line-height: 1.1;
+            }
+        }
+    }
+
+    .frm_required {
+        color: $red;
+    }
+
+    .frm_error {
+        color: $red;
+        font-size: $font-size-small;
+    }
+
+    .frm_checkbox {
+        cursor: pointer;
+        margin-top: 10px;
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    .frm_required_field {
+        .frm_checkbox {
+            &::after {
+                content: "*";
+                color: $red;
+            }
+        }
+    }
+
+    input[type="email"],
+    input[type="text"] {
+        padding: 12px 16px;
+        border-radius: 4px;
+        border: 1px solid $gray;
+        width: 100%;
+        font-size: $font-size-base;
+
+        &::placeholder {
+            color: $gray-100;
+        }
+    }
+
+    .frm_primary_label {
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $primary-color;
+        font-size: $font-size-xsmall;
+        margin-bottom: 5px;
+    }
+
+    .frm_blank_field {
+        input[type="email"],
+        input[type="text"] {
+            border-color: $red;
+        }
+    }
+
+    .frm_final_submit {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        appearance: none;
+        border: none;
+        border-radius: 26px;
+        padding: 10px 30px;
+        background-color: $footer-bgc;
+        font-size: 15px;
+        transition: $dur;
+        color: $primary-color;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: $gray;
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-image: url("/assets/images/link-arrow-primary.svg");
+            background-size: contain;
+            margin-left: 0.1em;
+        }
+    }
+}
+
+.request-doc-items {
+    display: flex;
+    padding: 24px 0;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+}
+
+.request-doc-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.custom-modal-close-btn-wrap {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.request-doc-title {
+    max-width: 460px;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.request-doc-item-title {
+    color: $gray-300;
+    opacity: 0.5;
 }
