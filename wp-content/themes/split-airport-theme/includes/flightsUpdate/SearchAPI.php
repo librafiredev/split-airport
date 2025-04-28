@@ -85,12 +85,18 @@ class SearchAPI
                     ]);
                 }
 
+
+
+
                 if ($flights['total_pages'] > $flights['current_page']):
 
 
 
 ?>
-                    <a href="#" class="load-more"><?php esc_html_e('Load More', 'split-airport'); ?></a>
+                    <!-- Uncomment this for load more pagination  -->
+                    <!-- <a href="#" class="load-more"><?php //esc_html_e('Load More', 'split-airport'); 
+                                                        ?></a> -->
+
 
 <?php
 

@@ -97,6 +97,8 @@ class Flight
         } else {
             $pagination = ' limit ' . self::$postsPerPage . ' ' . 'offset ' . $offset;
 
+            $pagination = ''; // Delete this for working load more (client removed load more feature)
+
             if ($destination) {
                 $destinationWhere = ' AND fs.destination= :destination';
             }
@@ -106,8 +108,7 @@ class Flight
             }
 
             if ($earlierFlights === 'show') {
-                $flightsTimeWhere = " date(fm.schtime) = date(:schdate)
-                AND time(fm.schtime) < time(:schtime) ";
+                $flightsTimeWhere = " date(fm.schtime) = date(:schdate)";
             }
         }
 

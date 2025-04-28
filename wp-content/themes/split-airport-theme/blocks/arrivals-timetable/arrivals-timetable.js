@@ -1,9 +1,12 @@
 import search from "../../assets/components/search";
 import urlApiSingle from "../../assets/components/urlApiSingle";
-import { searchFiltersOpen, searchFiltersClose } from "../../assets/components/searchUtils";
+import {
+    searchFiltersOpen,
+    searchFiltersClose,
+} from "../../assets/components/searchUtils";
 import request from "../../assets/components/flightsUpdateRequest";
 import flightPopup from "../../assets/components/flightPopup";
-import  "../../assets/components/searchEvents";
+import "../../assets/components/searchEvents";
 
 $(function () {
     const dateSwitcherLeft = $(".date-switcher__left");
@@ -14,7 +17,8 @@ $(function () {
     const searchInput = $('input[name="search"]');
     const flightTypeInput = $('input[name="flightsInit"]');
     const loadMore = ".load-more";
-    
+    const earlierFlights = $(".arrivals-timetable__earlier");
+
     const loadMoreAction = (e) => {
         e.preventDefault();
         request("", false, true);
@@ -22,20 +26,56 @@ $(function () {
 
     const flightTypeFilter = (e) => {
         urlApiSingle("flightType", $(e.currentTarget).val());
-        const tableTypeTitle = $('.flight-type');
+        const tableTypeTitle = $(".flight-type");
 
-        if($(e.currentTarget).val() === 'arrival') {
+        if ($(e.currentTarget).val() === "arrival") {
             tableTypeTitle.text(theme.FlightTypeTableStingArrival);
+            const columnHeadingGate = $(`.arrivals-timetable__table-name.gate`);
+            columnHeadingGate.remove();
+        } else {
+            tableTypeTitle.text(theme.FlightTypeTableStingDeparture);
+            const flightColumn = $(
+                `.arrivals-timetable__table-name.flight-info`
+            );
+            const columnHeadingGate = `<span class="arrivals-timetable__table-name gate">${theme.gateTableString}</span>`;
+            flightColumn.after(columnHeadingGate);
         }
 
-        else {
-            tableTypeTitle.text(theme.FlightTypeTableStingDeparture);
+        request("");
+    };
+
+    const earlierFlightsAction = (e) => {
+        e.preventDefault();
+        $(e.currentTarget).toggleClass("active");
+
+        if ($(e.currentTarget).hasClass("active")) {
+            urlApiSingle("earlierFlights", "show");
+            $(e.currentTarget)
+                .find("span")
+                .html(theme.earlierFlightsButtonBack);
+        } else {
+            urlApiSingle("earlierFlights", "show", true);
+            $(e.currentTarget)
+                .find("span")
+                .html(theme.earlierFlightsButtonShow);
         }
-       
+
         request("");
     };
 
     const flightDateFilter = (e) => {
+        urlApiSingle("earlierFlights", "show", true);
+        earlierFlights.removeClass("active");
+        earlierFlights.find("span").html(theme.earlierFlightsButtonShow);
+
+        if (
+            $(e.currentTarget).find("option:selected").data("istoday") == true
+        ) {
+            earlierFlights.show();
+        } else {
+            earlierFlights.hide();
+        }
+
         urlApiSingle("flightDate", $(e.currentTarget).val());
         request("");
     };
@@ -44,7 +84,7 @@ $(function () {
         const limit = dates.length - 1;
         const direction = $(e.currentTarget).data("direction");
 
-        let switcher = datesSelect[0].selectedIndex
+        let switcher = datesSelect[0].selectedIndex;
 
         if (direction === "left" && switcher > 0) {
             switcher--;
@@ -61,7 +101,7 @@ $(function () {
 
     // Init Flight popup
 
-    flightPopup.init()
+    flightPopup.init();
 
     // Call after search
 
@@ -70,6 +110,7 @@ $(function () {
     // Call on init
 
     request("");
+
     $("body").on("click", loadMore, loadMoreAction);
     searchInput.on("focus", searchFiltersOpen);
     $(document).on("click", searchFiltersClose);
@@ -77,10 +118,5 @@ $(function () {
     flightTypeInput.on("change", flightTypeFilter);
     dateSwitcherLeft.on("click", dateSwitcher);
     dateSwitcherRight.on("click", dateSwitcher);
-
+    earlierFlights.on("click", earlierFlightsAction);
 });
-
-
-
-
-

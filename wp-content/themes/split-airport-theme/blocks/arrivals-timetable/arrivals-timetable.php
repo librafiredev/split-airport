@@ -69,9 +69,6 @@ else:
                         <label for="departures"><?php esc_html_e('Departures', 'split-airport'); ?></label><br>
                     </div>
                     <div class="arrivals-timetable__radio-input">
-
-                        <?php if(!isset($_GET['earlierFlights'])): ?>
-
                         <div class="date-switcher">
                             <div data-direction="left" class="date-switcher__left">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-left.svg');  ?>
@@ -91,18 +88,12 @@ else:
                             </div>
                         </div>
 
-                        <?php else: ?>
-                            <p><?php echo __('Earlier flights for today, ', 'split-airport')  . $dates[date('Y-m-d')];  ?></p>
-                        <?php ?>
-
-                        <?php endif; ?>
-
                         <?php if ($dates): ?>
 
                             <select style="display:none;" name="flightDate">
                                 <?php foreach ($dates as $value => $date): ?>
 
-                                    <option <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? 'Today, ' : "") . $date; ?></option>
+                                    <option data-isToday="<?php  echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
 
                                 <?php endforeach; ?>
 
@@ -112,22 +103,33 @@ else:
                     </div>
                 </div>
                 <div class="arrivals-timetable__table">
-                    <a href="<?php echo Page::getSearchPage() . (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show' ? '' : '?earlierFlights=show'); ?>" class="arrivals-timetable__earlier">
+                    <a href="#" class="arrivals-timetable__earlier <?php if (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show') echo 'active'; ?>">
+                        <span>
+                            <?php
+                            if (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show') {
+                                esc_html_e('Back to current flights', 'split-airport');
+                            } else {
+                                esc_html_e('Show earlier flights', 'split-airport');
+                            }
+                            ?>
+                        </span>
                         <?php
-                        if (isset($_GET['earlierFlights']) && $_GET['earlierFlights'] === 'show') {
-                            esc_html_e('Back to current flights', 'split-airport');
-                        } else {
-                            esc_html_e('Show earlier flights', 'split-airport');
-                        }
+
                         echo file_get_contents(get_template_directory() . '/assets/images/arrow-up.svg');
                         ?>
                     </a>
                     <div class="arrivals-timetable__table-header">
-                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Planned', 'split-airport') ?></span>
-                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Expected', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Scheduled', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Estimated', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name flight-type"><?php echo $flightType === 'arrival' ? __('Arriving from', 'split-airport') :  __('Going to', 'split-airport')  ?></span>
-                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Flight', 'split-airport') ?></span>
-                        <span class="arrivals-timetable__table-name"><?php esc_html_e('Baggage claim', 'split-airport') ?></span>
+                        <span class="arrivals-timetable__table-name flight-info"><?php esc_html_e('Flight', 'split-airport') ?></span>
+
+                        <?php if (isset($_GET['flightType']) && $_GET['flightType'] === 'departure'): ?>
+
+                            <span class="arrivals-timetable__table-name gate"><?php esc_html_e('Gate', 'split-airport') ?></span>
+
+                        <?php endif; ?>
+
                         <span class="arrivals-timetable__table-name"><?php esc_html_e('Status', 'split-airport') ?></span>
                     </div>
 
