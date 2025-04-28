@@ -22,6 +22,13 @@ else:
             <div class="image-content__inner">
                 <div class="image-content__items">
                     <div class="image-content__left">
+                        <?php if ( get_field('title') ) : ?>
+                            <h2 class="image-content-title"><?php the_field('title'); ?></h2>
+                        <?php endif; ?>
+
+                        <?php if ( get_field('subtitle') ) : ?>
+                            <h2 class="image-content-subtitle"><?php the_field('subtitle'); ?></h2>
+                        <?php endif; ?>
 
                         <?php if ($content): ?>
 
