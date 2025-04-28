@@ -46,6 +46,7 @@ else: ?>
                     <?php endif; ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
+                <?php get_template_part('template-parts/blocks/warning-message', null, ['warning_message' => get_field('warning_message')]); ?>
             </div>
         </div>
 

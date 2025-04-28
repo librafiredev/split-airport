@@ -2,6 +2,7 @@
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/components/document-item";
 @import "../../assets/scss/components/heading-third";
+@import "../../assets/scss/blocks/warning-message";
 
 .document-group-wrapper {
     margin-top: 75px;
@@ -15,7 +16,7 @@
     }
 
     &:last-child {
-        margin-bottom: 80px;
+        margin-bottom: 100px;
     }
 }
 
