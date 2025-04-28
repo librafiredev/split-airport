@@ -19,7 +19,7 @@ else:
     $warning_message = get_field('warning_message');
 ?>
 
-    <section class="image-box">
+    <section class="image-box image-box-<?php echo get_field('styles') ?: 'default'; ?>">
         <div class="container">
             <div class="image-box__inner">
                 <div class="image-box__items">
