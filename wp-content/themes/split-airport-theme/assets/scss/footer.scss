@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "global/variables";
 @import "global/mixins";
 
@@ -10,19 +11,6 @@ $footer-svg-height: 517px;
     font-size: $font-size-h6;
     letter-spacing: -0.02em;
     line-height: calc(20 / 15);
-
-    .wp-block-heading {
-        font-size: inherit;
-        letter-spacing: -0.02em;
-        line-height: inherit;
-        margin-bottom: 30px;
-        color: $primary-color;
-
-        @include max-mq($footer-primary-bp) {
-            text-transform: uppercase;
-            font-size: $font-size-xsmall;
-        }
-    }
 
     .menu {
         li {
@@ -39,6 +27,27 @@ $footer-svg-height: 517px;
             &:hover {
                 color: $gray-200;
             }
+        }
+    }
+
+    .wp-block-heading {
+        font-size: inherit;
+        letter-spacing: -0.02em;
+        line-height: inherit;
+        margin-bottom: 30px;
+        color: $primary-color;
+
+        a {
+            transition: opacity $dur;
+
+            &:hover {
+                color: #8fa9c0;
+            }
+        }
+
+        @include max-mq($footer-primary-bp) {
+            text-transform: uppercase;
+            font-size: $font-size-xsmall;
         }
     }
 }
