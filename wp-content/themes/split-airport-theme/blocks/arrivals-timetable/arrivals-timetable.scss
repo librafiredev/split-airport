@@ -304,4 +304,8 @@
     justify-content: center;
     gap: 6px;
     cursor: pointer;
+
+    &:hover {
+        color: $gray-300;
+    }
 }
