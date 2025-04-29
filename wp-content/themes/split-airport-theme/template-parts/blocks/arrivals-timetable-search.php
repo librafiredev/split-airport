@@ -43,7 +43,7 @@ for ($i = 0; $i < 5; $i++) {
                     <?php if ($dates): ?>
                         <select name="flightDateSearch">
                             <?php foreach ($dates as $value => $date): ?>
-                                <option value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? 'Today, ' : "") . $date; ?></option>
+                                <option value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ', ' : "") . $date; ?></option>
                             <?php endforeach; ?>
                         </select>
                     <?php endif; ?>
