@@ -106,14 +106,13 @@ else:
 
                         <?php if ($dates): ?>
 
-                            <select style="display:none;" name="flightDate">
-                                <?php foreach ($dates as $value => $date): ?>
-
-                                    <option data-isToday="<?php echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
-
-                                <?php endforeach; ?>
-
-                            </select>
+                            <div class="arrivals-timetable-search__date">
+                                <select name="flightDate">
+                                    <?php foreach ($dates as $value => $date): ?>
+                                        <option data-isToday="<?php echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
 
                         <?php endif; ?>
                     </div>

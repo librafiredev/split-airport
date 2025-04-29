@@ -32,6 +32,22 @@
     .date-switcher {
         display: flex;
         align-items: center;
+
+        @include max-mq($sm) {
+            display: none;
+        }
+    }
+
+    .arrivals-timetable-search__date {
+        @include min-mq($sm + 1px) {
+            display: none;
+        }
+    }
+
+    select {
+        @include max-mq($sm) {
+            display: block;
+        }
     }
 }
 
