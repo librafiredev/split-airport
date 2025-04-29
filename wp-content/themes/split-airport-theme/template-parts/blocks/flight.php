@@ -37,13 +37,13 @@ if ($flight['airline']) {
     </span>
 
     <span class="flight__flight">
-        <?php if (isset($icon)): ?>
 
-            <span class="flight__icon">
+        <span class="flight__icon">
+            <?php if (isset($icon)): ?>
                 <?php echo $icon; ?>
-            </span>
+            <?php endif; ?>
+        </span>
 
-        <?php endif; ?>
 
         <span class="flight__info">
 
@@ -54,10 +54,12 @@ if ($flight['airline']) {
         </span>
     </span>
 
-    <span class="flight__baggage-gate">
-        <?php echo !empty($flight['gate']) ? htmlspecialchars($flight['gate']) : ''
-        ?>
-    </span>
+    <?php if (isset($_GET['flightType']) && $_GET['flightType'] === 'departure'): ?>
+        <span class="flight__baggage-gate">
+            <?php echo !empty($flight['gate']) ? htmlspecialchars($flight['gate']) : ''
+            ?>
+        </span>
+    <?php endif; ?>
 
     <span class="flight__baggage-status <?php echo strtolower(str_replace(" ", "-", $flight['comment'])); ?>">
         <?php echo !empty($flight['comment']) ? htmlspecialchars($flight['comment']) : '' ?>
