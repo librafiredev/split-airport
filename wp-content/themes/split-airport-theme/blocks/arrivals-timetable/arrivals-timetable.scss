@@ -118,10 +118,6 @@
         text-decoration: line-through;
     }
 
-    .flight__expected {
-        font-weight: 700;
-    }
-
     @include min-mq($sm + 1px) {
         > span {
             &:not(:last-child) {
@@ -175,6 +171,10 @@
     padding-bottom: 14px;
     border-bottom: 1px dashed $gray;
     transition: $dur;
+
+    .flight__expected {
+        font-weight: 700;
+    }
 
     &:hover {
         background-color: $footer-bgc;
