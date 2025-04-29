@@ -9,12 +9,8 @@ use SplitAirport\Helpers\Page;
 if (isset($block['data']['preview_image_help'])) :
     echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
 else:
-    $dates = [];
-
-
+    
     $currentLanguage = apply_filters('wpml_current_language', null);
-
-
     $locale = $currentLanguage === 'hr' ? 'hr_HR.UTF-8' : 'en_US.UTF-8';
 
     $formatter = new \IntlDateFormatter(
