@@ -11,8 +11,28 @@ if (isset($block['data']['preview_image_help'])) :
 else:
     $dates = [];
 
+
+    $currentLanguage = apply_filters('wpml_current_language', null);
+
+
+    $locale = $currentLanguage === 'hr' ? 'hr_HR.UTF-8' : 'en_US.UTF-8';
+
+    $formatter = new \IntlDateFormatter(
+        $locale,
+        \IntlDateFormatter::NONE,
+        \IntlDateFormatter::NONE,
+        date_default_timezone_get(),
+        \IntlDateFormatter::GREGORIAN,
+        'MMM d'
+    );
+
+    $dates = [];
+
     for ($i = 0; $i < 5; $i++) {
-        $dates[date('Y-m-d', strtotime("+$i days"))] = date('M d', strtotime("+$i days"));
+        $timestamp = strtotime("+$i days");
+        $key = date('Y-m-d', $timestamp);
+        $value = $formatter->format($timestamp);
+        $dates[$key] = $value;
     }
 
     $flightType = isset($_GET['flightType']) ? wp_strip_all_tags($_GET['flightType']) : "";
@@ -93,7 +113,7 @@ else:
                             <select style="display:none;" name="flightDate">
                                 <?php foreach ($dates as $value => $date): ?>
 
-                                    <option data-isToday="<?php  echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
+                                    <option data-isToday="<?php echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
 
                                 <?php endforeach; ?>
 
