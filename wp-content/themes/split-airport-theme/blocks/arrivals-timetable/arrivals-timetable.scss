@@ -37,6 +37,7 @@
 
 .date-switcher__right,
 .date-switcher__left {
+    cursor: pointer;
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -44,6 +45,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: $dur;
+
+    &:hover {
+        background-color: $gray;
+    }
 }
 
 .arrivals-timetable__table {
