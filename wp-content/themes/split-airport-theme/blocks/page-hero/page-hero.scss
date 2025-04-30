@@ -36,6 +36,7 @@ $page-hero-back-btn-bp: 1330px;
     font-size: $font-size-h1;
     line-height: 1;
     letter-spacing: -0.05em;
+    color: $gray-300;
 }
 
 .page-hero-back-btn {
@@ -202,4 +203,13 @@ $page-hero-back-btn-bp: 1330px;
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+.page-hero-img-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
 }

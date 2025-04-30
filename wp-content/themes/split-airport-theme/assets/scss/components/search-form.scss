@@ -21,6 +21,11 @@ $arrivals-item-side-adding-responsive: 10px;
     width: 100%;
     z-index: 99;
     background: $white;
+    transition: border-radius $dur;
+
+    &:has(input:focus) {
+        border-radius: 26px;
+    }
 
     @include max-mq($sm) {
         max-width: calc(100vw - 40px);
@@ -64,7 +69,7 @@ $arrivals-item-side-adding-responsive: 10px;
 .arrivals-timetable-search__bottom-filters {
     display: flex;
     justify-content: space-between;
-    padding: 22px 28px;
+    padding: 25px 28px;
     background-color: $footer-bgc;
     border-top: 1px solid $gray;
 
@@ -104,7 +109,7 @@ $arrivals-item-side-adding-responsive: 10px;
                 width: 15px;
                 height: 15px;
                 border-radius: 50%;
-                box-shadow: 0 0 0 2px $secondary-color;
+                box-shadow: 0 0 0 2px #cdcdcd;
                 margin-right: 10px;
                 border: 3px solid $white;
             }
@@ -114,6 +119,28 @@ $arrivals-item-side-adding-responsive: 10px;
             & + label {
                 &::before {
                     background-color: $secondary-color;
+                    box-shadow: 0 0 0 2px $secondary-color;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        input[type="radio"] {
+            & + label {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: -5px;
+                    top: 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    border: 3px solid #ededed;
+                    background: none;
                 }
             }
         }
@@ -121,6 +148,7 @@ $arrivals-item-side-adding-responsive: 10px;
 }
 
 .arrivals-timetable-search__date {
+    cursor: pointer;
     position: relative;
 
     &::after {
@@ -141,6 +169,7 @@ $arrivals-item-side-adding-responsive: 10px;
     }
 
     select {
+        cursor: pointer;
         appearance: none;
         outline: none;
         border: none;
@@ -155,6 +184,19 @@ $arrivals-item-side-adding-responsive: 10px;
         }
     }
 
+    &.no-chevron-select {
+        @include min-mq($sm + 1px) {
+            select {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+
+            &::after {
+                content: none;
+            }
+        }
+    }
+
     option:checked {
         background: $footer-bgc !important;
         box-shadow: 0 0 10px 100px $footer-bgc inset;
@@ -166,7 +208,7 @@ $arrivals-item-side-adding-responsive: 10px;
     display: flex;
     justify-content: space-between;
     padding: 13px $arrivals-item-side-adding;
-    border-bottom: 1px dashed $gray;
+    border-bottom: 1px solid #ededed;
     transition: $dur;
 
     &:hover {

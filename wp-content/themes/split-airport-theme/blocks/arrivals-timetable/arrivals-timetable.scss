@@ -22,8 +22,8 @@
 .arrivals-timetable__filters {
     display: flex;
     align-items: center;
-    padding: 16px 0 20px;
-    max-width: 572px;
+    padding: 15px 0 21px;
+    max-width: 565px;
 
     > *:last-child {
         margin-left: auto;
@@ -32,6 +32,10 @@
     .date-switcher {
         display: flex;
         align-items: center;
+
+        @include max-mq($sm) {
+            display: none;
+        }
     }
 }
 
@@ -78,6 +82,7 @@
 .date-switcher__view {
     padding: 0 7px;
     text-align: center;
+    display: none;
 }
 
 .flight,
@@ -85,6 +90,12 @@
     display: flex;
     align-items: center;
     padding: 16px 11px;
+
+    @include max-mq($sm) {
+        display: grid;
+        grid-template-columns: 80px auto 100px;
+        padding: 13px 10px;
+    }
 
     > span {
         &:not(:last-child) {
@@ -94,10 +105,6 @@
 
     .strikethrough {
         text-decoration: line-through;
-    }
-
-    .flight__expected {
-        font-weight: 700;
     }
 
     @include min-mq($sm + 1px) {
@@ -141,13 +148,10 @@
 
 .arrivals-timetable__table-header {
     background-color: #f6f6f6;
+    border-radius: 6px;
 
     @include max-mq(1024px) {
         font-size: 14px;
-    }
-
-    @include max-mq($sm) {
-        display: none;
     }
 }
 
@@ -158,10 +162,12 @@
     border-bottom: 1px dashed $gray;
     transition: $dur;
 
-    @include max-mq($sm) {
-        display: grid;
-        grid-template-columns: 55px auto 100px;
-        padding: 13px 0;
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .flight__expected {
+        font-weight: 700;
     }
 
     &:hover {
@@ -292,4 +298,8 @@
     justify-content: center;
     gap: 6px;
     cursor: pointer;
+
+    &:hover {
+        color: $gray-300;
+    }
 }
