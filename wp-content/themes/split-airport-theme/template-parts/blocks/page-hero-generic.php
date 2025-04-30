@@ -6,6 +6,7 @@ extract($args);
 
     <div class="page-hero-wrapper-inner">
         <div class="page-hero-img-wrap">
+            <div class="page-hero-img-pattern" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/hero-pattern.png);"></div>
             <?php if ($background) : ?>
                 <?php echo wp_get_attachment_image($background, 'full',); ?>
             <?php endif; ?>
