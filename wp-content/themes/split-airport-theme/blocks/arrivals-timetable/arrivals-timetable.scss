@@ -159,6 +159,7 @@
 
 .arrivals-timetable__table-header {
     background-color: #f6f6f6;
+    border-radius: 6px;
 
     @include max-mq(1024px) {
         font-size: 14px;
@@ -171,6 +172,10 @@
     padding-bottom: 14px;
     border-bottom: 1px dashed $gray;
     transition: $dur;
+
+    &:last-child {
+        border-bottom: none;
+    }
 
     .flight__expected {
         font-weight: 700;
