@@ -3,9 +3,10 @@ const initWrapper = $(".arrivals-timetable__table-flights");
 const loader = $(".loader");
 const datesSelectSearch = $('select[name="flightDateSearch"]');
 const loadMore = ".load-more";
+const loaderSearch = $(".loader-search");
 
 const request = async (term = "", isSearch = false, isLoadMore = false) => {
-    loader.show();
+   
 
     // Get Params
 
@@ -22,6 +23,11 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         airline;
 
     if (!isSearch) {
+
+        if(loader.length) {
+            loader.show();
+        }
+    
         flightsType = getParams.get("flightType") || "arrival";
         flightDate = getParams.get("flightDate") || "";
         search = getParams.get("search") || "";
@@ -69,7 +75,13 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
 
         const response = await request.json();
 
-        loader.hide();
+        if(loader.length) {
+            loader.hide();
+        }
+
+        if(loaderSearch.length) {
+            loaderSearch.hide()
+        }
 
         if (response.success === true) {
             if (!isSearch) {

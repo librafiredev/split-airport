@@ -3,6 +3,7 @@ import urlApiSingle from "./urlApiSingle";
 const _this = {
     $dom: {
         searchInput: $('input[name="search"]'),
+        loaderSearch: $(".loader-search"),
     },
 
     vars: {
@@ -18,14 +19,8 @@ const _this = {
 
     search: function (e) {
         e.preventDefault();
+        _this.$dom.loaderSearch.show();
         const term = $(e.currentTarget).val();
-
-        // Term needs to be at least 3 chars
-
-        if (term.length < 3 && !term) {
-            clearInterval(_this.vars.searchTimeout);
-            return false;
-        }
 
         const currentSearch = $(e.currentTarget);
         clearInterval(_this.vars.searchTimeout);
@@ -41,7 +36,7 @@ const _this = {
             }
 
             _this.vars.callback(term, true);
-        }, 1200);
+        }, 800);
     },
 };
 

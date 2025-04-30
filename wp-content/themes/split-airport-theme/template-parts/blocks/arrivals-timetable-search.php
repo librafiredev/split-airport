@@ -26,6 +26,7 @@ for ($i = 0; $i < 5; $i++) {
         <div class="arrivals-timetable-search__input">
             <?php echo file_get_contents(get_template_directory() . '/assets/images/search-icon.svg');  ?>
             <input name="search" type="text" placeholder="<?php esc_html_e('Find your Flights', 'split-airport'); ?>" />
+            <div class="loader-search"></div>
         </div>
         <div style="display: none;" class="arrivals-timetable-search__bottom">
             <div class="arrivals-timetable-search__bottom-filters">
