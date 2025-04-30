@@ -89,6 +89,7 @@ else:
                             <div data-direction="left" class="date-switcher__left">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-left.svg');  ?>
                             </div>
+                            <!-- NOTE: might need to delete this -->
                             <div class="date-switcher__view">
                                 <?php
                                 if ($flightDate) {
@@ -99,22 +100,22 @@ else:
 
                                 ?>
                             </div>
+                            <?php if ($dates): ?>
+
+                                <div class="arrivals-timetable-search__date no-chevron-select">
+                                    <select name="flightDate">
+                                        <?php foreach ($dates as $value => $date): ?>
+                                            <option data-isToday="<?php echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+
+                            <?php endif; ?>
                             <div data-direction="right" class="date-switcher__right">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/date-switcher-right.svg');  ?>
                             </div>
                         </div>
 
-                        <?php if ($dates): ?>
-
-                            <div class="arrivals-timetable-search__date">
-                                <select name="flightDate">
-                                    <?php foreach ($dates as $value => $date): ?>
-                                        <option data-isToday="<?php echo ($value === date('Y-m-d') ? 'true' : 'false') ?>" <?php if ($flightDate === $value) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ", " : "") . $date; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-
-                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="arrivals-timetable__table">

@@ -37,18 +37,6 @@
             display: none;
         }
     }
-
-    .arrivals-timetable-search__date {
-        @include min-mq($sm + 1px) {
-            display: none;
-        }
-    }
-
-    select {
-        @include max-mq($sm) {
-            display: block;
-        }
-    }
 }
 
 .date-switcher__right,
@@ -94,6 +82,7 @@
 .date-switcher__view {
     padding: 0 7px;
     text-align: center;
+    display: none;
 }
 
 .flight,
