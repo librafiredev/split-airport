@@ -31,7 +31,7 @@ else:
                 <div class="airlines__main">
                     <label class="airlines__top">
                         <?php echo file_get_contents(get_template_directory() . '/assets/images/search-icon.svg');  ?>
-                        <input placeholder="<?php esc_html_e('Search airline name', 'split-airport');  ?>" type="text" name="search" />
+                        <input value="<?php echo $term; ?>" placeholder="<?php esc_html_e('Search airline name', 'split-airport');  ?>" type="text" name="search" />
                     </label>
                     <button type="button" class="airlines-mobile-sidebar-btn">
                         <?php echo file_get_contents(get_template_directory() . '/assets/images/info.svg'); ?>
