@@ -2,8 +2,7 @@
 import search from "../../assets/components/search";
 
 $(function () {
-    const supportedAirlinesWrapper = $(".airlines__supported");
-    const unsupportedAirlinesWrapper = $(".airlines__unsupported");
+    const airlinesWrapper = $(".airlines__items");
     const loader = $(".loader");
 
     const request = async (term) => {
@@ -24,12 +23,7 @@ $(function () {
             loader.hide();
 
             if (response.success === true) {
-                supportedAirlinesWrapper.html(
-                    response.data.supported_airlines
-                );
-                unsupportedAirlinesWrapper.html(
-                    response.data.unsupported_airlines
-                );
+                airlinesWrapper.html(response.data.airlines);
             }
         } catch (e) {
             console.error(e.message);
@@ -38,12 +32,11 @@ $(function () {
 
     search(request);
 
-
-    $('.airlines-mobile-sidebar-btn').on('click', function () {
-        $('.airlines__sidebar').toggleClass('open');
+    $(".airlines-mobile-sidebar-btn").on("click", function () {
+        $(".airlines__sidebar").toggleClass("open");
     });
 
-    $('.airlines-mobile-sidebar-close-btn').on('click', function () {
-        $('.airlines__sidebar').removeClass('open');
+    $(".airlines-mobile-sidebar-close-btn").on("click", function () {
+        $(".airlines__sidebar").removeClass("open");
     });
 });

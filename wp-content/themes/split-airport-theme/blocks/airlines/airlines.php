@@ -11,34 +11,16 @@ else:
     $term = isset($_GET['search']) ? wp_strip_all_tags($_GET['search']) : "";
     $sidebar = get_field('sidebar');
 
-    $supported_airlines = new WP_Query([
-        'post_type'             => 'airline',
-        'posts_per_page'        => -1,
-        'orderby'               => 'title',
-        'order'                 => "ASC",
-        's'                     => $term,
-        'meta_query' => [
-            [
-                'key' => 'type',
-                'value' => 'supported',
-                'compare' => '=',
-            ]
+    $airlines = new WP_Query([
+        'post_type'      => 'airline',
+        'posts_per_page' => -1,
+        'orderby'        => [
+            'meta_value' => 'ASC',
+            'title'      => 'ASC',
         ],
-    ]);
-
-    $unsupported_airlines = new WP_Query([
-        'post_type'             => 'airline',
-        'posts_per_page'        => -1,
-        'orderby'               => 'title',
-        'order'                 => "ASC",
-        's'                     => $term,
-        'meta_query' => [
-            [
-                'key' => 'type',
-                'value' => 'unsupported',
-                'compare' => '=',
-            ]
-        ],
+        'meta_key'       => 'type',
+        'order'          => 'ASC',
+        's'              => $term,
     ]);
 
 ?>
@@ -54,42 +36,19 @@ else:
                     <button type="button" class="airlines-mobile-sidebar-btn">
                         <?php echo file_get_contents(get_template_directory() . '/assets/images/info.svg'); ?>
                         <span class="heading-third"><?php esc_html_e('Required identification & limitations', 'split-airport');  ?></span>
-                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chevron-right"><path d="M1 1L6 6L1 11" stroke="#084983" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="chevron-right">
+                            <path d="M1 1L6 6L1 11" stroke="#084983" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </button>
                     <div class="airlines__items">
-
-                        <h3 class="heading-third"><?php esc_html_e('Supported airlines', 'split-airport'); ?></h3>
-
-                        <?php if ($supported_airlines->have_posts()): ?>
-
-                            <div class="airlines__supported">
-                                <?php
-                                while ($supported_airlines->have_posts()): $supported_airlines->the_post();
-                                    get_template_part('template-parts/posts/airline');
-                                endwhile; ?>
-
-                            </div>
-
+                        <?php if ($airlines->have_posts()): ?>
+                            <?php
+                            while ($airlines->have_posts()): $airlines->the_post();
+                                get_template_part('template-parts/posts/airline');
+                            endwhile; ?>
                         <?php else:
                             get_template_part('template-parts/posts/no-posts');
                         endif; ?>
-
-                        <h3 class="heading-third"><?php esc_html_e('Unsupported airlines', 'split-airport'); ?></h3>
-
-                        <?php if ($unsupported_airlines->have_posts()): ?>
-
-                            <div class="airlines__unsupported">
-                                <?php
-                                while ($unsupported_airlines->have_posts()): $unsupported_airlines->the_post();
-                                    get_template_part('template-parts/posts/airline');
-                                endwhile; ?>
-                            </div>
-
-                        <?php else:
-
-                            get_template_part('template-parts/posts/no-posts');
-                        endif; ?>
-
                     </div>
                 </div>
 
