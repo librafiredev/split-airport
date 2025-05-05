@@ -13,6 +13,9 @@ if (isset($airline) && $airline) {
     }
 }
 
+$type = strtolower($AD);
+
+$timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals' : 'departure'), 'options');
 ?>
 
 <div class="flight-popup">
@@ -20,13 +23,12 @@ if (isset($airline) && $airline) {
         <div class="flight-popup-header-top-left">
             <span class="flight-popup-flight-icon">
                 <?php
-                $type = isset($AD) && strtoupper($AD) === 'DEPARTURE' ? 'takeoff' : 'landing';
-                $iconPath = $type === 'landing' ? '/assets/images/airplane-landing.svg' : '/assets/images/airplane-take-off.svg';
+                $iconPath = $type === 'arrival' ? '/assets/images/airplane-landing.svg' : '/assets/images/airplane-take-off.svg';
                 echo file_get_contents(get_template_directory() . $iconPath);
                 ?>
             </span>
             <span class="flight-popup-flight-text">
-                <?php echo $type === 'landing' ? 'Arrival' : 'Departure'; ?>
+                <?php echo $type === 'arrival' ? __('Arrival', 'split-airport') :  __('Departure', 'split-airport'); ?>
             </span>
             <span class="flight-popup-flight-id">
                 <?php echo isset($flight_number) && $flight_number ? esc_html($flight_number) : 'N/A'; ?>
@@ -42,29 +44,29 @@ if (isset($airline) && $airline) {
         <div class="flight-popup-header-title">
             <?php
             $destinationDisplay = isset($destination) && $destination ? esc_html($destination) : 'Unknown Destination';
-            echo $type === 'landing' ? "{$destinationDisplay} to Split" : "Split to {$destinationDisplay}";
+            echo $type === 'arrival' ? "{$destinationDisplay} to Split" : "Split to {$destinationDisplay}";
             ?>
         </div>
         <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
             <?php echo $comment; ?>
         </div>
-        <a class="flight-popup-header-btn" href="#">Follow this flight</a>
+        <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a>
     </div>
 
     <div class="flight-popup-details">
         <div class="flight-popup-details-col flight-popup-details-img-col">
-           <?php if(isset($airlineIcon) && $airlineIcon) echo $airlineIcon; ?>
+            <?php if (isset($airlineIcon) && $airlineIcon) echo $airlineIcon; ?>
         </div>
 
         <div class="flight-popup-details-col flight-popup-details-lg-col">
-            <div class="flight-popup-details-title">Airline</div>
+            <div class="flight-popup-details-title"><?php esc_html_e('Airline', 'split-airport'); ?></div>
             <div class="flight-popup-details-text">
                 <?php echo isset($airline) && $airline ? esc_html($airline) : 'N/A'; ?>
             </div>
         </div>
 
         <div class="flight-popup-details-col">
-            <div class="flight-popup-details-title">Date</div>
+            <div class="flight-popup-details-title"><?php esc_html_e('Date', 'split-airport'); ?></div>
             <div class="flight-popup-details-text">
                 <?php
                 if (!empty($schdate)) {
@@ -77,8 +79,8 @@ if (isset($airline) && $airline) {
         </div>
 
         <div class="flight-popup-details-col">
-            <div class="flight-popup-details-title">Planned</div>
-            <div class="flight-popup-details-text">
+            <div class="flight-popup-details-title"><?php esc_html_e('Scheduled', 'split-airport'); ?></div>
+            <div class="flight-popup-details-text <?php if ($schtime && ($schtime < $esttime || $schtime > $esttime)) echo 'strikethrough'; ?>">
                 <?php
                 if (!empty($schtime)) {
                     echo DateTimeFlight::formatTimeTableView($schtime);
@@ -90,55 +92,48 @@ if (isset($airline) && $airline) {
         </div>
 
         <div class="flight-popup-details-col">
-            <div class="flight-popup-details-title">Expected</div>
+            <div class="flight-popup-details-title"><?php esc_html_e('Estimated', 'split-airport'); ?></div>
             <div class="flight-popup-details-text">
                 <?php
-                if (!empty($esttime)) {
+                if (!empty($esttime) && $schtime != $esttime) {
                     echo DateTimeFlight::formatTimeTableView($esttime);
                 } else {
-                    echo 'N/A';
+                    echo "-";
                 }
                 ?>
             </div>
         </div>
 
-        <div class="flight-popup-details-col">
-            <div class="flight-popup-details-title">Gate</div>
-            <div class="flight-popup-details-text">
-                <?php echo !empty($gate) ? esc_html($gate) : '—'; ?>
+        <?php if ($type === 'departure'): ?>
+
+            <div class="flight-popup-details-col">
+                <div class="flight-popup-details-title"><?php esc_html_e('Gate', 'split-airport'); ?></div>
+                <div class="flight-popup-details-text">
+                    <?php echo !empty($gate) ? esc_html($gate) : '—'; ?>
+                </div>
             </div>
-        </div>
+
+        <?php endif; ?>
+
     </div>
 
-    <div class="flight-popup-main">
-        <div class="flight-popup-main-item">
-            <?php echo file_get_contents(get_template_directory() . '/assets/images/airplane.svg'); ?>
-            <div class="flight-popup-main-title">Passport check (for non-EU citizens)</div>
-            <div class="flight-popup-main-text">
-                <p>The passport check is performed on a counter located right at the entrance from the runway.</p>
-                <p>For more information about Croatian and EU travel documents requirements visit: <a href="https://mvep.gov.hr/consular-information-22802/travel-information/22806">mvep.gov.hr</a></p>
-            </div>
+    <?php if ($timeline): ?>
+
+        <div class="flight-popup-main">
+
+            <?php foreach ($timeline as $row => $timelineItem): ?>
+                <div class="flight-popup-main-item">
+                    <?php if ($row === 0) echo file_get_contents(get_template_directory() . '/assets/images/airplane.svg'); ?>
+                    <div class="flight-popup-main-title"><?php echo $timelineItem['title']; ?></div>
+                    <div class="flight-popup-main-text">
+                        <?php echo $timelineItem['content']; ?>
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
+
         </div>
 
-        <div class="flight-popup-main-item">
-            <div class="flight-popup-main-title">Baggage claim</div>
-            <div class="flight-popup-main-text">
-                <p>The next area immediately after Passport check counters is the Baggage Claim area. The logo of your airline will be displayed on the corresponding baggage claim belt.</p>
-            </div>
-        </div>
+    <?php endif; ?>
 
-        <div class="flight-popup-main-item">
-            <div class="flight-popup-main-title">Lobby pick-up area</div>
-            <div class="flight-popup-main-text">
-                <p>After claiming your baggage, you will make your way to the lobby through the pick-up area. If somebody is waiting for you at the airport, this is where they will be.</p>
-            </div>
-        </div>
-
-        <div class="flight-popup-main-item">
-            <div class="flight-popup-main-title">Departing from the airport</div>
-            <div class="flight-popup-main-text">
-                <p>Split Airport is connected to Split and the surrounding area through a dedicated Airport Shuttle Bus, Taxis, and Public Transportation.</p>
-            </div>
-        </div>
-    </div>
 </div>

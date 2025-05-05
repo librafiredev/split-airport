@@ -110,7 +110,7 @@
             "name": "content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Phone Number: [phone number=\"+385 21 203 218\"] – Displays a clickable phone number.\r\n<br>\r\n\r\nAddress: [address address=\"Zračna luka Split d.o.o., Cesta dr. Franje Tuđmana 1270, 21217 Kaštel Štafilić\" link=\"https:\/\/maps.app.goo.gl\/eBCcqG5HRvWa17yS8\"] – Displays a clickable address.\r\n<br\/>\r\n\r\nEmail: [email email=\"example-email@split-airport.hr\"] – Displays a clickable email.\r\n<br\/>\r\n\r\nButton: [button title=\"Example Button\" link=\"https:\/\/example.com\" newTab=\"yes\"] – Creates a button linking to the specified URL.",
+            "instructions": "Phone Number: [phone number=\"+385 21 203 218\"] – Displays a clickable phone number.\r\n<br>\r\n\r\nAddress: [address address=\"Zračna luka Split d.o.o., Cesta dr. Franje Tuđmana 1270, 21217 Kaštel Štafilić\" link=\"https:\/\/maps.app.goo.gl\/eBCcqG5HRvWa17yS8\"] – Displays a clickable address.\r\n<br\/>\r\n\r\nEmail: [email email=\"example-email@split-airport.hr\"] – Displays a clickable email.\r\n<br\/>\r\n\r\nButton: [button title=\"Example Button\" url=\"https:\/\/example.com\" newTab=\"yes\"] – Creates a button linking to the specified URL.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -145,5 +145,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746455553
+    "acfml_field_group_mode": "translation",
+    "modified": 1746459860
 }
