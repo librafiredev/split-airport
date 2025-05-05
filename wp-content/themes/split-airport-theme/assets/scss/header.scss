@@ -134,9 +134,14 @@ body:has(div#wpadminbar) {
 
 .site-warning-items {
     font-size: 15px;
-    height: 1.2em;
-    min-height: 1.2em;
+    height: 2.4em;
+    min-height: 2.4em;
     overflow: hidden;
+
+    .site-warning-wrap:not(.open) & {
+        display: flex;
+        align-items: center;
+    }
 
     .site-warning-wrap.open & {
         height: auto;
@@ -160,7 +165,9 @@ body:has(div#wpadminbar) {
     }
 
     &:not(:last-child) {
-        margin-bottom: 20px;
+        .site-warning-wrap.open & {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -306,7 +313,7 @@ body:has(div#wpadminbar) {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 10px;
 
     .site-warning-wrap.open & {
         margin-right: 10px;
