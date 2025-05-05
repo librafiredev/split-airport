@@ -2,12 +2,17 @@
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/components/heading-third";
 @import "../../assets/scss/blocks/accordions";
+@import "../../assets/scss/blocks/warning-message";
 
 .image-box {
     padding-top: 87px;
 
     @include max-mq($sm) {
         padding-top: 30px;
+    }
+
+    .warning-message {
+        margin-top: 40px;
     }
 
     .list {
