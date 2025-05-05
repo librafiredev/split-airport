@@ -280,6 +280,10 @@ body:has(div#wpadminbar) {
 
     .site-warning-wrap.open & {
         margin-right: 10px;
+
+        @include min-mq($sm) {
+            min-width: 128px;
+        }
     }
 }
 
