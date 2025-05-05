@@ -102,7 +102,12 @@
 
 .airlines__items {
     max-width: 690px;
-    padding-top: 50px;
+    padding-top: 35px;
+    margin-bottom: 30px;
+
+    @include max-mq($sm) {
+        padding-top: 0;
+    }
 
     .heading-third {
         color: $gray-300;
@@ -159,15 +164,6 @@
     font-size: $font-size-base;
     letter-spacing: -0.03em;
     font-weight: normal;
-}
-
-.airlines__items {
-    padding-top: 10px;
-    margin-bottom: 30px;
-
-    @include max-mq($sm) {
-        padding-top: 0;
-    }
 }
 
 .airlline__url {
