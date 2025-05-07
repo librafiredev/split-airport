@@ -35,7 +35,7 @@ $(function () {
         } else {
             tableTypeTitle.text(theme.FlightTypeTableStingDeparture);
             const flightColumn = $(
-                `.arrivals-timetable__table-name.flight-info`
+                `.arrivals-timetable__table-name.flight__expected`
             );
             const columnHeadingGate = `<span class="arrivals-timetable__table-name gate">${theme.gateTableString}</span>`;
             flightColumn.after(columnHeadingGate);
