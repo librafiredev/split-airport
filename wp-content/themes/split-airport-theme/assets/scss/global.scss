@@ -112,7 +112,10 @@ a.page-numbers {
 }
 
 .flight-popup-header-title {
-    order: 1;
+    display: inline;
+}
+
+.flight-popup-header__top {
     font-size: $font-size-h2;
     letter-spacing: -0.05em;
 
@@ -341,14 +344,15 @@ $flight-popup-left-pos-responsive: 8px;
 }
 
 .flight-popup-flight-id {
-    &::before {
+    &::after {
         content: "";
         display: inline-block;
         height: 4px;
         width: 4px;
         background-color: $primary-color;
-        margin: 0 8px;
-        margin-bottom: 2px;
+        margin: 0 0.17em;
+        border-radius: 1px;
+        margin-bottom: 0.3em;
     }
 }
 
@@ -390,8 +394,10 @@ $flight-popup-left-pos-responsive: 8px;
     }
 }
 
-.flight-popup-details-title {
-    opacity: 0.5;
+.flight-popup-details-text {
+    &.strikethrough {
+        text-decoration: line-through;
+    }
 }
 
 html,
