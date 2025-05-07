@@ -123,7 +123,6 @@ $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals'
 
             <?php foreach ($timeline as $row => $timelineItem): ?>
                 <div class="flight-popup-main-item">
-                    <?php if ($row === 0) echo file_get_contents(get_template_directory() . '/assets/images/airplane.svg'); ?>
                     <div class="flight-popup-main-title"><?php echo $timelineItem['title']; ?></div>
                     <div class="flight-popup-main-text">
                         <?php echo $timelineItem['content']; ?>

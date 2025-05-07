@@ -303,18 +303,6 @@ $flight-popup-left-pos-responsive: 8px;
     max-width: 644px;
     line-height: calc(24 / 17);
 
-    svg {
-        position: absolute;
-        top: 50%;
-        left: $flight-popup-left-pos;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-
-        @include max-mq($sm) {
-            left: $flight-popup-left-pos-responsive;
-        }
-    }
-
     &::before {
         width: 19px;
         height: 19px;
@@ -367,10 +355,6 @@ $flight-popup-left-pos-responsive: 8px;
 .flight-popup-flight-icon {
     max-width: 26px;
     margin-right: 10px;
-
-    svg {
-        display: inline-block;
-    }
 }
 
 .flight-popup-details-img-col {
