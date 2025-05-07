@@ -1,0 +1,98 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+.airport-map-wrapper {
+    padding-top: 200px;
+}
+
+.airport-map-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    img {
+        display: block;
+    }
+}
+
+.airport-map-tooltip {
+    white-space: nowrap;
+    font-size: 10px;
+    background-color: $white;
+    width: initial;
+    max-width: initial;
+    flex-shrink: 0;
+    transform: scale(0);
+    pointer-events: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 6px 3px;
+    box-shadow: 0 3px 6px 0 rgba($black, 0.15);
+    position: absolute;
+
+    &.right-tooltip {
+        left: 100%;
+        margin-left: 10px;
+    }
+
+    &.left-tooltip {
+        right: 100%;
+        margin-right: 10px;
+    }
+}
+
+.airport-map-shape-wrap {
+    position: absolute;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        .airport-map-tooltip {
+            transform: scale(1);
+        }
+    }
+}
+
+.airport-map-shape {
+    width: 100%;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.airport-map-icon {
+    background-color: $primary-color;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.airport-map-floors {
+    position: relative;
+    max-width: 1097px;
+    margin-left: auto;
+}
+
+.airport-map-group {
+    &:hover {
+        .airport-map-icon {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+.airport-map-container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.airport-map-icon-img {
+    max-width: 73%;
+    max-height: 73%;
+    display: block;
+}
