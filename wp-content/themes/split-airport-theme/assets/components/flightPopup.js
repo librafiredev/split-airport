@@ -13,7 +13,7 @@ const _this = {
         $("body").on("click", _this.$dom.flight, _this.openPopup);
         $("body").on("click", _this.$dom.searchFlight, _this.openPopup);
         $("body").on("click", _this.$dom.closeButton, _this.closePopup);
-        $(window).on('popstate', _this.closePopup);
+        $(window).on("popstate", _this.closePopup);
     },
 
     openPopup: function (e) {
@@ -26,12 +26,14 @@ const _this = {
     },
 
     closePopup: function () {
-        const popupInner = $(".flight-popup");
-        _this.$dom.popup.removeClass("open");
-        const url = new URL(window.location.href);
-        url.searchParams.delete("flightInfo");
-        window.history.pushState({}, "", url);
-        popupInner.remove();
+        if (_this.$dom.popup.hasClass("open")) {
+            const popupInner = $(".flight-popup");
+            _this.$dom.popup.removeClass("open");
+            const url = new URL(window.location.href);
+            url.searchParams.delete("flightInfo");
+            window.history.pushState({}, "", url);
+            popupInner.remove();
+        }
     },
 
     request: async function (ID) {
