@@ -26,18 +26,10 @@ if ($flight['airline']) {
 <div data-id="<?php echo $flight['ID']; ?>" class="flight">
 
     <span class="flight__flight">
-
-        <span class="flight__icon">
-            <?php if (isset($icon)): ?>
-                <?php echo $icon; ?>
-            <?php endif; ?>
-        </span>
-
-
         <span class="flight__info">
 
             <?php echo !empty($flight['flight_number']) && !empty($flight['airline'])
-                ? '<span class="flight__flight-num">' . htmlspecialchars($flight['flight_number']) . '</span>' . "<br>" . '<span class="flight__flight-airline">' . htmlspecialchars($flight['airline']) . '</span>'
+                ? '<span class="flight__flight-num">' . htmlspecialchars($flight['flight_number']) . '</span>' . '<span class="flight__icon">' . (isset($icon) ? $icon : '') . '</span><span class="flight__flight-airline">' . htmlspecialchars($flight['airline']) . '</span>'
                 : '' ?>
 
         </span>

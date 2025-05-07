@@ -85,6 +85,17 @@
     display: none;
 }
 
+@include min-mq($sm + 1px) {
+    .flight__info {
+        display: flex;
+        align-items: center;
+    }
+
+    .flight__flight-num {
+        min-width: 75px;
+    }
+}
+
 .flight,
 .arrivals-timetable__table-header {
     display: flex;
@@ -114,18 +125,18 @@
             }
 
             &:nth-child(1) {
-                flex: 0 0 89px;
-                max-width: 89px;
+                flex: 0 0 356px;
+                max-width: 356px;
             }
 
             &:nth-child(2) {
-                flex: 0 0 100px;
-                max-width: 100px;
+                flex: 0 0 160px;
+                max-width: 160px;
             }
 
             &:nth-child(3) {
-                flex: 0 0 165px;
-                max-width: 165px;
+                flex: 0 0 105px;
+                max-width: 105px;
             }
 
             &:nth-child(4) {
