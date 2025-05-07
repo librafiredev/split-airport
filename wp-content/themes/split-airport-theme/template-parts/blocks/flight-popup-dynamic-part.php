@@ -30,9 +30,7 @@ $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals'
             <span class="flight-popup-flight-text">
                 <?php echo $type === 'arrival' ? __('Arrival', 'split-airport') :  __('Departure', 'split-airport'); ?>
             </span>
-            <span class="flight-popup-flight-id">
-                <?php echo isset($flight_number) && $flight_number ? esc_html($flight_number) : 'N/A'; ?>
-            </span>
+
         </div>
 
         <button type="button" class="flight-popup-close-btn">
@@ -41,16 +39,25 @@ $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals'
     </div>
 
     <div class="flight-popup-header">
-        <div class="flight-popup-header-title">
-            <?php
-            $destinationDisplay = isset($destination) && $destination ? esc_html($destination) : 'Unknown Destination';
-            echo $type === 'arrival' ? "{$destinationDisplay} to Split" : "Split to {$destinationDisplay}";
-            ?>
+        <div class="flight-popup-header__left">
+            <div class="flight-popup-header__top">
+                <span class="flight-popup-flight-id">
+                    <?php echo isset($flight_number) && $flight_number ? esc_html($flight_number) : 'N/A'; ?>
+                </span>
+                <div class="flight-popup-header-title">
+                    <?php
+                    $destinationDisplay = isset($destination) && $destination ? esc_html($destination) : __('Unknown Destination', 'split-airport');
+                    echo $type === 'arrival' ? $destinationDisplay . " " . __('to Split', 'split-airport')   : __('Split to', 'split-airport') . " " . $destinationDisplay;
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="flight-popup-header__right">
+            <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a>
         </div>
         <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
             <?php echo $comment; ?>
         </div>
-        <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a>
     </div>
 
     <div class="flight-popup-details">
