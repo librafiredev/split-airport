@@ -394,10 +394,8 @@ $flight-popup-left-pos-responsive: 8px;
     }
 }
 
-.flight-popup-details-text {
-    &.strikethrough {
-        text-decoration: line-through;
-    }
+.strikethrough {
+    text-decoration: line-through;
 }
 
 html,
