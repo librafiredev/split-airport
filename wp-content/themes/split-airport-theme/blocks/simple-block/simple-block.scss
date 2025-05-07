@@ -1,0 +1,27 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+.simple-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+
+    .content-button {
+        margin-top: 0;
+    }
+
+    & > * {
+        flex: 0 0 calc(100% / 3 - 20px);
+        max-width: calc(100% / 3 - 20px);
+
+        @include max-mq($sm) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.simple-block-wrapper {
+    margin-bottom: 140px;
+}
