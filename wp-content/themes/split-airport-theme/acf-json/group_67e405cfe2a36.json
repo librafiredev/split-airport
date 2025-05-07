@@ -60,14 +60,14 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 1,
             "layout": "block",
             "pagination": 0,
-            "min": 5,
-            "max": 5,
+            "min": 9,
+            "max": 9,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
-            "wpml_cf_preferences": 1,
             "sub_fields": [
                 {
                     "key": "field_67e40807e8bcf",
@@ -167,5 +167,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746455570
+    "acfml_field_group_mode": "translation",
+    "modified": 1746618274
 }

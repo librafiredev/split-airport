@@ -5,6 +5,22 @@
 
 $img-offset: 15px;
 
+.text-cards-top,
+.text-cards-2-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include max-mq($text-card-first-bp) {
+        gap: 14px;
+    }
+
+    @include max-mq($xs) {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+}
+
 .text-cards-2-items {
     margin-top: 30px;
     grid-template-rows: 128px 37px 155px 11px 143px 8px 172px;
@@ -105,5 +121,17 @@ $img-offset: 15px;
     @include max-mq($text-card-first-bp) {
         grid-column: 1 / 3;
         grid-row: 6 / 7;
+    }
+}
+
+.text-cards-top-item {
+    grid-column: 2 / 3;
+
+    @include max-mq($text-card-first-bp) {
+        grid-column: 1 / 2;
+    }
+
+    > * {
+        max-width: 375px;
     }
 }
