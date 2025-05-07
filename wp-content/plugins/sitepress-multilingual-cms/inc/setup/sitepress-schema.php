@@ -4,6 +4,7 @@
  */
 
 use WPML\Infrastructure\WordPress\Component\Translation\Domain\Links\Repository;
+use WPML\Upgrade\Commands\CreateBackgroundTaskTable;
 
 function icl_reset_language_data() {
 	global $wpdb, $sitepress;
@@ -382,6 +383,12 @@ function icl_sitepress_activate() {
 		// Create tables from wpml/wpml links translations.
 		if ( ! Repository::createDatabaseTables() ) {
 			throw new Exception( 'Failed to create database tables for links translations.' );
+		}
+
+		// Create tables for background tasks.
+		$icl_background_task = CreateBackgroundTaskTable::create_table_if_not_exists( $wpdb );
+		if ( ! $icl_background_task ) {
+			throw new Exception( $wpdb->last_error );
 		}
 
 	} catch ( Exception $e ) {

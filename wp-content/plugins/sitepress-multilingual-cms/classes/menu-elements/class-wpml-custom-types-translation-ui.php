@@ -53,7 +53,7 @@ class WPML_Custom_Types_Translation_UI {
 					class="wpml-flex-table-cell text-center <?php echo $this->translation_option_class_names[ $value ]; ?>"
 					data-header="<?php echo esc_attr( $label ); ?>">
 				<input type="radio" name="<?php echo $radio_name; ?>"
-					   class="js-custom-post-mode"
+					   class="wpml-radio-native js-custom-post-mode"
 					   value="<?php echo esc_attr( $value ); ?>" <?php echo $disabled_state_for_mode['html_attribute']; ?>
 					   data-slug="<?php esc_attr_e( $content_slug ) ?>"
 					   data-name="<?php esc_attr_e( $content_label ) ?>"

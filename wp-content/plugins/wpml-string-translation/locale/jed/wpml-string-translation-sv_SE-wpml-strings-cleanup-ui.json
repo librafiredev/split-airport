@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "Rensa strängtabellen genom att ta bort oöversatta."
          ],
-         "Translated with PTC": [
-            "Översatt med PTC"
-         ],
          "Remove strings by domain": [
             "Ta bort strängar efter domän"
          ],

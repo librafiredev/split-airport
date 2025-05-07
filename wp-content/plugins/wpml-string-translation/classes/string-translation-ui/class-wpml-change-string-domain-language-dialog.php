@@ -27,7 +27,7 @@ class WPML_Change_String_Domain_Language_Dialog extends WPML_WPDB_And_SP_User {
 				 class="wpml-change-language-dialog no-bottom-spacer"
 				 title="<?php _e( 'Language of domains', 'wpml-string-translation' ); ?>"
 				 style="display:none"
-				 data-button-text="<?php _e( 'Apply', 'wpml-string-translation' ); ?>" 
+				 data-button-text="<?php _e( 'Apply', 'wpml-string-translation' ); ?>"
 				 data-cancel-text="<?php _e( 'Cancel', 'wpml-string-translation' ); ?>" >
 				<div class="wpml-domain-select-wrap">
 					<div class="select-row clear">
@@ -81,7 +81,7 @@ class WPML_Change_String_Domain_Language_Dialog extends WPML_WPDB_And_SP_User {
 					<table class="widefat striped wpml-cdl-table modal-checkboxes-table no-horizontal-spacer">
 						<thead>
 							<tr>
-								<td class="manage-column column-cb check-column"><input class="js-all-check" type="checkbox" value="all" /></td>
+								<td class="manage-column column-cb check-column"><input class="wpml-checkbox-native js-all-check" type="checkbox" value="all" /></td>
 								<th><b><?php _e( 'Current source language', 'wpml-string-translation' ); ?></b></th>
 								<th class="num"><b><?php _e( 'Number of strings', 'wpml-string-translation' ); ?></b></th>
 							</tr>
@@ -104,7 +104,7 @@ class WPML_Change_String_Domain_Language_Dialog extends WPML_WPDB_And_SP_User {
 						</div>
 						<div class="top-spacer">
 							<label for="wpml-cdl-set-default">
-								<input id="wpml-cdl-set-default" type="checkbox" class="js-default" value="use-as-default" checked="checked" />
+								<input id="wpml-cdl-set-default" type="checkbox" class="wpml-checkbox-native js-default" value="use-as-default" checked="checked" />
 								<?php _e( 'Use this language as the default language for new strings in this domain', 'wpml-string-translation' ); ?>
 							</label>
 						</div>

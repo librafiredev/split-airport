@@ -154,6 +154,9 @@
          "Search parent by title": [
             "タイトルで親を検索"
          ],
+         "Search by term title in %s": [
+            "%sでキーワードタイトルを検索"
+         ],
          "All taxonomies": [
             "すべてのタクソノミー"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "用語が見つかりません"
-         ],
-         "Search by term title": [
-            "用語のタイトルで検索"
          ],
          "Filter by:": [
             "フィルター条件："
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "プラグインやテーマからの大部分の文字列は英語なので、デフォルト言語と並べて表示しています。特定の言語で文字列を表示するには、<b>ソース言語</b>フィルターを使用してください。"
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "サイトのキャッシュに<b>%s</b>を使用しているため、WPMLが新しい文字列を自動登録できない可能性があります。これを修正するには、ページキャッシュをクリアし、翻訳されたページをフロントエンドで再度訪問して新しい文字列を検出してください。"
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPMLはサイトに表示される文字列を検出し、ここにリストアップできます。この機能は、実際にサイトに表示される文字列を特定し、翻訳するのに役立ちます。実際にサイトに表示される文字列のみをここに表示するには、この機能を有効にする必要があります。"
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "バッチ名："
+         ],
+         "Default translation engine: ": [
+            "デフォルトの翻訳エンジン： "
+         ],
+         "Change": [
+            "変更"
+         ],
+         "Failed to load engines": [
+            "エンジンの読み込みに失敗しました"
          ],
          "Your Automatic Translation Credits": [
             "自動翻訳クレジット"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "エンジンデータを取得できませんでした"
+         ],
          "Error in fetching currently logged in translator": [
             "現在ログインしている翻訳者の取得中にエラーが発生しました"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "レビューを待つ"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "DeepL、Google、Azureで推奨"
+         "Recommended with DeepL, Google and Microsoft": [
+            "DeepL、Google、Microsoftを推奨"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL、Google、Azureは優れた翻訳を提供しますが、正確さを確認するために人間によるレビューをお勧めします。WPML AIは文脈を理解した人間以上の翻訳を提供するため、レビュープロセスを自信を持ってスキップできます。"
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL、Google、Microsoftは素晴らしい翻訳を提供しますが、正確さを確認するために人間によるレビューをお勧めします。WPML AIは文脈を理解した人間以上の翻訳を提供するため、レビュープロセスを自信を持ってスキップできます。"
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPMLは翻訳を未公開のままにし、最初にレビューできるようにします。"

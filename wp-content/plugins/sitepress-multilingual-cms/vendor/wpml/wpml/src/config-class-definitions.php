@@ -15,6 +15,7 @@
 use WPML\Core\Component\Translation\Domain\TranslationBatch\Validator\CompletedTranslationValidator;
 use WPML\Core\Component\Translation\Domain\TranslationBatch\Validator\ElementTargetLanguageValidator;
 use WPML\Core\SharedKernel\Component\Language\Application\Query\LanguagesQueryInterface;
+use WPML\Core\SharedKernel\Component\User\Application\Query\UserQueryInterface;
 use WPML\DicInterface;
 use WPML\Infrastructure\WordPress\Component\Item\Application\Query\SearchQuery\QueryBuilder\ManyLanguagesStrategy\QueryBuilderFactory as ManyTargetLanguagesFactory;
 use WPML\Infrastructure\WordPress\Component\Item\Application\Query\SearchQuery\QueryBuilder\ManyLanguagesStrategy\SearchPopulatedTypesQueryBuilder as ManyLanguagesStrategySearchPopulatedTypesQueryBuilder;
@@ -31,6 +32,10 @@ use WPML\Legacy\Component\Translation\Domain\TranslationBatch\Validator\Base64Va
 use WPML\Legacy\Component\Translation\Sender\ErrorMapper\LegacyAteJobCreationError;
 use WPML\Legacy\Component\Translation\Sender\ErrorMapper\UnsupportedLanguagesInTranslationService;
 use WPML\UserInterface\Web\Core\Component\Dashboard\Application\Endpoint\GetUntranslatedTypesCount\GetUntranslatedTypesCountController;
+use WPML\UserInterface\Web\Core\Component\Notices\PromoteUsingDashboard\Application\Repository\ManualTranslationsCountRepositoryInterface;
+use WPML\UserInterface\Web\Core\Component\Notices\PromoteUsingDashboard\Application\Service\ManualTranslationsCountService;
+use WPML\UserInterface\Web\Infrastructure\WordPress\CompositionRoot\Config\ExistingPage\PostEditPage;
+use WPML\UserInterface\Web\Infrastructure\WordPress\CompositionRoot\Config\ExistingPage\PostListingPage;
 
 return [
   \WPML\Core\Component\Translation\Application\Service\TranslationService::class                                     =>
@@ -104,4 +109,15 @@ return [
         )
       );
     },
+  ManualTranslationsCountService::class =>
+    function ( DicInterface $dic ) {
+      return new ManualTranslationsCountService(
+        $dic->make( ManualTranslationsCountRepositoryInterface::class ),
+        $dic->make( UserQueryInterface::class ),
+        [
+          $dic->make( PostListingPage::class ),
+          $dic->make( PostEditPage::class ),
+        ]
+      );
+    }
 ];

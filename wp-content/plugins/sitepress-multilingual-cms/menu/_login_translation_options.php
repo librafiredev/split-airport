@@ -14,8 +14,8 @@ global $sitepress, $sitepress_settings;
 			$login_page_documentation_url = 'https://wpml.org/documentation/getting-started-guide/translating-wordpress-login-and-registration-pages/?utm_source=plugin&utm_medium=gui&utm_campaign=wpmlcore';
 			?>
 			<p>
-				<label>
-					<input type="checkbox" id="login_page_translation"
+				<label for="login_page_translation">
+					<input class="wpml-checkbox-native" type="checkbox" id="login_page_translation"
 						   name="login_page_translation"
 						<?php checked( get_option( \WPML\UrlHandling\WPLoginUrlConverter::SETTINGS_KEY, false ) ); ?>
 						   value="1"/>
@@ -25,8 +25,8 @@ global $sitepress, $sitepress_settings;
                 <p class="sub-section" id="show_login_page_language_switcher_sub_section"
 				<?php if ( ! get_option( \WPML\UrlHandling\WPLoginUrlConverter::SETTINGS_KEY, false ) ) : ?> style="display: none" <?php endif; ?>
                 >
-                    <label>
-                        <input type="checkbox" id="show_login_page_language_switcher"
+                    <label for="show_login_page_language_switcher">
+                        <input class="wpml-checkbox-native" type="checkbox" id="show_login_page_language_switcher"
                                name="show_login_page_language_switcher"
                             <?php checked( get_option( \WPML\AdminLanguageSwitcher\AdminLanguageSwitcher::LANGUAGE_SWITCHER_KEY, true ) ); ?>
                                value="1"/>
@@ -55,7 +55,7 @@ global $sitepress, $sitepress_settings;
 			<div class="wpml-section-content-inner">
 				<p class="buttons-wrap">
 					<span class="icl_ajx_response" id="icl_ajx_response_login"></span>
-					<input class="button button-primary" name="save" value="<?php esc_attr_e( 'Save', 'sitepress' ); ?>"
+					<input class="button-primary wpml-button base-btn" name="save" value="<?php esc_attr_e( 'Save', 'sitepress' ); ?>"
 						   type="submit"/>
 				</p>
 			</div>

@@ -37,6 +37,8 @@ class WPML_TM_Batch_Report_Email_Process {
 	}
 
 	private function send_emails() {
+		$this->batch_report->clean_batch_jobs();
+
 		$headers = array();
 		$headers[] = 'Content-type: text/html; charset=UTF-8';
 		$translators_ids = [ 0 ];

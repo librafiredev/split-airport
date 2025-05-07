@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "ไม่สามารถโหลดเครื่องมือแปลได้"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "ลากและวางเพื่อจัดเรียงจากเครื่องมือแปลที่ต้องการมากที่สุดไปหาน้อยที่สุด."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "ลากเครื่องมือแปลภาษาอัตโนมัติเริ่มต้นของคุณไว้ด้านบนสุดและจัดลำดับที่เหลือตามลำดับความสำคัญ."
          ],
          "Which translation engines do you want to use?": [
             "คุณต้องการใช้เครื่องมือแปลใดบ้าง?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "เครื่องมือแปลอัตโนมัติแต่ละตัวมีรูปแบบการแปลและคู่ภาษาที่รองรับแตกต่างกัน หากเครื่องมือแปลที่คุณต้องการไม่รองรับคู่ภาษาที่คุณต้องการใช้ เราจะเลือกใช้เครื่องมือแปลถัดไปที่รองรับ เรียนรู้เพิ่มเติมเกี่ยวกับ,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "เครื่องมือแปลภาษาอัตโนมัติแต่ละตัวมีรูปแบบการแปลและคู่ภาษาที่รองรับแตกต่างกัน หากเครื่องมือแปลภาษาที่คุณต้องการไม่รองรับคู่ภาษาที่คุณต้องการใช้ เราจะเลือกใช้เครื่องมือแปลภาษาที่คุณชื่นชอบถัดไปที่รองรับคู่ภาษานั้น."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (เบต้า) ตรวจจับความเป็นทางการของเนื้อหาของคุณโดยอัตโนมัติและแปลด้วยระดับความเป็นทางการเดียวกัน."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "แก้ไขความเป็นทางการ"
          ],
+         "%d credits per word": [
+            "%d เครดิตต่อคำ"
+         ],
+         "Backup %d": [
+            "สำรองข้อมูล %d"
+         ],
+         "Default": [
+            "ค่าเริ่มต้น"
+         ],
          "ON": [
             "เปิด"
          ],
          "OFF": [
             "ปิด"
-         ],
-         "%d credits per word": [
-            "%d เครดิตต่อคำ"
          ],
          "Documentation": [
             "เอกสารประกอบ"
@@ -101,9 +107,6 @@
          "Update": [
             "อัปเดต"
          ],
-         "Default": [
-            "ค่าเริ่มต้น"
-         ],
          "Formal": [
             "เป็นทางการ"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "รอการตรวจสอบ"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "แนะนำสำหรับ DeepL, Google และ Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "แนะนำให้ใช้กับ DeepL, Google และ Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google และ Azure ให้การแปลที่ยอดเยี่ยม แต่เราแนะนำให้มีการตรวจสอบโดยมนุษย์เพื่อยืนยันว่าถูกต้อง WPML AI ให้การแปลที่ดีกว่ามนุษย์ซึ่งเข้าใจบริบท ดังนั้นคุณสามารถข้ามขั้นตอนการตรวจสอบได้อย่างมั่นใจ."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google และ Microsoft มอบการแปลที่ยอดเยี่ยม แต่เราแนะนำให้มีการตรวจสอบโดยมนุษย์เพื่อยืนยันว่าถูกต้อง WPML AI มอบการแปลที่ดีกว่ามนุษย์ที่เข้าใจบริบท ดังนั้นคุณจึงสามารถข้ามขั้นตอนการตรวจสอบได้อย่างมั่นใจ."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML จะเก็บการแปลไว้โดยไม่เผยแพร่ เพื่อให้คุณสามารถตรวจสอบก่อน."

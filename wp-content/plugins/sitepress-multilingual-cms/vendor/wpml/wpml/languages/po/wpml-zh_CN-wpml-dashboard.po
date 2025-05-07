@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:00+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:39+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -163,6 +163,9 @@ msgstr "父级："
 msgid "Search parent by title"
 msgstr "按标题搜索父级"
 
+msgid "Search by term title in %s"
+msgstr "在%s中按术语标题搜索"
+
 msgid "All taxonomies"
 msgstr "所有分类法"
 
@@ -177,9 +180,6 @@ msgstr "加载术语"
 
 msgid "No terms found"
 msgstr "未找到术语"
-
-msgid "Search by term title"
-msgstr "按术语标题搜索"
 
 msgid "Filter by:"
 msgstr "筛选："
@@ -391,6 +391,9 @@ msgstr "全部翻译仅翻译那些在英语中注册的字符串"
 msgid "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language."
 msgstr "您的插件和主题中的大多数字符串都是英文的，所以我们将它们与您的默认语言一起显示。使用<b>源语言</b>过滤器查看特定语言的字符串。"
 
+msgid "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings."
+msgstr "您正在使用<b>%s</b>来缓存您的网站，这可能会阻止WPML自动注册新字符串。要解决此问题，请清除您的页面缓存，然后在前端再次访问您的翻译页面以检测新字符串。"
+
 msgid "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature."
 msgstr "WPML可以检测出现在网站上的字符串并在此列出。此功能可帮助您识别实际出现在网站上的字符串并对其进行翻译。要在此处仅查看实际出现在网站上的字符串，您需要启用此功能。"
 
@@ -459,6 +462,15 @@ msgstr "您可以为这个批次指定一个自定义名称以便于跟踪，并
 
 msgid "Batch name:"
 msgstr "批次名称："
+
+msgid "Default translation engine: "
+msgstr "默认翻译引擎： "
+
+msgid "Change"
+msgstr "更改"
+
+msgid "Failed to load engines"
+msgstr "加载引擎失败"
 
 msgid "Your Automatic Translation Credits"
 msgstr "您的自动翻译额度"
@@ -1105,6 +1117,9 @@ msgstr "需要注意"
 msgid "%1$s: %2$s%3$s"
 msgstr "%1$s：%2$s%3$s"
 
+msgid "Could not fetch engines data"
+msgstr "无法获取引擎数据"
+
 msgid "Error in fetching currently logged in translator"
 msgstr "获取当前登录翻译员时出错"
 
@@ -1168,11 +1183,11 @@ msgstr "在WPML自动翻译完您的内容后，您希望做什么？"
 msgid "Wait for review"
 msgstr "等待审核"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "推荐使用DeepL、Google和Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "推荐使用DeepL、Google和Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL、Google和Azure提供出色的翻译，但我们建议进行人工审核以确认其准确性。WPML AI提供优于人工的翻译，能够理解上下文，因此您可以放心地跳过审核过程。"
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL、谷歌和微软提供了优秀的翻译，但我们建议进行人工审核以确认其正确性。WPML AI 提供比人工更好的翻译，能够理解上下文，因此您可以放心地跳过审核过程。"
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML保持翻译未发布状态，以便您可以先进行审核。"

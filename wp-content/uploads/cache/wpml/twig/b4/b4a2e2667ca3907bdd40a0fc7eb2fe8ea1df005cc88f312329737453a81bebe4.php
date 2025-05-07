@@ -55,11 +55,12 @@ class __TwigTemplate_85d07d65282e5a727cd2e6ff75cad8d1597110b31e27a12b1d9ce285cd5
         echo "</h4>
 \t<ul>
 \t\t<li>
-\t\t\t<label>
+\t\t\t<label for=\"wpml-ls-before-in-post-translations\">
 \t\t\t\t<input type=\"checkbox\" name=\"statics[post_translations][display_before_content]\"
 \t\t\t\t\t   id=\"wpml-ls-before-in-post-translations\"
+\t\t\t\t\t   class=\"wpml-checkbox-native\"
 \t\t\t\t\t   value=\"1\"";
-        // line 28
+        // line 29
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "display_before_content", [])) {
             echo " checked=\"checked\"";
         }
@@ -72,8 +73,9 @@ class __TwigTemplate_85d07d65282e5a727cd2e6ff75cad8d1597110b31e27a12b1d9ce285cd5
 \t\t\t<label>
 \t\t\t\t<input type=\"checkbox\"  name=\"statics[post_translations][display_after_content]\"
 \t\t\t\t\t   id=\"wpml-ls-after-in-post-translations\"
+\t\t\t\t\t   class=\"wpml-checkbox-native\"
 \t\t\t\t\t   value=\"1\"";
-        // line 35
+        // line 37
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "display_after_content", [])) {
             echo " checked=\"checked\"";
         }
@@ -85,35 +87,36 @@ class __TwigTemplate_85d07d65282e5a727cd2e6ff75cad8d1597110b31e27a12b1d9ce285cd5
 \t</ul>
 
 \t";
-        // line 40
+        // line 42
         if (twig_test_empty($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "availability_text", []))) {
-            // line 41
-            echo "\t\t";
-            $context["availability_text"] = $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "post_translations", []), "default_alternative_languages_text", []);
-            // line 42
-            echo "\t";
-        } else {
             // line 43
             echo "\t\t";
-            $context["availability_text"] = $this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "availability_text", []);
+            $context["availability_text"] = $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "post_translations", []), "default_alternative_languages_text", []);
             // line 44
             echo "\t";
+        } else {
+            // line 45
+            echo "\t\t";
+            $context["availability_text"] = $this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "availability_text", []);
+            // line 46
+            echo "\t";
         }
-        // line 45
+        // line 47
         echo "
 \t<h4><label>";
-        // line 46
+        // line 48
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "post_translations", []), "label_alternative_languages_text", []), "html", null, true);
         echo "</label>  ";
-        $this->loadTemplate("tooltip.twig", "slot-subform-statics-post_translations.twig", 46)->display(twig_array_merge($context, ["content" => $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "tooltips", []), "alternative_languages_text", [])]));
+        $this->loadTemplate("tooltip.twig", "slot-subform-statics-post_translations.twig", 48)->display(twig_array_merge($context, ["content" => $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "tooltips", []), "alternative_languages_text", [])]));
         echo "</h4>
 \t<input type=\"text\" class=\"js-wpml-ls-trigger-update\"
 \t\t   name=\"statics[post_translations][availability_text]\" value=\"";
-        // line 48
+        // line 50
         echo \WPML\Core\twig_escape_filter($this->env, ($context["availability_text"] ?? null), "html", null, true);
         echo "\" size=\"40\">
 
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()
@@ -128,7 +131,7 @@ class __TwigTemplate_85d07d65282e5a727cd2e6ff75cad8d1597110b31e27a12b1d9ce285cd5
 
     public function getDebugInfo()
     {
-        return array (  113 => 48,  106 => 46,  103 => 45,  100 => 44,  97 => 43,  94 => 42,  91 => 41,  89 => 40,  77 => 35,  63 => 28,  52 => 22,  49 => 21,  47 => 18,  46 => 17,  45 => 14,  42 => 13,  40 => 9,  39 => 5,  34 => 2,  32 => 1,);
+        return array (  115 => 50,  108 => 48,  105 => 47,  102 => 46,  99 => 45,  96 => 44,  93 => 43,  91 => 42,  79 => 37,  64 => 29,  52 => 22,  49 => 21,  47 => 18,  46 => 17,  45 => 14,  42 => 13,  40 => 9,  39 => 5,  34 => 2,  32 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

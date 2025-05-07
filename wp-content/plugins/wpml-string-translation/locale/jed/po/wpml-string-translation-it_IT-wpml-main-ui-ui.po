@@ -15,19 +15,19 @@ msgstr "Shift+tab"
 msgid "Tab"
 msgstr "Scheda"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:102
+#: src/js/main-ui/components/EditTranslationPopup.js:104
 msgid "Translation to:"
 msgstr "Traduzione a:"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:121
+#: src/js/main-ui/components/EditTranslationPopup.js:123
 msgid "Copy from original"
 msgstr "Copia dall'originale"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:136
+#: src/js/main-ui/components/EditTranslationPopup.js:138
 msgid "Use Shift+Enter to add a new line."
 msgstr "Usa Shift+Invio per aggiungere una nuova riga."
 
-#: src/js/main-ui/components/EditTranslationPopup.js:95
+#: src/js/main-ui/components/EditTranslationPopup.js:97
 msgid "Original:"
 msgstr "Originale:"
 

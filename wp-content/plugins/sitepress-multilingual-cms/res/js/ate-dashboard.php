@@ -2,8 +2,14 @@
 $constructor = '';
 $isJs        = false;
 
-$factory           = new WPML_TM_AMS_ATE_Console_Section_Factory();
+$factory = new WPML_TM_AMS_ATE_Console_Section_Factory();
+
+/** @var \WPML_TM_AMS_ATE_Console_Section|null $ateConsoleSection */
 $ateConsoleSection = $factory->create();
+
+if ( ! $ateConsoleSection ) {
+	return;
+}
 
 $script_url = $ateConsoleSection->getDashboardScriptUrl();
 $response = wp_remote_request($script_url, ['timeout' => 20]);

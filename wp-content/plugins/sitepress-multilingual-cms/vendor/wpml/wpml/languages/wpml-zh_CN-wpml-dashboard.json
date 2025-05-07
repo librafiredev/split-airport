@@ -154,6 +154,9 @@
          "Search parent by title": [
             "按标题搜索父级"
          ],
+         "Search by term title in %s": [
+            "在%s中按术语标题搜索"
+         ],
          "All taxonomies": [
             "所有分类法"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "未找到术语"
-         ],
-         "Search by term title": [
-            "按术语标题搜索"
          ],
          "Filter by:": [
             "筛选："
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "您的插件和主题中的大多数字符串都是英文的，所以我们将它们与您的默认语言一起显示。使用<b>源语言</b>过滤器查看特定语言的字符串。"
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "您正在使用<b>%s</b>来缓存您的网站，这可能会阻止WPML自动注册新字符串。要解决此问题，请清除您的页面缓存，然后在前端再次访问您的翻译页面以检测新字符串。"
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML可以检测出现在网站上的字符串并在此列出。此功能可帮助您识别实际出现在网站上的字符串并对其进行翻译。要在此处仅查看实际出现在网站上的字符串，您需要启用此功能。"
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "批次名称："
+         ],
+         "Default translation engine: ": [
+            "默认翻译引擎： "
+         ],
+         "Change": [
+            "更改"
+         ],
+         "Failed to load engines": [
+            "加载引擎失败"
          ],
          "Your Automatic Translation Credits": [
             "您的自动翻译额度"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s：%2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "无法获取引擎数据"
+         ],
          "Error in fetching currently logged in translator": [
             "获取当前登录翻译员时出错"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "等待审核"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "推荐使用DeepL、Google和Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "推荐使用DeepL、Google和Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL、Google和Azure提供出色的翻译，但我们建议进行人工审核以确认其准确性。WPML AI提供优于人工的翻译，能够理解上下文，因此您可以放心地跳过审核过程。"
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL、谷歌和微软提供了优秀的翻译，但我们建议进行人工审核以确认其正确性。WPML AI 提供比人工更好的翻译，能够理解上下文，因此您可以放心地跳过审核过程。"
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML保持翻译未发布状态，以便您可以先进行审核。"

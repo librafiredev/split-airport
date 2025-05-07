@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "Laden der Übersetzungsmaschinen fehlgeschlagen"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "Per Drag & Drop von der am meisten bevorzugten zur am wenigsten bevorzugten Übersetzungsmaschine sortieren."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "Ziehen Sie Ihr standardmäßiges Übersetzungssystem an die oberste Position und ordnen Sie die übrigen nach Priorität."
          ],
          "Which translation engines do you want to use?": [
             "Welche Übersetzungsmaschinen möchten Sie verwenden?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "Automatische Übersetzungsmaschinen unterscheiden sich in Übersetzungsstil und unterstützten Sprachpaaren. Wenn Ihre bevorzugte Übersetzungsmaschine ein Sprachpaar nicht unterstützt, das Sie verwenden möchten, greifen wir auf Ihre nächste bevorzugte Maschine zurück, die es unterstützt. Erfahren Sie mehr über,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "Automatische Übersetzungssysteme unterscheiden sich hinsichtlich des Übersetzungsstils und der unterstützten Sprachpaare. Sollte Ihr bevorzugtes Übersetzungssystem ein von Ihnen gewünschtes Sprachpaar nicht unterstützen, greifen wir auf das nächstbevorzugte System zurück, das dieses Sprachpaar unterstützt."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML KI (Beta) erkennt automatisch die Formalität Ihres Inhalts und übersetzt mit der gleichen Formalität."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "Formalität bearbeiten"
          ],
+         "%d credits per word": [
+            "%d Guthaben pro Wort"
+         ],
+         "Backup %d": [
+            "Sicherungskopie %d"
+         ],
+         "Default": [
+            "Standard"
+         ],
          "ON": [
             "AN"
          ],
          "OFF": [
             "AUS"
-         ],
-         "%d credits per word": [
-            "%d Guthaben pro Wort"
          ],
          "Documentation": [
             "Dokumentation"
@@ -101,9 +107,6 @@
          "Update": [
             "Aktualisieren"
          ],
-         "Default": [
-            "Standard"
-         ],
          "Formal": [
             "Formell"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "Auf Überprüfung warten"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Empfohlen bei DeepL, Google und Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Empfohlen in Verbindung mit DeepL, Google und Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google und Azure liefern großartige Übersetzungen, aber wir empfehlen eine menschliche Überprüfung, um sicherzustellen, dass sie korrekt sind. WPML KI bietet bessere als menschliche Übersetzungen, die den Kontext verstehen, sodass Sie den Überprüfungsprozess getrost überspringen können."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google und Microsoft liefern hervorragende Übersetzungen, jedoch empfehlen wir eine menschliche Überprüfung, um deren Korrektheit zu bestätigen. WPML KI bietet Übersetzungen, die besser als menschliche Übersetzungen sind und den Kontext verstehen, sodass Sie den Überprüfungsprozess mit Zuversicht überspringen können."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML hält Übersetzungen unveröffentlicht, damit Sie sie zuerst überprüfen können."

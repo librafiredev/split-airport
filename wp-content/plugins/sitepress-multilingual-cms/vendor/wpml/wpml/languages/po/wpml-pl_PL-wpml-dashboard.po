@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:00+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:39+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -163,6 +163,9 @@ msgstr "Rodzic:"
 msgid "Search parent by title"
 msgstr "Wyszukaj rodzica po tytule"
 
+msgid "Search by term title in %s"
+msgstr "Wyszukaj według tytułu terminu w %s"
+
 msgid "All taxonomies"
 msgstr "Wszystkie taksonomie"
 
@@ -177,9 +180,6 @@ msgstr "Ładowanie terminów"
 
 msgid "No terms found"
 msgstr "Nie znaleziono terminów"
-
-msgid "Search by term title"
-msgstr "Wyszukaj według tytułu terminu"
 
 msgid "Filter by:"
 msgstr "Filtruj według:"
@@ -391,6 +391,9 @@ msgstr "Tłumacz wszystko tłumaczy tylko te ciągi znaków, które są zarejest
 msgid "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language."
 msgstr "Większość stringów z twoich wtyczek i motywu jest po angielsku, więc pokazujemy je obok twojego domyślnego języka. Użyj filtra <b>Język źródłowy</b>, aby zobaczyć stringi w konkretnym języku."
 
+msgid "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings."
+msgstr "Używasz <b>%s</b> do buforowania swojej witryny, co może uniemożliwić WPML automatyczne rejestrowanie nowych ciągów. Aby to naprawić, wyczyść pamięć podręczną strony, a następnie odwiedź ponownie przetłumaczone strony w interfejsie użytkownika, aby wykryć nowe ciągi."
+
 msgid "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature."
 msgstr "WPML może wykrywać ciągi znaków, które pojawiają się na stronie i wyświetlać je tutaj. Ta funkcja pomaga zidentyfikować ciągi znaków, które rzeczywiście pojawiają się na stronie i je przetłumaczyć. Aby zobaczyć tutaj tylko ciągi znaków, które rzeczywiście pojawiają się na stronie, musisz włączyć tę funkcję."
 
@@ -459,6 +462,15 @@ msgstr "Możesz przypisać niestandardową nazwę tej partii dla łatwego śledz
 
 msgid "Batch name:"
 msgstr "Nazwa partii:"
+
+msgid "Default translation engine: "
+msgstr "Domyślny silnik tłumaczeniowy: "
+
+msgid "Change"
+msgstr "Zmień"
+
+msgid "Failed to load engines"
+msgstr "Nie udało się załadować silników"
 
 msgid "Your Automatic Translation Credits"
 msgstr "Twoje kredyty tłumaczenia automatycznego"
@@ -1105,6 +1117,9 @@ msgstr "wymaga uwagi"
 msgid "%1$s: %2$s%3$s"
 msgstr "%1$s: %2$s%3$s"
 
+msgid "Could not fetch engines data"
+msgstr "Nie udało się pobrać danych silników"
+
 msgid "Error in fetching currently logged in translator"
 msgstr "Błąd podczas pobierania aktualnie zalogowanego tłumacza"
 
@@ -1168,11 +1183,11 @@ msgstr "Co chcesz zrobić po tym, jak WPML automatycznie przetłumaczy Twoją tr
 msgid "Wait for review"
 msgstr "Czekaj na weryfikację"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "Zalecane z DeepL, Google i Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "Rekomendowane z DeepL, Google i Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google i Azure dają świetne tłumaczenia, ale zalecamy ludzką weryfikację. WPML AI daje Lepsze Niż Ludzkie Tłumaczenia, więc możesz spokojnie pominąć sprawdzanie."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google i Microsoft dostarczają znakomite tłumaczenia, jednakże zalecamy przeprowadzenie weryfikacji przez człowieka celem potwierdzenia ich poprawności. WPML AI oferuje Tłumaczenia Lepsze Niż Ludzkie, które rozumieją kontekst, dzięki czemu można z pewnością pominąć proces weryfikacji."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML zachowuje tłumaczenia jako nieopublikowane, abyś mógł je najpierw przejrzeć."

@@ -11,11 +11,11 @@
         }
 
         alert.dialog({
-                         dialogClass  : 'otgs-ui-dialog',
+                         dialogClass  : 'otgs-ui-dialog wpml-tm-post-edit-dialog',
                          closeOnEscape: false,
 			draggable: false,
 			modal: true,
-			minWidth: 700,
+			minWidth: 900,
 			open: function(e) {
 				$(e.target).closest('.otgs-ui-dialog').find('.ui-widget-header').remove();
         setTimeout(function() {

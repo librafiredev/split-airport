@@ -39,10 +39,19 @@ class TranslationProxyService implements TranslationProxyServiceInterface {
 
     try {
       $result = $this->legacyTranslationProxyProject->commit_batch_job();
+      if ( ! $result ) {
+        return false;
+      }
 
       $batchJobId = $this->legacyTranslationProxyProject->get_batch_job_id();
 
-      if ( ! $result || ! $batchJobId ) {
+      if ( ! is_numeric( $batchJobId ) ) {
+        return false;
+      }
+
+      $batchJobId = (int) $batchJobId;
+
+      if ( ! $batchJobId ) {
         return false;
       }
 

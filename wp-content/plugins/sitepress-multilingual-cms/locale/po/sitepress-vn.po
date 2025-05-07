@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the WPML Multilingual CMS plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPML Multilingual CMS 4.7.0-dev\n"
+"Project-Id-Version: WPML Multilingual CMS 4.7.3-dev\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sitepress-multilingual-cms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T09:01:15+00:00\n"
+"POT-Creation-Date: 2025-04-07T13:45:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: sitepress\n"
@@ -26,8 +26,8 @@ msgstr "https://wpml.org/"
 
 #. Description of the plugin
 #: sitepress.php
-msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">WPML 4.7.0 release notes</a>"
-msgstr "WPML Multilingual CMS | <a href=\"https://wpml.org\">Tài liệu</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">Ghi chú phát hành WPML 4.7.0</a>"
+msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">WPML 4.7.2 release notes</a>"
+msgstr "WPML Hệ thống quản lý nội dung đa ngôn ngữ | <a href=\"https://wpml.org\">Tài liệu</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">Ghi chú phát hành WPML 4.7.2</a>"
 
 #. Author of the plugin
 #: sitepress.php
@@ -40,7 +40,7 @@ msgid "http://www.onthegosystems.com/"
 msgstr "http://www.onthegosystems.com/"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:182
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:343
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:335
 msgid "Button: Text"
 msgstr "Nút: Văn bản"
 
@@ -49,7 +49,7 @@ msgid "Button: Link"
 msgstr "Nút: Liên kết"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:197
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:238
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:240
 msgid "Heading: Title"
 msgstr "Đề mục: Tiêu đề"
 
@@ -58,7 +58,7 @@ msgid "Heading: Link"
 msgstr "Tiêu đề: Liên kết"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:212
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:358
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:350
 msgid "HTML"
 msgstr "HTML"
 
@@ -67,7 +67,7 @@ msgid "Photo: Link"
 msgstr "Ảnh: Liên kết"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:232
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:253
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:255
 msgid "Text Editor: Text"
 msgstr "Trình soạn thảo văn bản: Văn bản"
 
@@ -219,6 +219,11 @@ msgstr "Bài viết: Văn bản Liên kết Thêm"
 msgid "Posts Slider: More Link Text"
 msgstr "Trình chiếu Bài viết: Văn bản Liên kết Thêm"
 
+#. Translators: %s: Post type label. For example, Beaver Builder Templates.
+#: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/Hooks/TranslationGuiLabels.php:23
+msgid "Beaver Builder %s"
+msgstr "Beaver Builder %s"
+
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-accordion.php:8
 msgid "Accordion Item: Label"
 msgstr "Mục hộp xổ: Nhãn"
@@ -296,7 +301,7 @@ msgid "Tab Item: Content"
 msgstr "Mục thẻ: Nội dung"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-testimonials.php:16
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:413
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:390
 msgid "Testimonial: content"
 msgstr "Đánh giá: nội dung"
 
@@ -396,6 +401,11 @@ msgstr "Tìm kiếm cửa sổ: Văn bản gợi ý"
 msgid "Search Dropdown: Placeholder"
 msgstr "Tìm kiếm danh sách thả xuống: Văn bản gợi ý"
 
+#. Translators: %s: Post type label. For example, Cornerstone Templates.
+#: addons/wpml-page-builders/classes/Integrations/Cornerstone/Hooks/TranslationGuiLabels.php:43
+msgid "Cornerstone %s"
+msgstr "Cornerstone %s"
+
 #: addons/wpml-page-builders/classes/Integrations/Cornerstone/modules/class-wpml-cornerstone-accordion.php:19
 msgid "Accordion: Header"
 msgstr "Hộp xổ: Tiêu đề"
@@ -434,407 +444,319 @@ msgstr "Bạn có thể tìm thêm thông tin tại đây: %s"
 msgid "It is not possible to use Divi's backend builder to edit a post in a different language than your domain. Please use Divi's frontend builder to edit this post or %1$s switch to the correct domain %2$s to use the backend builder."
 msgstr "Không thể sử dụng trình tạo backend của Divi để chỉnh sửa bài viết bằng ngôn ngữ khác với tên miền của bạn. Vui lòng sử dụng trình tạo frontend của Divi để chỉnh sửa bài viết này hoặc %1$s chuyển sang tên miền chính xác %2$s để sử dụng trình tạo backend."
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:227
+#. Translators: %s: Post type label. For example, Divi Templates.
+#: addons/wpml-page-builders/classes/Integrations/Divi/Hooks/TranslationGuiLabels.php:37
+msgid "Divi %s"
+msgstr "Divi %s"
+
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:229
 msgid "Container: Link URL"
 msgstr "Container: URL Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:243
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:245
 msgid "Heading: Link URL"
 msgstr "Tiêu đề: URL Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:263
-msgid "Icon: Link URL"
-msgstr "Biểu tượng: URL Liên kết"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:273
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:265
 msgid "Video: Link"
 msgstr "Video: Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:278
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:270
 msgid "Video: Vimeo link"
 msgstr "Video: liên kết Vimeo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:283
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:275
 msgid "Video: Youtube URL"
 msgstr "Video: URL Youtube"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:288
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:280
 msgid "Video: Vimeo URL"
 msgstr "Video: URL Vimeo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:293
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:285
 msgid "Video: DailyMotion URL"
 msgstr "Video: URL DailyMotion"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:290
 msgid "Video: Self hosted"
 msgstr "Video: Tự lưu trữ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:303
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:295
 msgid "Video: External hosted"
 msgstr "Video: Lưu trữ bên ngoài"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:313
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:305
 msgid "Login: Button text"
 msgstr "Đăng nhập: Văn bản nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:318
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:310
 msgid "Login: User label"
 msgstr "Đăng nhập: Nhãn người dùng"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:323
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:315
 msgid "Login: User placeholder"
 msgstr "Đăng nhập: Placeholder người dùng"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:328
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:320
 msgid "Login: Password label"
 msgstr "Đăng nhập: Nhãn mật khẩu"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:333
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:325
 msgid "Login: Password placeholder"
 msgstr "Đăng nhập: Placeholder mật khẩu"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:348
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:340
 msgid "Button: Link URL"
 msgstr "Nút: URL Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:368
-msgid "Image: Caption"
-msgstr "Hình ảnh: Chú thích"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:373
-msgid "Image: Link URL"
-msgstr "Hình ảnh: URL Liên kết"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:383
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:360
 msgid "Alert: Title"
 msgstr "Cảnh báo: Tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:388
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:365
 msgid "Alert: Description"
 msgstr "Cảnh báo: Mô tả"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:398
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:375
 msgid "Blockquote: Content"
 msgstr "Blockquote: Nội dung"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:403
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:380
 msgid "Blockquote: Tweet button label"
 msgstr "Blockquote: Nhãn nút Tweet"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:418
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:395
 msgid "Testimonial: name"
 msgstr "Đánh giá: tên"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:423
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:400
 msgid "Testimonial: job"
 msgstr "Đánh giá: công việc"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:433
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:410
 msgid "Progress: Title"
 msgstr "Tiến trình: Tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:438
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:415
 msgid "Progress: Inner text"
 msgstr "Tiến trình: Văn bản bên trong"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:448
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:425
 msgid "Counter: Starting number"
 msgstr "Bộ đếm: Số bắt đầu"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:453
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:430
 msgid "Counter: Title"
 msgstr "Bộ đếm: Tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:458
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:435
 msgid "Counter: Prefix"
 msgstr "Bộ đếm: Tiền tố"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:463
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:440
 msgid "Counter: Suffix"
 msgstr "Bộ đếm: Hậu tố"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:473
-msgid "Countdown: Label days"
-msgstr "Đếm ngược: Nhãn ngày"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:478
-msgid "Countdown: Label hours"
-msgstr "Đếm ngược: Nhãn giờ"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:483
-msgid "Countdown: Label minutes"
-msgstr "Đếm ngược: Nhãn phút"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:488
-msgid "Countdown: Label seconds"
-msgstr "Đếm ngược: Nhãn giây"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:498
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:450
 msgid "Icon Box: Title text"
 msgstr "Hộp Biểu tượng: Văn bản tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:503
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:455
 msgid "Icon Box: Description text"
 msgstr "Hộp Biểu tượng: Văn bản mô tả"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:508
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:460
 msgid "Icon Box: Link"
 msgstr "Hộp Biểu tượng: Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:518
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:470
 msgid "Image Box: Title text"
 msgstr "Hộp Hình ảnh: Văn bản tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:523
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:475
 msgid "Image Box: Description text"
 msgstr "Hộp Hình ảnh: Văn bản mô tả"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:528
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:480
 msgid "Image Box: Link"
 msgstr "Hộp Hình ảnh: Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:538
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:490
 msgid "Animated Headline: Before text"
 msgstr "Tiêu đề Động: Văn bản trước"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:543
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:495
 msgid "Animated Headline: Highlighted text"
 msgstr "Tiêu đề Động: Văn bản nổi bật"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:548
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:500
 msgid "Animated Headline: Rotating text"
 msgstr "Tiêu đề Động: Văn bản xoay"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:553
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:505
 msgid "Animated Headline: After text"
 msgstr "Tiêu đề Động: Văn bản sau"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:558
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:510
 msgid "Animated Headline: Link URL"
 msgstr "Tiêu đề Động: URL Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:568
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:520
 msgid "Flip Box: Title text side A"
 msgstr "Hộp Lật: Văn bản tiêu đề mặt A"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:573
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:525
 msgid "Flip Box: Description text side A"
 msgstr "Hộp Lật: Văn bản mô tả mặt A"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:578
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:530
 msgid "Flip Box: Title text side B"
 msgstr "Hộp Lật: Văn bản tiêu đề mặt B"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:583
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:535
 msgid "Flip Box: Description text side B"
 msgstr "Hộp Lật: Văn bản mô tả mặt B"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:588
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:540
 msgid "Flip Box: Button text"
 msgstr "Hộp Lật: Văn bản nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:593
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:545
 msgid "Flip Box: Button link"
 msgstr "Hộp Lật: Liên kết nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:603
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:555
 msgid "Call to action: title"
 msgstr "Lời kêu gọi hành động: tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:608
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:560
 msgid "Call to action: description"
 msgstr "Lời kêu gọi hành động: mô tả"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:613
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:565
 msgid "Call to action: button"
 msgstr "Lời kêu gọi hành động: nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:618
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:570
 msgid "Call to action: ribbon title"
 msgstr "Lời kêu gọi hành động: tiêu đề ruy-băng"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:623
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:575
 msgid "Call to action: link"
 msgstr "Lời kêu gọi hành động: liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:668
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:615
 msgid "Price Table: Heading"
 msgstr "Bảng Giá: Tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:673
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:620
 msgid "Price Table: Sub heading"
 msgstr "Bảng Giá: Tiêu đề phụ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:678
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:625
 msgid "Price Table: Period"
 msgstr "Bảng Giá: Thời hạn"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:683
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:630
 msgid "Price Table: Button text"
 msgstr "Bảng Giá: Văn bản nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:688
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:635
 msgid "Price Table: Footer additional info"
 msgstr "Bảng Giá: Thông tin bổ sung ở chân trang"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:693
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:640
 msgid "Price Table: Ribbon title"
 msgstr "Bảng Giá: Tiêu đề ruy-băng"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:698
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:645
 msgid "Price Table: Button link"
 msgstr "Bảng Giá: Liên kết nút"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:709
-msgid "Form: name"
-msgstr "Biểu mẫu: tên"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:714
-msgid "Form: Button text"
-msgstr "Biểu mẫu: Văn bản nút"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:719
-msgid "Form: Email subject"
-msgstr "Biểu mẫu: Chủ đề email"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:724
-msgid "Form: Email from name"
-msgstr "Biểu mẫu: Tên người gửi email"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:729
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:739
-msgid "Form: Email Content"
-msgstr "Biểu mẫu: Nội dung email"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:734
-msgid "Form: Email subject 2"
-msgstr "Biểu mẫu: Chủ đề email 2"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:744
-msgid "Form: Success message"
-msgstr "Biểu mẫu: Thông báo thành công"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:749
-msgid "Form: Error message"
-msgstr "Biểu mẫu: Thông báo lỗi"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:754
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:764
-msgid "Form: Required message"
-msgstr "Biểu mẫu: Thông báo bắt buộc"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:759
-msgid "Form: Invalid message"
-msgstr "Biểu mẫu: Thông báo không hợp lệ"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:769
-msgid "Form: Redirect to URL"
-msgstr "Biểu mẫu: Chuyển hướng đến URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:780
-msgid "Posts: Classic Read more text"
-msgstr "Bài viết: Văn bản Đọc thêm Cổ điển"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:785
-msgid "Posts: Previous Label"
-msgstr "Bài viết: Nhãn Trước"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
-msgid "Posts: Next Label"
-msgstr "Bài viết: Nhãn Tiếp theo"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
-msgid "Posts: Cards Read more text"
-msgstr "Bài viết: Văn bản Đọc thêm Thẻ"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:805
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:656
 msgid "Menu Anchor"
 msgstr "Neo Menu"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:815
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:666
 msgid "Archive: Cards Separator"
 msgstr "Lưu trữ: Dấu phân cách thẻ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:820
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:671
 msgid "Archive: Cards Read More Text"
 msgstr "Lưu trữ: Văn bản Đọc thêm của thẻ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:825
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:676
 msgid "Archive: Nothing Found Message"
 msgstr "Lưu trữ: Thông báo Không tìm thấy"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:830
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:681
 msgid "Archive: Previous Label"
 msgstr "Lưu trữ: Nhãn Trước"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:835
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:686
 msgid "Archive: Next Label"
 msgstr "Lưu trữ: Nhãn Tiếp theo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:840
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:691
 msgid "Archive: Classic Separator"
 msgstr "Lưu trữ: Dấu phân cách cổ điển"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:845
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:696
 msgid "Archive: Classic Read More Text"
 msgstr "Lưu trữ: Văn bản Đọc thêm cổ điển"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:855
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:706
 msgid "Search: Placeholder"
 msgstr "Tìm kiếm: Văn bản gợi ý"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:865
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:716
 msgid "Post Navigation: Previous Label"
 msgstr "Điều hướng bài viết: Nhãn Trước"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:870
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:721
 msgid "Post Navigation: Next Label"
 msgstr "Điều hướng bài viết: Nhãn Tiếp theo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:880
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:731
 msgid "Divider: Text"
 msgstr "Dấu phân cách: Văn bản"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:890
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:741
 msgid "Table of Contents: Title"
 msgstr "Mục lục: Tiêu đề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:907
-msgid "Lottie: Link URL"
-msgstr "Lottie: URL Liên kết"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:917
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:751
 msgid "Author: Name"
 msgstr "Tác giả: Tên"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:922
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:756
 msgid "Author: Bio"
 msgstr "Tác giả: Tiểu sử"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:928
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:762
 msgid "Author: Link"
 msgstr "Tác giả: Liên kết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:933
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:767
 msgid "Author: Archive Text"
 msgstr "Tác giả: Văn bản lưu trữ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:939
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:773
 msgid "Author: Archive URL"
 msgstr "Tác giả: URL lưu trữ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:956
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
 msgid "Galleries: All Label"
 msgstr "Thư viện ảnh: Nhãn Tất cả"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:961
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
 msgid "Galleries: Gallery custom link"
 msgstr "Thư viện ảnh: Liên kết tùy chỉnh thư viện"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/DynamicContent/Strings.php:149
-msgid "Dynamic content string: %s"
-msgstr "Chuỗi nội dung động: %s"
+#. Translators: %s: Post type label. For example, Elementor Landing Pages.
+#: addons/wpml-page-builders/classes/Integrations/Elementor/Hooks/TranslationGuiLabels.php:29
+msgid "Elementor %s"
+msgstr "Elementor %s"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:25
 msgid "WPML Language Switcher"
@@ -869,97 +791,61 @@ msgstr "Hiển thị cờ"
 msgid "Show Active Language - has to be ON with Dropdown"
 msgstr "Hiển thị ngôn ngữ đang hoạt động - phải BẬT với Danh sách thả xuống"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:97
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:361
 msgid "Native language name"
 msgstr "Tên ngôn ngữ bản địa"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:117
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:362
 msgid "Language name in current language"
 msgstr "Tên ngôn ngữ bằng ngôn ngữ hiện tại"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:129
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:119
 msgid "Style"
 msgstr "Kiểu dáng"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:138
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:128
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:568
 msgid "Normal"
 msgstr "Bình thường"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:153
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:201
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:271
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:143
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:191
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:261
 msgid "Text Color"
 msgstr "Màu văn bản"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:169
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:286
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:159
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:276
 msgid "Background Color"
 msgstr "Màu nền"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:184
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:174
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:569
 msgid "Hover"
 msgstr "Khi di chuột"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:227
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:217
 msgid "Language Flag"
 msgstr "Cờ ngôn ngữ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:238
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:310
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:228
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:300
 msgid "Margin"
 msgstr "Lề"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:252
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:242
 msgid "Post Translation Text"
 msgstr "Văn bản bản dịch bài viết"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:288
 msgid "Padding"
 msgstr "Đệm"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-accordion.php:30
 msgid "Accordion: Title"
 msgstr "Accordion: Tiêu đề"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:39
-msgid "Form: Field label"
-msgstr "Biểu mẫu: Nhãn trường"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:40
-msgid "Form: Field placeholder"
-msgstr "Biểu mẫu: Giữ chỗ trường"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:41
-msgid "Form: Field HTML"
-msgstr "Biểu mẫu: HTML trường"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:42
-msgid "Form: Acceptance Text"
-msgstr "Biểu mẫu: Văn bản chấp nhận"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:43
-msgid "Form: Checkbox Options"
-msgstr "Biểu mẫu: Tùy chọn hộp kiểm"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:44
-msgid "Form: Step Next Label"
-msgstr "Biểu mẫu: Nhãn bước tiếp theo"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:45
-msgid "Form: Step Previous Label"
-msgstr "Biểu mẫu: Nhãn bước trước"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:46
-msgid "Form: Previous Button"
-msgstr "Biểu mẫu: Nút trước"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:47
-msgid "Form: Next Button"
-msgstr "Biểu mẫu: Nút tiếp theo"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:30
 msgid "Icon List: Text"
@@ -968,18 +854,6 @@ msgstr "Danh sách biểu tượng: Văn bản"
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:33
 msgid "Icon List: Link URL"
 msgstr "Danh sách biểu tượng: URL liên kết"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:29
-msgid "Pricing list: title"
-msgstr "Danh sách giá: tiêu đề"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:33
-msgid "Pricing list: description"
-msgstr "Bảng giá: mô tả"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:37
-msgid "Pricing list: link"
-msgstr "Bảng giá: liên kết"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-table.php:29
 msgid "Price table: text"
@@ -1029,22 +903,6 @@ msgstr "Chuyển đổi: Tiêu đề"
 msgid "Toggle: Content"
 msgstr "Chuyển đổi: Nội dung"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:12
-msgid "Hotspot: Label"
-msgstr "Điểm nóng: Nhãn"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:14
-msgid "Hotspot: Content"
-msgstr "Điểm nóng: Nội dung"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:16
-msgid "Hotspot: URL"
-msgstr "Điểm nóng: URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MediaCarousel.php:29
-msgid "Media Carousel: link URL"
-msgstr "Băng chuyền phương tiện: URL liên kết"
-
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MultipleGallery.php:12
 msgid "Galleries: Gallery Title"
 msgstr "Thư viện ảnh: Tiêu đề thư viện"
@@ -1069,16 +927,35 @@ msgstr "Đánh giá: Hình ảnh bình luận"
 msgid "Reviews: Comment Link"
 msgstr "Đánh giá: Liên kết bình luận"
 
-#. translators: 1 and 2 are html <strong></strong> tags.
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:57
-msgid "%1$sWarning:%2$s You are trying to add a translation using the Fusion Builder Live editor but your site is configured to use the WPML Translation Editor."
-msgstr "%1$sCảnh báo:%2$s Bạn đang cố gắng thêm bản dịch bằng trình chỉnh sửa trực tiếp Fusion Builder nhưng trang web của bạn được cấu hình để sử dụng Trình chỉnh sửa dịch WPML."
+#. Translators: %s: Post type label. For example, Enfold Templates.
+#: addons/wpml-page-builders/classes/Integrations/Enfold/Hooks/TranslationGuiLabels.php:27
+msgid "Enfold %s"
+msgstr "Enfold %s"
 
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:62
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
-#: sitepress.class.php:1266
-msgid "OK"
-msgstr "OK"
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:27
+#: classes/options/class-wpml-multilingual-options.php:90
+msgid "You can set different options for each language"
+msgstr "Bạn có thể thiết lập các tùy chọn khác nhau cho từng ngôn ngữ"
+
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:28
+#: classes/options/class-wpml-multilingual-options.php:91
+msgid "Use the language switcher in the top admin bar to switch languages, then set and save options for each language individually."
+msgstr "Sử dụng bộ chuyển đổi ngôn ngữ ở thanh quản trị trên cùng để chuyển đổi ngôn ngữ, sau đó thiết lập và lưu các tùy chọn cho từng ngôn ngữ riêng biệt."
+
+#. Translators: %s: Post type label. For example, Avada Templates.
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/TranslationGuiLabels.php:38
+msgid "Avada %s"
+msgstr "Avada %s"
+
+#. Translators: %s: Post type label. For example, Site Templates.
+#: addons/wpml-page-builders/classes/Integrations/Gutenberg/Hooks/TranslationGuiLabels.php:29
+msgid "Site %s"
+msgstr "Site %s"
+
+#. Translators: %s: Post type label. For example, WPBakery Templates.
+#: addons/wpml-page-builders/classes/Integrations/WPBakery/Hooks/TranslationGuiLabels.php:41
+msgid "WPBakery %s"
+msgstr "WPBakery %s"
 
 #: addons/wpml-page-builders/classes/Shared/st/class-wpml-st-pb-plugin.php:33
 msgid "The WPML Page Builders plugin that you're using is now part of WPML."
@@ -1096,45 +973,45 @@ msgstr "Đừng lo lắng, toàn bộ chức năng được bảo toàn trong WP
 msgid "Deactivate WPML Page Builders"
 msgstr "Hủy kích hoạt WPML Page Builders"
 
-#: ajax.php:199
+#: ajax.php:178
 #: classes/menu-elements/class-wpml-user-options-menu.php:159
 #: menu/languages.php:647
 msgid "%s is currently hidden to visitors."
 msgstr "%s hiện đang bị ẩn đối với khách truy cập."
 
-#: ajax.php:207
+#: ajax.php:186
 #: classes/menu-elements/class-wpml-user-options-menu.php:166
 #: menu/languages.php:658
 msgid "%s are currently hidden to visitors."
 msgstr "%s hiện đang bị ẩn đối với khách truy cập."
 
-#: ajax.php:210
+#: ajax.php:189
 #: menu/languages.php:665
 msgid "You can enable its/their display for yourself, in your <a href=\"%s\">profile page</a>."
 msgstr "Bạn có thể bật hiển thị cho mình trong <a href=\"%s\">trang hồ sơ</a> của bạn."
 
-#: ajax.php:214
+#: ajax.php:193
 #: menu/languages.php:668
 msgid "All languages are currently displayed."
 msgstr "Tất cả ngôn ngữ hiện đang được hiển thị."
 
-#: ajax.php:323
+#: ajax.php:306
 msgid "Error: No custom field"
 msgstr "Lỗi: Không có trường tùy chỉnh"
 
-#: ajax.php:329
+#: ajax.php:312
 msgid "Error: Please provide translation action"
 msgstr "Lỗi: Vui lòng cung cấp hành động dịch thuật"
 
-#: ajax.php:338
+#: ajax.php:321
 msgid "Settings updated"
 msgstr "Đã cập nhật cài đặt"
 
-#: ajax.php:341
+#: ajax.php:324
 msgid "Error: WPML Translation Management plugin not initiated"
 msgstr "Lỗi: Plugin WPML Translation Management chưa được khởi tạo"
 
-#: ajax.php:346
+#: ajax.php:329
 msgid "Error: Please activate WPML Translation Management plugin"
 msgstr "Lỗi: Vui lòng kích hoạt plugin WPML Translation Management"
 
@@ -1153,7 +1030,7 @@ msgstr "Lỗi: Vui lòng kích hoạt plugin WPML Translation Management"
 #: classes/troubleshooting/SynchronizeSourceIdOfATEJobs/TriggerSynchronization.php:79
 #: classes/url-handling/class-wpml-xdomain-data-parser.php:84
 #: classes/widgets/class-wpml-widgets-support-backend.php:153
-#: inc/functions-troubleshooting.php:210
+#: inc/functions-troubleshooting.php:211
 #: inc/icl-admin-notifier.php:791
 #: inc/wp-nav-menus/class-wpml-nav-menu.php:169
 #: inc/wpml-post-edit-ajax.class.php:277
@@ -1346,8 +1223,8 @@ msgstr "Chọn tùy chọn này nếu giao diện hoặc plugin của bạn sử
 #: menu/languages.php:696
 #: menu/languages.php:759
 #: menu/languages.php:805
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
 #: menu/_custom_types_translation.php:132
 #: menu/_custom_types_translation.php:214
 #: menu/_login_translation_options.php:58
@@ -1489,7 +1366,7 @@ msgstr "Hành động"
 #: menu/menu-sync/menus-sync.php:130
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:211
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:227
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
 #: sitepress.class.php:1267
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -2319,7 +2196,7 @@ msgid "Needs review"
 msgstr "Cần xem xét"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:261
-#: inc/translation-management/translation-management.class.php:1173
+#: inc/translation-management/translation-management.class.php:1184
 #: inc/wp-nav-menus/menus-sync.php:428
 msgid "Not translated"
 msgstr "Chưa được dịch"
@@ -2331,7 +2208,7 @@ msgstr "Đang chờ dịch tự động"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:266
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:275
-#: inc/translation-management/translation-management.class.php:1176
+#: inc/translation-management/translation-management.class.php:1187
 msgid "Waiting for translator"
 msgstr "Đang chờ người dịch"
 
@@ -2344,7 +2221,7 @@ msgid "Waiting for translation service"
 msgstr "Đang chờ dịch vụ dịch thuật"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:284
-#: inc/translation-management/translation-management.class.php:1191
+#: inc/translation-management/translation-management.class.php:1202
 msgid "Translation ready to download"
 msgstr "Bản dịch sẵn sàng để tải xuống"
 
@@ -2357,12 +2234,12 @@ msgid "Translation completed"
 msgstr "Dịch thuật hoàn tất"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:298
-#: inc/translation-management/translation-management.class.php:1182
+#: inc/translation-management/translation-management.class.php:1193
 msgid "Needs update"
 msgstr "Cần cập nhật"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:301
-#: inc/translation-management/translation-management.class.php:1179
+#: inc/translation-management/translation-management.class.php:1190
 msgid "In progress"
 msgstr "Đang tiến hành"
 
@@ -2569,14 +2446,6 @@ msgstr "Bất kỳ thay đổi nào bạn thực hiện sẽ bị mất vào l�
 #: classes/notices/wpml-tm-post-edit-notices.php:195
 msgid "Go Back"
 msgstr "Quay lại"
-
-msgid "Translated with PTC"
-msgstr "Được dịch bởi PTC"
-
-
-
-msgid "Made at OnTheGoSystems"
-msgstr "Được tạo tại OnTheGoSystems"
 
 #: classes/notices/wpml-tm-post-edit-notices.php:196
 msgid "Edit Anyway (Not Recommended)"
@@ -3249,13 +3118,13 @@ msgstr "Trang cuối"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:121
 #: classes/utilities/admin/wpml-admin-pagination-render.php:37
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
 msgid "Current page"
 msgstr "Trang hiện tại"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:122
 #: classes/utilities/admin/wpml-admin-pagination-render.php:38
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
 msgid "of"
 msgstr "trên"
 
@@ -3335,7 +3204,7 @@ msgid "Translation:"
 msgstr "Bản dịch:"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-row-view.php:77
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:73
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:78
 msgid "Edit translation"
 msgstr "Chỉnh sửa bản dịch"
 
@@ -4062,55 +3931,55 @@ msgstr "Không có Lô"
 msgid "Contact the translator"
 msgstr "Liên hệ với người dịch"
 
-#: inc/translation-management/translation-management.class.php:1185
+#: inc/translation-management/translation-management.class.php:1196
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:381
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:396
 msgid "Duplicate"
 msgstr "Sao chép"
 
-#: inc/translation-management/translation-management.class.php:1188
+#: inc/translation-management/translation-management.class.php:1199
 msgid "Complete"
 msgstr "Hoàn thành"
 
-#: inc/translation-management/translation-management.class.php:1194
+#: inc/translation-management/translation-management.class.php:1205
 msgid "In progress - needs retry"
 msgstr "Đang tiến hành - cần thử lại"
 
-#: inc/translation-management/translation-management.class.php:1916
+#: inc/translation-management/translation-management.class.php:1927
 msgid "Translation entry not found for: %d"
 msgstr "Không tìm thấy mục dịch cho: %d"
 
-#: inc/translation-management/translation-management.class.php:2078
-#: inc/translation-management/translation-management.class.php:2097
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
+#: inc/translation-management/translation-management.class.php:2089
+#: inc/translation-management/translation-management.class.php:2108
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
 msgid "translate"
 msgstr "dịch"
 
-#: inc/translation-management/translation-management.class.php:2080
+#: inc/translation-management/translation-management.class.php:2091
 msgid "string not registered"
 msgstr "chuỗi chưa được đăng ký"
 
-#: inc/translation-management/translation-management.class.php:2088
+#: inc/translation-management/translation-management.class.php:2099
 msgid "Multiple options"
 msgstr "Nhiều tùy chọn"
 
-#: inc/translation-management/translation-management.class.php:2100
+#: inc/translation-management/translation-management.class.php:2111
 msgid "some strings might be not registered"
 msgstr "một số chuỗi có thể chưa được đăng ký"
 
-#: inc/translation-management/translation-management.class.php:2325
+#: inc/translation-management/translation-management.class.php:2336
 msgid " - (needs update)"
 msgstr " - (cần cập nhật)"
 
-#: inc/translation-management/translation-management.class.php:2500
+#: inc/translation-management/translation-management.class.php:2511
 msgid "Preferences saved."
 msgstr "Đã lưu tùy chọn."
 
-#: inc/translation-management/translation-management.class.php:2519
+#: inc/translation-management/translation-management.class.php:2530
 msgid "Translation requests cancelled."
 msgstr "Yêu cầu dịch thuật đã bị hủy."
 
-#: inc/translation-management/translation-management.class.php:2521
+#: inc/translation-management/translation-management.class.php:2532
 msgid "No Translation requests selected."
 msgstr "Không có Yêu cầu dịch thuật nào được chọn."
 
@@ -4928,7 +4797,7 @@ msgid "WPML Network Setup"
 msgstr "Thiết lập mạng WPML"
 
 #: menu/network.php:54
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
 msgid "Search"
 msgstr "Tìm kiếm"
 
@@ -5160,208 +5029,217 @@ msgstr "Để truy cập nâng cao hoặc gỡ cài đặt hoàn toàn WPML và 
 msgid "For retrieving debug information if asked by support person, use the %sdebug information%s page."
 msgstr "Để truy xuất thông tin gỡ lỗi nếu được nhân viên hỗ trợ yêu cầu, hãy sử dụng trang %sthông tin gỡ lỗi%s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:11
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
 msgid "Show"
 msgstr "Hiển thị"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:12
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
 msgid "untranslated"
 msgstr "chưa dịch"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:13
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
 msgid "all"
 msgstr "tất cả"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:14
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
 msgid "in"
 msgstr "trong"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
 msgid "to"
 msgstr "sang"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
 #: menu/_custom_types_translation.php:172
 msgid "Taxonomy"
 msgstr "Phân loại"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
 msgid "any language"
 msgstr "bất kỳ ngôn ngữ nào"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
 msgid "Refresh"
 msgstr "Làm mới"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
 msgid "Update Taxonomy Hierarchy"
 msgstr "Cập nhật Hệ thống Phân cấp Phân loại"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
 msgid "select parent"
 msgstr "chọn mục cha"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
 msgid "Select the taxonomy to translate: "
 msgstr "Chọn phân loại để dịch: "
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:28
 msgid "%1$s Translation"
 msgstr "Dịch %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
 msgid "Hierarchy Synchronization"
 msgstr "Đồng bộ hóa Hệ thống Phân cấp"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
 msgid "Copy to all languages"
 msgstr "Sao chép sang tất cả ngôn ngữ"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
 msgid "Overwrite existing translations"
 msgstr "Ghi đè lên bản dịch hiện có"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
 msgid "Will be removed"
 msgstr "Sẽ bị xóa"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
 msgid "Will be added"
 msgstr "Sẽ được thêm"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:32
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
 msgid "Legend:"
 msgstr "Chú thích:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
 msgid "Synchronize taxonomy hierarchy according to: %1$s language."
 msgstr "Đồng bộ hóa hệ thống phân cấp phân loại theo: ngôn ngữ %1$s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
 msgid "Target Language"
 msgstr "Ngôn ngữ đích"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
 msgid "Term translation"
 msgstr "Dịch thuật ngữ"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
 msgid "Original term"
 msgstr "Thuật ngữ gốc"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
 msgid "Label translation"
 msgstr "Dịch nhãn"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
 msgid "Copy from original"
 msgstr "Sao chép từ bản gốc"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
 msgid "Original:"
 msgstr "Bản gốc:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
 msgid "Translation to:"
 msgstr "Bản dịch sang:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
 msgid "Name"
 msgstr "Tên"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
 msgid "Slug"
 msgstr "Slug"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
 msgid "Description"
 msgstr "Mô tả"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: sitepress.class.php:1266
+msgid "OK"
+msgstr "OK"
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
 msgid "Singular"
 msgstr "Số ít"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
 msgid "Plural"
 msgstr "Số nhiều"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
 msgid "Change language"
 msgstr "Thay đổi ngôn ngữ"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
 msgid "loading"
 msgstr "đang tải"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
 msgid "Go to previous page"
 msgstr "Đi đến trang trước"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
 msgid "Go to the next page"
 msgstr "Đi đến trang tiếp theo"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
 msgid "Go to the first page"
 msgstr "Đi đến trang đầu tiên"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
 msgid "Go to the last page"
 msgstr "Đi đến trang cuối cùng"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
 msgid "The taxonomy hierarchy is now synchronized."
 msgstr "Hệ thống phân cấp phân loại đã được đồng bộ hóa."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
 msgid "The taxonomy hierarchy is already synchronized."
 msgstr "Hệ thống phân cấp phân loại đã được đồng bộ hóa rồi."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
 msgid "No %1$s found."
 msgstr "Không tìm thấy %1$s nào."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
 msgid "items"
 msgstr "mục"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
 msgid "item"
 msgstr "mục"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
 msgid "Translation of %1$s"
 msgstr "Bản dịch của %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:67
 msgid "Translations of taxonomy %1$s labels and slug"
 msgstr "Bản dịch của nhãn và slug phân loại %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:68
 msgid "To translate taxonomy labels and slug you need %s plugin."
 msgstr "Để dịch nhãn và slug phân loại, bạn cần plugin %s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:69
 msgid "Loading ..."
 msgstr "Đang tải ..."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:70
 msgid "%1$s terms (in original language)"
 msgstr "Các thuật ngữ %1$s (trong ngôn ngữ gốc)"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:72
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:71
+msgid "Because too many %1$s were found, only the first %2$s results are listed. You can refine the results using the Search field below."
+msgstr "Do tìm thấy quá nhiều %1$s, chỉ liệt kê %2$s kết quả đầu tiên. Bạn có thể tinh chỉnh kết quả bằng cách sử dụng trường Tìm kiếm bên dưới."
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:77
 msgid "Add translation"
 msgstr "Thêm bản dịch"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:74
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:79
 msgid "Original language"
 msgstr "Ngôn ngữ gốc"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:75
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:80
 msgid "This term has additional meta fields:"
 msgstr "Thuật ngữ này có các trường meta bổ sung:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:220
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:224
 msgid "Wrong nonce"
 msgstr "Nonce không hợp lệ"
 
@@ -5911,23 +5789,23 @@ msgstr "Tùy chọn trình tạo trang"
 msgid "Send to translation the content of raw HTML cells"
 msgstr "Gửi để dịch nội dung của các ô HTML thô"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:118
+#: modules/cache-plugins-integration/cache-plugins-integration.php:116
 msgid "<i>%s</i> integration"
 msgstr "Tích hợp <i>%s</i>"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:120
+#: modules/cache-plugins-integration/cache-plugins-integration.php:118
 msgid "You are using a caching plugin. When you translate strings, the cache needs to be cleared in order for the translation to display."
 msgstr "Bạn đang sử dụng plugin bộ nhớ đệm. Khi bạn dịch chuỗi, bộ nhớ đệm cần được xóa để hiển thị bản dịch."
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:125
+#: modules/cache-plugins-integration/cache-plugins-integration.php:123
 msgid "Automatically clear the cache when strings are translated"
 msgstr "Tự động xóa bộ nhớ đệm khi chuỗi được dịch"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:128
+#: modules/cache-plugins-integration/cache-plugins-integration.php:126
 msgid "I will clear the cache manually after translating strings"
 msgstr "Tôi sẽ xóa bộ nhớ đệm thủ công sau khi dịch chuỗi"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:131
+#: modules/cache-plugins-integration/cache-plugins-integration.php:129
 msgid "Clear cache now"
 msgstr "Xóa bộ nhớ đệm ngay"
 

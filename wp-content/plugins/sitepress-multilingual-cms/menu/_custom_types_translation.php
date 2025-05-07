@@ -128,7 +128,7 @@ if ( $custom_posts ) {
 					<span class="icl_ajx_response" id="icl_ajx_response_cp"></span>
 					<input type="submit"
 						   id="wpml_post_type_save_legacy"
-						   class="js_element_type_sync_button button button-primary"
+						   class="button-primary js_element_type_sync_button wpml-button base-btn"
 						   value="<?php esc_attr_e( 'Save', 'sitepress' ); ?>"
                            style="display:none"
                     />
@@ -210,7 +210,7 @@ if ( $custom_taxonomies ) {
 				<p class="buttons-wrap">
 					<span class="icl_ajx_response" id="icl_ajx_response_ct"></span>
 					<input type="submit"
-						   class="js_element_type_sync_button button-primary"
+						   class="button-primary js_element_type_sync_button wpml-button base-btn"
 						   value="<?php esc_html_e( 'Save', 'sitepress' ); ?>" />
 				</p>
 			</form>

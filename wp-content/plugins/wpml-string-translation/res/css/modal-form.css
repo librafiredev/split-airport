@@ -17,7 +17,7 @@
 .wpml-st-modal-form .ui-dialog-titlebar-close {
   width: 55px;
   height: 55px;
-  color: rgba(51, 135, 158, 0.3); }
+  color: #2F7D92; }
   .wpml-st-modal-form .ui-dialog-titlebar-close:before {
     font-size: 32px;
     content: "\f335"; }
@@ -29,15 +29,11 @@
     content: "";
     width: 32px;
     height: 32px;
-    background: #ebf3f5;
+    background: url("../img/union.png") #F8FBFC center no-repeat;
     border-radius: 50%;
-    background-image: url("../img/union.png");
     background-size: 16px;
-    background-repeat: no-repeat;
-    background-position: center center;
     display: block;
-    margin: auto;
-    margin-bottom: 10px; }
+    margin: auto auto 10px; }
 
 .wpml-st-modal-form .modal-float-childs > :nth-child(1) {
   float: left; }
@@ -51,13 +47,11 @@
   max-width: 139px;
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px rgba(51, 135, 158, 0.3) solid; }
-  .wpml-st-modal-form .search-input:focus {
-    border: 1px #ebf3f5 solid; }
-  .wpml-st-modal-form .search-input::-webkit-input-placeholder {
-    color: rgba(51, 135, 158, 0.4); }
-  .wpml-st-modal-form .search-input::-moz-placeholder {
-    color: rgba(51, 135, 158, 0.4); }
+  border: 1px rgba(47, 125, 146, 0.3) solid; }
+  .wpml-st-modal-form .search-input:focus, .wpml-st-modal-form .search-input:hover {
+    border-color: #2F7D92; }
+  .wpml-st-modal-form .search-input::-webkit-input-placeholder, .wpml-st-modal-form .search-input::-moz-placeholder {
+    color: #757575; }
 
 .wpml-st-modal-form .search-icon {
   float: left;
@@ -67,19 +61,19 @@
   background-size: 16px;
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px rgba(51, 135, 158, 0.3) solid;
+  border: 1px rgba(47, 125, 146, 0.3) solid;
   border-left: 0; }
 
 .wpml-st-modal-form .separator {
-  padding: 15px 0px; }
+  padding: 15px 0; }
   .wpml-st-modal-form .separator:after {
     content: "";
     display: block;
     width: 100%;
     height: 1px;
-    background: rgba(51, 135, 158, 0.2); }
+    background-color: #ebf3f5; }
   .wpml-st-modal-form .separator.separator-no-padding-top {
-    padding-top: 0px; }
+    padding-top: 0; }
 
 .wpml-st-modal-form form {
   padding-left: 15px;
@@ -88,12 +82,12 @@
 .wpml-st-modal-form input[type=checkbox], .wpml-st-modal-form input[type=checkbox]:checked {
   width: 18px;
   height: 18px;
-  border: 1px #33879e solid; }
+  border: 1px #2F7D92 solid; }
   .wpml-st-modal-form input[type=checkbox]:before, .wpml-st-modal-form input[type=checkbox]:checked:before {
     margin: -2px 0px 0px -3px; }
 
 .wpml-st-modal-form select {
-  border-color: #d9d9d9;
+  border-color: #ddd;
   border-radius: 2px;
   padding: 3px 15px;
   width: 100%; }
@@ -110,15 +104,16 @@
       top: 4px; }
 
 .wpml-st-modal-form .modal-checkboxes-table {
-  border: 0; }
+  border: 0;
+  box-shadow: none; }
   .wpml-st-modal-form .modal-checkboxes-table thead tr > * {
-    border-bottom: 2px black solid; }
+    border-bottom: 1px black solid; }
   .wpml-st-modal-form .modal-checkboxes-table tbody td {
-    border-bottom: 1px #d9d9d9 solid; }
+    border-bottom: 1px #ddd solid; }
     .wpml-st-modal-form .modal-checkboxes-table tbody td:first-child {
-      border-left: 1px #d9d9d9 solid; }
+      border-left: 1px #ddd solid; }
     .wpml-st-modal-form .modal-checkboxes-table tbody td:last-child {
-      border-right: 1px #d9d9d9 solid; }
+      border-right: 1px #ddd solid; }
   .wpml-st-modal-form .modal-checkboxes-table td {
     font-weight: bold; }
 
@@ -128,7 +123,7 @@
   display: block; }
 
 .wpml-st-modal-form .checkboxes-list .checkbox-wrap, .wpml-st-modal-form .checkboxes-select-all-box .checkbox-wrap {
-  padding: 5px 0px;
+  padding: 5px 0;
   float: left;
   width: 50%; }
 
@@ -142,22 +137,8 @@
   width: fit-content;
   margin: 0 auto; }
 
-.wpml-st-modal-form .ui-dialog-buttonpane .ui-button {
-  margin-left: 0px;
-  margin-right: 0px;
-  min-width: 80px;
-  min-height: 30px; }
-
 .wpml-st-modal-form .ui-dialog-buttonpane .ui-button.wpml-st-cancel-button {
-  margin-right: 15px;
-  background: white;
-  border: 1px #33879e solid;
-  color: #33879e; }
-
-.wpml-st-modal-form .ui-dialog-buttonpane .ui-button.button-primary {
-  background: #33879e; }
-  .wpml-st-modal-form .ui-dialog-buttonpane .ui-button.button-primary:hover {
-    background: #42a6c2; }
+  margin-right: 15px; }
 
 .wpml-st-modal-form .ui-dialog-content {
   padding: 30px 35px; }
@@ -174,13 +155,13 @@
   padding-top: 10px; }
 
 .wpml-st-modal-form .no-bottom-spacer {
-  padding-bottom: 0px; }
+  padding-bottom: 0; }
 
 .wpml-st-modal-form .no-margin-bottom {
-  margin-bottom: 0px; }
+  margin-bottom: 0; }
 
 .wpml-st-modal-form .no-horizontal-spacer {
-  margin-left: 0%;
+  margin-left: 0;
   width: 100%;
   max-width: 100%; }
 
@@ -194,15 +175,12 @@
   width: 45%; }
 
 .wpml-st-modal-form .icl_ajx_response {
-  color: #27AD95; }
+  color: #1C7D6B; }
 
 @media screen and (max-width: 782px) {
   .wpml-st-modal-form input[type=checkbox], .wpml-st-modal-form input[type=checkbox]:checked {
     width: 1.5625rem;
-    height: 1.5625rem;
-    border: 1px #33879e solid; }
-    .wpml-st-modal-form input[type=checkbox]:before, .wpml-st-modal-form input[type=checkbox]:checked:before {
-      margin: -2px 0px 0px -3px; } }
+    height: 1.5625rem; } }
 
 @media screen and (max-width: 600px) {
   .wpml-st-modal-form {
@@ -213,7 +191,7 @@
   background-image: url("../img/translation.png"); }
 
 .wpml-st-modal-form .ui-dialog-content.wpml-st-select-translate-user-fields-box {
-  padding-top: 0px; }
+  padding-top: 0; }
   .wpml-st-modal-form .ui-dialog-content.wpml-st-select-translate-user-fields-box .wpml-st-select-translate-user-fields-box-subheading > p {
     text-align: center;
     margin: 0.5em 0; }

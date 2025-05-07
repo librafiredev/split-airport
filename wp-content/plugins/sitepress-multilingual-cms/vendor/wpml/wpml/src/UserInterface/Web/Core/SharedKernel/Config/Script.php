@@ -30,6 +30,12 @@ class Script {
   /** @var string $usedOn */
   private $usedOn = self::USED_ON_ADMIN;
 
+  /** @var ?string $scriptVarName */
+  private $scriptVarName;
+
+  /** @var array<string> $scriptData */
+  private $scriptData = [];
+
 
   public function __construct( string $id ) {
     $this->id = $id;
@@ -143,6 +149,40 @@ class Script {
       );
     }
     $this->usedOn = $usedOn;
+    return $this;
+  }
+
+
+  /** @return ?string */
+  public function scriptVarName() {
+    return $this->scriptVarName ?? $this->id;
+  }
+
+
+  /**
+   * @param string $scriptVarName
+   * @return static
+   */
+  public function setScriptVarName( string $scriptVarName ): self {
+    $this->scriptVarName = $scriptVarName;
+    return $this;
+  }
+
+
+  /**
+   * @return array<string>
+   */
+  public function scriptData(): array {
+    return $this->scriptData;
+  }
+
+
+  /**
+   * @param array<string>  $scriptData
+   * @return static
+   */
+  public function setScriptData( array $scriptData ): self {
+    $this->scriptData = $scriptData;
     return $this;
   }
 

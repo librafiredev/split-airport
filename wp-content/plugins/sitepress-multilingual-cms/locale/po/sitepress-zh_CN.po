@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the WPML Multilingual CMS plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPML Multilingual CMS 4.7.0-dev\n"
+"Project-Id-Version: WPML Multilingual CMS 4.7.3-dev\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sitepress-multilingual-cms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T09:01:15+00:00\n"
+"POT-Creation-Date: 2025-04-07T13:45:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: sitepress\n"
@@ -26,8 +26,8 @@ msgstr "https://wpml.org/"
 
 #. Description of the plugin
 #: sitepress.php
-msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">WPML 4.7.0 release notes</a>"
-msgstr "WPML 多语言 CMS | <a href=\"https://wpml.org\">文档</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">WPML 4.7.0 发布说明</a>"
+msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">WPML 4.7.2 release notes</a>"
+msgstr "WPML多语言CMS | <a href=\"https://wpml.org\">文档</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">WPML 4.7.2发布说明</a>"
 
 #. Author of the plugin
 #: sitepress.php
@@ -40,7 +40,7 @@ msgid "http://www.onthegosystems.com/"
 msgstr "http://www.onthegosystems.com/"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:182
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:343
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:335
 msgid "Button: Text"
 msgstr "按钮：文本"
 
@@ -49,7 +49,7 @@ msgid "Button: Link"
 msgstr "按钮：链接"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:197
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:238
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:240
 msgid "Heading: Title"
 msgstr "标题：标题"
 
@@ -58,7 +58,7 @@ msgid "Heading: Link"
 msgstr "标题：链接"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:212
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:358
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:350
 msgid "HTML"
 msgstr "HTML"
 
@@ -67,7 +67,7 @@ msgid "Photo: Link"
 msgstr "图片：链接"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:232
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:253
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:255
 msgid "Text Editor: Text"
 msgstr "文本编辑器：文本"
 
@@ -219,6 +219,11 @@ msgstr "文章：更多链接文本"
 msgid "Posts Slider: More Link Text"
 msgstr "文章滑块：更多链接文本"
 
+#. Translators: %s: Post type label. For example, Beaver Builder Templates.
+#: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/Hooks/TranslationGuiLabels.php:23
+msgid "Beaver Builder %s"
+msgstr "海狸建造者 %s"
+
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-accordion.php:8
 msgid "Accordion Item: Label"
 msgstr "手风琴项目：标签"
@@ -296,7 +301,7 @@ msgid "Tab Item: Content"
 msgstr "选项卡项目：内容"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-testimonials.php:16
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:413
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:390
 msgid "Testimonial: content"
 msgstr "推荐语：内容"
 
@@ -396,6 +401,11 @@ msgstr "模态搜索：占位符"
 msgid "Search Dropdown: Placeholder"
 msgstr "下拉搜索：占位符"
 
+#. Translators: %s: Post type label. For example, Cornerstone Templates.
+#: addons/wpml-page-builders/classes/Integrations/Cornerstone/Hooks/TranslationGuiLabels.php:43
+msgid "Cornerstone %s"
+msgstr "基石 %s"
+
 #: addons/wpml-page-builders/classes/Integrations/Cornerstone/modules/class-wpml-cornerstone-accordion.php:19
 msgid "Accordion: Header"
 msgstr "手风琴：标题"
@@ -434,407 +444,319 @@ msgstr "您可以在此处找到更多信息：%s"
 msgid "It is not possible to use Divi's backend builder to edit a post in a different language than your domain. Please use Divi's frontend builder to edit this post or %1$s switch to the correct domain %2$s to use the backend builder."
 msgstr "无法使用Divi的后端构建器编辑与您的域名语言不同的帖子。请使用Divi的前端构建器编辑此帖子或%1$s切换到正确的域名%2$s以使用后端构建器。"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:227
+#. Translators: %s: Post type label. For example, Divi Templates.
+#: addons/wpml-page-builders/classes/Integrations/Divi/Hooks/TranslationGuiLabels.php:37
+msgid "Divi %s"
+msgstr "Divi %s"
+
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:229
 msgid "Container: Link URL"
 msgstr "容器：链接URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:243
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:245
 msgid "Heading: Link URL"
 msgstr "标题：链接URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:263
-msgid "Icon: Link URL"
-msgstr "图标：链接URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:273
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:265
 msgid "Video: Link"
 msgstr "视频：链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:278
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:270
 msgid "Video: Vimeo link"
 msgstr "视频：Vimeo链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:283
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:275
 msgid "Video: Youtube URL"
 msgstr "视频：YouTube URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:288
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:280
 msgid "Video: Vimeo URL"
 msgstr "视频：Vimeo URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:293
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:285
 msgid "Video: DailyMotion URL"
 msgstr "视频：DailyMotion URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:290
 msgid "Video: Self hosted"
 msgstr "视频：自托管"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:303
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:295
 msgid "Video: External hosted"
 msgstr "视频：外部托管"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:313
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:305
 msgid "Login: Button text"
 msgstr "登录：按钮文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:318
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:310
 msgid "Login: User label"
 msgstr "登录：用户标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:323
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:315
 msgid "Login: User placeholder"
 msgstr "登录：用户占位符"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:328
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:320
 msgid "Login: Password label"
 msgstr "登录：密码标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:333
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:325
 msgid "Login: Password placeholder"
 msgstr "登录：密码占位符"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:348
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:340
 msgid "Button: Link URL"
 msgstr "按钮：链接URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:368
-msgid "Image: Caption"
-msgstr "图片：说明"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:373
-msgid "Image: Link URL"
-msgstr "图片：链接URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:383
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:360
 msgid "Alert: Title"
 msgstr "警告：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:388
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:365
 msgid "Alert: Description"
 msgstr "警告：描述"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:398
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:375
 msgid "Blockquote: Content"
 msgstr "引用块：内容"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:403
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:380
 msgid "Blockquote: Tweet button label"
 msgstr "引用块：推文按钮标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:418
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:395
 msgid "Testimonial: name"
 msgstr "推荐语：姓名"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:423
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:400
 msgid "Testimonial: job"
 msgstr "推荐语：职位"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:433
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:410
 msgid "Progress: Title"
 msgstr "进度：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:438
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:415
 msgid "Progress: Inner text"
 msgstr "进度：内部文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:448
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:425
 msgid "Counter: Starting number"
 msgstr "计数器：起始数字"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:453
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:430
 msgid "Counter: Title"
 msgstr "计数器：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:458
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:435
 msgid "Counter: Prefix"
 msgstr "计数器：前缀"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:463
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:440
 msgid "Counter: Suffix"
 msgstr "计数器：后缀"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:473
-msgid "Countdown: Label days"
-msgstr "倒计时：天数标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:478
-msgid "Countdown: Label hours"
-msgstr "倒计时：小时标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:483
-msgid "Countdown: Label minutes"
-msgstr "倒计时：分钟标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:488
-msgid "Countdown: Label seconds"
-msgstr "倒计时：秒数标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:498
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:450
 msgid "Icon Box: Title text"
 msgstr "图标框：标题文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:503
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:455
 msgid "Icon Box: Description text"
 msgstr "图标框：描述文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:508
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:460
 msgid "Icon Box: Link"
 msgstr "图标框：链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:518
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:470
 msgid "Image Box: Title text"
 msgstr "图片框：标题文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:523
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:475
 msgid "Image Box: Description text"
 msgstr "图片框：描述文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:528
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:480
 msgid "Image Box: Link"
 msgstr "图片框：链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:538
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:490
 msgid "Animated Headline: Before text"
 msgstr "动画标题：前置文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:543
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:495
 msgid "Animated Headline: Highlighted text"
 msgstr "动画标题：高亮文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:548
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:500
 msgid "Animated Headline: Rotating text"
 msgstr "动画标题：轮换文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:553
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:505
 msgid "Animated Headline: After text"
 msgstr "动画标题：后置文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:558
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:510
 msgid "Animated Headline: Link URL"
 msgstr "动画标题：链接URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:568
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:520
 msgid "Flip Box: Title text side A"
 msgstr "翻转框：A面标题文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:573
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:525
 msgid "Flip Box: Description text side A"
 msgstr "翻转框：A面描述文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:578
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:530
 msgid "Flip Box: Title text side B"
 msgstr "翻转框：B面标题文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:583
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:535
 msgid "Flip Box: Description text side B"
 msgstr "翻转框：B面描述文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:588
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:540
 msgid "Flip Box: Button text"
 msgstr "翻转框：按钮文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:593
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:545
 msgid "Flip Box: Button link"
 msgstr "翻转框：按钮链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:603
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:555
 msgid "Call to action: title"
 msgstr "行动号召：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:608
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:560
 msgid "Call to action: description"
 msgstr "行动号召：描述"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:613
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:565
 msgid "Call to action: button"
 msgstr "行动号召：按钮"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:618
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:570
 msgid "Call to action: ribbon title"
 msgstr "行动号召：丝带标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:623
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:575
 msgid "Call to action: link"
 msgstr "行动号召：链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:668
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:615
 msgid "Price Table: Heading"
 msgstr "价格表：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:673
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:620
 msgid "Price Table: Sub heading"
 msgstr "价格表：副标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:678
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:625
 msgid "Price Table: Period"
 msgstr "价格表：周期"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:683
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:630
 msgid "Price Table: Button text"
 msgstr "价格表：按钮文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:688
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:635
 msgid "Price Table: Footer additional info"
 msgstr "价格表：页脚附加信息"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:693
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:640
 msgid "Price Table: Ribbon title"
 msgstr "价格表：丝带标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:698
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:645
 msgid "Price Table: Button link"
 msgstr "价格表：按钮链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:709
-msgid "Form: name"
-msgstr "表单：名称"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:714
-msgid "Form: Button text"
-msgstr "表单：按钮文本"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:719
-msgid "Form: Email subject"
-msgstr "表单：电子邮件主题"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:724
-msgid "Form: Email from name"
-msgstr "表单：电子邮件发件人名称"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:729
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:739
-msgid "Form: Email Content"
-msgstr "表单：电子邮件内容"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:734
-msgid "Form: Email subject 2"
-msgstr "表单：电子邮件主题2"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:744
-msgid "Form: Success message"
-msgstr "表单：成功消息"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:749
-msgid "Form: Error message"
-msgstr "表单：错误消息"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:754
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:764
-msgid "Form: Required message"
-msgstr "表单：必填消息"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:759
-msgid "Form: Invalid message"
-msgstr "表单：无效消息"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:769
-msgid "Form: Redirect to URL"
-msgstr "表单：重定向到URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:780
-msgid "Posts: Classic Read more text"
-msgstr "文章：经典阅读更多文本"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:785
-msgid "Posts: Previous Label"
-msgstr "文章：上一页标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
-msgid "Posts: Next Label"
-msgstr "文章：下一页标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
-msgid "Posts: Cards Read more text"
-msgstr "文章：卡片阅读更多文本"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:805
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:656
 msgid "Menu Anchor"
 msgstr "菜单锚点"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:815
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:666
 msgid "Archive: Cards Separator"
 msgstr "存档：卡片分隔符"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:820
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:671
 msgid "Archive: Cards Read More Text"
 msgstr "存档：卡片阅读更多文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:825
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:676
 msgid "Archive: Nothing Found Message"
 msgstr "存档：未找到消息"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:830
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:681
 msgid "Archive: Previous Label"
 msgstr "存档：上一页标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:835
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:686
 msgid "Archive: Next Label"
 msgstr "存档：下一页标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:840
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:691
 msgid "Archive: Classic Separator"
 msgstr "存档：经典分隔符"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:845
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:696
 msgid "Archive: Classic Read More Text"
 msgstr "存档：经典阅读更多文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:855
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:706
 msgid "Search: Placeholder"
 msgstr "搜索：占位符"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:865
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:716
 msgid "Post Navigation: Previous Label"
 msgstr "文章导航：上一篇标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:870
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:721
 msgid "Post Navigation: Next Label"
 msgstr "文章导航：下一篇标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:880
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:731
 msgid "Divider: Text"
 msgstr "分隔线：文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:890
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:741
 msgid "Table of Contents: Title"
 msgstr "目录：标题"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:907
-msgid "Lottie: Link URL"
-msgstr "Lottie：链接URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:917
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:751
 msgid "Author: Name"
 msgstr "作者：姓名"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:922
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:756
 msgid "Author: Bio"
 msgstr "作者：简介"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:928
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:762
 msgid "Author: Link"
 msgstr "作者：链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:933
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:767
 msgid "Author: Archive Text"
 msgstr "作者：存档文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:939
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:773
 msgid "Author: Archive URL"
 msgstr "作者：存档URL"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:956
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
 msgid "Galleries: All Label"
 msgstr "画廊：全部标签"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:961
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
 msgid "Galleries: Gallery custom link"
 msgstr "画廊：画廊自定义链接"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/DynamicContent/Strings.php:149
-msgid "Dynamic content string: %s"
-msgstr "动态内容字符串：%s"
+#. Translators: %s: Post type label. For example, Elementor Landing Pages.
+#: addons/wpml-page-builders/classes/Integrations/Elementor/Hooks/TranslationGuiLabels.php:29
+msgid "Elementor %s"
+msgstr "Elementor %s"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:25
 msgid "WPML Language Switcher"
@@ -869,97 +791,61 @@ msgstr "显示国旗"
 msgid "Show Active Language - has to be ON with Dropdown"
 msgstr "显示当前语言 - 必须与下拉菜单一起开启"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:97
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:361
 msgid "Native language name"
 msgstr "本地语言名称"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:117
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:362
 msgid "Language name in current language"
 msgstr "当前语言中的语言名称"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:129
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:119
 msgid "Style"
 msgstr "样式"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:138
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:128
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:568
 msgid "Normal"
 msgstr "普通"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:153
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:201
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:271
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:143
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:191
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:261
 msgid "Text Color"
 msgstr "文字颜色"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:169
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:286
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:159
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:276
 msgid "Background Color"
 msgstr "背景颜色"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:184
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:174
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:569
 msgid "Hover"
 msgstr "悬停"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:227
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:217
 msgid "Language Flag"
 msgstr "语言国旗"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:238
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:310
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:228
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:300
 msgid "Margin"
 msgstr "外边距"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:252
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:242
 msgid "Post Translation Text"
 msgstr "文章翻译文本"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:288
 msgid "Padding"
 msgstr "内边距"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-accordion.php:30
 msgid "Accordion: Title"
 msgstr "手风琴：标题"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:39
-msgid "Form: Field label"
-msgstr "表单：字段标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:40
-msgid "Form: Field placeholder"
-msgstr "表单：字段占位符"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:41
-msgid "Form: Field HTML"
-msgstr "表单：字段HTML"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:42
-msgid "Form: Acceptance Text"
-msgstr "表单：接受文本"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:43
-msgid "Form: Checkbox Options"
-msgstr "表单：复选框选项"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:44
-msgid "Form: Step Next Label"
-msgstr "表单：下一步标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:45
-msgid "Form: Step Previous Label"
-msgstr "表单：上一步标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:46
-msgid "Form: Previous Button"
-msgstr "表单：上一步按钮"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:47
-msgid "Form: Next Button"
-msgstr "表单：下一步按钮"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:30
 msgid "Icon List: Text"
@@ -968,18 +854,6 @@ msgstr "图标列表：文本"
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:33
 msgid "Icon List: Link URL"
 msgstr "图标列表：链接URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:29
-msgid "Pricing list: title"
-msgstr "价格列表：标题"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:33
-msgid "Pricing list: description"
-msgstr "价格列表：描述"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:37
-msgid "Pricing list: link"
-msgstr "价格列表：链接"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-table.php:29
 msgid "Price table: text"
@@ -1029,22 +903,6 @@ msgstr "切换：标题"
 msgid "Toggle: Content"
 msgstr "切换：内容"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:12
-msgid "Hotspot: Label"
-msgstr "热点：标签"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:14
-msgid "Hotspot: Content"
-msgstr "热点：内容"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:16
-msgid "Hotspot: URL"
-msgstr "热点：URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MediaCarousel.php:29
-msgid "Media Carousel: link URL"
-msgstr "媒体轮播：链接URL"
-
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MultipleGallery.php:12
 msgid "Galleries: Gallery Title"
 msgstr "画廊：画廊标题"
@@ -1069,16 +927,35 @@ msgstr "评论：评论图片"
 msgid "Reviews: Comment Link"
 msgstr "评论：评论链接"
 
-#. translators: 1 and 2 are html <strong></strong> tags.
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:57
-msgid "%1$sWarning:%2$s You are trying to add a translation using the Fusion Builder Live editor but your site is configured to use the WPML Translation Editor."
-msgstr "%1$s警告：%2$s 您正在尝试使用Fusion Builder实时编辑器添加翻译，但您的站点配置为使用WPML翻译编辑器。"
+#. Translators: %s: Post type label. For example, Enfold Templates.
+#: addons/wpml-page-builders/classes/Integrations/Enfold/Hooks/TranslationGuiLabels.php:27
+msgid "Enfold %s"
+msgstr "Enfold %s"
 
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:62
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
-#: sitepress.class.php:1266
-msgid "OK"
-msgstr "确定"
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:27
+#: classes/options/class-wpml-multilingual-options.php:90
+msgid "You can set different options for each language"
+msgstr "您可以为每种语言设置不同的选项"
+
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:28
+#: classes/options/class-wpml-multilingual-options.php:91
+msgid "Use the language switcher in the top admin bar to switch languages, then set and save options for each language individually."
+msgstr "使用顶部管理栏中的语言切换器切换语言，然后为每种语言单独设置和保存选项。"
+
+#. Translators: %s: Post type label. For example, Avada Templates.
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/TranslationGuiLabels.php:38
+msgid "Avada %s"
+msgstr "Avada %s"
+
+#. Translators: %s: Post type label. For example, Site Templates.
+#: addons/wpml-page-builders/classes/Integrations/Gutenberg/Hooks/TranslationGuiLabels.php:29
+msgid "Site %s"
+msgstr "网站 %s"
+
+#. Translators: %s: Post type label. For example, WPBakery Templates.
+#: addons/wpml-page-builders/classes/Integrations/WPBakery/Hooks/TranslationGuiLabels.php:41
+msgid "WPBakery %s"
+msgstr "WPBakery %s"
 
 #: addons/wpml-page-builders/classes/Shared/st/class-wpml-st-pb-plugin.php:33
 msgid "The WPML Page Builders plugin that you're using is now part of WPML."
@@ -1096,45 +973,45 @@ msgstr "别担心，完整功能已在WPML字符串翻译中保留。"
 msgid "Deactivate WPML Page Builders"
 msgstr "停用WPML Page Builders"
 
-#: ajax.php:199
+#: ajax.php:178
 #: classes/menu-elements/class-wpml-user-options-menu.php:159
 #: menu/languages.php:647
 msgid "%s is currently hidden to visitors."
 msgstr "%s 当前对访问者隐藏。"
 
-#: ajax.php:207
+#: ajax.php:186
 #: classes/menu-elements/class-wpml-user-options-menu.php:166
 #: menu/languages.php:658
 msgid "%s are currently hidden to visitors."
 msgstr "%s 当前对访问者隐藏。"
 
-#: ajax.php:210
+#: ajax.php:189
 #: menu/languages.php:665
 msgid "You can enable its/their display for yourself, in your <a href=\"%s\">profile page</a>."
 msgstr "您可以在您的<a href=\"%s\">个人资料页面</a>中为自己启用其显示。"
 
-#: ajax.php:214
+#: ajax.php:193
 #: menu/languages.php:668
 msgid "All languages are currently displayed."
 msgstr "目前显示所有语言。"
 
-#: ajax.php:323
+#: ajax.php:306
 msgid "Error: No custom field"
 msgstr "错误：没有自定义字段"
 
-#: ajax.php:329
+#: ajax.php:312
 msgid "Error: Please provide translation action"
 msgstr "错误：请提供翻译操作"
 
-#: ajax.php:338
+#: ajax.php:321
 msgid "Settings updated"
 msgstr "设置已更新"
 
-#: ajax.php:341
+#: ajax.php:324
 msgid "Error: WPML Translation Management plugin not initiated"
 msgstr "错误：WPML翻译管理插件未初始化"
 
-#: ajax.php:346
+#: ajax.php:329
 msgid "Error: Please activate WPML Translation Management plugin"
 msgstr "错误：请激活WPML翻译管理插件"
 
@@ -1153,7 +1030,7 @@ msgstr "错误：请激活WPML翻译管理插件"
 #: classes/troubleshooting/SynchronizeSourceIdOfATEJobs/TriggerSynchronization.php:79
 #: classes/url-handling/class-wpml-xdomain-data-parser.php:84
 #: classes/widgets/class-wpml-widgets-support-backend.php:153
-#: inc/functions-troubleshooting.php:210
+#: inc/functions-troubleshooting.php:211
 #: inc/icl-admin-notifier.php:791
 #: inc/wp-nav-menus/class-wpml-nav-menu.php:169
 #: inc/wpml-post-edit-ajax.class.php:277
@@ -1346,8 +1223,8 @@ msgstr "如果您的主题或插件在前端使用AJAX操作，而WPML需要过�
 #: menu/languages.php:696
 #: menu/languages.php:759
 #: menu/languages.php:805
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
 #: menu/_custom_types_translation.php:132
 #: menu/_custom_types_translation.php:214
 #: menu/_login_translation_options.php:58
@@ -1489,7 +1366,7 @@ msgstr "操作"
 #: menu/menu-sync/menus-sync.php:130
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:211
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:227
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
 #: sitepress.class.php:1267
 msgid "Cancel"
 msgstr "取消"
@@ -2319,7 +2196,7 @@ msgid "Needs review"
 msgstr "需要审核"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:261
-#: inc/translation-management/translation-management.class.php:1173
+#: inc/translation-management/translation-management.class.php:1184
 #: inc/wp-nav-menus/menus-sync.php:428
 msgid "Not translated"
 msgstr "未翻译"
@@ -2331,7 +2208,7 @@ msgstr "等待自动翻译"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:266
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:275
-#: inc/translation-management/translation-management.class.php:1176
+#: inc/translation-management/translation-management.class.php:1187
 msgid "Waiting for translator"
 msgstr "等待译者"
 
@@ -2344,7 +2221,7 @@ msgid "Waiting for translation service"
 msgstr "等待翻译服务"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:284
-#: inc/translation-management/translation-management.class.php:1191
+#: inc/translation-management/translation-management.class.php:1202
 msgid "Translation ready to download"
 msgstr "翻译准备下载"
 
@@ -2357,12 +2234,12 @@ msgid "Translation completed"
 msgstr "翻译已完成"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:298
-#: inc/translation-management/translation-management.class.php:1182
+#: inc/translation-management/translation-management.class.php:1193
 msgid "Needs update"
 msgstr "需要更新"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:301
-#: inc/translation-management/translation-management.class.php:1179
+#: inc/translation-management/translation-management.class.php:1190
 msgid "In progress"
 msgstr "进行中"
 
@@ -2569,14 +2446,6 @@ msgstr "下次您发送此页面进行翻译时，您所做的任何更改都将
 #: classes/notices/wpml-tm-post-edit-notices.php:195
 msgid "Go Back"
 msgstr "返回"
-
-msgid "Translated with PTC"
-msgstr "由PTC翻译"
-
-
-
-msgid "Made at OnTheGoSystems"
-msgstr "由OnTheGoSystems制作"
 
 #: classes/notices/wpml-tm-post-edit-notices.php:196
 msgid "Edit Anyway (Not Recommended)"
@@ -3249,13 +3118,13 @@ msgstr "最后一页"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:121
 #: classes/utilities/admin/wpml-admin-pagination-render.php:37
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
 msgid "Current page"
 msgstr "当前页面"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:122
 #: classes/utilities/admin/wpml-admin-pagination-render.php:38
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
 msgid "of"
 msgstr "共"
 
@@ -3335,7 +3204,7 @@ msgid "Translation:"
 msgstr "翻译："
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-row-view.php:77
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:73
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:78
 msgid "Edit translation"
 msgstr "编辑翻译"
 
@@ -4062,55 +3931,55 @@ msgstr "无批次"
 msgid "Contact the translator"
 msgstr "联系译者"
 
-#: inc/translation-management/translation-management.class.php:1185
+#: inc/translation-management/translation-management.class.php:1196
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:381
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:396
 msgid "Duplicate"
 msgstr "复制"
 
-#: inc/translation-management/translation-management.class.php:1188
+#: inc/translation-management/translation-management.class.php:1199
 msgid "Complete"
 msgstr "完成"
 
-#: inc/translation-management/translation-management.class.php:1194
+#: inc/translation-management/translation-management.class.php:1205
 msgid "In progress - needs retry"
 msgstr "进行中 - 需要重试"
 
-#: inc/translation-management/translation-management.class.php:1916
+#: inc/translation-management/translation-management.class.php:1927
 msgid "Translation entry not found for: %d"
 msgstr "未找到%d的翻译条目"
 
-#: inc/translation-management/translation-management.class.php:2078
-#: inc/translation-management/translation-management.class.php:2097
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
+#: inc/translation-management/translation-management.class.php:2089
+#: inc/translation-management/translation-management.class.php:2108
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
 msgid "translate"
 msgstr "翻译"
 
-#: inc/translation-management/translation-management.class.php:2080
+#: inc/translation-management/translation-management.class.php:2091
 msgid "string not registered"
 msgstr "字符串未注册"
 
-#: inc/translation-management/translation-management.class.php:2088
+#: inc/translation-management/translation-management.class.php:2099
 msgid "Multiple options"
 msgstr "多个选项"
 
-#: inc/translation-management/translation-management.class.php:2100
+#: inc/translation-management/translation-management.class.php:2111
 msgid "some strings might be not registered"
 msgstr "某些字符串可能未注册"
 
-#: inc/translation-management/translation-management.class.php:2325
+#: inc/translation-management/translation-management.class.php:2336
 msgid " - (needs update)"
 msgstr " - （需要更新）"
 
-#: inc/translation-management/translation-management.class.php:2500
+#: inc/translation-management/translation-management.class.php:2511
 msgid "Preferences saved."
 msgstr "偏好设置已保存。"
 
-#: inc/translation-management/translation-management.class.php:2519
+#: inc/translation-management/translation-management.class.php:2530
 msgid "Translation requests cancelled."
 msgstr "翻译请求已取消。"
 
-#: inc/translation-management/translation-management.class.php:2521
+#: inc/translation-management/translation-management.class.php:2532
 msgid "No Translation requests selected."
 msgstr "未选择翻译请求。"
 
@@ -4928,7 +4797,7 @@ msgid "WPML Network Setup"
 msgstr "WPML网络设置"
 
 #: menu/network.php:54
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
 msgid "Search"
 msgstr "搜索"
 
@@ -5160,208 +5029,217 @@ msgstr "对于高级访问或完全卸载WPML并删除所有语言信息，请�
 msgid "For retrieving debug information if asked by support person, use the %sdebug information%s page."
 msgstr "如果支持人员要求检索调试信息，请使用%s调试信息%s页面。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:11
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
 msgid "Show"
 msgstr "显示"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:12
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
 msgid "untranslated"
 msgstr "未翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:13
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
 msgid "all"
 msgstr "全部"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:14
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
 msgid "in"
 msgstr "在"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
 msgid "to"
 msgstr "到"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
 #: menu/_custom_types_translation.php:172
 msgid "Taxonomy"
 msgstr "分类法"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
 msgid "any language"
 msgstr "任何语言"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
 msgid "Refresh"
 msgstr "刷新"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
 msgid "Update Taxonomy Hierarchy"
 msgstr "更新分类法层级"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
 msgid "select parent"
 msgstr "选择父级"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
 msgid "Select the taxonomy to translate: "
 msgstr "选择要翻译的分类法："
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:28
 msgid "%1$s Translation"
 msgstr "%1$s翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
 msgid "Hierarchy Synchronization"
 msgstr "层级同步"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
 msgid "Copy to all languages"
 msgstr "复制到所有语言"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
 msgid "Overwrite existing translations"
 msgstr "覆盖现有翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
 msgid "Will be removed"
 msgstr "将被移除"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
 msgid "Will be added"
 msgstr "将被添加"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:32
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
 msgid "Legend:"
 msgstr "图例："
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
 msgid "Synchronize taxonomy hierarchy according to: %1$s language."
 msgstr "根据%1$s语言同步分类法层级。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
 msgid "Target Language"
 msgstr "目标语言"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
 msgid "Term translation"
 msgstr "术语翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
 msgid "Original term"
 msgstr "原始术语"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
 msgid "Label translation"
 msgstr "标签翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
 msgid "Copy from original"
 msgstr "从原始复制"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
 msgid "Original:"
 msgstr "原始："
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
 msgid "Translation to:"
 msgstr "翻译为："
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
 msgid "Name"
 msgstr "名称"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
 msgid "Slug"
 msgstr "别名"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
 msgid "Description"
 msgstr "描述"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: sitepress.class.php:1266
+msgid "OK"
+msgstr "确定"
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
 msgid "Singular"
 msgstr "单数"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
 msgid "Plural"
 msgstr "复数"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
 msgid "Change language"
 msgstr "更改语言"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
 msgid "loading"
 msgstr "加载中"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
 msgid "Go to previous page"
 msgstr "转到上一页"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
 msgid "Go to the next page"
 msgstr "转到下一页"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
 msgid "Go to the first page"
 msgstr "转到第一页"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
 msgid "Go to the last page"
 msgstr "转到最后一页"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
 msgid "The taxonomy hierarchy is now synchronized."
 msgstr "分类法层级现已同步。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
 msgid "The taxonomy hierarchy is already synchronized."
 msgstr "分类法层级已经同步。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
 msgid "No %1$s found."
 msgstr "未找到%1$s。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
 msgid "items"
 msgstr "项目"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
 msgid "item"
 msgstr "项目"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
 msgid "Translation of %1$s"
 msgstr "%1$s的翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:67
 msgid "Translations of taxonomy %1$s labels and slug"
 msgstr "分类法%1$s标签和别名的翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:68
 msgid "To translate taxonomy labels and slug you need %s plugin."
 msgstr "要翻译分类法标签和别名，你需要%s插件。"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:69
 msgid "Loading ..."
 msgstr "加载中..."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:70
 msgid "%1$s terms (in original language)"
 msgstr "%1$s术语（原始语言）"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:72
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:71
+msgid "Because too many %1$s were found, only the first %2$s results are listed. You can refine the results using the Search field below."
+msgstr "由于找到的%1$s太多，仅列出前%2$s个结果。你可以使用下面的搜索字段来细化结果。"
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:77
 msgid "Add translation"
 msgstr "添加翻译"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:74
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:79
 msgid "Original language"
 msgstr "原始语言"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:75
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:80
 msgid "This term has additional meta fields:"
 msgstr "此术语有额外的元字段："
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:220
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:224
 msgid "Wrong nonce"
 msgstr "错误的一次性令牌"
 
@@ -5911,23 +5789,23 @@ msgstr "页面构建器选项"
 msgid "Send to translation the content of raw HTML cells"
 msgstr "发送原始 HTML 单元格的内容进行翻译"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:118
+#: modules/cache-plugins-integration/cache-plugins-integration.php:116
 msgid "<i>%s</i> integration"
 msgstr "<i>%s</i> 集成"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:120
+#: modules/cache-plugins-integration/cache-plugins-integration.php:118
 msgid "You are using a caching plugin. When you translate strings, the cache needs to be cleared in order for the translation to display."
 msgstr "您正在使用缓存插件。翻译字符串时，需要清除缓存以显示翻译。"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:125
+#: modules/cache-plugins-integration/cache-plugins-integration.php:123
 msgid "Automatically clear the cache when strings are translated"
 msgstr "翻译字符串时自动清除缓存"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:128
+#: modules/cache-plugins-integration/cache-plugins-integration.php:126
 msgid "I will clear the cache manually after translating strings"
 msgstr "翻译字符串后我将手动清除缓存"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:131
+#: modules/cache-plugins-integration/cache-plugins-integration.php:129
 msgid "Clear cache now"
 msgstr "立即清除缓存"
 

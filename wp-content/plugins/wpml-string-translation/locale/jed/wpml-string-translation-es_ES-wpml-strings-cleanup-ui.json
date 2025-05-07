@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "Limpia la tabla de traducción de cadenas eliminando las cadenas no traducidas por dominio."
          ],
-         "Translated with PTC": [
-            "Traducido por PTC"
-         ],
          "Remove strings by domain": [
             "Eliminar cadenas por dominio"
          ],

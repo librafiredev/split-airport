@@ -31,6 +31,9 @@ class RemoteTranslationServiceDomain {
   /** @var RemoteTranslationServiceExtraField[] */
   private $extraFields;
 
+  /** @var bool */
+  private $autoRefreshProjectOptions;
+
   /**
    * When the maximumJobsPerBatch is not set or it's 0 this means that., we don't need to chunk the translation service jobs separately
    * @var int | null
@@ -49,6 +52,7 @@ class RemoteTranslationServiceDomain {
    * @param mixed[] $customFieldsData
    * @param RemoteTranslationServiceExtraField[] $extraFields
    * @param int | null $maximumJobsPerBatch
+   * @param bool $autoRefreshProjectOptions
    */
   public function __construct(
     int $id,
@@ -60,7 +64,8 @@ class RemoteTranslationServiceDomain {
     array $customFields,
     array $customFieldsData,
     array $extraFields,
-    int $maximumJobsPerBatch = null
+    int $maximumJobsPerBatch = null,
+    bool $autoRefreshProjectOptions = false
   ) {
     $this->id                     = $id;
     $this->name                   = $name;
@@ -72,6 +77,7 @@ class RemoteTranslationServiceDomain {
     $this->customFieldsData       = $customFieldsData;
     $this->extraFields            = $extraFields;
     $this->maximumJobsPerBatch    = $maximumJobsPerBatch;
+    $this->autoRefreshProjectOptions = $autoRefreshProjectOptions;
   }
 
 
@@ -156,6 +162,11 @@ class RemoteTranslationServiceDomain {
   }
 
 
+  public function getAutoRefreshProjectOptions(): bool {
+    return $this->autoRefreshProjectOptions;
+  }
+
+
   /**
    * @return array{
    *   id: int,
@@ -168,7 +179,8 @@ class RemoteTranslationServiceDomain {
    *   label: string,
    *   name: string,
    *   items: ExtraFieldItems|null
-   * }>
+   * }>,
+   *   autoRefreshProjectOptions: bool
    * }
    */
   public function toArray(): array {
@@ -185,6 +197,7 @@ class RemoteTranslationServiceDomain {
         },
         $this->getExtraFields()
       ),
+      'autoRefreshProjectOptions' => $this->getAutoRefreshProjectOptions()
     ];
   }
 

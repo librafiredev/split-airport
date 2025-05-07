@@ -60,6 +60,7 @@ class WPML_Menu_Sync_Display {
 					<tr>
 						<th scope="row" class="check-column">
 							<input type="checkbox"
+								   class="wpml-checkbox-native"
 								   name="<?php echo $input_name; ?>"
 								   value="<?php echo esc_attr( $item_name ); ?>"/>
 						</th>

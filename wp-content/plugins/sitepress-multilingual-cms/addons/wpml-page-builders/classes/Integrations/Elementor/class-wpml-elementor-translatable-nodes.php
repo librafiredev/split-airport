@@ -150,7 +150,9 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 				} elseif ( class_exists( $class_or_instance ) ) {
 					try {
 						$instances[] = new $class_or_instance();
-					} catch ( Exception $e ) {}
+					} catch ( Exception $e ) {
+						// Allow to continue if an integration class fails.
+					}
 				}
 			}
 		}
@@ -255,16 +257,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					),
 				),
 			),
-			'icon'                 => array(
-				'conditions' => array( self::TYPE => 'icon' ),
-				'fields'     => array(
-					'link' => array(
-						'field'       => 'url',
-						'type'        => __( 'Icon: Link URL', 'sitepress' ),
-						'editor_type' => 'LINK',
-					),
-				),
-			),
 			'video'                => array(
 				'conditions' => array( self::TYPE => 'video' ),
 				'fields'     => array(
@@ -360,21 +352,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					),
 				),
 			),
-			'image'                => array(
-				'conditions' => array( self::TYPE => 'image' ),
-				'fields'     => array(
-					array(
-						'field'       => 'caption',
-						'type'        => __( 'Image: Caption', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					'link' => array(
-						'field'       => 'url',
-						'type'        => __( 'Image: Link URL', 'sitepress' ),
-						'editor_type' => 'LINK',
-					),
-				),
-			),
 			'alert'                => array(
 				'conditions' => array( self::TYPE => 'alert' ),
 				'fields'     => array(
@@ -461,31 +438,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					array(
 						'field'       => 'suffix',
 						'type'        => __( 'Counter: Suffix', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-				),
-			),
-			'countdown'            => array(
-				'conditions' => array( self::TYPE => 'countdown' ),
-				'fields'     => array(
-					array(
-						'field'       => 'label_days',
-						'type'        => __( 'Countdown: Label days', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'label_hours',
-						'type'        => __( 'Countdown: Label hours', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'label_minutes',
-						'type'        => __( 'Countdown: Label minutes', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'label_seconds',
-						'type'        => __( 'Countdown: Label seconds', 'sitepress' ),
 						'editor_type' => 'LINE',
 					),
 				),
@@ -645,11 +597,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 				'fields'            => array(),
 				'integration-class' => 'WPML_Elementor_Tabs',
 			),
-			'price-list'           => array(
-				'conditions'        => array( self::TYPE => 'price-list' ),
-				'fields'            => array(),
-				'integration-class' => 'WPML_Elementor_Price_List',
-			),
 			'icon-list'            => array(
 				'conditions'        => array( self::TYPE => 'icon-list' ),
 				'fields'            => array(),
@@ -700,102 +647,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					),
 				),
 				'integration-class' => 'WPML_Elementor_Price_Table',
-			),
-			'form'                 => array(
-				'conditions'        => array( self::TYPE => 'form' ),
-				'fields'            => array(
-					array(
-						'field'       => 'form_name',
-						'type'        => __( 'Form: name', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'button_text',
-						'type'        => __( 'Form: Button text', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'email_subject',
-						'type'        => __( 'Form: Email subject', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'email_from_name',
-						'type'        => __( 'Form: Email from name', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'email_content',
-						'type'        => __( 'Form: Email Content', 'sitepress' ),
-						'editor_type' => 'AREA',
-					),
-					array(
-						'field'       => 'email_subject_2',
-						'type'        => __( 'Form: Email subject 2', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'email_content_2',
-						'type'        => __( 'Form: Email Content', 'sitepress' ),
-						'editor_type' => 'AREA',
-					),
-					array(
-						'field'       => 'success_message',
-						'type'        => __( 'Form: Success message', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'error_message',
-						'type'        => __( 'Form: Error message', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'required_message',
-						'type'        => __( 'Form: Required message', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'invalid_message',
-						'type'        => __( 'Form: Invalid message', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'required_field_message',
-						'type'        => __( 'Form: Required message', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'redirect_to',
-						'type'        => __( 'Form: Redirect to URL', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-				),
-				'integration-class' => 'WPML_Elementor_Form',
-			),
-			'posts'                => array(
-				'conditions' => array( self::TYPE => 'posts' ),
-				'fields'     => array(
-					array(
-						'field'       => 'classic_read_more_text',
-						'type'        => __( 'Posts: Classic Read more text', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'pagination_prev_label',
-						'type'        => __( 'Posts: Previous Label', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'pagination_next_label',
-						'type'        => __( 'Posts: Next Label', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-					array(
-						'field'       => 'cards_read_more_text',
-						'type'        => __( 'Posts: Cards Read more text', 'sitepress' ),
-						'editor_type' => 'LINE',
-					),
-				),
 			),
 			'menu-anchor'          => array(
 				'conditions' => array( self::TYPE => 'menu-anchor' ),
@@ -892,23 +743,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					),
 				),
 			),
-			'media-carousel'       => [
-				'conditions'        => [ self::TYPE => 'media-carousel' ],
-				'fields'            => [],
-				'integration-class' => [
-					'\WPML\PB\Elementor\Modules\MediaCarousel',
-				],
-			],
-			'lottie'               => [
-				'conditions' => [ self::TYPE => 'lottie' ],
-				'fields'     => [
-					'custom_link' => [
-						'field'       => 'url',
-						'type'        => __( 'Lottie: Link URL', 'sitepress' ),
-						'editor_type' => 'LINK',
-					],
-				],
-			],
 			'author-box'           => array(
 				'conditions' => array( self::TYPE => 'author-box' ),
 				'fields'     => array(
@@ -966,13 +800,6 @@ class WPML_Elementor_Translatable_Nodes implements IWPML_Page_Builders_Translata
 					'\WPML\PB\Elementor\Modules\MultipleGallery',
 				],
 			),
-			'hotspot'              => [
-				'conditions'        => [ self::TYPE => 'hotspot' ],
-				'fields'            => [],
-				'integration-class' => [
-					\WPML\PB\Elementor\Modules\Hotspot::class,
-				],
-			],
 		);
 	}
 

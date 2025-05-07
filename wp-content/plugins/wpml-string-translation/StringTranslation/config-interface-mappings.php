@@ -34,6 +34,7 @@ use WPML\StringTranslation\Application\StringHtml\Repository\HtmlStringsReposito
 use WPML\StringTranslation\Application\StringHtml\Repository\JsonStringsRepositoryInterface;
 use WPML\StringTranslation\Application\StringHtml\Validator\IsExcludedHtmlStringValidatorInterface;
 use WPML\StringTranslation\Application\Setting\Repository\FilesystemRepositoryInterface;
+use WPML\StringTranslation\Application\Setting\Repository\PluginRepositoryInterface;
 use WPML\StringTranslation\Application\Setting\Repository\SettingsRepositoryInterface;
 use WPML\StringTranslation\Application\Setting\Repository\UrlRepositoryInterface;
 use WPML\StringTranslation\Application\Translation\Query\FindTranslationDetailsQueryInterface;
@@ -76,6 +77,7 @@ use WPML\StringTranslation\Infrastructure\StringHtml\Repository\HtmlStringsRepos
 use WPML\StringTranslation\Infrastructure\StringHtml\Repository\JsonStringsRepository;
 use WPML\StringTranslation\Infrastructure\StringHtml\Validator\IsExcludedHtmlStringValidator;
 use WPML\StringTranslation\Infrastructure\Setting\Repository\FilesystemRepository;
+use WPML\StringTranslation\Infrastructure\Setting\Repository\PluginRepository;
 use WPML\StringTranslation\Infrastructure\Setting\Repository\SettingsRepository;
 use WPML\StringTranslation\Infrastructure\Setting\Repository\UrlRepository;
 use WPML\StringTranslation\Infrastructure\StringPackage\Query\SearchPopulatedKindsQuery;
@@ -118,6 +120,7 @@ return [
 	JsonStringsRepositoryInterface::class => JsonStringsRepository::class,
 	IsExcludedHtmlStringValidatorInterface::class => IsExcludedHtmlStringValidator::class,
 	FilesystemRepositoryInterface::class => FilesystemRepository::class,
+	PluginRepositoryInterface::class => PluginRepository::class,
 	SettingsRepositoryInterface::class => SettingsRepository::class,
 	UrlRepositoryInterface::class => UrlRepository::class,
 	FindTranslationDetailsQueryInterface::class => FindTranslationDetailsQuery::class,

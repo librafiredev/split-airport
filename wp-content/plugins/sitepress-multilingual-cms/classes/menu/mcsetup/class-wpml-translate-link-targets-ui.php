@@ -44,7 +44,7 @@ class WPML_Translate_Link_Targets_UI extends WPML_TM_MCS_Section_UI {
 		);
 
 		$output .= '<p>' . $main_message . '</p>';
-		$output .= '<button id="wpml-scan-link-targets" class="button-secondary"';
+		$output .= '<button id="wpml-scan-link-targets" class="button-secondary wpml-button base-btn wpml-button--outlined"';
 
 		foreach ( $data_attributes as $key => $value ) {
 			$output .= ' data-' . $key . '="' . $value . '"';

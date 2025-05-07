@@ -188,9 +188,9 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 		</table>
 		<a name="add_po_strings_confirm"></a>
 
-			<p><span style="float: left"><input class="js-wpml-btn-cancel button" type="button" value="<?php echo esc_attr__( 'Cancel', 'wpml-string-translation' ); ?>"
+			<p><span style="float: left"><input class="js-wpml-btn-cancel button wpml-button base-btn gray-light-btn" type="button" value="<?php echo esc_attr__( 'Cancel', 'wpml-string-translation' ); ?>"
 												onclick="location.href='admin.php?page=<?php echo htmlspecialchars( $_GET['page'], ENT_QUOTES ); ?>'"/>
-		&nbsp;<input disabled="disabled" class="js-wpml-btn-add-strings button-primary" type="submit" value="<?php echo esc_attr__( 'Add selected strings', 'wpml-string-translation' ); ?>"/></span><span class="spinner" style="float: left"></span>
+		&nbsp;<input disabled="disabled" class="js-wpml-btn-add-strings button-primary wpml-button base-btn" type="submit" value="<?php echo esc_attr__( 'Add selected strings', 'wpml-string-translation' ); ?>"/></span><span class="spinner" style="float: left"></span>
 		</p>
 		</form>
 
@@ -613,7 +613,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 						<div class="utilities-icon">
 						</div>
 
-						<h2>Utilities</h2>
+						<h2><?php echo __('Utilities', 'wpml-string-translation'); ?></h2>
 					</div>
 
 					<?php if ( current_user_can( 'manage_options' ) ) : ?>
@@ -644,21 +644,21 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 								</div>
 							</div>
 							<div class="inside">
-								<p>WPML can detect untranslated strings and automatically register them for translation. WPML will register any untranslated strings encountered while browsing the site.</p>
+								<p><?php echo __('WPML can detect untranslated strings and automatically register them for translation. WPML will register any untranslated strings encountered while browsing the site.', 'wpml-string-translation'); ?></p>
 								<label for="autoregister-strings-type-only-viewed-by-admin" style="display: block; padding-top: 10px; padding-bottom: 10px">
 									<input type="radio"
-										   class="js-auto-register-enabled"
+										   class="wpml-radio-native js-auto-register-enabled"
 										   id="autoregister-strings-type-only-viewed-by-admin"
 										   name="<?php echo AutoRegisterSettings::KEY_ENABLED; ?>"
 										   value="<?php echo $auto_register_settings->getTypeOnlyViewedByAdmin(); ?>"
 									<?php checked( true, $auto_register_settings->getIsTypeOnlyViewedByAdmin() ); ?>
 									>
 									<?php echo esc_html__( 'Untranslated strings that I encounter while logged in', 'wpml-string-translation' ); ?>
-									(<span style="color: #2782ad">recommended</span>)
+									<mark class="wpml-blue-badge"><?php echo __('recommended', 'wpml-string-translation'); ?></mark>
 								</label>
 								<label for="autoregister-strings-type-viewed-by-all-users" style="display: block; padding-top: 10px; padding-bottom: 10px">
 									<input type="radio"
-										   class="js-auto-register-enabled"
+										   class="wpml-radio-native js-auto-register-enabled"
 										   id="autoregister-strings-type-viewed-by-all-users"
 										   name="<?php echo AutoRegisterSettings::KEY_ENABLED; ?>"
 										   value="<?php echo $auto_register_settings->getTypeViewedByAllUsers(); ?>"
@@ -668,7 +668,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 								</label>
 								<label for="autoregister-strings-type-disabled" style="display: block; padding-top: 10px; padding-bottom: 10px">
 									<input type="radio"
-										   class="js-auto-register-enabled"
+										   class="wpml-radio-native js-auto-register-enabled"
 										   id="autoregister-strings-type-disabled"
 										   name="<?php echo AutoRegisterSettings::KEY_ENABLED; ?>"
 										   value="<?php echo $auto_register_settings->getTypeDisabled(); ?>"
@@ -681,7 +681,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 									<p class="button-wrap">
 										<input type="button"
 											   id="save-autoregister-strings-type"
-											   class="button-secondary"
+											   class="button-secondary wpml-button base-btn wpml-button--outlined"
 											   value="<?php echo esc_attr__( 'Save settings', 'wpml-string-translation' ); ?>"
 										/>
 										<span class="icl_ajx_response" id="icl-ajx-response-autoregister-strings-type" style="display:inline"></span>
@@ -692,6 +692,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 										>
 											<input
 												id="autoregister-strings-should-register-backend-strings"
+												class="wpml-checkbox-native"
 												type="checkbox"
 											<?php checked( true, $auto_register_settings->getShouldRegisterBackendStrings() ); ?>
 											<?php echo $auto_register_settings->getIsTypeDisabled() ? 'disabled="disabled"' : ""; ?>
@@ -779,7 +780,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 									<div class="sub field-bottom-spacer">
 										<div class="clear">
 											<div class="checkbox-and-select-checkbox checkbox-and-small-select-checkbox">
-												<input type="checkbox" name="icl_st_po_translations" id="icl_st_po_translations" />
+												<input type="checkbox" class="wpml-checkbox-native" name="icl_st_po_translations" id="icl_st_po_translations" />
 												<label for="icl_st_po_translations"><?php echo esc_html__( 'Also create translations according to the .po file', 'wpml-string-translation' ); ?></label>
 											</div>
 											<div class="checkbox-and-select-select checkbox-and-small-select-select">
@@ -812,15 +813,15 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 												</select>
 											</div>
 											<div class="select-and-button-button">
-												<a href="#" id="icl_st_importpo_newbutton"><?php echo esc_html__( 'New', 'wpml-string-translation' ); ?></a>
-												<a href="#" style="display: none" id="icl_st_importpo_existingbutton"><?php echo esc_html__( 'Select from existing', 'wpml-string-translation' ); ?></a>
+												<button class="button-secondary wpml-button base-btn wpml-button--outlined" id="icl_st_importpo_newbutton"><?php echo esc_html__( 'New', 'wpml-string-translation' ); ?></button>
+												<button class="button-secondary wpml-button base-btn wpml-button--outlined" style="display: none" id="icl_st_importpo_existingbutton"><?php echo esc_html__( 'Select from existing', 'wpml-string-translation' ); ?></button>
 											</div>
 										</div>
 										<?php endif; ?>
 									</div>
 
 									<p class="button-wrap">
-										<input class="button button-secondary" name="icl_po_upload" id="icl_po_upload" type="submit" value="<?php echo esc_attr__( 'Submit', 'wpml-string-translation' ); ?>"/>
+										<input class="button-secondary wpml-button base-btn wpml-button--outlined" name="icl_po_upload" id="icl_po_upload" type="submit" value="<?php echo esc_attr__( 'Submit', 'wpml-string-translation' ); ?>"/>
 										<span id="icl_st_err_domain" class="icl_error_text" style="display:none"><?php echo esc_html__( 'Please enter a domain!', 'wpml-string-translation' ); ?></span>
 										<span id="icl_st_err_po" class="icl_error_text" style="display:none"><?php echo esc_html__( 'Please select the .po file to upload!', 'wpml-string-translation' ); ?></span>
 									</p>
@@ -857,7 +858,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 									<div>
 										<div class="clear field-bottom-spacer">
 											<div class="checkbox-and-select-checkbox">
-												<input type="checkbox" name="icl_st_pe_translations" id="icl_st_pe_translations" checked="checked" value="1" onchange="if(jQuery(this).prop('checked'))jQuery('#icl_st_e_language').fadeIn('fast'); else jQuery('#icl_st_e_language').fadeOut('fast')" />
+												<input type="checkbox" class="wpml-checkbox-native" name="icl_st_pe_translations" id="icl_st_pe_translations" checked="checked" value="1" onchange="if(jQuery(this).prop('checked'))jQuery('#icl_st_e_language').fadeIn('fast'); else jQuery('#icl_st_e_language').fadeOut('fast')" />
 												<label for="icl_st_pe_translations"><?php echo esc_html__( 'Also include translations', 'wpml-string-translation' ); ?></label>
 											</div>
 											<div class="checkbox-and-select-select">
@@ -879,7 +880,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 											</div>
 										</div>
 									</div>
-									<p class="button-wrap"><input type="submit" class="button-secondary" name="icl_st_pie_e" value="<?php echo esc_attr__( 'Submit', 'wpml-string-translation' ); ?>"/></p>
+									<p class="button-wrap"><input type="submit" class="button-secondary wpml-button base-btn wpml-button--outlined" name="icl_st_pie_e" value="<?php echo esc_attr__( 'Submit', 'wpml-string-translation' ); ?>"/></p>
 								</form>
 							</div>
 							<?php endif ?>
@@ -925,7 +926,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 								<div class="wpml-st-excluded-info-wrapper clear">
 									<p class="button-wrap">
 										<input type="button"
-											   class="button-secondary"
+											   class="button-secondary wpml-button base-btn wpml-button--outlined"
 											   id="wpml-language-of-domains-link"
 											   value="<?php echo __( "Set the language of text-domains", "sitepress" ); ?>"
 										/>
@@ -1003,7 +1004,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 										<div class="checkbox-wrap">
 											<div class="checkbox">
 												<input
-													type="checkbox"
+													type="checkbox" class="wpml-checkbox-native"
 													name="users[<?php echo $role; ?>]"
 													value="1"
 													<?php echo $checked; ?>
@@ -1017,7 +1018,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 								<div id="action-buttons" class="clear">
 									<p class="button-wrap">
 										<input type="submit"
-											   class="button-secondary"
+											   class="button-secondary wpml-button base-btn wpml-button--outlined"
 											   id="wpml-user-properties"
 											   data-editUserRoleText="<?php echo esc_attr__( 'Edit user roles', 'wpml-string-translation' ); ?>"
 											   data-applyText="<?php echo esc_attr__( 'Apply', 'wpml-string-translation' ); ?>"
@@ -1070,7 +1071,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 											$track_strings         = array_key_exists( 'track_strings', $string_settings ) && $string_settings['track_strings'];
 											$track_strings_checked = checked( true, $track_strings, false );
 											?>
-											<input type="checkbox" id="track_strings" name="icl_st[track_strings]" value="1" <?php echo $track_strings_checked; ?> />
+											<input type="checkbox" class="wpml-checkbox-native" id="track_strings" name="icl_st[track_strings]" value="1" <?php echo $track_strings_checked; ?> />
 											<label for="track_strings"><?php esc_html_e( 'Track where strings appear on the site', 'wpml-string-translation' ); ?></label>
 										</li>
 										<li class="clear wpml-picker-container">
@@ -1096,7 +1097,7 @@ wp_enqueue_style( 'wpml-tooltip', WPML_ST_URL . '/res/css/tooltip/tooltip.css', 
 										</li>
 									</ul>
 									<p class="button-wrap">
-										<input class="button-secondary" type="submit" name="iclt_st_save" value="<?php esc_attr_e( 'Apply', 'wpml-string-translation' ); ?>"/>
+										<input class="button-secondary wpml-button base-btn wpml-button-outlined" type="submit" name="iclt_st_save" value="<?php esc_attr_e( 'Apply', 'wpml-string-translation' ); ?>"/>
 										<span class="icl_ajx_response" id="icl_ajx_response2" style="display:inline"></span>
 									</p>
 								</form>

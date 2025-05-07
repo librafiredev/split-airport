@@ -104,6 +104,8 @@ class TranslatableTypesQuery implements TranslatableTypesQueryInterface {
       );
     }
 
+    $postTypeObject = apply_filters( 'wpml_post_type_dto_filter', $postTypeObject );
+
     return new PostTypeDto(
       $postTypeObject->name,
       $postTypeObject->labels->name,

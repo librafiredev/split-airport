@@ -102,7 +102,7 @@ class WPML_SEO_HeadLangs {
 				<form id="icl_seo_options" name="icl_seo_options" action="">
 					<?php wp_nonce_field( 'icl_seo_options_nonce', '_icl_nonce' ); ?>
 					<p>
-						<input type="checkbox" id="icl_seo_head_langs" name="icl_seo_head_langs"
+						<input type="checkbox" id="icl_seo_head_langs" class="wpml-checkbox-native" name="icl_seo_head_langs"
 							<?php
 							if ( $seo['head_langs'] ) {
 								echo 'checked="checked"';
@@ -131,7 +131,7 @@ class WPML_SEO_HeadLangs {
 					</p>
 					<p class="buttons-wrap">
 						<span class="icl_ajx_response" id="icl_ajx_response_seo"> </span>
-						<input class="button button-primary" name="save" value="<?php esc_attr_e( 'Save', 'sitepress' ); ?>" type="submit"/>
+						<input class="button-primary wpml-button base-btn" name="save" value="<?php esc_attr_e( 'Save', 'sitepress' ); ?>" type="submit"/>
 					</p>
 				</form>
 			</div>

@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "エンジンの読み込みに失敗しました"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "最も優先度の高いエンジンから低いエンジンへとドラッグ＆ドロップで並べ替えてください。"
+         "Drag your default engine to the top and order the rest by priority.": [
+            "デフォルトのエンジンを一番上にドラッグし、残りを優先順位で並べ替えてください。"
          ],
          "Which translation engines do you want to use?": [
             "どの翻訳エンジンを使用しますか？"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "自動翻訳エンジンは翻訳スタイルとサポートされる言語ペアが異なります。優先する翻訳エンジンが使用したい言語ペアをサポートしていない場合、次に優先するエンジンでその言語ペアをサポートしているものにフォールバックします。詳細については、"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "自動翻訳エンジンは、翻訳スタイルとサポートされる言語ペアが異なります。お好みの翻訳エンジンが使用したい言語ペアをサポートしていない場合、次に優先されるエンジンでその言語ペアをサポートしているものにフォールバックします。"
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI（ベータ版）はコンテンツの形式を自動的に検出し、同じ形式で翻訳します。"
@@ -56,14 +56,20 @@
          "Edit formality": [
             "形式を編集"
          ],
+         "%d credits per word": [
+            "単語あたり%dクレジット"
+         ],
+         "Backup %d": [
+            "バックアップ %d"
+         ],
+         "Default": [
+            "デフォルト"
+         ],
          "ON": [
             "オン"
          ],
          "OFF": [
             "オフ"
-         ],
-         "%d credits per word": [
-            "単語あたり%dクレジット"
          ],
          "Documentation": [
             "ドキュメント"
@@ -101,9 +107,6 @@
          "Update": [
             "更新"
          ],
-         "Default": [
-            "デフォルト"
-         ],
          "Formal": [
             "フォーマル"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "レビュー待ち"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "DeepL、Google、Azureで推奨"
+         "Recommended with DeepL, Google and Microsoft": [
+            "DeepL、Google、Microsoftと併せて推奨"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL、Google、Azureは優れた翻訳を提供しますが、正確性を確認するために人間によるレビューをお勧めします。WPML AIは文脈を理解し、人間を超える翻訳を提供するので、レビュープロセスを自信を持ってスキップできます。"
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL、Google、Microsoftは優れた翻訳を提供しますが、正確さを確認するために人間による確認をお勧めします。WPML AIは文脈を理解した人間以上の翻訳を提供するため、確認プロセスを自信を持ってスキップできます。"
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPMLは翻訳を未公開のままにし、先にレビューできるようにします。"

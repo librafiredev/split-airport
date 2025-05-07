@@ -73,7 +73,6 @@ abstract class WPML_Page_Builders_Register_Strings {
 			}
 
 			if ( $this->reuse_translations ) {
-				// @phpstan-ignore-next-line
 				$this->reuse_translations->find_and_reuse( $post->ID, $existing_strings );
 			}
 		}

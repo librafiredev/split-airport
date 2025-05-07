@@ -34,7 +34,7 @@ class __TwigTemplate_00db527eb895eb4185b8a0708d771c7ef4ceb5fae2397947eeb3b84af2f
         echo "</p>
 <p>
     <input type=\"checkbox\" id=\"wpml-ls-show-in-shortcode-actions\" name=\"statics[shortcode_actions][show]\" value=\"1\"
-                   class=\"js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-shortcode-actions-toggle-target\"
+                   class=\"wpml-checkbox-native js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-shortcode-actions-toggle-target\"
                    ";
         // line 5
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "shortcode_actions", []), "show", [])) {
@@ -71,13 +71,14 @@ class __TwigTemplate_00db527eb895eb4185b8a0708d771c7ef4ceb5fae2397947eeb3b84af2f
             echo " hidden";
         }
         echo "\">
-    <button class=\"js-wpml-ls-open-dialog button-secondary\"
+    <button class=\"button-secondary js-wpml-ls-open-dialog wpml-button base-btn wpml-button--outlined\"
             data-target=\"#wpml-ls-slot-list-statics-shortcode_actions\"
             name=\"wpml-ls-customize\">";
         // line 27
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "shortcode_actions", []), "customize_button_label", []), "html", null, true);
         echo "</button>
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()

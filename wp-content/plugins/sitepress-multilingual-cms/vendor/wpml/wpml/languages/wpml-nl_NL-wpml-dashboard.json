@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Zoek bovenliggend element op titel"
          ],
+         "Search by term title in %s": [
+            "Zoek op term titel in %s"
+         ],
          "All taxonomies": [
             "Alle taxonomieën"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Geen termen gevonden"
-         ],
-         "Search by term title": [
-            "Zoeken op termtitel"
          ],
          "Filter by:": [
             "Filteren op:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "De meeste strings van uw plugins en thema zijn in het Engels, dus we tonen ze naast uw standaardtaal. Gebruik het filter <b>Brontaal</b> om strings in een specifieke taal te bekijken."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Je gebruikt <b>%s</b> om je site te cachen, wat kan voorkomen dat WPML automatisch nieuwe strings registreert. Om dit op te lossen, leeg je pagina-cache en bezoek dan je vertaalde pagina's opnieuw aan de voorkant om nieuwe strings te detecteren."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML kan teksten detecteren die op de site verschijnen en ze hier vermelden. Deze functie helpt u de teksten te identificeren die daadwerkelijk op de site verschijnen en ze te vertalen. Om hier alleen de teksten te zien die daadwerkelijk op de site verschijnen, moet u deze functie inschakelen."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Batchnaam:"
+         ],
+         "Default translation engine: ": [
+            "Standaard vertaalengine: "
+         ],
+         "Change": [
+            "Wijzigen"
+         ],
+         "Failed to load engines": [
+            "Laden van engines mislukt"
          ],
          "Your Automatic Translation Credits": [
             "Uw Automatische Vertaalkredieten"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Kon enginedata niet ophalen"
+         ],
          "Error in fetching currently logged in translator": [
             "Fout bij het ophalen van de momenteel ingelogde vertaler"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Wachten op beoordeling"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Aanbevolen met DeepL, Google en Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Aanbevolen met DeepL, Google en Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google en Azure leveren geweldige vertalingen, maar we raden een menselijke controle aan om te bevestigen dat ze correct zijn. WPML AI biedt Beter dan Menselijke Vertalingen die context begrijpen, zodat u het beoordelingsproces met vertrouwen kunt overslaan."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google en Microsoft leveren geweldige vertalingen, maar we raden aan om ze door een mens te laten checken om zeker te weten dat ze kloppen. WPML AI levert vertalingen die beter zijn dan die van mensen en die de context snappen, zodat je met een gerust hart het nakijken kunt overslaan."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML houdt vertalingen ongepubliceerd, zodat u ze eerst kunt beoordelen."

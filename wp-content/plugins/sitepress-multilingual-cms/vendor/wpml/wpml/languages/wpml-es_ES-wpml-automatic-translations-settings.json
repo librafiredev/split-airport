@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "No se pudieron cargar los motores"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "Arrastra y suelta para ordenar desde el motor más preferido al menos preferido."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "Arrastre su motor predeterminado a la parte superior y ordene el resto por prioridad."
          ],
          "Which translation engines do you want to use?": [
             "¿Qué motores de traducción quieres usar?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "Los motores de traducción automática difieren en el estilo de traducción y los pares de idiomas compatibles. Si tu motor de traducción preferido no es compatible con un par de idiomas que deseas usar, recurrimos al siguiente motor preferido que sí lo admita. Aprende más sobre,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "Los motores de traducción automática difieren en el estilo de traducción y los pares de idiomas compatibles. Si su motor de traducción preferido no admite un par de idiomas que desea utilizar, recurriremos al siguiente motor preferido que sí lo admita."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (beta) detecta automáticamente la formalidad de tu contenido y traduce con la misma formalidad."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "Editar formalidad"
          ],
+         "%d credits per word": [
+            "%d créditos por palabra"
+         ],
+         "Backup %d": [
+            "Copia de seguridad %d"
+         ],
+         "Default": [
+            "Predeterminado"
+         ],
          "ON": [
             "ACTIVADO"
          ],
          "OFF": [
             "DESACTIVADO"
-         ],
-         "%d credits per word": [
-            "%d créditos por palabra"
          ],
          "Documentation": [
             "Documentación"
@@ -101,9 +107,6 @@
          "Update": [
             "Actualizar"
          ],
-         "Default": [
-            "Predeterminado"
-         ],
          "Formal": [
             "Formal"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "Esperar revisión"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Recomendado con DeepL, Google y Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Recomendado con DeepL, Google y Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google y Azure ofrecen excelentes traducciones, pero recomendamos una revisión humana para confirmar que son correctas. WPML AI proporciona Traducciones Mejores que las Humanas que entienden el contexto, por lo que puedes omitir con confianza el proceso de revisión."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google y Microsoft ofrecen excelentes traducciones, pero recomendamos una revisión humana para confirmar que sean correctas. WPML proporciona Traducciones Mejores que las Humanas que comprenden el contexto, por lo que puede omitir con confianza el proceso de revisión."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML mantiene las traducciones sin publicar, para que puedas revisarlas primero."

@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "ドメインごとに未翻訳の文字列を削除して、文字列変換テーブルをクリーンアップする。"
          ],
-         "Translated with PTC": [
-            "PTCで翻訳"
-         ],
          "Remove strings by domain": [
             "ドメインごとに文字列を削除する"
          ],

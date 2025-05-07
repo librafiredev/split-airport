@@ -23,7 +23,7 @@ class UnsupportedLanguagesInTranslationService implements StrategyInterface {
    * If it does, we must extract the unsupported language codes.
    * At the end, we need to return one message for all of them.
    *
-   * @param array{type: string, text?: string}[] $errors
+   * @param array{type?: string, text?: string}[] $errors
    *
    * @return string|null
    */

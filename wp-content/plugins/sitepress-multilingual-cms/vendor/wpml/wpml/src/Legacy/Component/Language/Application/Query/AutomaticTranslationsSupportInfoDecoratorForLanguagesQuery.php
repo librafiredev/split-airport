@@ -56,6 +56,17 @@ class AutomaticTranslationsSupportInfoDecoratorForLanguagesQuery implements Lang
   private function addInfoAboutAutomaticTranslationsSupport( array $languages ): array {
     $languagesData = CachedLanguageMappings::getAllLanguagesWithAutomaticSupportInfo();
 
+    if ( ! is_array( $languagesData ) ) {
+      return [];
+    }
+
+    $languagesData = array_filter(
+      $languagesData,
+      function ( $languageData ) {
+        return is_array( $languageData ) && isset( $languageData['can_be_translated_automatically'] );
+      }
+    );
+
     return array_map(
       function ( LanguageDto $language ) use ( $languagesData ) {
         $matchedLanguage = $languagesData[ $language->getCode() ] ?? null;

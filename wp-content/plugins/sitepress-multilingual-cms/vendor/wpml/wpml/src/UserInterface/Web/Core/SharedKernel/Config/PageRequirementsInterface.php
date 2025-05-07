@@ -5,8 +5,8 @@ namespace WPML\UserInterface\Web\Core\SharedKernel\Config;
 /**
 * Interface PageRequirementsInterface
 *
-* If the 'controller' of a page implements this interface, the controller will
-* can do some extra checks before the page is loaded.
+* If the 'controller' of a page implements this interface, the controller
+* determines if the notice should be displayed.
 */
 interface PageRequirementsInterface {
 

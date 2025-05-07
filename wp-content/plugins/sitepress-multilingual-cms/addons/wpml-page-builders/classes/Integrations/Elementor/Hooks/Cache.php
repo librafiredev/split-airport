@@ -17,6 +17,8 @@ class Cache implements \IWPML_Frontend_Action, \IWPML_Backend_Action {
 	public function add_hooks() {
 		Hooks::onAction( 'wpml_translation_job_saved' )
 			->then( spreadArgs( [ $this, 'flushAll' ] ) );
+		Hooks::onAction( 'wpml_pb_translations_auto_updated' )
+			->then( spreadArgs( [ $this, 'flushAll' ] ) );
 	}
 
 	/**
@@ -42,7 +44,9 @@ class Cache implements \IWPML_Frontend_Action, \IWPML_Backend_Action {
 				if ( $fileManager && method_exists( $fileManager, 'clear_cache' ) ) {
 					$fileManager->clear_cache();
 				}
-			} catch ( \Exception $e ) {}
+			} catch ( \Exception $e ) {
+				// Do nothing.
+			}
 		}
 	}
 

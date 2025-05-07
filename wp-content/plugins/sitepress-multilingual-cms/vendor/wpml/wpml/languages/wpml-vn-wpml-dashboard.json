@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Tìm kiếm mục gốc theo tiêu đề"
          ],
+         "Search by term title in %s": [
+            "Tìm kiếm theo tiêu đề thuật ngữ trong %s"
+         ],
          "All taxonomies": [
             "Tất cả phân loại"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Không tìm thấy thuật ngữ nào"
-         ],
-         "Search by term title": [
-            "Tìm kiếm theo tiêu đề thuật ngữ"
          ],
          "Filter by:": [
             "Lọc theo:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "Hầu hết các chuỗi từ plugin và chủ đề của bạn đều bằng tiếng Anh, vì vậy chúng tôi đang hiển thị chúng cùng với ngôn ngữ mặc định của bạn. Sử dụng bộ lọc <b>Ngôn ngữ nguồn</b> để xem các chuỗi bằng một ngôn ngữ cụ thể."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Bạn đang sử dụng <b>%s</b> để lưu bộ đệm trang web của mình, điều này có thể ngăn WPML tự động đăng ký các chuỗi mới. Để khắc phục, hãy xóa bộ đệm trang của bạn, sau đó truy cập lại các trang đã dịch trên giao diện người dùng để phát hiện các chuỗi mới."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML có thể phát hiện các chuỗi xuất hiện trên trang web và liệt kê chúng ở đây. Tính năng này giúp bạn xác định các chuỗi thực sự xuất hiện trên trang web và dịch chúng. Để chỉ xem ở đây các chuỗi thực sự xuất hiện trên trang web, bạn cần kích hoạt tính năng này."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Tên lô:"
+         ],
+         "Default translation engine: ": [
+            "Công cụ dịch mặc định: "
+         ],
+         "Change": [
+            "Thay đổi"
+         ],
+         "Failed to load engines": [
+            "Không tải được các công cụ"
          ],
          "Your Automatic Translation Credits": [
             "Tín dụng Dịch thuật Tự động của Bạn"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Không thể lấy dữ liệu công cụ"
+         ],
          "Error in fetching currently logged in translator": [
             "Lỗi khi tìm nạp người dịch hiện đang đăng nhập"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Chờ xem xét"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Được khuyến nghị với DeepL, Google và Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Được đề xuất với DeepL, Google và Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google và Azure cung cấp bản dịch tuyệt vời, nhưng chúng tôi khuyên nên có sự xem xét của con người để xác nhận tính chính xác. WPML AI cung cấp Bản dịch Tốt hơn Con người có khả năng hiểu ngữ cảnh, vì vậy bạn có thể tự tin bỏ qua quá trình xem xét."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google và Microsoft cung cấp các bản dịch tuyệt vời, nhưng chúng tôi khuyên bạn nên có một người kiểm tra để xác nhận chúng là chính xác. WPML AI cung cấp các bản dịch Tốt hơn Con người, hiểu được ngữ cảnh, vì vậy bạn có thể tự tin bỏ qua quá trình kiểm tra."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML giữ các bản dịch chưa được xuất bản, để bạn có thể xem xét chúng trước."

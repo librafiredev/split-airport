@@ -154,6 +154,9 @@
          "Search parent by title": [
             "ค้นหาหมวดหมู่หลักตามชื่อเรื่อง"
          ],
+         "Search by term title in %s": [
+            "ค้นหาตามชื่อคำศัพท์ใน %s"
+         ],
          "All taxonomies": [
             "ทุกอนุกรมวิธาน"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "ไม่พบคำศัพท์"
-         ],
-         "Search by term title": [
-            "ค้นหาตามชื่อคำศัพท์"
          ],
          "Filter by:": [
             "กรองตาม:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "สตริงส่วนใหญ่จากปลั๊กอินและธีมของคุณเป็นภาษาอังกฤษ ดังนั้นเราจึงแสดงพวกมันพร้อมกับภาษาเริ่มต้นของคุณ ใช้ตัวกรอง <b>ภาษาต้นฉบับ</b> เพื่อดูสตริงในภาษาเฉพาะ."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "คุณกำลังใช้ <b>%s</b> เพื่อแคชเว็บไซต์ของคุณ ซึ่งอาจป้องกันไม่ให้ WPML ลงทะเบียนสตริงใหม่โดยอัตโนมัติ เพื่อแก้ไขปัญหานี้ ให้ล้างแคชหน้าเพจของคุณ จากนั้นเข้าชมหน้าที่แปลแล้วของคุณอีกครั้งที่ส่วนหน้าเพื่อตรวจหาสตริงใหม่."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML สามารถตรวจหาสตริงที่ปรากฏบนเว็บไซต์และแสดงรายการที่นี่ คุณสมบัตินี้ช่วยคุณระบุสตริงที่ปรากฏจริงบนเว็บไซต์และแปลได้ หากต้องการเห็นเฉพาะสตริงที่ปรากฏจริงบนเว็บไซต์ที่นี่ คุณต้องเปิดใช้งานคุณสมบัตินี้."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "ชื่อชุดงาน:"
+         ],
+         "Default translation engine: ": [
+            "เครื่องมือแปลภาษาอัตโนมัติเริ่มต้น: "
+         ],
+         "Change": [
+            "เปลี่ยน"
+         ],
+         "Failed to load engines": [
+            "โหลดเครื่องมือแปลภาษาอัตโนมัติไม่สำเร็จ"
          ],
          "Your Automatic Translation Credits": [
             "เครดิตการแปลอัตโนมัติของคุณ"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "ไม่สามารถดึงข้อมูลเครื่องมือแปลภาษาอัตโนมัติได้"
+         ],
          "Error in fetching currently logged in translator": [
             "เกิดข้อผิดพลาดในการดึงข้อมูลนักแปลที่เข้าสู่ระบบในปัจจุบัน"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "รอการตรวจสอบ"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "แนะนำสำหรับ DeepL, Google และ Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "แนะนำสำหรับ DeepL, Google และ Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google และ Azure ให้การแปลที่ยอดเยี่ยม แต่เราแนะนำให้มีการตรวจสอบโดยมนุษย์เพื่อยืนยันว่าถูกต้อง WPML AI ให้การแปลที่ดีกว่ามนุษย์ซึ่งเข้าใจบริบท ดังนั้นคุณจึงสามารถข้ามขั้นตอนการตรวจสอบได้อย่างมั่นใจ."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google และ Microsoft ให้บริการแปลที่ยอดเยี่ยม แต่เราแนะนำให้มีการตรวจสอบโดยมนุษย์เพื่อยืนยันว่าถูกต้อง WPML AI ให้บริการการแปลที่ดีกว่ามนุษย์ที่เข้าใจบริบท ดังนั้นคุณจึงสามารถข้ามขั้นตอนการตรวจสอบได้อย่างมั่นใจ."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML เก็บการแปลไว้โดยไม่เผยแพร่ เพื่อให้คุณสามารถตรวจสอบก่อน."

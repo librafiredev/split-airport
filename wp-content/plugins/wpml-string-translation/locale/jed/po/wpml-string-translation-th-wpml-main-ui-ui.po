@@ -15,19 +15,19 @@ msgstr "Shift+แท็บ"
 msgid "Tab"
 msgstr "แท็บ"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:102
+#: src/js/main-ui/components/EditTranslationPopup.js:104
 msgid "Translation to:"
 msgstr "แปลเป็น:"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:121
+#: src/js/main-ui/components/EditTranslationPopup.js:123
 msgid "Copy from original"
 msgstr "คัดลอกมาจากต้นฉบับ"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:136
+#: src/js/main-ui/components/EditTranslationPopup.js:138
 msgid "Use Shift+Enter to add a new line."
 msgstr "ใช้ Shift+Enter เพื่อเพิ่มบรรทัดใหม่"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:95
+#: src/js/main-ui/components/EditTranslationPopup.js:97
 msgid "Original:"
 msgstr "ต้นฉบับ:"
 

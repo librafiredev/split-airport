@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "로딩 중..."
 msgid "Failed to load engines"
 msgstr "엔진 로드에 실패했습니다"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "가장 선호하는 엔진부터 가장 덜 선호하는 엔진 순으로 정렬하려면 드래그 앤 드롭하세요."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "기본 엔진을 맨 위로 끌어다 놓고 나머지를 우선순위에 따라 정렬하세요."
 
 msgid "Which translation engines do you want to use?"
 msgstr "어떤 번역 엔진을 사용하시겠습니까?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "자동 번역 엔진은 번역 스타일과 지원되는 언어 쌍이 다릅니다. 선호하는 번역 엔진이 사용하려는 언어 쌍을 지원하지 않는 경우, 해당 언어 쌍을 지원하는 다음으로 선호하는 엔진으로 대체됩니다. 다음에 대해 자세히 알아보세요,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "자동 번역 엔진은 번역 스타일과 지원되는 언어 쌍에 따라 다릅니다. 선호하는 번역 엔진이 사용하려는 언어 쌍을 지원하지 않는 경우, 해당 언어 쌍을 지원하는 다음 선호 엔진으로 전환됩니다."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "WPML AI (베타)는 콘텐츠의 격식을 자동으로 감지하고 동일한 격식으로 번역합니다."
@@ -63,14 +63,20 @@ msgstr "귀하의 사이트는 격식 설정을 제공하는 언어를 사용하
 msgid "Edit formality"
 msgstr "격식 수정"
 
+msgid "%d credits per word"
+msgstr "단어당 %d 크레딧"
+
+msgid "Backup %d"
+msgstr "백업 %d"
+
+msgid "Default"
+msgstr "기본값"
+
 msgid "ON"
 msgstr "켜짐"
 
 msgid "OFF"
 msgstr "꺼짐"
-
-msgid "%d credits per word"
-msgstr "단어당 %d 크레딧"
 
 msgid "Documentation"
 msgstr "문서"
@@ -110,9 +116,6 @@ msgstr "취소"
 msgid "Update"
 msgstr "업데이트"
 
-msgid "Default"
-msgstr "기본값"
-
 msgid "Formal"
 msgstr "공식적"
 
@@ -140,11 +143,11 @@ msgstr "WPML이 콘텐츠를 자동으로 번역한 후 어떤 작업을 수행�
 msgid "Wait for review"
 msgstr "검토 대기"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "DeepL, Google 및 Azure와 함께 권장됨"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "DeepL, Google 및 Microsoft와 함께 권장됨"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google 및 Azure는 훌륭한 번역을 제공하지만, 정확성을 확인하기 위해 인간의 검토를 권장합니다. WPML AI는 맥락을 이해하는 인간보다 나은 번역을 제공하므로 검토 과정을 자신 있게 건너뛸 수 있습니다."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google, Microsoft는 훌륭한 번역을 제공하지만, 정확성을 확인하기 위해 사람의 검토를 권장합니다. WPML AI는 맥락을 이해하는 인간보다 우수한 번역을 제공하므로 검토 과정을 자신 있게 건너뛸 수 있습니다."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML은 번역을 게시하지 않고 보관하여 먼저 검토할 수 있도록 합니다."

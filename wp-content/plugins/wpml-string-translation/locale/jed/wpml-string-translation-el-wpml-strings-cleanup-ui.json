@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "Καθαρισμός πίνακα μεταφράσεων."
          ],
-         "Translated with PTC": [
-            "Μετάφραση με PTC"
-         ],
          "Remove strings by domain": [
             "Αφαίρεση ανά τομέα"
          ],

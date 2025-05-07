@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "טעינת המנועים נכשלה"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "גרור ושחרר כדי למיין מהמנוע המועדף ביותר לפחות מועדף."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "גרור את מנוע בררת המחדל שלך לראש הרשימה וסדר את השאר לפי סדר עדיפות."
          ],
          "Which translation engines do you want to use?": [
             "באילו מנועי תרגום ברצונך להשתמש?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "מנועי תרגום אוטומטיים נבדלים בסגנון התרגום ובזוגות השפות הנתמכים. אם מנוע התרגום המועדף עליך אינו תומך בזוג שפות שברצונך להשתמש בו, אנו נופלים למנוע המועדף הבא שלך שכן תומך בו. למד עוד על,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "מנועי תרגום אוטומטיים נבדלים בסגנון התרגום ובצמדי השפות הנתמכים. אם מנוע התרגום המועדף עליך אינו תומך בצמד שפות שברצונך להשתמש בו, אנו נעבור למנוע המועדף הבא שלך שכן תומך בו."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (בטא) מזהה אוטומטית את הפורמליות של התוכן שלך ומתרגם באותה רמת פורמליות."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "ערוך פורמליות"
          ],
+         "%d credits per word": [
+            "%d נקודות זכות למילה"
+         ],
+         "Backup %d": [
+            "גיבוי %d"
+         ],
+         "Default": [
+            "ברירת מחדל"
+         ],
          "ON": [
             "פעיל"
          ],
          "OFF": [
             "כבוי"
-         ],
-         "%d credits per word": [
-            "%d נקודות זכות למילה"
          ],
          "Documentation": [
             "תיעוד"
@@ -101,9 +107,6 @@
          "Update": [
             "עדכון"
          ],
-         "Default": [
-            "ברירת מחדל"
-         ],
          "Formal": [
             "פורמלי"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "המתן לבדיקה"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "מומלץ עם DeepL, Google ו-Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "מומלץ עם DeepL, Google ו-Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google ו-Azure מספקים תרגומים מצוינים, אך אנו ממליצים על בדיקה אנושית כדי לאשר שהם נכונים. WPML AI מספק תרגומים טובים יותר מתרגום אנושי שמבינים הקשר, כך שתוכל לדלג בביטחון על תהליך הבדיקה."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google ו-Microsoft מספקים תרגומים נהדרים, אבל אנו ממליצים על סקירה אנושית כדי לאשר שהם נכונים. WPML מספק תרגומים טובים יותר מבני אדם שמבינים הקשר, כך שתוכל לדלג בביטחון על תהליך הסקירה."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML שומר תרגומים כלא מפורסמים, כך שתוכל לבדוק אותם תחילה."

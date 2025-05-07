@@ -32,7 +32,7 @@ class __TwigTemplate_e69f3e54bf486790ec80cc7c4a8d8f3cdf405a75bed30167681e6bb9fd0
         echo "<p class=\"wpml-ls-form-line js-wpml-ls-option\">
     <label for=\"wpml-ls-show-in-footer\">
         <input type=\"checkbox\" id=\"wpml-ls-show-in-footer\" name=\"statics[footer][show]\" value=\"1\"
-               class=\"js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-footer-toggle-target\"
+               class=\"wpml-checkbox-native js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-footer-toggle-target\"
                ";
         // line 5
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "footer", []), "show", [])) {

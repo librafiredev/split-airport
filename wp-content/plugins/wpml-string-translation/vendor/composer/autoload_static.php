@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit125428fd11190ac48ef6cf8457cb799b
+class ComposerStaticInitdab9449ec861009ffc60ad37d2be0097
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -153,6 +153,7 @@ class ComposerStaticInit125428fd11190ac48ef6cf8457cb799b
         'WPML\\StringTranslation\\Application\\Debug\\Repository\\ComponentDebugRepository' => __DIR__ . '/../..' . '/StringTranslation/Application/Debug/Repository/ComponentDebugRepository.php',
         'WPML\\StringTranslation\\Application\\Debug\\Service\\DebugService' => __DIR__ . '/../..' . '/StringTranslation/Application/Debug/Service/DebugService.php',
         'WPML\\StringTranslation\\Application\\Setting\\Repository\\FilesystemRepositoryInterface' => __DIR__ . '/../..' . '/StringTranslation/Application/Setting/Repository/FilesystemRepositoryInterface.php',
+        'WPML\\StringTranslation\\Application\\Setting\\Repository\\PluginRepositoryInterface' => __DIR__ . '/../..' . '/StringTranslation/Application/Setting/Repository/PluginRepositoryInterface.php',
         'WPML\\StringTranslation\\Application\\Setting\\Repository\\SettingsRepositoryInterface' => __DIR__ . '/../..' . '/StringTranslation/Application/Setting/Repository/SettingsRepositoryInterface.php',
         'WPML\\StringTranslation\\Application\\Setting\\Repository\\UrlRepositoryInterface' => __DIR__ . '/../..' . '/StringTranslation/Application/Setting/Repository/UrlRepositoryInterface.php',
         'WPML\\StringTranslation\\Application\\StringCore\\Command\\InsertStringPositionsCommandInterface' => __DIR__ . '/../..' . '/StringTranslation/Application/StringCore/Command/InsertStringPositionsCommandInterface.php',
@@ -223,6 +224,7 @@ class ComposerStaticInit125428fd11190ac48ef6cf8457cb799b
         'WPML\\StringTranslation\\Infrastructure\\Core\\HookHandler\\WPMLPopulatedItemSectionsFilter' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Core/HookHandler/WPMLPopulatedItemSectionsFilter.php',
         'WPML\\StringTranslation\\Infrastructure\\Factory' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Factory.php',
         'WPML\\StringTranslation\\Infrastructure\\Setting\\Repository\\FilesystemRepository' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Setting/Repository/FilesystemRepository.php',
+        'WPML\\StringTranslation\\Infrastructure\\Setting\\Repository\\PluginRepository' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Setting/Repository/PluginRepository.php',
         'WPML\\StringTranslation\\Infrastructure\\Setting\\Repository\\SettingsRepository' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Setting/Repository/SettingsRepository.php',
         'WPML\\StringTranslation\\Infrastructure\\Setting\\Repository\\UrlRepository' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/Setting/Repository/UrlRepository.php',
         'WPML\\StringTranslation\\Infrastructure\\StringCore\\Command\\BulkActionBaseCommand' => __DIR__ . '/../..' . '/StringTranslation/Infrastructure/StringCore/Command/BulkActionBaseCommand.php',
@@ -540,7 +542,7 @@ class ComposerStaticInit125428fd11190ac48ef6cf8457cb799b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit125428fd11190ac48ef6cf8457cb799b::$classMap;
+            $loader->classMap = ComposerStaticInitdab9449ec861009ffc60ad37d2be0097::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -10,6 +10,7 @@ class Provider {
 	public static function get() {
 		return [
 			EssentialAddons\ContentTimeline::get(),
+			PremiumAddonsForElementor\PremiumAddonsButton::get(),
 			LoopGrid::get(),
 			LoopCarousel::get(),
 			Hotspot::get(),

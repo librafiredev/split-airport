@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "Не удалось загрузить движки"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "Перетащите для сортировки от наиболее предпочтительного к наименее предпочтительному движку."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "Перетащите выбранный по умолчанию механизм наверх и расположите остальные по приоритету."
          ],
          "Which translation engines do you want to use?": [
             "Какие движки перевода вы хотите использовать?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "Движки автоматического перевода различаются по стилю перевода и поддерживаемым языковым парам. Если ваш предпочтительный движок перевода не поддерживает нужную вам языковую пару, мы переключаемся на следующий предпочтительный движок, который ее поддерживает. Узнайте больше о,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "Системы автоматического перевода различаются стилем перевода и поддерживаемыми языковыми парами. Если предпочитаемая вами система перевода не поддерживает нужную вам языковую пару, мы обращаемся к следующей предпочитаемой системе, которая её поддерживает."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (бета) автоматически определяет формальность вашего контента и переводит с той же формальностью."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "Редактировать формальность"
          ],
+         "%d credits per word": [
+            "%d кредитов за слово"
+         ],
+         "Backup %d": [
+            "Резервная копия %d"
+         ],
+         "Default": [
+            "По умолчанию"
+         ],
          "ON": [
             "ВКЛ"
          ],
          "OFF": [
             "ВЫКЛ"
-         ],
-         "%d credits per word": [
-            "%d кредитов за слово"
          ],
          "Documentation": [
             "Документация"
@@ -101,9 +107,6 @@
          "Update": [
             "Обновить"
          ],
-         "Default": [
-            "По умолчанию"
-         ],
          "Formal": [
             "Формальный"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "Ждать проверки"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Рекомендуется для DeepL, Google и Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Рекомендуется с DeepL, Google и Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google и Azure обеспечивают отличные переводы, но мы рекомендуем человеческую проверку, чтобы подтвердить их правильность. WPML AI предоставляет переводы лучше, чем человеческие, которые понимают контекст, поэтому вы можете уверенно пропустить процесс проверки."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google и Microsoft предоставляют отличные переводы, однако мы рекомендуем проведение человеческой проверки для подтверждения их корректности. WPML ИИ обеспечивает переводы, превосходящие человеческие, с пониманием контекста, что позволяет уверенно пропустить процесс проверки."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML сохраняет переводы неопубликованными, чтобы вы могли сначала их проверить."

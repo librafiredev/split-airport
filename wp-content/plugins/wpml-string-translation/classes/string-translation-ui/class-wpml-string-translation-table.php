@@ -154,7 +154,7 @@ class WPML_String_Translation_Table {
 			}
 		?>
 		<tr>
-			<td scope="col" class="manage-column column-cb check-column"><input type="checkbox"/></td>
+			<td scope="col" class="manage-column column-cb check-column"><input class="wpml-checkbox-native" type="checkbox"/></td>
 			<th scope="col"><?php esc_html_e( 'Domain', 'wpml-string-translation' ); ?></th>
 			<?php if ( $renderContext ) : ?>
 				<th scope="col"><?php esc_html_e( 'Context', 'wpml-string-translation' ); ?></th>
@@ -255,7 +255,7 @@ class WPML_String_Translation_Table {
 	private function render_checkbox_cell( $string ) {
 		$class = 'icl_st_row_cb' . ( ! empty( $string['string_package_id'] ) ? ' icl_st_row_package' : '' ) . ' js-icl-st-row-cb';
 
-		return '<td><input class="' . esc_attr( $class ) . '" type="checkbox" value="' . esc_attr( $string['string_id'] )
+		return '<td><input class="wpml-checkbox-native ' . esc_attr( $class ) . '" type="checkbox" value="' . esc_attr( $string['string_id'] )
 			   . '" data-language="' . esc_attr( $string['string_language'] ) . '" /></td>';
 	}
 

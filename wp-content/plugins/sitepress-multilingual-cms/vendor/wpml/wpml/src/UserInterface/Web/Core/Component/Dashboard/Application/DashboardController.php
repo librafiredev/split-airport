@@ -192,6 +192,7 @@ class DashboardController implements
       'languageEditorPage'              => admin_url( 'admin.php?page=sitepress-multilingual-cms%2Fmenu%2Flanguages.php&trop=1' ),
       'glossaryPage'                    => admin_url( 'admin.php?page=tm%2Fmenu%2Fmain.php&sm=ate-ams&settings=glossary' ),
       'translationProxyUrl'             => $this->translationProxyService->getTPUrl(),
+      'translationEngine'               => admin_url( 'admin.php?page=tm%2Fmenu%2Fsettings#automatic-translations-section' ),
     ];
   }
 
@@ -413,7 +414,7 @@ class DashboardController implements
     $smParameter = htmlspecialchars( (string) ( filter_input( INPUT_GET, 'sm' ) ?: '' ) );
 
     if ( empty( $smParameter ) || $smParameter === 'dashboard' ) {
-      echo '<div id="wpml-notices"></div>';
+      echo '<div id="wpml-notice-glossary"></div>';
     }
   }
 

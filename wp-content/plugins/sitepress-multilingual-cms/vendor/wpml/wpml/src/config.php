@@ -10,6 +10,9 @@ return [
   // Admin pages.
   'adminPages' => require __DIR__ . '/config-admin-pages.php',
 
+  // Admin notices.
+  'adminNotices' => require __DIR__ . '/config-admin-notices.php',
+
   // General endpoints. Page specific endpoints are defined in config-admin-pages.php.
   'endpoints' => require __DIR__ . '/config-endpoints.php',
 

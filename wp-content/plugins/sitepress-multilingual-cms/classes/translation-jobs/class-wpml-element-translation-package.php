@@ -195,6 +195,8 @@ class WPML_Element_Translation_Package extends WPML_Translation_Job_Helper {
 
 		$show = $wpdb->hide_errors();
 
+		$inserts = [];
+
 		foreach ( $translation_package['contents'] as $field => $value ) {
 			$job_translate = array(
 				'job_id'                => $job_id,
@@ -215,7 +217,26 @@ class WPML_Element_Translation_Package extends WPML_Translation_Job_Helper {
 
 			$job_translate = $this->filter_non_translatable_fields( $job_translate );
 
-			$wpdb->insert( $wpdb->prefix . 'icl_translate', $job_translate );
+			$inserts[] = $wpdb->prepare(
+				'( %d, %d, %s, %s, %s, %d, %s, %s, %d )',
+				$job_translate['job_id'],
+				$job_translate['content_id'],
+				$job_translate['field_type'],
+				$job_translate['field_wrap_tag'],
+				$job_translate['field_format'],
+				$job_translate['field_translate'],
+				$job_translate['field_data'],
+				$job_translate['field_data_translated'],
+				$job_translate['field_finished']
+			);
+		}
+
+		if ( $inserts ) {
+			$wpdb->query(
+				'INSERT INTO ' . $wpdb->prefix . 'icl_translate ' .
+				'(job_id, content_id, field_type, field_wrap_tag, field_format, field_translate, field_data, field_data_translated, field_finished) ' .
+				'VALUES ' . implode( ', ', $inserts )
+			);
 		}
 
 		$wpdb->show_errors( $show );

@@ -49,12 +49,9 @@ class PostCalculator {
     $content           = $this->contentFilter->getContent( $post->getContent(), $post->getId() ) ?: '';
     $additionalContent = $this->contentFilter->getAdditionalContent( '', $itemId ) ?: '';
 
-    $titleCount             = $this->calculator->words( $post->getTitle() );
-    $contentCount           = $this->calculator->words( $content );
-    $excerptCount           = $this->calculator->words( $post->getExcerpt() );
-    $additionalContentCount = $this->calculator->words( $additionalContent );
-
-    $wordCount = $titleCount + $contentCount + $excerptCount + $additionalContentCount;
+    $wordCount = $this->calculator->words(
+      $post->getTitle() . $post->getExcerpt() . $content . $additionalContent
+    );
 
     $this->metadata->update( $itemId, self::WORD_COUNT_META_KEY, (string) $wordCount );
 

@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "Αποτυχία φόρτωσης μηχανών"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "Σύρετε και αφήστε για να ταξινομήσετε από την πιο προτιμώμενη στη λιγότερο προτιμώμενη μηχανή."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "Σύρετε την προεπιλεγμένη μηχανή σας στην κορυφή και ταξινομήστε τις υπόλοιπες κατά προτεραιότητα."
          ],
          "Which translation engines do you want to use?": [
             "Ποιες μηχανές μετάφρασης θέλετε να χρησιμοποιήσετε;?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "Οι μηχανές αυτόματης μετάφρασης διαφέρουν ως προς το ύφος μετάφρασης και τα υποστηριζόμενα ζεύγη γλωσσών. Εάν η προτιμώμενη μηχανή μετάφρασής σας δεν υποστηρίζει ένα ζεύγος γλωσσών που επιθυμείτε να χρησιμοποιήσετε, ανατρέχουμε στην επόμενη προτιμώμενη μηχανή που το υποστηρίζει. Μάθετε περισσότερα σχετικά με,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "Οι αυτόματες μηχανές μετάφρασης διαφέρουν ως προς το ύφος μετάφρασης και τα υποστηριζόμενα ζεύγη γλωσσών. Εάν η προτιμώμενη μηχανή μετάφρασής σας δεν υποστηρίζει ένα ζεύγος γλωσσών που επιθυμείτε να χρησιμοποιήσετε, ανατρέχουμε στην επόμενη προτιμώμενη μηχανή σας που το υποστηρίζει."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "Το WPML AI (beta) ανιχνεύει αυτόματα την τυπικότητα του περιεχομένου σας και μεταφράζει με την ίδια τυπικότητα."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "Επεξεργασία τυπικότητας"
          ],
+         "%d credits per word": [
+            "%d πιστώσεις ανά λέξη"
+         ],
+         "Backup %d": [
+            "Αντίγραφο ασφαλείας %d"
+         ],
+         "Default": [
+            "Προεπιλογή"
+         ],
          "ON": [
             "ΕΝΕΡΓΟ"
          ],
          "OFF": [
             "ΑΝΕΝΕΡΓΟ"
-         ],
-         "%d credits per word": [
-            "%d πιστώσεις ανά λέξη"
          ],
          "Documentation": [
             "Τεκμηρίωση"
@@ -101,9 +107,6 @@
          "Update": [
             "Ενημέρωση"
          ],
-         "Default": [
-            "Προεπιλογή"
-         ],
          "Formal": [
             "Τυπικό"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "Αναμονή για επανεξέταση"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Συνιστάται με DeepL, Google και Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Συνιστάται με DeepL, Google και Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "Οι DeepL, Google και Azure παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστούμε ανθρώπινη επισκόπηση για επιβεβαίωση της ορθότητάς τους. Το WPML AI παρέχει Μεταφράσεις Καλύτερες από Ανθρώπινες που κατανοούν το πλαίσιο, επιτρέποντάς σας να παραλείψετε με σιγουριά τη διαδικασία επισκόπησης."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "Η DeepL, η Google και η Microsoft παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστούμε ανθρώπινη επισκόπηση για να επιβεβαιωθεί η ορθότητά τους. Το WPML AI προσφέρει Μεταφράσεις Καλύτερες από τις Ανθρώπινες που κατανοούν το πλαίσιο, ώστε να μπορείτε με βεβαιότητα να παραλείψετε τη διαδικασία επανεξέτασης."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "Το WPML διατηρεί τις μεταφράσεις μη δημοσιευμένες, ώστε να μπορείτε να τις επανεξετάσετε πρώτα."

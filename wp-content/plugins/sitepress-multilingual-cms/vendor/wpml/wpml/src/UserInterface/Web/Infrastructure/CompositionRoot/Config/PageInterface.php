@@ -45,15 +45,4 @@ interface PageInterface {
   );
 
 
-  /**
-   * @param array<mixed> $data
-   * @return void
-   */
-  public function provideDataForPage(
-    Page $page,
-    string $jsWindowKey,
-    $data
-  );
-
-
 }

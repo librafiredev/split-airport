@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:00+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:39+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -163,6 +163,9 @@ msgstr "הורה:"
 msgid "Search parent by title"
 msgstr "חפש הורה לפי כותרת"
 
+msgid "Search by term title in %s"
+msgstr "חפש לפי כותרת מונח ב-%s"
+
 msgid "All taxonomies"
 msgstr "כל הטקסונומיות"
 
@@ -177,9 +180,6 @@ msgstr "טוען מונחים"
 
 msgid "No terms found"
 msgstr "לא נמצאו מונחים"
-
-msgid "Search by term title"
-msgstr "חפש לפי כותרת מונח"
 
 msgid "Filter by:"
 msgstr "סנן לפי:"
@@ -391,6 +391,9 @@ msgstr "תרגום הכל מתרגם רק את המחרוזות שרשומות �
 msgid "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language."
 msgstr "רוב המחרוזות מהתוספים והערכת הנושא שלך הן באנגלית, לכן אנו מציגים אותן לצד שפת ברירת המחדל שלך. השתמש במסנן <b>שפת מקור</b> כדי להציג מחרוזות בשפה ספציפית."
 
+msgid "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings."
+msgstr "אתה משתמש ב-<b>%s</b> כדי לשמור את האתר שלך במטמון, מה שעלול למנוע מ-WPML לרשום מחרוזות חדשות באופן אוטומטי. כדי לתקן זאת, נקה את מטמון העמוד שלך ולאחר מכן בקר שוב בעמודים המתורגמים שלך בחזית האתר כדי לזהות מחרוזות חדשות."
+
 msgid "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature."
 msgstr "WPML יכול לזהות מחרוזות שמופיעות באתר ולהציג אותן כאן. תכונה זו עוזרת לך לזהות את המחרוזות שמופיעות בפועל באתר ולתרגם אותן. כדי לראות כאן רק את המחרוזות שמופיעות בפועל באתר, עליך להפעיל תכונה זו."
 
@@ -459,6 +462,15 @@ msgstr "אתה יכול להקצות שם מותאם אישית לאצווה ז�
 
 msgid "Batch name:"
 msgstr "שם האצווה:"
+
+msgid "Default translation engine: "
+msgstr "מנוע תרגום ברירת מחדל: "
+
+msgid "Change"
+msgstr "שנה"
+
+msgid "Failed to load engines"
+msgstr "טעינת מנועים נכשלה"
 
 msgid "Your Automatic Translation Credits"
 msgstr "נקודות זכות לתרגום אוטומטי שלך"
@@ -1105,6 +1117,9 @@ msgstr "דורש תשומת לב"
 msgid "%1$s: %2$s%3$s"
 msgstr "%1$s: %2$s%3$s"
 
+msgid "Could not fetch engines data"
+msgstr "לא ניתן היה לאחזר נתוני מנועים"
+
 msgid "Error in fetching currently logged in translator"
 msgstr "שגיאה בהבאת המתרגם המחובר כעת"
 
@@ -1168,11 +1183,11 @@ msgstr "מה תרצה לעשות לאחר ש-WPML יסיים לתרגם את ה�
 msgid "Wait for review"
 msgstr "המתן לסקירה"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "מומלץ עם DeepL, Google ו-Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "מומלץ עם DeepL, Google ו-Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google ו-Azure מספקים תרגומים מעולים, אך אנו ממליצים על סקירה אנושית כדי לאשר שהם נכונים. WPML AI מספק תרגומים טובים יותר מאדם שמבינים הקשר, כך שתוכל לדלג בביטחון על תהליך הסקירה."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google ו-Microsoft מספקות תרגומים נהדרים, אבל אנו ממליצים על סקירה אנושית כדי לאשר שהם נכונים. WPML AI מספק תרגומים טובים יותר מבני אדם שמבינים הקשר, כך שתוכל לדלג בבטחה על תהליך הסקירה."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML שומר תרגומים כלא מפורסמים, כך שתוכל לסקור אותם תחילה."

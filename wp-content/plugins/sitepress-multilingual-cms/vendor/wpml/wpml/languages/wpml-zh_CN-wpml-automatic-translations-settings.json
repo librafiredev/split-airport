@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "加载引擎失败"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "从最优先到最不优先的引擎进行拖放排序。"
+         "Drag your default engine to the top and order the rest by priority.": [
+            "将您的默认引擎拖到顶部，并按优先级排列其余引擎。"
          ],
          "Which translation engines do you want to use?": [
             "您想使用哪些翻译引擎？"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "自动翻译引擎在翻译风格和支持的语言对方面有所不同。如果您首选的翻译引擎不支持您想使用的语言对，我们会退而使用您下一个支持该语言对的首选引擎。了解更多关于，"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "自动翻译引擎在翻译风格和支持的语言对方面有所不同。如果您首选的翻译引擎不支持您想要使用的语言对，我们会退而使用您下一个支持该语言对的首选引擎。"
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI（测试版）自动检测您内容的正式程度，并以相同的正式程度进行翻译。"
@@ -56,14 +56,20 @@
          "Edit formality": [
             "编辑正式程度"
          ],
+         "%d credits per word": [
+            "%d每字积分"
+         ],
+         "Backup %d": [
+            "备份 %d"
+         ],
+         "Default": [
+            "默认"
+         ],
          "ON": [
             "开启"
          ],
          "OFF": [
             "关闭"
-         ],
-         "%d credits per word": [
-            "%d每字积分"
          ],
          "Documentation": [
             "文档"
@@ -101,9 +107,6 @@
          "Update": [
             "更新"
          ],
-         "Default": [
-            "默认"
-         ],
          "Formal": [
             "正式"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "等待审核"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "推荐用于DeepL、谷歌和Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "建议与DeepL、Google和Microsoft一起使用"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL、谷歌和Azure提供出色的翻译，但我们建议进行人工审核以确认其正确性。WPML AI提供超越人工的翻译，能够理解上下文，因此您可以自信地跳过审核过程。"
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL、Google 和 Microsoft 提供了出色的翻译，但我们建议进行人工审核以确认其准确性。WPML AI 提供了比人工翻译更好的翻译结果，能够理解上下文，因此您可以放心地跳过审核过程。"
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML保持翻译未发布状态，以便您先进行审核。"

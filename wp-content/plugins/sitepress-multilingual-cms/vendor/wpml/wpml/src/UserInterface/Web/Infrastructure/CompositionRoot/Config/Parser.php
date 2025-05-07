@@ -5,6 +5,7 @@ namespace WPML\UserInterface\Web\Infrastructure\CompositionRoot\Config;
 use WPML\PHP\Exception\Exception;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Config;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Endpoint\Endpoint;
+use WPML\UserInterface\Web\Core\SharedKernel\Config\Notice;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Page;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Script;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Style;
@@ -128,7 +129,8 @@ class Parser {
 
 
   /**
-   * Parses 'adminPages' to $config->adminPages.
+   * Parses 'scripts' to $config->scripts.
+   * These scripts are standalone scripts (not attached to a page or notice).
    *
    * @throws Exception
    */
@@ -143,6 +145,53 @@ class Parser {
     }
 
     return $config;
+  }
+
+
+  /**
+   * Parses 'adminPages' to $config->adminPages.
+   *
+   * @param ?Config $config
+   *
+   * @throws Exception
+   *
+   */
+  public function parseAdminNotices( Config $config = null ): Config {
+    $config = $config ?? new Config();
+
+    foreach ( $this->configRaw['adminNotices'] as $id => $raw ) {
+      $notice = new Notice( $id );
+      $this->parseNoticeFields( $notice, $raw );
+
+      // Scripts.
+      $this->parseNoticeScripts( $notice, $raw );
+
+      // Styles.
+      $this->parseNoticeStyles( $notice, $raw );
+
+      // Endpoints
+      $endpoints = $this->parseEndpointsFor(
+        $raw['endpoints'] ?? []
+      );
+      foreach ( $endpoints as $endpoint ) {
+        $notice->addEndpoint( $endpoint );
+      }
+
+      $config->addAdminNotice( $notice );
+    }
+
+    return $config;
+  }
+
+
+  /**
+   * @param string $noticeId Id of the page to remove.
+   * @return void
+   */
+  public function removeAdminNoticeConfig( string $noticeId ) {
+    if ( array_key_exists( $noticeId, (array) $this->configRaw['adminNotices'] ) ) {
+      unset( $this->configRaw['adminNotices'][$noticeId] );
+    }
   }
 
 
@@ -257,28 +306,47 @@ class Parser {
    * @return void
    */
   private function parsePageScripts( Page $page, $pageConfig ) {
+    $scripts = $this->parseScriptsByConfig( $pageConfig, $page->id() );
+    foreach ( $scripts as $script ) {
+      $page->addScript( $script );
+    }
+  }
+
+
+  /**
+   * @param array<string, mixed> $config
+   * @param string $fallbackId
+   *
+   * @throws Exception
+   *
+   * @return Script[]
+   */
+  private function parseScriptsByConfig( $config, $fallbackId ) {
+    $scripts = [];
     // Scripts.
     // Normalise scripts to array of arrays.
-    $pageConfig['scripts'] = $pageConfig['scripts'] ?? [];
+    $config['scripts'] = $config['scripts'] ?? [];
     if (
-      is_array( $pageConfig['scripts'] ) &&
-      array_key_exists( 'src', $pageConfig['scripts'] )
+      is_array( $config['scripts'] ) &&
+      array_key_exists( 'src', $config['scripts'] )
     ) {
       // Single script as array.
-      $pageConfig['scripts'] = [ $pageConfig['scripts'] ];
+      $config['scripts'] = [ $config['scripts'] ];
     }
 
-    if ( ! is_array( $pageConfig['scripts'] ) ) {
-      return;
+    if ( ! is_array( $config['scripts'] ) ) {
+      return [];
     }
 
-    foreach ( $pageConfig['scripts'] as $scriptRaw ) {
+    foreach ( $config['scripts'] as $scriptRaw ) {
       // Use page id if script has no specific id.
-      $scriptRaw['id'] = $scriptRaw['id'] ?? $page->id();
+      $scriptRaw['id'] = $scriptRaw['id'] ?? $fallbackId;
       if ( $script = $this->parseScript( $scriptRaw ) ) {
-        $page->addScript( $script );
+        $scripts[] = $script;
       }
     }
+
+    return $scripts;
   }
 
 
@@ -329,38 +397,57 @@ class Parser {
    * @return void
    */
   private function parsePageStyles( Page $page, $pageConfig ) {
+    $styles = $this->parseStylesByConfig( $pageConfig, $page->id() );
+    foreach ( $styles as $style ) {
+      $page->addStyle( $style );
+    }
+  }
 
-    $pageConfig['styles'] = $pageConfig['styles'] ?? [];
-    if ( is_string( $pageConfig['styles'] ) ) {
+
+  /**
+   * @param array<string, mixed> $config
+   * @param string $fallbackId
+   *
+   * @throws Exception
+   *
+   * @return Style[]
+   */
+  private function parseStylesByConfig( $config, $fallbackId ) {
+    $styles = [];
+
+    $config['styles'] = $config['styles'] ?? [];
+    if ( is_string( $config['styles'] ) ) {
       // Single style as string.
-      $pageConfig['styles'] = [ [ 'src' => $pageConfig['styles'] ] ];
+      $config['styles'] = [ [ 'src' => $config['styles'] ] ];
     } else if (
-      is_array( $pageConfig['styles'] ) &&
-      array_key_exists( 'src', $pageConfig['styles'] )
+      is_array( $config['styles'] ) &&
+      array_key_exists( 'src', $config['styles'] )
     ) {
       // Single style as array.
-      $pageConfig['styles'] = [ $pageConfig['styles'] ];
+      $config['styles'] = [ $config['styles'] ];
     }
 
-    if ( ! is_array( $pageConfig['styles'] ) ) {
-      return;
+    if ( ! is_array( $config['styles'] ) ) {
+      return [];
     }
 
-    foreach ( $pageConfig['styles'] as $styleRaw ) {
+    foreach ( $config['styles'] as $styleRaw ) {
       if ( ! array_key_exists( 'src', $styleRaw ) ) {
         continue;
       }
 
       // Use page id if script has no specific id.
-      $style = new Style( $styleRaw['id'] ?? $page->id() );
+      $style = new Style( $styleRaw['id'] ?? $fallbackId );
       $style->setSrc( $styleRaw['src'] );
 
       if ( array_key_exists( 'dependencies', $styleRaw ) ) {
         $style->setDependencies( $styleRaw['dependencies'] );
       }
 
-      $page->addStyle( $style );
+      $styles[] = $style;
     }
+
+    return $styles;
   }
 
 
@@ -496,6 +583,85 @@ class Parser {
     }
 
     return $endpoints;
+  }
+
+
+  /**
+   * @param array<string, mixed> $noticeConfig
+   * @throws Exception
+   * @return void
+   */
+  private function parseNoticeFields( Notice $notice, $noticeConfig ) {
+    $this->parseNoticeClassFields( $notice, $noticeConfig );
+
+    if (
+      array_key_exists( 'onPages', $noticeConfig ) &&
+      is_array( $noticeConfig['onPages'] )
+    ) {
+      foreach ( $noticeConfig['onPages'] as $existingPage ) {
+        $notice->addOnPage( $existingPage );
+      }
+    }
+
+    if (
+      array_key_exists( 'capability', $noticeConfig ) &&
+      is_string( $noticeConfig['capability'] )
+    ) {
+      $notice->setCapability( $noticeConfig['capability'] );
+    }
+  }
+
+
+    /**
+   * @param Notice $notice
+   * @param array<string, mixed> $noticeConfig
+   * @return void
+   */
+  private function parseNoticeClassFields( Notice $notice, $noticeConfig ) {
+    /**
+     * Disable phpstan/psalm as we don't want to check at this point if the
+     * string really is a existing class (unnecessary overhead as this runs
+     * for all pages and not only for the requested one).
+     */
+    if (
+      array_key_exists( 'controller', $noticeConfig ) &&
+      is_string( $noticeConfig['controller'] ) &&
+      $noticeConfig['controller']
+    ) {
+      /**
+       * @phpstan-ignore-next-line class-string
+       * @psalm-suppress ArgumentTypeCoercion
+       */
+      $notice->setControllerClassName( $noticeConfig['controller'] );
+    }
+  }
+
+
+  /**
+   * @param array<string, mixed> $noticeConfig
+   *
+   * @throws Exception
+   *
+   * @return void
+   */
+  private function parseNoticeScripts( Notice $notice, $noticeConfig ) {
+    $scripts = $this->parseScriptsByConfig( $noticeConfig, $notice->id() );
+    foreach ( $scripts as $script ) {
+      $notice->addScript( $script );
+    }
+  }
+
+
+  /**
+   * @param array<string, mixed> $noticeConfig
+   *
+   * @return void
+   */
+  private function parseNoticeStyles( Notice $notice, $noticeConfig ) {
+    $styles = $this->parseStylesByConfig( $noticeConfig, $notice->id() );
+    foreach ( $styles as $style ) {
+      $notice->addStyle( $style );
+    }
   }
 
 

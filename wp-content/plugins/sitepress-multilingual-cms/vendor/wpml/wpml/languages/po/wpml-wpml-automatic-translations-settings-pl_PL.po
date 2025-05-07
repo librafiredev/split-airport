@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "Ładowanie..."
 msgid "Failed to load engines"
 msgstr "Nie udało się załadować silników"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "Przeciągnij i upuść, aby posortować od najbardziej do najmniej preferowanego silnika."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "Przeciągnij swój domyślny silnik na górę i uporządkuj pozostałe według priorytetu."
 
 msgid "Which translation engines do you want to use?"
 msgstr "Których silników tłumaczeniowych chcesz używać?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "Automaty do tłumaczenia różnią się stylem i obsługiwanymi parami języków. Jeśli twój ulubiony nie ogarnia jakiejś pary, przełączamy na następny. Więcej info o tym,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "Automatyczne silniki tłumaczeniowe różnią się stylem tłumaczenia i obsługiwanymi parami językowymi. Jeśli preferowany przez Państwa silnik tłumaczeniowy nie obsługuje pary językowej, którą Państwo chcą wykorzystać, przechodzimy do kolejnego preferowanego silnika, który ją obsługuje."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "WPML AI (beta) automatycznie wykrywa formalność treści i tłumaczy z zachowaniem tej samej formalności."
@@ -63,14 +63,20 @@ msgstr "Twoja witryna nie używa języków, które oferują ustawienia formalno�
 msgid "Edit formality"
 msgstr "Edytuj formalność"
 
+msgid "%d credits per word"
+msgstr "%d kredytów na słowo"
+
+msgid "Backup %d"
+msgstr "Kopia zapasowa %d"
+
+msgid "Default"
+msgstr "Domyślny"
+
 msgid "ON"
 msgstr "WŁĄCZONE"
 
 msgid "OFF"
 msgstr "WYŁĄCZONE"
-
-msgid "%d credits per word"
-msgstr "%d kredytów na słowo"
 
 msgid "Documentation"
 msgstr "Dokumentacja"
@@ -111,9 +117,6 @@ msgstr "Anuluj"
 msgid "Update"
 msgstr "Aktualizuj"
 
-msgid "Default"
-msgstr "Domyślny"
-
 msgid "Formal"
 msgstr "Formalny"
 
@@ -141,11 +144,11 @@ msgstr "Co chcesz zrobić po tym, jak WPML automatycznie przetłumaczy Twoją tr
 msgid "Wait for review"
 msgstr "Czekaj na przegląd"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "Zalecane z DeepL, Google i Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "Zalecane z DeepL, Google i Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google i Azure dają świetne tłumaczenia, ale lepiej sprawdzić, czy na pewno git. WPML AI robi tłumaczenia lepsze niż ludzie, ogarniając kontekst, więc możesz olać sprawdzanie."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google i Microsoft dostarczają znakomitych tłumaczeń, jednakże rekomendujemy weryfikację przez człowieka celem potwierdzenia ich poprawności. WPML AI oferuje Tłumaczenia Lepsze Niż Ludzkie, które rozumieją kontekst, dzięki czemu można z pewnością pominąć proces recenzji."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML zachowuje tłumaczenia nieopublikowane, abyś mógł je najpierw przejrzeć."

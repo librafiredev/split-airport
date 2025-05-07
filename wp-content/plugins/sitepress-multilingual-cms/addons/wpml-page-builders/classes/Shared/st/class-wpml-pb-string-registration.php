@@ -79,7 +79,7 @@ class WPML_PB_String_Registration {
 	 * @param string       $name     String name.
 	 * @param int          $location String location.
 	 * @param string       $wrap_tag String wrap tag.
-	 * @param int          $groupSequence
+	 * @param int|null     $groupSequence
 	 *
 	 * @return null|integer $string_id
 	 */
@@ -91,7 +91,7 @@ class WPML_PB_String_Registration {
 		$name = '',
 		$location = 0,
 		$wrap_tag = '',
-		$groupSequence = 0
+		$groupSequence = null
 	) {
 
 		$string_id = 0;

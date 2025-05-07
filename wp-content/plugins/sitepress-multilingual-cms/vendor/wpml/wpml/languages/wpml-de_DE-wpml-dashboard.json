@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Übergeordnetes Element nach Titel suchen"
          ],
+         "Search by term title in %s": [
+            "Suche nach Begriffstitel in %s"
+         ],
          "All taxonomies": [
             "Alle Taxonomien"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Keine Begriffe gefunden"
-         ],
-         "Search by term title": [
-            "Nach Begriffstitel suchen"
          ],
          "Filter by:": [
             "Filtern nach:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "Die meisten Zeichenketten aus Ihren Plugins und Ihrem Theme sind auf Englisch, daher zeigen wir sie neben Ihrer Standardsprache an. Verwenden Sie den Filter <b>Quellsprache</b>, um Zeichenketten in einer bestimmten Sprache anzuzeigen."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Sie verwenden <b>%s</b> zum Zwischenspeichern Ihrer Website, was WPML möglicherweise daran hindert, neue Zeichenfolgen automatisch zu registrieren. Um dies zu beheben, löschen Sie Ihren Seitencache und besuchen Sie dann Ihre übersetzten Seiten erneut im Frontend, um neue Zeichenfolgen zu erkennen."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML kann Zeichenketten erkennen, die auf der Website erscheinen, und sie hier auflisten. Diese Funktion hilft Ihnen, die Zeichenketten zu identifizieren, die tatsächlich auf der Website erscheinen, und sie zu übersetzen. Um hier nur die Zeichenketten zu sehen, die tatsächlich auf der Website erscheinen, müssen Sie diese Funktion aktivieren."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Batch-Name:"
+         ],
+         "Default translation engine: ": [
+            "Standardmäßiges Übersetzungssystem: "
+         ],
+         "Change": [
+            "Ändern"
+         ],
+         "Failed to load engines": [
+            "Laden der Systeme fehlgeschlagen"
          ],
          "Your Automatic Translation Credits": [
             "Ihre Guthaben für automatische Übersetzungen"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Abruf der Systemdaten nicht möglich"
+         ],
          "Error in fetching currently logged in translator": [
             "Fehler beim Abrufen des aktuell angemeldeten Übersetzers"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Auf Überprüfung warten"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Empfohlen für DeepL, Google und Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Empfohlen mit DeepL, Google und Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google und Azure liefern großartige Übersetzungen, aber wir empfehlen eine menschliche Überprüfung, um ihre Korrektheit zu bestätigen. WPML AI bietet Übersetzungen, die besser als menschliche Übersetzungen sind und den Kontext verstehen, sodass Sie den Überprüfungsprozess getrost überspringen können."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google und Microsoft liefern hervorragende Übersetzungen, jedoch empfehlen wir eine menschliche Überprüfung, um deren Korrektheit zu bestätigen. WPML KI bietet kontextverständliche Übersetzungen, die besser als menschliche Übersetzungen sind, sodass Sie den Überprüfungsprozess mit Zuversicht überspringen können."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML behält Übersetzungen unveröffentlicht, damit Sie sie zuerst überprüfen können."

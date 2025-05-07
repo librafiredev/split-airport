@@ -217,7 +217,7 @@ class WPML_Beaver_Builder_Pricing_Table extends WPML_Beaver_Builder_Module_With_
 
 	/**
 	 * @param string         $node_id
-	 * @param object         $settings
+	 * @param object|mixed   $settings
 	 * @param WPML_PB_String $string
 	 */
 	private function update_billing_fields( $node_id, $settings, $string ) {

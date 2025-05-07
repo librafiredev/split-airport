@@ -49,7 +49,7 @@ class __TwigTemplate_3c0bcb450e0e7d9c012dcaeefa9817c90dd1999c4a7bc4ad7781206e188
 <ul>
     <li>
         <label>
-            <input type=\"radio\" class=\"js-wpml-ls-trigger-update js-wpml-ls-menu-is-hierarchical\"
+            <input type=\"radio\" class=\"wpml-radio-native js-wpml-ls-trigger-update js-wpml-ls-menu-is-hierarchical\"
                    name=\"";
         // line 12
         if (($context["name_base"] ?? null)) {
@@ -73,7 +73,7 @@ class __TwigTemplate_3c0bcb450e0e7d9c012dcaeefa9817c90dd1999c4a7bc4ad7781206e188
     </li>
     <li>
         <label>
-            <input type=\"radio\" class=\"js-wpml-ls-trigger-update js-wpml-ls-menu-is-hierarchical\"
+            <input type=\"radio\" class=\"wpml-radio-native js-wpml-ls-trigger-update js-wpml-ls-menu-is-hierarchical\"
                    name=\"";
         // line 19
         if (($context["name_base"] ?? null)) {
@@ -95,7 +95,8 @@ class __TwigTemplate_3c0bcb450e0e7d9c012dcaeefa9817c90dd1999c4a7bc4ad7781206e188
         echo "
         </label>
     </li>
-</ul>";
+</ul>
+";
     }
 
     public function getTemplateName()

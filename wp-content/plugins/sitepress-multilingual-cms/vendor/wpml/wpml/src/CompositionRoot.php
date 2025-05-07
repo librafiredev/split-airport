@@ -54,6 +54,12 @@ class CompositionRoot {
 
 
   /** @return void */
+  public function loadAdminNotices() {
+    $this->config->loadAdminNotices();
+  }
+
+
+  /** @return void */
   public function loadEventListeners() {
     $this->configEvents->loadEvents();
   }

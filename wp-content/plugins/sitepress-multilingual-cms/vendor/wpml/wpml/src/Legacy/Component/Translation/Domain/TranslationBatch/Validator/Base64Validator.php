@@ -41,11 +41,16 @@ class Base64Validator implements ValidatorInterface {
 
     list( $postIds, $packageIds ) = $this->extractPostAndPackageIds( $translationBatch );
 
-    list( $invalidPostIds, $invalidPackageIds ) = $this->base64Validator->getInvalidPostAndPackageIds(
+    $invalidPostAndPackageIds = $this->base64Validator->getInvalidPostAndPackageIds(
       $postIds,
       $packageIds
     );
 
+    if ( ! is_array( $invalidPostAndPackageIds ) || count( $invalidPostAndPackageIds ) !== 2 ) {
+      return [ $translationBatch, $ignoredElements ];
+    }
+
+    list( $invalidPostIds, $invalidPackageIds ) = $invalidPostAndPackageIds;
     if ( empty( $invalidPostIds ) && empty( $invalidPackageIds ) ) {
       return [ $translationBatch, $ignoredElements ];
     }

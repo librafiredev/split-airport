@@ -26,7 +26,9 @@ class SetReviewTranslationOptionController implements EndpointInterface {
   public function handle( $requestData = null ): array {
     $requestData = $requestData ?: [];
 
-    $reviewMode = $this->settingsService->saveReviewOption( $requestData['reviewOption'] );
+    $reviewMode = $this->settingsService->saveReviewOption(
+      $requestData['reviewOption'] ?? null
+    );
 
     return [
       'reviewOption' => $reviewMode,

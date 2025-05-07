@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the WPML Multilingual CMS plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPML Multilingual CMS 4.7.0-dev\n"
+"Project-Id-Version: WPML Multilingual CMS 4.7.3-dev\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sitepress-multilingual-cms\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T09:01:15+00:00\n"
+"POT-Creation-Date: 2025-04-07T13:45:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: sitepress\n"
@@ -26,8 +26,8 @@ msgstr "https://wpml.org/"
 
 #. Description of the plugin
 #: sitepress.php
-msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">WPML 4.7.0 release notes</a>"
-msgstr "WPML Многоязычная CMS | <a href=\"https://wpml.org\">Документация</a> | <a href=\"https://wpml.org/version/wpml-4-7-0/\">Примечания к выпуску WPML 4.7.0</a>"
+msgid "WPML Multilingual CMS | <a href=\"https://wpml.org\">Documentation</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">WPML 4.7.2 release notes</a>"
+msgstr "WPML многоязычная система управления контентом | <a href=\"https://wpml.org\">Документация</a> | <a href=\"https://wpml.org/version/wpml-4-7-2/\">Примечания к выпуску WPML 4.7.2</a>"
 
 #. Author of the plugin
 #: sitepress.php
@@ -40,7 +40,7 @@ msgid "http://www.onthegosystems.com/"
 msgstr "http://www.onthegosystems.com/"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:182
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:343
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:335
 msgid "Button: Text"
 msgstr "Кнопка: Текст"
 
@@ -49,7 +49,7 @@ msgid "Button: Link"
 msgstr "Кнопка: Ссылка"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:197
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:238
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:240
 msgid "Heading: Title"
 msgstr "Заголовок: Название"
 
@@ -58,7 +58,7 @@ msgid "Heading: Link"
 msgstr "Заголовок: Ссылка"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:212
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:358
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:350
 msgid "HTML"
 msgstr "HTML"
 
@@ -67,7 +67,7 @@ msgid "Photo: Link"
 msgstr "Фото: Ссылка"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/class-wpml-beaver-builder-translatable-nodes.php:232
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:253
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:255
 msgid "Text Editor: Text"
 msgstr "Текстовый редактор: Текст"
 
@@ -219,6 +219,11 @@ msgstr "Записи: Текст ссылки Подробнее"
 msgid "Posts Slider: More Link Text"
 msgstr "Слайдер записей: Текст ссылки Подробнее"
 
+#. Translators: %s: Post type label. For example, Beaver Builder Templates.
+#: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/Hooks/TranslationGuiLabels.php:23
+msgid "Beaver Builder %s"
+msgstr "Beaver Builder %s"
+
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-accordion.php:8
 msgid "Accordion Item: Label"
 msgstr "Элемент аккордеона: Метка"
@@ -296,7 +301,7 @@ msgid "Tab Item: Content"
 msgstr "Вкладка: Содержание"
 
 #: addons/wpml-page-builders/classes/Integrations/BeaverBuilder/modules/class-wpml-beaver-builder-testimonials.php:16
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:413
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:390
 msgid "Testimonial: content"
 msgstr "Отзыв: содержание"
 
@@ -396,6 +401,11 @@ msgstr "Модальный поиск: Заполнитель"
 msgid "Search Dropdown: Placeholder"
 msgstr "Выпадающий поиск: Заполнитель"
 
+#. Translators: %s: Post type label. For example, Cornerstone Templates.
+#: addons/wpml-page-builders/classes/Integrations/Cornerstone/Hooks/TranslationGuiLabels.php:43
+msgid "Cornerstone %s"
+msgstr "Cornerstone %s"
+
 #: addons/wpml-page-builders/classes/Integrations/Cornerstone/modules/class-wpml-cornerstone-accordion.php:19
 msgid "Accordion: Header"
 msgstr "Аккордеон: Заголовок"
@@ -434,407 +444,319 @@ msgstr "Вы можете найти больше информации здес�
 msgid "It is not possible to use Divi's backend builder to edit a post in a different language than your domain. Please use Divi's frontend builder to edit this post or %1$s switch to the correct domain %2$s to use the backend builder."
 msgstr "Невозможно использовать конструктор Divi для редактирования записи на языке, отличном от языка вашего домена. Пожалуйста, используйте фронтенд-конструктор Divi для редактирования этой записи или %1$s переключитесь на правильный домен %2$s, чтобы использовать бэкенд-конструктор."
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:227
+#. Translators: %s: Post type label. For example, Divi Templates.
+#: addons/wpml-page-builders/classes/Integrations/Divi/Hooks/TranslationGuiLabels.php:37
+msgid "Divi %s"
+msgstr "Divi %s"
+
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:229
 msgid "Container: Link URL"
 msgstr "Контейнер: URL ссылки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:243
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:245
 msgid "Heading: Link URL"
 msgstr "Заголовок: URL ссылки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:263
-msgid "Icon: Link URL"
-msgstr "Иконка: URL ссылки"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:273
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:265
 msgid "Video: Link"
 msgstr "Видео: Ссылка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:278
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:270
 msgid "Video: Vimeo link"
 msgstr "Видео: Ссылка Vimeo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:283
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:275
 msgid "Video: Youtube URL"
 msgstr "Видео: URL Youtube"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:288
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:280
 msgid "Video: Vimeo URL"
 msgstr "Видео: URL Vimeo"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:293
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:285
 msgid "Video: DailyMotion URL"
 msgstr "Видео: URL DailyMotion"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:290
 msgid "Video: Self hosted"
 msgstr "Видео: Самостоятельно размещенное"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:303
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:295
 msgid "Video: External hosted"
 msgstr "Видео: Внешне размещенное"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:313
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:305
 msgid "Login: Button text"
 msgstr "Вход: Текст кнопки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:318
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:310
 msgid "Login: User label"
 msgstr "Вход: Метка пользователя"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:323
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:315
 msgid "Login: User placeholder"
 msgstr "Вход: Заполнитель пользователя"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:328
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:320
 msgid "Login: Password label"
 msgstr "Вход: Метка пароля"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:333
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:325
 msgid "Login: Password placeholder"
 msgstr "Вход: Заполнитель пароля"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:348
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:340
 msgid "Button: Link URL"
 msgstr "Кнопка: URL ссылки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:368
-msgid "Image: Caption"
-msgstr "Изображение: Подпись"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:373
-msgid "Image: Link URL"
-msgstr "Изображение: URL ссылки"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:383
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:360
 msgid "Alert: Title"
 msgstr "Оповещение: Заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:388
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:365
 msgid "Alert: Description"
 msgstr "Оповещение: Описание"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:398
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:375
 msgid "Blockquote: Content"
 msgstr "Блочная цитата: Содержание"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:403
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:380
 msgid "Blockquote: Tweet button label"
 msgstr "Блочная цитата: Метка кнопки твита"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:418
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:395
 msgid "Testimonial: name"
 msgstr "Отзыв: имя"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:423
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:400
 msgid "Testimonial: job"
 msgstr "Отзыв: должность"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:433
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:410
 msgid "Progress: Title"
 msgstr "Прогресс: Заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:438
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:415
 msgid "Progress: Inner text"
 msgstr "Прогресс: Внутренний текст"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:448
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:425
 msgid "Counter: Starting number"
 msgstr "Счетчик: Начальное число"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:453
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:430
 msgid "Counter: Title"
 msgstr "Счетчик: Заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:458
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:435
 msgid "Counter: Prefix"
 msgstr "Счетчик: Префикс"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:463
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:440
 msgid "Counter: Suffix"
 msgstr "Счетчик: Суффикс"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:473
-msgid "Countdown: Label days"
-msgstr "Обратный отсчет: Метка дней"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:478
-msgid "Countdown: Label hours"
-msgstr "Обратный отсчет: Метка часов"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:483
-msgid "Countdown: Label minutes"
-msgstr "Обратный отсчет: Метка минут"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:488
-msgid "Countdown: Label seconds"
-msgstr "Обратный отсчет: Метка секунд"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:498
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:450
 msgid "Icon Box: Title text"
 msgstr "Иконка-бокс: Текст заголовка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:503
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:455
 msgid "Icon Box: Description text"
 msgstr "Иконка-бокс: Текст описания"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:508
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:460
 msgid "Icon Box: Link"
 msgstr "Иконка-бокс: Ссылка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:518
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:470
 msgid "Image Box: Title text"
 msgstr "Изображение-бокс: Текст заголовка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:523
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:475
 msgid "Image Box: Description text"
 msgstr "Изображение-бокс: Текст описания"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:528
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:480
 msgid "Image Box: Link"
 msgstr "Изображение-бокс: Ссылка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:538
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:490
 msgid "Animated Headline: Before text"
 msgstr "Анимированный заголовок: Текст перед"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:543
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:495
 msgid "Animated Headline: Highlighted text"
 msgstr "Анимированный заголовок: Выделенный текст"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:548
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:500
 msgid "Animated Headline: Rotating text"
 msgstr "Анимированный заголовок: Вращающийся текст"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:553
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:505
 msgid "Animated Headline: After text"
 msgstr "Анимированный заголовок: Текст после"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:558
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:510
 msgid "Animated Headline: Link URL"
 msgstr "Анимированный заголовок: URL ссылки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:568
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:520
 msgid "Flip Box: Title text side A"
 msgstr "Флип-бокс: Текст заголовка стороны А"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:573
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:525
 msgid "Flip Box: Description text side A"
 msgstr "Флип-бокс: Текст описания стороны А"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:578
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:530
 msgid "Flip Box: Title text side B"
 msgstr "Флип-бокс: Текст заголовка стороны B"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:583
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:535
 msgid "Flip Box: Description text side B"
 msgstr "Флип-бокс: Текст описания стороны B"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:588
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:540
 msgid "Flip Box: Button text"
 msgstr "Флип-бокс: Текст кнопки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:593
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:545
 msgid "Flip Box: Button link"
 msgstr "Флип-бокс: Ссылка кнопки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:603
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:555
 msgid "Call to action: title"
 msgstr "Призыв к действию: заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:608
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:560
 msgid "Call to action: description"
 msgstr "Призыв к действию: описание"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:613
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:565
 msgid "Call to action: button"
 msgstr "Призыв к действию: кнопка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:618
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:570
 msgid "Call to action: ribbon title"
 msgstr "Призыв к действию: заголовок ленты"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:623
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:575
 msgid "Call to action: link"
 msgstr "Призыв к действию: ссылка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:668
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:615
 msgid "Price Table: Heading"
 msgstr "Таблица цен: Заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:673
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:620
 msgid "Price Table: Sub heading"
 msgstr "Таблица цен: Подзаголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:678
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:625
 msgid "Price Table: Period"
 msgstr "Таблица цен: Период"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:683
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:630
 msgid "Price Table: Button text"
 msgstr "Таблица цен: Текст кнопки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:688
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:635
 msgid "Price Table: Footer additional info"
 msgstr "Таблица цен: Дополнительная информация в футере"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:693
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:640
 msgid "Price Table: Ribbon title"
 msgstr "Таблица цен: Заголовок ленты"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:698
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:645
 msgid "Price Table: Button link"
 msgstr "Таблица цен: Ссылка кнопки"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:709
-msgid "Form: name"
-msgstr "Форма: имя"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:714
-msgid "Form: Button text"
-msgstr "Форма: Текст кнопки"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:719
-msgid "Form: Email subject"
-msgstr "Форма: Тема электронного письма"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:724
-msgid "Form: Email from name"
-msgstr "Форма: Имя отправителя электронного письма"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:729
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:739
-msgid "Form: Email Content"
-msgstr "Форма: Содержание электронного письма"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:734
-msgid "Form: Email subject 2"
-msgstr "Форма: Тема электронного письма 2"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:744
-msgid "Form: Success message"
-msgstr "Форма: Сообщение об успехе"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:749
-msgid "Form: Error message"
-msgstr "Форма: Сообщение об ошибке"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:754
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:764
-msgid "Form: Required message"
-msgstr "Форма: Сообщение об обязательном поле"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:759
-msgid "Form: Invalid message"
-msgstr "Форма: Сообщение о недействительном значении"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:769
-msgid "Form: Redirect to URL"
-msgstr "Форма: Перенаправить на URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:780
-msgid "Posts: Classic Read more text"
-msgstr "Записи: Классический текст 'Читать далее'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:785
-msgid "Posts: Previous Label"
-msgstr "Записи: Метка 'Предыдущее'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
-msgid "Posts: Next Label"
-msgstr "Записи: Метка 'Следующее'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
-msgid "Posts: Cards Read more text"
-msgstr "Записи: Текст 'Читать далее' для карточек"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:805
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:656
 msgid "Menu Anchor"
 msgstr "Якорь меню"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:815
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:666
 msgid "Archive: Cards Separator"
 msgstr "Архив: Разделитель карточек"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:820
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:671
 msgid "Archive: Cards Read More Text"
 msgstr "Архив: Текст 'Читать далее' для карточек"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:825
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:676
 msgid "Archive: Nothing Found Message"
 msgstr "Архив: Сообщение 'Ничего не найдено'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:830
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:681
 msgid "Archive: Previous Label"
 msgstr "Архив: Метка 'Предыдущее'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:835
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:686
 msgid "Archive: Next Label"
 msgstr "Архив: Метка 'Следующее'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:840
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:691
 msgid "Archive: Classic Separator"
 msgstr "Архив: Классический разделитель"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:845
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:696
 msgid "Archive: Classic Read More Text"
 msgstr "Архив: Классический текст 'Читать далее'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:855
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:706
 msgid "Search: Placeholder"
 msgstr "Поиск: Заполнитель"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:865
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:716
 msgid "Post Navigation: Previous Label"
 msgstr "Навигация по записям: Метка 'Предыдущее'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:870
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:721
 msgid "Post Navigation: Next Label"
 msgstr "Навигация по записям: Метка 'Следующее'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:880
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:731
 msgid "Divider: Text"
 msgstr "Разделитель: Текст"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:890
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:741
 msgid "Table of Contents: Title"
 msgstr "Оглавление: Заголовок"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:907
-msgid "Lottie: Link URL"
-msgstr "Lottie: URL ссылки"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:917
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:751
 msgid "Author: Name"
 msgstr "Автор: Имя"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:922
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:756
 msgid "Author: Bio"
 msgstr "Автор: Биография"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:928
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:762
 msgid "Author: Link"
 msgstr "Автор: Ссылка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:933
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:767
 msgid "Author: Archive Text"
 msgstr "Автор: Текст архива"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:939
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:773
 msgid "Author: Archive URL"
 msgstr "Автор: URL архива"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:956
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:790
 msgid "Galleries: All Label"
 msgstr "Галереи: Метка 'Все'"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:961
+#: addons/wpml-page-builders/classes/Integrations/Elementor/class-wpml-elementor-translatable-nodes.php:795
 msgid "Galleries: Gallery custom link"
 msgstr "Галереи: Пользовательская ссылка галереи"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/DynamicContent/Strings.php:149
-msgid "Dynamic content string: %s"
-msgstr "Строка динамического контента: %s"
+#. Translators: %s: Post type label. For example, Elementor Landing Pages.
+#: addons/wpml-page-builders/classes/Integrations/Elementor/Hooks/TranslationGuiLabels.php:29
+msgid "Elementor %s"
+msgstr "Elementor %s"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:25
 msgid "WPML Language Switcher"
@@ -869,97 +791,61 @@ msgstr "Отображать флаг"
 msgid "Show Active Language - has to be ON with Dropdown"
 msgstr "Показать активный язык - должно быть включено с выпадающим списком"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:97
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:361
 msgid "Native language name"
 msgstr "Родное название языка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:117
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:107
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:362
 msgid "Language name in current language"
 msgstr "Название языка на текущем языке"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:129
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:119
 msgid "Style"
 msgstr "Стиль"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:138
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:128
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:568
 msgid "Normal"
 msgstr "Обычный"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:153
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:201
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:271
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:143
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:191
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:261
 msgid "Text Color"
 msgstr "Цвет текста"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:169
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:286
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:159
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:276
 msgid "Background Color"
 msgstr "Цвет фона"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:184
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:174
 #: classes/language-switcher/class-wpml-ls-admin-ui.php:569
 msgid "Hover"
 msgstr "При наведении"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:227
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:217
 msgid "Language Flag"
 msgstr "Флаг языка"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:238
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:310
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:228
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:300
 msgid "Margin"
 msgstr "Отступ"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:252
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:242
 msgid "Post Translation Text"
 msgstr "Текст перевода записи"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:298
+#: addons/wpml-page-builders/classes/Integrations/Elementor/LanguageSwitcher/WidgetAdaptor.php:288
 msgid "Padding"
 msgstr "Внутренний отступ"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-accordion.php:30
 msgid "Accordion: Title"
 msgstr "Аккордеон: Заголовок"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:39
-msgid "Form: Field label"
-msgstr "Форма: Метка поля"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:40
-msgid "Form: Field placeholder"
-msgstr "Форма: Заполнитель поля"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:41
-msgid "Form: Field HTML"
-msgstr "Форма: HTML поля"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:42
-msgid "Form: Acceptance Text"
-msgstr "Форма: Текст согласия"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:43
-msgid "Form: Checkbox Options"
-msgstr "Форма: Варианты флажков"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:44
-msgid "Form: Step Next Label"
-msgstr "Форма: Метка 'Следующий шаг'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:45
-msgid "Form: Step Previous Label"
-msgstr "Форма: Метка 'Предыдущий шаг'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:46
-msgid "Form: Previous Button"
-msgstr "Форма: Кнопка 'Предыдущий'"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-form.php:47
-msgid "Form: Next Button"
-msgstr "Форма: Кнопка 'Следующий'"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:30
 msgid "Icon List: Text"
@@ -968,18 +854,6 @@ msgstr "Список с иконками: Текст"
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-icon-list.php:33
 msgid "Icon List: Link URL"
 msgstr "Список с иконками: URL ссылки"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:29
-msgid "Pricing list: title"
-msgstr "Список цен: заголовок"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:33
-msgid "Pricing list: description"
-msgstr "Прайс-лист: описание"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-list.php:37
-msgid "Pricing list: link"
-msgstr "Прайс-лист: ссылка"
 
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/class-wpml-elementor-price-table.php:29
 msgid "Price table: text"
@@ -1029,22 +903,6 @@ msgstr "Переключатель: Заголовок"
 msgid "Toggle: Content"
 msgstr "Переключатель: Содержание"
 
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:12
-msgid "Hotspot: Label"
-msgstr "Хотспот: Метка"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:14
-msgid "Hotspot: Content"
-msgstr "Хотспот: Содержание"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/Hotspot.php:16
-msgid "Hotspot: URL"
-msgstr "Хотспот: URL"
-
-#: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MediaCarousel.php:29
-msgid "Media Carousel: link URL"
-msgstr "Медиа-карусель: URL ссылки"
-
 #: addons/wpml-page-builders/classes/Integrations/Elementor/modules/MultipleGallery.php:12
 msgid "Galleries: Gallery Title"
 msgstr "Галереи: Заголовок галереи"
@@ -1069,16 +927,35 @@ msgstr "Отзывы: Изображение комментария"
 msgid "Reviews: Comment Link"
 msgstr "Отзывы: Ссылка комментария"
 
-#. translators: 1 and 2 are html <strong></strong> tags.
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:57
-msgid "%1$sWarning:%2$s You are trying to add a translation using the Fusion Builder Live editor but your site is configured to use the WPML Translation Editor."
-msgstr "%1$sВнимание:%2$s Вы пытаетесь добавить перевод с помощью редактора Fusion Builder Live, но ваш сайт настроен на использование редактора переводов WPML."
+#. Translators: %s: Post type label. For example, Enfold Templates.
+#: addons/wpml-page-builders/classes/Integrations/Enfold/Hooks/TranslationGuiLabels.php:27
+msgid "Enfold %s"
+msgstr "Enfold %s"
 
-#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/frontend/Hooks.php:62
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
-#: sitepress.class.php:1266
-msgid "OK"
-msgstr "ОК"
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:27
+#: classes/options/class-wpml-multilingual-options.php:90
+msgid "You can set different options for each language"
+msgstr "Вы можете установить различные параметры для каждого языка"
+
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/MultilingualOptions.php:28
+#: classes/options/class-wpml-multilingual-options.php:91
+msgid "Use the language switcher in the top admin bar to switch languages, then set and save options for each language individually."
+msgstr "Используйте переключатель языков в верхней панели администратора для смены языков, затем установите и сохраните параметры для каждого языка индивидуально."
+
+#. Translators: %s: Post type label. For example, Avada Templates.
+#: addons/wpml-page-builders/classes/Integrations/FusionBuilder/Hooks/TranslationGuiLabels.php:38
+msgid "Avada %s"
+msgstr "Avada %s"
+
+#. Translators: %s: Post type label. For example, Site Templates.
+#: addons/wpml-page-builders/classes/Integrations/Gutenberg/Hooks/TranslationGuiLabels.php:29
+msgid "Site %s"
+msgstr "Сайт %s"
+
+#. Translators: %s: Post type label. For example, WPBakery Templates.
+#: addons/wpml-page-builders/classes/Integrations/WPBakery/Hooks/TranslationGuiLabels.php:41
+msgid "WPBakery %s"
+msgstr "WPBakery %s"
 
 #: addons/wpml-page-builders/classes/Shared/st/class-wpml-st-pb-plugin.php:33
 msgid "The WPML Page Builders plugin that you're using is now part of WPML."
@@ -1096,45 +973,45 @@ msgstr "Не беспокойтесь, полная функциональнос
 msgid "Deactivate WPML Page Builders"
 msgstr "Деактивировать WPML Page Builders"
 
-#: ajax.php:199
+#: ajax.php:178
 #: classes/menu-elements/class-wpml-user-options-menu.php:159
 #: menu/languages.php:647
 msgid "%s is currently hidden to visitors."
 msgstr "%s в настоящее время скрыт от посетителей."
 
-#: ajax.php:207
+#: ajax.php:186
 #: classes/menu-elements/class-wpml-user-options-menu.php:166
 #: menu/languages.php:658
 msgid "%s are currently hidden to visitors."
 msgstr "%s в настоящее время скрыты от посетителей."
 
-#: ajax.php:210
+#: ajax.php:189
 #: menu/languages.php:665
 msgid "You can enable its/their display for yourself, in your <a href=\"%s\">profile page</a>."
 msgstr "Вы можете включить их отображение для себя на своей <a href=\"%s\">странице профиля</a>."
 
-#: ajax.php:214
+#: ajax.php:193
 #: menu/languages.php:668
 msgid "All languages are currently displayed."
 msgstr "В настоящее время отображаются все языки."
 
-#: ajax.php:323
+#: ajax.php:306
 msgid "Error: No custom field"
 msgstr "Ошибка: Нет пользовательского поля"
 
-#: ajax.php:329
+#: ajax.php:312
 msgid "Error: Please provide translation action"
 msgstr "Ошибка: Пожалуйста, укажите действие перевода"
 
-#: ajax.php:338
+#: ajax.php:321
 msgid "Settings updated"
 msgstr "Настройки обновлены"
 
-#: ajax.php:341
+#: ajax.php:324
 msgid "Error: WPML Translation Management plugin not initiated"
 msgstr "Ошибка: Плагин WPML Translation Management не инициализирован"
 
-#: ajax.php:346
+#: ajax.php:329
 msgid "Error: Please activate WPML Translation Management plugin"
 msgstr "Ошибка: Пожалуйста, активируйте плагин WPML Translation Management"
 
@@ -1153,7 +1030,7 @@ msgstr "Ошибка: Пожалуйста, активируйте плагин 
 #: classes/troubleshooting/SynchronizeSourceIdOfATEJobs/TriggerSynchronization.php:79
 #: classes/url-handling/class-wpml-xdomain-data-parser.php:84
 #: classes/widgets/class-wpml-widgets-support-backend.php:153
-#: inc/functions-troubleshooting.php:210
+#: inc/functions-troubleshooting.php:211
 #: inc/icl-admin-notifier.php:791
 #: inc/wp-nav-menus/class-wpml-nav-menu.php:169
 #: inc/wpml-post-edit-ajax.class.php:277
@@ -1346,8 +1223,8 @@ msgstr "Выберите этот параметр, если ваша тема �
 #: menu/languages.php:696
 #: menu/languages.php:759
 #: menu/languages.php:805
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
 #: menu/_custom_types_translation.php:132
 #: menu/_custom_types_translation.php:214
 #: menu/_login_translation_options.php:58
@@ -1489,7 +1366,7 @@ msgstr "Действие"
 #: menu/menu-sync/menus-sync.php:130
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:211
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:227
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:49
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
 #: sitepress.class.php:1267
 msgid "Cancel"
 msgstr "Отмена"
@@ -2319,7 +2196,7 @@ msgid "Needs review"
 msgstr "Требует проверки"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:261
-#: inc/translation-management/translation-management.class.php:1173
+#: inc/translation-management/translation-management.class.php:1184
 #: inc/wp-nav-menus/menus-sync.php:428
 msgid "Not translated"
 msgstr "Не переведено"
@@ -2331,7 +2208,7 @@ msgstr "Ожидание автоматического перевода"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:266
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:275
-#: inc/translation-management/translation-management.class.php:1176
+#: inc/translation-management/translation-management.class.php:1187
 msgid "Waiting for translator"
 msgstr "Ожидание переводчика"
 
@@ -2344,7 +2221,7 @@ msgid "Waiting for translation service"
 msgstr "Ожидание службы перевода"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:284
-#: inc/translation-management/translation-management.class.php:1191
+#: inc/translation-management/translation-management.class.php:1202
 msgid "Translation ready to download"
 msgstr "Перевод готов к загрузке"
 
@@ -2357,12 +2234,12 @@ msgid "Translation completed"
 msgstr "Перевод завершен"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:298
-#: inc/translation-management/translation-management.class.php:1182
+#: inc/translation-management/translation-management.class.php:1193
 msgid "Needs update"
 msgstr "Требуется обновление"
 
 #: classes/menu/dashboard/class-wpml-tm-dashboard-document-row.php:301
-#: inc/translation-management/translation-management.class.php:1179
+#: inc/translation-management/translation-management.class.php:1190
 msgid "In progress"
 msgstr "В процессе"
 
@@ -2569,14 +2446,6 @@ msgstr "Любые внесенные вами изменения будут у�
 #: classes/notices/wpml-tm-post-edit-notices.php:195
 msgid "Go Back"
 msgstr "Вернуться"
-
-msgid "Translated with PTC"
-msgstr "Переведено с помощью PTC"
-
-
-
-msgid "Made at OnTheGoSystems"
-msgstr "Создано в OnTheGoSystems"
 
 #: classes/notices/wpml-tm-post-edit-notices.php:196
 msgid "Edit Anyway (Not Recommended)"
@@ -3249,13 +3118,13 @@ msgstr "Последняя страница"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:121
 #: classes/utilities/admin/wpml-admin-pagination-render.php:37
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
 msgid "Current page"
 msgstr "Текущая страница"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-list-view.php:122
 #: classes/utilities/admin/wpml-admin-pagination-render.php:38
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
 msgid "of"
 msgstr "из"
 
@@ -3335,7 +3204,7 @@ msgid "Translation:"
 msgstr "Перевод:"
 
 #: classes/translation-feedback/views/wpml-tf-backend-feedback-row-view.php:77
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:73
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:78
 msgid "Edit translation"
 msgstr "Редактировать перевод"
 
@@ -4062,55 +3931,55 @@ msgstr "Нет пакета"
 msgid "Contact the translator"
 msgstr "Связаться с переводчиком"
 
-#: inc/translation-management/translation-management.class.php:1185
+#: inc/translation-management/translation-management.class.php:1196
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:381
 #: menu/post-menus/post-edit-screen/wpml-meta-boxes-post-edit-html.class.php:396
 msgid "Duplicate"
 msgstr "Дублировать"
 
-#: inc/translation-management/translation-management.class.php:1188
+#: inc/translation-management/translation-management.class.php:1199
 msgid "Complete"
 msgstr "Завершить"
 
-#: inc/translation-management/translation-management.class.php:1194
+#: inc/translation-management/translation-management.class.php:1205
 msgid "In progress - needs retry"
 msgstr "В процессе - требуется повторная попытка"
 
-#: inc/translation-management/translation-management.class.php:1916
+#: inc/translation-management/translation-management.class.php:1927
 msgid "Translation entry not found for: %d"
 msgstr "Запись перевода не найдена для: %d"
 
-#: inc/translation-management/translation-management.class.php:2078
-#: inc/translation-management/translation-management.class.php:2097
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
+#: inc/translation-management/translation-management.class.php:2089
+#: inc/translation-management/translation-management.class.php:2108
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
 msgid "translate"
 msgstr "перевести"
 
-#: inc/translation-management/translation-management.class.php:2080
+#: inc/translation-management/translation-management.class.php:2091
 msgid "string not registered"
 msgstr "строка не зарегистрирована"
 
-#: inc/translation-management/translation-management.class.php:2088
+#: inc/translation-management/translation-management.class.php:2099
 msgid "Multiple options"
 msgstr "Несколько вариантов"
 
-#: inc/translation-management/translation-management.class.php:2100
+#: inc/translation-management/translation-management.class.php:2111
 msgid "some strings might be not registered"
 msgstr "некоторые строки могут быть не зарегистрированы"
 
-#: inc/translation-management/translation-management.class.php:2325
+#: inc/translation-management/translation-management.class.php:2336
 msgid " - (needs update)"
 msgstr " - (требует обновления)"
 
-#: inc/translation-management/translation-management.class.php:2500
+#: inc/translation-management/translation-management.class.php:2511
 msgid "Preferences saved."
 msgstr "Настройки сохранены."
 
-#: inc/translation-management/translation-management.class.php:2519
+#: inc/translation-management/translation-management.class.php:2530
 msgid "Translation requests cancelled."
 msgstr "Запросы на перевод отменены."
 
-#: inc/translation-management/translation-management.class.php:2521
+#: inc/translation-management/translation-management.class.php:2532
 msgid "No Translation requests selected."
 msgstr "Не выбраны запросы на перевод."
 
@@ -4928,7 +4797,7 @@ msgid "WPML Network Setup"
 msgstr "Настройка сети WPML"
 
 #: menu/network.php:54
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
 msgid "Search"
 msgstr "Поиск"
 
@@ -5160,208 +5029,217 @@ msgstr "Для расширенного доступа или полного у�
 msgid "For retrieving debug information if asked by support person, use the %sdebug information%s page."
 msgstr "Для получения отладочной информации, если об этом попросит специалист службы поддержки, используйте страницу %sотладочной информации%s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:11
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
 msgid "Show"
 msgstr "Показать"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:12
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:16
 msgid "untranslated"
 msgstr "непереведенные"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:13
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
 msgid "all"
 msgstr "все"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:14
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
 msgid "in"
 msgstr "в"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:15
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
 msgid "to"
 msgstr "на"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:17
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:21
 #: menu/_custom_types_translation.php:172
 msgid "Taxonomy"
 msgstr "Таксономия"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:18
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
 msgid "any language"
 msgstr "любой язык"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:19
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
 msgid "Refresh"
 msgstr "Обновить"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:20
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
 msgid "Update Taxonomy Hierarchy"
 msgstr "Обновить иерархию таксономии"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:22
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:26
 msgid "select parent"
 msgstr "выбрать родительский элемент"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:23
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
 msgid "Select the taxonomy to translate: "
 msgstr "Выберите таксономию для перевода: "
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:24
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:28
 msgid "%1$s Translation"
 msgstr "Перевод %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:25
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
 msgid "Hierarchy Synchronization"
 msgstr "Синхронизация иерархии"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:27
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
 msgid "Copy to all languages"
 msgstr "Копировать на все языки"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:29
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
 msgid "Overwrite existing translations"
 msgstr "Перезаписать существующие переводы"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:30
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
 msgid "Will be removed"
 msgstr "Будет удалено"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:31
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
 msgid "Will be added"
 msgstr "Будет добавлено"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:32
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
 msgid "Legend:"
 msgstr "Условные обозначения:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:33
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
 msgid "Synchronize taxonomy hierarchy according to: %1$s language."
 msgstr "Синхронизировать иерархию таксономии в соответствии с: языком %1$s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:34
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
 msgid "Target Language"
 msgstr "Целевой язык"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:35
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
 msgid "Term translation"
 msgstr "Перевод термина"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:36
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
 msgid "Original term"
 msgstr "Оригинальный термин"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:37
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
 msgid "Label translation"
 msgstr "Перевод метки"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:38
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
 msgid "Copy from original"
 msgstr "Копировать с оригинала"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:39
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
 msgid "Original:"
 msgstr "Оригинал:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:40
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:44
 msgid "Translation to:"
 msgstr "Перевод на:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:41
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:45
 msgid "Name"
 msgstr "Имя"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:42
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
 msgid "Slug"
 msgstr "Ярлык"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:43
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
 msgid "Description"
 msgstr "Описание"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:46
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: sitepress.class.php:1266
+msgid "OK"
+msgstr "ОК"
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
 msgid "Singular"
 msgstr "Единственное число"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:47
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:51
 msgid "Plural"
 msgstr "Множественное число"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:48
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:52
 msgid "Change language"
 msgstr "Изменить язык"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:50
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
 msgid "loading"
 msgstr "загрузка"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:53
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
 msgid "Go to previous page"
 msgstr "Перейти на предыдущую страницу"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:54
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
 msgid "Go to the next page"
 msgstr "Перейти на следующую страницу"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:55
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
 msgid "Go to the first page"
 msgstr "Перейти на первую страницу"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:56
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
 msgid "Go to the last page"
 msgstr "Перейти на последнюю страницу"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:57
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
 msgid "The taxonomy hierarchy is now synchronized."
 msgstr "Иерархия таксономии теперь синхронизирована."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:58
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
 msgid "The taxonomy hierarchy is already synchronized."
 msgstr "Иерархия таксономии уже синхронизирована."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:59
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
 msgid "No %1$s found."
 msgstr "Не найдено %1$s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:60
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
 msgid "items"
 msgstr "элементов"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:61
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
 msgid "item"
 msgstr "элемент"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:62
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
 msgid "Translation of %1$s"
 msgstr "Перевод %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:63
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:67
 msgid "Translations of taxonomy %1$s labels and slug"
 msgstr "Переводы меток и ярлыков таксономии %1$s"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:64
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:68
 msgid "To translate taxonomy labels and slug you need %s plugin."
 msgstr "Для перевода меток и ярлыков таксономии вам нужен плагин %s."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:65
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:69
 msgid "Loading ..."
 msgstr "Загрузка..."
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:66
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:70
 msgid "%1$s terms (in original language)"
 msgstr "Термины %1$s (на исходном языке)"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:72
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:71
+msgid "Because too many %1$s were found, only the first %2$s results are listed. You can refine the results using the Search field below."
+msgstr "Поскольку было найдено слишком много %1$s, перечислены только первые %2$s результатов. Вы можете уточнить результаты, используя поле поиска ниже."
+
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:77
 msgid "Add translation"
 msgstr "Добавить перевод"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:74
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:79
 msgid "Original language"
 msgstr "Исходный язык"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:75
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:80
 msgid "This term has additional meta fields:"
 msgstr "У этого термина есть дополнительные метаполя:"
 
-#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:220
+#: menu/term-taxonomy-menus/taxonomy-translation-display.class.php:224
 msgid "Wrong nonce"
 msgstr "Неверный одноразовый код"
 
@@ -5911,23 +5789,23 @@ msgstr "Опции конструкторов страниц"
 msgid "Send to translation the content of raw HTML cells"
 msgstr "Отправлять на перевод содержимое ячеек с чистым HTML"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:118
+#: modules/cache-plugins-integration/cache-plugins-integration.php:116
 msgid "<i>%s</i> integration"
 msgstr "Интеграция <i>%s</i>"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:120
+#: modules/cache-plugins-integration/cache-plugins-integration.php:118
 msgid "You are using a caching plugin. When you translate strings, the cache needs to be cleared in order for the translation to display."
 msgstr "Вы используете плагин кэширования. Когда вы переводите строки, кэш необходимо очистить, чтобы отобразился перевод."
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:125
+#: modules/cache-plugins-integration/cache-plugins-integration.php:123
 msgid "Automatically clear the cache when strings are translated"
 msgstr "Автоматически очищать кэш при переводе строк"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:128
+#: modules/cache-plugins-integration/cache-plugins-integration.php:126
 msgid "I will clear the cache manually after translating strings"
 msgstr "Я буду очищать кэш вручную после перевода строк"
 
-#: modules/cache-plugins-integration/cache-plugins-integration.php:131
+#: modules/cache-plugins-integration/cache-plugins-integration.php:129
 msgid "Clear cache now"
 msgstr "Очистить кэш сейчас"
 

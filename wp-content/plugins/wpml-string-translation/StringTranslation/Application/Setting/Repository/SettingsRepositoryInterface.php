@@ -23,9 +23,13 @@ interface SettingsRepositoryInterface {
 	public function setNewTranslationsWereLoadedSetting();
 	public function unsetNewTranslationsWereLoadedSetting();
 	public function wereNewTranslationsLoaded(): bool;
-	public function saveKeyToSettings( string $keyName );
+	/**
+	 * @param int|string $value
+	 */
+	public function saveKeyToSettings( string $keyName, $value = 1 );
 	public function removeKeyFromSettings( string $keyName );
 	public function hasKeyInSettings( string $keyName ): bool;
+	public function getKeyValueFromSettings( string $keyName ): string;
 	public function getIsCurrentUserAdmin(): bool;
 	public function isAdminViewingFrontendPage(): bool;
 	public function setIsAutoregistrationEnabled( bool $isAutoregistrationEnabled );

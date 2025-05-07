@@ -3,18 +3,24 @@ namespace WPML\StringTranslation\UserInterface\RestApi;
 
 use WPML\Rest\Adaptor;
 use \WPML\StringTranslation\Application\Setting\Repository\SettingsRepositoryInterface;
+use \WPML\StringTranslation\Application\Setting\Repository\PluginRepositoryInterface;
 
 class StringSettingsApiController extends AbstractController {
 
 	/** @var SettingsRepositoryInterface */
 	private $settingsRepository;
 
+	/** @var PluginRepositoryInterface */
+	private $pluginRepository;
+
 	public function __construct(
 		Adaptor                     $adaptor,
-		SettingsRepositoryInterface $settingsRepository
+		SettingsRepositoryInterface $settingsRepository,
+		PluginRepositoryInterface   $pluginRepository
 	) {
 		parent::__construct( $adaptor );
-		$this->settingsRepository  = $settingsRepository;
+		$this->settingsRepository = $settingsRepository;
+		$this->pluginRepository = $pluginRepository;
 	}
 
 	/**
@@ -36,6 +42,10 @@ class StringSettingsApiController extends AbstractController {
 							'type'    => 'integer',
 							'default' => 0,
 						],
+						'setNoticeThatCachePluginCanBlockAutoregisterAsDismissed' => [
+							'type'    => 'integer',
+							'default' => 0,
+						]
 					]
 				]
 			],
@@ -55,12 +65,17 @@ class StringSettingsApiController extends AbstractController {
 	public function post( \WP_REST_Request $request ) {
 		$autoregisterType             = $request->get_param( 'autoregisterType' );
 		$shouldRegisterBackendStrings = (bool) $request->get_param( 'shouldRegisterBackendStrings' );
+		$shouldShowNoticeThatCachePluginCanBlockAutoregister = (bool) $request->get_param('shouldShowNoticeThatCachePluginCanBlockAutoregister');
 
 		if ( ! is_null( $autoregisterType ) ) {
 			$this->settingsRepository->setAutoregisterStringsTypeSetting( $autoregisterType );
 		}
 
 		$this->settingsRepository->setShouldRegisterBackendStringsSetting( $shouldRegisterBackendStrings );
+
+		if ( ! $shouldShowNoticeThatCachePluginCanBlockAutoregister ) {
+			$this->pluginRepository->setNoticeThatCachePluginCanBlockAutoregisterAsDismissed();
+		}
 
 		return [];
 	}
@@ -91,6 +106,10 @@ class StringSettingsApiController extends AbstractController {
 			'autoregisterType'             => $this->settingsRepository->getAutoregisterStringsTypeSetting(),
 			'shouldRegisterBackendStrings' => $this->settingsRepository->getShouldRegisterBackendStringsSetting() ? 1 : 0,
 			'autoregisterAllowedLanguages' => $autoregisterAllowedLanguages,
+			'activeCachePluginName'        => $this->pluginRepository->shouldShowNoticeThatCachePluginCanBlockAutoregister()
+				? $this->pluginRepository->getActiveCachePluginName()
+				: '',
+			'shouldShowNoticeThatCachePluginCanBlockAutoregister' => $this->pluginRepository->shouldShowNoticeThatCachePluginCanBlockAutoregister(),
 		];
 	}
 }

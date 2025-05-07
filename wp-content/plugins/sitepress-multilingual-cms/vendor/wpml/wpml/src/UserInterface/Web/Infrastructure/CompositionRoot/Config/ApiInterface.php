@@ -33,6 +33,9 @@ interface ApiInterface {
   public function validateRequest( string $capability ): bool;
 
 
+  public function capabilityPlusAdmin( string $capability ): string;
+
+
   /**
    * @param array<mixed> $data
    * @return mixed

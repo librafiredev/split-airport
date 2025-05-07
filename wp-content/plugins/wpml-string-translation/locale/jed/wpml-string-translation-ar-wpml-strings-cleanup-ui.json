@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "قم بتنظيف جدول ترجمة السلسلة عن طريق إزالة السلاسل غير المترجمة حسب المجال."
          ],
-         "Translated with PTC": [
-            "مترجم بواسطة PTC"
-         ],
          "Remove strings by domain": [
             "إزالة السلاسل حسب المجال"
          ],

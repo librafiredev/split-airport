@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Αναζήτηση γονέα βάσει τίτλου"
          ],
+         "Search by term title in %s": [
+            "Αναζήτηση κατά τίτλο όρου στο %s"
+         ],
          "All taxonomies": [
             "Όλες οι ταξινομίες"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Δεν βρέθηκαν όροι"
-         ],
-         "Search by term title": [
-            "Αναζήτηση βάσει τίτλου όρου"
          ],
          "Filter by:": [
             "Φιλτράρισμα κατά:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "Οι περισσότερες συμβολοσειρές από τα πρόσθετα και το θέμα σας είναι στα Αγγλικά, οπότε τις εμφανίζουμε παράλληλα με την προεπιλεγμένη γλώσσα σας. Χρησιμοποιήστε το φίλτρο <b>Γλώσσα Προέλευσης</b> για προβολή συμβολοσειρών σε συγκεκριμένη γλώσσα."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Χρησιμοποιείτε το <b>%s</b> για την προσωρινή αποθήκευση του ιστοτόπου σας, γεγονός που ενδέχεται να εμποδίζει το WPML να καταχωρίζει αυτομάτως νέες συμβολοσειρές. Για να διορθώσετε αυτό το ζήτημα, εκκαθαρίστε την προσωρινή μνήμη της σελίδας σας και, στη συνέχεια, επισκεφθείτε εκ νέου τις μεταφρασμένες σελίδες σας στο frontend προκειμένου να εντοπιστούν οι νέες συμβολοσειρές."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "Το WPML μπορεί να εντοπίσει συμβολοσειρές που εμφανίζονται στον ιστότοπο και να τις καταχωρίσει εδώ. Αυτή η λειτουργία σας βοηθά να εντοπίσετε τις συμβολοσειρές που πραγματικά εμφανίζονται στον ιστότοπο και να τις μεταφράσετε. Για να δείτε εδώ μόνο τις συμβολοσειρές που πραγματικά εμφανίζονται στον ιστότοπο, πρέπει να ενεργοποιήσετε αυτή τη λειτουργία."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Όνομα παρτίδας:"
+         ],
+         "Default translation engine: ": [
+            "Προεπιλεγμένη μηχανή μετάφρασης: "
+         ],
+         "Change": [
+            "Αλλαγή"
+         ],
+         "Failed to load engines": [
+            "Αποτυχία φόρτωσης μηχανών"
          ],
          "Your Automatic Translation Credits": [
             "Οι Πιστώσεις Αυτόματης Μετάφρασής σας"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Αδυναμία ανάκτησης δεδομένων μηχανών"
+         ],
          "Error in fetching currently logged in translator": [
             "Σφάλμα κατά την ανάκτηση του τρέχοντος συνδεδεμένου μεταφραστή"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Αναμονή για αναθεώρηση"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Προτείνεται με DeepL, Google και Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Συνιστάται με DeepL, Google και Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "Οι DeepL, Google και Azure παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστάται ανθρώπινη επισκόπηση για επιβεβαίωση ορθότητας. Το WPML AI παρέχει Καλύτερες από Ανθρώπινες Μεταφράσεις που κατανοούν το πλαίσιο, επιτρέποντας παράλειψη της διαδικασίας επισκόπησης."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "Η DeepL, η Google και η Microsoft παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστούμε ανθρώπινη επισκόπηση για να επιβεβαιωθεί η ορθότητά τους. Το WPML AI προσφέρει Μεταφράσεις Καλύτερες από τις Ανθρώπινες που κατανοούν το πλαίσιο, ώστε να μπορείτε με βεβαιότητα να παραλείψετε τη διαδικασία επανεξέτασης."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "Το WPML διατηρεί τις μεταφράσεις αδημοσίευτες, ώστε να μπορείτε να τις ελέγξετε πρώτα."

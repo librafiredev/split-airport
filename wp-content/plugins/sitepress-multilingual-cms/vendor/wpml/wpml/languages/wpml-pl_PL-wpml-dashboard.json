@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Wyszukaj rodzica po tytule"
          ],
+         "Search by term title in %s": [
+            "Wyszukaj według tytułu terminu w %s"
+         ],
          "All taxonomies": [
             "Wszystkie taksonomie"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Nie znaleziono terminów"
-         ],
-         "Search by term title": [
-            "Wyszukaj według tytułu terminu"
          ],
          "Filter by:": [
             "Filtruj według:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "Większość stringów z twoich wtyczek i motywu jest po angielsku, więc pokazujemy je obok twojego domyślnego języka. Użyj filtra <b>Język źródłowy</b>, aby zobaczyć stringi w konkretnym języku."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Używasz <b>%s</b> do buforowania swojej witryny, co może uniemożliwić WPML automatyczne rejestrowanie nowych ciągów. Aby to naprawić, wyczyść pamięć podręczną strony, a następnie odwiedź ponownie przetłumaczone strony w interfejsie użytkownika, aby wykryć nowe ciągi."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML może wykrywać ciągi znaków, które pojawiają się na stronie i wyświetlać je tutaj. Ta funkcja pomaga zidentyfikować ciągi znaków, które rzeczywiście pojawiają się na stronie i je przetłumaczyć. Aby zobaczyć tutaj tylko ciągi znaków, które rzeczywiście pojawiają się na stronie, musisz włączyć tę funkcję."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Nazwa partii:"
+         ],
+         "Default translation engine: ": [
+            "Domyślny silnik tłumaczeniowy: "
+         ],
+         "Change": [
+            "Zmień"
+         ],
+         "Failed to load engines": [
+            "Nie udało się załadować silników"
          ],
          "Your Automatic Translation Credits": [
             "Twoje kredyty tłumaczenia automatycznego"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Nie udało się pobrać danych silników"
+         ],
          "Error in fetching currently logged in translator": [
             "Błąd podczas pobierania aktualnie zalogowanego tłumacza"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Czekaj na weryfikację"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Zalecane z DeepL, Google i Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Rekomendowane z DeepL, Google i Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google i Azure dają świetne tłumaczenia, ale zalecamy ludzką weryfikację. WPML AI daje Lepsze Niż Ludzkie Tłumaczenia, więc możesz spokojnie pominąć sprawdzanie."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google i Microsoft dostarczają znakomite tłumaczenia, jednakże zalecamy przeprowadzenie weryfikacji przez człowieka celem potwierdzenia ich poprawności. WPML AI oferuje Tłumaczenia Lepsze Niż Ludzkie, które rozumieją kontekst, dzięki czemu można z pewnością pominąć proces weryfikacji."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML zachowuje tłumaczenia jako nieopublikowane, abyś mógł je najpierw przejrzeć."

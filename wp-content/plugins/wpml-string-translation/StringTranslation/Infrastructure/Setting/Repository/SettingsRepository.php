@@ -2,7 +2,6 @@
 
 namespace WPML\StringTranslation\Infrastructure\Setting\Repository;
 
-use Mpdf\Tag\Pre;
 use WPML\FP\Str;
 use WPML\StringTranslation\Application\Setting\Repository\SettingsRepositoryInterface;
 use WPML\StringTranslation\Application\Setting\Repository\UrlRepositoryInterface;
@@ -157,9 +156,12 @@ class SettingsRepository implements SettingsRepositoryInterface {
 		return $settings['autoregister_strings_were_new_translations_loaded'];
 	}
 
-	public function saveKeyToSettings( string $keyName ) {
+	/**
+	 * @param int|string $value
+	 */
+	public function saveKeyToSettings( string $keyName, $value = 1 ) {
 		$settings = $this->getSettings();
-		$settings[ $keyName ] = 1;
+		$settings[ $keyName ] = $value;
 		$this->saveSettings( $settings );
 	}
 
@@ -172,6 +174,11 @@ class SettingsRepository implements SettingsRepositoryInterface {
 	public function hasKeyInSettings( string $keyName ): bool {
 		$settings = $this->getSettings();
 		return array_key_exists( $keyName, $settings );
+	}
+
+	public function getKeyValueFromSettings( string $keyName ): string {
+		$settings = $this->getSettings();
+		return isset( $settings[ $keyName ] ) ? (string) $settings[ $keyName ] : '';
 	}
 
 	private function getSettings() {

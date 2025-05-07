@@ -240,8 +240,8 @@ class WPML_PB_Integration {
 	}
 
 	/**
-	 * @param WP_Post $post
-	 * @param bool $allowRegisteringPostTranslation Specifies if the string registration must be allowed for posts that are not original.
+	 * @param WP_Post|mixed $post
+	 * @param bool          $allowRegisteringPostTranslation Specifies if the string registration must be allowed for posts that are not original.
 	 */
 	public function register_all_strings_for_translation( $post, $allowRegisteringPostTranslation = false ) {
 		if ( $post instanceof \WP_Post && $this->is_post_status_ok( $post ) && ( $allowRegisteringPostTranslation || $this->is_original_post( $post ) ) ) {

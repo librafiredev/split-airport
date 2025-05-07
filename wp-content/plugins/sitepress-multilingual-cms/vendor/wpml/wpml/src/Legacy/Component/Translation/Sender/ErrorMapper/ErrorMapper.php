@@ -17,7 +17,7 @@ class ErrorMapper {
 
 
   /**
-   * @param array{type: string, text: string}[] $errors
+   * @param array{id?: string, type?: string, text?: string}[] $errors
    *
    * @return string
    */

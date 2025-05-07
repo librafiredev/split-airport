@@ -154,6 +154,9 @@
          "Search parent by title": [
             "البحث عن الأصل حسب العنوان"
          ],
+         "Search by term title in %s": [
+            "بحث حسب عنوان المصطلح في %s"
+         ],
          "All taxonomies": [
             "جميع التصنيفات"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "لم يتم العثور على مصطلحات"
-         ],
-         "Search by term title": [
-            "البحث حسب عنوان المصطلح"
          ],
          "Filter by:": [
             "تصفية حسب:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "معظم السلاسل النصية من الإضافات والسمة الخاصة بك باللغة الإنجليزية، لذلك نعرضها إلى جانب لغتك الافتراضية. استخدم عامل تصفية <b>لغة المصدر</b> لعرض السلاسل النصية بلغة معينة."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "أنت تستخدم <b>%s</b> لتخزين موقعك مؤقتًا، مما قد يمنع WPML من تسجيل النصوص الجديدة تلقائيًا. لإصلاح هذا، قم بمسح ذاكرة التخزين المؤقت للصفحة، ثم قم بزيارة صفحاتك المترجمة مرة أخرى في الواجهة الأمامية لاكتشاف النصوص الجديدة."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "يمكن لـ WPML اكتشاف السلاسل التي تظهر على الموقع وإدراجها هنا. تساعدك هذه الميزة على تحديد السلاسل التي تظهر بالفعل على الموقع وترجمتها. لرؤية السلاسل التي تظهر بالفعل على الموقع هنا فقط، تحتاج إلى تمكين هذه الميزة."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "اسم الدفعة:"
+         ],
+         "Default translation engine: ": [
+            "محرك الترجمة الافتراضي: "
+         ],
+         "Change": [
+            "تغيير"
+         ],
+         "Failed to load engines": [
+            "فشل تحميل المحركات"
          ],
          "Your Automatic Translation Credits": [
             "رصيدك من الترجمة التلقائية"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "تعذر جلب بيانات المحركات"
+         ],
          "Error in fetching currently logged in translator": [
             "خطأ في جلب المترجم المسجل حاليًا"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "الانتظار للمراجعة"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "موصى به مع DeepL وGoogle وAzure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "موصى به مع DeepL وGoogle وMicrosoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "تقدم DeepL وGoogle وAzure ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. يوفر الذكاء الاصطناعي لـWPML ترجمات أفضل من البشر تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "تقدم DeepL وGoogle وMicrosoft ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. توفر WPML ترجمات أفضل من الترجمات البشرية والتي تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "يحتفظ WPML بالترجمات غير منشورة، حتى تتمكن من مراجعتها أولاً."

@@ -123,7 +123,20 @@ class Api implements ApiInterface {
 
 
   public function validateRequest( string $capability ): bool {
-    return \current_user_can( $capability );
+    return \current_user_can( $this->capabilityPlusAdmin( $capability ) );
+  }
+
+
+  public function capabilityPlusAdmin( string $capability ): string {
+    if ( current_user_can( WPML_CAP_MANAGE_OPTIONS ) ) {
+      // There is nothing on WPML which isn't allowed by Administrators.
+      // This prevents people from being locked out of WPML functions when
+      // they accidentally lose their WPML_CAP_MANAGE_TRANSLATIONS capability.
+      // See wpmldev-4629.
+      return WPML_CAP_MANAGE_OPTIONS;
+    }
+
+    return $capability;
   }
 
 

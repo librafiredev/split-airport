@@ -43,6 +43,10 @@ class WPML_Gutenberg_Integration_Factory {
 			make( \WPML\PB\Gutenberg\Hooks\TranslationJobImages::class )
 		);
 
+		$integrations->add(
+			make( \WPML\PB\Gutenberg\Hooks\TranslationGuiLabels::class )
+		);
+
 		return $integrations;
 	}
 

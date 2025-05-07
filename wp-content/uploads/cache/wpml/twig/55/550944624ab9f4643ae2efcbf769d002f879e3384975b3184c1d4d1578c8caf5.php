@@ -45,7 +45,7 @@ class __TwigTemplate_a6eb75c37f5dab844ddd37f90ac22e0314c113a7a7f01b5e355c02e4b79
         <label>
             <input
                     type=\"checkbox\"
-                    class=\"js-wpml-ls-setting-display_flags js-wpml-ls-toggle-suboptions js-wpml-ls-trigger-update\"
+                    class=\"wpml-checkbox-native js-wpml-ls-setting-display_flags js-wpml-ls-toggle-suboptions js-wpml-ls-trigger-update\"
                     data-target=\".js-wpml-ls-flag-sizes\"
                     data-show-on-checked=\"1\"
                     value=\"1\"
@@ -151,7 +151,7 @@ class __TwigTemplate_a6eb75c37f5dab844ddd37f90ac22e0314c113a7a7f01b5e355c02e4b79
         </ul>
     </li>
     <li>
-        <label><input type=\"checkbox\" class=\"js-wpml-ls-setting-display_names_in_native_lang js-wpml-ls-trigger-update\"
+        <label><input type=\"checkbox\" class=\"wpml-checkbox-native js-wpml-ls-setting-display_names_in_native_lang js-wpml-ls-trigger-update\"
                       name=\"";
         // line 51
         if (($context["name_base"] ?? null)) {
@@ -177,7 +177,7 @@ class __TwigTemplate_a6eb75c37f5dab844ddd37f90ac22e0314c113a7a7f01b5e355c02e4b79
         </label>
     </li>
     <li>
-        <label><input type=\"checkbox\" class=\"js-wpml-ls-setting-display_names_in_current_lang js-wpml-ls-trigger-update\"
+        <label><input type=\"checkbox\" class=\"wpml-checkbox-native js-wpml-ls-setting-display_names_in_current_lang js-wpml-ls-trigger-update\"
                       name=\"";
         // line 58
         if (($context["name_base"] ?? null)) {
@@ -203,7 +203,7 @@ class __TwigTemplate_a6eb75c37f5dab844ddd37f90ac22e0314c113a7a7f01b5e355c02e4b79
         </label>
     </li>
     <li>
-        <label><input type=\"checkbox\" class=\"js-wpml-ls-setting-display_link_for_current_lang js-wpml-ls-trigger-update\"
+        <label><input type=\"checkbox\" class=\"wpml-checkbox-native js-wpml-ls-setting-display_link_for_current_lang js-wpml-ls-trigger-update\"
                       name=\"";
         // line 65
         if (($context["name_base"] ?? null)) {
@@ -228,7 +228,8 @@ class __TwigTemplate_a6eb75c37f5dab844ddd37f90ac22e0314c113a7a7f01b5e355c02e4b79
         echo "
         </label>
     </li>
-</ul>";
+</ul>
+";
     }
 
     public function getTemplateName()

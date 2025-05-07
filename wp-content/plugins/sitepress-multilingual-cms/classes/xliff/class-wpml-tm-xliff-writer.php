@@ -3,11 +3,15 @@
  * @package wpml-core
  */
 
+use WPML\FP\Cast;
+use WPML\FP\Fns;
+use WPML\FP\Lst;
 use WPML\FP\Obj;
 use WPML\FP\Str;
 use WPML\LIB\WP\Attachment;
 use WPML\TM\Jobs\FieldId;
 use WPML\Utilities\Labels;
+use function WPML\FP\spreadArgs;
 
 class WPML_TM_Xliff_Writer {
 	const TAB                    = "\t";
@@ -180,17 +184,21 @@ class WPML_TM_Xliff_Writer {
 		$source_language_domain = $sitepress->get_domain_by_language( $source_language );
 		$target_language_domain = $sitepress->get_domain_by_language( $target_language );
 
-
+		$jobSender = \WPML\TM\ATE\JobSender\JobSenderRepository::get();
 
 		$string = $xliff
 			->setFileAttributes(
 				array(
-					'original'        => $original_id,
-					'source-language' => $source_language,
-					'target-language' => $target_language,
+					'original'                    => $original_id,
+					'source-language'             => $source_language,
+					'target-language'             => $target_language,
 					'tool:source-language-domain' => $source_language_domain,
 					'tool:target-language-domain' => $target_language_domain,
-					'datatype'        => 'plaintext',
+					'tool:sender-id'              => $jobSender->id,
+					'tool:sender-username'        => $jobSender->username,
+					'tool:sender-email'           => $jobSender->email,
+					'tool:sender-display-name'    => $jobSender->displayName,
+					'datatype'                    => 'plaintext',
 				)
 			)
 			->setReferences(
@@ -305,13 +313,22 @@ class WPML_TM_Xliff_Writer {
 			return $translation_units;
 		}
 
+		$elements = array_values( array_filter( $elements, function( $element ) {
+			return ( 1 === (int) $element->field_translate );
+		} ) );
+
 		$elements = $this->pre_populate_elements_with_translation_memory( $elements, $job->source_language_code, $job->language_code );
 
-		foreach ( $elements as $element ) {
-			if ( 1 === (int) $element->field_translate ) {
-				$this->process_elements( $element, $job, $translation_units, $apply_memory );
-			}
-		}
+		$elementsAsFields = Fns::map( Cast::toArr(), $elements );
+		$elementsAsFields = apply_filters( 'wpml_tm_adjust_translation_fields', $elementsAsFields, $job, null );
+		$elementsAsFields = Fns::map( function( $elementAsField ) {
+			return $this->getExtraData( $elementAsField );
+		}, $elementsAsFields );
+
+		$elementsPairs = Lst::zip( $elements, $elementsAsFields );
+		Fns::map( spreadArgs( function( $element, $elementAsField ) use ( &$translation_units, $apply_memory ) {
+			$this->processElement( $element, $elementAsField, $translation_units, $apply_memory );
+		} ), $elementsPairs );
 
 		/**
 		 * @param array    $translation_units
@@ -325,24 +342,21 @@ class WPML_TM_Xliff_Writer {
 	 * Adds to the translation units array. If images are in the extra data it processes them first.
 	 *
 	 * @param stdClass $element
-	 * @param stdClass $job
-	 * @param array    $translation_units
-	 * @param boolean  $apply_memory
+	 * @param array    $extraData
+	 * @param array    $translationUnits
+	 * @param boolean  $applyMemory
 	 * @return void
 	 */
-	private function process_elements( $element, $job, &$translation_units, $apply_memory ) {
-
-		$extra_data = $this->get_extra_data( $element, $job );
-
-		if ( isset( $extra_data['images'] ) && count( $extra_data['images'] ) > 0 && ! $this->has_group_image_been_handled( $extra_data ) ) {
-			$this->handle_extra_data_images( $element, $extra_data, $translation_units );
+	private function processElement( $element, $extraData, &$translationUnits, $applyMemory ) {
+		if ( isset( $extraData['images'] ) && count( $extraData['images'] ) > 0 && ! $this->has_group_image_been_handled( $extraData ) ) {
+			$this->handle_extra_data_images( $element, $extraData, $translationUnits );
 		};
 
-		if ( isset( $extra_data['images'] ) ) {
-			unset( $extra_data['images'] );
+		if ( isset( $extraData['images'] ) ) {
+			unset( $extraData['images'] );
 		}
 
-		$this->handle_field_data( $element, $extra_data, $translation_units, $apply_memory );
+		$this->handle_field_data( $element, $extraData, $translationUnits, $applyMemory );
 	}
 
 	/**
@@ -567,56 +581,53 @@ class WPML_TM_Xliff_Writer {
 
 	/**
 	 * Retrieves and constructs extra data for a given field.
-	 * Applies filters to adjust the title and get extra data for groups and images.
+	 * After applying filters to adjust the title and get extra data for groups and images.
 	 *
-	 * @param \stdClass $field
-	 * @param \stdClass $job
+	 * @param array $field
 	 *
 	 * @return array
 	 */
-	private function get_extra_data( $field, $job ) {
-		$result = apply_filters( 'wpml_tm_adjust_translation_fields', [ (array) $field ], $job, null );
-
-		$field_type = Obj::pathOr( '', [ 0, 'field_type' ], $result );
-		$title      = Obj::pathOr( '', [ 0, 'title' ], $result );
-		$group      = Obj::pathOr( '', [ 0, 'group' ], $result );
-		$image_url  = Obj::pathOr( '', [ 0, 'image' ], $result );
-		$purpose    = Obj::pathOr( '', [ 0, 'purpose' ], $result );
+	private function getExtraData( $field ) {
+		$fieldType = Obj::propOr( '', 'field_type', $field );
+		$title     = Obj::propOr( '', 'title', $field );
+		$group     = Obj::propOr( '', 'group', $field );
+		$imageUrl  = Obj::propOr( '', 'image', $field );
+		$purpose   = Obj::propOr( '', 'purpose', $field );
 
 		if ( is_array( $group ) ) {
-			$group_title_string = implode( '/', array_values( $group ) );
-			$group_id_string    = implode( '/', array_keys( $group ) );
-		} elseif ( FieldId::is_a_custom_field( $field_type ) ) {
-			$title              = Str::pregReplace( '/^' . FieldId::CUSTOM_FIELD_PREFIX . '/', '', $title );
-			$group_title_string = self::CUSTOM_FIELDS_GROUP;
-			$group_id_string    = self::CUSTOM_FIELDS_GROUP_ID;
+			$groupTitleString = implode( '/', array_values( $group ) );
+			$groupIdString    = implode( '/', array_keys( $group ) );
+		} elseif ( FieldId::is_a_custom_field( $fieldType ) ) {
+			$title            = Str::pregReplace( '/^' . FieldId::CUSTOM_FIELD_PREFIX . '/', '', $title );
+			$groupTitleString = self::CUSTOM_FIELDS_GROUP;
+			$groupIdString    = self::CUSTOM_FIELDS_GROUP_ID;
 		} else {
-			$group_title_string = self::DEFAULT_GROUP;
-			$group_id_string    = self::DEFAULT_GROUP_ID;
+			$groupTitleString = self::DEFAULT_GROUP;
+			$groupIdString    = self::DEFAULT_GROUP_ID;
 		}
 
-		$extradata_array = [
+		$extradataArray = [
 			'unit'     => Labels::labelize( $title ),
-			'type'     => FieldId::is_a_custom_field( $field_type ) ? 'custom_field' : 'text',
-			'group'    => $group_title_string,
-			'group_id' => $group_id_string,
+			'type'     => FieldId::is_a_custom_field( $fieldType ) ? 'custom_field' : 'text',
+			'group'    => $groupTitleString,
+			'group_id' => $groupIdString,
 		];
 
-		if ( '' !== $image_url ) {
-			$extradata_array = array_merge(
-				$extradata_array,
-				[ 'images' => [ $image_url ] ]
+		if ( '' !== $imageUrl ) {
+			$extradataArray = array_merge(
+				$extradataArray,
+				[ 'images' => [ $imageUrl ] ]
 			);
 		}
 
 		if ( $purpose ) {
-			$extradata_array = array_merge(
-				$extradata_array,
+			$extradataArray = array_merge(
+				$extradataArray,
 				[ 'purpose' => $purpose ]
 			);
 		}
 
-		return $extradata_array;
+		return $extradataArray;
 	}
 
 	/**

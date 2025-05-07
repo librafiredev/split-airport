@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "جارٍ التحميل..."
 msgid "Failed to load engines"
 msgstr "فشل تحميل المحركات"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "اسحب وأفلت للترتيب من المحرك الأكثر تفضيلاً إلى الأقل تفضيلاً."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "اسحب محرك الترجمة الافتراضي إلى الأعلى ورتب الباقي حسب الأولوية."
 
 msgid "Which translation engines do you want to use?"
 msgstr "ما هي محركات الترجمة التي ترغب في استخدامها؟?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "تختلف محركات الترجمة التلقائية في أسلوب الترجمة وأزواج اللغات المدعومة. إذا لم يدعم محرك الترجمة المفضل لديك زوج اللغات الذي ترغب في استخدامه، فإننا نعود إلى المحرك التالي المفضل لديك الذي يدعمه. تعرف على المزيد حول،,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "تختلف محركات الترجمة الآلية في أسلوب الترجمة وأزواج اللغات المدعومة. إذا كان محرك الترجمة المفضل لديك لا يدعم زوج اللغات الذي ترغب في استخدامه، فإننا نعود إلى المحرك المفضل التالي الذي يدعمه."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "يكتشف WPML AI (تجريبي) تلقائيًا رسمية المحتوى الخاص بك ويترجم بنفس الرسمية."
@@ -63,14 +63,20 @@ msgstr "موقعك لا يستخدم لغات تقدم إعدادات الرسم
 msgid "Edit formality"
 msgstr "تعديل الرسمية"
 
+msgid "%d credits per word"
+msgstr "%d رصيد لكل كلمة"
+
+msgid "Backup %d"
+msgstr "نسخة احتياطية %d"
+
+msgid "Default"
+msgstr "افتراضي"
+
 msgid "ON"
 msgstr "تشغيل"
 
 msgid "OFF"
 msgstr "إيقاف"
-
-msgid "%d credits per word"
-msgstr "%d رصيد لكل كلمة"
 
 msgid "Documentation"
 msgstr "الوثائق"
@@ -110,9 +116,6 @@ msgstr "إلغاء"
 msgid "Update"
 msgstr "تحديث"
 
-msgid "Default"
-msgstr "افتراضي"
-
 msgid "Formal"
 msgstr "رسمي"
 
@@ -140,11 +143,11 @@ msgstr "ماذا تريد أن تفعل بعد أن ينتهي WPML من ترج�
 msgid "Wait for review"
 msgstr "انتظار المراجعة"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "موصى به مع DeepL وGoogle وAzure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "موصى به مع DeepL وGoogle وMicrosoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "تقدم DeepL وGoogle وAzure ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. يوفر WPML AI ترجمات أفضل من الإنسان تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "تقدم DeepL وGoogle وMicrosoft ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. يوفر WPML ترجمات أفضل من البشر تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "يحتفظ WPML بالترجمات غير منشورة، حتى تتمكن من مراجعتها أولاً."

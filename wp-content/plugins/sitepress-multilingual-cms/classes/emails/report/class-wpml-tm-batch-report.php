@@ -4,7 +4,7 @@
  * Class WPML_TM_Batch_Report
  */
 class WPML_TM_Batch_Report {
-	
+
 	const BATCH_REPORT_OPTION = '_wpml_batch_report';
 
 	/**
@@ -40,7 +40,7 @@ class WPML_TM_Batch_Report {
 		if ( ! WPML_User_Jobs_Notification_Settings::is_new_job_notification_enabled( $job_fields->translator_id ) ) {
 			return;
 		}
-		
+
 		$batch_jobs = $batch_jobs_raw = $this->get_jobs();
 		$batch_jobs = $this->add_job_to_batch( $batch_jobs, $job, $job_fields );
 
@@ -105,6 +105,158 @@ class WPML_TM_Batch_Report {
 		return array_diff( $blog_translators, $assigned_translators );
 	}
 
+	/**
+	 * Cleans batch jobs by validating language pairs and ensuring each job ID exists in the database.
+	 *
+	 * @return void
+	 */
+	public function clean_batch_jobs()
+	{
+		global $sitepress;
+
+		$batch_jobs = $this->get_batch_jobs();
+		if ( empty( $batch_jobs ) ) {
+			return;
+		}
+
+		$valid_language_codes = array_fill_keys( array_keys( $sitepress->get_active_languages() ), true );
+
+		// Filter jobs by active languages and collect job IDs.
+		list( $filtered_jobs, $job_ids ) = $this->filter_jobs_by_active_languages_and_collect_job_ids( $batch_jobs, $valid_language_codes );
+
+		// If no job IDs were collected, update the option and exit.
+		if ( empty( $job_ids ) ) {
+			$this->update_batch_jobs_option( $filtered_jobs );
+			return;
+		}
+
+		// Validate the collected job IDs against the database.
+		$valid_job_ids_set = $this->get_valid_job_ids_set( $job_ids );
+
+		// Remove job items that are not in the valid job IDs set.
+		$cleaned_jobs = $this->remove_invalid_jobs( $filtered_jobs, $valid_job_ids_set );
+
+		$this->update_batch_jobs_option( $cleaned_jobs );
+	}
+
+	/**
+	 * Retrieves the batch jobs option.
+	 *
+	 * @return array Batch jobs array, or an empty array if not valid.
+	 */
+	private function get_batch_jobs()
+	{
+		$batch_jobs = get_option( self::BATCH_REPORT_OPTION );
+		return ( empty( $batch_jobs ) || !is_array( $batch_jobs ) ) ? array() : $batch_jobs;
+	}
+
+	/**
+	 * Updates the batch jobs option with the provided jobs array.
+	 *
+	 * @param array $jobs Batch jobs array.
+	 * @return void
+	 */
+	private function update_batch_jobs_option( array $jobs )
+	{
+		update_option( self::BATCH_REPORT_OPTION, $jobs, 'no' );
+	}
+
+	/**
+	 * Filters batch jobs by checking active language pairs and collects job IDs.
+	 *
+	 * @param array $batch_jobs Batch jobs.
+	 * @param array $valid_language_codes Array of valid language codes.
+	 * @return array An array with two elements: the filtered jobs and the collected job IDs.
+	 */
+	private function filter_jobs_by_active_languages_and_collect_job_ids( array $batch_jobs, array $valid_language_codes )
+	{
+		$filtered_jobs = array();
+		$job_ids       = array();
+
+		foreach ( $batch_jobs as $translator_id => $language_pairs ) {
+			foreach ( $language_pairs as $language_pair_name => $language_pair_items ) {
+				$languages = explode( '|', $language_pair_name );
+				// Ensure the language pair format is valid.
+				if ( count( $languages ) !== 2 ) {
+					continue;
+				}
+
+				list( $source_lang, $target_lang ) = $languages;
+
+				if ( !isset( $valid_language_codes[ $source_lang ] ) || !isset( $valid_language_codes[ $target_lang ] ) ) {
+					continue;
+				}
+
+				$filtered_jobs[ $translator_id ][ $language_pair_name ] = $language_pair_items;
+				foreach ( $language_pair_items as $item ) {
+					if ( !empty( $item[ 'job_id' ] ) ) {
+						$job_ids[] = (int)$item[ 'job_id' ];
+					}
+				}
+			}
+		}
+
+		return array( $filtered_jobs, $job_ids );
+	}
+
+	/**
+	 * Validates the collected job IDs against the database.
+	 *
+	 * @param array $job_ids Collected job IDs.
+	 * @return array A set of valid job IDs.
+	 */
+	private function get_valid_job_ids_set( array $job_ids )
+	{
+		$job_ids           = array_unique( $job_ids );
+		$valid_job_ids_set = array();
+		$chunk_size        = 500;
+		$chunks            = array_chunk( $job_ids, $chunk_size );
+
+		foreach ( $chunks as $chunk ) {
+			$placeholders = implode( ',', array_fill( 0, count( $chunk ), '%d' ) );
+			$table        = $this->wpdb->prefix . 'icl_translate_job';
+			$sql          = "SELECT job_id FROM {$table} WHERE job_id IN ($placeholders)";
+			$results      = $this->wpdb->get_col( $this->wpdb->prepare( $sql, $chunk ) );
+
+			if ( !empty( $results ) ) {
+				foreach ( $results as $job_id ) {
+					$valid_job_ids_set[ (int)$job_id ] = true;
+				}
+			}
+		}
+
+		return $valid_job_ids_set;
+	}
+
+	/**
+	 * Removes invalid job items from the filtered jobs based on the valid job IDs set.
+	 *
+	 * @param array $filtered_jobs Filtered jobs array.
+	 * @param array $valid_job_ids_set Set of valid job IDs.
+	 * @return array Cleaned jobs array.
+	 */
+	private function remove_invalid_jobs( array $filtered_jobs, array $valid_job_ids_set )
+	{
+		foreach ( $filtered_jobs as $translator_id => $language_pairs ) {
+			foreach ( $language_pairs as $language_pair_name => $language_pair_items ) {
+				foreach ( $language_pair_items as $index => $item ) {
+					$job_id = isset( $item[ 'job_id' ] ) ? (int)$item[ 'job_id' ] : 0;
+					// Remove the item if job_id exists but is not valid.
+					if ( $job_id && !isset( $valid_job_ids_set[ $job_id ] ) ) {
+						unset( $filtered_jobs[ $translator_id ][ $language_pair_name ][ $index ] );
+					}
+				}
+				if ( empty( $filtered_jobs[ $translator_id ][ $language_pair_name ] ) ) {
+					unset( $filtered_jobs[ $translator_id ][ $language_pair_name ] );
+				}
+			}
+			if ( empty( $filtered_jobs[ $translator_id ] ) ) {
+				unset( $filtered_jobs[ $translator_id ] );
+			}
+		}
+
+		return $filtered_jobs;
+	}
 
 	/**
 	 * @return array

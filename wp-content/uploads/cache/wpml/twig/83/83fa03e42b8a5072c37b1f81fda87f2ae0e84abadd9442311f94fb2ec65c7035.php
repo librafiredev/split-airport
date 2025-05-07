@@ -32,7 +32,7 @@ class __TwigTemplate_bc5ad4c970e36dcb3c63dc9f876fafb745b3b11d260242284f5916e7e8b
         echo "<p class=\"wpml-ls-form-line js-wpml-ls-option\">
     <label for=\"wpml-ls-show-in-post-translations\">
         <input type=\"checkbox\" id=\"wpml-ls-show-in-post-translations\" name=\"statics[post_translations][show]\" value=\"1\"
-               class=\"js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-post-translations-toggle-target\"
+               class=\"wpml-checkbox-native js-wpml-ls-toggle-slot js-wpml-ls-trigger-save\" data-target=\".js-wpml-ls-post-translations-toggle-target\"
                ";
         // line 5
         if ($this->getAttribute($this->getAttribute($this->getAttribute(($context["settings"] ?? null), "statics", []), "post_translations", []), "show", [])) {
@@ -72,7 +72,8 @@ class __TwigTemplate_bc5ad4c970e36dcb3c63dc9f876fafb745b3b11d260242284f5916e7e8b
 ($context["slot_settings"] ?? null), "slug" => "post_translations"]));
         // line 24
         echo "
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()

@@ -968,6 +968,17 @@ class TranslationManagement {
 
 		$comment = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->comments} WHERE comment_ID=%d", $comment_id ), ARRAY_A );
 
+		/**
+		 * @param bool  $skip_duplication Whether to skip duplicating the comment. Default: false.
+		 * @param int   $comment_id       The ID of the comment being processed.
+		 * @param array $comment          The comment data.
+		 */
+		$skip_duplication = apply_filters( 'wpml_skip_comment_duplication', false, $comment_id, $comment );
+
+		if ( $skip_duplication ) {
+			return;
+		}
+
 		// loop duplicate posts, add new comment
 		$post_id = $comment['comment_post_ID'];
 

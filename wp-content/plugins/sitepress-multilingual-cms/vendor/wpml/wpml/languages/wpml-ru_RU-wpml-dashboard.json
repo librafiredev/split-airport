@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Поиск родительского элемента по заголовку"
          ],
+         "Search by term title in %s": [
+            "Поиск по заголовку термина в %s"
+         ],
          "All taxonomies": [
             "Все таксономии"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Термины не найдены"
-         ],
-         "Search by term title": [
-            "Поиск по заголовку термина"
          ],
          "Filter by:": [
             "Фильтровать по:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "Большинство строк из ваших плагинов и темы на английском языке, поэтому мы показываем их вместе с вашим языком по умолчанию. Используйте фильтр <b>Исходный язык</b>, чтобы просмотреть строки на определенном языке."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Вы используете <b>%s</b> для кэширования вашего сайта, что может помешать WPML автоматически регистрировать новые строки. Чтобы исправить это, очистите кэш страницы, затем снова посетите ваши переведенные страницы на фронтенде для обнаружения новых строк."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML может обнаруживать строки, которые появляются на сайте, и перечислять их здесь. Эта функция помогает вам определить строки, которые фактически появляются на сайте, и перевести их. Чтобы видеть здесь только строки, которые фактически появляются на сайте, вам нужно включить эту функцию."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Имя пакета:"
+         ],
+         "Default translation engine: ": [
+            "Система автоматического перевода по умолчанию: "
+         ],
+         "Change": [
+            "Изменить"
+         ],
+         "Failed to load engines": [
+            "Не удалось загрузить системы автоматического перевода"
          ],
          "Your Automatic Translation Credits": [
             "Ваши кредиты автоматического перевода"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Не удалось получить данные систем автоматического перевода"
+         ],
          "Error in fetching currently logged in translator": [
             "Ошибка при получении данных о текущем авторизованном переводчике"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Ждать проверки"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Рекомендуется для DeepL, Google и Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Рекомендуется с DeepL, Google и Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google и Azure предоставляют отличные переводы, но мы рекомендуем человеческую проверку для подтверждения их правильности. WPML AI предоставляет переводы лучше, чем человеческие, которые понимают контекст, поэтому вы можете уверенно пропустить процесс проверки."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google и Microsoft предоставляют превосходные переводы, однако мы рекомендуем проведение человеческой проверки для подтверждения их корректности. WPML Искусственный интеллект обеспечивает переводы, превосходящие человеческие, с пониманием контекста, что позволяет вам уверенно пропустить процесс рецензирования."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML сохраняет переводы неопубликованными, чтобы вы могли сначала их проверить."

@@ -44,6 +44,12 @@ function user_is_translator_or_exit() {
 	}
 }
 
+function user_can_edit_post_or_exit() {
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		wp_die( 'Unauthorized', 403 );
+	}
+}
+
 
 $iclsettings      = $this->get_settings();
 $default_language = $this->get_default_language();
@@ -342,8 +348,8 @@ switch ( $request ) {
 		$sitepress->set_setting( 'seo', $seo, true );
 		echo '1|';
 		break;
-	case 'connect_translations':
-		user_is_manager_or_exit();
+	case 'connect_translations': // This is used by the "Connect Translations" dialog.
+		user_can_edit_post_or_exit();
 
 		$new_trid      = $_POST['new_trid'];
 		$post_type     = $_POST['post_type'];
@@ -431,8 +437,8 @@ switch ( $request ) {
 		}
 		echo wp_json_encode( true );
 		break;
-	case 'get_posts_from_trid':
-		user_is_manager_or_exit();
+	case 'get_posts_from_trid': // This is used by the "Connect Translations" dialog.
+		user_can_edit_post_or_exit();
 
 		$trid      = $_POST['trid'];
 		$post_type = $_POST['post_type'];
@@ -452,8 +458,8 @@ switch ( $request ) {
 		}
 		echo wp_json_encode( $results );
 		break;
-	case 'get_orphan_posts':
-		user_is_manager_or_exit();
+	case 'get_orphan_posts': // This is used by the "Connect Translations" dialog.
+		user_can_edit_post_or_exit();
 
 		$trid            = $_POST['trid'];
 		$post_type       = $_POST['post_type'];
@@ -463,13 +469,46 @@ switch ( $request ) {
 		echo wp_json_encode( $results );
 
 		break;
-	default: // TODO: wpmldev-4700
+	// classes/ATE/Hooks/class-wpml-tm-old-editor.php
+	case 'icl_doc_translation_method':
 		user_is_translator_or_exit();
-		if ( function_exists( 'ajax_' . $request ) ) {
-			$function_name = 'ajax_' . $request;
-			$function_name();
-		} else {
-			do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
-		}
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	// modules/cache-plugins-integration/cache-plugins-integration.php
+	case 'wpml_cpi_options':
+	case 'wpml_cpi_clear_cache':
+		user_is_manager_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	// inc/translation-management/translation-management.class.php
+	case 'assign_translator':
+	case 'icl_cf_translation':
+	case 'icl_tcf_translation':
+	case 'icl_doc_translation_method':
+	case 'reset_duplication':
+	case 'set_duplication':
+		user_is_translator_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	// inc/translation-proxy/wpml-pro-translation.class.php
+	case 'set_pickup_mode':
+		user_is_manager_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	//inc/upgrade-functions/upgrade-2.0.0.php
+	case 'wpml_upgrade_2_0_0':
+		user_is_manager_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	//wpml-string-translation/inc/wpml-string-translation.class.php
+	case 'icl_st_delete_strings':
+		user_is_translator_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
+	//wpml-string-translation/classes/slug-translation/class-wpml-slug-translation.php
+	case 'icl_slug_translation':
+		user_is_translator_or_exit();
+		do_action( 'icl_ajx_custom_call', $request, $_REQUEST );
+		break;
 }
 exit;

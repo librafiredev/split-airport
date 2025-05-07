@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "Đang tải..."
 msgid "Failed to load engines"
 msgstr "Không thể tải công cụ"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "Kéo và thả để sắp xếp từ công cụ ưa thích nhất đến ít ưa thích nhất."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "Kéo công cụ mặc định của bạn lên trên cùng và sắp xếp phần còn lại theo thứ tự ưu tiên."
 
 msgid "Which translation engines do you want to use?"
 msgstr "Bạn muốn sử dụng công cụ dịch nào?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "Các công cụ dịch tự động khác nhau về phong cách dịch và các cặp ngôn ngữ được hỗ trợ. Nếu công cụ dịch ưa thích của bạn không hỗ trợ cặp ngôn ngữ bạn muốn sử dụng, chúng tôi sẽ sử dụng công cụ ưa thích tiếp theo của bạn có hỗ trợ. Tìm hiểu thêm về,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "Các công cụ dịch tự động khác nhau về phong cách dịch và các cặp ngôn ngữ được hỗ trợ. Nếu công cụ dịch ưa thích của bạn không hỗ trợ cặp ngôn ngữ bạn muốn sử dụng, chúng tôi sẽ chuyển sang công cụ ưa thích tiếp theo của bạn có hỗ trợ cặp ngôn ngữ đó."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "WPML AI (beta) tự động phát hiện mức độ trang trọng của nội dung của bạn và dịch với cùng mức độ trang trọng."
@@ -63,14 +63,20 @@ msgstr "Trang web của bạn không sử dụng ngôn ngữ có cài đặt m�
 msgid "Edit formality"
 msgstr "Chỉnh sửa mức độ trang trọng"
 
+msgid "%d credits per word"
+msgstr "%d tín dụng mỗi từ"
+
+msgid "Backup %d"
+msgstr "Sao lưu %d"
+
+msgid "Default"
+msgstr "Mặc định"
+
 msgid "ON"
 msgstr "BẬT"
 
 msgid "OFF"
 msgstr "TẮT"
-
-msgid "%d credits per word"
-msgstr "%d tín dụng mỗi từ"
 
 msgid "Documentation"
 msgstr "Tài liệu"
@@ -110,9 +116,6 @@ msgstr "Hủy"
 msgid "Update"
 msgstr "Cập nhật"
 
-msgid "Default"
-msgstr "Mặc định"
-
 msgid "Formal"
 msgstr "Trang trọng"
 
@@ -140,11 +143,11 @@ msgstr "Bạn muốn làm gì sau khi WPML hoàn thành việc dịch tự độ
 msgid "Wait for review"
 msgstr "Chờ xem xét"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "Được khuyến nghị với DeepL, Google và Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "Được khuyến nghị với DeepL, Google và Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google và Azure cung cấp bản dịch tuyệt vời, nhưng chúng tôi khuyên nên có sự xem xét của con người để xác nhận tính chính xác. WPML AI cung cấp Bản dịch Tốt hơn Con người hiểu được ngữ cảnh, vì vậy bạn có thể tự tin bỏ qua quá trình xem xét."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google và Microsoft cung cấp các bản dịch tuyệt vời, nhưng chúng tôi khuyên bạn nên nhờ con người kiểm tra để xác nhận tính chính xác. WPML AI cung cấp bản dịch Tốt hơn Con người có khả năng hiểu ngữ cảnh, vì vậy bạn có thể tự tin bỏ qua quy trình kiểm tra."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML giữ các bản dịch ở trạng thái chưa xuất bản, để bạn có thể xem xét trước."

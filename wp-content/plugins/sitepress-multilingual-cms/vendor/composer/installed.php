@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '4.7.3',
-        'version' => '4.7.3.0',
+        'pretty_version' => '4.7.4',
+        'version' => '4.7.4.0',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '69e531d324cb1c36dd16ddf1b62d60d98d1098b3',
+        'reference' => '51e1e91835d551e60b552f937685e361bc1c381e',
         'name' => 'wpml/core',
         'dev' => false,
     ),
@@ -58,12 +58,12 @@
             'dev_requirement' => false,
         ),
         'otgs/installer' => array(
-            'pretty_version' => '3.1.11',
-            'version' => '3.1.11.0',
+            'pretty_version' => '3.1.13',
+            'version' => '3.1.13.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../otgs/installer',
             'aliases' => array(),
-            'reference' => '41c8ae2d3584b393ab6bb246b09ee505c12b289e',
+            'reference' => '7558dcbcfe306ae4d0d06a81706840b527ad1ef2',
             'dev_requirement' => false,
         ),
         'otgs/ui' => array(
@@ -164,12 +164,12 @@
             'dev_requirement' => false,
         ),
         'wpml/core' => array(
-            'pretty_version' => '4.7.3',
-            'version' => '4.7.3.0',
+            'pretty_version' => '4.7.4',
+            'version' => '4.7.4.0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '69e531d324cb1c36dd16ddf1b62d60d98d1098b3',
+            'reference' => '51e1e91835d551e60b552f937685e361bc1c381e',
             'dev_requirement' => false,
         ),
         'wpml/core-api' => array(
@@ -182,12 +182,12 @@
             'dev_requirement' => false,
         ),
         'wpml/fp' => array(
-            'pretty_version' => '0.2.7',
-            'version' => '0.2.7.0',
+            'pretty_version' => '0.2.8',
+            'version' => '0.2.8.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../wpml/fp',
             'aliases' => array(),
-            'reference' => '99b137c3b3975b60295a5287aadd5bcbfad41bd7',
+            'reference' => '6d765f4213206b1f4a1d3aa4f8b85e19b0037741',
             'dev_requirement' => false,
         ),
         'wpml/sql-parser' => array(
@@ -211,12 +211,12 @@
             'dev_requirement' => false,
         ),
         'wpml/wpml' => array(
-            'pretty_version' => '4.7.2',
-            'version' => '4.7.2.0',
+            'pretty_version' => '4.7.4',
+            'version' => '4.7.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../wpml/wpml',
             'aliases' => array(),
-            'reference' => '2facab1cea46b019850422b757f21f9195a0e96f',
+            'reference' => '885ad9578ca448a8dc1a6148c8b43f74c0745971',
             'dev_requirement' => false,
         ),
         'yoast/whip' => array(

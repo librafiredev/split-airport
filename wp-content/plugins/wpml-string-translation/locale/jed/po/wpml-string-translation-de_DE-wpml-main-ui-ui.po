@@ -15,19 +15,19 @@ msgstr "Umschalttaste+Tabulator"
 msgid "Tab"
 msgstr "Registerkarte"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:102
+#: src/js/main-ui/components/EditTranslationPopup.js:104
 msgid "Translation to:"
 msgstr "Übersetzung in:"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:121
+#: src/js/main-ui/components/EditTranslationPopup.js:123
 msgid "Copy from original"
 msgstr "Kopie vom Original"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:136
+#: src/js/main-ui/components/EditTranslationPopup.js:138
 msgid "Use Shift+Enter to add a new line."
 msgstr "Verwenden Sie Shift+Enter, um eine neue Zeile hinzuzufügen."
 
-#: src/js/main-ui/components/EditTranslationPopup.js:95
+#: src/js/main-ui/components/EditTranslationPopup.js:97
 msgid "Original:"
 msgstr "Original:"
 

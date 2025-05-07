@@ -35,17 +35,22 @@ class __TwigTemplate_5c8f56d47459877a3ece6e9f9f31e35d03e6cf99ade9aff0eedabbd3723
     </div>
     <div class=\"wpml-dialog-footer \">
         <span class=\"errors icl_error_text\"></span>
-        <input class=\"js-wpml-ls-dialog-close cancel wpml-dialog-close-button alignleft\" value=\"";
-        // line 7
+        <input
+            class=\"js-wpml-ls-dialog-close cancel wpml-dialog-close-button alignleft wpml-button base-btn gray-light-btn\"
+            value=\"";
+        // line 9
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "misc", []), "button_cancel", []), "html", null, true);
-        echo "\" type=\"button\">
-        <input class=\"js-wpml-ls-dialog-save button-primary term-save alignright\" value=\"";
-        // line 8
+        echo "\"
+            type=\"button\"
+        >
+        <input class=\"button-primary js-wpml-ls-dialog-save wpml-button base-btn term-save alignright\" value=\"";
+        // line 12
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["strings"] ?? null), "misc", []), "button_save", []), "html", null, true);
         echo "\" type=\"submit\">
         <span class=\"spinner alignright\"></span>
     </div>
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()
@@ -60,7 +65,7 @@ class __TwigTemplate_5c8f56d47459877a3ece6e9f9f31e35d03e6cf99ade9aff0eedabbd3723
 
     public function getDebugInfo()
     {
-        return array (  44 => 8,  40 => 7,  32 => 1,);
+        return array (  48 => 12,  42 => 9,  32 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

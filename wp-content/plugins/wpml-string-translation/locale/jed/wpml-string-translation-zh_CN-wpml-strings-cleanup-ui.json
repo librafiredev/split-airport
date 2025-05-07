@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "按域删除未翻译的字符串，清理字符串翻译表。"
          ],
-         "Translated with PTC": [
-            "由PTC翻译"
-         ],
          "Remove strings by domain": [
             "按域删除字符串"
          ],

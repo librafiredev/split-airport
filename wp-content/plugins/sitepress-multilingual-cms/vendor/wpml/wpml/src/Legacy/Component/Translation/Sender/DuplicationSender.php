@@ -52,6 +52,9 @@ class DuplicationSender implements DuplicationSenderInterface {
 
     // Even though, the method is called `get_sent_job_ids`, but it returns translated post ids in this case.
     $translatedPostIds = $this->legacyTranslationManagement->get_sent_job_ids();
+    if ( ! is_array( $translatedPostIds ) ) {
+      return [];
+    }
 
     if ( $translatedPostIds ) {
       return $this->translationQuery->getManyByTranslatedElementIds( $translatedPostIds );

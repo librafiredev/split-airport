@@ -89,7 +89,7 @@ class __TwigTemplate_e647489f4364528f8a817a49a8a86bbfec435a84786443950e2bf447bbc
 \t\t<li>
 \t\t\t<label for=\"link_empty_off\">
 \t\t\t\t<input type=\"radio\" name=\"link_empty\" id=\"link_empty_off\"
-\t\t\t\t\t   class=\"js-wpml-ls-trigger-save\"
+\t\t\t\t\t   class=\"wpml-radio-native js-wpml-ls-trigger-save\"
 \t\t\t\t\t   value=\"0\"";
         // line 25
         if ( !$this->getAttribute(($context["settings"] ?? null), "link_empty", [])) {
@@ -103,7 +103,7 @@ class __TwigTemplate_e647489f4364528f8a817a49a8a86bbfec435a84786443950e2bf447bbc
 \t\t<li>
 \t\t\t<label for=\"link_empty_on\">
 \t\t\t\t<input type=\"radio\" name=\"link_empty\" id=\"link_empty_on\"
-\t\t\t\t\t   class=\"js-wpml-ls-trigger-save\"
+\t\t\t\t\t   class=\"wpml-radio-native js-wpml-ls-trigger-save\"
 \t\t\t\t\t   value=\"1\"";
         // line 32
         if ($this->getAttribute(($context["settings"] ?? null), "link_empty", [])) {
@@ -266,7 +266,7 @@ class __TwigTemplate_e647489f4364528f8a817a49a8a86bbfec435a84786443950e2bf447bbc
             echo " checked=\"checked\"";
         }
         // line 92
-        echo "\t\t\t\t   class=\"js-wpml-ls-migrated js-wpml-ls-trigger-save js-wpml-ls-trigger-need-save\">
+        echo "\t\t\t\t   class=\"wpml-checkbox-native js-wpml-ls-migrated js-wpml-ls-trigger-save js-wpml-ls-trigger-need-save\">
 
 \t\t\t<label for=\"wpml-ls-backwards-compatibility\">
 \t\t\t\t";

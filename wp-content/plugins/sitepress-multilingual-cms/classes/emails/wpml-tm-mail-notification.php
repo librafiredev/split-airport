@@ -61,9 +61,11 @@ class WPML_TM_Mail_Notification {
 
 		add_action( 'wpml_tm_remove_job_notification', array( $this, 'action_translator_removed_mail' ), 10, 2 );
 		add_action( 'wpml_tm_resign_job_notification', array( $this, 'action_translator_resign_mail' ), 10, 2 );
-		add_action( 'icl_ajx_custom_call', array( $this, 'send_queued_mails' ), 10, 0 );
 		add_action( 'icl_pro_translation_completed', array( $this, 'send_queued_mails' ), 10, 0 );
 
+		if ( is_admin() ) {
+			add_action( 'shutdown', array( $this, 'send_queued_mails' ), 10, 0 );
+		}
 	}
 
 	/**

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "Φόρτωση..."
 msgid "Failed to load engines"
 msgstr "Αποτυχία φόρτωσης μηχανών"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "Σύρετε και αφήστε για να ταξινομήσετε από την πιο προτιμώμενη στη λιγότερο προτιμώμενη μηχανή."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "Σύρετε την προεπιλεγμένη μηχανή σας στην κορυφή και ταξινομήστε τις υπόλοιπες κατά προτεραιότητα."
 
 msgid "Which translation engines do you want to use?"
 msgstr "Ποιες μηχανές μετάφρασης θέλετε να χρησιμοποιήσετε;?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "Οι μηχανές αυτόματης μετάφρασης διαφέρουν ως προς το ύφος μετάφρασης και τα υποστηριζόμενα ζεύγη γλωσσών. Εάν η προτιμώμενη μηχανή μετάφρασής σας δεν υποστηρίζει ένα ζεύγος γλωσσών που επιθυμείτε να χρησιμοποιήσετε, ανατρέχουμε στην επόμενη προτιμώμενη μηχανή που το υποστηρίζει. Μάθετε περισσότερα σχετικά με,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "Οι αυτόματες μηχανές μετάφρασης διαφέρουν ως προς το ύφος μετάφρασης και τα υποστηριζόμενα ζεύγη γλωσσών. Εάν η προτιμώμενη μηχανή μετάφρασής σας δεν υποστηρίζει ένα ζεύγος γλωσσών που επιθυμείτε να χρησιμοποιήσετε, ανατρέχουμε στην επόμενη προτιμώμενη μηχανή σας που το υποστηρίζει."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "Το WPML AI (beta) ανιχνεύει αυτόματα την τυπικότητα του περιεχομένου σας και μεταφράζει με την ίδια τυπικότητα."
@@ -63,14 +63,20 @@ msgstr "Ο ιστότοπός σας δεν χρησιμοποιεί γλώσσ�
 msgid "Edit formality"
 msgstr "Επεξεργασία τυπικότητας"
 
+msgid "%d credits per word"
+msgstr "%d πιστώσεις ανά λέξη"
+
+msgid "Backup %d"
+msgstr "Αντίγραφο ασφαλείας %d"
+
+msgid "Default"
+msgstr "Προεπιλογή"
+
 msgid "ON"
 msgstr "ΕΝΕΡΓΟ"
 
 msgid "OFF"
 msgstr "ΑΝΕΝΕΡΓΟ"
-
-msgid "%d credits per word"
-msgstr "%d πιστώσεις ανά λέξη"
 
 msgid "Documentation"
 msgstr "Τεκμηρίωση"
@@ -111,9 +117,6 @@ msgstr "Ακύρωση"
 msgid "Update"
 msgstr "Ενημέρωση"
 
-msgid "Default"
-msgstr "Προεπιλογή"
-
 msgid "Formal"
 msgstr "Τυπικό"
 
@@ -141,11 +144,11 @@ msgstr "Τι θα θέλατε να κάνετε αφού το WPML ολοκλη
 msgid "Wait for review"
 msgstr "Αναμονή για επανεξέταση"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "Συνιστάται με DeepL, Google και Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "Συνιστάται με DeepL, Google και Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "Οι DeepL, Google και Azure παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστούμε ανθρώπινη επισκόπηση για επιβεβαίωση της ορθότητάς τους. Το WPML AI παρέχει Μεταφράσεις Καλύτερες από Ανθρώπινες που κατανοούν το πλαίσιο, επιτρέποντάς σας να παραλείψετε με σιγουριά τη διαδικασία επισκόπησης."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "Η DeepL, η Google και η Microsoft παρέχουν εξαιρετικές μεταφράσεις, αλλά συνιστούμε ανθρώπινη επισκόπηση για να επιβεβαιωθεί η ορθότητά τους. Το WPML AI προσφέρει Μεταφράσεις Καλύτερες από τις Ανθρώπινες που κατανοούν το πλαίσιο, ώστε να μπορείτε με βεβαιότητα να παραλείψετε τη διαδικασία επανεξέτασης."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "Το WPML διατηρεί τις μεταφράσεις μη δημοσιευμένες, ώστε να μπορείτε να τις επανεξετάσετε πρώτα."

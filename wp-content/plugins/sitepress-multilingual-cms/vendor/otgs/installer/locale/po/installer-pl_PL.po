@@ -7,13 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-16T17:01:33+00:00\n"
+"POT-Creation-Date: 2025-04-08T10:19:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: installer\n"
-
-msgid "Translate with PTC"
-msgstr "Tłumacz z PTC"
 
 #. translators: %1$s and %2$s are opening and closing link tags.
 #: includes/admin-notices/notices/Account.php:107
@@ -50,6 +47,7 @@ msgstr "Twoja witryna jest podatna na zmiany w przyszłych wersjach WordPress. K
 msgid "Your site is vulnerable to breaking changes in future WordPress releases. Renew your account to protect your site with the latest %s releases."
 msgstr "Twoja witryna jest podatna na zmiany w przyszłych wersjach WordPress. Odnów swoje konto, aby chronić swoją witrynę za pomocą najnowszych wersji %s."
 
+#. translators: %s Product url
 #: includes/admin-notices/notices/Texts.php:52
 msgid "This site is registered on %s as a development site."
 msgstr "Ta strona jest zarejestrowana na %s jako strona rozwoju."
@@ -96,6 +94,7 @@ msgstr "Potrzebujesz pomocy?"
 msgid "See the %1$s and let us know in %2$s."
 msgstr "Zobacz %1$s i daj nam znać w %2$s."
 
+#. translators: %1$s is `communication error details` %2$s is ex. wpml.org technical support
 #: includes/admin-notices/notices/Texts.php:84
 msgid "communication error details"
 msgstr "szczegóły błędu komunikacji"
@@ -118,7 +117,7 @@ msgid "Ignore and don't ask me again"
 msgstr "Zignoruj i nie pytaj ponownie"
 
 #: includes/admin-notices/notices/Texts.php:147
-#: includes/class-wp-installer.php:545
+#: includes/class-wp-installer.php:525
 #: includes/upgrade/AutoUpgrade.php:114
 #: templates/repository-register.php:49
 msgid "Register"
@@ -269,107 +268,111 @@ msgstr "Beta"
 msgid "Production"
 msgstr "Produkcja"
 
-#: includes/class-wp-installer.php:193
+#: includes/class-wp-installer.php:190
 msgid "Installing %s"
 msgstr "Instalowanie %s"
 
-#: includes/class-wp-installer.php:194
+#: includes/class-wp-installer.php:191
 msgid "Updating %s"
 msgstr "Aktualizacja %s"
 
-#: includes/class-wp-installer.php:195
+#: includes/class-wp-installer.php:192
 msgid "Activating %s"
 msgstr "Aktywacja %s"
 
+#: includes/class-wp-installer.php:358
 #: includes/class-wp-installer.php:359
-#: includes/class-wp-installer.php:360
-#: includes/class-wp-installer.php:1183
+#: includes/class-wp-installer.php:1124
 msgid "Installer"
 msgstr "Instalator"
 
-#: includes/class-wp-installer.php:534
+#: includes/class-wp-installer.php:513
 msgid "Upgrade"
 msgstr "aktualizuj"
 
-#: includes/class-wp-installer.php:539
+#: includes/class-wp-installer.php:519
 msgid "Registered"
 msgstr "Zarejestrowany"
 
-#: includes/class-wp-installer.php:743
+#: includes/class-wp-installer.php:701
 msgid ""
 "You are using an invalid site key defined as the constant %s (most likely in wp-config.php).\n"
 "                                                Please remove it or use the correct value in order to be able to register correctly."
 msgstr "Nieprawidłowy klucz %s. Usuń lub popraw w wp-config.php."
 
-#: includes/class-wp-installer.php:877
+#: includes/class-wp-installer.php:824
 msgid "Commercial"
 msgstr "Komercyjny"
 
-#: includes/class-wp-installer.php:1076
+#: includes/class-wp-installer.php:1014
 msgid "Installer cannot display the products information because the automatic updating for %s was explicitly disabled with the configuration below (usually in wp-config.php):"
 msgstr "Automatyczne aktualizacje %s wyłączone w konfiguracji."
 
-#: includes/class-wp-installer.php:1078
+#: includes/class-wp-installer.php:1016
 msgid "In order to see the products information, please run the %smanual updates check%s to initialize the products list or (temporarily) remove the above code."
 msgstr "Aby zobaczyć informacje o produktach, uruchom %sręczne sprawdzanie aktualizacji%s, aby zainicjować listę produktów lub (tymczasowo) usuń powyższy kod."
 
-#: includes/class-wp-installer.php:1105
+#: includes/class-wp-installer.php:1044
 msgid "Installer cannot contact our updates server to get information about the available products and check for new versions. If you are seeing this message for the first time, you can ignore it, as it may be a temporary communication problem. If the problem persists and your WordPress admin is slowing down, you can disable automated version checks. Add the following line to your wp-config.php file:"
 msgstr "Instalator nie może skontaktować się z serwerem aktualizacji."
 
-#: includes/class-wp-installer.php:1131
-#: includes/class-wp-installer.php:1135
+#: includes/class-wp-installer.php:1071
+#: includes/class-wp-installer.php:1075
 msgid "Information about new versions is invalid. It may be a temporary communication problem, please check for updates again."
 msgstr "Informacje o nowych wersjach nieprawidłowe, sprawdź ponownie."
 
-#: includes/class-wp-installer.php:1175
+#: includes/class-wp-installer.php:1115
 msgid "Sorry, you are not allowed to manage Installer for this site."
 msgstr "Nie możesz zarządzać instalatorem dla tej witryny."
 
-#: includes/class-wp-installer.php:1221
+#: includes/class-wp-installer.php:1154
 msgid "No repositories defined."
 msgstr "Nie zdefiniowano żadnych repozytoriów."
 
-#: includes/class-wp-installer.php:1597
+#: includes/class-wp-installer.php:1376
+msgid "We have preselected the plugins your site needs to be fully multilingual."
+msgstr "Dokonaliśmy wstępnej selekcji wtyczek niezbędnych do pełnej wielojęzyczności Państwa witryny."
+
+#: includes/class-wp-installer.php:1612
 #: includes/site-key/class-otgs-installer-site-key-ajax.php:67
 msgid "Invalid site key for the current site."
 msgstr "Nieprawidłowy klucz witryny."
 
-#: includes/class-wp-installer.php:1598
+#: includes/class-wp-installer.php:1613
 #: includes/site-key/class-otgs-installer-site-key-ajax.php:67
 msgid "Please note that the site key is case sensitive."
 msgstr "Klucz witryny rozróżnia wielkość liter."
 
-#: includes/class-wp-installer.php:1604
+#: includes/class-wp-installer.php:1618
 msgid "%s cannot access %s to register. Try again to see if it's a temporary problem. If the problem continues, make sure that this site has access to the Internet."
 msgstr "%s nie może uzyskać dostępu do %s, spróbuj ponownie."
 
-#: includes/class-wp-installer.php:2302
+#: includes/class-wp-installer.php:2259
 msgid "Connection failed! Please refresh the page and try again. (%s)"
 msgstr "Połączenie nie powiodło się! Odśwież stronę i spróbuj ponownie. (%s)"
 
-#: includes/class-wp-installer.php:2305
+#: includes/class-wp-installer.php:2262
 msgid "Your subscription appears to no longer be valid. Please try to register again using a valid site key."
 msgstr "Subskrypcja nieważna, zarejestruj się ponownie."
 
-#: includes/class-wp-installer.php:3009
-#: includes/class-wp-installer.php:3087
+#: includes/class-wp-installer.php:2891
+#: includes/class-wp-installer.php:2953
 msgid "%s cannot update because your site's registration is not valid. Please %sregister %s%s again for this site first."
 msgstr "%s nie może zostać zaktualizowana, ponieważ rejestracja Twojej witryny jest nieprawidłowa. Prosimy o %sponowną rejestrację %s%s dla tej strony."
 
-#: includes/class-wp-installer.php:3111
+#: includes/class-wp-installer.php:2976
 msgid "Update Plugin"
 msgstr "Zaktualizuj wtyczkę"
 
-#: includes/class-wp-installer.php:3112
+#: includes/class-wp-installer.php:2977
 msgid "Return to the plugins page"
 msgstr "Wróć do strony wtyczek"
 
-#: includes/products/commercial-tab/DownloadsList.php:29
+#: includes/products/commercial-tab/DownloadsList.php:28
 msgid "(embedded)"
 msgstr "(wbudowany)"
 
-#: includes/products/commercial-tab/DownloadsList.php:43
+#: includes/products/commercial-tab/DownloadsList.php:42
 msgid "Release notes"
 msgstr "Informacje o wersji"
 
@@ -476,11 +479,11 @@ msgstr "Serwer API zestawu narzędzi"
 msgid " to use auto-updates"
 msgstr " aby korzystać z automatycznych aktualizacji"
 
-#: loader.php:67
+#: loader.php:72
 msgid "This site is registered on %s as a development site. Switch to a production site key to %s."
 msgstr "Ta witryna jest zarejestrowana pod adresem %s jako witryna rozwojowa. Przełącz się na klucz witryny produkcyjnej na %s."
 
-#: loader.php:72
+#: loader.php:77
 msgid "This site is registered on Toolset.com as a development site."
 msgstr "Strona zarejestrowana jako rozwojowa na Toolset.com."
 
@@ -525,8 +528,7 @@ msgid "You are using a potentially less stable channel for %s. If you didn't ena
 msgstr "Używasz potencjalnie mniej stabilnego kanału dla %s. Jeśli nie włączyłeś tego celowo, powinieneś przełączyć się na kanał \"Production\"."
 
 #: templates/downloads-list-compact.php:8
-#: templates/downloads-list.php:15
-#: templates/downloads-list.php:44
+#: templates/downloads-list.php:29
 msgid "Plugin"
 msgstr "Wtyczka"
 
@@ -535,8 +537,7 @@ msgid "Available"
 msgstr "Dostępny"
 
 #: templates/downloads-list-compact.php:10
-#: templates/downloads-list.php:16
-#: templates/downloads-list.php:45
+#: templates/downloads-list.php:30
 msgid "Installed"
 msgstr "Zainstalowany"
 
@@ -569,22 +570,22 @@ msgid "activated"
 msgstr "aktywowany"
 
 #: templates/downloads-list-compact.php:65
-#: templates/downloads-list.php:71
+#: templates/downloads-list.php:55
 msgid "Downloading is not possible because WordPress cannot write into the plugins folder. %sHow to fix%s."
 msgstr "Pobieranie nie jest możliwe, ponieważ WordPress nie może zapisać do folderu wtyczek. %sJak naprawić%s."
 
 #: templates/downloads-list-compact.php:72
-#: templates/downloads-list.php:78
+#: templates/downloads-list.php:62
 msgid "Download"
 msgstr "pobierz"
 
 #: templates/downloads-list-compact.php:74
-#: templates/downloads-list.php:82
+#: templates/downloads-list.php:66
 msgid "Activate after download"
 msgstr "Aktywuj po pobraniu"
 
 #: templates/downloads-list-compact.php:77
-#: templates/downloads-list.php:86
+#: templates/downloads-list.php:70
 msgid "Operation complete!"
 msgstr "Operacja zakończona!"
 
@@ -595,17 +596,15 @@ msgid ""
 "Click OK to revalidate your subscription or CANCEL to try again."
 msgstr "Błąd pobierania! OK - odnów subskrypcję, ANULUJ - spróbuj ponownie."
 
-#: templates/downloads-list.php:17
-#: templates/downloads-list.php:46
+#: templates/downloads-list.php:31
 msgid "Current"
 msgstr "aktualny"
 
-#: templates/downloads-list.php:18
-#: templates/downloads-list.php:47
+#: templates/downloads-list.php:32
 msgid "Released"
 msgstr "Zwolniony"
 
-#: templates/downloads-list.php:88
+#: templates/downloads-list.php:72
 msgid ""
 "Download failed!\n"
 "\n"
@@ -679,6 +678,7 @@ msgstr "%s wsparcie na wpml.org"
 msgid "Do you have an account on %s?"
 msgstr "Czy masz konto na %s?"
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:18
 msgid "Great! You just need to extend your subscription."
 msgstr "Świetnie! Musisz tylko przedłużyć subskrypcję."
@@ -688,6 +688,7 @@ msgstr "Świetnie! Musisz tylko przedłużyć subskrypcję."
 msgid "You have a %s account. You just need to extend your subscription."
 msgstr "Masz konto %s. Musisz tylko przedłużyć subskrypcję."
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:21
 msgid "Extend Subscription"
 msgstr "Przedłuż subskrypcję"
@@ -707,6 +708,7 @@ msgstr "Nie masz jeszcze konta %1$s. Musisz skonfigurować odnowienie dla %2$s."
 msgid "Set Up Renewal For %s"
 msgstr "Skonfiguruj odnowienie dla %s"
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:28
 msgid "No worries. We can check that for you."
 msgstr "Nie martw się. Możemy to dla ciebie sprawdzić."

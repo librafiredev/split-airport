@@ -58,7 +58,7 @@ class __TwigTemplate_8e21d7f6ef883359572c2fffa94a483786dfc9f2871d5d1c5d4970ca719
             echo "position_in_menu";
         }
         echo "\"
-                   class=\" js-wpml-ls-trigger-update\"
+                   class=\"wpml-radio-native js-wpml-ls-trigger-update\"
                    value=\"before\"";
         // line 13
         if ((($context["menu_position"] ?? null) == "before")) {
@@ -80,7 +80,7 @@ class __TwigTemplate_8e21d7f6ef883359572c2fffa94a483786dfc9f2871d5d1c5d4970ca719
             echo "position_in_menu";
         }
         echo "\"
-                   class=\" js-wpml-ls-trigger-update\"
+                   class=\"wpml-radio-native js-wpml-ls-trigger-update\"
                    value=\"after\"";
         // line 20
         if ((($context["menu_position"] ?? null) == "after")) {
@@ -91,7 +91,8 @@ class __TwigTemplate_8e21d7f6ef883359572c2fffa94a483786dfc9f2871d5d1c5d4970ca719
         echo "
         </label>
     </li>
-</ul>";
+</ul>
+";
     }
 
     public function getTemplateName()

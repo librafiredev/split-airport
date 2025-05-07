@@ -4,12 +4,12 @@
   .wpml-picker-container .wp-picker-container-wrap {
     float: left;
     display: block;
-    border: 1px rgba(51, 135, 158, 0.3) solid;
+    border: 1px solid rgba(47, 125, 146, 0.3);
     border-radius: 2px;
     padding: 6px 10px;
     cursor: pointer; }
     .wpml-picker-container .wp-picker-container-wrap:hover, .wpml-picker-container .wp-picker-container-wrap:has(.wp-color-result.button:focus) {
-      border-color: #33879e; }
+      border-color: #2F7D92; }
     .wpml-picker-container .wp-picker-container-wrap .wp-color-result.button {
       margin: 0;
       border: none;

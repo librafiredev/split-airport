@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "Motorlar yüklenemedi"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "En çok tercih edilenden en az tercih edilene doğru sıralamak için sürükleyip bırakın."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "Varsayılan motorunuzu en üste sürükleyin ve diğerlerini öncelik sırasına göre düzenleyin."
          ],
          "Which translation engines do you want to use?": [
             "Hangi çeviri motorlarını kullanmak istiyorsunuz?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "Otomatik çeviri motorları, çeviri stili ve desteklenen dil çiftleri açısından farklılık gösterir. Tercih ettiğiniz çeviri motoru kullanmak istediğiniz bir dil çiftini desteklemiyorsa, destekleyen bir sonraki tercih ettiğiniz motora geçeriz. Hakkında daha fazla bilgi edinin,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "Otomatik çeviri motorları, çeviri tarzı ve desteklenen dil çiftleri bakımından farklılık gösterir. Tercih ettiğiniz çeviri motoru, kullanmak istediğiniz bir dil çiftini desteklemiyorsa, destekleyen bir sonraki tercih ettiğiniz motora geçiş yaparız."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (beta) içeriğinizin resmiyetini otomatik olarak algılar ve aynı resmiyetle çeviri yapar."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "Resmiyeti düzenle"
          ],
+         "%d credits per word": [
+            "Kelime başına %d kredi"
+         ],
+         "Backup %d": [
+            "%d Yedekleme"
+         ],
+         "Default": [
+            "Varsayılan"
+         ],
          "ON": [
             "AÇIK"
          ],
          "OFF": [
             "KAPALI"
-         ],
-         "%d credits per word": [
-            "Kelime başına %d kredi"
          ],
          "Documentation": [
             "Dokümantasyon"
@@ -101,9 +107,6 @@
          "Update": [
             "Güncelle"
          ],
-         "Default": [
-            "Varsayılan"
-         ],
          "Formal": [
             "Resmi"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "İnceleme için bekle"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "DeepL, Google ve Azure ile önerilir"
+         "Recommended with DeepL, Google and Microsoft": [
+            "DeepL, Google ve Microsoft ile tavsiye edilir"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google ve Azure harika çeviriler sunar, ancak doğru olduklarından emin olmak için insan incelemesi öneririz. WPML AI, bağlamı anlayan İnsandan Daha İyi Çeviriler sağlar, böylece inceleme sürecini güvenle atlayabilirsiniz."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google ve Microsoft mükemmel çeviriler sunmaktadır, ancak doğru olduklarını teyit etmek için insan tarafından gözden geçirilmesini tavsiye etmekteyiz. WPML AI, bağlamı anlayan ve İnsan Çevirisinden Daha İyi Çeviriler sunmakta olup, bu sayede gözden geçirme sürecini güvenle atlayabilirsiniz."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML çevirileri yayınlanmamış olarak tutar, böylece önce onları inceleyebilirsiniz."

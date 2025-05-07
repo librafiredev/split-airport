@@ -34,6 +34,9 @@ class WPML_TM_ATE_Models_Job_Create {
 	/** @var bool */
 	public $apply_memory;
 
+	/** @var WPML_TM_ATE_Models_Job_Sender */
+	public $job_sender;
+
 	/**
 	 * WPML_TM_ATE_Models_Job_Create constructor.
 	 *

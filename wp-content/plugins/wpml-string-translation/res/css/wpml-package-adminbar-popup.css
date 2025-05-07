@@ -8,11 +8,11 @@
   z-index: 9002;
   width: 200px;
   padding: 10px;
-  background-color: #32373c;
-  color: rgba(240, 245, 250, 0.7); }
+  background-color: #373737;
+  color: #ddd; }
   .wpml-package-popup h2 {
     margin-top: 0;
-    color: rgba(240, 245, 250, 0.7); }
+    color: #ddd; }
   .wpml-package-popup .wpml-simple-lang-selector {
     margin: 10px 0 7px; }
     .wpml-package-popup .wpml-simple-lang-selector .wpml_select2-choice {

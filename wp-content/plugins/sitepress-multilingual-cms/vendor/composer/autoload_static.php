@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
+class ComposerStaticInitcae5c4903bcc218a3f2d9bdcbd83a504
 {
     public static $files = array (
         'b45b351e6b6f7487d819961fef2fda77' => __DIR__ . '/..' . '/jakeasmith/http_build_url/src/http_build_url.php',
@@ -205,6 +205,7 @@ class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
         'WPML\\CLI\\Core\\Commands\\ICommand' => __DIR__ . '/../..' . '/classes/wp-cli/commands/ICommand.php',
         'WPML\\CLI\\Core\\Commands\\IWPML_Command_Factory' => __DIR__ . '/../..' . '/classes/wp-cli/factories/IWPML_Command_Factory.php',
         'WPML\\CLI\\Core\\Commands\\IWPML_Core' => __DIR__ . '/../..' . '/classes/wp-cli/IWPML_Core.php',
+        'WPML\\Compatibility\\Flatsome\\Hooks' => __DIR__ . '/../..' . '/compatibility/Flatsome/Hooks.php',
         'WPML\\Compatibility\\GoogleSiteKit\\Hooks' => __DIR__ . '/../..' . '/compatibility/GoogleSiteKit/Hooks.php',
         'WPML\\Container\\Config' => __DIR__ . '/../..' . '/classes/container/class-config.php',
         'WPML\\Container\\Container' => __DIR__ . '/../..' . '/classes/container/class-wpml-container.php',
@@ -824,6 +825,7 @@ class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
         'WPML\\TM\\ATE\\Hooks\\ReturnedJobActionsFactory' => __DIR__ . '/../..' . '/classes/ATE/Hooks/ReturnedJobActionsFactory.php',
         'WPML\\TM\\ATE\\JobRecord' => __DIR__ . '/../..' . '/classes/ATE/JobRecord.php',
         'WPML\\TM\\ATE\\JobRecords' => __DIR__ . '/../..' . '/classes/ATE/JobRecords.php',
+        'WPML\\TM\\ATE\\JobSender\\JobSenderRepository' => __DIR__ . '/../..' . '/classes/ATE/JobSender/JobSenderRepository.php',
         'WPML\\TM\\ATE\\Jobs' => __DIR__ . '/../..' . '/classes/ATE/Jobs.php',
         'WPML\\TM\\ATE\\LanguageMapping\\InvalidateCacheEndpoint' => __DIR__ . '/../..' . '/classes/ATE/LanguageMapping/InvalidateCacheEndpoint.php',
         'WPML\\TM\\ATE\\Loader' => __DIR__ . '/../..' . '/classes/ATE/Loader.php',
@@ -1045,6 +1047,8 @@ class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
         'WPML\\Utils\\Pager' => __DIR__ . '/../..' . '/classes/utilities/Pager.php',
         'WPML\\WP\\OptionManager' => __DIR__ . '/..' . '/wpml/core-api/core/OptionManager.php',
         'WPML\\XMLConfig\\AllowTranslatableJobFields' => __DIR__ . '/../..' . '/classes/xml-config/class-allow-translatable-job-fields.php',
+        'WPML\\XMLConfig\\RemoteNotices\\Conditions' => __DIR__ . '/../..' . '/classes/xml-config/RemoteNotices/Conditions.php',
+        'WPML\\XMLConfig\\RemoteNotices\\Hooks' => __DIR__ . '/../..' . '/classes/xml-config/RemoteNotices/Hooks.php',
         'WPML_404_Guess' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-404-guess.php',
         'WPML_AJAX_Action_Validation' => __DIR__ . '/../..' . '/classes/action-filter-loader/class-wpml-ajax-action-validation.php',
         'WPML_AJAX_Base_Factory' => __DIR__ . '/../..' . '/classes/action-filter-loader/class-wpml-ajax-action-base-factory.php',
@@ -1505,6 +1509,7 @@ class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
         'WPML_TM_ATE_Jobs_Store_Actions_Factory' => __DIR__ . '/../..' . '/classes/ATE/Hooks/class-wpml-tm-ate-jobs-store-actions-factory.php',
         'WPML_TM_ATE_Models_Job_Create' => __DIR__ . '/../..' . '/classes/ATE/models/class-wpml-tm-ate-models-job-create.php',
         'WPML_TM_ATE_Models_Job_File' => __DIR__ . '/../..' . '/classes/ATE/models/class-wpml-tm-ate-models-job-file.php',
+        'WPML_TM_ATE_Models_Job_Sender' => __DIR__ . '/../..' . '/classes/ATE/models/class-wpml-tm-ate-models-job-sender.php',
         'WPML_TM_ATE_Models_Language' => __DIR__ . '/../..' . '/classes/ATE/models/class-wpml-tm-ate-models-language.php',
         'WPML_TM_ATE_Post_Edit_Actions' => __DIR__ . '/../..' . '/classes/ATE/Hooks/class-wpml-tm-ate-post-edit-actions.php',
         'WPML_TM_ATE_Post_Edit_Actions_Factory' => __DIR__ . '/../..' . '/classes/ATE/Hooks/class-wpml-tm-ate-post-edit-actions-factory.php',
@@ -2054,9 +2059,9 @@ class ComposerStaticInita63814e088ba0f1313d0ab1db6422e80
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita63814e088ba0f1313d0ab1db6422e80::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita63814e088ba0f1313d0ab1db6422e80::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita63814e088ba0f1313d0ab1db6422e80::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcae5c4903bcc218a3f2d9bdcbd83a504::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcae5c4903bcc218a3f2d9bdcbd83a504::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitcae5c4903bcc218a3f2d9bdcbd83a504::$classMap;
 
         }, null, ClassLoader::class);
     }

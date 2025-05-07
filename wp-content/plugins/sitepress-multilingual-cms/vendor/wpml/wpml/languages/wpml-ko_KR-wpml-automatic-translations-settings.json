@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "엔진 로드에 실패했습니다"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "가장 선호하는 엔진부터 가장 덜 선호하는 엔진 순으로 정렬하려면 드래그 앤 드롭하세요."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "기본 엔진을 맨 위로 끌어다 놓고 나머지를 우선순위에 따라 정렬하세요."
          ],
          "Which translation engines do you want to use?": [
             "어떤 번역 엔진을 사용하시겠습니까?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "자동 번역 엔진은 번역 스타일과 지원되는 언어 쌍이 다릅니다. 선호하는 번역 엔진이 사용하려는 언어 쌍을 지원하지 않는 경우, 해당 언어 쌍을 지원하는 다음으로 선호하는 엔진으로 대체됩니다. 다음에 대해 자세히 알아보세요,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "자동 번역 엔진은 번역 스타일과 지원되는 언어 쌍에 따라 다릅니다. 선호하는 번역 엔진이 사용하려는 언어 쌍을 지원하지 않는 경우, 해당 언어 쌍을 지원하는 다음 선호 엔진으로 전환됩니다."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "WPML AI (베타)는 콘텐츠의 격식을 자동으로 감지하고 동일한 격식으로 번역합니다."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "격식 수정"
          ],
+         "%d credits per word": [
+            "단어당 %d 크레딧"
+         ],
+         "Backup %d": [
+            "백업 %d"
+         ],
+         "Default": [
+            "기본값"
+         ],
          "ON": [
             "켜짐"
          ],
          "OFF": [
             "꺼짐"
-         ],
-         "%d credits per word": [
-            "단어당 %d 크레딧"
          ],
          "Documentation": [
             "문서"
@@ -101,9 +107,6 @@
          "Update": [
             "업데이트"
          ],
-         "Default": [
-            "기본값"
-         ],
          "Formal": [
             "공식적"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "검토 대기"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "DeepL, Google 및 Azure와 함께 권장됨"
+         "Recommended with DeepL, Google and Microsoft": [
+            "DeepL, Google 및 Microsoft와 함께 권장됨"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google 및 Azure는 훌륭한 번역을 제공하지만, 정확성을 확인하기 위해 인간의 검토를 권장합니다. WPML AI는 맥락을 이해하는 인간보다 나은 번역을 제공하므로 검토 과정을 자신 있게 건너뛸 수 있습니다."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google, Microsoft는 훌륭한 번역을 제공하지만, 정확성을 확인하기 위해 사람의 검토를 권장합니다. WPML AI는 맥락을 이해하는 인간보다 우수한 번역을 제공하므로 검토 과정을 자신 있게 건너뛸 수 있습니다."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML은 번역을 게시하지 않고 보관하여 먼저 검토할 수 있도록 합니다."

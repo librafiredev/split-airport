@@ -4,6 +4,7 @@ use WPML\UserInterface\Web\Core\Component\ATE\Application\Endpoint\EnableAteCont
 use WPML\UserInterface\Web\Core\Component\ATE\Application\Endpoint\GetAccountBalances\GetAccountBalancesController;
 use WPML\UserInterface\Web\Core\Component\ATE\Application\Endpoint\GetGlossaryCountController;
 use WPML\UserInterface\Web\Core\Component\Communication\Application\Endpoint\DismissNoticeController;
+use WPML\UserInterface\Web\Core\Component\Communication\Application\Endpoint\DismissNoticePerUserController;
 use WPML\UserInterface\Web\Core\Component\Communication\Application\Endpoint\GetDismissedNoticesController;
 use WPML\UserInterface\Web\Core\Component\Dashboard\Application\Endpoint\GetLocalTranslators\GetLocalTranslatorsController;
 
@@ -53,6 +54,11 @@ return [
     'path' => '/dismiss-notice',
     'handler' => DismissNoticeController::class,
     'method' => 'POST',
+  ],
+  'dismissnoticeperuser' => [
+    'path'    => '/dismiss-notice-per-user',
+    'handler' => DismissNoticePerUserController::class,
+    'method'  => 'POST',
   ],
 
 ];

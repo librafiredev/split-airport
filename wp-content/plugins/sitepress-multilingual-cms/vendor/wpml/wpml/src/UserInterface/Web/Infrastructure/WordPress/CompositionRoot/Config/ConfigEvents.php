@@ -39,6 +39,8 @@ class ConfigEvents implements ConfigEventsInterface {
   public function loadEvents() {
     new Event\Translation\Links\ItemUpdateEvent( $this->dic );
     new Event\Translation\Posts\PostInsertedEvent( $this->dic );
+    new Event\Translation\Posts\PageBuilderEditWarningEvent( $this->dic );
+    new Event\Translation\StartUsingDashboardBanner\Events( $this->dic );
     new WordCountEvents( $this->dic );
   }
 

@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:09+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:54+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -39,14 +39,14 @@ msgstr "Yükleniyor..."
 msgid "Failed to load engines"
 msgstr "Motorlar yüklenemedi"
 
-msgid "Drag & drop to sort from the most to the least preferred engine."
-msgstr "En çok tercih edilenden en az tercih edilene doğru sıralamak için sürükleyip bırakın."
+msgid "Drag your default engine to the top and order the rest by priority."
+msgstr "Varsayılan motorunuzu en üste sürükleyin ve diğerlerini öncelik sırasına göre düzenleyin."
 
 msgid "Which translation engines do you want to use?"
 msgstr "Hangi çeviri motorlarını kullanmak istiyorsunuz?"
 
-msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,"
-msgstr "Otomatik çeviri motorları, çeviri stili ve desteklenen dil çiftleri açısından farklılık gösterir. Tercih ettiğiniz çeviri motoru kullanmak istediğiniz bir dil çiftini desteklemiyorsa, destekleyen bir sonraki tercih ettiğiniz motora geçeriz. Hakkında daha fazla bilgi edinin,"
+msgid "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it."
+msgstr "Otomatik çeviri motorları, çeviri tarzı ve desteklenen dil çiftleri bakımından farklılık gösterir. Tercih ettiğiniz çeviri motoru, kullanmak istediğiniz bir dil çiftini desteklemiyorsa, destekleyen bir sonraki tercih ettiğiniz motora geçiş yaparız."
 
 msgid "WPML AI (beta) automatically detects the formality of your content and translates with the same formality."
 msgstr "WPML AI (beta) içeriğinizin resmiyetini otomatik olarak algılar ve aynı resmiyetle çeviri yapar."
@@ -63,14 +63,20 @@ msgstr "Siteniz resmiyet ayarları sunan dilleri kullanmıyor."
 msgid "Edit formality"
 msgstr "Resmiyeti düzenle"
 
+msgid "%d credits per word"
+msgstr "Kelime başına %d kredi"
+
+msgid "Backup %d"
+msgstr "%d Yedekleme"
+
+msgid "Default"
+msgstr "Varsayılan"
+
 msgid "ON"
 msgstr "AÇIK"
 
 msgid "OFF"
 msgstr "KAPALI"
-
-msgid "%d credits per word"
-msgstr "Kelime başına %d kredi"
 
 msgid "Documentation"
 msgstr "Dokümantasyon"
@@ -110,9 +116,6 @@ msgstr "İptal"
 msgid "Update"
 msgstr "Güncelle"
 
-msgid "Default"
-msgstr "Varsayılan"
-
 msgid "Formal"
 msgstr "Resmi"
 
@@ -140,11 +143,11 @@ msgstr "WPML içeriğinizi otomatik olarak çevirmeyi bitirdikten sonra ne yapma
 msgid "Wait for review"
 msgstr "İnceleme için bekle"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "DeepL, Google ve Azure ile önerilir"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "DeepL, Google ve Microsoft ile tavsiye edilir"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google ve Azure harika çeviriler sunar, ancak doğru olduklarından emin olmak için insan incelemesi öneririz. WPML AI, bağlamı anlayan İnsandan Daha İyi Çeviriler sağlar, böylece inceleme sürecini güvenle atlayabilirsiniz."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google ve Microsoft mükemmel çeviriler sunmaktadır, ancak doğru olduklarını teyit etmek için insan tarafından gözden geçirilmesini tavsiye etmekteyiz. WPML AI, bağlamı anlayan ve İnsan Çevirisinden Daha İyi Çeviriler sunmakta olup, bu sayede gözden geçirme sürecini güvenle atlayabilirsiniz."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML çevirileri yayınlanmamış olarak tutar, böylece önce onları inceleyebilirsiniz."

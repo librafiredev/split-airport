@@ -3,6 +3,10 @@
 // Mapping of interfaces to implementations.
 
 use WPML\UserInterface\Web\Core\Component\Dashboard\Application\Endpoint\GetPopulatedItemSections\PopulatedItemSectionsFilterInterface;
+use WPML\UserInterface\Web\Core\Component\Notices\PromoteUsingDashboard\Application\Repository\DashboardTranslationsRepositoryInterface;
+use WPML\UserInterface\Web\Core\Component\Notices\PromoteUsingDashboard\Application\Repository\ManualTranslationsCountRepositoryInterface;
+use WPML\UserInterface\Web\Infrastructure\WordPress\Component\NoticeStartUsingDashboard\Application\Repository\DashboardTranslationsRepository;
+use WPML\UserInterface\Web\Infrastructure\WordPress\Component\NoticeStartUsingDashboard\Application\Repository\ManualTranslationsCountRepository;
 
 return [
 
@@ -51,6 +55,12 @@ return [
 
   \WPML\Core\Component\Translation\Application\Query\TranslationStatusQueryInterface::class =>
     \WPML\Infrastructure\WordPress\Component\Translation\Application\Query\TranslationStatusQuery::class,
+
+  \WPML\UserInterface\Web\Core\Component\Notices\WarningTranslationEdit\Application\TranslationEditorInterface::class =>
+    \WPML\UserInterface\Web\Legacy\Component\Translation\TranslationEditor::class,
+
+  \WPML\UserInterface\Web\Core\Port\Asset\AssetInterface::class =>
+    \WPML\UserInterface\Web\Infrastructure\WordPress\Port\Asset\Asset::class,
 
   \WPML\Core\Component\Translation\Application\Query\ItemLanguageQueryInterface::class =>
     \WPML\Infrastructure\WordPress\Component\Translation\Application\Query\RegularItemsAndStringsLanguageQuery::class,
@@ -147,8 +157,8 @@ return [
   \WPML\Core\SharedKernel\Component\Post\Domain\Repository\MetadataRepositoryInterface::class =>
     \WPML\Infrastructure\WordPress\SharedKernel\Post\Domain\Repository\MetadataRepository::class,
 
-  WPML\Core\Component\Communication\Domain\Repository\DismissedNoticesRepositoryInterface::class =>
-    WPML\Infrastructure\WordPress\Component\Communication\Domain\Repository\DismissedNoticesRepository::class,
+  \WPML\Core\Component\Communication\Domain\DismissedNoticesStorageInterface::class =>
+    \WPML\Infrastructure\WordPress\Component\Communication\Domain\DismissedNoticesStorage::class,
 
   WPML\Core\Component\Post\Domain\WordCount\ItemContentCalculator\PostContentFilterInterface::class =>
     WPML\Infrastructure\WordPress\Component\Item\Domain\WordCount\ItemContentCalculator\PostContentFilter::class,
@@ -183,5 +193,9 @@ return [
 
   PopulatedItemSectionsFilterInterface::class =>
       \WPML\UserInterface\Web\Infrastructure\WordPress\Port\Hook\PopulatedItemSectionsFilter::class,
+
+  DashboardTranslationsRepositoryInterface::class => DashboardTranslationsRepository::class,
+
+  ManualTranslationsCountRepositoryInterface::class => ManualTranslationsCountRepository::class,
 
 ];

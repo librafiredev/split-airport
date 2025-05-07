@@ -15,19 +15,19 @@ msgstr "Shift+탭"
 msgid "Tab"
 msgstr "탭"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:102
+#: src/js/main-ui/components/EditTranslationPopup.js:104
 msgid "Translation to:"
 msgstr "다음으로 번역:"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:121
+#: src/js/main-ui/components/EditTranslationPopup.js:123
 msgid "Copy from original"
 msgstr "원본에서 복사"
 
-#: src/js/main-ui/components/EditTranslationPopup.js:136
+#: src/js/main-ui/components/EditTranslationPopup.js:138
 msgid "Use Shift+Enter to add a new line."
 msgstr "새 줄을 추가하려면 Shift+Enter를 사용하세요."
 
-#: src/js/main-ui/components/EditTranslationPopup.js:95
+#: src/js/main-ui/components/EditTranslationPopup.js:97
 msgid "Original:"
 msgstr "원래의:"
 

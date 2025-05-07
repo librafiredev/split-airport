@@ -572,7 +572,7 @@ class WPML_String_Translation {
 		echo $localization->render( $plugin_localization );
 		echo $localization->render( $other_localization );
 		echo '		</table>
-					<button id="wpml_theme_plugin_localization_scan" type="button" class="button-primary btn-scan section-submit-button" disabled="disabled">' . __( 'Scan selected components for strings', 'wpml-string-translation' ) . '</button>
+					<button id="wpml_theme_plugin_localization_scan" type="button" class="button-primary wpml-button base-btn btn-scan section-submit-button" disabled="disabled">' . __( 'Scan selected components for strings', 'wpml-string-translation' ) . '</button>
 				</div>
 			</div>';
 	}
@@ -670,7 +670,7 @@ class WPML_String_Translation {
 					<div class="info-content">
 						<p class="heading">' . __( 'Updated or new translation files detected', 'wpml-string-translation' ) . '</p>
 						<p>' . __( 'WPML has found new or updated translation (.mo) files and needs to scan them to find translatable strings.', 'wpml-string-translation' ) . '</p>
-						<form><button id="select-all-changed-mo-checkboxes-to-rescan" type="button" class="button-primary btn-select-all">' . __( 'Select affected components', 'wpml-string-translation' ) . '</button></form>
+						<form><button id="select-all-changed-mo-checkboxes-to-rescan" type="button" class="button-primary wpml-button base-btn btn-select-all">' . __( 'Select affected components', 'wpml-string-translation' ) . '</button></form>
 					</div>
 				</div>
 			</div>';

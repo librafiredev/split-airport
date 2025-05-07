@@ -70,7 +70,7 @@ class __TwigTemplate_e8026f23a5e1a95e09dd212c63758a719ef6a4b783541a8d10fed90ab8a
         // line 15
         echo "    </span>
 
-\t<button class=\"js-wpml-ls-open-dialog button-secondary\"";
+\t<button class=\"button-secondary js-wpml-ls-open-dialog wpml-button base-btn wpml-button--outlined\"";
         // line 17
         if (($context["disabled"] ?? null)) {
             echo " disabled=\"disabled\"";
@@ -81,7 +81,8 @@ class __TwigTemplate_e8026f23a5e1a95e09dd212c63758a719ef6a4b783541a8d10fed90ab8a
         echo "\">+ ";
         echo \WPML\Core\twig_escape_filter($this->env, ($context["button_label"] ?? null), "html", null, true);
         echo "</button>
-</p>";
+</p>
+";
     }
 
     public function getTemplateName()

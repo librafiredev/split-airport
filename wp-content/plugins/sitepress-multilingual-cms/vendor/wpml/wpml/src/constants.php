@@ -14,4 +14,5 @@ define( 'WPML_PUBLIC_DIR', WPML_ROOT_DIR . '/public' );
 
 
 // Capabliities.
+define( 'WPML_CAP_MANAGE_OPTIONS', 'manage_options' );
 define( 'WPML_CAP_MANAGE_TRANSLATIONS', 'manage_translations' );

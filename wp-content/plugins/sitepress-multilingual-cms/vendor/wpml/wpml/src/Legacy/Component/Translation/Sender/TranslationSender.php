@@ -97,14 +97,17 @@ class TranslationSender implements TranslationSenderInterface {
       }
 
       $errors = $this->legacyTranslationManagement->messages_by_type( 'error' );
-      if ( $errors ) {
+      if ( is_array( $errors ) ) {
         $errorMessage = $this->errorMapper->map( $errors );
         throw new SendBatchException( $errorMessage );
       }
 
       do_action( 'wpml_tm_jobs_notification' );
 
-      $jobIds = array_merge( $jobIds, $this->legacyTranslationManagement->get_sent_job_ids() );
+      $jobIdsOfLegacy = $this->legacyTranslationManagement->get_sent_job_ids();
+      if ( is_array( $jobIdsOfLegacy ) ) {
+        $jobIds = array_merge( $jobIds, $jobIdsOfLegacy );
+      }
     }
 
     if ( $jobIds ) {

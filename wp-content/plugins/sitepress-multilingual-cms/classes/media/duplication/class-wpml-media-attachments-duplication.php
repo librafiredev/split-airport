@@ -1075,7 +1075,7 @@ class WPML_Media_Attachments_Duplication {
             SELECT SQL_CALC_FOUND_ROWS p1.ID, p1.post_parent
             FROM {$this->wpdb->prefix}icl_translations t
             INNER JOIN {$this->wpdb->posts} p1
-            	ON t.element_id = p1.ID
+            	ON t.element_id = p1.ID AND p1.post_type = 'attachment'
             LEFT JOIN {$this->wpdb->prefix}icl_translations tt
             	ON t.trid = tt.trid
 			WHERE t.element_type = 'post_attachment'

@@ -2,17 +2,16 @@
 
 namespace WPML\Core\Component\Communication\Application\Query;
 
-use WPML\Core\Component\Communication\Domain\NoticesOption;
-use WPML\Core\Port\Persistence\OptionsInterface;
+use WPML\Core\Component\Communication\Domain\DismissedNoticesStorageInterface;
 
 class DismissedNoticesQuery {
 
-  /** @var OptionsInterface */
-  private $options;
+  /** @var DismissedNoticesStorageInterface */
+  private $storage;
 
 
-  public function __construct( OptionsInterface $options ) {
-    $this->options = $options;
+  public function __construct( DismissedNoticesStorageInterface $storage ) {
+    $this->storage = $storage;
   }
 
 
@@ -22,12 +21,24 @@ class DismissedNoticesQuery {
    * @return string[]
    */
   public function getDismissed( array $noticeIdsToCheck = [] ): array {
-    /**
-     * @var array{dismissed?: string[]} $noticeOptions
-     */
-    $noticeOptions = $this->options->get( NoticesOption::OPTION_NAME, [] );
+    $dismissed = $this->storage->getGlobal();
 
-    $dismissed = $noticeOptions['dismissed'] ?? [];
+    if ( ! empty( $noticeIdsToCheck ) ) {
+      $dismissed = array_intersect( $dismissed, $noticeIdsToCheck );
+    }
+
+    return $dismissed;
+  }
+
+
+  /**
+   * @param int      $userId
+   * @param string[] $noticeIdsToCheck
+   *
+   * @return string[]
+   */
+  public function getDismissedByUser( int $userId, array $noticeIdsToCheck = [] ): array {
+    $dismissed = $this->storage->getPerUser( $userId );
 
     if ( ! empty( $noticeIdsToCheck ) ) {
       $dismissed = array_intersect( $dismissed, $noticeIdsToCheck );

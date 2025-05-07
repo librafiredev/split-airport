@@ -46,7 +46,7 @@ WPML_String_Translation.ChangeDomainLanguage = function () {
 				closeOnEscape: true,
 				buttons:       [
 					{
-						class: 'wpml-st-cancel-button',
+						class: 'wpml-button base-btn wpml-button--outlined wpml-st-cancel-button',
 						text: 'Cancel',
 						click: function() {
 							jQuery( this ).dialog( 'close' );
@@ -54,6 +54,7 @@ WPML_String_Translation.ChangeDomainLanguage = function () {
 					},
 					{
 						id:    'wpml-change-domain-language-dialog-apply-button',
+						class: 'wpml-button base-btn',
 						text:  privateData.change_lang_dialog.data('button-text'),
 						click: applyChanges
 					}
@@ -120,7 +121,7 @@ WPML_String_Translation.ChangeDomainLanguage = function () {
 				tr += '<tr>';
 			}
 			tr += '<td>';
-			tr += '<input class="js-lang" type="checkbox" value="' + data[i].language + '" />';
+			tr += '<input class="wpml-checkbox-native js-lang" type="checkbox" value="' + data[i].language + '" />';
 			tr += '</td>';
 			tr += '<td>';
 			tr += data[i].display_name;

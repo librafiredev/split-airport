@@ -36,6 +36,7 @@ class ReturnedJobActions implements \IWPML_Action {
 	public function callActions() {
 		if ( isset( $_GET['ate_original_id'] ) && Obj::prop( 'complete', $_GET ) ) {
 			call_user_func( $this->removeTranslationDuplicateStatus, (int) $_GET['ate_original_id'] );
+			do_action( 'wpml_on_back_from_ate_manual_translation', (int) $_GET['ate_original_id'] );
 		}
 	}
 }

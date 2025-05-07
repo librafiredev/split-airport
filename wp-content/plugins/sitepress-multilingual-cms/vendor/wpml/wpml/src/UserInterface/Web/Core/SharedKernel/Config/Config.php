@@ -9,6 +9,9 @@ class Config {
   /** @var array<Page> $adminPages */
   private $adminPages = [];
 
+  /** @var array<Notice> $adminNotices */
+  private $adminNotices = [];
+
   /** @var array<Endpoint> $endpoints */
   private $endpoints = [];
 
@@ -25,6 +28,18 @@ class Config {
   /** @return void */
   public function addAdminPage( Page $page ) {
     $this->adminPages[] = $page;
+  }
+
+
+  /** @return array<Notice> */
+  public function adminNotices() {
+    return $this->adminNotices;
+  }
+
+
+  /** @return void */
+  public function addAdminNotice( Notice $notice ) {
+    $this->adminNotices[] = $notice;
   }
 
 

@@ -137,6 +137,9 @@ class WPML_TP_Service extends WPML_TP_REST_Object implements Serializable {
 	 */
 	public $maximumJobsPerBatch;
 
+	/** @var bool */
+	public $auto_refresh_project_options;
+
 	public function __construct( stdClass $object = null ) {
 		parent::__construct( $object );
 		$this->set_custom_fields_data();
@@ -717,6 +720,20 @@ class WPML_TP_Service extends WPML_TP_REST_Object implements Serializable {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function get_auto_refresh_project_options() {
+		return $this->auto_refresh_project_options;
+	}
+
+	/**
+	 * @param bool $auto_refresh_project_options
+	 */
+	public function set_auto_refresh_project_options( $auto_refresh_project_options ) {
+		$this->auto_refresh_project_options = (bool) $auto_refresh_project_options;
+	}
+
+	/**
 	 * @return array
 	 */
 	protected function get_properties() {
@@ -760,6 +777,7 @@ class WPML_TP_Service extends WPML_TP_REST_Object implements Serializable {
 			'redirect_to_ts?'                              => 'redirect_to_ts',
 			'countries'                                    => 'countries',
 			'recommended_maximum_number_of_jobs_per_batch' => 'recommended_maximum_number_of_jobs_per_batch',
+			'auto_refresh_project_options'				   =>  'auto_refresh_project_options',
 		];
 	}
 }

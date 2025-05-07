@@ -32,14 +32,14 @@
          "Failed to load engines": [
             "فشل تحميل المحركات"
          ],
-         "Drag & drop to sort from the most to the least preferred engine.": [
-            "اسحب وأفلت للترتيب من المحرك الأكثر تفضيلاً إلى الأقل تفضيلاً."
+         "Drag your default engine to the top and order the rest by priority.": [
+            "اسحب محرك الترجمة الافتراضي إلى الأعلى ورتب الباقي حسب الأولوية."
          ],
          "Which translation engines do you want to use?": [
             "ما هي محركات الترجمة التي ترغب في استخدامها؟?"
          ],
-         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it. Learn more about,": [
-            "تختلف محركات الترجمة التلقائية في أسلوب الترجمة وأزواج اللغات المدعومة. إذا لم يدعم محرك الترجمة المفضل لديك زوج اللغات الذي ترغب في استخدامه، فإننا نعود إلى المحرك التالي المفضل لديك الذي يدعمه. تعرف على المزيد حول،,"
+         "Automatic translation engines differ in translation style and supported language pairs. If your preferred translation engine does not support a language pair that you want to use, we fall back to your next preferred engine that does support it.": [
+            "تختلف محركات الترجمة الآلية في أسلوب الترجمة وأزواج اللغات المدعومة. إذا كان محرك الترجمة المفضل لديك لا يدعم زوج اللغات الذي ترغب في استخدامه، فإننا نعود إلى المحرك المفضل التالي الذي يدعمه."
          ],
          "WPML AI (beta) automatically detects the formality of your content and translates with the same formality.": [
             "يكتشف WPML AI (تجريبي) تلقائيًا رسمية المحتوى الخاص بك ويترجم بنفس الرسمية."
@@ -56,14 +56,20 @@
          "Edit formality": [
             "تعديل الرسمية"
          ],
+         "%d credits per word": [
+            "%d رصيد لكل كلمة"
+         ],
+         "Backup %d": [
+            "نسخة احتياطية %d"
+         ],
+         "Default": [
+            "افتراضي"
+         ],
          "ON": [
             "تشغيل"
          ],
          "OFF": [
             "إيقاف"
-         ],
-         "%d credits per word": [
-            "%d رصيد لكل كلمة"
          ],
          "Documentation": [
             "الوثائق"
@@ -101,9 +107,6 @@
          "Update": [
             "تحديث"
          ],
-         "Default": [
-            "افتراضي"
-         ],
          "Formal": [
             "رسمي"
          ],
@@ -131,11 +134,11 @@
          "Wait for review": [
             "انتظار المراجعة"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "موصى به مع DeepL وGoogle وAzure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "موصى به مع DeepL وGoogle وMicrosoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "تقدم DeepL وGoogle وAzure ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. يوفر WPML AI ترجمات أفضل من الإنسان تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "تقدم DeepL وGoogle وMicrosoft ترجمات رائعة، ولكننا نوصي بمراجعة بشرية للتأكد من صحتها. يوفر WPML ترجمات أفضل من البشر تفهم السياق، لذا يمكنك تخطي عملية المراجعة بثقة."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "يحتفظ WPML بالترجمات غير منشورة، حتى تتمكن من مراجعتها أولاً."

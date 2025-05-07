@@ -27,11 +27,11 @@ class SettingsService {
 
 
   /**
-   * @param string $reviewMode
+   * @param ?string $reviewMode
    *
    * @return string
    */
-  public function saveReviewOption( string $reviewMode ) {
+  public function saveReviewOption( $reviewMode ) {
     $reviewMode = $reviewMode ? new ReviewMode( $reviewMode ) : ReviewMode::createDefault();
 
     $this->translationSettingsRepository->saveReviewMode( $reviewMode );

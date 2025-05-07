@@ -47,7 +47,7 @@ use WPML\UserInterface\Web\Core\Component\Preferences\Application\Endpoint\SaveA
  *                                - PageConfigUserInterface
  *                                - PageRequirementsInterface
  *                              Can be extended by adding further interfaces
- *                              src/UserInterface/Web/Core/Port/Page/*
+ *                              src/UserInterface/Web/Core/SharedKernel/Config/*
  *  - requirements (optional)   Classname to specify the page loading requirements.
  *                              It must implement PageRequirementsInterface.
  *  - menuTitle (optional)      Title of the menu item.
@@ -105,9 +105,9 @@ return [
         'dataProvider'  => DashboardController::class,
         'dependencies'  => [ 'wpml-node-modules', 'wp-i18n', 'lodash' ]
       ],
-      [
-        'id'            => 'wpml-notices',
-        'src'           => 'public/js/notices.js',
+      [ // Move 'wpml-notice-glossary' to config-admin-notices.php
+        'id'            => 'wpml-notice-glossary',
+        'src'           => 'public/js/notice-glossary.js',
         'prerequisites' => DashboardController::class,
         'dependencies'  => [ 'wpml-node-modules', 'wp-i18n', 'lodash' ]
       ],
@@ -241,6 +241,11 @@ return [
       'getneedsupdatecountcreatedincte' => [
         'path'    => '/get-needs-update-count-created-in-cte',
         'handler' => GetNeedsUpdateCreatedInCteController::class,
+        'method'  => 'GET',
+      ],
+      'getengines' => [
+        'path'    => '/get-engines',
+        'handler' => GetEnginesController::class,
         'method'  => 'GET',
       ],
     ],

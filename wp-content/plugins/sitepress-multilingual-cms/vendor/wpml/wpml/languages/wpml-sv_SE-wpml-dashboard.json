@@ -154,6 +154,9 @@
          "Search parent by title": [
             "Sök överordnad efter titel"
          ],
+         "Search by term title in %s": [
+            "Sök efter termtitel i %s"
+         ],
          "All taxonomies": [
             "Alla taxonomier"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "Inga termer hittades"
-         ],
-         "Search by term title": [
-            "Sök efter termtitel"
          ],
          "Filter by:": [
             "Filtrera efter:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "De flesta strängar från dina plugins och teman är på engelska, så vi visar dem tillsammans med ditt standardspråk. Använd filtret <b>Källspråk</b> för att visa strängar på ett specifikt språk."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "Du använder <b>%s</b> för att cacha din webbplats, vilket kan hindra WPML från att automatiskt registrera nya strängar. För att åtgärda detta, rensa din sidcache och besök sedan dina översatta sidor igen på frontend för att upptäcka nya strängar."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML kan upptäcka strängar som visas på webbplatsen och lista dem här. Denna funktion hjälper dig att identifiera de strängar som faktiskt visas på webbplatsen och översätta dem. För att endast se de strängar som faktiskt visas på webbplatsen här behöver du aktivera denna funktion."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "Batchnamn:"
+         ],
+         "Default translation engine: ": [
+            "Standardöversättningsmotor: "
+         ],
+         "Change": [
+            "Ändra"
+         ],
+         "Failed to load engines": [
+            "Det gick inte att ladda motorer"
          ],
          "Your Automatic Translation Credits": [
             "Dina automatiska översättningskrediter"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "Det gick inte att hämta motordata"
+         ],
          "Error in fetching currently logged in translator": [
             "Fel vid hämtning av inloggad översättare"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "Vänta på granskning"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "Rekommenderas med DeepL, Google och Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "Rekommenderas med DeepL, Google och Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google och Azure ger bra översättningar, men vi rekommenderar en mänsklig granskning för att bekräfta att de är korrekta. WPML AI ger bättre än mänskliga översättningar som förstår kontext, så du kan tryggt hoppa över granskningsprocessen."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google och Microsoft levererar bra översättningar, men vi rekommenderar en mänsklig granskning för att bekräfta att de är korrekta. WPML AI tillhandahåller Bättre än mänskliga översättningar som förstår sammanhanget, så du kan tryggt hoppa över granskningsprocessen."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML håller översättningarna opublicerade så att du kan granska dem först."

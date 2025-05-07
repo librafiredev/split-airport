@@ -35,7 +35,7 @@
 
     jQuery('input[name="show_on_root"]').change(iclToggleShowOnRoot)
     jQuery('#wpml_show_page_on_root_details').find('a').click(function () {
-      if (!jQuery('#wpml_show_on_root_page').hasClass('active')) {
+      if (!jQuery('#wpml_show_on_root_page').is(':checked')) {
         alert(jQuery('#wpml_show_page_on_root_x').html())
         return false
       }
@@ -311,7 +311,7 @@
       rootHtmlFile = form.find('[name=root_html_file_path]').val()
 
       if (useDirectories) {
-        if (showOnRoot === 'html' && !rootHtmlFile) {
+        if (showOnRoot === 'html_file' && !rootHtmlFile) {
           validSettings = false
           useDirectoryWrapper.find('.icl_error_text.icl_error_1').fadeIn()
         }
@@ -459,17 +459,19 @@
             formMessage.fadeIn()
           }
 
-          if (jQuery('input[name=show_on_root]').length) {
+          if (jQuery('input[name=use_directory]').is(':checked') && jQuery('input[name=show_on_root]').length) {
             rootHtmlFile = jQuery('#wpml_show_on_root_html_file')
             rootPage = jQuery('#wpml_show_on_root_page')
             if (rootHtmlFile.prop('checked')) {
               rootHtmlFile.addClass('active')
               rootPage.removeClass('active')
             }
+
             if (rootPage.prop('checked')) {
               rootPage.addClass('active')
               rootHtmlFile.removeClass('active')
             }
+
           }
         } else {
           formErrors = jQuery('form[name="' + formName + '"] .icl_form_errors')

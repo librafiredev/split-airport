@@ -508,7 +508,7 @@ if ( ! \WPML\Plugins::isTMActive() && ( ! wpml_is_setup_complete() || false !== 
 			$job->target_language->name = $translation_job->get_language_code( true );
 			$job->deadline              = strtotime( $translation_job->get_deadline_date() );
 			$job->apply_memory          = $apply_memory;
-
+			$job->job_sender            = \WPML\TM\ATE\JobSender\JobSenderRepository::get();
 			/*
 			 * wpmldev-1840
 			 *

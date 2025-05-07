@@ -89,8 +89,8 @@ class WPML_Media_Settings {
 							<td colspan="2">
 								<ul class="wpml_media_options_language">
 									<li>
-										<label>
-											<input type="checkbox" id="set_language_info" name="set_language_info" value="1"
+										<label for="set_language_info">
+											<input class="wpml-checkbox-native" type="checkbox" id="set_language_info" name="set_language_info" value="1"
 											<?php
 												echo $has_orphan_attachments
 													? ' checked="checked"'
@@ -99,9 +99,9 @@ class WPML_Media_Settings {
 											/>
 											<?php esc_html_e( 'Set language information for existing media', 'sitepress' ); ?>
 										</label></li>
-									<li><label><input type="checkbox" id="translate_media" name="translate_media" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Translate existing media in all languages', 'sitepress' ); ?></label></li>
-									<li><label><input type="checkbox" id="duplicate_media" name="duplicate_media" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Duplicate existing media for translated content', 'sitepress' ); ?></label></li>
-									<li><label><input type="checkbox" id="duplicate_featured" name="duplicate_featured" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Duplicate the featured images for translated content', 'sitepress' ); ?></label></li>
+									<li><label for="translate_media"><input type="checkbox" class="wpml-checkbox-native" id="translate_media" name="translate_media" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Translate existing media in all languages', 'sitepress' ); ?></label></li>
+									<li><label for="duplicate_media"><input type="checkbox" class="wpml-checkbox-native" id="duplicate_media" name="duplicate_media" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Duplicate existing media for translated content', 'sitepress' ); ?></label></li>
+									<li><label for="duplicate_featured"><input type="checkbox" class="wpml-checkbox-native" id="duplicate_featured" name="duplicate_featured" value="1" checked="checked"/>&nbsp;<?php esc_html_e( 'Duplicate the featured images for translated content', 'sitepress' ); ?></label></li>
 								</ul>
 							</td>
 						</tr>
@@ -109,7 +109,7 @@ class WPML_Media_Settings {
 						<tr>
 							<td><a href="https://wpml.org/documentation/getting-started-guide/media-translation/?utm_source=plugin&utm_medium=gui&utm_campaign=wpmlcore" target="_blank"><?php esc_html_e( 'Media Translation Documentation', 'sitepress' ); ?></a></td>
 							<td align="right">
-								<input class="button-primary" name="start" type="submit" value="<?php esc_attr_e( 'Start', 'sitepress' ); ?> &raquo;"/>
+								<input class="button-primary wpml-button base-btn" name="start" type="submit" value="<?php esc_attr_e( 'Start', 'sitepress' ); ?> &raquo;"/>
 							</td>
 
 						</tr>
@@ -141,15 +141,15 @@ class WPML_Media_Settings {
 									$duplicate_featured_html_checked     = $content_defaults['duplicate_featured'] ? 'checked="checked"' : '';
 									?>
 									<li>
-										<label><input type="checkbox" name="content_default_always_translate_media"
+										<label><input type="checkbox" class="wpml-checkbox-native" name="content_default_always_translate_media"
 													  value="1" <?php echo $always_translate_media_html_checked; ?> />&nbsp;<?php esc_html_e( 'When uploading media to the Media library, make it available in all languages', 'sitepress' ); ?></label>
 									</li>
 									<li>
-										<label><input type="checkbox" name="content_default_duplicate_media"
+										<label><input type="checkbox" class="wpml-checkbox-native" name="content_default_duplicate_media"
 													  value="1" <?php echo $duplicate_media_html_checked; ?> />&nbsp;<?php esc_html_e( 'Duplicate media attachments for translations', 'sitepress' ); ?></label>
 									</li>
 									<li>
-										<label><input type="checkbox" name="content_default_duplicate_featured"
+										<label><input type="checkbox" class="wpml-checkbox-native" name="content_default_duplicate_featured"
 													  value="1"  <?php echo $duplicate_featured_html_checked; ?> />&nbsp;<?php esc_html_e( 'Duplicate featured images for translations', 'sitepress' ); ?></label>
 									</li>
 								</ul>
@@ -170,7 +170,7 @@ class WPML_Media_Settings {
 									$translateMediaLibraryTexts = \WPML\Media\Option::getTranslateMediaLibraryTexts() ? 'checked="checked"' : '';
 									?>
 									<li>
-										<label><input type="checkbox" name="translate_media_library_texts"
+										<label><input class="wpml-checkbox-native" type="checkbox" name="translate_media_library_texts"
 													  value="1" <?php echo $translateMediaLibraryTexts; ?> />&nbsp;<?php esc_html_e( 'Translate media library texts with posts', 'sitepress' ); ?></label>
 									</li>
 								</ul>
@@ -183,7 +183,7 @@ class WPML_Media_Settings {
 
 						<tr>
 							<td colspan="2" align="right">
-								<input class="button-secondary" name="set_defaults" type="submit" value="<?php esc_attr_e( 'Apply', 'sitepress' ); ?>"/>
+								<input class="button-secondary wpml-button base-btn wpml-button--outlined" name="set_defaults" type="submit" value="<?php esc_attr_e( 'Apply', 'sitepress' ); ?>"/>
 							</td>
 						</tr>
 

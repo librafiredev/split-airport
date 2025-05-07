@@ -60,6 +60,9 @@ class RemoteTranslationServiceQuery implements RemoteTranslationServiceQueryInte
       ? $currentTranslationService->maximumJobsPerBatch
       : null;
 
+    $autoRefreshProjectOptions = isset( $currentTranslationService->auto_refresh_project_options )
+                                 && (bool) $currentTranslationService->auto_refresh_project_options;
+
     $translationServiceDomain = new RemoteTranslationServiceDomain(
       $currentTranslationService->id,
       $currentTranslationService->name,
@@ -70,7 +73,8 @@ class RemoteTranslationServiceQuery implements RemoteTranslationServiceQueryInte
       (array) $currentTranslationService->custom_fields,
       (array) $currentTranslationService->custom_fields_data,
       [],
-      $maximumJobsPerBatch
+      $maximumJobsPerBatch,
+      $autoRefreshProjectOptions
     );
 
     // Try to get the extra fields ONLY if the translation service is authenticated
@@ -97,6 +101,11 @@ class RemoteTranslationServiceQuery implements RemoteTranslationServiceQueryInte
     }
 
     try {
+      $extraFields = $this->translationProxyBasket::get_basket_extra_fields_array( $forceRefresh );
+      if ( ! is_array( $extraFields ) ) {
+        return [];
+      }
+
       return array_map(
         function ( \WPML_TP_Extra_Field $field ) {
           return new RemoteTranslationServiceExtraField(
@@ -106,8 +115,14 @@ class RemoteTranslationServiceQuery implements RemoteTranslationServiceQueryInte
             $field->items
           );
         },
-        $this->translationProxyBasket::get_basket_extra_fields_array( $forceRefresh )
+        array_filter(
+          $extraFields,
+          function ( $field ) {
+            return $field instanceof \WPML_TP_Extra_Field;
+          }
+        )
       );
+
     } catch ( \Throwable $e ) { // Handling any general exception coming from Legacy
       return [];
     }

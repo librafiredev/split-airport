@@ -7,13 +7,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-16T17:01:33+00:00\n"
+"POT-Creation-Date: 2025-04-08T10:19:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: installer\n"
-
-msgid "Translate with PTC"
-msgstr "PTC로 번역하기"
 
 #. translators: %1$s and %2$s are opening and closing link tags.
 #: includes/admin-notices/notices/Account.php:107
@@ -50,6 +47,7 @@ msgstr "귀하의 사이트는 향후 워드프레스 릴리스의 변경 사항
 msgid "Your site is vulnerable to breaking changes in future WordPress releases. Renew your account to protect your site with the latest %s releases."
 msgstr "귀하의 사이트는 향후 워드프레스 릴리스의 변경 사항에 취약합니다. 계정을 갱신하여 최신 %s 릴리스로 사이트를 보호하세요."
 
+#. translators: %s Product url
 #: includes/admin-notices/notices/Texts.php:52
 msgid "This site is registered on %s as a development site."
 msgstr "이 사이트는 %s 에 개발 사이트로 등록되어 있습니다."
@@ -96,6 +94,7 @@ msgstr "도움 필요?"
 msgid "See the %1$s and let us know in %2$s."
 msgstr "%1$s를 확인하고 %2$s로 알려주세요."
 
+#. translators: %1$s is `communication error details` %2$s is ex. wpml.org technical support
 #: includes/admin-notices/notices/Texts.php:84
 msgid "communication error details"
 msgstr "통신 오류 세부 정보"
@@ -118,7 +117,7 @@ msgid "Ignore and don't ask me again"
 msgstr "무시하고 다시 묻지 마세요"
 
 #: includes/admin-notices/notices/Texts.php:147
-#: includes/class-wp-installer.php:545
+#: includes/class-wp-installer.php:525
 #: includes/upgrade/AutoUpgrade.php:114
 #: templates/repository-register.php:49
 msgid "Register"
@@ -269,107 +268,111 @@ msgstr "베타"
 msgid "Production"
 msgstr "프로덕션"
 
-#: includes/class-wp-installer.php:193
+#: includes/class-wp-installer.php:190
 msgid "Installing %s"
 msgstr "%s 설치 중"
 
-#: includes/class-wp-installer.php:194
+#: includes/class-wp-installer.php:191
 msgid "Updating %s"
 msgstr "%s 업데이트 중"
 
-#: includes/class-wp-installer.php:195
+#: includes/class-wp-installer.php:192
 msgid "Activating %s"
 msgstr "%s 활성화"
 
+#: includes/class-wp-installer.php:358
 #: includes/class-wp-installer.php:359
-#: includes/class-wp-installer.php:360
-#: includes/class-wp-installer.php:1183
+#: includes/class-wp-installer.php:1124
 msgid "Installer"
 msgstr "설치자"
 
-#: includes/class-wp-installer.php:534
+#: includes/class-wp-installer.php:513
 msgid "Upgrade"
 msgstr "업그레이드"
 
-#: includes/class-wp-installer.php:539
+#: includes/class-wp-installer.php:519
 msgid "Registered"
 msgstr "등록됨"
 
-#: includes/class-wp-installer.php:743
+#: includes/class-wp-installer.php:701
 msgid ""
 "You are using an invalid site key defined as the constant %s (most likely in wp-config.php).\n"
 "                                                Please remove it or use the correct value in order to be able to register correctly."
 msgstr "상수 %s(대부분 wp-config.php에 있음)로 정의된 잘못된 사이트 키를 사용하고 있습니다.\n 올바르게 등록하려면 해당 키를 제거하거나 올바른 값을 사용하세요."
 
-#: includes/class-wp-installer.php:877
+#: includes/class-wp-installer.php:824
 msgid "Commercial"
 msgstr "상업용"
 
-#: includes/class-wp-installer.php:1076
+#: includes/class-wp-installer.php:1014
 msgid "Installer cannot display the products information because the automatic updating for %s was explicitly disabled with the configuration below (usually in wp-config.php):"
 msgstr "%s에 대한 자동 업데이트가 아래 구성(일반적으로 wp-config.php에 있음)에서 명시적으로 비활성화되었기 때문에 설치 프로그램이 제품 정보를 표시할 수 없습니다"
 
-#: includes/class-wp-installer.php:1078
+#: includes/class-wp-installer.php:1016
 msgid "In order to see the products information, please run the %smanual updates check%s to initialize the products list or (temporarily) remove the above code."
 msgstr "제품 정보를 확인하려면 %s수동 업데이트 확인%s을 실행하여 제품 목록을 초기화하거나 위 코드를 (일시적으로) 제거하세요."
 
-#: includes/class-wp-installer.php:1105
+#: includes/class-wp-installer.php:1044
 msgid "Installer cannot contact our updates server to get information about the available products and check for new versions. If you are seeing this message for the first time, you can ignore it, as it may be a temporary communication problem. If the problem persists and your WordPress admin is slowing down, you can disable automated version checks. Add the following line to your wp-config.php file:"
 msgstr "설치 프로그램이 사용 가능한 제품에 대한 정보를 얻고 새 버전을 확인하기 위해 업데이트 서버에 연결할 수 없습니다. 이 메시지가 처음 표시되는 경우 일시적인 통신 문제일 수 있으므로 무시해도 됩니다. 문제가 지속되고 워드프레스 관리자 속도가 느려지는 경우 자동 버전 확인을 비활성화할 수 있습니다. wp-config.php 파일에 다음 줄을 추가합니다:"
 
-#: includes/class-wp-installer.php:1131
-#: includes/class-wp-installer.php:1135
+#: includes/class-wp-installer.php:1071
+#: includes/class-wp-installer.php:1075
 msgid "Information about new versions is invalid. It may be a temporary communication problem, please check for updates again."
 msgstr "새 버전에 대한 정보가 유효하지 않습니다. 일시적인 통신 문제일 수 있으니 업데이트를 다시 확인해 주세요."
 
-#: includes/class-wp-installer.php:1175
+#: includes/class-wp-installer.php:1115
 msgid "Sorry, you are not allowed to manage Installer for this site."
 msgstr "죄송합니다. 이 사이트의 설치 관리자는 관리할 수 없습니다."
 
-#: includes/class-wp-installer.php:1221
+#: includes/class-wp-installer.php:1154
 msgid "No repositories defined."
 msgstr "정의된 리포지토리가 없습니다."
 
-#: includes/class-wp-installer.php:1597
+#: includes/class-wp-installer.php:1376
+msgid "We have preselected the plugins your site needs to be fully multilingual."
+msgstr "귀하의 사이트가 완전히 다국어화되는 데 필요한 플러그인들을 미리 선택해 두었습니다."
+
+#: includes/class-wp-installer.php:1612
 #: includes/site-key/class-otgs-installer-site-key-ajax.php:67
 msgid "Invalid site key for the current site."
 msgstr "현재 사이트에 대한 사이트 키가 잘못되었습니다."
 
-#: includes/class-wp-installer.php:1598
+#: includes/class-wp-installer.php:1613
 #: includes/site-key/class-otgs-installer-site-key-ajax.php:67
 msgid "Please note that the site key is case sensitive."
 msgstr "사이트 키는 대소문자를 구분합니다."
 
-#: includes/class-wp-installer.php:1604
+#: includes/class-wp-installer.php:1618
 msgid "%s cannot access %s to register. Try again to see if it's a temporary problem. If the problem continues, make sure that this site has access to the Internet."
 msgstr "%s은 등록하기 위해 %s에 액세스할 수 없습니다. 일시적인 문제인지 다시 시도해 보세요. 문제가 계속되면 이 사이트가 인터넷에 액세스할 수 있는지 확인하세요."
 
-#: includes/class-wp-installer.php:2302
+#: includes/class-wp-installer.php:2259
 msgid "Connection failed! Please refresh the page and try again. (%s)"
 msgstr "연결에 실패했습니다! 페이지를 새로고침하고 다시 시도하세요. (%s)"
 
-#: includes/class-wp-installer.php:2305
+#: includes/class-wp-installer.php:2262
 msgid "Your subscription appears to no longer be valid. Please try to register again using a valid site key."
 msgstr "구독이 더 이상 유효하지 않은 것 같습니다. 유효한 사이트 키를 사용하여 다시 등록해 보세요."
 
-#: includes/class-wp-installer.php:3009
-#: includes/class-wp-installer.php:3087
+#: includes/class-wp-installer.php:2891
+#: includes/class-wp-installer.php:2953
 msgid "%s cannot update because your site's registration is not valid. Please %sregister %s%s again for this site first."
 msgstr "%s은 귀하의 사이트 등록이 유효하지 않기 때문에 업데이트할 수 없습니다. 먼저 이 사이트에 대해 %s%s%s을 다시 등록하세요."
 
-#: includes/class-wp-installer.php:3111
+#: includes/class-wp-installer.php:2976
 msgid "Update Plugin"
 msgstr "플러그인 업데이트"
 
-#: includes/class-wp-installer.php:3112
+#: includes/class-wp-installer.php:2977
 msgid "Return to the plugins page"
 msgstr "플러그인 페이지로 돌아가기"
 
-#: includes/products/commercial-tab/DownloadsList.php:29
+#: includes/products/commercial-tab/DownloadsList.php:28
 msgid "(embedded)"
 msgstr "(임베디드)"
 
-#: includes/products/commercial-tab/DownloadsList.php:43
+#: includes/products/commercial-tab/DownloadsList.php:42
 msgid "Release notes"
 msgstr "릴리스 노트"
 
@@ -476,11 +479,11 @@ msgstr "툴셋 API 서버"
 msgid " to use auto-updates"
 msgstr "자동 업데이트 사용"
 
-#: loader.php:67
+#: loader.php:72
 msgid "This site is registered on %s as a development site. Switch to a production site key to %s."
 msgstr "이 사이트는 %s에 개발 사이트로 등록되어 있습니다. %s의 프로덕션 사이트 키로 전환하세요."
 
-#: loader.php:72
+#: loader.php:77
 msgid "This site is registered on Toolset.com as a development site."
 msgstr "이 사이트는 Toolset.com에 개발 사이트로 등록되어 있습니다."
 
@@ -525,8 +528,7 @@ msgid "You are using a potentially less stable channel for %s. If you didn't ena
 msgstr "%s에 대해 잠재적으로 덜 안정적인 채널을 사용하고 있습니다. 의도적으로 이것을 활성화하지 않은 경우 'Production' 채널로 전환해야 합니다."
 
 #: templates/downloads-list-compact.php:8
-#: templates/downloads-list.php:15
-#: templates/downloads-list.php:44
+#: templates/downloads-list.php:29
 msgid "Plugin"
 msgstr "플러그인"
 
@@ -535,8 +537,7 @@ msgid "Available"
 msgstr "사용 가능"
 
 #: templates/downloads-list-compact.php:10
-#: templates/downloads-list.php:16
-#: templates/downloads-list.php:45
+#: templates/downloads-list.php:30
 msgid "Installed"
 msgstr "설치됨"
 
@@ -569,22 +570,22 @@ msgid "activated"
 msgstr "활성화됨"
 
 #: templates/downloads-list-compact.php:65
-#: templates/downloads-list.php:71
+#: templates/downloads-list.php:55
 msgid "Downloading is not possible because WordPress cannot write into the plugins folder. %sHow to fix%s."
 msgstr "워드프레스에서 플러그인 폴더에 쓸 수 없기 때문에 다운로드할 수 없습니다. %s수정 방법%s."
 
 #: templates/downloads-list-compact.php:72
-#: templates/downloads-list.php:78
+#: templates/downloads-list.php:62
 msgid "Download"
 msgstr "다운로드"
 
 #: templates/downloads-list-compact.php:74
-#: templates/downloads-list.php:82
+#: templates/downloads-list.php:66
 msgid "Activate after download"
 msgstr "다운로드 후 활성화"
 
 #: templates/downloads-list-compact.php:77
-#: templates/downloads-list.php:86
+#: templates/downloads-list.php:70
 msgid "Operation complete!"
 msgstr "작업 완료!"
 
@@ -595,17 +596,15 @@ msgid ""
 "Click OK to revalidate your subscription or CANCEL to try again."
 msgstr "다운로드 실패. 구독 재확인 또는 재시도."
 
-#: templates/downloads-list.php:17
-#: templates/downloads-list.php:46
+#: templates/downloads-list.php:31
 msgid "Current"
 msgstr "현재"
 
-#: templates/downloads-list.php:18
-#: templates/downloads-list.php:47
+#: templates/downloads-list.php:32
 msgid "Released"
 msgstr "출시"
 
-#: templates/downloads-list.php:88
+#: templates/downloads-list.php:72
 msgid ""
 "Download failed!\n"
 "\n"
@@ -679,6 +678,7 @@ msgstr "%s wpml.org에서 지원"
 msgid "Do you have an account on %s?"
 msgstr "%s에 계정이 있나요?"
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:18
 msgid "Great! You just need to extend your subscription."
 msgstr "좋아요! 구독을 연장하기만 하면 됩니다."
@@ -688,6 +688,7 @@ msgstr "좋아요! 구독을 연장하기만 하면 됩니다."
 msgid "You have a %s account. You just need to extend your subscription."
 msgstr "%s 계정이 있습니다. 구독을 연장하기만 하면 됩니다."
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:21
 msgid "Extend Subscription"
 msgstr "구독 연장"
@@ -707,6 +708,7 @@ msgstr "아직 %1$s 계정이 없습니다. %2$s에 대한 갱신을 설정해�
 msgid "Set Up Renewal For %s"
 msgstr "%s에 대한 갱신 설정"
 
+#. translators: %s replaced with wpml.org or toolset.com
 #: templates/repository-end-users.php:28
 msgid "No worries. We can check that for you."
 msgstr "걱정하지 마세요. 저희가 확인해 드리겠습니다."

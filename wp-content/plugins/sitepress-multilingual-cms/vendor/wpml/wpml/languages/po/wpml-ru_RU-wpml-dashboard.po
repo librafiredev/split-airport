@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:00+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:39+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -163,6 +163,9 @@ msgstr "Родительский:"
 msgid "Search parent by title"
 msgstr "Поиск родительского элемента по заголовку"
 
+msgid "Search by term title in %s"
+msgstr "Поиск по заголовку термина в %s"
+
 msgid "All taxonomies"
 msgstr "Все таксономии"
 
@@ -177,9 +180,6 @@ msgstr "Загрузка терминов"
 
 msgid "No terms found"
 msgstr "Термины не найдены"
-
-msgid "Search by term title"
-msgstr "Поиск по заголовку термина"
 
 msgid "Filter by:"
 msgstr "Фильтровать по:"
@@ -391,6 +391,9 @@ msgstr "Translate Everything переводит только те строки, 
 msgid "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language."
 msgstr "Большинство строк из ваших плагинов и темы на английском языке, поэтому мы показываем их вместе с вашим языком по умолчанию. Используйте фильтр <b>Исходный язык</b>, чтобы просмотреть строки на определенном языке."
 
+msgid "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings."
+msgstr "Вы используете <b>%s</b> для кэширования вашего сайта, что может помешать WPML автоматически регистрировать новые строки. Чтобы исправить это, очистите кэш страницы, затем снова посетите ваши переведенные страницы на фронтенде для обнаружения новых строк."
+
 msgid "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature."
 msgstr "WPML может обнаруживать строки, которые появляются на сайте, и перечислять их здесь. Эта функция помогает вам определить строки, которые фактически появляются на сайте, и перевести их. Чтобы видеть здесь только строки, которые фактически появляются на сайте, вам нужно включить эту функцию."
 
@@ -459,6 +462,15 @@ msgstr "Вы можете присвоить этому пакету польз�
 
 msgid "Batch name:"
 msgstr "Имя пакета:"
+
+msgid "Default translation engine: "
+msgstr "Система автоматического перевода по умолчанию: "
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Failed to load engines"
+msgstr "Не удалось загрузить системы автоматического перевода"
 
 msgid "Your Automatic Translation Credits"
 msgstr "Ваши кредиты автоматического перевода"
@@ -1105,6 +1117,9 @@ msgstr "требует внимания"
 msgid "%1$s: %2$s%3$s"
 msgstr "%1$s: %2$s%3$s"
 
+msgid "Could not fetch engines data"
+msgstr "Не удалось получить данные систем автоматического перевода"
+
 msgid "Error in fetching currently logged in translator"
 msgstr "Ошибка при получении данных о текущем авторизованном переводчике"
 
@@ -1168,11 +1183,11 @@ msgstr "Что бы вы хотели сделать после того, как
 msgid "Wait for review"
 msgstr "Ждать проверки"
 
-msgid "Recommended with DeepL, Google and Azure"
-msgstr "Рекомендуется для DeepL, Google и Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
+msgstr "Рекомендуется с DeepL, Google и Microsoft"
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
-msgstr "DeepL, Google и Azure предоставляют отличные переводы, но мы рекомендуем человеческую проверку для подтверждения их правильности. WPML AI предоставляет переводы лучше, чем человеческие, которые понимают контекст, поэтому вы можете уверенно пропустить процесс проверки."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgstr "DeepL, Google и Microsoft предоставляют превосходные переводы, однако мы рекомендуем проведение человеческой проверки для подтверждения их корректности. WPML Искусственный интеллект обеспечивает переводы, превосходящие человеческие, с пониманием контекста, что позволяет вам уверенно пропустить процесс рецензирования."
 
 msgid "WPML keeps translations unpublished, so you can review them first."
 msgstr "WPML сохраняет переводы неопубликованными, чтобы вы могли сначала их проверить."

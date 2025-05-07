@@ -1,0 +1,3 @@
+<?php
+return ['messages'=>['3ba5e281e627b90bd7cca673e9fe7a4b'=>'Hungry? Last minute presents?<br>Find your way around airport and discover everything you need before your flight.','5222b38e9a05626c96dbc3a54698dc7b'=>'Lepo mi je','At the airport'=>'Airport','For you'=>'Za vas','Here you\'ll find all the essential information to support your journey.'=>'Lepo mi je','Hungry? Last minute presents?
+Find your way around airport and discover everything you need before your flight.'=>'Hungry? Last minute presents?<br>Find your way around airport and discover everything you need before your flight.','Welcome to Dalmatia'=>'Zdravo','d73527e146e0924e8ca6fad25479ea79'=>'Za vas','f4f75e511ca0b5a3d7fbedce7fab073d'=>'Zdravo','fde3b7aef5646201b1f5acd27ef183f2'=>'Airport']];

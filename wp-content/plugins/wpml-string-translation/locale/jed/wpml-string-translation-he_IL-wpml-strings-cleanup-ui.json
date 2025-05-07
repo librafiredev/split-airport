@@ -8,9 +8,6 @@
          "Clean up the String Translation table by removing untranslated strings by domain.": [
             "נקה את טבלת תרגום מחרוזות על ידי הסרת מחרוזות לא מתורגמות לפי תחום."
          ],
-         "Translated with PTC": [
-            "תורגם עם PTC"
-         ],
          "Remove strings by domain": [
             "הסר מחרוזות לפי דומיין"
          ],

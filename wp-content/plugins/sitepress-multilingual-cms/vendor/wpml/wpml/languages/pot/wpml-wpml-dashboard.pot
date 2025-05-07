@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-12T08:47:00+00:00\n"
+"POT-Creation-Date: 2025-04-22T15:22:39+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: wpml\n"
@@ -163,6 +163,9 @@ msgstr ""
 msgid "Search parent by title"
 msgstr ""
 
+msgid "Search by term title in %s"
+msgstr ""
+
 msgid "All taxonomies"
 msgstr ""
 
@@ -176,9 +179,6 @@ msgid "Loading terms"
 msgstr ""
 
 msgid "No terms found"
-msgstr ""
-
-msgid "Search by term title"
 msgstr ""
 
 msgid "Filter by:"
@@ -391,6 +391,9 @@ msgstr ""
 msgid "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language."
 msgstr ""
 
+msgid "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings."
+msgstr ""
+
 msgid "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature."
 msgstr ""
 
@@ -458,6 +461,15 @@ msgid "You can assign a custom name to this batch for easy tracking and suggest 
 msgstr ""
 
 msgid "Batch name:"
+msgstr ""
+
+msgid "Default translation engine: "
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Failed to load engines"
 msgstr ""
 
 msgid "Your Automatic Translation Credits"
@@ -1103,6 +1115,9 @@ msgstr ""
 msgid "%1$s: %2$s%3$s"
 msgstr ""
 
+msgid "Could not fetch engines data"
+msgstr ""
+
 msgid "Error in fetching currently logged in translator"
 msgstr ""
 
@@ -1166,10 +1181,10 @@ msgstr ""
 msgid "Wait for review"
 msgstr ""
 
-msgid "Recommended with DeepL, Google and Azure"
+msgid "Recommended with DeepL, Google and Microsoft"
 msgstr ""
 
-msgid "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
+msgid "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process."
 msgstr ""
 
 msgid "WPML keeps translations unpublished, so you can review them first."

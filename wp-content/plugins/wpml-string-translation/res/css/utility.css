@@ -4,17 +4,16 @@
   height: 15px; }
 
 .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container {
-  padding: 5px 0px; }
+  padding: 5px 0; }
   .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox {
     border-bottom: 0; }
     .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .handlediv {
       width: 20%; }
       .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .handlediv .icon-text {
-        margin: 0px;
+        margin: -6px 0 0;
         position: absolute;
         top: 50%;
-        margin-top: -6px;
-        right: 0px;
+        right: 0;
         width: 80px;
         text-decoration: underline; }
     .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .hndle {
@@ -29,31 +28,26 @@
         display: block;
         width: 32px;
         height: 32px;
-        background: #ebf3f5;
+        background: url("../img/translation.png") #ddd no-repeat center;
         border-radius: 50%;
-        background-image: url("../img/translation.png");
         background-size: 16px;
-        background-repeat: no-repeat;
-        background-position: center center;
         position: absolute;
-        left: 0px;
+        left: 0;
         top: 9px; }
     .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .inside {
-      border: 0px;
-      padding: 0px;
-      margin: 0px; }
+      border: none;
+      padding: 0;
+      margin: 0; }
       .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .inside .link-wrap {
         float: none;
-        margin-bottom: 0px; }
+        margin-bottom: 0; }
         .wpml-strings-widgets-wrap.wpml-strings-single-widget-wrap .wpml-string-widgets .postbox-container .postbox .inside .link-wrap a:before {
           content: "";
           display: inline-block;
           width: 11px;
           height: 11px;
-          background-image: url("../img/caret-right.png");
+          background: url("../img/caret-right.png") no-repeat center;
           background-size: 11px;
-          background-repeat: no-repeat;
-          background-position: center center;
           padding-left: 15px; }
 
 @media (max-width: 600px) {

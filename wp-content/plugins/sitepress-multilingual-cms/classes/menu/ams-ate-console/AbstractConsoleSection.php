@@ -238,32 +238,37 @@ abstract class WPML_TM_AMS_Translation_Abstract_Console_Section  {
 		/** @var NoCreditPopup $noCreditPopup */
 		$noCreditPopup = make( NoCreditPopup::class );
 
+		$currentSender = \WPML\TM\ATE\JobSender\JobSenderRepository::get();
+
 		$app_constructor = [
-			'section' => $this->get_section_slug(),
-			'host'         => esc_js( $this->endpoints->get_base_url( WPML_TM_ATE_AMS_Endpoints::SERVICE_AMS ) ),
-			'wpml_host'    => esc_js( get_site_url() ),
-			'wpml_home'    => esc_js( get_home_url() ),
-			'secret_key'   => esc_js( $registration_data['secret'] ),
-			'shared_key'   => esc_js( $registration_data['shared'] ),
-			'status'       => esc_js( $registration_data['status'] ),
-			'tm_email'     => esc_js( wp_get_current_user()->user_email ),
-			'website_uuid' => esc_js( $this->auth->get_site_id() ),
-			'site_key'     => esc_js( apply_filters( 'otgs_installer_get_sitekey_wpml', null ) ),
-			'dependencies' => [
+			'section'              => $this->get_section_slug(),
+			'host'                 => esc_js( $this->endpoints->get_base_url( WPML_TM_ATE_AMS_Endpoints::SERVICE_AMS ) ),
+			'wpml_host'            => esc_js( get_site_url() ),
+			'wpml_home'            => esc_js( get_home_url() ),
+			'secret_key'           => esc_js( $registration_data['secret'] ),
+			'shared_key'           => esc_js( $registration_data['shared'] ),
+			'status'               => esc_js( $registration_data['status'] ),
+			'tm_user_id'           => $currentSender->id,
+			'tm_email'             => esc_js( $currentSender->email ),
+			'tm_user_name'         => esc_js( $currentSender->username ),
+			'tm_user_display_name' => esc_js( $currentSender->displayName ),
+			'website_uuid'         => esc_js( $this->auth->get_site_id() ),
+			'site_key'             => esc_js( apply_filters( 'otgs_installer_get_sitekey_wpml', null ) ),
+			'dependencies'         => [
 				'sitepress-multilingual-cms' => [
 					'version' => ICL_SITEPRESS_VERSION,
 				],
 			],
-			'tab'          => self::TAB_SELECTOR,
-			'container'    => self::CONTAINER_SELECTOR,
-			'post_types'   => $this->get_post_types_data(),
-			'ui_language'  => esc_js( $this->get_user_admin_language() ),
-			'restNonce'    => wp_create_nonce( 'wp_rest' ),
-			'authCookie'   => [
+			'tab'                  => self::TAB_SELECTOR,
+			'container'            => self::CONTAINER_SELECTOR,
+			'post_types'           => $this->get_post_types_data(),
+			'ui_language'          => esc_js( $this->get_user_admin_language() ),
+			'restNonce'            => wp_create_nonce( 'wp_rest' ),
+			'authCookie'           => [
 				'name'  => LOGGED_IN_COOKIE,
 				'value' => $_COOKIE[ LOGGED_IN_COOKIE ],
 			],
-			'languages'    => $noCreditPopup->getLanguagesData(),
+			'languages'            => $noCreditPopup->getLanguagesData(),
 		];
 
 		return $app_constructor;

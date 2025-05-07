@@ -203,7 +203,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 									<tr>
 										<th></th>
 										<th>
-											<span class="recommendation-badge"><?php esc_html_e('Recommended', 'sitepress'); ?></span>
+											<span class="recommendation-badge ate-recommended"><?php esc_html_e('Recommended', 'sitepress'); ?></span>
 											<span class="column-heading"><?php esc_html_e('Advanced Translation Editor', 'sitepress'); ?></span>
 										</th>
 										<th>
@@ -364,7 +364,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 							<ul>
 								<li>
 									<label>
-										<input type="radio" name="icl_translated_document_status" value="1"
+										<input class="wpml-radio-native" type="radio" name="icl_translated_document_status" value="1"
 											<?php
 											checked(
 												(bool) icl_get_setting( 'translated_document_status' ),
@@ -382,7 +382,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 								</li>
 								<li>
 									<label>
-										<input type="radio" name="icl_translated_document_status" value="0"
+										<input class="wpml-radio-native" type="radio" name="icl_translated_document_status" value="0"
 											<?php
 											checked(
 												(bool) icl_get_setting( 'translated_document_status' ),
@@ -411,7 +411,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 							<ul>
 								<li>
 									<label>
-										<input type="radio" name="icl_translated_document_status_sync" value="1"
+										<input class="wpml-radio-native" type="radio" name="icl_translated_document_status_sync" value="1"
 											<?php
 											checked(
 												(bool) icl_get_setting( 'translated_document_status_sync' ),
@@ -424,7 +424,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 								</li>
 								<li>
 									<label>
-										<input type="radio" name="icl_translated_document_status_sync" value="0"
+										<input class="wpml-radio-native" type="radio" name="icl_translated_document_status_sync" value="0"
 											<?php
 											checked(
 												(bool) icl_get_setting( 'translated_document_status_sync' ),
@@ -449,7 +449,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 							</h4>
 							<ul>
 								<li>
-									<label><input type="radio" name="icl_translated_document_page_url"
+									<label><input class="wpml-radio-native" type="radio" name="icl_translated_document_page_url"
 												  value="auto-generate"
 											<?php
 											if ( empty( $sitepress_settings['translated_document_page_url'] )
@@ -467,7 +467,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 									</label>
 								</li>
 								<li>
-									<label><input type="radio" name="icl_translated_document_page_url" value="translate"
+									<label><input class="wpml-radio-native" type="radio" name="icl_translated_document_page_url" value="translate"
 											<?php
 											if ( $sitepress_settings['translated_document_page_url']
 												=== 'translate' ) :
@@ -483,7 +483,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 									</label>
 								</li>
 								<li>
-									<label><input type="radio" name="icl_translated_document_page_url"
+									<label><input class="wpml-radio-native" type="radio" name="icl_translated_document_page_url"
 												  value="copy-encoded"
 											<?php
 											if ( $sitepress_settings['translated_document_page_url']
@@ -510,6 +510,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 							<p id="tm_block_retranslating_terms">
 								<label>
 									<input
+										class="wpml-checkbox-native"
 										name="tm_block_retranslating_terms"
 										value="1"
 										<?php checked( wpml_get_setting( 'tm_block_retranslating_terms' ), "1" ) ?>
@@ -523,7 +524,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 						<div class="wpml-section-content-inner">
 							<p class="buttons-wrap">
 								<span class="icl_ajx_response" id="icl_ajx_response_tdo"> </span>
-								<input id="js-translated_document-options-btn" type="button" class="button-primary"
+								<input id="js-translated_document-options-btn" type="button" class="button-primary wpml-button base-btn"
 									   value="
 								<?php
 									   echo esc_attr__(
@@ -580,7 +581,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 
 						<p>
 							<label>
-								<input type="radio" name="icl_translation_pickup_method"
+								<input class="wpml-radio-native" type="radio" name="icl_translation_pickup_method"
 									   value="<?php echo ICL_PRO_TRANSLATION_PICKUP_XMLRPC; ?>"
 									<?php
 									if ( $sitepress_settings['translation_pickup_method']
@@ -599,7 +600,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 
 						<p>
 							<label>
-								<input type="radio" name="icl_translation_pickup_method"
+								<input class="wpml-radio-native" type="radio" name="icl_translation_pickup_method"
 									   value="<?php echo ICL_PRO_TRANSLATION_PICKUP_POLLING; ?>"
 									<?php
 									if ( $sitepress_settings['translation_pickup_method']
@@ -621,7 +622,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 							<span class="icl_ajx_response" id="icl_ajx_response_tpm"> </span>
 							<input
 								id="translation-pickup-mode"
-								class="button-primary"
+								class="button-primary wpml-button base-btn"
 								name="save"
 								value="<?php echo esc_attr__( 'Save', 'wpml-translation-management' ) ?>"
 								type="button"
@@ -744,7 +745,7 @@ class WPML_TM_Menus_Settings extends WPML_TM_Menus {
 
 			<div class="wpml-section" id="translation-notifications-sec-3">
 				<p class="submit">
-					<input type="submit" class="button-primary"
+					<input type="submit" class="button-primary wpml-button base-btn"
 						   value="<?php echo esc_html__( 'Save', 'wpml-translation-management' ); ?>"/>
 				</p>
 			</div>

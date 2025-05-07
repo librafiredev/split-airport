@@ -154,6 +154,9 @@
          "Search parent by title": [
             "חפש הורה לפי כותרת"
          ],
+         "Search by term title in %s": [
+            "חפש לפי כותרת מונח ב-%s"
+         ],
          "All taxonomies": [
             "כל הטקסונומיות"
          ],
@@ -168,9 +171,6 @@
          ],
          "No terms found": [
             "לא נמצאו מונחים"
-         ],
-         "Search by term title": [
-            "חפש לפי כותרת מונח"
          ],
          "Filter by:": [
             "סנן לפי:"
@@ -382,6 +382,9 @@
          "Most strings from your plugins and theme are in English, so we’re showing them alongside your default language. Use the <b>Source Language</b> filter to view strings in a specific language.": [
             "רוב המחרוזות מהתוספים והערכת הנושא שלך הן באנגלית, לכן אנו מציגים אותן לצד שפת ברירת המחדל שלך. השתמש במסנן <b>שפת מקור</b> כדי להציג מחרוזות בשפה ספציפית."
          ],
+         "You’re using <b>%s</b> to cache your site, which may prevent WPML from automatically registering new strings. To fix this, clear your page cache, then visit your translated pages again on the frontend to detect new strings.": [
+            "אתה משתמש ב-<b>%s</b> כדי לשמור את האתר שלך במטמון, מה שעלול למנוע מ-WPML לרשום מחרוזות חדשות באופן אוטומטי. כדי לתקן זאת, נקה את מטמון העמוד שלך ולאחר מכן בקר שוב בעמודים המתורגמים שלך בחזית האתר כדי לזהות מחרוזות חדשות."
+         ],
          "WPML can detect strings that appear on the site and list them here. This feature helps you identify the strings that actually appear on the site and translate them. To see here only the strings that actually appear on the site, you need to enable this feature.": [
             "WPML יכול לזהות מחרוזות שמופיעות באתר ולהציג אותן כאן. תכונה זו עוזרת לך לזהות את המחרוזות שמופיעות בפועל באתר ולתרגם אותן. כדי לראות כאן רק את המחרוזות שמופיעות בפועל באתר, עליך להפעיל תכונה זו."
          ],
@@ -450,6 +453,15 @@
          ],
          "Batch name:": [
             "שם האצווה:"
+         ],
+         "Default translation engine: ": [
+            "מנוע תרגום ברירת מחדל: "
+         ],
+         "Change": [
+            "שנה"
+         ],
+         "Failed to load engines": [
+            "טעינת מנועים נכשלה"
          ],
          "Your Automatic Translation Credits": [
             "נקודות זכות לתרגום אוטומטי שלך"
@@ -1081,6 +1093,9 @@
          "%1$s: %2$s%3$s": [
             "%1$s: %2$s%3$s"
          ],
+         "Could not fetch engines data": [
+            "לא ניתן היה לאחזר נתוני מנועים"
+         ],
          "Error in fetching currently logged in translator": [
             "שגיאה בהבאת המתרגם המחובר כעת"
          ],
@@ -1144,11 +1159,11 @@
          "Wait for review": [
             "המתן לסקירה"
          ],
-         "Recommended with DeepL, Google and Azure": [
-            "מומלץ עם DeepL, Google ו-Azure"
+         "Recommended with DeepL, Google and Microsoft": [
+            "מומלץ עם DeepL, Google ו-Microsoft"
          ],
-         "DeepL, Google, and Azure deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
-            "DeepL, Google ו-Azure מספקים תרגומים מעולים, אך אנו ממליצים על סקירה אנושית כדי לאשר שהם נכונים. WPML AI מספק תרגומים טובים יותר מאדם שמבינים הקשר, כך שתוכל לדלג בביטחון על תהליך הסקירה."
+         "DeepL, Google, and Microsoft deliver great translations, but we recommend a human review to confirm they are correct. WPML AI provides Better Than Human Translations that understand context, so you can confidently skip the review process.": [
+            "DeepL, Google ו-Microsoft מספקות תרגומים נהדרים, אבל אנו ממליצים על סקירה אנושית כדי לאשר שהם נכונים. WPML AI מספק תרגומים טובים יותר מבני אדם שמבינים הקשר, כך שתוכל לדלג בבטחה על תהליך הסקירה."
          ],
          "WPML keeps translations unpublished, so you can review them first.": [
             "WPML שומר תרגומים כלא מפורסמים, כך שתוכל לסקור אותם תחילה."

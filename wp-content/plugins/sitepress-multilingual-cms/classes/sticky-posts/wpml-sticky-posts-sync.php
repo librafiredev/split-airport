@@ -38,7 +38,7 @@ class WPML_Sticky_Posts_Sync {
 
 		$option = 'sticky_posts_' . $current_language;
 		$posts  = get_option( $option );
-		if ( false === $posts ) {
+		if ( ! is_array( $posts ) || empty( $posts ) ) {
 			$posts = $this->get_unfiltered_sticky_posts_option();
 			if ( $posts ) {
 				$posts = $this->populate_lang_option->filter_by_language(
@@ -110,11 +110,11 @@ class WPML_Sticky_Posts_Sync {
 	/**
 	 * It returns an original, unfiltered `sticky_posts` option which contains sticky posts from ALL languages
 	 *
-	 * @return array|false
+	 * @return array
 	 */
 	public function get_unfiltered_sticky_posts_option() {
 		remove_filter( 'pre_option_sticky_posts', array( $this, 'pre_option_sticky_posts_filter' ) );
-		$posts = get_option( 'sticky_posts' );
+		$posts = $this->get_sticky_posts();
 		add_filter( 'pre_option_sticky_posts', array( $this, 'pre_option_sticky_posts_filter' ), 10, 0 );
 
 		return $posts;
@@ -144,7 +144,7 @@ class WPML_Sticky_Posts_Sync {
 	 * @param int    $post_id
 	 */
 	private function add_post_id( $option, $post_id ) {
-		$sticky_posts = get_option( $option, array() );
+		$sticky_posts = $this->get_sticky_posts( $option );
 
 		if ( ! in_array( $post_id, $sticky_posts, true ) ) {
 			$sticky_posts[] = $post_id;
@@ -178,7 +178,7 @@ class WPML_Sticky_Posts_Sync {
 	 * @param int    $post_id
 	 */
 	private function remove_post_id( $option, $post_id ) {
-		$sticky_posts = get_option( $option, array() );
+		$sticky_posts = $this->get_sticky_posts( $option );
 
 		if ( ( $key = array_search( $post_id, $sticky_posts ) ) !== false ) {
 			unset( $sticky_posts[ $key ] );
@@ -192,6 +192,16 @@ class WPML_Sticky_Posts_Sync {
 	 * @return array
 	 */
 	private function get_option_by_lang( $lang ) {
-		return get_option( 'sticky_posts_' . $lang, array() );
+		$sticky_posts = $this->get_sticky_posts( 'sticky_posts_' . $lang );
+		return $sticky_posts;
+	}
+
+	/**
+	 * @param string $option Default is sticky_posts
+	 * @return array
+	 */
+	private function get_sticky_posts( $option = 'sticky_posts' ) {
+		$sticky_posts = get_option( $option, array() );
+		return is_array( $sticky_posts ) ? $sticky_posts : [];
 	}
 }

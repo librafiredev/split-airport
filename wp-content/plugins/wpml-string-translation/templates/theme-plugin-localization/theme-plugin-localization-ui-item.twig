@@ -2,7 +2,7 @@
 {% if component_data.domains|length < 2 %}
     {% set showDomainsList = false %}
 {% endif %}
-<tr 
+<tr
     class="item{{ component_data.active ? ' active' }}"
     data-itemcategory="{{ type }}"
     data-themepluginitem="1"
@@ -11,7 +11,7 @@
     {% if not component_data.active %}style="display: none"{% endif %}
 >
     <td class="checkbox-column">
-        <input type="checkbox" name="{{ type }}[]" id="{{ type }}-{{ component_data.id }}" value="{{ dir_and_file }}" data-component-name="{{ component_data.component_name|replace(' ', '-')|lower }}">
+        <input class="wpml-checkbox-native" type="checkbox" name="{{ type }}[]" id="{{ type }}-{{ component_data.id }}" value="{{ dir_and_file }}" data-component-name="{{ component_data.component_name|replace(' ', '-')|lower }}">
     </td>
     <td class="name-cell">
         <label for="{{ type }}-{{ component_data.id }}">{% if show_active_label and component_data.active %}<span class="bold-label">{{ active_text }}:</span> {% endif %}{{ component_data.component_name }}</label>

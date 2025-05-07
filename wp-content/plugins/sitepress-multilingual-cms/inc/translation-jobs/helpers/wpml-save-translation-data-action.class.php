@@ -266,6 +266,7 @@ class WPML_Save_Translation_Data_Action extends WPML_Translation_Job_Helper_With
 					// set stickiness
 					// is the original post a sticky post?
 					$sticky_posts       = get_option( 'sticky_posts' );
+					$sticky_posts       = is_array( $sticky_posts ) ? $sticky_posts : [];
 					$is_original_sticky = $original_post->post_type == 'post' && in_array( $original_post->ID, $sticky_posts );
 
 					if ( $is_original_sticky && $sitepress->get_setting( 'sync_sticky_flag' ) ) {

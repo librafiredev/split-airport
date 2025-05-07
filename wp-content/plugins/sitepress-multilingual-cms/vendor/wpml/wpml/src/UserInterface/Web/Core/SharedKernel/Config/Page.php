@@ -187,11 +187,11 @@ class Page {
 
   public function getHtmlScriptRootContainers(): string {
     $html = '';
-    // remove  wpml-notices from scripts - we don't want to render it here, it must be rendered on very top of the page
+    // remove  wpml-notice-glossary from scripts - we don't want to render it here, it must be rendered on very top of the page
     $this->scripts = array_filter(
       $this->scripts,
       function ( $script ) {
-        return $script->id() !== 'wpml-notices';
+        return $script->id() !== 'wpml-notice-glossary';
       }
     );
 

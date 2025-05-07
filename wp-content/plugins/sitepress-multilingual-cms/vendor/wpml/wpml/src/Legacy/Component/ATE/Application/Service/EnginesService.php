@@ -135,7 +135,7 @@ class EnginesService implements EnginesServiceInterface {
       );
     }
 
-    if ( ! $apiResult ) {
+    if ( ! is_array( $apiResult ) || ! isset( $apiResult['list'] ) ) {
       throw new EngineServiceException(
         __( 'Error fetching translation engines', 'wpml' )
       );
@@ -158,7 +158,7 @@ class EnginesService implements EnginesServiceInterface {
       );
     }
 
-    if ( ! $apiResult ) {
+    if ( ! is_array( $apiResult ) || ! isset( $apiResult['engines'] ) ) {
       throw new EngineServiceException(
         __( 'Error fetching available formalities', 'wpml' )
       );

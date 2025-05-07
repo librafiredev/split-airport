@@ -54,12 +54,14 @@ class __TwigTemplate_cb51746de731948e1e7637f1b00dc6bc2fa9b72962a6645992c298d00e8
         // line 11
         echo "
 \t\t<p class=\"buttons-wrap\">
-\t\t\t<a class=\"button button-secondary\" onclick=\"if(!confirm('";
-        // line 13
+\t\t\t<a
+\t\t\t\tclass=\"button-secondary wpml-button base-btn wpml-button--outlined\"
+\t\t\t\tonclick=\"if(!confirm('";
+        // line 15
         echo \WPML\Core\twig_escape_filter($this->env, ($context["confirmation_message"] ?? null), "html", null, true);
         echo "')) return false;\"
 \t\t\t   href=\"";
-        // line 14
+        // line 16
         echo \WPML\Core\twig_escape_filter($this->env, ($context["restore_page_url"] ?? null), "html", null, true);
         echo "\">";
         echo \WPML\Core\twig_escape_filter($this->env, ($context["restore_button_label"] ?? null), "html", null, true);
@@ -69,7 +71,8 @@ class __TwigTemplate_cb51746de731948e1e7637f1b00dc6bc2fa9b72962a6645992c298d00e8
         echo "</a>
 \t\t</p>
 \t</div>
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()
@@ -84,7 +87,7 @@ class __TwigTemplate_cb51746de731948e1e7637f1b00dc6bc2fa9b72962a6645992c298d00e8
 
     public function getDebugInfo()
     {
-        return array (  63 => 14,  59 => 13,  55 => 11,  49 => 9,  47 => 8,  42 => 6,  36 => 3,  32 => 1,);
+        return array (  65 => 16,  61 => 15,  55 => 11,  49 => 9,  47 => 8,  42 => 6,  36 => 3,  32 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

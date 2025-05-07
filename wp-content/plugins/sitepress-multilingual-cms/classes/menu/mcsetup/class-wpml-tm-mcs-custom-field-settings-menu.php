@@ -137,7 +137,7 @@ abstract class WPML_TM_MCS_Custom_Field_Settings_Menu {
 					} else {
 						if ( esc_attr( $this->kind_shorthand() ) === 'cf' ) {
 							?>
-                            <label><input type="checkbox" <?php if ( CfMetaBoxOption::get() ) : ?> checked="checked"
+                            <label><input class="wpml-checkbox-native" type="checkbox" <?php if ( CfMetaBoxOption::get() ) : ?> checked="checked"
 							              <?php endif; ?>id="show_cf_meta_box" name="translate_media"
                                           value="1"/>&nbsp;<?php esc_html_e( 'Show "Multilingual Content Setup" meta box on post edit screen.', 'sitepress' ); ?>
                             </label>
@@ -162,7 +162,7 @@ abstract class WPML_TM_MCS_Custom_Field_Settings_Menu {
 						<p class="buttons-wrap">
 							<span class="icl_ajx_response"
 								  id="icl_ajx_response_<?php echo esc_attr( $this->kind_shorthand() ); ?>"></span>
-							<input type="submit" class="button-primary"
+							<input type="submit" class="button-primary wpml-button base-btn"
 								   value="<?php echo esc_attr__( 'Save', 'wpml-translation-management' ); ?>"/>
 						</p>
 						<?php
@@ -199,7 +199,7 @@ abstract class WPML_TM_MCS_Custom_Field_Settings_Menu {
 	private function render_radio( $cf_key, $html_disabled, $status, $ref_status ) {
 		ob_start();
 		?>
-		<input type="radio" name="<?php echo $this->get_radio_name( $cf_key ); ?>"
+		<input class="wpml-radio-native" type="radio" name="<?php echo $this->get_radio_name( $cf_key ); ?>"
 			   value="<?php echo esc_attr( $ref_status ); ?>"
 			   title="<?php echo esc_attr( $ref_status ); ?>" <?php echo $html_disabled; ?>
 			   <?php

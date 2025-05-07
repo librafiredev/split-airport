@@ -18,7 +18,7 @@ class LastPickedUpDateService implements LastPickedUpDateServiceInterface {
   public function get() {
     $lastPickup = $this->legacyLastPickedUp->get();
 
-    return is_bool( $lastPickup ) ? null : $lastPickup;
+    return is_numeric( $lastPickup ) ? (int) $lastPickup : null;
   }
 
 

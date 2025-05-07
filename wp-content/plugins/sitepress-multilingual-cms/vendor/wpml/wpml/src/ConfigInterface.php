@@ -18,6 +18,10 @@ interface ConfigInterface {
 
 
   /** @return void */
+  public function loadAdminNotices();
+
+
+  /** @return void */
   public function loadAdminScripts();
 
 

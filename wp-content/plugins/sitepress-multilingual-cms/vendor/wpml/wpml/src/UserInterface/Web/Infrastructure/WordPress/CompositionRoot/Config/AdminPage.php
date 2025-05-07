@@ -5,9 +5,18 @@ namespace WPML\UserInterface\Web\Infrastructure\WordPress\CompositionRoot\Config
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Page as DomainPage;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Script;
 use WPML\UserInterface\Web\Core\SharedKernel\Config\Style;
+use WPML\UserInterface\Web\Infrastructure\CompositionRoot\Config\ApiInterface;
 use WPML\UserInterface\Web\Infrastructure\CompositionRoot\Config\PageInterface;
 
 class AdminPage implements PageInterface {
+
+  /** @var ApiInterface $api */
+  private $api;
+
+
+  public function __construct( ApiInterface $api ) {
+    $this->api = $api;
+  }
 
 
   public function register( DomainPage $page, $onLoadPageHandle ) {
@@ -93,34 +102,6 @@ class AdminPage implements PageInterface {
   }
 
 
-  /**
-   * @param array<mixed> $data
-   */
-  public function provideDataForPage(
-    DomainPage $page,
-    string $jsWindowKey,
-    $data
-  ) {
-    if ( count( $page->scripts() ) === 0 ) {
-      // phpcs:ignore
-      error_log(
-        'WordPress Limitiation: There must be at least one script attached ' .
-        'to the page "' . $page->id() . '" to use provideDataForScript().'
-      );
-
-      return;
-    }
-
-    // There is no way in WordPress to attach data to js window without
-    // having it loaded to a script.
-    $this->provideDataForScript(
-      $page->scripts()[key( $page->scripts() )],
-      $jsWindowKey,
-      $data
-    );
-  }
-
-
   /** @return ?string The WordPress name of the page or null if no page gets registered. */
   private function loadPage( DomainPage $page ) {
     if ( $page->legacyExtension() ) {
@@ -168,7 +149,7 @@ class AdminPage implements PageInterface {
           'order'      => $page->position(),
           'page_title' => $page->title(),
           'menu_title' => $page->menuTitle(),
-          'capability' => $page->capability(),
+          'capability' => $this->api->capabilityPlusAdmin( $page->capability() ),
           'menu_slug'  => $page->id(),
           'function'   => [ $page, 'render' ],
         ];
@@ -189,7 +170,7 @@ class AdminPage implements PageInterface {
       $page->parentId() ?: '',
       $page->title(),
       $page->menuTitle(),
-      $page->capability(),
+      $this->api->capabilityPlusAdmin( $page->capability() ),
       $page->id(),
       [ $page, 'render' ],
       $page->position()

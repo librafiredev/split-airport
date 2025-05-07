@@ -11,68 +11,63 @@
 
 .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container {
   width: 100%;
-  padding: 25px 0px;
+  padding: 25px 0;
   background-color: white;
-  border: 1px rgba(51, 135, 158, 0.4) solid;
+  border: 1px rgba(47, 125, 146, 0.5) solid;
   box-sizing: border-box;
   border-radius: 5px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header {
-    padding: 0px 22px; }
+    padding: 0 22px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header > * {
       float: left; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header .utilities-icon {
       width: 32px;
       height: 32px;
-      background: #ebf3f5;
+      background: url("../img/utilities.png") #fafafa no-repeat center;
       border-radius: 50%;
-      background-image: url("../img/utilities.png");
-      background-size: 16px;
-      background-repeat: no-repeat;
-      background-position: center center; }
+      background-size: 16px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header h2 {
       height: 32px;
       line-height: 32px;
-      margin: 0px;
+      margin: 0;
       padding-left: 15px;
       font-weight: 500; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header:after {
       width: 100%;
       height: 15px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .meta-box-sortables {
-    margin: 0px;
+    margin: 0;
     min-height: auto; }
 
 .wpml-strings-widgets-wrap .wpml-string-widgets .postbox {
-  border: 0px;
+  border: 0;
   box-shadow: none;
-  border-bottom: 1px rgba(51, 135, 158, 0.3) solid;
-  margin: 0px 22px; }
+  border-bottom: 1px rgba(47, 125, 146, 0.3) solid;
+  margin: 0 22px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox.postbox-last {
-    border-bottom: 0px black solid; }
+    border-bottom: 0 black solid; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .handlediv {
     float: right;
     width: 5%;
     height: unset; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .handlediv .icon-wrap {
-      margin: 0px;
+      margin: 0;
       height: 100%;
       position: absolute;
       right: 15px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .handlediv svg {
       transform: rotate(-90deg);
       display: inline-block;
-      margin: 17px 0 0 15px;
-      margin: 0px;
+      margin: -6px 0 0 15px;
       position: absolute;
-      top: 50%;
-      margin-top: -6px; }
+      top: 50%; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .hndle-wrap {
     position: relative; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .hndle-wrap:hover {
       cursor: pointer; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox h3.hndle {
-    margin: 0px;
-    padding: 14px 0px;
+    margin: 0;
+    padding: 14px 0;
     border: none;
     float: left;
     width: 95%; }
@@ -80,31 +75,32 @@
       font-weight: normal;
       font-size: 15px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox h3.hndle .wpml-string-widgets-notice {
-      background: #FBF6E5;
-      color: #E8AE57;
+      background: #fbf6e5;
+      color: #996415;
       padding: 0.2rem 1rem;
-      border-radius: 15px; }
+      border-radius: 15px;
+      display: inline-block; }
       .wpml-strings-widgets-wrap .wpml-string-widgets .postbox h3.hndle .wpml-string-widgets-notice span {
         text-decoration: underline; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox h3.hndle:hover {
       cursor: pointer; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox.closed {
-    margin-bottom: 0px; }
+    margin-bottom: 0; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox.closed .handlediv svg {
       transform: rotate(90deg); }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside {
     padding: 24px;
-    margin: 10px 0px;
-    border: 1px rgba(51, 135, 158, 0.3) solid;
+    margin: 10px 0;
+    border: 1px rgba(47, 125, 146, 0.3) solid;
     border-radius: 5px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside.column-borders {
-      border: 0px;
-      margin: 0px 0px;
-      padding: 0px; }
+      border: 0;
+      margin: 0;
+      padding: 0; }
       .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside.column-borders > .column {
         width: 49%;
         box-sizing: border-box;
-        border: 1px rgba(51, 135, 158, 0.3) solid;
+        border: 1px rgba(47, 125, 146, 0.3) solid;
         border-radius: 5px;
         padding: 5px 20px 20px 20px; }
       .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside.column-borders > .spacer-column {
@@ -122,21 +118,13 @@
       .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside .link-wrap > a {
         line-height: 40px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .inside .list-vertical-spacer {
-      padding: 8px 0px; }
-  .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .button-secondary {
-    background: #33879e;
-    color: white;
-    padding: 3px 15px;
-    font-size: 14px;
-    height: initial; }
-    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .button-secondary:hover {
-      background: #42a6c2; }
+      padding: 8px 0; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .icl_ajx_response {
     line-height: 40px;
-    color: #27AD95; }
+    color: #1C7D6B; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox p {
     font-size: 14px;
-    margin-top: 0px; }
+    margin-top: 0; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox p:last-child {
       margin-bottom: 0; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox.opened {
@@ -169,29 +157,29 @@
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .notice-message * {
       color: black; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message {
-    border-left: 5px #33879e solid;
-    background: #ebf3f5;
+    border-left: 4px #2F7D92 solid;
+    background: #F8FBFC;
     border-radius: 5px;
     padding: 15px;
     color: black; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message .otgs-ico-info-o {
-      color: #33879e;
+      color: #2F7D92;
       padding-right: 10px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message .counter-msg {
-      color: #33879e; }
+      color: #2F7D92; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message a {
       text-decoration: underline; }
       .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message a:hover {
         text-decoration: none; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .info-message * {
       color: black; }
-  .wpml-strings-widgets-wrap .wpml-string-widgets .postbox input[type=radio], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox input[type=checkbox] {
+  .wpml-strings-widgets-wrap .wpml-string-widgets .postbox input[type=radio] {
     width: 16px;
     height: 16px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox label[for=track_strings] {
     color: black; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column h5 {
-    color: #33879e; }
+    color: #2F7D92; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .field-bottom-spacer {
     padding-bottom: 20px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field-label, .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field {
@@ -202,33 +190,33 @@
     height: 35px;
     line-height: 35px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field {
-    border: 1px #d9d9d9 solid; }
+    border: 1px #ddd solid; }
+    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field:has(#icl_po_file:focus), .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field:hover {
+      border-color: #2F7D92; }
+    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field #icl_po_file:focus, .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field #icl_po_file:hover {
+      box-shadow: none; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field .upload-icon {
       float: left;
       width: 24px;
       height: 24px;
       padding-left: 20px;
       padding-top: 7px;
-      background: white;
-      background-image: url("../img/upload.png");
-      background-size: 12px;
-      background-repeat: no-repeat;
-      background-position: center center; }
+      background: url("../img/upload.png") white no-repeat center;
+      background-size: 12px; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .file-upload-field input {
       border: 0;
-      background: white; }
+      background: white;
+      color: #2F7D92; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column select {
     width: 100%;
-    border-color: #d9d9d9;
     border-radius: 2px;
-    padding: 0px 15px;
+    padding: 0 15px;
     margin: 0; }
-  .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column select[name=icl_st_i_context], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column select[name=icl_st_e_context], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .st-i-source-lang-select {
-    max-width: none; }
+  .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column select[name=icl_st_i_context], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column select[name=icl_st_e_context], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .st-i-source-lang-select, .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column input[name="icl_st_i_context_new"] {
+    max-width: 500px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .checkbox-and-select-checkbox {
     float: left;
-    width: 40%;
-    padding-top: 5px; }
+    width: 40%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .checkbox-and-select-checkbox.checkbox-and-small-select-checkbox {
       width: 60%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .checkbox-and-select-checkbox:not(.checkbox-and-select-checkbox-checked) {
@@ -240,8 +228,7 @@
       width: 40%; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-select {
     float: left;
-    width: 90%;
-    padding-top: 5px; }
+    width: 90%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-select.select-and-button-select-select-small {
       width: 70%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-select input[type=text] {
@@ -251,17 +238,13 @@
     width: 10%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button.select-and-button-button-big {
       width: 30%; }
-    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button > a {
-      border: 1px #33879e solid;
-      display: inline-block;
-      height: 28px;
-      line-height: 28px;
-      width: 80%;
-      margin-top: 5px;
-      margin-left: 10px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 13px; }
+    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button .wpml-button--outlined {
+      padding: 4px 16px; }
+    .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button #icl_st_importpo_existingbutton {
+      margin: 0 0 0 10px;
+      white-space: nowrap; }
+      .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button #icl_st_importpo_existingbutton .rtl {
+        margin: 0 10px 0 0; }
 
 @media (min-width: 782px) and (max-width: 1200px) {
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-select {
@@ -271,7 +254,7 @@
 
 @media screen and (max-width: 782px) {
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox-container .wpml-strings-widgets-header h2 {
-    padding: 0px 10px; }
+    padding: 0 10px; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox input[type=radio], .wpml-strings-widgets-wrap .wpml-string-widgets .postbox input[type=checkbox] {
     width: 1.5625rem;
     height: 1.5625rem; }
@@ -298,14 +281,13 @@
     clear: both;
     width: 100%; }
     .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .select-and-button-button a {
-      margin-left: 0px; }
+      margin-left: 0; }
   .wpml-strings-widgets-wrap .wpml-string-widgets .postbox .form-in-column .checkbox-and-select-select {
     padding-top: 10px; } }
 
 #dashboard_wpml_cleanup_strings_content p {
-  padding: 0;
-  margin: 0;
-  padding-bottom: 20px; }
+  padding: 0 0 20px;
+  margin: 0; }
 
 #dashboard_wpml_user_properties #icl_st_tusers_list {
   font-weight: 600; }
@@ -319,7 +301,7 @@
     width: 33%;
     margin-bottom: 12px; }
     #dashboard_wpml_user_properties #roles_list .checkbox-wrap input {
-      border-color: #33879e; }
+      border-color: rgba(47, 125, 146, 0.3); }
 
 #dashboard_wpml_user_properties #action-buttons {
   margin-top: 3px; }
