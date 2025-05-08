@@ -43,5 +43,7 @@
     "webpack-merge": "^5.8.0",
     "webpack-remove-empty-scripts": "^1.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "select2": "^4.1.0-rc.0"
+  }
 }

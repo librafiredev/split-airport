@@ -3,6 +3,7 @@ import urlApiSingle from "../../assets/components/urlApiSingle";
 import {
     searchFiltersOpen,
     searchFiltersClose,
+    styleDateSelect
 } from "../../assets/components/searchUtils";
 import request from "../../assets/components/flightsUpdateRequest";
 import flightPopup from "../../assets/components/flightPopup";
@@ -110,6 +111,10 @@ $(function () {
     // Call on init
 
     request("");
+
+    // Style select
+
+    styleDateSelect()
 
     $("body").on("click", loadMore, loadMoreAction);
     searchInput.on("focus", searchFiltersOpen);
