@@ -16,6 +16,7 @@
 }
 
 .airport-map-tooltip {
+    line-height: 1;
     white-space: nowrap;
     font-size: 10px;
     background-color: $white;
@@ -28,23 +29,57 @@
     font-weight: bold;
     border-radius: 3px;
     padding: 6px 3px;
-    box-shadow: 0 3px 6px 0 rgba($black, 0.15);
+    box-shadow: 0 3px 8px 0 rgba($black, 0.15);
     position: absolute;
+
+    &::after {
+        content: "";
+        position: absolute;
+        border: 4px solid transparent;
+        top: 50%;
+    }
 
     &.right-tooltip {
         left: 100%;
         margin-left: 10px;
+
+        &::after {
+            border-right-color: $white;
+            right: 100%;
+            transform: translateY(-50%);
+        }
     }
 
     &.left-tooltip {
         right: 100%;
         margin-right: 10px;
+
+        &::after {
+            border-left-color: $white;
+            left: 100%;
+            transform: translateY(-50%);
+        }
     }
 }
 
 .airport-map-shape-wrap {
     position: absolute;
-    z-index: 5;
+}
+
+.airport-map-area {
+    > * {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.airport-map-shape-wrap-area {
+    pointer-events: none;
+    transform-origin: top left;
+}
+
+.airport-map-shape-wrap-icon {
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
@@ -78,9 +113,20 @@
 }
 
 .airport-map-group {
+    z-index: 5;
+
     &:hover {
         .airport-map-icon {
             background-color: $secondary-color;
+        }
+
+        .airport-map-area {
+            svg {
+                * {
+                    fill: $secondary-color-100;
+                    stroke: $secondary-color;
+                }
+            }
         }
     }
 }

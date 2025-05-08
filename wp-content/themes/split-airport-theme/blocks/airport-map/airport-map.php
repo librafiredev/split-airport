@@ -22,7 +22,7 @@ $icon_data = [
     // FLOOR 0
     [
         array(
-            'label' => __('Lost & Found'),
+            'label' => esc_html__('Lost & Found'),
             'id' => 1,
             'items' => [
                 array(
@@ -38,6 +38,10 @@ $icon_data = [
                 ),
                 array(
                     'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lost-n-found-area.svg',
+                    'x' => 927,
+                    'y' => 920,
+                    'width' => 82,
+                    'height' => 40,
                     'type' => 'area',
                 )
             ],
@@ -81,7 +85,8 @@ $overlays_data = [];
                                     <?php $items = $group['items']; ?>
                                     <?php foreach ($items as $i_key => $item) : ?>
                                         <?php
-                                        $shape_type = $item['type'];
+                                        $shape_type = $item['type'] ?: 'icon';
+                                        $shape_path = $item['shape_path'];
                                         $pos_x = $item['x'];
                                         $pos_y = $item['y'];
                                         if ($shape_type != 'area') {
@@ -91,18 +96,37 @@ $overlays_data = [];
                                     
                                         $pos_x_percent = 100 * $pos_x / $floor['width'];
                                         $pos_y_percent = 100 * $pos_y / $floor['height'];
-                                        $icon_width_percent = 100 * $icon_size / $floor['width'];
-                                        $icon_height_percent = 100 * $icon_size / $floor['height'];
-                                    
                                         ?>
-                                        <div class="airport-map-shape-wrap" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $icon_width_percent; ?>%; height: <?php echo $icon_height_percent; ?>%;">
-                                            <div
-                                                class="airport-map-shape airport-map-<?php echo $shape_type ?: 'icon'; ?>"
-                                            >
-                                                <img class="airport-map-icon-img" src="<?php echo $item['shape_path']; ?>" /> 
+
+                                        <?php if ( $shape_type == 'area' ) : ?>
+                                            <?php
+                                            $width_percent = 100 * $item['width'] / $floor['width'];
+                                            $height_percent = 100 * $item['height'] / $floor['height'];
+                                            ?>
+                                        
+                                            <div class="airport-map-shape-wrap airport-map-shape-wrap-area" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;">
+                                                <div
+                                                    class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
+                                                >
+                                                    <?php echo file_get_contents($shape_path); ?>
+                                                </div>
+                                                
                                             </div>
-                                            <div class="airport-map-tooltip <?php echo $item['tooltip_side'] ?: 'right'; ?>-tooltip"><?php echo $group['label']; ?></div>
-                                        </div>
+                                            
+                                        <?php else: ?>
+                                            <?php 
+                                            $width_percent = 100 * $icon_size / $floor['width'];
+                                            $height_percent = 100 * $icon_size / $floor['height'];
+                                            ?>
+                                            <div class="airport-map-shape-wrap airport-map-shape-wrap-icon" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;">
+                                                <div
+                                                    class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
+                                                >
+                                                    <img class="airport-map-icon-img" src="<?php echo $shape_path; ?>" /> 
+                                                </div>
+                                                <div class="airport-map-tooltip <?php echo $item['tooltip_side'] ?: 'right'; ?>-tooltip"><?php echo $group['label']; ?></div>
+                                            </div>
+                                        <?php endif; ?>
                                     <?php endforeach ?>
                                 </div>
                             <?php endforeach ?>
