@@ -135,10 +135,24 @@
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+}
+
+.airport-map-main,
+.airport-map-sidebar {
+    flex-grow: 1;
 }
 
 .airport-map-icon-img {
     max-width: 73%;
     max-height: 73%;
     display: block;
+}
+
+.map-sidebar-list-hidden {
+    display: none;
+}
+
+.map-sidebar-clickable {
+    cursor: pointer;
 }
