@@ -1,7 +1,6 @@
 @import "../global/variables";
 
-.loader,
-.loader-search {
+.loader {
     display: none;
     width: 50px;
     padding: 8px;
@@ -24,5 +23,16 @@
 
 .loader-search {
     margin-right: 20px;
-    width: 35px;
+    display: none;
+    width: 20px;
+    padding: 5px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: $primary-color;
+    --_m: conic-gradient(#0000 5%, #000), linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: l3 1s infinite linear;
 }
