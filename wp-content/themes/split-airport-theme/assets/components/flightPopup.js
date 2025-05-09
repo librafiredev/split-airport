@@ -12,7 +12,9 @@ const _this = {
     init: function () {
         $("body").on("click", _this.$dom.flight, _this.openPopup);
         $("body").on("click", _this.$dom.searchFlight, _this.openPopup);
-        $("body").on("click", _this.$dom.closeButton, _this.closePopup);
+        $("body").on("click", _this.$dom.closeButton, function () {
+            history.go(-1);
+        });
         $(window).on("popstate", _this.closePopup);
     },
 
