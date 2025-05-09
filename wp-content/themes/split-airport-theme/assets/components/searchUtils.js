@@ -1,5 +1,18 @@
+import "select2";
+
 const searchFiltersElement = $(".arrivals-timetable-search__bottom");
 const searchInput = $('input[name="search"]');
+const dateSelectSearch = $('select[name="flightDateSearch"]');
+const dateSelect = $('select[name="flightDate"]');
+
+const styleDateSelect = () => {
+    dateSelectSearch.select2({
+        minimumResultsForSearch: Infinity
+    });
+    dateSelect.select2({
+        minimumResultsForSearch: Infinity
+    });
+};
 
 const searchFiltersOpen = () => {
     searchFiltersElement.stop(true, true).slideDown();
@@ -15,4 +28,4 @@ const searchFiltersClose = (e) => {
     }
 };
 
-export {searchFiltersOpen, searchFiltersClose};
+export { searchFiltersOpen, searchFiltersClose, styleDateSelect };
