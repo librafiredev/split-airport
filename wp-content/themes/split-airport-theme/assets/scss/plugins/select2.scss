@@ -135,3 +135,15 @@
 .select2-container--default .select2-results > .select2-results__options {
     max-height: 300px !important;
 }
+
+div#wpadminbar ~ span.select2-container,
+body.admin-bar > span.select2-container {
+    padding-top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+    div#wpadminbar ~ span.select2-container,
+    body.admin-bar > span.select2-container {
+        padding-top: 46px !important;
+    }
+}
