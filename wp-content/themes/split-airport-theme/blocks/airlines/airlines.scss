@@ -125,6 +125,7 @@
     padding: 12px 9px;
     position: relative;
     padding-right: 0;
+    transition: $dur;
 
     @include max-mq($sm) {
         padding: 13px 0;
@@ -139,6 +140,10 @@
             width: 90%;
             border-bottom: 1px solid $gray;
         }
+    }
+
+    &:hover {
+        background-color: $footer-bgc;
     }
 }
 
