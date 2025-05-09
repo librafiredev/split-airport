@@ -1,7 +1,6 @@
 @import "../global/variables";
 @import "../global/mixins";
 @import "../components/loader";
-@import "../plugins/select2";
 
 $arrivals-item-side-adding: 30px;
 $arrivals-item-side-adding-responsive: 10px;
@@ -152,9 +151,20 @@ $arrivals-item-side-adding-responsive: 10px;
     cursor: pointer;
     position: relative;
 
-    .arrivals-timetable-search & {
-        @include min-mq($sm + 1px) {
-            margin-right: -10px;
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        border-bottom: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+        right: 17px;
+        top: 50%;
+        transform: translateY(-65%) rotate(45deg);
+
+        @include max-mq($sm) {
+            right: 0;
         }
     }
 

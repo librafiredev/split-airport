@@ -32,16 +32,11 @@
     .date-switcher {
         display: flex;
         align-items: center;
-        position: relative;
+
+        @include max-mq($sm) {
+            display: none;
+        }
     }
-}
-
-.date-switcher__left {
-    left: 0;
-}
-
-.date-switcher__right {
-    right: 0;
 }
 
 .date-switcher__right,
@@ -55,29 +50,9 @@
     justify-content: center;
     align-items: center;
     transition: $dur;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    pointer-events: all;
-
-    // note: this should prevent clicking on select 2 next to the edges where circle does not cover the select 2
-    &::after {
-        content: "";
-        display: block;
-        width: 104%;
-        height: 104%;
-        position: absolute;
-        top: -2%;
-        left: -2%;
-    }
 
     &:hover {
         background-color: $gray;
-    }
-
-    @include max-mq($sm) {
-        display: none;
     }
 }
 
