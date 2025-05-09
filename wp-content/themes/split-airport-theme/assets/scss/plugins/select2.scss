@@ -1,0 +1,141 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+@mixin select-chev {
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("/assets/images/chevron-up.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 8px;
+        margin-bottom: 3px;
+        right: 15px;
+        top: 27%;
+        width: 14px;
+        transform: translateX(1px) rotate(180deg);
+
+        @include max-mq($sm) {
+            right: 0;
+        }
+    }
+}
+
+.arrivals-timetable-search {
+    .select2-container--default
+        .select2-selection--single
+        .select2-selection__arrow {
+        @include select-chev;
+
+        @include min-mq($sm + 1px) {
+            &::after {
+                right: 21px;
+            }
+        }
+    }
+}
+
+@include max-mq($sm) {
+    .select2-container--default
+        .select2-selection--single
+        .select2-selection__arrow {
+        @include select-chev;
+    }
+}
+
+.select2-container--open {
+    .select2-selection__arrow {
+        &::after {
+            transform: rotate(0) !important;
+        }
+    }
+}
+
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    b {
+        display: none;
+    }
+}
+
+.select2-container {
+    width: auto !important;
+
+    @include min-mq($sm + 1px) {
+        min-width: 185px !important;
+    }
+
+    @include max-mq($sm) {
+        min-width: 135px !important;
+    }
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+    border: none !important;
+    text-align: center;
+}
+
+.select2-results {
+    text-align: center;
+}
+
+.select2-container--default
+    .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #f6f6f6 !important;
+    color: $gray-300 !important;
+}
+
+.select2-container--default .select2-results__option--selected {
+    background-color: $white !important;
+    color: $gray-300 !important;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url("/assets/images/checkmark.svg");
+        background-repeat: no-repeat;
+        width: 11px;
+        background-size: contain;
+        height: 8px;
+        margin-left: 6px;
+        margin-bottom: 3px;
+    }
+}
+
+.select2-results__option {
+    border-top: 1px solid #ededed;
+
+    @include min-mq($sm + 1px) {
+        padding: 12px 30px !important;
+    }
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    @include min-mq($sm + 1px) {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+}
+
+.select2-dropdown {
+    border: none !important;
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 40px 40px 0 rgba($black, 0.07);
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 300px !important;
+}
+
+.select2-dropdown--below {
+    transform: translateY(12px);
+}
