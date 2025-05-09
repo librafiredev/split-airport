@@ -75,7 +75,8 @@ class Flight
     {
         $db = new Database();
         $connection = $db->getConnection();
-        $ftsTerm = $term . '*';
+       // $ftsTerm = $term . '*';
+        $likeTerm = '%'.$term.'%';
         $searchWhere = "";
         $pagination = "";
         $destinationWhere = "";
@@ -89,7 +90,7 @@ class Flight
         }
 
         if ($term) {
-            $searchWhere = " AND flights_search MATCH :term";
+            $searchWhere = " AND fs.flight_number LIKE :like_term OR fs.destination LIKE :like_term OR fs.airline LIKE :like_term ";
         }
 
         if ($queryType === 'search') {
@@ -144,7 +145,8 @@ class Flight
 
         if ($sql) {
             if ($term) {
-                $sql->bindValue(':term', $ftsTerm);
+               // $sql->bindValue(':term', $ftsTerm);
+                $sql->bindValue(':like_term', $likeTerm);
             }
 
             if ($destination) {
