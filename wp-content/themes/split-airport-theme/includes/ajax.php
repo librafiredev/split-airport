@@ -19,6 +19,13 @@ function airlines_search()
             'meta_key'       => 'type',
             'order'          => 'ASC',
             's'              => $term,
+            'meta_query' => array(
+                array(
+                    'key' => 'type',
+                    'value' => 'icon',
+                    'compare' => '!=',
+                ),
+            ),
         ]);
 
         ob_start();

@@ -21,6 +21,13 @@ else:
         'meta_key'       => 'type',
         'order'          => 'ASC',
         's'              => $term,
+        'meta_query' => array(
+            array(
+                'key' => 'type',
+                'value' => 'icon',
+                'compare' => '!=',
+            ),
+        ),
     ]);
 
 ?>
