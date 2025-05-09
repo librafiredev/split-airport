@@ -61,7 +61,9 @@ else:
                                 <div class="image-box__section-box-items">
                                     <div class="image-box__section-box-item">
                                         <div class="image-box__section-box-item-image">
-                                            <?php echo file_get_contents(get_template_directory() . '/assets/images/check.svg'); ?>
+                                            <?php
+                                
+                                            echo in_array('checked', $box_section['chekmark_box_1'])  ? file_get_contents(get_template_directory() . '/assets/images/check.svg') : file_get_contents(get_template_directory() . '/assets/images/x.svg'); ?>
                                         </div>
                                         <div class="image-box__section-box-item-content">
 
@@ -80,7 +82,9 @@ else:
                                     </div>
                                     <div class="image-box__section-box-item">
                                         <div class="image-box__section-box-item-image">
-                                            <?php echo file_get_contents(get_template_directory() . '/assets/images/x.svg'); ?>
+                                            <?php
+                                            echo in_array('checked', $box_section['chekmark_box_2'])  ? file_get_contents(get_template_directory() . '/assets/images/check.svg') : file_get_contents(get_template_directory() . '/assets/images/x.svg'); ?>
+                                            
                                         </div>
                                         <div class="image-box__section-box-item-content">
 

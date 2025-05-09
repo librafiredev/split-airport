@@ -258,17 +258,44 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 2,
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "wpml_cf_preferences": 2
+                    "append": ""
+                },
+                {
+                    "key": "field_681de0713b71f",
+                    "label": "Chekmark Box 1",
+                    "name": "chekmark_box_1",
+                    "aria-label": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "checked": "checked"
+                    },
+                    "default_value": [],
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "save_custom": 0,
+                    "custom_choice_button_text": "Add new choice"
                 },
                 {
                     "key": "field_67ebcfd806b20",
@@ -302,17 +329,44 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 2,
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "wpml_cf_preferences": 2
+                    "append": ""
+                },
+                {
+                    "key": "field_681de09f3b720",
+                    "label": "Chekmark Box 2",
+                    "name": "chekmark_box_2",
+                    "aria-label": "",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 1,
+                    "choices": {
+                        "checked": "checked"
+                    },
+                    "default_value": [],
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "allow_in_bindings": 0,
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "save_custom": 0,
+                    "custom_choice_button_text": "Add new choice"
                 }
             ],
             "wpml_cf_preferences": 1
@@ -545,5 +599,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746455543
+    "acfml_field_group_mode": "translation",
+    "modified": 1746789079
 }
