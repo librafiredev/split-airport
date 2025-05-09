@@ -8,7 +8,7 @@ const urlApiSingle = (param, term, deleteParam = false) => {
         url.searchParams.set(param, term);
     }
 
-    history.pushState({}, "", url);
+    history.replaceState({}, "", url);
 };
 
 export default urlApiSingle;
