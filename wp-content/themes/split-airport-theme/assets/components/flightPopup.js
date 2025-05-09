@@ -31,7 +31,7 @@ const _this = {
             _this.$dom.popup.removeClass("open");
             const url = new URL(window.location.href);
             url.searchParams.delete("flightInfo");
-            window.history.pushState({}, "", url);
+            window.history.replaceState({}, "", url);
             popupInner.remove();
         }
     },
