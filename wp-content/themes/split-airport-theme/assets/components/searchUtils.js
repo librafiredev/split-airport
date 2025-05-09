@@ -16,6 +16,7 @@ const styleDateSelect = () => {
 
 const searchFiltersOpen = () => {
     searchFiltersElement.stop(true, true).slideDown();
+    $('.arrivals-timetable-search').addClass('search-dropdown-focused');
 };
 
 const searchFiltersClose = (e) => {
@@ -25,6 +26,7 @@ const searchFiltersClose = (e) => {
 
     if (!isInsideFilters && !isInsideInput) {
         searchFiltersElement.stop(true, true).slideUp();
+        $('.arrivals-timetable-search').removeClass('search-dropdown-focused');
     }
 };
 

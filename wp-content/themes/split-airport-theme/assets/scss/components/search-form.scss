@@ -24,7 +24,8 @@ $arrivals-item-side-adding-responsive: 10px;
     background: $white;
     transition: border-radius $dur;
 
-    &:has(input:focus) {
+    &:has(input:focus),
+    .search-dropdown-focused & {
         border-radius: 26px;
     }
 
