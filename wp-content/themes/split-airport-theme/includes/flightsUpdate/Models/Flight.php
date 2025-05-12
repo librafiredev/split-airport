@@ -48,16 +48,15 @@ class Flight
                     AND post_status = 'publish'
                     LIMIT 1
                     ",
-                    '%' . $wpdb->esc_like( $partial[0] ?? '' ) . '%'
+                    '%' . $wpdb->esc_like($partial[0] ?? '') . '%'
                 ),
                 ARRAY_A
             );
-            
+
             return $airline;
         }
 
         return null;
-
     }
 
 
@@ -101,8 +100,8 @@ class Flight
     {
         $db = new Database();
         $connection = $db->getConnection();
-       // $ftsTerm = $term . '*';
-        $likeTerm = '%'.$term.'%';
+        // $ftsTerm = $term . '*';
+        $likeTerm = '%' . $term . '%';
         $searchWhere = "";
         $pagination = "";
         $destinationWhere = "";
@@ -171,7 +170,7 @@ class Flight
 
         if ($sql) {
             if ($term) {
-               // $sql->bindValue(':term', $ftsTerm);
+                // $sql->bindValue(':term', $ftsTerm);
                 $sql->bindValue(':like_term', $likeTerm);
             }
 
@@ -184,7 +183,13 @@ class Flight
             }
 
             $sql->bindValue(':schdate', $date);
-            $sql->bindValue(':schtime', DateTimeFlight::todayTime());
+
+            if (DateTimeFlight::todayDate() === $date) {
+                $sql->bindValue(':schtime', DateTimeFlight::todayTime());
+            } else {
+                $sql->bindValue(':schtime', DateTimeFlight::todayTimeStartOfDay());
+            }
+
             $sql->bindValue(':type', strtoupper($type));
 
             $result = $sql->execute();
@@ -229,9 +234,9 @@ class Flight
         $flights = Files::parseFiles();
 
         $currentFlights = $flights['current_flights'] ?? [];
-      
-        if ( $currentFlights) {
-            foreach ( $currentFlights as $flight) {
+
+        if ($currentFlights) {
+            foreach ($currentFlights as $flight) {
                 $flightSearchSQLPrepare->bindValue(':flight_number', $flight->brlet);
                 $flightSearchSQLPrepare->bindValue(':destination', $flight->fromto);
                 $flightSearchSQLPrepare->bindValue(':airline', $flight->operlong);

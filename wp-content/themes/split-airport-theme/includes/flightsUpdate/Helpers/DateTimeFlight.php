@@ -37,6 +37,11 @@ class DateTimeFlight
         return (new DateTime('now', new DateTimeZone(self::$timezone)))->format('H:i:s');
     }
 
+    public static function todayTimeStartOfDay(): string
+    {
+        return (new DateTime('now', new DateTimeZone(self::$timezone)))->setTime(0, 0, 0)->format('H:i:s');
+    }
+
     public static function formatTimeTableView(string $time): string
     {
         return (new DateTime($time, new DateTimeZone(self::$timezone)))->format('H:i');
