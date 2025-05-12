@@ -6,7 +6,13 @@ const _this = {
 
     },
 
-    accordions : function(trigger = _this.isRequired(), items = _this.isRequired()) {
+    accordions: function (trigger = _this.isRequired(), items = _this.isRequired()) {
+        if (items.eq(0).hasClass('initialized')) {
+            return;
+        }
+
+
+        items.eq(0).addClass('initialized');
 
         trigger.on('click', _this.accordionsAction);
 
@@ -14,11 +20,11 @@ const _this = {
         _this.$dom.triggers = trigger;
 
     },
-    accordionsAction : function() {
+    accordionsAction: function () {
 
         let triggered = $(this);
 
-        if(!triggered.hasClass('open')) {
+        if (!triggered.hasClass('open')) {
 
             // Close all the others
             _this.$dom.items.stop().slideUp('.4s');
@@ -28,7 +34,7 @@ const _this = {
 
             triggered.next().stop().slideDown('.4s');
             triggered.addClass('open');
-            
+
         }
         else {
 
@@ -39,7 +45,7 @@ const _this = {
         }
     },
 
-    isRequired : function () {
+    isRequired: function () {
         throw new Error('Accordion function missing parameters');
     }
 
