@@ -31,7 +31,33 @@ class Flight
             ARRAY_A
         );
 
-        return $airline;
+        if (!empty($airline)) {
+            return $airline;
+        }
+
+        $partial = !empty($title) ? explode(' ', trim($title)) : '';
+
+        if (!empty($partial)) {
+            $airline = $wpdb->get_row(
+                $wpdb->prepare(
+                    "
+                    SELECT *
+                    FROM {$wpdb->prefix}posts
+                    WHERE UPPER(post_title) LIKE UPPER(%s)
+                    AND post_type = 'airline'
+                    AND post_status = 'publish'
+                    LIMIT 1
+                    ",
+                    '%' . $wpdb->esc_like( $partial[0] ?? '' ) . '%'
+                ),
+                ARRAY_A
+            );
+            
+            return $airline;
+        }
+
+        return null;
+
     }
 
 
