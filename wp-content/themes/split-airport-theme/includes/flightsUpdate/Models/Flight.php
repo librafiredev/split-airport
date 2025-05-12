@@ -115,7 +115,7 @@ class Flight
         }
 
         if ($term) {
-            $searchWhere = " AND fs.flight_number LIKE :like_term OR fs.destination LIKE :like_term OR fs.airline LIKE :like_term ";
+            $searchWhere = " AND (fs.flight_number LIKE :like_term OR fs.destination LIKE :like_term OR fs.airline LIKE :like_term) ";
         }
 
         if ($queryType === 'search') {
@@ -184,7 +184,7 @@ class Flight
 
             $sql->bindValue(':schdate', $date);
 
-            if (DateTimeFlight::todayDate() === $date) {
+            if (DateTimeFlight::todayDate() === $date && $queryType !== 'search') {
                 $sql->bindValue(':schtime', DateTimeFlight::todayTime());
             } else {
                 $sql->bindValue(':schtime', DateTimeFlight::todayTimeStartOfDay());
