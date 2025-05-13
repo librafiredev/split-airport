@@ -6,8 +6,6 @@ const loadMore = ".load-more";
 const loaderSearch = $(".loader-search");
 
 const request = async (term = "", isSearch = false, isLoadMore = false) => {
-   
-
     // Get Params
 
     const urlParams = new URL(window.location.href);
@@ -23,11 +21,10 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         airline;
 
     if (!isSearch) {
-
-        if(loader.length) {
+        if (loader.length) {
             loader.show();
         }
-    
+
         flightsType = getParams.get("flightType") || "arrival";
         flightDate = getParams.get("flightDate") || "";
         search = getParams.get("search") || "";
@@ -54,6 +51,7 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
         const requestParams = new URLSearchParams();
 
         requestParams.append("term", search);
+        requestParams.append("currentLanguage", theme.currentLanguage);
         requestParams.append("flightType", flightsType);
         requestParams.append("flightDate", flightDate);
         requestParams.append("_wpnonce", theme.restNonce);
@@ -75,12 +73,12 @@ const request = async (term = "", isSearch = false, isLoadMore = false) => {
 
         const response = await request.json();
 
-        if(loader.length) {
+        if (loader.length) {
             loader.hide();
         }
 
-        if(loaderSearch.length) {
-            loaderSearch.hide()
+        if (loaderSearch.length) {
+            loaderSearch.hide();
         }
 
         if (response.success === true) {

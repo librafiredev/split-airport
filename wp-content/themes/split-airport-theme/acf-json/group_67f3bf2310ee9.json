@@ -314,7 +314,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 1,
             "placement": "top",
             "endpoint": 0,
             "selected": 0
@@ -333,7 +333,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
+            "wpml_cf_preferences": 2,
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
@@ -360,6 +360,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "translation",
-    "modified": 1746786409
+    "acfml_field_group_mode": "localization",
+    "modified": 1747131648
 }

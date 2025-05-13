@@ -44,6 +44,7 @@ const _this = {
         try {
             const requestParams = new URLSearchParams();
             requestParams.append("ID", ID);
+            requestParams.append("currentLanguage", theme.currentLanguage);
             requestParams.append("_wpnonce", theme.restNonce);
 
             const request = await fetch(

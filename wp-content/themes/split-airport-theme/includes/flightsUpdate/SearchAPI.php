@@ -38,6 +38,15 @@ class SearchAPI
     public static function flightRestAPI(\WP_REST_Request $request)
     {
         $ID = wp_strip_all_tags($request->get_param('ID'));
+        $currentLanguage =  wp_strip_all_tags($request->get_param('currentLanguage')) ?: 'en';
+
+         // Switch to current language
+
+         if ($currentLanguage) {
+            do_action('wpml_switch_language',  $currentLanguage);
+        }
+        
+
         $flight = Flight::getFlightByID($ID);
 
         if ($flight) {
@@ -62,6 +71,13 @@ class SearchAPI
         $airline =  wp_strip_all_tags($request->get_param('airlineCompany'));
         $earlierFlights =  wp_strip_all_tags($request->get_param('earlierFlights'));
         $offset =  wp_strip_all_tags($request->get_param('offset')) ?: 0;
+        $currentLanguage =  wp_strip_all_tags($request->get_param('currentLanguage')) ?: 'en';
+
+        // Switch to current language
+
+        if ($currentLanguage) {
+            do_action('wpml_switch_language',  $currentLanguage);
+        }
 
         $flights = Flight::getSearchData($term, $date, $type, $destination, $airline, $earlierFlights, $queryType, $offset);
 
