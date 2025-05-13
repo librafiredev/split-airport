@@ -15,7 +15,7 @@ define( 'CRITICAL_CSS_THRESHOLD', '2' );
 
 /** Set to true while website is in development */
 if( !defined( 'IN_DEVELOPMENT' ) )
-    define( 'IN_DEVELOPMENT', true );
+    define( 'IN_DEVELOPMENT', false );
 
 /** Google Maps API key */
 define( 'ACF_GOOGLE_API_KEY', '' );

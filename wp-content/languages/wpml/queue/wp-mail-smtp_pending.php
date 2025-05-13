@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Or disable the Sendinblue email sending setting in WooCommerce > Settings > Sendinblue (tab) > Email Options (tab) > Enable Sendinblue to send WooCommerce emails.'=>['saveStringInDb'=>true,'cmp'=>['wp-mail-smtp',1],'names'=>[],'urls'=>[]],'Or enable "Do not change email sender by default" setting in Settings > Email template > Sender (tab).'=>['saveStringInDb'=>true,'cmp'=>['wp-mail-smtp',1],'names'=>[],'urls'=>[]],'Or deactivate "SMTP" module in Branda > Emails > SMTP.'=>['saveStringInDb'=>true,'cmp'=>['wp-mail-smtp',1],'names'=>[],'urls'=>[]]]];

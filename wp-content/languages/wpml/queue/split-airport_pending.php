@@ -1,2 +1,0 @@
-<?php
-return ['items'=>['No flights found for'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>[],'urls'=>[]],'Show more flights with'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>[],'urls'=>[]],'All flights with'=>['saveStringInDb'=>true,'cmp'=>['wpml-string-translation',1],'names'=>[],'urls'=>[]],'All flights from'=>['saveStringInDb'=>true,'cmp'=>['split-airport-theme',2],'names'=>[],'urls'=>[]]]];

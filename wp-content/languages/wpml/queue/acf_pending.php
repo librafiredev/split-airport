@@ -1,2 +1,2 @@
 <?php
-return ['items'=>[]];
+return ['items'=>['Repeater'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Flexible Content'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Add Row'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Gallery'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Clone\\4noun'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Block'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Options Page'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Update'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]],'Options Updated'=>['saveStringInDb'=>true,'cmp'=>['acf',1],'names'=>[],'urls'=>[]]]];
