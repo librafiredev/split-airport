@@ -13,21 +13,24 @@ $group_class_prefix = 'airport-map-group-';
 
 if( ! function_exists('recoursively_render_map_categories') ) :
 
-    function recoursively_render_map_categories($items, $additinal_data, $suffix = '', $level = 0, $options = array()) {
+    function recoursively_render_map_categories(&$items, $additinal_data, $suffix = '', $level = 0, $options = array()) {
         ?>
         <ul class="map-sidebar-list map-sidebar-level-<?php echo $level; ?> <?php echo $level >= 2 ? 'map-sidebar-list-hidden' : ''; ?>">
             <?php
-            foreach ($items as $idx => $item) {
+            foreach ($items as $idx => &$item) {
                 $floor = $item['floor'];
                 $group_idx = $item['group_index'];
                 $new_sufix = $suffix . '-' . $idx;
                 $has_toggle_sub_menu = !empty($item['children']) && $level == 1;
+                $item_class = 'map-sidebar-item' . $new_sufix;
+                $item['html_class'] = $item_class;
                 ?>
-                <li class="map-sidebar-item<?php echo $new_sufix; ?>">
+                <li class="map-sidebar-searchable <?php echo $item_class; ?>">
                     <button class="map-sidebar-btn <?php echo $has_toggle_sub_menu || (empty($item['children']) && $level != 0) ? 'map-sidebar-clickable' : ''; ?>" type="button" data-target-floor="<?php echo $floor; ?>" data-target-group-class="<?php echo $options['group_class_prefix'] . $floor . '-' . $group_idx; ?>">
                         <?php if ($item['label']) : ?>
                             <?php echo $item['label']; ?>
                         <?php else: ?>
+                            <?php $item['label'] = $additinal_data[$floor][$group_idx]['label']; ?>
                             <?php echo $additinal_data[$floor][$group_idx]['label']; ?>
                         <?php endif ?>
                         <?php if ( $has_toggle_sub_menu ) : ?>
@@ -153,9 +156,12 @@ $overlays_data = [];
     <section class="airport-map-wrapper">
         <div class="airport-map-container">
             <div class="airport-map-sidebar">
-                
+                <div>
+                    <input type="text" class="airport-map-search" />
+                </div>
                 <div>
                     <?php recoursively_render_map_categories($category_data, $icon_data, '', 0, array('group_class_prefix' => $group_class_prefix)); ?>
+                    <div class="airport-map-no-results hidden-no-results"><?php esc_html_e('No results found for: ') ?>“<span class="airport-map-search-term"></span>”</div>
                 </div>
             </div>
             <div class="airport-map-main">
@@ -221,5 +227,15 @@ $overlays_data = [];
             </div>
         </div>
     </section><!-- .airport-map-wrapper-->
+
+    <script>
+        if (typeof window.airportMaps == 'undefined') {
+            window.airportMaps = []
+        }
+        
+        window.airportMaps.push({
+            categories: <?php echo json_encode($category_data); ?>,
+        })
+    </script>
     
 <?php endif; ?>
