@@ -40,7 +40,7 @@ $(function () {
         matches.forEach(function (item) {
             var searchableEl = sectionElement.find('.' + item.html_class);
             searchableEl.addClass('found-item');
-            var optionalItemToOpen = searchableEl.closest('.map-sidebar-level-1').find('li>.map-sidebar-btn');
+            var optionalItemToOpen = searchableEl.closest('.map-sidebar-level-1').find('>li>.map-sidebar-btn');
 
             if (optionalItemToOpen && inputValue) {
                 optionalItemToOpen.addClass('map-sidebar-open-sub');
@@ -72,7 +72,19 @@ $(function () {
             return [...prev, a];
         }
 
-        let flatCategories = categories.reduce(flattenNestedObjects, []);
+        var flatCategories = categories.reduce(flattenNestedObjects, []);
+
+        sectionElement.find('.has-target-group').on('click', function () {
+            var isActive = $(this).hasClass('highlighted-sidebar-item');
+            sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
+            sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
+
+            if (!isActive) {
+                var targetSelector = $(this).attr('data-target-group-class');
+                $('.' + targetSelector).addClass('highlighted-map-group');
+                $(this).addClass('highlighted-sidebar-item');
+            }
+        });
 
         sectionElement.find('.airport-map-search').on('input', function (e) {
             debouncedHandleSearch(sectionElement, e, flatCategories);

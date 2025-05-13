@@ -24,9 +24,10 @@ if( ! function_exists('recoursively_render_map_categories') ) :
                 $has_toggle_sub_menu = !empty($item['children']) && $level == 1;
                 $item_class = 'map-sidebar-item' . $new_sufix;
                 $item['html_class'] = $item_class;
+                $has_target_group = isset($item['group_index']);
                 ?>
                 <li class="map-sidebar-searchable <?php echo $item_class; ?>">
-                    <button class="map-sidebar-btn <?php echo $has_toggle_sub_menu || (empty($item['children']) && $level != 0) ? 'map-sidebar-clickable' : ''; ?>" type="button" data-target-floor="<?php echo $floor; ?>" data-target-group-class="<?php echo $options['group_class_prefix'] . $floor . '-' . $group_idx; ?>">
+                    <button class="map-sidebar-btn <?php echo $has_toggle_sub_menu || (empty($item['children']) && $level != 0) ? 'map-sidebar-clickable' : ''; ?> <?php echo $has_target_group ? 'has-target-group' : ''; ?>" type="button" data-target-floor="<?php echo $floor; ?>" data-target-group-class="<?php echo $options['group_class_prefix'] . $floor . '-' . $group_idx; ?>">
                         <?php if ($item['label']) : ?>
                             <?php echo $item['label']; ?>
                         <?php else: ?>

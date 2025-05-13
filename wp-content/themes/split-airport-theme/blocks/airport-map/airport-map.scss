@@ -83,12 +83,13 @@
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
+}
 
-    &:hover {
-        .airport-map-tooltip {
-            transform: scale(1);
-        }
-    }
+.airport-map-shape-wrap-icon:hover .airport-map-tooltip,
+.highlighted-map-group
+    .airport-map-shape-wrap-icon:first-child
+    .airport-map-tooltip {
+    transform: scale(1);
 }
 
 .airport-map-shape {
@@ -114,18 +115,19 @@
 
 .airport-map-group {
     z-index: 5;
+}
 
-    &:hover {
-        .airport-map-icon {
-            background-color: $secondary-color;
-        }
+.highlighted-map-group,
+.airport-map-group:hover {
+    .airport-map-icon {
+        background-color: $secondary-color;
+    }
 
-        .airport-map-area {
-            svg {
-                * {
-                    fill: $secondary-color-100;
-                    stroke: $secondary-color;
-                }
+    .airport-map-area {
+        svg {
+            * {
+                fill: $secondary-color-100;
+                stroke: $secondary-color;
             }
         }
     }
@@ -155,6 +157,8 @@
 
 .map-sidebar-clickable {
     cursor: pointer;
+    background-color: $white;
+    padding: 5px 10px;
 }
 
 .has-active-search {
@@ -174,4 +178,8 @@
 
 .hidden-no-results {
     display: none;
+}
+
+.highlighted-sidebar-item {
+    background-color: #f6f6f6;
 }
