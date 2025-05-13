@@ -156,3 +156,22 @@
 .map-sidebar-clickable {
     cursor: pointer;
 }
+
+.has-active-search {
+    .map-sidebar-searchable {
+        display: none;
+
+        &.found-item,
+        &:has(li.found-item) {
+            display: block;
+
+            .map-sidebar-searchable {
+                display: block;
+            }
+        }
+    }
+}
+
+.hidden-no-results {
+    display: none;
+}
