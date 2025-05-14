@@ -72,7 +72,7 @@ $(function () {
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
     }
 
-    function highlightGroup(sectionElement, groupButton) {
+    function toggleGroupHighlight(sectionElement, groupButton) {
         var isActive = groupButton.hasClass('highlighted-sidebar-item');
         sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
         sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
@@ -103,13 +103,20 @@ $(function () {
             sectionElement.find('.has-target-group').on('click', function () {
                 var groupButton = $(this);
                 var targetFloor = groupButton.attr('data-target-floor');
-                if (parseInt(targetFloor) == window.airportMaps[i].currentFloor) {
-                    highlightGroup(sectionElement, groupButton);
+                var isActive = groupButton.hasClass('highlighted-sidebar-item');
 
+
+                if (parseInt(targetFloor) == window.airportMaps[i].currentFloor) {
+                    toggleGroupHighlight(sectionElement, groupButton);
                 } else {
+                    // NOTE: this will first disable the item before changing the floor
+                    // hopefully that will make for a better ux
+                    if (isActive) {
+                        toggleGroupHighlight(sectionElement, groupButton);
+                    }
                     goToFloor(sectionElement, targetFloor, i);
                     setTimeout(function () {
-                        highlightGroup(sectionElement, groupButton);
+                        toggleGroupHighlight(sectionElement, groupButton);
                     }, 500);
                 }
             });
