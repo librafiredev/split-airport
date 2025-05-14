@@ -65,6 +65,8 @@ $(function () {
     function goToFloor(sectionElement, targetFloor, mapIndex) {
         sectionElement.find('.airport-map-floor-btn').removeClass('current-floor-btn');
         sectionElement.find('[data-target-floor-idx="' + targetFloor + '"]').addClass('current-floor-btn');
+        sectionElement.find('.is-active-cbs').removeClass('is-active-cbs');
+        sectionElement.find('[data-cbs-floor="' + targetFloor + '"]').addClass('is-active-cbs');
         sectionElement.find('.airport-map-active-floor').removeClass('airport-map-active-floor');
         sectionElement.find('[data-floor-idx="' + targetFloor + '"]').addClass('airport-map-active-floor');
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
@@ -110,6 +112,19 @@ $(function () {
                         highlightGroup(sectionElement, groupButton);
                     }, 500);
                 }
+            });
+
+            sectionElement.find('.airport-map-guide-cb').change(function () {
+                var guideTargetSelector = $(this).attr('data-target-guide-class');
+                var guideTarget = sectionElement.find('.' + guideTargetSelector);
+
+                if (this.checked) {
+                    guideTarget.addClass('is-guide-visible');
+                } else {
+                    guideTarget.removeClass('is-guide-visible');
+                }
+
+
             });
 
             sectionElement.find('.airport-map-floor-btn').on('click', function () {
