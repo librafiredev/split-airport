@@ -1,9 +1,11 @@
 $(function () {
 
-    $('.map-sidebar-level-1>li>.map-sidebar-btn').on('click', function () {
-        $(this).siblings('ul').eq(0).stop().slideToggle();
-        $(this).toggleClass('map-sidebar-open-sub');
-    });
+    function initSidebarAccordions() {
+        $('.map-sidebar-level-1>li>.map-sidebar-btn').on('click', function () {
+            $(this).siblings('ul').eq(0).stop().slideToggle();
+            $(this).toggleClass('map-sidebar-open-sub');
+        });
+    }
 
     function debounce(func, timeout = 300) {
         let timer;
@@ -60,36 +62,57 @@ $(function () {
         handleSidebarSearch(sectionElement, event, someData);
     }, 300);
 
-    $('.airport-map-wrapper').each(function (i) {
-        var sectionElement = $(this);
+    function initInteractables() {
+        $('.airport-map-wrapper').each(function (i) {
+            var sectionElement = $(this);
+            $(this).addClass('map-initialized');
 
-        var categories = window.airportMaps[i].categories;
-        function flattenNestedObjects(prev, a) {
-            if (a.children) {
-                return [a, ...a.children.reduce(flattenNestedObjects, prev)];
+            var categories = window.airportMaps[i].categories;
+            function flattenNestedObjects(prev, a) {
+                if (a.children) {
+                    return [a, ...a.children.reduce(flattenNestedObjects, prev)];
+                }
+
+                return [...prev, a];
             }
 
-            return [...prev, a];
+            var flatCategories = categories.reduce(flattenNestedObjects, []);
+
+            sectionElement.find('.has-target-group').on('click', function () {
+                var isActive = $(this).hasClass('highlighted-sidebar-item');
+                sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
+                sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
+
+                if (!isActive) {
+                    var targetSelector = $(this).attr('data-target-group-class');
+                    sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
+                    $(this).addClass('highlighted-sidebar-item');
+                }
+            });
+
+            sectionElement.find('.airport-map-search').on('input', function (e) {
+                debouncedHandleSearch(sectionElement, e, flatCategories);
+            });
+
+        });
+    }
+
+    function init() {
+        if ($('.airport-map-wrapper').length < 1) {
+            return;
         }
 
-        var flatCategories = categories.reduce(flattenNestedObjects, []);
+        if ($('.airport-map-wrapper').eq(0).hasClass('map-initialized')) {
+            return;
+        }
 
-        sectionElement.find('.has-target-group').on('click', function () {
-            var isActive = $(this).hasClass('highlighted-sidebar-item');
-            sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
-            sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
+        // NOTE: all of the maps are going to be initialized by one script through a loop
+        $('.airport-map-wrapper').eq(0).addClass('map-initialized');
 
-            if (!isActive) {
-                var targetSelector = $(this).attr('data-target-group-class');
-                $('.' + targetSelector).addClass('highlighted-map-group');
-                $(this).addClass('highlighted-sidebar-item');
-            }
-        });
+        initInteractables();
+        initSidebarAccordions();
+    }
 
-        sectionElement.find('.airport-map-search').on('input', function (e) {
-            debouncedHandleSearch(sectionElement, e, flatCategories);
-        });
-
-    });
+    init();
 
 });
