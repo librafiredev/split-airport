@@ -108,6 +108,65 @@
     }
 }
 
+.transportation__item-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-bottom: 41px;
+}
+
+.transportation__item-bottom {
+    margin-top: auto;
+}
+
+.transportation__item-bottom-content {
+    color: $gray-300;
+    font-size: $font-size-h6;
+    line-height: calc(20 / 15);
+    letter-spacing: -0.02em;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.transportation__item-links-item-main-text {
+    margin-bottom: 5px;
+}
+
+.transportation__item-links-item-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: calc(20 / 15);
+    padding: 8px 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    transition: $dur;
+    position: relative;
+
+    svg {
+        display: block;
+    }
+
+    &:hover {
+        background-color: $footer-bgc;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: calc(100% - 20px);
+        left: 10px;
+        bottom: 0;
+
+        .transportation__item-links-item:not(:last-child) & {
+            border-bottom: 1px dashed $gray;
+        }
+    }
+}
+
 .transportation__item-button {
     display: inline-flex;
     vertical-align: middle;
@@ -145,40 +204,6 @@
     }
 }
 
-.transportation__item-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 10px;
-    margin-bottom: 41px;
-}
-
-.transportation__item-bottom {
-    margin-top: auto;
-}
-
-.transportation__item-bottom-content {
-    color: $gray-300;
-    font-size: $font-size-h6;
-    line-height: calc(20 / 15);
-    letter-spacing: -0.02em;
-
-    a {
-        text-decoration: underline;
-    }
-}
-
-.transportation__item-links-item {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    line-height: calc(20 / 15);
-    padding: 8px 0;
-
-    &:not(:last-child) {
-        border-bottom: 1px dashed $gray;
-    }
-}
-
 .transportation__item-links-item-right {
     margin-left: auto;
     color: $primary-color-100;
@@ -186,8 +211,4 @@
 
 .transportation__item-links-item-text {
     color: $gray-100;
-}
-
-.transportation__item-links-item-main-text {
-    margin-bottom: 5px;
 }

@@ -115,29 +115,28 @@
 
                     <div class="transportation__item-links-item">
 
-                        <?php if ($link['link']): ?>
+                        
 
-                            <a <?php if (isset($link['link']['target']) && $link['link']['target']) echo "target='" . $link['link']['target'] . "'" ?> href="<?php echo $link['link']['url'] ?>" class="transportation__item-links-item-link"></a>
+                        <a <?php if (isset($link['link']['target']) && $link['link']['target']) echo "target='" . $link['link']['target'] . "'" ?> href="<?php echo $link['link']['url'] ?>" class="transportation__item-links-item-link">
+                            <div class="transportation__item-links-item-left">
 
-                        <?php endif; ?>
-                        <div class="transportation__item-links-item-left">
+                                <?php if ($link['link']): ?>
 
-                            <?php if ($link['link']): ?>
+                                    <p class="transportation__item-links-item-main-text"><?php echo $link['link']['title']; ?></p>
 
-                                <p class="transportation__item-links-item-main-text"><?php echo $link['link']['title']; ?></p>
+                                <?php endif; ?>
 
-                            <?php endif; ?>
+                                <?php if ($link['text']): ?>
 
-                            <?php if ($link['text']): ?>
+                                    <p class="transportation__item-links-item-text"><?php echo $link['text']; ?></p>
 
-                                <p class="transportation__item-links-item-text"><?php echo $link['text']; ?></p>
+                                <?php endif; ?>
 
-                            <?php endif; ?>
-
-                        </div>
-                        <div class="transportation__item-links-item-right">
-                            <?php echo file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg'); ?>
-                        </div>
+                            </div>
+                            <div class="transportation__item-links-item-right">
+                                <?php echo file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg'); ?>
+                            </div>
+                        </a>
                     </div>
 
             <?php
