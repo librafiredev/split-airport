@@ -111,6 +111,7 @@
     position: relative;
     max-width: 1097px;
     margin-left: auto;
+    overflow: hidden;
 }
 
 .airport-map-group {
@@ -182,4 +183,23 @@
 
 .highlighted-sidebar-item {
     background-color: #f6f6f6;
+}
+
+.airport-map-pannable {
+    display: none;
+
+    &.airport-map-active-floor {
+        display: block;
+    }
+}
+
+.airport-map-floor-btn {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.airport-map-floor-btns {
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }

@@ -64,6 +64,18 @@ $floors_data = [
         'height' => 1469,
         'overlay_path' => '',
     ),
+    array(
+        'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1.svg",
+        'width' => 2470,
+        'height' => 1462,
+        'overlay_path' => '',
+    ),
+    array(
+        'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-2.svg",
+        'width' => 2475,
+        'height' => 1469,
+        'overlay_path' => '',
+    ),
 ];
 $icon_data = [
     // FLOOR 0
@@ -167,8 +179,10 @@ $overlays_data = [];
             </div>
             <div class="airport-map-main">
                 <div class="airport-map-floors">
+                    <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
                     <?php foreach ($floors_data as $floor_idx => $floor) : ?>
-                        <div class="airport-map-pannable">
+                        <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn" data-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
+                        <div class="airport-map-pannable <?php echo $floor_idx == 0 ? 'airport-map-active-floor' : ''; ?>">
                             <div class="airport-map-wrap">
                                 <img src="<?php echo $floor['bg_path']; ?>" alt="" />
                                 <?php $groups = $icon_data[$floor_idx]; ?>
@@ -224,6 +238,7 @@ $overlays_data = [];
                             </div>
                         </div>
                     <?php endforeach; ?>
+                    <?php echo $floor_controls_html . '</div>'; ?>
                 </div>
             </div>
         </div>
