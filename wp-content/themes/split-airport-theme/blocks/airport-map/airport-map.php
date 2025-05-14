@@ -8,6 +8,7 @@ if( isset( $block['data']['preview_image_help'] )  ) :
     echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
 else:
 
+$initial_floor = 0;
 $icon_size = 62;
 $group_class_prefix = 'airport-map-group-';
 
@@ -181,8 +182,8 @@ $overlays_data = [];
                 <div class="airport-map-floors">
                     <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
                     <?php foreach ($floors_data as $floor_idx => $floor) : ?>
-                        <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn" data-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
-                        <div class="airport-map-pannable <?php echo $floor_idx == 0 ? 'airport-map-active-floor' : ''; ?>">
+                        <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
+                        <div class="airport-map-pannable <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
                             <div class="airport-map-wrap">
                                 <img src="<?php echo $floor['bg_path']; ?>" alt="" />
                                 <?php $groups = $icon_data[$floor_idx]; ?>
@@ -251,6 +252,7 @@ $overlays_data = [];
         
         window.airportMaps.push({
             categories: <?php echo json_encode($category_data); ?>,
+            currentFloor: <?php echo $initial_floor; ?>,
         })
     </script>
     

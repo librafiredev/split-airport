@@ -186,16 +186,37 @@
 }
 
 .airport-map-pannable {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: $dur;
 
     &.airport-map-active-floor {
+        position: relative;
         display: block;
+        opacity: 1;
+        transform: translateY(0);
+
+        & ~ .airport-map-pannable {
+            transform: translateY(-10%);
+        }
     }
 }
 
 .airport-map-floor-btn {
     cursor: pointer;
     padding: 10px 15px;
+    background-color: $white;
+    border: 1px solid $gray;
+    color: $gray-300;
+
+    &.current-floor-btn {
+        background-color: $footer-bgc;
+        border: 1px solid $gray-50;
+        color: $primary-color-100;
+    }
 }
 
 .airport-map-floor-btns {

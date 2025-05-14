@@ -62,6 +62,14 @@ $(function () {
         handleSidebarSearch(sectionElement, event, someData);
     }, 300);
 
+    function goToFloor(sectionElement, targetFloor, mapIndex) {
+        sectionElement.find('.airport-map-floor-btn').removeClass('current-floor-btn');
+        sectionElement.find('[data-target-floor-idx="' + targetFloor + '"]').addClass('current-floor-btn');
+        sectionElement.find('.airport-map-active-floor').removeClass('airport-map-active-floor');
+        sectionElement.find('[data-floor-idx="' + targetFloor + '"]').addClass('airport-map-active-floor');
+        window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
+    }
+
     function initInteractables() {
         $('.airport-map-wrapper').each(function (i) {
             var sectionElement = $(this);
@@ -88,6 +96,11 @@ $(function () {
                     sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
                     $(this).addClass('highlighted-sidebar-item');
                 }
+            });
+
+            sectionElement.find('.airport-map-floor-btn').on('click', function () {
+                var targetFloor = $(this).attr('data-target-floor-idx');
+                goToFloor(sectionElement, targetFloor, i);
             });
 
             sectionElement.find('.airport-map-search').on('input', function (e) {
