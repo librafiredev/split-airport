@@ -70,6 +70,18 @@ $(function () {
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
     }
 
+    function highlightGroup(sectionElement, groupButton) {
+        var isActive = groupButton.hasClass('highlighted-sidebar-item');
+        sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
+        sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
+
+        if (!isActive) {
+            var targetSelector = groupButton.attr('data-target-group-class');
+            sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
+            groupButton.addClass('highlighted-sidebar-item');
+        }
+    }
+
     function initInteractables() {
         $('.airport-map-wrapper').each(function (i) {
             var sectionElement = $(this);
@@ -87,14 +99,16 @@ $(function () {
             var flatCategories = categories.reduce(flattenNestedObjects, []);
 
             sectionElement.find('.has-target-group').on('click', function () {
-                var isActive = $(this).hasClass('highlighted-sidebar-item');
-                sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
-                sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
+                var groupButton = $(this);
+                var targetFloor = groupButton.attr('data-target-floor');
+                if (parseInt(targetFloor) == window.airportMaps[i].currentFloor) {
+                    highlightGroup(sectionElement, groupButton);
 
-                if (!isActive) {
-                    var targetSelector = $(this).attr('data-target-group-class');
-                    sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
-                    $(this).addClass('highlighted-sidebar-item');
+                } else {
+                    goToFloor(sectionElement, targetFloor, i);
+                    setTimeout(function () {
+                        highlightGroup(sectionElement, groupButton);
+                    }, 500);
                 }
             });
 

@@ -192,8 +192,10 @@
     opacity: 0;
     transform: translateY(10%);
     transition: $dur;
+    pointer-events: none;
 
     &.airport-map-active-floor {
+        pointer-events: all;
         position: relative;
         display: block;
         opacity: 1;
