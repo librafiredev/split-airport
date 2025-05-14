@@ -53,7 +53,7 @@ $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals'
             </div>
         </div>
         <div class="flight-popup-header__right">
-            <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a>
+            <!-- <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a> -->
         </div>
         <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
             <?php echo $comment; ?>
