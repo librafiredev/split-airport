@@ -11,6 +11,7 @@ else:
 $initial_floor = 0;
 $icon_size = 62;
 $group_class_prefix = 'airport-map-group-';
+$overlay_guide_class_prefix = 'airport-map-guide-';
 
 if( ! function_exists('recoursively_render_map_categories') ) :
 
@@ -63,7 +64,7 @@ $floors_data = [
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0.svg",
         'width' => 2650,
         'height' => 1469,
-        'overlay_path' => '',
+        'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-overlay.svg",
     ),
     array(
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1.svg",
@@ -163,7 +164,28 @@ $category_data = [
         ],
     ),
 ];
-$overlays_data = [];
+$guides_data = [
+    [
+        array(
+            'label' => esc_html__('Local arrival'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
+        ),
+
+
+        array(
+            'label' => esc_html__('Baggage claim'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-claim.svg",
+        ),
+    ],
+    [
+        array(
+            'label' => esc_html__('Local departure'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-local-departure.svg",
+        ),
+
+    ],
+    []
+];
 
 ?>
 
@@ -179,6 +201,23 @@ $overlays_data = [];
                 </div>
             </div>
             <div class="airport-map-main">
+                <div class="airport-map-guide-cbs">
+                    <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
+                        <?php if (empty($guide_group)) { 
+                            continue;
+                        } ?>
+
+                        <div class="airport-map-guide-cbs-floor <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>" data-cbs-floor="<?php echo $g_floor_idx; ?>">
+                            <div class="airport-map-guide-m-label"><?php echo esc_html__('Airport guide:'); ?></div>
+                            <div class="airport-map-guide-cbs-only">
+                                <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
+                                    <label class="airport-map-guide-cb-wrap"><input type="checkbox" class="airport-map-guide-cb" data-target-guide-class="<?php echo $overlay_guide_class_prefix; ?><?php echo $g_floor_idx; ?>-<?php echo $guide_index; ?>" /><span><?php echo $guide_item['label']; ?></span></label>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                    
+                </div>
                 <div class="airport-map-floors">
                     <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
                     <?php foreach ($floors_data as $floor_idx => $floor) : ?>
@@ -186,6 +225,9 @@ $overlays_data = [];
                         <div class="airport-map-pannable <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
                             <div class="airport-map-wrap">
                                 <img src="<?php echo $floor['bg_path']; ?>" alt="" />
+                                <?php if (!empty($floor['overlay_path'])) : ?>
+                                    <img class="airport-map-fg-overlay" src="<?php echo $floor['overlay_path']; ?>" alt="" />
+                                <?php endif; ?>
                                 <?php $groups = $icon_data[$floor_idx]; ?>
                                 <?php foreach ($groups as $g_idx => $group) : ?>
                                     <div class="airport-map-group <?php echo $group_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $g_idx; ?>">
@@ -236,6 +278,13 @@ $overlays_data = [];
                                         <?php endforeach ?>
                                     </div>
                                 <?php endforeach ?>
+                                
+                                <?php $guide_group = $guides_data[$floor_idx]; ?>
+                                <?php if (!empty($guide_group)) : ?>
+                                    <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
+                                        <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" /></div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
