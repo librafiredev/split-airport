@@ -187,6 +187,19 @@ $footer-svg-height: 517px;
 }
 
 .footer-column-2 {
+    @include max-mq($crt) {
+        margin-bottom: 80px;
+    }
+}
+
+.footer-column-3 {
+    @include max-mq($crt) {
+        margin-left: auto;
+    }
+}
+
+.footer-column-3,
+.footer-column-2 {
     flex: 0 0 406px;
 
     @include max-mq($footer-primary-bp) {
@@ -196,15 +209,6 @@ $footer-svg-height: 517px;
 
     .menu {
         column-count: 2;
-    }
-}
-
-.footer-column-3 {
-    flex: 0 0 204px;
-
-    @include max-mq($footer-primary-bp) {
-        flex: 0 0 100%;
-        margin-bottom: 39px;
     }
 }
 
