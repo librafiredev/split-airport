@@ -44,6 +44,7 @@
     "webpack-remove-empty-scripts": "^1.0.1"
   },
   "dependencies": {
-    "select2": "^4.1.0-rc.0"
+    "select2": "^4.1.0-rc.0",
+    "@panzoom/panzoom": "^4.6.0"
   }
 }

@@ -1,4 +1,27 @@
+import Panzoom from "@panzoom/panzoom";
+
 $(function () {
+
+    var panzooms = {};
+
+    function centerAt(x, y, mapIndex) {
+        var currentPanzoom = panzooms[mapIndex];
+        if (!currentPanzoom) {
+            return
+        }
+
+        var dur = 200;
+
+        currentPanzoom.zoom(2, { duration: dur, animate: true });
+
+        setTimeout(function () {
+            currentPanzoom.pan(
+                x,
+                y,
+                { animate: true }
+            );
+        }, dur + 10);
+    }
 
     function initSidebarAccordions() {
         $('.map-sidebar-level-1>li>.map-sidebar-btn').on('click', function () {
@@ -62,7 +85,7 @@ $(function () {
         handleSidebarSearch(sectionElement, event, someData);
     }, 300);
 
-    function goToFloor(sectionElement, targetFloor, mapIndex) {
+    function goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex) {
         sectionElement.find('.airport-map-floor-btn').removeClass('current-floor-btn');
         sectionElement.find('[data-target-floor-idx="' + targetFloor + '"]').addClass('current-floor-btn');
         sectionElement.find('.is-active-cbs').removeClass('is-active-cbs');
@@ -72,7 +95,31 @@ $(function () {
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
     }
 
-    function toggleGroupHighlight(sectionElement, groupButton) {
+    function goToFloor(sectionElement, targetFloor, mapIndex) {
+        var currentPanzoom = panzooms[mapIndex];
+        var shouldDelay = false;
+
+        var zoomDur = 300;
+
+        if (currentPanzoom) {
+            if (currentPanzoom.getScale() > 1 || currentPanzoom.getScale() < 1) {
+                shouldDelay = true;
+            }
+            setTimeout(function () {
+                currentPanzoom.zoom(0, { animate: true });
+            }, zoomDur * .1);
+        }
+
+        if (shouldDelay) {
+            setTimeout(function () {
+                goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex);
+            }, zoomDur * 1.1)
+        } else {
+            goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex);
+        }
+    }
+
+    function toggleGroupHighlight(sectionElement, groupButton, floorData) {
         var isActive = groupButton.hasClass('highlighted-sidebar-item');
         sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
         sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
@@ -81,6 +128,26 @@ $(function () {
             var targetSelector = groupButton.attr('data-target-group-class');
             sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
             groupButton.addClass('highlighted-sidebar-item');
+
+            var pannable = sectionElement.find('.airport-map-pannable').eq(0)[0];
+            var pannableW = pannable.clientWidth;
+            var pannableH = pannable.clientHeight;
+
+            var groupItems = sectionElement.find('.' + targetSelector).find('>.airport-map-shape-wrap');
+
+            var x = 0;
+            var y = 0;
+            groupItems.each(function () {
+                var gElement = $(this).eq(0)[0];
+                x += (parseFloat($(this).eq(0).attr('data-original-x')) * pannableW / floorData.width) + gElement.clientWidth / 2;
+                y += (parseFloat($(this).eq(0).attr('data-original-y')) * pannableH / floorData.height) + gElement.clientHeight / 2;
+            });
+            x = x / groupItems.length;
+            y = y / groupItems.length;
+
+            var targetX = (-x + pannableW / 2);
+            var targety = (-y + pannableH / 2);
+            centerAt(targetX, targety, 0);
         }
     }
 
@@ -104,19 +171,20 @@ $(function () {
                 var groupButton = $(this);
                 var targetFloor = groupButton.attr('data-target-floor');
                 var isActive = groupButton.hasClass('highlighted-sidebar-item');
+                var currentFloor = window.airportMaps[i].currentFloor;
+                var currentFloorData = window.airportMaps[i].floorsData[currentFloor];
 
-
-                if (parseInt(targetFloor) == window.airportMaps[i].currentFloor) {
-                    toggleGroupHighlight(sectionElement, groupButton);
+                if (parseInt(targetFloor) == currentFloor) {
+                    toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
                 } else {
                     // NOTE: this will first disable the item before changing the floor
                     // hopefully that will make for a better ux
                     if (isActive) {
-                        toggleGroupHighlight(sectionElement, groupButton);
+                        toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
                     }
                     goToFloor(sectionElement, targetFloor, i);
                     setTimeout(function () {
-                        toggleGroupHighlight(sectionElement, groupButton);
+                        toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
                     }, 500);
                 }
             });
@@ -143,6 +211,13 @@ $(function () {
                 debouncedHandleSearch(sectionElement, e, flatCategories);
             });
 
+            if (window.innerWidth < 767) {
+                panzooms[i] = {};
+
+                sectionElement.find('.airport-map-pannable').each(function () {
+                    panzooms[i] = Panzoom(this, { contain: 'outside', startScale: 1.0 });
+                });
+            }
         });
     }
 
