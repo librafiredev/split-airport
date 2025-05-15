@@ -38,8 +38,8 @@ else: ?>
 
                                 <div class="download-schedule-tri-main">
                                     <div class="download-schedule-tri-main-l">
-                                        <div class="download-schedule-tri-title"><?php echo ucfirst(basename($file_path)); ?></div>
-                                        <div class="download-schedule-tri-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
+                                    <div class="download-schedule-tri-title"><?php echo get_the_title($file_id); ?></div>
+                                    <div class="download-schedule-tri-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
                                     </div>
                                     <a href="<?php echo esc_url($file_url); ?>" download class="download-schedule-item-dl">
                                         <?php esc_html_e('Download', 'split-aritport'); ?>

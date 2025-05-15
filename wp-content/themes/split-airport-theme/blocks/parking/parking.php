@@ -170,8 +170,8 @@ else:
                                 ?>
 
                                 <div class="parking__download-file-info">
-                                    <p class="parking__download-file-name"><?php echo ucfirst(basename($file_path)); ?></p>
-                                    <p class="parking__download-file-type"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></p>
+                                <p class="parking__download-file-name"><?php echo get_the_title($download_section['file']); ?></p>
+                                <p class="parking__download-file-type"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></p>
                                 </div>
 
                                 <a download href="<?php echo esc_url($file_url); ?>"><?php esc_html_e('Download', 'split-aritport'); ?></a>

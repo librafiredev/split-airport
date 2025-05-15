@@ -35,8 +35,8 @@ else: ?>
                             </div>
                             <div class="document-item-main">
                                 <div class="document-item-main-l">
-                                    <div class="document-item-title"><?php echo ucfirst(basename($file_path)); ?></div>
-                                    <div class="document-item-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
+                                <div class="document-item-title"><?php echo get_the_title($file_id); ?></div>
+                                <div class="document-item-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
                                 </div>
                                 <a href="<?php echo esc_url($file_url); ?>" download class="document-item-dl">
                                     <?php esc_html_e('Download', 'split-aritport'); ?>
