@@ -15,7 +15,9 @@ if (isset($airline) && $airline) {
 
 $type = strtolower($AD);
 
-$timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals' : 'departure'), 'options');
+$options_slug = apply_filters('wpml_current_language', null) !== 'en' ? 'options_' . apply_filters('wpml_current_language', null) : "options";
+
+$timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals' : 'departure'), $options_slug);
 ?>
 
 <div class="flight-popup">
