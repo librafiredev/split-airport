@@ -219,76 +219,78 @@ $guides_data = [
                     
                 </div>
                 <div class="airport-map-floors">
-                    <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
-                    <?php foreach ($floors_data as $floor_idx => $floor) : ?>
-                        <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
-                        <div class="airport-map-pannable <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
-                            <div class="airport-map-wrap">
-                                <img src="<?php echo $floor['bg_path']; ?>" alt="" />
-                                <?php if (!empty($floor['overlay_path'])) : ?>
-                                    <img class="airport-map-fg-overlay" src="<?php echo $floor['overlay_path']; ?>" alt="" />
-                                <?php endif; ?>
-                                <?php $groups = $icon_data[$floor_idx]; ?>
-                                <?php foreach ($groups as $g_idx => $group) : ?>
-                                    <div class="airport-map-group <?php echo $group_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $g_idx; ?>">
-                                        <?php $items = $group['items']; ?>
-                                        <?php foreach ($items as $i_key => $item) : ?>
-                                            <?php
-                                            $shape_type = $item['type'] ?: 'icon';
-                                            $shape_path = $item['shape_path'];
-                                            $pos_x = $item['x'];
-                                            $pos_y = $item['y'];
-                                            if ($shape_type != 'area') {
-                                                $pos_x += $icon_size * .5;
-                                                $pos_y += $icon_size * .5;
-                                            }
-                
-                                            $pos_x_percent = 100 * $pos_x / $floor['width'];
-                                            $pos_y_percent = 100 * $pos_y / $floor['height'];
-                                            ?>
-                                            <?php if ( $shape_type == 'area' ) : ?>
-                                                <?php
-                                                $width_percent = 100 * $item['width'] / $floor['width'];
-                                                $height_percent = 100 * $item['height'] / $floor['height'];
-                                                ?>
-                
-                                                <div class="airport-map-shape-wrap airport-map-shape-wrap-area" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;">
-                                                    <div
-                                                        class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
-                                                    >
-                                                        <?php echo file_get_contents($shape_path); ?>
-                                                    </div>
-                
-                                                </div>
-                
-                                            <?php else: ?>
-                                                <?php
-                                                $width_percent = 100 * $icon_size / $floor['width'];
-                                                $height_percent = 100 * $icon_size / $floor['height'];
-                                                ?>
-                                                <div class="airport-map-shape-wrap airport-map-shape-wrap-icon" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;">
-                                                    <div
-                                                        class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
-                                                    >
-                                                        <img class="airport-map-icon-img" src="<?php echo $shape_path; ?>" />
-                                                    </div>
-                                                    <div class="airport-map-tooltip <?php echo $item['tooltip_side'] ?: 'right'; ?>-tooltip"><?php echo $group['label']; ?></div>
-                                                </div>
-                                            <?php endif; ?>
+                    <div class="airport-map-floors-inner">
+                        <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
+                        <div class="airport-map-pannable">
+                            <?php foreach ($floors_data as $floor_idx => $floor) : ?>
+                                <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
+                                <div class="airport-map-floor <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
+                        
+                                    <div class="airport-map-wrap">
+                                        <img src="<?php echo $floor['bg_path']; ?>" alt="" />
+                                        <?php if (!empty($floor['overlay_path'])) : ?>
+                                            <img class="airport-map-fg-overlay" src="<?php echo $floor['overlay_path']; ?>" alt="" />
+                                        <?php endif; ?>
+                                        <?php $groups = $icon_data[$floor_idx]; ?>
+                                        <?php foreach ($groups as $g_idx => $group) : ?>
+                                            <div class="airport-map-group <?php echo $group_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $g_idx; ?>">
+                                                <?php $items = $group['items']; ?>
+                                                <?php foreach ($items as $i_key => $item) : ?>
+                                                    <?php
+                                                    $shape_type = $item['type'] ?: 'icon';
+                                                    $shape_path = $item['shape_path'];
+                                                    $pos_x = $item['x'];
+                                                    $pos_y = $item['y'];
+                                                    if ($shape_type != 'area') {
+                                                        $pos_x += $icon_size * .5;
+                                                        $pos_y += $icon_size * .5;
+                                                    }
+                                                    $pos_x_percent = 100 * $pos_x / $floor['width'];
+                                                    $pos_y_percent = 100 * $pos_y / $floor['height'];
+                                                    ?>
+                                                    <?php if ( $shape_type == 'area' ) : ?>
+                                                        <?php
+                                                        $width_percent = 100 * $item['width'] / $floor['width'];
+                                                        $height_percent = 100 * $item['height'] / $floor['height'];
+                                                        ?>
+                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-area" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
+                                                            <div
+                                                                class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
+                                                            >
+                                                                <?php echo file_get_contents($shape_path); ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php else: ?>
+                                                        <?php
+                                                        $width_percent = 100 * $icon_size / $floor['width'];
+                                                        $height_percent = 100 * $icon_size / $floor['height'];
+                                                        ?>
+                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-icon" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
+                                                            <div
+                                                                class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
+                                                            >
+                                                                <img class="airport-map-icon-img" src="<?php echo $shape_path; ?>" />
+                                                            </div>
+                                                            <div class="airport-map-tooltip <?php echo $item['tooltip_side'] ?: 'right'; ?>-tooltip"><?php echo $group['label']; ?></div>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endforeach ?>
+                                            </div>
                                         <?php endforeach ?>
+                        
+                                        <?php $guide_group = $guides_data[$floor_idx]; ?>
+                                        <?php if (!empty($guide_group)) : ?>
+                                            <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
+                                                <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" /></div>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
-                                <?php endforeach ?>
-                                
-                                <?php $guide_group = $guides_data[$floor_idx]; ?>
-                                <?php if (!empty($guide_group)) : ?>
-                                    <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                        <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" /></div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div>
+                        
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
-                    <?php echo $floor_controls_html . '</div>'; ?>
+                        <?php echo $floor_controls_html . '</div>'; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -302,6 +304,7 @@ $guides_data = [
         window.airportMaps.push({
             categories: <?php echo json_encode($category_data); ?>,
             currentFloor: <?php echo $initial_floor; ?>,
+            floorsData: <?php echo json_encode($floors_data); ?>,
         })
     </script>
     

@@ -132,6 +132,7 @@
     max-width: 1097px;
     margin-left: auto;
     overflow: hidden;
+    padding: 100px;
 }
 
 .airport-map-group {
@@ -207,7 +208,7 @@
     background-color: #f6f6f6;
 }
 
-.airport-map-pannable {
+.airport-map-floor {
     position: absolute;
     top: 0;
     left: 0;
@@ -223,7 +224,7 @@
         opacity: 1;
         transform: translateY(0);
 
-        & ~ .airport-map-pannable {
+        & ~ .airport-map-floor {
             transform: translateY(-10%);
         }
     }
@@ -291,4 +292,8 @@
     &:hover {
         color: $primary-color;
     }
+}
+
+.airport-map-floors-inner {
+    overflow: visible !important;
 }
