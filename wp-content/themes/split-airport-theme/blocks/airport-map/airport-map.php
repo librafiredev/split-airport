@@ -195,6 +195,28 @@ $guides_data = [
             'label' => esc_html__('Local arrival'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
         ),
+        array(
+            'label' => esc_html__('Local departure'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-departure.svg",
+            'guide_tooltips' => [
+                array(
+                    'label' => esc_html__('2. Esclator to l2'),
+                    'x' => 1300,
+                    'y' => 500,
+                    'tooltip_side' => 'left',
+                ),
+                array(
+                    'label' => esc_html__('1. Check in'),
+                    'x' => 1525,
+                    'y' => 330,
+                    'tooltip_side' => 'right',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('International arrival'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
+        ),
 
 
         array(
@@ -333,7 +355,16 @@ foreach ($floors_data as $key => $value) {
                                         <?php $guide_group = $guides_data[$floor_idx]; ?>
                                         <?php if (!empty($guide_group)) : ?>
                                             <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                                <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" /></div>
+                                                <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" />
+                                                    <?php if (!empty($guide_item['guide_tooltips'])) : ?>
+                                                        <?php foreach ($guide_item['guide_tooltips'] as $key => $guide_tooltip) :
+                                                            $pos_x_percent = 100 * $guide_tooltip['x'] / $floor['width'];
+                                                            $pos_y_percent = 100 * $guide_tooltip['y'] / $floor['height'];
+                                                            ?>
+                                                            <div class="airport-map-tooltip airport-map-tooltip-guide guide-<?php echo $guide_tooltip['tooltip_side'] ?: 'right'; ?>-tooltip" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%;"><?php echo $guide_tooltip['label']; ?></div>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
+                                                </div>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </div>
