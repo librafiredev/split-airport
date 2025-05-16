@@ -95,11 +95,11 @@ $(function () {
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
     }
 
-    function goToFloor(sectionElement, targetFloor, mapIndex) {
+    function executePotentiallyDelayedAction(mapIndex, action) {
         var currentPanzoom = panzooms[mapIndex];
         var shouldDelay = false;
 
-        var zoomDur = 300;
+        var zoomDur = 400;
 
         if (currentPanzoom) {
             if (currentPanzoom.getScale() > 1 || currentPanzoom.getScale() < 1) {
@@ -117,11 +117,17 @@ $(function () {
 
         if (shouldDelay) {
             setTimeout(function () {
-                goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex);
+                action();
             }, zoomDur * 1.1)
         } else {
-            goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex);
+            action();
         }
+    }
+
+    function goToFloor(sectionElement, targetFloor, mapIndex) {
+        executePotentiallyDelayedAction(mapIndex, function () {
+            goToFloorWithoutMobile(sectionElement, targetFloor, mapIndex);
+        });
     }
 
     function toggleGroupHighlight(sectionElement, groupButton, floorData) {
@@ -195,14 +201,17 @@ $(function () {
             });
 
             sectionElement.find('.airport-map-guide-cb').change(function () {
-                var guideTargetSelector = $(this).attr('data-target-guide-class');
+                var checkbox = this;
+                var guideTargetSelector = $(checkbox).attr('data-target-guide-class');
                 var guideTarget = sectionElement.find('.' + guideTargetSelector);
 
-                if (this.checked) {
-                    guideTarget.addClass('is-guide-visible');
-                } else {
-                    guideTarget.removeClass('is-guide-visible');
-                }
+                executePotentiallyDelayedAction(i, function () {
+                    if (checkbox.checked) {
+                        guideTarget.addClass('is-guide-visible');
+                    } else {
+                        guideTarget.removeClass('is-guide-visible');
+                    }
+                });
 
 
             });
