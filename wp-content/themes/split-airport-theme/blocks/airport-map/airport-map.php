@@ -29,7 +29,10 @@ if( ! function_exists('recoursively_render_map_categories') ) :
                 $has_target_group = isset($item['group_index']);
                 ?>
                 <li class="map-sidebar-searchable <?php echo $item_class; ?>">
-                    <button class="map-sidebar-btn <?php echo $has_toggle_sub_menu || (empty($item['children']) && $level != 0) ? 'map-sidebar-clickable' : ''; ?> <?php echo $has_target_group ? 'has-target-group' : ''; ?>" type="button" data-target-floor="<?php echo $floor; ?>" data-target-group-class="<?php echo $options['group_class_prefix'] . $floor . '-' . $group_idx; ?>">
+                    <button class="map-sidebar-btn <?php echo $has_toggle_sub_menu || (empty($item['children']) && $level != 0) ? 'map-sidebar-clickable' : 'map-sidebar-root'; ?> <?php echo $has_target_group ? 'has-target-group' : ''; ?>" type="button" data-target-floor="<?php echo $floor; ?>" data-target-group-class="<?php echo $options['group_class_prefix'] . $floor . '-' . $group_idx; ?>">
+                        <?php if (!empty($item['icon_path'])): ?>
+                            <img class="map-sidebar-item-icon" src="<?php echo $item['icon_path']; ?>" alt="Icon">
+                        <?php endif; ?>
                         <?php if ($item['label']) : ?>
                             <?php echo $item['label']; ?>
                         <?php else: ?>
@@ -37,7 +40,7 @@ if( ! function_exists('recoursively_render_map_categories') ) :
                             <?php echo $additinal_data[$floor][$group_idx]['label']; ?>
                         <?php endif ?>
                         <?php if ( $has_toggle_sub_menu ) : ?>
-                            <span>
+                            <span class="map-sidebar-chev">
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/arrow-down.svg'); ?>
                             </span>
                         <?php endif; ?>
@@ -140,16 +143,13 @@ $icon_data = [
 ];
 $category_data = [
     array(
-        'label' => esc_html__('Baggage'),
-        'children' => [
-            array(
-                'group_index' => 0,
-                'floor' => 0,
-            ),
-        ],
+        'label' => esc_html__('Check-in'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/check-in-icon.svg",
+        'children' => [],
     ),
     array(
         'label' => esc_html__('Services'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/users-icon.svg",
         'children' => [
             array(
                 'label' => esc_html__('Info pult'),
@@ -162,6 +162,31 @@ $category_data = [
                 ]
             ),
         ],
+    ),
+    array(
+        'label' => esc_html__('Baggage'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/baggage-icon.svg",
+        'children' => [
+            array(
+                'group_index' => 0,
+                'floor' => 0,
+            ),
+        ],
+    ),
+    array(
+        'label' => esc_html__('Passanger controls'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/security-icon.svg",
+        'children' => [],
+    ),
+    array(
+        'label' => esc_html__('Parking'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/parking-icon.svg",
+        'children' => [],
+    ),
+    array(
+        'label' => esc_html__('Restaurants & Caffe bars'),
+        'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/restaurant-icon.svg",
+        'children' => [],
     ),
 ];
 $guides_data = [
@@ -187,15 +212,35 @@ $guides_data = [
     []
 ];
 
+$max_aspect_ratio = null;
+
+foreach ($floors_data as $key => $value) {
+    $c_ar = $value['width'] / max($value['height'], 1);
+    if ($max_aspect_ratio == null) {
+        $max_aspect_ratio = $c_ar;
+    } else {
+        $max_aspect_ratio = min($c_ar, $max_aspect_ratio);
+    }
+}
+
 ?>
 
     <section class="airport-map-wrapper">
+        <div class="container" style="position: relative;">
+            <button type="button" onclick="history.go(-1)" class="page-hero-back-btn airport-map-back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.765 23.6263L0.8 13.7998C0.318633 13.3249 0.0326416 12.6815 0 12C0.0330377 11.3186 0.318966 10.6753 0.8 10.2002L11.765 0.373699C12.1426 0.0245768 12.6757 -0.0902977 13.1598 0.0731377C13.644 0.236573 14.004 0.652946 14.1018 1.16255C14.1997 1.67215 14.0201 2.19587 13.632 2.53283L5.166 10.1167C5.08832 10.1869 5.06134 10.2987 5.09822 10.3975C5.1351 10.4963 5.22815 10.5616 5.332 10.5616L22.587 10.5616C23.3674 10.5616 24 11.2056 24 12C24 12.7944 23.3674 13.4384 22.587 13.4384L5.332 13.4384C5.22785 13.4383 5.13456 13.504 5.09784 13.6032C5.06112 13.7024 5.08868 13.8144 5.167 13.8843L13.632 21.4672C14.0201 21.8041 14.1997 22.3278 14.1018 22.8375C14.004 23.3471 13.644 23.7634 13.1598 23.9269C12.6757 24.0903 12.1426 23.9754 11.765 23.6263Z" fill="#5B5B5B" />
+                </svg>
+            </button>
+            <h1 class="page-hero-title airport-map-title"><?php esc_html_e('Interactive map'); ?></h1>
+        </div>
         <div class="airport-map-container">
             <div class="airport-map-sidebar">
-                <div>
-                    <input type="text" class="airport-map-search" />
+                <div class="airport-map-sidebar-sarch-wrap">
+                    <img src="<?php echo get_template_directory_uri() . "/assets/images/lg-search.svg"; ?>" alt="Sarch icon" class="airport-map-sarch-icon">
+                    <input type="text" class="airport-map-search" placeholder="<?php esc_attr_e('Search airport map'); ?>" />
                 </div>
-                <div>
+                <div class="airport-map-sidebar-menu">
                     <?php recoursively_render_map_categories($category_data, $icon_data, '', 0, array('group_class_prefix' => $group_class_prefix)); ?>
                     <div class="airport-map-no-results hidden-no-results"><?php esc_html_e('No results found for: ') ?>“<span class="airport-map-search-term"></span>”</div>
                 </div>
@@ -203,24 +248,31 @@ $guides_data = [
             <div class="airport-map-main">
                 <div class="airport-map-guide-cbs">
                     <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
-                        <?php if (empty($guide_group)) { 
-                            continue;
-                        } ?>
 
                         <div class="airport-map-guide-cbs-floor <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>" data-cbs-floor="<?php echo $g_floor_idx; ?>">
                             <div class="airport-map-guide-m-label"><?php echo esc_html__('Airport guide:'); ?></div>
                             <div class="airport-map-guide-cbs-only">
-                                <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                    <label class="airport-map-guide-cb-wrap"><input type="checkbox" class="airport-map-guide-cb" data-target-guide-class="<?php echo $overlay_guide_class_prefix; ?><?php echo $g_floor_idx; ?>-<?php echo $guide_index; ?>" /><span><?php echo $guide_item['label']; ?></span></label>
-                                <?php endforeach; ?>
+                                <?php if (empty($guide_group)) : ?>
+                                    <div class="airport-map-no-guide">
+                                        <?php if($g_floor_idx == 2) : ?>
+                                            <?php esc_html_e('No guides on floor 2'); ?>
+                                        <?php else: ?>
+                                            <?php esc_html_e('No guides on current floor'); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
+                                        <label class="airport-map-guide-cb-wrap"><input type="checkbox" class="airport-map-guide-cb" data-target-guide-class="<?php echo $overlay_guide_class_prefix; ?><?php echo $g_floor_idx; ?>-<?php echo $guide_index; ?>" /><span><?php echo $guide_item['label']; ?></span></label>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
                     
                 </div>
-                <div class="airport-map-floors">
+                <div class="airport-map-floors" style="aspect-ratio: <?php echo $max_aspect_ratio; ?>;">
+                    <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
                     <div class="airport-map-floors-inner">
-                        <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
                         <div class="airport-map-pannable">
                             <?php foreach ($floors_data as $floor_idx => $floor) : ?>
                                 <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
@@ -289,8 +341,8 @@ $guides_data = [
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <?php echo $floor_controls_html . '</div>'; ?>
                     </div>
+                    <?php echo $floor_controls_html . '</div>'; ?>
                 </div>
             </div>
         </div>
