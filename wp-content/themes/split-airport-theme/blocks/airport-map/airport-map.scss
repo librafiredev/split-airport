@@ -2,6 +2,8 @@
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/blocks/page-hero-generic";
 
+$map-main-bp: $sm;
+
 .airport-map-wrapper {
     padding-top: 85px;
 
@@ -186,6 +188,12 @@
     border-left: none;
     border-top: none;
     background-color: #fcfcfc;
+
+    @include max-mq($map-main-bp) {
+        padding: 79px 0 15px 15px;
+        aspect-ratio: 1.2 !important;
+        border: none;
+    }
 }
 
 .page-hero-back-btn.airport-map-back-btn,
@@ -229,12 +237,23 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+
+    @include max-mq($map-main-bp) {
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
 }
 
 .airport-map-sidebar {
     min-width: 305px;
     display: flex;
     flex-direction: column;
+
+    @include max-mq($map-main-bp) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 2;
+    }
 }
 
 .airport-map-sidebar-sarch-wrap {
@@ -265,6 +284,11 @@
     border: 1px solid $gray;
     border-top: none;
 
+    @include max-mq($map-main-bp) {
+        min-height: 300px;
+        border-bottom: none;
+    }
+
     & > .map-sidebar-level-0 {
         position: absolute;
         width: 100%;
@@ -272,11 +296,20 @@
         top: 0;
         left: 0;
         overflow-y: auto;
+
+        @include max-mq($map-main-bp) {
+            position: relative;
+        }
     }
 }
 
 .airport-map-main {
     max-width: calc(100% - 305px);
+
+    @include max-mq($map-main-bp) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 .airport-map-main,
@@ -373,6 +406,11 @@
     position: absolute;
     top: 30px;
     left: 30px;
+
+    @include max-mq($map-main-bp) {
+        top: 20px;
+        left: 20px;
+    }
 }
 
 .airport-map-guide-cbs-floor {
@@ -387,6 +425,12 @@
     transition: $dur;
     height: 100%;
     padding: 5px 20px;
+
+    @include max-mq($map-main-bp) {
+        white-space: wrap;
+        flex-wrap: wrap;
+        padding: 11px 20px;
+    }
 
     &.is-active-cbs {
         pointer-events: all;
@@ -413,10 +457,19 @@
     scrollbar-color: $gray $footer-bgc;
     scrollbar-width: thin;
     height: 58px;
+
+    @include max-mq($map-main-bp) {
+        height: 82px;
+    }
 }
 
 .airport-map-guide-cbs-only {
     user-select: none;
+
+    @include max-mq($map-main-bp) {
+        white-space: wrap;
+        margin-left: -10px;
+    }
 }
 
 .airport-map-guide-cb-wrap {
@@ -442,6 +495,11 @@
             color: #5b5b5b;
             font-size: 15px;
             letter-spacing: -0.02em;
+
+            @include max-mq($map-main-bp) {
+                font-size: $font-size-base;
+                letter-spacing: -0.03em;
+            }
 
             &::before {
                 content: "";
@@ -501,9 +559,14 @@
     transform: translateY(-50%);
     display: block;
     pointer-events: none;
+
+    @include max-mq($map-main-bp) {
+        left: 20px;
+    }
 }
 
 .airport-map-search {
+    border-radius: 0;
     padding: 10px;
     font-size: 15px;
     padding-left: 60px;
@@ -513,6 +576,12 @@
     font-family: $primary-font;
     display: block;
     letter-spacing: -0.02em;
+
+    @include max-mq($map-main-bp) {
+        padding-left: 50px;
+        border-left: none;
+        border-right: none;
+    }
 }
 
 .airport-map-guide-m-label {
@@ -521,6 +590,13 @@
     letter-spacing: -0.02em;
     margin-right: 16px;
     line-height: 20px;
+
+    @include max-mq($map-main-bp) {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.03em;
+    }
 }
 
 .airport-map-no-guide {
@@ -533,4 +609,12 @@
     height: 20px;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+.airport-map-no-results {
+    padding: 20px;
+}
+
+.airport-map-search-term {
+    color: $primary-color;
 }

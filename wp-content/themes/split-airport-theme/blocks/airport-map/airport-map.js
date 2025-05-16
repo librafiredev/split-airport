@@ -12,7 +12,7 @@ $(function () {
 
         var dur = 200;
 
-        currentPanzoom.zoom(2, { duration: dur, animate: true });
+        currentPanzoom.zoom(2.5, { duration: dur, animate: true });
 
         setTimeout(function () {
             currentPanzoom.pan(
@@ -105,8 +105,13 @@ $(function () {
             if (currentPanzoom.getScale() > 1 || currentPanzoom.getScale() < 1) {
                 shouldDelay = true;
             }
+            currentPanzoom.pan(
+                0,
+                0,
+                { animate: true }
+            );
             setTimeout(function () {
-                currentPanzoom.zoom(0, { animate: true });
+                currentPanzoom.zoom(1, { animate: true });
             }, zoomDur * .1);
         }
 
@@ -216,6 +221,17 @@ $(function () {
 
                 sectionElement.find('.airport-map-pannable').each(function () {
                     panzooms[i] = Panzoom(this, { contain: 'outside', startScale: 1.0 });
+
+                    var isFirstTouch = true;
+
+                    $(this).on('touchend', function () {
+                        // NOTE: this is just to make it clear that map can be zoomed
+                        // without this scrolling is blocked
+                        if (isFirstTouch) {
+                            isFirstTouch = false;
+                            panzooms[i].zoom(1.5, { animate: true });
+                        }
+                    });
                 });
             }
         });
