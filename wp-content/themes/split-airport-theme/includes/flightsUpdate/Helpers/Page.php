@@ -10,7 +10,8 @@ class Page
 
     public static function getSearchPage()
     {
-        $pageID =  get_field('arrivals_timetable', 'options');
+        $options_slug = apply_filters('wpml_current_language', null) !== 'en' ? 'options_' . apply_filters('wpml_current_language', null) : "options";
+        $pageID =  get_field('arrivals_timetable', $options_slug);
         return self::$pageUrl = get_page_link($pageID);
     }
 }

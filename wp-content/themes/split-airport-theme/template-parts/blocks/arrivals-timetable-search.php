@@ -19,6 +19,9 @@ for ($i = 0; $i < 5; $i++) {
     $value = $formatter->format($timestamp);
     $dates[$key] = $value;
 }
+
+$flightDate = isset($_GET['flightDate']) ? wp_strip_all_tags($_GET['flightDate']) : "";
+$flightType = isset($_GET['flightType']) ? wp_strip_all_tags($_GET['flightType']) : "";
 ?>
 
 <div class="arrivals-timetable-search">
@@ -32,11 +35,11 @@ for ($i = 0; $i < 5; $i++) {
             <div class="arrivals-timetable-search__bottom-filters">
                 <div class="arrivals-timetable-search__radio-inputs">
                     <div class="arrivals-timetable-search__radio-input">
-                        <input id="arrivals-search" type="radio" name="flightsSearch" value="arrival" checked="checked" />
+                        <input <?php if($flightType === 'arrival') echo 'checked=checked'; ?>  id="arrivals-search" type="radio" name="flightsSearch" value="arrival" checked="checked" />
                         <label for="arrivals-search"><?php esc_html_e('Arrivals', 'split-airport'); ?></label><br>
                     </div>
                     <div class="arrivals-timetable-search__radio-input">
-                        <input id="departures-search" type="radio" name="flightsSearch" value="departure" />
+                        <input <?php if($flightType === 'departure') echo 'checked=checked'; ?> id="departures-search" type="radio" name="flightsSearch" value="departure" />
                         <label for="departures-search"><?php esc_html_e('Departures', 'split-airport'); ?></label><br>
                     </div>
                 </div>
@@ -44,7 +47,7 @@ for ($i = 0; $i < 5; $i++) {
                     <?php if ($dates): ?>
                         <select name="flightDateSearch">
                             <?php foreach ($dates as $value => $date): ?>
-                                <option value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ', ' : "") . $date; ?></option>
+                                <option <?php if($value === $flightDate) echo 'selected=selected'; ?> value="<?php echo $value; ?>"><?php echo ($value === date('Y-m-d') ? __('Today', 'split-airport') . ', ' : "") . $date; ?></option>
                             <?php endforeach; ?>
                         </select>
                     <?php endif; ?>

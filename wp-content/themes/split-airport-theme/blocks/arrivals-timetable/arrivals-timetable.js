@@ -3,7 +3,7 @@ import urlApiSingle from "../../assets/components/urlApiSingle";
 import {
     searchFiltersOpen,
     searchFiltersClose,
-    styleDateSelect
+    styleDateSelect,
 } from "../../assets/components/searchUtils";
 import request from "../../assets/components/flightsUpdateRequest";
 import flightPopup from "../../assets/components/flightPopup";
@@ -33,6 +33,10 @@ $(function () {
             tableTypeTitle.text(theme.FlightTypeTableStingArrival);
             const columnHeadingGate = $(`.arrivals-timetable__table-name.gate`);
             columnHeadingGate.remove();
+
+            // Change search type
+
+            $('[name="flightsSearch"][value="arrival"]').prop("checked", true);
         } else {
             tableTypeTitle.text(theme.FlightTypeTableStingDeparture);
             const flightColumn = $(
@@ -40,6 +44,11 @@ $(function () {
             );
             const columnHeadingGate = `<span class="arrivals-timetable__table-name gate">${theme.gateTableString}</span>`;
             flightColumn.after(columnHeadingGate);
+
+            // Change search type
+
+            $('[name="flightsSearch"][value="departure"]').prop("checked", true);
+  
         }
 
         request("");
@@ -76,6 +85,14 @@ $(function () {
         } else {
             earlierFlights.hide();
         }
+
+        // Search date change 
+
+        $('[name="flightDateSearch"]').val($(e.currentTarget).val());
+
+        const select2Render = $('.arrivals-timetable-search .arrivals-timetable-search__date .select2-selection__rendered');
+        select2Render.attr('title', $(e.currentTarget).find("option:selected").text())
+        select2Render.html($(e.currentTarget).find("option:selected").text())
 
         urlApiSingle("flightDate", $(e.currentTarget).val());
         request("");
@@ -114,7 +131,7 @@ $(function () {
 
     // Style select
 
-    styleDateSelect()
+    styleDateSelect();
 
     $("body").on("click", loadMore, loadMoreAction);
     searchInput.on("focus", searchFiltersOpen);
