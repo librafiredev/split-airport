@@ -73,13 +73,13 @@ $floors_data = [
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1.svg",
         'width' => 2470,
         'height' => 1462,
-        'overlay_path' => '',
+        'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-overlay.svg",
     ),
     array(
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-2.svg",
         'width' => 2475,
         'height' => 1469,
-        'overlay_path' => '',
+        'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-2-overlay.svg",
     ),
 ];
 $icon_data = [
@@ -106,7 +106,7 @@ $icon_data = [
                     'width' => 82,
                     'height' => 40,
                     'type' => 'area',
-                )
+                ),
             ],
         ),
         array(
@@ -115,6 +115,172 @@ $icon_data = [
                 array(
                     'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/info.svg',
                     'x' => 2085,
+                    'y' => 437,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Check-in counters'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-check-in.svg',
+                    'x' => 1392,
+                    'y' => 294,
+                    
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/check-in-area.svg',
+                    'x' => 1007,
+                    'y' => 193,
+                    'width' => 855,
+                    'height' => 77,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Self check-in'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-check-in-1.svg',
+                    'x' => 1055,
+                    'y' => 409,
+                    
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-check-in-2.svg',
+                    'x' => 1602,
+                    'y' => 398,
+                    'tooltip_side' => 'left',
+                    
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-checkin-area.svg',
+                    'x' => 1055,
+                    'y' => 398,
+                    'width' => 610,
+                    'height' => 132,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('flight tickets'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-boarding-pass-1.svg',
+                    'x' => 2370,
+                    'y' => 361,
+                    'tooltip_side' => 'left',
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-boarding-pass-1.svg',
+                    'x' => 2156,
+                    'y' => 437,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('VAT Refund'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/refund.svg',
+                    'x' => 954,
+                    'y' => 294,
+                    
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/refund-area.svg',
+                    'x' => 920,
+                    'y' => 280,
+                    'width' => 99,
+                    'height' => 102,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Meeting Point'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/shrink.svg',
+                    'x' => 1579,
+                    'y' => 734,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('ATM'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/money-atm.svg',
+                    'x' => 1243,
+                    'y' => 1054,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Bank'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bank.svg',
+                    'x' => 1032,
+                    'y' => 1183,
+                    'tooltip_side' => 'left',
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bank-area.svg',
+                    'x' => 966,
+                    'y' => 1148,
+                    'width' => 195,
+                    'height' => 133,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Exchange'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/exchange.svg',
+                    'x' => 1218,
+                    'y' => 1184,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/exchange-area.svg',
+                    'x' => 1159,
+                    'y' => 1148,
+                    'width' => 179,
+                    'height' => 133,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Departure Passenger Assistance'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'x' => 1528,
+                    'y' => 103,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'x' => 1614,
+                    'y' => 597,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Store'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/storefront.svg',
+                    'x' => 2370,
                     'y' => 437,
                     'tooltip_side' => 'left',
                 ),
@@ -133,13 +299,175 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Departure Passenger Assistance'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'x' => 1342,
+                    'y' => 162,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Duty free shops'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'x' => 693,
+                    'y' => 375,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'x' => 540,
+                    'y' => 622,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'x' => 1874,
+                    'y' => 284,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'x' => 2104,
+                    'y' => 335,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free-area-0.svg',
+                    'x' => 631,
+                    'y' => 328,
+                    'width' => 186,
+                    'height' => 158,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free-area-1.svg',
+                    'x' => 482,
+                    'y' => 604,
+                    'width' => 187,
+                    'height' => 97,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Smoking Area'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/allowances-smoking.png',
+                    'x' => 566,
+                    'y' => 358,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/smoking-area.svg',
+                    'x' => 492,
+                    'y' => 326,
+                    'width' => 96,
+                    'height' => 94,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Business lounge'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'x' => 448,
+                    'y' => 813,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('International Departure'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'x' => 704,
+                    'y' => 227,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'x' => 2082,
+                    'y' => 227,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Domestic Departure'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'x' => 246,
+                    'y' => 915,
+                ),
+            ],
+        ),
     ],
+    // FLOOR 2
+    [
+        array(
+            'label' => esc_html__('Business lounge'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'x' => 328,
+                    'y' => 701,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'x' => 328,
+                    'y' => 886,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lounge-1.svg',
+                    'x' => 275,
+                    'y' => 632,
+                    'width' => 182,
+                    'height' => 208,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lounge-2.svg',
+                    'x' => 275,
+                    'y' => 842,
+                    'width' => 182,
+                    'height' => 149,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+    ]
 ];
 $category_data = [
     array(
         'label' => esc_html__('Check-in'),
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/check-in-icon.svg",
-        'children' => [],
+        'children' => [
+            array(
+                'group_index' => 2,
+                'floor' => 0,
+            ),
+            array(
+                'label' => esc_html__('Self Check-in Kiosks'),
+                'group_index' => 3,
+                'floor' => 0,
+            ),
+            array(
+                'label' => esc_html__('Flight Ticket Purchase'),
+                'group_index' => 4,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 5,
+                'floor' => 0,
+            ),
+        ],
     ),
     array(
         'label' => esc_html__('Services'),
@@ -159,6 +487,75 @@ $category_data = [
                         'floor' => 1,
                     ),
                 ]
+            ),
+            array(
+                'group_index' => 6,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 7,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 8,
+                'floor' => 0,
+            ),
+            array(
+                'label' => esc_html__('Exchange Office'),
+                'group_index' => 9,
+                'floor' => 0,
+            ),
+            array(
+                'label' => esc_html__('Departure Passenger Assistance'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('Assistance on floor 0'),
+                        'group_index' => 10,
+                        'floor' => 0,
+                    ),
+                    array(
+                        'label' => esc_html__('Assistance on floor 1'),
+                        'group_index' => 1,
+                        'floor' => 1,
+                    ),
+                ]
+            ),
+            array(
+                'group_index' => 2,
+                'floor' => 1,
+            ),
+            array(
+                'group_index' => 3,
+                'floor' => 1,
+            ),
+            array(
+                'label' => esc_html__('Business lounges'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('Lounges on floor 1'),
+                        'group_index' => 4,
+                        'floor' => 1,
+                    ),
+                    array(
+                        'label' => esc_html__('Lounges on floor 2'),
+                        'group_index' => 0,
+                        'floor' => 2,
+                    ),
+                ]
+            ),
+            array(
+                'label' => esc_html__('International Departure Area'),
+                'group_index' => 5,
+                'floor' => 1,
+            ),
+            array(
+                'label' => esc_html__('Domestic Departure Area'),
+                'group_index' => 6,
+                'floor' => 1,
+            ),
+            array(
+                'group_index' => 11,
+                'floor' => 0,
             ),
         ],
     ),
@@ -247,6 +644,7 @@ $guides_data = [
             'label' => esc_html__('Baggage departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-departure.svg",
             'target_class' => 'map-guide-baggage-departure',
+            'override_z_index' => 10,
         ),
     ],[
         array(
@@ -376,7 +774,7 @@ foreach ($floors_data as $key => $value) {
                                                         $width_percent = 100 * $item['width'] / $floor['width'];
                                                         $height_percent = 100 * $item['height'] / $floor['height'];
                                                         ?>
-                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-area" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
+                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-area" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;<?php echo isset($item['override_z_index']) ? ' z-index:' . $item['override_z_index'] : ''; ?>" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
                                                             <div
                                                                 class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
                                                             >
@@ -388,7 +786,7 @@ foreach ($floors_data as $key => $value) {
                                                         $width_percent = 100 * $icon_size / $floor['width'];
                                                         $height_percent = 100 * $icon_size / $floor['height'];
                                                         ?>
-                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-icon" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
+                                                        <div class="airport-map-shape-wrap airport-map-shape-wrap-icon" style="left: <?php echo $pos_x_percent; ?>%; top: <?php echo $pos_y_percent; ?>%; width: <?php echo $width_percent; ?>%; height: <?php echo $height_percent; ?>%;<?php echo isset($item['override_z_index']) ? ' z-index:' . $item['override_z_index'] : ''; ?>" data-original-x="<?php echo $item['x']; ?>" data-original-y="<?php echo $item['y']; ?>">
                                                             <div
                                                                 class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
                                                             >
@@ -404,7 +802,7 @@ foreach ($floors_data as $key => $value) {
                                         <?php $guide_group = $guides_data[$floor_idx]; ?>
                                         <?php if (!empty($guide_group)) : ?>
                                             <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                                <div class="airport-map-guide-wrap <?php echo $guide_item['target_class']; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" />
+                                                <div class="airport-map-guide-wrap <?php echo $guide_item['target_class']; ?>" style="<?php echo isset($guide_item['override_z_index']) ? 'z-index:' . $guide_item['override_z_index'] : ''; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" />
                                                     <?php if (!empty($guide_item['guide_tooltips'])) : ?>
                                                         <?php foreach ($guide_item['guide_tooltips'] as $key => $guide_tooltip) :
                                                             $pos_x_percent = 100 * $guide_tooltip['x'] / $floor['width'];
