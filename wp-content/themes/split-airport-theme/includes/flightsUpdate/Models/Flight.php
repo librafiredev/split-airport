@@ -107,9 +107,10 @@ class Flight
         $destinationWhere = "";
         $airlineWhere = "";
         $flightsTimeWhere = " date(fm.schtime) = date(:schdate)
-        AND time(fm.schtime) >= time(:schtime) ";
-
-
+        AND  (
+        (fm.esttime IS NOT NULL AND time(fm.esttime) >= time(:schtime)) OR
+        (fm.esttime IS NULL AND time(fm.schtime) >= time(:schtime))) ";
+              
         if (!$date) {
             $date = DateTimeFlight::todayDate();
         }
@@ -164,7 +165,7 @@ class Flight
                 . $searchWhere
                 . $destinationWhere
                 . $airlineWhere . "
-        ORDER BY fm.schtime
+        ORDER BY COALESCE(fm.esttime, fm.schtime)
         " . $pagination
         );
 
