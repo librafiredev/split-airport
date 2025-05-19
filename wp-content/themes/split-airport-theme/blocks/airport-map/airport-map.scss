@@ -483,6 +483,7 @@ $map-main-bp: $sm;
     @include max-mq($map-main-bp) {
         white-space: wrap;
         margin-left: -10px;
+        display: flex;
     }
 }
 
@@ -494,6 +495,14 @@ $map-main-bp: $sm;
     display: inline-flex;
     align-items: center;
     padding-right: 6px;
+
+    @include max-mq($map-main-bp) {
+        flex-shrink: 0;
+
+        &:last-child {
+            padding-right: 20px;
+        }
+    }
 
     input {
         cursor: pointer;
