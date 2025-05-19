@@ -237,8 +237,12 @@ $map-main-bp: $sm;
 }
 
 .airport-map-group {
-    * {
+    & > * {
         z-index: 8;
+
+        &.airport-map-shape-wrap-icon {
+            z-index: 9;
+        }
     }
 }
 
