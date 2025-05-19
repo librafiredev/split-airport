@@ -273,6 +273,7 @@ $map-main-bp: $sm;
 
 .airport-map-sidebar {
     min-width: 305px;
+    max-width: 305px;
     display: flex;
     flex-direction: column;
 

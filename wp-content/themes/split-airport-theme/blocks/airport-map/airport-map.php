@@ -123,22 +123,16 @@ $icon_data = [
     ],
     // FLOOR 1
     [
-        // array(
-        //     'label' => '',
-        //     'category' => 1,
-        //     'items' => [
-        //         array(
-        //             'shape_path' => '',
-        //         ),
-        //         array(
-        //             'shape_path' => '',
-        //         ),
-        //         array(
-        //             'shape_path' => '',
-        //             'type' => 'area',
-        //         )
-        //     ],
-        // ),
+        array(
+            'label' => esc_html__('Info Pult'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/info.svg',
+                    'x' => 1979,
+                    'y' => 99,
+                ),
+            ],
+        ),
     ],
 ];
 $category_data = [
@@ -158,6 +152,11 @@ $category_data = [
                         'label' => esc_html__('Info on floor 0'),
                         'group_index' => 1,
                         'floor' => 0,
+                    ),
+                    array(
+                        'label' => esc_html__('Info on floor 1'),
+                        'group_index' => 0,
+                        'floor' => 1,
                     ),
                 ]
             ),
