@@ -496,6 +496,7 @@ $map-main-bp: $sm;
     @include max-mq($map-main-bp) {
         white-space: wrap;
         margin-left: -10px;
+        height: 28px;
     }
 }
 
@@ -505,6 +506,7 @@ $map-main-bp: $sm;
     vertical-align: middle;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;
 
     &.is-active-cbs {
         padding: 5px 10px;
@@ -634,6 +636,7 @@ $map-main-bp: $sm;
         font-size: 12px;
         font-weight: bold;
         letter-spacing: 0.03em;
+        flex: 0 0 100%;
     }
 }
 
@@ -641,6 +644,12 @@ $map-main-bp: $sm;
     font-size: 15px;
     color: #5b5b5b;
     display: inline-block;
+    white-space: nowrap;
+
+    @include max-mq($map-main-bp) {
+        padding-left: 10px;
+        font-size: $font-size-base;
+    }
 }
 
 .map-sidebar-item-icon {
