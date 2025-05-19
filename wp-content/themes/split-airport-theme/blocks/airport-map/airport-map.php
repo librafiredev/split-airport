@@ -217,17 +217,41 @@ $guides_data = [
             'label' => esc_html__('International arrival'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
         ),
-
-
+        array(
+            'label' => esc_html__('International departure'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-international-departure.svg",
+            'guide_tooltips' => [
+                array(
+                    'label' => esc_html__('2. Esclator to l2'),
+                    'x' => 1300,
+                    'y' => 500,
+                    'tooltip_side' => 'left',
+                ),
+                array(
+                    'label' => esc_html__('1. Check in'),
+                    'x' => 1525,
+                    'y' => 330,
+                    'tooltip_side' => 'right',
+                ),
+            ],
+        ),
         array(
             'label' => esc_html__('Baggage claim'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-claim.svg",
+        ),
+        array(
+            'label' => esc_html__('Baggage departure'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-departure.svg",
         ),
     ],
     [
         array(
             'label' => esc_html__('Local departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-local-departure.svg",
+        ),
+        array(
+            'label' => esc_html__('International departure'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-international-departure.svg",
         ),
 
     ],
