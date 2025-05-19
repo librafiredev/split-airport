@@ -194,10 +194,12 @@ $guides_data = [
         array(
             'label' => esc_html__('Local arrival'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
+            'target_class' => 'map-guide-local-arrivals',
         ),
         array(
             'label' => esc_html__('Local departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-departure.svg",
+            'target_class' => 'map-guide-local-departure',
             'guide_tooltips' => [
                 array(
                     'label' => esc_html__('2. Esclator to l2'),
@@ -216,10 +218,12 @@ $guides_data = [
         array(
             'label' => esc_html__('International arrival'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
+            'target_class' => 'map-guide-international-arrivals',
         ),
         array(
             'label' => esc_html__('International departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-international-departure.svg",
+            'target_class' => 'map-guide-international-departure',
             'guide_tooltips' => [
                 array(
                     'label' => esc_html__('2. Esclator to l2'),
@@ -238,20 +242,23 @@ $guides_data = [
         array(
             'label' => esc_html__('Baggage claim'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-claim.svg",
+            'target_class' => 'map-guide-baggage-claim',
         ),
         array(
             'label' => esc_html__('Baggage departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-departure.svg",
+            'target_class' => 'map-guide-baggage-departure',
         ),
-    ],
-    [
+    ],[
         array(
             'label' => esc_html__('Local departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-local-departure.svg",
+            'target_class' => 'map-guide-local-departure',
         ),
         array(
             'label' => esc_html__('International departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-international-departure.svg",
+            'target_class' => 'map-guide-international-departure',
         ),
 
     ],
@@ -293,13 +300,26 @@ foreach ($floors_data as $key => $value) {
             </div>
             <div class="airport-map-main">
                 <div class="airport-map-guide-cbs">
-                    <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
+                    <div class="airport-map-guide-cbs-floor">
+                        <div class="airport-map-guide-m-label"><?php echo esc_html__('Airport guide:'); ?></div>
+                        <div class="airport-map-guide-cbs-only">
+                            <?php $guides_on_floors = array(); ?>
+                            <?php foreach ($guides_data as $g_floor_idx => $guide_group) {
+                                foreach ($guide_group as $guide_item) {
+                                    $target_class = $guide_item['target_class'];
+                                    if (empty($guides_on_floors[$target_class])) {
+                                        $guides_on_floors[$target_class] = [$g_floor_idx];
+                                    } else {
+                                        $guides_on_floors[$target_class][] = $g_floor_idx;
+                                    }
+                                }
+                            } 
+                            ?>
 
-                        <div class="airport-map-guide-cbs-floor <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>" data-cbs-floor="<?php echo $g_floor_idx; ?>">
-                            <div class="airport-map-guide-m-label"><?php echo esc_html__('Airport guide:'); ?></div>
-                            <div class="airport-map-guide-cbs-only">
+                            <?php $existing_guide_gr = []; ?>
+                            <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
                                 <?php if (empty($guide_group)) : ?>
-                                    <div class="airport-map-no-guide">
+                                    <div class="airport-map-no-guide airport-guide-cb-<?php echo $g_floor_idx; ?> <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>">
                                         <?php if($g_floor_idx == 2) : ?>
                                             <?php esc_html_e('No guides on floor 2'); ?>
                                         <?php else: ?>
@@ -308,13 +328,19 @@ foreach ($floors_data as $key => $value) {
                                     </div>
                                 <?php else: ?>
                                     <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                        <label class="airport-map-guide-cb-wrap"><input type="checkbox" class="airport-map-guide-cb" data-target-guide-class="<?php echo $overlay_guide_class_prefix; ?><?php echo $g_floor_idx; ?>-<?php echo $guide_index; ?>" /><span><?php echo $guide_item['label']; ?></span></label>
+                                        <?php 
+                                        $target_class = $guide_item['target_class'];
+                                        if (in_array($target_class, $existing_guide_gr, true)) {
+                                            continue;
+                                        } 
+                                        $existing_guide_gr[] = $target_class;
+                                        ?>
+                                        <label class="airport-map-guide-cb-wrap <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?><?php if (!empty($guides_on_floors[$target_class])) { foreach ($guides_on_floors[$target_class] as $flr) { echo ' airport-guide-cb-' . $flr; } } ?>" style="transition-delay: <?php echo $guide_index * 100; ?>ms"><input type="checkbox" class="airport-map-guide-cb" data-target-guide-class="<?php echo $target_class; ?>" /><span><?php echo $guide_item['label']; ?></span></label>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
-                    
+                    </div>
                 </div>
                 <div class="airport-map-floors" style="aspect-ratio: <?php echo $max_aspect_ratio; ?>;">
                     <?php $floor_controls_html = '<div class="airport-map-floor-btns">'; ?>
@@ -379,7 +405,7 @@ foreach ($floors_data as $key => $value) {
                                         <?php $guide_group = $guides_data[$floor_idx]; ?>
                                         <?php if (!empty($guide_group)) : ?>
                                             <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
-                                                <div class="airport-map-guide-wrap <?php echo $overlay_guide_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $guide_index; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" />
+                                                <div class="airport-map-guide-wrap <?php echo $guide_item['target_class']; ?>"><img class="" src="<?php echo $guide_item['image_path']; ?>" />
                                                     <?php if (!empty($guide_item['guide_tooltips'])) : ?>
                                                         <?php foreach ($guide_item['guide_tooltips'] as $key => $guide_tooltip) :
                                                             $pos_x_percent = 100 * $guide_tooltip['x'] / $floor['width'];

@@ -90,6 +90,7 @@ $(function () {
         sectionElement.find('[data-target-floor-idx="' + targetFloor + '"]').addClass('current-floor-btn');
         sectionElement.find('.is-active-cbs').removeClass('is-active-cbs');
         sectionElement.find('[data-cbs-floor="' + targetFloor + '"]').addClass('is-active-cbs');
+        sectionElement.find('.airport-guide-cb-' + targetFloor + '').addClass('is-active-cbs');
         sectionElement.find('.airport-map-active-floor').removeClass('airport-map-active-floor');
         sectionElement.find('[data-floor-idx="' + targetFloor + '"]').addClass('airport-map-active-floor');
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
