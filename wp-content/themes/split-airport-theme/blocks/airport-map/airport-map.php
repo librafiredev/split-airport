@@ -286,6 +286,139 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Baggage Claim'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage.svg',
+                    'x' => 302,
+                    'y' => 776,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage-area.svg',
+                    'x' => 288,
+                    'y' => 446,
+                    'width' => 601,
+                    'height' => 764,
+                    'type' => 'area',
+                    'override_z_index' => 2,
+                ),
+            ],
+        ),
+        array(
+            // NOTE: this is just an overlay
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage-area-no-interact.svg',
+                    'x' => 288,
+                    'y' => 446,
+                    'width' => 601,
+                    'height' => 764,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Customs'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security-officer.svg',
+                    'x' => 828,
+                    'y' => 502,
+                    'tooltip_side' => 'left',
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/customs-area.svg',
+                    'x' => 908,
+                    'y' => 384,
+                    'width' => 125,
+                    'height' => 187,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Passport control'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'x' => 331,
+                    'y' => 263,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'x' => 552,
+                    'y' => 183,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control-area.svg',
+                    'x' => 288,
+                    'y' => 126,
+                    'width' => 438,
+                    'height' => 248,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('European Union'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/eu.svg',
+                    'x' => 476,
+                    'y' => 183,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Rent a Car'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/car-key.svg',
+                    'x' => 1639,
+                    'y' => 1227,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Taxi'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/taxi-sign.svg',
+                    'x' => 1712,
+                    'y' => 934,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Shuttle Bus'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'x' => 1639,
+                    'y' => 934,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'x' => 70,
+                    'y' => 797,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Bus Terminal'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'x' => 1639,
+                    'y' => 1297,
+                ),
+            ],
+        ),
+        
     ],
     // FLOOR 1
     [
@@ -406,6 +539,46 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Passport Control'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'x' => 255,
+                    'y' => 689,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Security Check Point'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security.svg',
+                    'x' => 820,
+                    'y' => 910,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security-area.svg',
+                    'x' => 478,
+                    'y' => 768,
+                    'width' => 457,
+                    'height' => 382,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('European Union'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/eu.svg',
+                    'x' => 255,
+                    'y' => 492,
+                ),
+            ],
+        ),
+
     ],
     // FLOOR 2
     [
@@ -567,17 +740,79 @@ $category_data = [
                 'group_index' => 0,
                 'floor' => 0,
             ),
+            array(
+                'group_index' => 12,
+                'floor' => 0,
+            ),
         ],
     ),
     array(
         'label' => esc_html__('Passanger controls'),
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/security-icon.svg",
-        'children' => [],
+        'children' => [
+            array(
+                'label' => esc_html__('Passport control'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('Passport control on floor 0'),
+                        'group_index' => 15,
+                        'floor' => 0,
+                    ),
+                    array(
+                        'label' => esc_html__('Passport control on floor 1'),
+                        'group_index' => 7,
+                        'floor' => 1,
+                    ),
+                ]
+            ),
+            array(
+                'group_index' => 8,
+                'floor' => 1,
+            ),
+            array(
+                'group_index' => 14,
+                'floor' => 0,
+            ),
+            array(
+                'label' => esc_html__('European Union'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('European Union on floor 0'),
+                        'group_index' => 16,
+                        'floor' => 0,
+                    ),
+                    array(
+                        'label' => esc_html__('European Union on floor 1'),
+                        'group_index' => 9,
+                        'floor' => 1,
+                    ),
+                ]
+            ),
+
+        ],
     ),
     array(
         'label' => esc_html__('Parking'),
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/parking-icon.svg",
-        'children' => [],
+        'children' => [
+            array(
+                'group_index' => 17,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 18,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 19,
+                'floor' => 0,
+            ),
+            array(
+                'group_index' => 20,
+                'floor' => 0,
+            ),
+
+        ],
     ),
     array(
         'label' => esc_html__('Restaurants & Caffe bars'),
