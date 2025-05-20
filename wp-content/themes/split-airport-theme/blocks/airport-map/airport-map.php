@@ -418,6 +418,16 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Parking'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/parking.svg',
+                    'x' => 1639,
+                    'y' => 1157,
+                ),
+            ],
+        ),
         
     ],
     // FLOOR 1
@@ -526,6 +536,7 @@ $icon_data = [
                     'x' => 2082,
                     'y' => 227,
                     'tooltip_side' => 'left',
+                    'override_z_index' => 10,
                 ),
             ],
         ),
@@ -578,6 +589,81 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Restaurant'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'x' => 295,
+                    'y' => 1204,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'x' => 1518,
+                    'y' => 389,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-1.svg',
+                    'x' => 197,
+                    'y' => 1137,
+                    'width' => 260,
+                    'height' => 196,
+                    'type' => 'area',
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-2.svg',
+                    'x' => 1447,
+                    'y' => 374,
+                    'width' => 204,
+                    'height' => 92,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Caffe Bar'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'x' => 402,
+                    'y' => 279,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'x' => 1766,
+                    'y' => 236,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'x' => 1518,
+                    'y' => 490,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'x' => 2184,
+                    'y' => 236,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-1.svg',
+                    'x' => 318,
+                    'y' => 233,
+                    'width' => 231,
+                    'height' => 168,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-2.svg',
+                    'x' => 1447,
+                    'y' => 475,
+                    'width' => 204,
+                    'height' => 92,
+                    'type' => 'area',
+                    'override_z_index' => 3,
+                ),
+            ],
+        ),
+
 
     ],
     // FLOOR 2
@@ -612,6 +698,42 @@ $icon_data = [
                     'height' => 149,
                     'type' => 'area',
                     'override_z_index' => 3,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Restaurant'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'x' => 517,
+                    'y' => 349,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-3.svg',
+                    'x' => 457,
+                    'y' => 277,
+                    'width' => 182,
+                    'height' => 215,
+                    'type' => 'area',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Caffe Bar'),
+            'items' => [
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'x' => 345,
+                    'y' => 349,
+                ),
+                array(
+                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-3.svg',
+                    'x' => 296,
+                    'y' => 277,
+                    'width' => 161,
+                    'height' => 215,
+                    'type' => 'area',
                 ),
             ],
         ),
@@ -817,7 +939,38 @@ $category_data = [
     array(
         'label' => esc_html__('Restaurants & Caffe bars'),
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/restaurant-icon.svg",
-        'children' => [],
+        'children' => [
+            array(
+                'label' => esc_html__('Restaurants'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('Restaurants on floor 1'),
+                        'group_index' => 10,
+                        'floor' => 1,
+                    ),
+                    array(
+                        'label' => esc_html__('Restaurants on floor 2'),
+                        'group_index' => 1,
+                        'floor' => 2,
+                    ),
+                ]
+            ),
+            array(
+                'label' => esc_html__('Caffee bars'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('Caffee bars on floor 1'),
+                        'group_index' => 11,
+                        'floor' => 1,
+                    ),
+                    array(
+                        'label' => esc_html__('Caffee bars on floor 2'),
+                        'group_index' => 2,
+                        'floor' => 2,
+                    ),
+                ]
+            ),
+        ],
     ),
 ];
 $guides_data = [
