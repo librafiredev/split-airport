@@ -90,18 +90,18 @@ $icon_data = [
             'label' => esc_html__('Lost & Found'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lost-n-found.svg',
+                    'shape_path' => '/assets/images/airport-map/lost-n-found.svg',
                     'x' => 836,
                     'y' => 911,
                     'tooltip_side' => 'left',
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lost-n-found.svg',
+                    'shape_path' => '/assets/images/airport-map/lost-n-found.svg',
                     'x' => 1036,
                     'y' => 911,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lost-n-found-area.svg',
+                    'shape_path' => '/assets/images/airport-map/lost-n-found-area.svg',
                     'x' => 927,
                     'y' => 920,
                     'width' => 82,
@@ -114,7 +114,7 @@ $icon_data = [
             'label' => esc_html__('Info Pult'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/info.svg',
+                    'shape_path' => '/assets/images/airport-map/info.svg',
                     'x' => 2085,
                     'y' => 437,
                     'tooltip_side' => 'left',
@@ -125,13 +125,13 @@ $icon_data = [
             'label' => esc_html__('Check-in counters'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-check-in.svg',
+                    'shape_path' => '/assets/images/airport-map/plane-check-in.svg',
                     'x' => 1392,
                     'y' => 294,
                     
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/check-in-area.svg',
+                    'shape_path' => '/assets/images/airport-map/check-in-area.svg',
                     'x' => 1007,
                     'y' => 193,
                     'width' => 855,
@@ -144,20 +144,20 @@ $icon_data = [
             'label' => esc_html__('Self check-in'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-check-in-1.svg',
+                    'shape_path' => '/assets/images/airport-map/self-check-in-1.svg',
                     'x' => 1055,
                     'y' => 409,
                     
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-check-in-2.svg',
+                    'shape_path' => '/assets/images/airport-map/self-check-in-2.svg',
                     'x' => 1602,
                     'y' => 398,
                     'tooltip_side' => 'left',
                     
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/self-checkin-area.svg',
+                    'shape_path' => '/assets/images/airport-map/self-checkin-area.svg',
                     'x' => 1055,
                     'y' => 398,
                     'width' => 610,
@@ -171,13 +171,13 @@ $icon_data = [
             'label' => esc_html__('flight tickets'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-boarding-pass-1.svg',
+                    'shape_path' => '/assets/images/airport-map/plane-boarding-pass-1.svg',
                     'x' => 2370,
                     'y' => 361,
                     'tooltip_side' => 'left',
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/plane-boarding-pass-1.svg',
+                    'shape_path' => '/assets/images/airport-map/plane-boarding-pass-1.svg',
                     'x' => 2156,
                     'y' => 437,
                     'tooltip_side' => 'left',
@@ -188,13 +188,13 @@ $icon_data = [
             'label' => esc_html__('VAT Refund'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/refund.svg',
+                    'shape_path' => '/assets/images/airport-map/refund.svg',
                     'x' => 954,
                     'y' => 294,
                     
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/refund-area.svg',
+                    'shape_path' => '/assets/images/airport-map/refund-area.svg',
                     'x' => 920,
                     'y' => 280,
                     'width' => 99,
@@ -207,7 +207,7 @@ $icon_data = [
             'label' => esc_html__('Meeting Point'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/shrink.svg',
+                    'shape_path' => '/assets/images/airport-map/shrink.svg',
                     'x' => 1579,
                     'y' => 734,
                 ),
@@ -217,7 +217,7 @@ $icon_data = [
             'label' => esc_html__('ATM'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/money-atm.svg',
+                    'shape_path' => '/assets/images/airport-map/money-atm.svg',
                     'x' => 1243,
                     'y' => 1054,
                     'tooltip_side' => 'left',
@@ -228,13 +228,13 @@ $icon_data = [
             'label' => esc_html__('Bank'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bank.svg',
+                    'shape_path' => '/assets/images/airport-map/bank.svg',
                     'x' => 1032,
                     'y' => 1183,
                     'tooltip_side' => 'left',
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bank-area.svg',
+                    'shape_path' => '/assets/images/airport-map/bank-area.svg',
                     'x' => 966,
                     'y' => 1148,
                     'width' => 195,
@@ -248,12 +248,12 @@ $icon_data = [
             'label' => esc_html__('Exchange'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/exchange.svg',
+                    'shape_path' => '/assets/images/airport-map/exchange.svg',
                     'x' => 1218,
                     'y' => 1184,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/exchange-area.svg',
+                    'shape_path' => '/assets/images/airport-map/exchange-area.svg',
                     'x' => 1159,
                     'y' => 1148,
                     'width' => 179,
@@ -266,12 +266,12 @@ $icon_data = [
             'label' => esc_html__('Departure Passenger Assistance'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
                     'x' => 1528,
                     'y' => 103,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
                     'x' => 1614,
                     'y' => 597,
                 ),
@@ -281,7 +281,7 @@ $icon_data = [
             'label' => esc_html__('Store'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/storefront.svg',
+                    'shape_path' => '/assets/images/airport-map/storefront.svg',
                     'x' => 2370,
                     'y' => 437,
                     'tooltip_side' => 'left',
@@ -292,12 +292,12 @@ $icon_data = [
             'label' => esc_html__('Baggage Claim'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage.svg',
+                    'shape_path' => '/assets/images/airport-map/baggage.svg',
                     'x' => 302,
                     'y' => 776,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage-area.svg',
+                    'shape_path' => '/assets/images/airport-map/baggage-area.svg',
                     'x' => 288,
                     'y' => 446,
                     'width' => 601,
@@ -311,7 +311,7 @@ $icon_data = [
             // NOTE: this is just an overlay
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/baggage-area-no-interact.svg',
+                    'shape_path' => '/assets/images/airport-map/baggage-area-no-interact.svg',
                     'x' => 288,
                     'y' => 446,
                     'width' => 601,
@@ -325,13 +325,13 @@ $icon_data = [
             'label' => esc_html__('Customs'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security-officer.svg',
+                    'shape_path' => '/assets/images/airport-map/security-officer.svg',
                     'x' => 828,
                     'y' => 502,
                     'tooltip_side' => 'left',
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/customs-area.svg',
+                    'shape_path' => '/assets/images/airport-map/customs-area.svg',
                     'x' => 908,
                     'y' => 384,
                     'width' => 125,
@@ -345,17 +345,17 @@ $icon_data = [
             'label' => esc_html__('Passport control'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'shape_path' => '/assets/images/airport-map/passport-control.svg',
                     'x' => 331,
                     'y' => 263,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'shape_path' => '/assets/images/airport-map/passport-control.svg',
                     'x' => 552,
                     'y' => 183,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control-area.svg',
+                    'shape_path' => '/assets/images/airport-map/passport-control-area.svg',
                     'x' => 288,
                     'y' => 126,
                     'width' => 438,
@@ -369,7 +369,7 @@ $icon_data = [
             'label' => esc_html__('European Union'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/eu.svg',
+                    'shape_path' => '/assets/images/airport-map/eu.svg',
                     'x' => 476,
                     'y' => 183,
                 ),
@@ -379,7 +379,7 @@ $icon_data = [
             'label' => esc_html__('Rent a Car'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/car-key.svg',
+                    'shape_path' => '/assets/images/airport-map/car-key.svg',
                     'x' => 1639,
                     'y' => 1227,
                 ),
@@ -389,7 +389,7 @@ $icon_data = [
             'label' => esc_html__('Taxi'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/taxi-sign.svg',
+                    'shape_path' => '/assets/images/airport-map/taxi-sign.svg',
                     'x' => 1712,
                     'y' => 934,
                 ),
@@ -399,12 +399,12 @@ $icon_data = [
             'label' => esc_html__('Shuttle Bus'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'shape_path' => '/assets/images/airport-map/bus.svg',
                     'x' => 1639,
                     'y' => 934,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'shape_path' => '/assets/images/airport-map/bus.svg',
                     'x' => 70,
                     'y' => 797,
                 ),
@@ -414,7 +414,7 @@ $icon_data = [
             'label' => esc_html__('Bus Terminal'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/bus.svg',
+                    'shape_path' => '/assets/images/airport-map/bus.svg',
                     'x' => 1639,
                     'y' => 1297,
                 ),
@@ -424,7 +424,7 @@ $icon_data = [
             'label' => esc_html__('Parking'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/parking.svg',
+                    'shape_path' => '/assets/images/airport-map/parking.svg',
                     'x' => 1639,
                     'y' => 1157,
                 ),
@@ -438,7 +438,7 @@ $icon_data = [
             'label' => esc_html__('Info Pult'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/info.svg',
+                    'shape_path' => '/assets/images/airport-map/info.svg',
                     'x' => 1979,
                     'y' => 99,
                 ),
@@ -448,7 +448,7 @@ $icon_data = [
             'label' => esc_html__('Departure Passenger Assistance'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/wheelchair.svg',
+                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
                     'x' => 1342,
                     'y' => 162,
                 ),
@@ -458,27 +458,27 @@ $icon_data = [
             'label' => esc_html__('Duty free shops'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free.svg',
                     'x' => 693,
                     'y' => 375,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free.svg',
                     'x' => 540,
                     'y' => 622,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free.svg',
                     'x' => 1874,
                     'y' => 284,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free.svg',
                     'x' => 2104,
                     'y' => 335,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free-area-0.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free-area-0.svg',
                     'x' => 631,
                     'y' => 328,
                     'width' => 186,
@@ -487,7 +487,7 @@ $icon_data = [
                     'override_z_index' => 3,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/duty-free-area-1.svg',
+                    'shape_path' => '/assets/images/airport-map/duty-free-area-1.svg',
                     'x' => 482,
                     'y' => 604,
                     'width' => 187,
@@ -501,12 +501,12 @@ $icon_data = [
             'label' => esc_html__('Smoking Area'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/allowances-smoking.png',
+                    'shape_path' => '/assets/images/airport-map/allowances-smoking.png',
                     'x' => 566,
                     'y' => 358,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/smoking-area.svg',
+                    'shape_path' => '/assets/images/airport-map/smoking-area.svg',
                     'x' => 492,
                     'y' => 326,
                     'width' => 96,
@@ -519,7 +519,7 @@ $icon_data = [
             'label' => esc_html__('Business lounge'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'shape_path' => '/assets/images/airport-map/sofa-couch.svg',
                     'x' => 448,
                     'y' => 813,
                 ),
@@ -529,12 +529,12 @@ $icon_data = [
             'label' => esc_html__('International Departure'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
                     'x' => 704,
                     'y' => 227,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
                     'x' => 2082,
                     'y' => 227,
                     'tooltip_side' => 'left',
@@ -546,7 +546,7 @@ $icon_data = [
             'label' => esc_html__('Domestic Departure'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/airplane-takeoff.svg',
+                    'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
                     'x' => 246,
                     'y' => 915,
                 ),
@@ -556,7 +556,7 @@ $icon_data = [
             'label' => esc_html__('Passport Control'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/passport-control.svg',
+                    'shape_path' => '/assets/images/airport-map/passport-control.svg',
                     'x' => 255,
                     'y' => 689,
                 ),
@@ -566,12 +566,12 @@ $icon_data = [
             'label' => esc_html__('Security Check Point'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security.svg',
+                    'shape_path' => '/assets/images/airport-map/security.svg',
                     'x' => 820,
                     'y' => 910,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/security-area.svg',
+                    'shape_path' => '/assets/images/airport-map/security-area.svg',
                     'x' => 478,
                     'y' => 768,
                     'width' => 457,
@@ -585,7 +585,7 @@ $icon_data = [
             'label' => esc_html__('European Union'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/eu.svg',
+                    'shape_path' => '/assets/images/airport-map/eu.svg',
                     'x' => 255,
                     'y' => 492,
                 ),
@@ -595,17 +595,17 @@ $icon_data = [
             'label' => esc_html__('Restaurant'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'shape_path' => '/assets/images/airport-map/restaurant.svg',
                     'x' => 295,
                     'y' => 1204,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'shape_path' => '/assets/images/airport-map/restaurant.svg',
                     'x' => 1518,
                     'y' => 389,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-1.svg',
+                    'shape_path' => '/assets/images/airport-map/rest-area-1.svg',
                     'x' => 197,
                     'y' => 1137,
                     'width' => 260,
@@ -613,7 +613,7 @@ $icon_data = [
                     'type' => 'area',
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-2.svg',
+                    'shape_path' => '/assets/images/airport-map/rest-area-2.svg',
                     'x' => 1447,
                     'y' => 374,
                     'width' => 204,
@@ -626,27 +626,27 @@ $icon_data = [
             'label' => esc_html__('Caffe Bar'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
                     'x' => 402,
                     'y' => 279,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
                     'x' => 1766,
                     'y' => 236,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
                     'x' => 1518,
                     'y' => 490,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
                     'x' => 2184,
                     'y' => 236,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-1.svg',
+                    'shape_path' => '/assets/images/airport-map/cafe-area-1.svg',
                     'x' => 318,
                     'y' => 233,
                     'width' => 231,
@@ -655,7 +655,7 @@ $icon_data = [
                     'override_z_index' => 3,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-2.svg',
+                    'shape_path' => '/assets/images/airport-map/cafe-area-2.svg',
                     'x' => 1447,
                     'y' => 475,
                     'width' => 204,
@@ -674,17 +674,17 @@ $icon_data = [
             'label' => esc_html__('Business lounge'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'shape_path' => '/assets/images/airport-map/sofa-couch.svg',
                     'x' => 328,
                     'y' => 701,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/sofa-couch.svg',
+                    'shape_path' => '/assets/images/airport-map/sofa-couch.svg',
                     'x' => 328,
                     'y' => 886,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lounge-1.svg',
+                    'shape_path' => '/assets/images/airport-map/lounge-1.svg',
                     'x' => 275,
                     'y' => 632,
                     'width' => 182,
@@ -693,7 +693,7 @@ $icon_data = [
                     'override_z_index' => 3,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/lounge-2.svg',
+                    'shape_path' => '/assets/images/airport-map/lounge-2.svg',
                     'x' => 275,
                     'y' => 842,
                     'width' => 182,
@@ -707,12 +707,12 @@ $icon_data = [
             'label' => esc_html__('Restaurant'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/restaurant.svg',
+                    'shape_path' => '/assets/images/airport-map/restaurant.svg',
                     'x' => 517,
                     'y' => 349,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/rest-area-3.svg',
+                    'shape_path' => '/assets/images/airport-map/rest-area-3.svg',
                     'x' => 457,
                     'y' => 277,
                     'width' => 182,
@@ -725,12 +725,12 @@ $icon_data = [
             'label' => esc_html__('Caffe Bar'),
             'items' => [
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/coffe.svg',
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
                     'x' => 345,
                     'y' => 349,
                 ),
                 array(
-                    'shape_path' => get_template_directory_uri() . '/assets/images/airport-map/cafe-area-3.svg',
+                    'shape_path' => '/assets/images/airport-map/cafe-area-3.svg',
                     'x' => 296,
                     'y' => 277,
                     'width' => 161,
@@ -1174,7 +1174,7 @@ foreach ($floors_data as $key => $value) {
                                                             <div
                                                                 class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
                                                             >
-                                                                <?php echo file_get_contents($shape_path); ?>
+                                                                <?php echo file_get_contents(get_template_directory() . $shape_path); ?>
                                                             </div>
                                                         </div>
                                                     <?php else: ?>
@@ -1186,7 +1186,7 @@ foreach ($floors_data as $key => $value) {
                                                             <div
                                                                 class="airport-map-shape airport-map-<?php echo $shape_type; ?>"
                                                             >
-                                                                <img class="airport-map-icon-img" src="<?php echo $shape_path; ?>" />
+                                                                <img class="airport-map-icon-img" src="<?php echo get_template_directory_uri() . $shape_path; ?>" />
                                                             </div>
                                                             <div class="airport-map-tooltip <?php echo $item['tooltip_side'] ?: 'right'; ?>-tooltip"><?php echo $group['label']; ?></div>
                                                         </div>
