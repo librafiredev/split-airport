@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/blocks/page-hero-generic";
@@ -376,14 +377,38 @@ $map-main-bp: $sm;
 }
 
 .has-active-search {
-    .map-sidebar-searchable {
+    .map-sidebar-level-0 {
+        & > li > .map-sidebar-btn {
+            display: none;
+        }
+
+        & > .found-item {
+            display: block;
+
+            & > .map-sidebar-btn {
+                display: flex;
+            }
+
+            ul .map-sidebar-searchable {
+                display: block;
+            }
+        }
+
+        & > li:has(li.found-item) {
+            & > .map-sidebar-btn {
+                display: flex;
+            }
+        }
+    }
+
+    .map-sidebar-level-1 .map-sidebar-searchable {
         display: none;
 
         &.found-item,
         &:has(li.found-item) {
             display: block;
 
-            .map-sidebar-searchable {
+            .map-sidebar-level-1 .map-sidebar-searchable {
                 display: block;
             }
         }
