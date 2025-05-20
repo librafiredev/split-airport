@@ -69,7 +69,10 @@ $(function () {
 
             if (optionalItemToOpen && inputValue) {
                 optionalItemToOpen.addClass('map-sidebar-open-sub');
-                optionalItemToOpen.siblings('ul').eq(0).stop().slideDown();
+                optionalItemToOpen.siblings('ul').each(function () {
+                    $(this).children().show();
+                    $(this).slideDown();
+                });
             }
         });
 
@@ -243,6 +246,15 @@ $(function () {
                         }
                     });
                 });
+            }
+        });
+
+        $(document).keypress(function (e) {
+            if (e.originalEvent.key === '/') {
+                if ($(this).find('.airport-map-search').eq(0)[0] != document.activeElement) {
+                    e.preventDefault();
+                    $(this).find('.airport-map-search').eq(0).focus();
+                }
             }
         });
     }
