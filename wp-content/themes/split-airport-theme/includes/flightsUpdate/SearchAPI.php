@@ -91,7 +91,8 @@ class SearchAPI
                     get_template_part('template-parts/blocks/search-data', null, [
                         'flights'       => $flights['posts'],
                         'term'          => $term,
-                        'flightType'    => $type
+                        'flightType'    => $type,
+                        'date'          => $date
                     ]);
                 }
             } else {
