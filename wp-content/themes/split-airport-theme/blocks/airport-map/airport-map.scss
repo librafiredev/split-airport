@@ -152,7 +152,7 @@ $map-main-bp: $sm;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 4;
+    z-index: 11;
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -249,6 +249,14 @@ $map-main-bp: $sm;
 
 .highlighted-map-group,
 .airport-map-group:hover {
+    & > * {
+        z-index: 98;
+
+        &.airport-map-shape-wrap-icon {
+            z-index: 99;
+        }
+    }
+
     .airport-map-icon {
         background-color: $secondary-color;
     }
@@ -502,6 +510,10 @@ $map-main-bp: $sm;
     display: block;
     z-index: 5;
     pointer-events: none;
+
+    &.top-overlay {
+        z-index: 11;
+    }
 }
 
 .airport-map-guide-cbs {
@@ -699,4 +711,5 @@ $map-main-bp: $sm;
 
 .airport-map-tooltip-guide {
     transform: scale(1);
+    z-index: 15;
 }

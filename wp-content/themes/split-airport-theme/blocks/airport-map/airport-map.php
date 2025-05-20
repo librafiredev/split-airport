@@ -68,6 +68,7 @@ $floors_data = [
         'width' => 2650,
         'height' => 1469,
         'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-overlay.svg",
+        'top_overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-top-overlay.svg",
     ),
     array(
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1.svg",
@@ -162,6 +163,7 @@ $icon_data = [
                     'width' => 610,
                     'height' => 132,
                     'type' => 'area',
+                    'override_z_index' => 2,
                 ),
             ],
         ),
@@ -984,6 +986,7 @@ $guides_data = [
             'label' => esc_html__('Local departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-departure.svg",
             'target_class' => 'map-guide-local-departure',
+            'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
                     'label' => esc_html__('2. Esclator to l2'),
@@ -1008,6 +1011,7 @@ $guides_data = [
             'label' => esc_html__('International departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-international-departure.svg",
             'target_class' => 'map-guide-international-departure',
+            'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
                     'label' => esc_html__('2. Esclator to l2'),
@@ -1027,6 +1031,7 @@ $guides_data = [
             'label' => esc_html__('Baggage claim'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-claim.svg",
             'target_class' => 'map-guide-baggage-claim',
+            'override_z_index' => 10,
         ),
         array(
             'label' => esc_html__('Baggage departure'),
@@ -1139,6 +1144,9 @@ foreach ($floors_data as $key => $value) {
                                         <img src="<?php echo $floor['bg_path']; ?>" alt="" />
                                         <?php if (!empty($floor['overlay_path'])) : ?>
                                             <img class="airport-map-fg-overlay" src="<?php echo $floor['overlay_path']; ?>" alt="" />
+                                        <?php endif; ?>
+                                        <?php if (!empty($floor['top_overlay_path'])) : ?>
+                                            <img class="airport-map-fg-overlay top-overlay" src="<?php echo $floor['top_overlay_path']; ?>" alt="" />
                                         <?php endif; ?>
                                         <?php $groups = $icon_data[$floor_idx]; ?>
                                         <?php foreach ($groups as $g_idx => $group) : ?>
