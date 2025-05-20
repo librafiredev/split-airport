@@ -687,6 +687,7 @@ $map-main-bp: $sm;
     color: #5b5b5b;
     display: inline-block;
     white-space: nowrap;
+    line-height: 20px;
 
     @include max-mq($map-main-bp) {
         padding-left: 10px;
