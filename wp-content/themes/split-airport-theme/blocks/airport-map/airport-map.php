@@ -87,7 +87,7 @@ $icon_data = [
     // FLOOR 0
     [
         array(
-            'label' => esc_html__('Lost & Found'),
+            'label' => esc_html__('Lost & found'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/lost-n-found.svg',
@@ -185,7 +185,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('VAT Refund'),
+            'label' => esc_html__('VAT refund'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/refund.svg',
@@ -204,7 +204,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Meeting Point'),
+            'label' => esc_html__('Meeting point'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/shrink.svg',
@@ -289,7 +289,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Baggage Claim'),
+            'label' => esc_html__('Baggage claim'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/baggage.svg',
@@ -376,7 +376,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Rent a Car'),
+            'label' => esc_html__('Rent-a-Car'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/car-key.svg',
@@ -498,7 +498,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Smoking Area'),
+            'label' => esc_html__('Smoking area'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/allowances-smoking.png',
@@ -563,7 +563,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Security Check Point'),
+            'label' => esc_html__('Security check point'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/security.svg',
@@ -751,12 +751,12 @@ $category_data = [
                 'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Self Check-in Kiosks'),
+                'label' => esc_html__('Self check-in kiosks'),
                 'group_index' => 3,
                 'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Flight Ticket Purchase'),
+                'label' => esc_html__('Flight ticket purchase'),
                 'group_index' => 4,
                 'floor' => 0,
             ),
@@ -771,15 +771,15 @@ $category_data = [
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/users-icon.svg",
         'children' => [
             array(
-                'label' => esc_html__('Info pult'),
+                'label' => esc_html__('Information desks'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Info on floor 0'),
+                        'label' => esc_html__('Information desk, floor 0'),
                         'group_index' => 1,
                         'floor' => 0,
                     ),
                     array(
-                        'label' => esc_html__('Info on floor 1'),
+                        'label' => esc_html__('Information desk, floor 1'),
                         'group_index' => 0,
                         'floor' => 1,
                     ),
@@ -798,12 +798,12 @@ $category_data = [
                 'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Exchange Office'),
+                'label' => esc_html__('Exchange office'),
                 'group_index' => 9,
                 'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Departure Passenger Assistance'),
+                'label' => esc_html__('Departure passenger assistance'),
                 'children' => [
                     array(
                         'label' => esc_html__('Assistance on floor 0'),
@@ -829,7 +829,7 @@ $category_data = [
                 'label' => esc_html__('Business lounges'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Lounges on floor 1'),
+                        'label' => esc_html__('Lounge on floor 1'),
                         'group_index' => 4,
                         'floor' => 1,
                     ),
@@ -841,12 +841,12 @@ $category_data = [
                 ]
             ),
             array(
-                'label' => esc_html__('International Departure Area'),
+                'label' => esc_html__('International departure area'),
                 'group_index' => 5,
                 'floor' => 1,
             ),
             array(
-                'label' => esc_html__('Domestic Departure Area'),
+                'label' => esc_html__('Domestic departure area'),
                 'group_index' => 6,
                 'floor' => 1,
             ),
@@ -871,7 +871,7 @@ $category_data = [
         ],
     ),
     array(
-        'label' => esc_html__('Passanger controls'),
+        'label' => esc_html__('Passenger checks'),
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/security-icon.svg",
         'children' => [
             array(
@@ -962,15 +962,15 @@ $category_data = [
                 ]
             ),
             array(
-                'label' => esc_html__('Caffee bars'),
+                'label' => esc_html__('Caffe bars'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Caffee bars on floor 1'),
+                        'label' => esc_html__('Caffe bars on floor 1'),
                         'group_index' => 11,
                         'floor' => 1,
                     ),
                     array(
-                        'label' => esc_html__('Caffee bars on floor 2'),
+                        'label' => esc_html__('Caffe bars on floor 2'),
                         'group_index' => 2,
                         'floor' => 2,
                     ),
