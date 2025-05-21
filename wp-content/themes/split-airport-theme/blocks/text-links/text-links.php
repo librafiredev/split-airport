@@ -132,7 +132,7 @@ else: ?>
             <div class="text-links-image">
                 <picture>
                     <source srcset="<?php echo $image_mobile['url']; ?>" media="(max-width: 767px)">
-                    <img src="<?php echo $image['url']; ?>">
+                    <img src="<?php echo $image['url']; ?>" alt="Text links image">
                 </picture>
             </div>
         

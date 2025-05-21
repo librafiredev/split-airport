@@ -30,7 +30,7 @@ else: ?>
         <section class="home-hero-wrapper">
             <picture>
                 <source srcset="<?php echo $background_mobile; ?>" media="(max-width: 991px)">
-                <img class="home-hero-bg" src="<?php echo $background; ?>">
+                <img class="home-hero-bg" src="<?php echo $background; ?>" alt="<?php echo "Hero image"; ?>">
             </picture>
 
             

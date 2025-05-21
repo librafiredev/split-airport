@@ -19,7 +19,7 @@ else: ?>
 
         <div class="container">
             <div class="text-cards-inner">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/images/air-line.svg" class="text-cards-air-line" />
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/air-line.svg" class="text-cards-air-line" alt="Decoration image" />
 
                 <div class="text-cards-top">
 

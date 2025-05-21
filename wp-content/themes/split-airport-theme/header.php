@@ -67,7 +67,7 @@
 							</div>
 						</div>
 
-						<button type="button" class="site-warning-expand"></button>
+						<button type="button" class="site-warning-expand" aria-label="Expand"></button>
 					</div>
 				</div>
 				<div class="site-warning-overlay"></div>
