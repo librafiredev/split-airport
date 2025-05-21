@@ -935,6 +935,10 @@ $category_data = [
                 'group_index' => 20,
                 'floor' => 0,
             ),
+            array(
+                'group_index' => 21,
+                'floor' => 0,
+            ),
 
         ],
     ),
