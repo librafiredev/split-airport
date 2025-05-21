@@ -3,6 +3,14 @@ import Panzoom from "@panzoom/panzoom";
 $(function () {
 
     var panzooms = {};
+    var marginForError = .1;
+
+    function simpleNormalize(input, currentStart, currentEnd, newStart, newEnd) {
+        const deviderRaw = (currentEnd - currentStart);
+        // NOTE: this will make it less precise/correct but it will prevent issues with "infinity/dividing by 0"
+        const devider = !deviderRaw ? 0.001 : deviderRaw;
+        return newStart + (input - currentStart) * (newEnd - newStart) / devider;
+    }
 
     function centerAt(x, y, mapIndex) {
         var currentPanzoom = panzooms[mapIndex];
@@ -99,6 +107,10 @@ $(function () {
         window.airportMaps[mapIndex].currentFloor = parseInt(targetFloor);
     }
 
+    function isApproxZoomed(currentPanzoom) {
+        return currentPanzoom.getScale() > (1 + marginForError) || currentPanzoom.getScale() < (1 - marginForError);
+    }
+
     function executePotentiallyDelayedAction(mapIndex, action) {
         var currentPanzoom = panzooms[mapIndex];
         var shouldDelay = false;
@@ -106,7 +118,7 @@ $(function () {
         var zoomDur = 400;
 
         if (currentPanzoom) {
-            if (currentPanzoom.getScale() > 1 || currentPanzoom.getScale() < 1) {
+            if (isApproxZoomed(currentPanzoom)) {
                 shouldDelay = true;
             }
             currentPanzoom.pan(
@@ -134,16 +146,19 @@ $(function () {
         });
     }
 
-    function toggleGroupHighlight(sectionElement, groupButton, floorData) {
+    function highlightGroup(sectionElement, groupButton) {
+        var targetSelector = groupButton.attr('data-target-group-class');
+        sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
+        groupButton.addClass('highlighted-sidebar-item');
+    }
+
+    function toggleGroupHighlight(sectionElement, groupButton, floorData, shouldDelayHighlight) {
         var isActive = groupButton.hasClass('highlighted-sidebar-item');
         sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
         sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
 
         if (!isActive) {
             var targetSelector = groupButton.attr('data-target-group-class');
-            sectionElement.find('.' + targetSelector).addClass('highlighted-map-group');
-            groupButton.addClass('highlighted-sidebar-item');
-
             var pannable = sectionElement.find('.airport-map-pannable').eq(0)[0];
             var pannableW = pannable.clientWidth;
             var pannableH = pannable.clientHeight;
@@ -163,7 +178,20 @@ $(function () {
             var targetX = (-x + pannableW / 2);
             var targety = (-y + pannableH / 2);
             centerAt(targetX, targety, 0);
+
+            if (shouldDelayHighlight) {
+                setTimeout(function () {
+                    highlightGroup(sectionElement, groupButton);
+                }, 400);
+            } else {
+                highlightGroup(sectionElement, groupButton);
+            }
         }
+    }
+
+    function removeHighlights(sectionElement) {
+        sectionElement.find('.airport-map-group').removeClass('highlighted-map-group');
+        sectionElement.find('.has-target-group').removeClass('highlighted-sidebar-item');
     }
 
     function initInteractables() {
@@ -185,23 +213,44 @@ $(function () {
             sectionElement.find('.has-target-group').on('click', function () {
                 var groupButton = $(this);
                 var targetFloor = groupButton.attr('data-target-floor');
-                var isActive = groupButton.hasClass('highlighted-sidebar-item');
                 var currentFloor = window.airportMaps[i].currentFloor;
                 var currentFloorData = window.airportMaps[i].floorsData[currentFloor];
+                var currentPanzoom = panzooms[i];
 
-                if (parseInt(targetFloor) == currentFloor) {
-                    toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
-                } else {
-                    // NOTE: this will first disable the item before changing the floor
-                    // hopefully that will make for a better ux
-                    if (isActive) {
-                        toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
+                removeHighlights(sectionElement);
+
+                setTimeout(function () {
+                    var shouldGoToFloor = parseInt(targetFloor) != currentFloor;
+                    var shouldDeplayHighlight = parseInt(targetFloor) != currentFloor;
+                    var shouldWaitForScroll = false;
+
+                    if (panzooms[i]) {
+                        shouldDeplayHighlight = shouldDeplayHighlight || isApproxZoomed(currentPanzoom);
+
+                        shouldWaitForScroll = true;
                     }
-                    goToFloor(sectionElement, targetFloor, i);
-                    setTimeout(function () {
-                        toggleGroupHighlight(sectionElement, groupButton, currentFloorData);
-                    }, 500);
-                }
+
+                    if (shouldGoToFloor) {
+                        goToFloor(sectionElement, targetFloor, i);
+                    }
+
+                    if (shouldWaitForScroll) {
+                        var scrollDelay = simpleNormalize(Math.abs($(window).scrollTop() - sectionElement.offset().top), 0, 2000, 1, 1500);
+                        scrollDelay = Math.max(scrollDelay, 1);
+                        window.scrollTo({
+                            left: 0, top: sectionElement.find('.airport-map-main').offset().top, behavior: 'smooth',
+                        });
+                        setTimeout(function () {
+                            toggleGroupHighlight(sectionElement, groupButton, currentFloorData, shouldDeplayHighlight);
+                        }, scrollDelay);
+                    } else {
+                        toggleGroupHighlight(sectionElement, groupButton, currentFloorData, shouldDeplayHighlight);
+                    }
+                }, 10);
+            });
+
+            sectionElement.find('.airport-map-pannable').on('click', function () {
+                removeHighlights(sectionElement);
             });
 
             sectionElement.find('.airport-map-guide-cb').change(function () {
@@ -236,15 +285,18 @@ $(function () {
                     panzooms[i] = Panzoom(this, { contain: 'outside', startScale: 1.0 });
 
                     var isFirstTouch = true;
+                    var currentPanzoom = panzooms[i];
 
-                    $(this).on('touchend', function () {
-                        // NOTE: this is just to make it clear that map can be zoomed
-                        // without this scrolling is blocked
-                        if (isFirstTouch) {
-                            isFirstTouch = false;
-                            panzooms[i].zoom(1.5, { animate: true });
-                        }
-                    });
+                    if (isApproxZoomed(currentPanzoom)) {
+                        $(this).on('touchend', function () {
+                            // NOTE: this is just to make it clear that map can be zoomed
+                            // without this scrolling is blocked
+                            if (isFirstTouch) {
+                                isFirstTouch = false;
+                                panzooms[i].zoom(1.5, { animate: true });
+                            }
+                        });
+                    }
                 });
             }
         });
