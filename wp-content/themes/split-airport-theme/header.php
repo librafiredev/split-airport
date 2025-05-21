@@ -130,7 +130,7 @@
 				</nav><!-- #site-navigation -->
 
 				<div class="menu-toggle-wrapper">
-					<a href='#' class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<a href='#' class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-name="Mobile menu">
 						<span></span>
 						<span></span>
 						<span></span>
