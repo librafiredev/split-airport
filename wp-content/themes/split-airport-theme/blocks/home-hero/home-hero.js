@@ -6,7 +6,7 @@ import {
 import request from "../../assets/components/flightsUpdateRequest";
 import search from "../../assets/components/search";
 import flightPopup from "../../assets/components/flightPopup";
-import  "../../assets/components/searchEvents";
+import "../../assets/components/searchEvents";
 
 $(function () {
     const searchInput = $('input[name="search"]');

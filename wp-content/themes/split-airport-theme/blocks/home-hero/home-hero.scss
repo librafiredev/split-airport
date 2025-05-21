@@ -5,6 +5,18 @@
 
 $hero-res-switch: $md;
 
+.home-hero-bg-desktop {
+    @include max-mq($sm) {
+        display: none;
+    }
+}
+
+.home-hero-bg-mobile {
+    @include min-mq($sm + 1px) {
+        display: none;
+    }
+}
+
 .home-hero-bg {
     object-fit: cover;
     position: absolute;

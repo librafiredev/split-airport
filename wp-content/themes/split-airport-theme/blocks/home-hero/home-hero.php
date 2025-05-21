@@ -23,16 +23,12 @@ else: ?>
         $count_correction = $split_first_two_items ? 1 : 0;
 
         $corrected_count = count( get_field('items') ) - $count_correction;
-
     ?>
 
     <div class="hero-home-overflow <?php echo $show_search_form ? 'hero-home-has-search' : 'hero-home-no-search'; ?> <?php echo $corrected_count % 2 == 0 ? 'hero-home-even-items' : 'hero-home-odd-items' ?>">
         <section class="home-hero-wrapper">
-            <picture>
-                <source srcset="<?php echo $background_mobile; ?>" media="(max-width: 991px)">
-                <img class="home-hero-bg" src="<?php echo $background; ?>" alt="<?php echo "Hero image"; ?>">
-            </picture>
-
+            <?php echo wp_get_attachment_image($background_mobile, 'full', false, array('class' => 'home-hero-bg home-hero-bg-mobile')); ?>
+            <?php echo wp_get_attachment_image($background, 'full', false, array('class' => 'home-hero-bg home-hero-bg-desktop')); ?>
             
             <div class="container">
                 <div class="home-hero-inner">
