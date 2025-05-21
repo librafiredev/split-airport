@@ -253,7 +253,7 @@ $(function () {
                 removeHighlights(sectionElement);
             });
 
-            sectionElement.find('.airport-map-guide-cb').change(function () {
+            sectionElement.find('.airport-map-guide-cb').on('change', function () {
                 var checkbox = this;
                 var guideTargetSelector = $(checkbox).attr('data-target-guide-class');
                 var guideTarget = sectionElement.find('.' + guideTargetSelector);
@@ -301,11 +301,11 @@ $(function () {
             }
         });
 
-        $(document).keypress(function (e) {
+        $(document).on('keypress', function (e) {
             if (e.originalEvent.key === '/') {
                 if ($(this).find('.airport-map-search').eq(0)[0] != document.activeElement) {
                     e.preventDefault();
-                    $(this).find('.airport-map-search').eq(0).focus();
+                    $(this).find('.airport-map-search').eq(0).trigger('focus');
                 }
             }
         });
