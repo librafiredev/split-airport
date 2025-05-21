@@ -250,10 +250,10 @@ $map-main-bp: $sm;
 .highlighted-map-group,
 .airport-map-group:hover {
     & > * {
-        z-index: 98;
+        z-index: 78;
 
         &.airport-map-shape-wrap-icon {
-            z-index: 99;
+            z-index: 79;
         }
     }
 
@@ -269,6 +269,20 @@ $map-main-bp: $sm;
             }
         }
     }
+}
+
+.highlighted-map-group {
+    & > * {
+        &.airport-map-shape-wrap-icon {
+            &:first-child {
+                z-index: 89;
+            }
+        }
+    }
+}
+
+.airport-map-shape-wrap-icon:hover {
+    z-index: 89 !important;
 }
 
 .airport-map-container {
