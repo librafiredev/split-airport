@@ -5,6 +5,7 @@ $(function () {
     var panzooms = {};
     var marginForError = .1;
     var zoomOnHighlight = 2.5;
+    var zoomDur = 400;
 
     function simpleNormalize(input, currentStart, currentEnd, newStart, newEnd) {
         const deviderRaw = (currentEnd - currentStart);
@@ -19,7 +20,7 @@ $(function () {
             return
         }
 
-        var dur = 200;
+        var dur = 350;
 
         currentPanzoom.zoom(zoom, { duration: dur, animate: true });
 
@@ -116,7 +117,7 @@ $(function () {
         var currentPanzoom = panzooms[mapIndex];
         var shouldDelay = false;
 
-        var zoomDur = 400;
+
 
         if (currentPanzoom) {
             if (isApproxZoomed(currentPanzoom)) {
@@ -205,7 +206,7 @@ $(function () {
             if (shouldDelayHighlight) {
                 setTimeout(function () {
                     highlightGroup(sectionElement, groupButton);
-                }, 400);
+                }, zoomDur + 300);
             } else {
                 highlightGroup(sectionElement, groupButton);
             }
@@ -253,20 +254,25 @@ $(function () {
                         shouldWaitForScroll = true;
                     }
 
-                    if (shouldGoToFloor) {
-                        goToFloor(sectionElement, targetFloor, i);
-                    }
-
                     if (shouldWaitForScroll) {
-                        var scrollDelay = simpleNormalize(Math.abs($(window).scrollTop() - sectionElement.offset().top), 0, 2000, 1, 1500);
+                        var scrollDelay = simpleNormalize(Math.abs($(window).scrollTop() - sectionElement.offset().top), 0, 2000, 1, 1200);
                         scrollDelay = Math.max(scrollDelay, 1);
                         window.scrollTo({
                             left: 0, top: sectionElement.find('.airport-map-main').offset().top, behavior: 'smooth',
                         });
+                        if (shouldGoToFloor) {
+                            setTimeout(function () {
+                                goToFloor(sectionElement, targetFloor, i);
+                            }, scrollDelay);
+                            scrollDelay += 800;
+                        }
                         setTimeout(function () {
                             toggleGroupHighlight(sectionElement, groupButton, currentFloorData, shouldDeplayHighlight);
                         }, scrollDelay);
                     } else {
+                        if (shouldGoToFloor) {
+                            goToFloor(sectionElement, targetFloor, i);
+                        }
                         toggleGroupHighlight(sectionElement, groupButton, currentFloorData, shouldDeplayHighlight);
                     }
                 }, 10);
@@ -288,8 +294,6 @@ $(function () {
                         guideTarget.removeClass('is-guide-visible');
                     }
                 });
-
-
             });
 
             sectionElement.find('.airport-map-floor-btn').on('click', function () {
