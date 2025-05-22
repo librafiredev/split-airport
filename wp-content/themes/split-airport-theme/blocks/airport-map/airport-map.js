@@ -4,6 +4,7 @@ $(function () {
 
     var panzooms = {};
     var marginForError = .1;
+    var zoomOnHighlight = 2.5;
 
     function simpleNormalize(input, currentStart, currentEnd, newStart, newEnd) {
         const deviderRaw = (currentEnd - currentStart);
@@ -12,7 +13,7 @@ $(function () {
         return newStart + (input - currentStart) * (newEnd - newStart) / devider;
     }
 
-    function centerAt(x, y, mapIndex) {
+    function centerAt(x, y, mapIndex, zoom) {
         var currentPanzoom = panzooms[mapIndex];
         if (!currentPanzoom) {
             return
@@ -20,7 +21,7 @@ $(function () {
 
         var dur = 200;
 
-        currentPanzoom.zoom(2.5, { duration: dur, animate: true });
+        currentPanzoom.zoom(zoom, { duration: dur, animate: true });
 
         setTimeout(function () {
             currentPanzoom.pan(
@@ -165,19 +166,41 @@ $(function () {
 
             var groupItems = sectionElement.find('.' + targetSelector).find('>.airport-map-shape-wrap');
 
-            var x = 0;
-            var y = 0;
+            var minX = null;
+            var maxX = null;
+            var minY = null;
+            var maxY = null;
             groupItems.each(function () {
                 var gElement = $(this).eq(0)[0];
-                x += (parseFloat($(this).eq(0).attr('data-original-x')) * pannableW / floorData.width) + gElement.clientWidth / 2;
-                y += (parseFloat($(this).eq(0).attr('data-original-y')) * pannableH / floorData.height) + gElement.clientHeight / 2;
+                var originalX = (parseFloat($(this).eq(0).attr('data-original-x')) * pannableW / floorData.width) + gElement.clientWidth / 2;
+                var originalY = (parseFloat($(this).eq(0).attr('data-original-y')) * pannableH / floorData.height) + gElement.clientHeight / 2;
+
+                if (minX == null) {
+                    minX = originalX;
+                    maxX = originalX;
+                    minY = originalY;
+                    maxY = originalY;
+                } else {
+                    minX = Math.min(originalX, minX);
+                    maxX = Math.max(originalX, maxX);
+                    minY = Math.min(originalY, minY);
+                    maxY = Math.max(originalY, maxY);
+                }
             });
-            x = x / groupItems.length;
-            y = y / groupItems.length;
+
+            var x = ((minX + maxX) / 2);
+            var y = ((minY + maxY) / 2);
 
             var targetX = (-x + pannableW / 2);
             var targety = (-y + pannableH / 2);
-            centerAt(targetX, targety, 0);
+
+            var zoomScale = zoomOnHighlight;
+
+            if (Math.abs(minX - maxX) > pannableW / (zoomOnHighlight + .1) || Math.abs(minY - maxY) > pannableH / (zoomOnHighlight + .1)) {
+                zoomScale = 1.2;
+            }
+
+            centerAt(targetX, targety, 0, zoomScale);
 
             if (shouldDelayHighlight) {
                 setTimeout(function () {
