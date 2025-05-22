@@ -314,7 +314,7 @@ $(function () {
                     var isFirstTouch = true;
                     var currentPanzoom = panzooms[i];
 
-                    if (isApproxZoomed(currentPanzoom)) {
+                    if (!isApproxZoomed(currentPanzoom)) {
                         $(this).on('touchend', function () {
                             // NOTE: this is just to make it clear that map can be zoomed
                             // without this scrolling is blocked
