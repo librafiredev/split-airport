@@ -149,6 +149,10 @@ $map-main-bp: $sm;
     & * {
         vertical-align: middle;
     }
+
+    .map-sidebar-open-sub & {
+        transform: rotate(180deg) translateY(-15%);
+    }
 }
 
 .airport-map-guide-wrap {
