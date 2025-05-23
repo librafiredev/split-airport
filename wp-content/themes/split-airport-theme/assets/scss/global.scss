@@ -155,16 +155,18 @@ a.page-numbers {
 
 .flight-popup-header-text,
 .flight__baggage-status {
+    &.departed,
     &.landed {
         color: $green;
     }
 
-    &.cancelled {
+    &.cancelled,
+    &.delay,
+    &.delayed {
         color: $red;
     }
 
-    &.boarding,
-    &.delayed {
+    &.boarding {
         color: $secondary-color;
     }
 }
