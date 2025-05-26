@@ -111,6 +111,7 @@ else: ?>
 
                 </div><!-- .home-hero-inner -->
             </div><!-- .container -->
+            <?php get_template_part('template-parts/blocks/my-flights'); ?>
         </section><!-- .home-hero-wrapper-->
     </div>
     <?php get_template_part('template-parts/blocks/flight-popup'); ?>
