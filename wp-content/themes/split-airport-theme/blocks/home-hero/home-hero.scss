@@ -5,6 +5,7 @@
 @import "../../assets/scss/blocks/my-flights";
 
 $hero-res-switch: $md;
+$items-height: 294px;
 
 .home-hero-bg-desktop {
     @include max-mq($sm) {
@@ -41,6 +42,12 @@ $hero-res-switch: $md;
     position: relative;
     padding-top: $header-height;
 
+    @include max-mq($hero-res-switch) {
+        .my-flights-btn {
+            bottom: $items-height - 1px;
+        }
+    }
+
     .container {
         position: relative;
         z-index: 1;
@@ -61,6 +68,7 @@ $hero-res-switch: $md;
 
     @include max-mq($hero-res-switch) {
         min-height: 685px;
+        padding-bottom: $items-height;
     }
 
     .hero-home-has-search & {
@@ -127,6 +135,11 @@ $hero-res-switch: $md;
     display: flex;
     align-items: center;
     min-width: 20px;
+    max-width: 32px;
+
+    @include max-mq($sm) {
+        max-width: 20px;
+    }
 }
 
 .home-hero-items {
@@ -135,13 +148,22 @@ $hero-res-switch: $md;
     align-items: flex-end;
     margin-top: auto;
 
+    @include max-mq($lg) {
+        width: 60%;
+    }
+
     @include min-mq($hero-res-switch + 1px) {
         height: 175px;
     }
 
     @include max-mq($hero-res-switch) {
         padding-top: 20px;
-        max-width: 100% !important;
+        max-width: calc(100% - 40px) !important;
+        width: 100%;
+        height: $items-height;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
     }
 
     &::after,
@@ -167,10 +189,9 @@ $hero-res-switch: $md;
         width: calc(100% + 2px);
 
         @include max-mq($hero-res-switch) {
-            right: -10px;
-            width: calc(100% + 20px);
+            right: -20px;
+            width: calc(100% + 40px);
             border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
         }
 
         @include min-max-mq($xs + 1px, $sm) {
@@ -250,10 +271,6 @@ $hero-res-switch: $md;
 
         @include max-mq($hero-res-switch) {
             padding: 15px 13px;
-        }
-
-        @include max-mq($xs) {
-            padding: 19px 15px;
         }
     }
 }
