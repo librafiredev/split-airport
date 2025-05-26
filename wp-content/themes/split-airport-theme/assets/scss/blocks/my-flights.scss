@@ -1,5 +1,7 @@
 @import "../global/variables";
 @import "../global/mixins";
+@import "../blocks/custom-modal.scss";
+@import "../components/heading-third";
 
 .my-flights-btn {
     cursor: pointer;
@@ -62,4 +64,101 @@
     vertical-align: middle;
     padding: 2px 6px;
     line-height: 1;
+}
+
+.custom-modal-wrapper.my-flights-modal-wrapper {
+    align-items: flex-start;
+    padding-top: 80px;
+
+    .custom-modal {
+        max-width: 575px;
+        padding: 0;
+    }
+
+    .custom-modal-close-btn-wrap {
+        margin-right: -10px;
+        margin-top: -10px;
+    }
+
+    .custom-modal-close-btn {
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.my-flights-modal-header {
+    padding: 28px 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.my-flights-modal-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .heading-third {
+        margin-bottom: 0;
+    }
+}
+
+.my-flights-modal-header-icon {
+    max-width: 48px;
+}
+
+.my-flight-item {
+    position: relative;
+}
+
+.my-flight-item-btn {
+    cursor: pointer;
+    transition: $dur;
+    border-top: 1px solid $gray;
+    padding: 18px 26px;
+    font-size: 15px;
+    line-height: calc(20 / 15);
+    color: $primary-color;
+    padding-right: 50px;
+
+    strong:not(:first-child) {
+        padding-right: 0.8em;
+    }
+
+    &:hover {
+        background-color: $gray;
+    }
+}
+
+.my-flight-item-remove-btn {
+    cursor: pointer;
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    svg {
+        vertical-align: middle;
+        height: 18px;
+        width: 18px;
+    }
+
+    path {
+        stroke: $primary-color;
+    }
+
+    &:hover {
+        path {
+            stroke: $red;
+        }
+    }
+}
+
+.my-flight-item-destination {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 1em;
 }
