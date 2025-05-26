@@ -2,6 +2,7 @@
 
 use SplitAirport\Models\Flight;
 use SplitAirport\Helpers\DateTimeFlight;
+use SplitAirport\Models\MyFlights as MyFlightsModel;
 
 extract($args);
 
@@ -18,6 +19,8 @@ $type = strtolower($AD);
 $options_slug = apply_filters('wpml_current_language', null) !== 'en' ? 'options_' . apply_filters('wpml_current_language', null) : "options";
 
 $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals' : 'departure'), $options_slug);
+
+$myFligts = MyFlightsModel::getMyFlights();
 ?>
 
 <div class="flight-popup">
@@ -55,7 +58,7 @@ $timeline = get_field('single_flight_popup_' . ($type === 'arrival' ? 'arrivals'
             </div>
         </div>
         <div class="flight-popup-header__right">
-            <!-- <a class="flight-popup-header-btn" href="#"><?php esc_html_e('Follow this flight', 'split-airport'); ?></a> -->
+            <a data-id="<?php echo $ID; ?>" class="flight-popup-header-btn follow-flight" href="#"><?php in_array($ID, $myFligts) ?  esc_html_e('Unfollow this flight', 'split-airport') : esc_html_e('Follow this flight', 'split-airport'); ?></a>
         </div>
         <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
             <?php echo $comment; ?>

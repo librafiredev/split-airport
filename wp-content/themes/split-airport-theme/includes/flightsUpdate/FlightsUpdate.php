@@ -33,6 +33,7 @@ class FlightsUpdate
 
         add_action('update_flights_data', [static::class, 'UpdateFlightsData']);
         SearchAPI::init();
+        MyFlights::init();
     }
 
 
@@ -48,7 +49,7 @@ class FlightsUpdate
     {
 
         $flightTimeWindow =  DateTimeFlight::getFlightTimeWindow();
-        
+
         // Old flights + current flights + 4 days flights
 
         try {

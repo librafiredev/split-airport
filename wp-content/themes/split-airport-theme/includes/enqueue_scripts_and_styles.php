@@ -29,6 +29,7 @@ function global_js_object()
 		'ajaxUrl' 			        		=> admin_url('admin-ajax.php'),
 		'searchRestUrl' 					=> get_site_url() . '/wp-json/splitAirport/v1/search',
 		'flightRestUrl'						=> get_site_url() . '/wp-json/splitAirport/v1/flight',
+		'myFlightsRestUrl'							=> get_site_url() . '/wp-json/splitAirport/v1/myFlights',
 		'nonce'								=> wp_create_nonce('security'),
 		'restNonce' 						=> wp_create_nonce('wp_rest'),
 		'FlightTypeTableStingArrival'   	=> __('Arriving from', 'split-airport'),
@@ -36,7 +37,10 @@ function global_js_object()
 		'gateTableString'					=> __('Gate', 'split-airport'),
 		'earlierFlightsButtonBack'			=> __('Back to current flights', 'split-airport'),
 		'earlierFlightsButtonShow'			=> __('Show earlier flights', 'split-airport'),
-		'currentLanguage'					=> apply_filters('wpml_current_language', null)
+		'currentLanguage'					=> apply_filters('wpml_current_language', null),
+		'unfollowButtonText'                => __('Unfollow this flight', 'split-airport'),
+		'followButtonText'                	=> __('Follow this flight', 'split-airport'),
+		'noMyFlights'						=> __('Your favorites list is empty.', 'split-airport'),
 	);
 
 	$global_js_object = json_encode($global_js_object);
