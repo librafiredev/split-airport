@@ -16,6 +16,8 @@ extract($args);
                 <path d="m682.7 0h-682.7v716h1445v-645h-611.4c-18.5 0-36.5-6.1-51.3-17.3l-48.3-36.5c-14.8-11.2-32.8-17.2-51.3-17.2z" />
             </svg>
         </div>
+
+        <?php get_template_part('template-parts/blocks/my-flights'); ?>
     </div>
 
 
