@@ -13,7 +13,7 @@ $page-hero-back-btn-bp: 1330px;
         position: relative;
         margin-bottom: 15px;
 
-        @include min-mq($sm) {
+        @include min-mq($crt) {
             margin-top: -22px;
 
             .site-main:has(section.airlines) & {
@@ -25,7 +25,7 @@ $page-hero-back-btn-bp: 1330px;
             }
         }
 
-        @include min-max-mq($sm, $page-hero-back-btn-bp) {
+        @include min-max-mq($crt, $page-hero-back-btn-bp) {
             display: flex;
             flex-wrap: wrap;
         }
@@ -60,7 +60,7 @@ $page-hero-back-btn-bp: 1330px;
     }
 
     svg {
-        @include max-mq($sm) {
+        @include max-mq($crt) {
             max-width: 18px;
         }
     }
@@ -73,11 +73,11 @@ $page-hero-back-btn-bp: 1330px;
 .page-hero-title {
     max-width: 640px;
 
-    @include min-max-mq($sm, $page-hero-back-btn-bp) {
+    @include min-max-mq($crt, $page-hero-back-btn-bp) {
         flex-grow: 0;
     }
 
-    @include max-mq($sm) {
+    @include max-mq($crt) {
         font-size: $responsive-size-h2;
         letter-spacing: -0.07em;
     }
@@ -94,19 +94,25 @@ $page-hero-back-btn-bp: 1330px;
         --additional-padding: 50px;
     }
 
-    @include min-mq($sm + 1px) {
+    @include min-mq($crt + 1px) {
         .site-main:has(section.arrivals-timetable) & {
             height: calc(384px + var(--additional-padding));
         }
     }
 
-    @include max-mq($sm) {
-        height: calc(126px + var(--additional-padding));
+    @include max-mq($crt) {
+        height: calc(156px + var(--additional-padding));
     }
 
     & + * {
         position: relative;
         z-index: 1;
+    }
+
+    @include max-mq($crt) {
+        .my-flights-btn {
+            bottom: $page-hero-mobile-bdrad;
+        }
     }
 }
 
@@ -148,7 +154,12 @@ $page-hero-back-btn-bp: 1330px;
     display: flex;
     justify-content: center;
 
-    @include max-mq($sm) {
+    @include max-mq($lg) {
+        left: -10%;
+    }
+
+    @include max-mq($crt) {
+        left: 0;
         height: $page-hero-mobile-bdrad + 2px;
 
         svg {
@@ -166,11 +177,10 @@ $page-hero-back-btn-bp: 1330px;
         right: 60%;
         background-color: $white;
 
-        @include max-mq($sm) {
+        @include max-mq($crt) {
             right: 0;
             width: 100%;
             border-top-left-radius: $page-hero-mobile-bdrad;
-            border-top-right-radius: $page-hero-mobile-bdrad;
         }
     }
 
@@ -178,7 +188,7 @@ $page-hero-back-btn-bp: 1330px;
         justify-content: flex-start;
     }
 
-    @include min-mq($sm + 1px) {
+    @include min-mq($crt + 1px) {
         .site-main:has(section.airlines) & {
             &::after {
                 content: "";
@@ -200,7 +210,7 @@ $page-hero-back-btn-bp: 1330px;
     color: $gray-300;
     letter-spacing: -0.02em;
 
-    @include min-max-mq($sm, $page-hero-back-btn-bp) {
+    @include min-max-mq($crt, $page-hero-back-btn-bp) {
         flex: 0 0 100%;
         max-width: 100%;
     }
