@@ -8,6 +8,8 @@ if (isset($block['data']['preview_image_help'])) :
     echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
 else:
     $working_hours = get_field('working_hours');
+
+      $follow_flights_pages = get_field('follow_flights_pages', 'options') ?? [];
 ?>
 
     <section class="page-hero-wrapper">
@@ -20,7 +22,7 @@ else:
                 </svg>
             </div>
 
-            <?php get_template_part('template-parts/blocks/my-flights'); ?>
+            <?php if(in_array(get_the_ID(), $follow_flights_pages)) get_template_part('template-parts/blocks/my-flights'); ?>
         </div>
 
 

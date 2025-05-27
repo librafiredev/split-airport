@@ -59,6 +59,50 @@ class Flight
         return null;
     }
 
+    public static function checkLandedFlights(array $flights)
+    {
+
+        $landedFlights = [];
+
+        if ($flights) {
+            $db = new Database();
+            $connection = $db->getConnection();
+
+            $placeholders = [];
+            foreach ($flights as $index => $id) {
+                $placeholders[] = ":id$index";
+            }
+
+            $inClause = implode(',', $placeholders);
+
+            $sql = $connection->prepare(
+                "
+            SELECT
+                fm.ID
+            FROM flights fm
+            WHERE 
+            fm.ID IN ($inClause) AND fm.comment = :status
+            "
+            );
+
+            foreach ($flights as $index => $id) {
+                $sql->bindValue(":id$index", $id, SQLITE3_INTEGER);
+            }
+
+            $sql->bindValue(':status', 'Landed');
+            $result = $sql->execute();
+
+            while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+                $landedFlights[] = $row["ID"];
+            }
+
+            $db->closeConnestion();
+        }
+
+
+        return $landedFlights;
+    }
+
 
     public static function getFlightByID($ID)
     {
@@ -110,7 +154,7 @@ class Flight
         AND  (
         (fm.esttime IS NOT NULL AND time(fm.esttime) >= time(:schtime)) OR
         (fm.esttime IS NULL AND time(fm.schtime) >= time(:schtime))) ";
-              
+
         if (!$date) {
             $date = DateTimeFlight::todayDate();
         }

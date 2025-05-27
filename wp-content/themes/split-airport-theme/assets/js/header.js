@@ -1,5 +1,4 @@
 $(function () {
-
     function initWarnings() {
         if ($('.site-warning-items-inner').length === 0) {
             return;

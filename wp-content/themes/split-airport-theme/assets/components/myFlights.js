@@ -1,22 +1,20 @@
 const _this = {
     $dom: {
         followButton: ".follow-flight",
-        modal: $(".my-flights-modal-wrapper"),
-        trigger: $(".my-flights-btn.view-trigger"),
-        viewItems: $(".my-flights-modal-wrapper__items"),
-        close: $(
-            ".my-flights-modal-wrapper .custom-modal-close-btn, .my-flights-modal-wrapper .custom-modal-close-area "
-        ),
+        trigger: ".my-flights-btn.view-trigger",
+        close: ".my-flights-modal-wrapper .custom-modal-close-btn, .my-flights-modal-wrapper .custom-modal-close-area",
         removeFlight: ".my-flight-item-remove-btn",
+        myFlightsWrapper: $(".my-flights-root"),
     },
 
     vars: {},
 
     init: function () {
         $("body").on("click", _this.$dom.followButton, _this.followAction);
-        _this.$dom.trigger.on("click", _this.openView);
-        _this.$dom.close.on("click", _this.closeView);
+        $("body").on("click", _this.$dom.trigger, _this.openView);
+        $("body").on("click", _this.$dom.close, _this.closeView);
         $("body").on("click", _this.$dom.removeFlight, _this.followAction);
+        _this.nextDayDeleteFlightsAction();
     },
 
     followAction: async function (e) {
@@ -45,9 +43,11 @@ const _this = {
                         response.data.smallView
                     );
 
+                    const viewItems = $(".my-flights-modal-wrapper__items");
+
                     if (!response.data.smallView) {
-                        _this.$dom.viewItems.html(
-                            `<p>${theme.noMyFlights}</p>`
+                        viewItems.html(
+                            `<p class="no-items-my-flight">${theme.noMyFlights}</p>`
                         );
                     }
                 } else {
@@ -63,15 +63,49 @@ const _this = {
         }
     },
 
+    nextDayDeleteFlightsAction: async function () {
+        const today = new Date().toISOString().split("T")[0];
+        const lastCheckDate = localStorage.getItem("lastFlightCheckDate");
+
+        if (lastCheckDate !== today) {
+            try {
+                const data = new FormData();
+
+                data.append("_wpnonce", theme.restNonce);
+
+                const request = await fetch(theme.checkMyFlightsRestUrl, {
+                    body: data,
+                    method: "POST",
+                });
+
+                const response = await request.json();
+
+                if (response.success === true) {
+                    _this.$dom.myFlightsWrapper.html(
+                        response.data.myFlightsHTML
+                    );
+
+                    localStorage.setItem("lastFlightCheckDate", today);
+                }
+            } catch (e) {
+                console.error(e.message);
+            }
+        }
+    },
+
     openView: function () {
-        if (!_this.$dom.modal.hasClass("open")) {
-            _this.$dom.modal.addClass("open");
+        const modal = $(".my-flights-modal-wrapper");
+
+        if (!modal.hasClass("open")) {
+            modal.addClass("open");
         }
     },
 
     closeView: function () {
-        if (_this.$dom.modal.hasClass("open")) {
-            _this.$dom.modal.removeClass("open");
+        const modal = $(".my-flights-modal-wrapper");
+
+        if (modal.hasClass("open")) {
+            modal.removeClass("open");
         }
     },
 };

@@ -10,6 +10,8 @@ else: ?>
 
     <?php 
 
+        $follow_flights_pages = get_field('follow_flights_pages', 'options') ?? [];
+
         $title = get_field('title');
         
         $background_mobile = get_field('background_mobile');
@@ -111,7 +113,7 @@ else: ?>
 
                 </div><!-- .home-hero-inner -->
             </div><!-- .container -->
-            <?php get_template_part('template-parts/blocks/my-flights'); ?>
+            <?php if(in_array(get_the_ID(), $follow_flights_pages)) get_template_part('template-parts/blocks/my-flights'); ?>
         </section><!-- .home-hero-wrapper-->
     </div>
     <?php get_template_part('template-parts/blocks/flight-popup'); ?>

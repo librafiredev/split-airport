@@ -50,6 +50,39 @@
             "wpml_cf_preferences": 1
         },
         {
+            "key": "field_6835c97222e1f",
+            "label": "Follow Flights Pages",
+            "name": "follow_flights_pages",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 1,
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_6818da516cabc",
             "label": "Arrivals Timetable",
             "name": "",
@@ -360,6 +393,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "localization",
-    "modified": 1747131648
+    "acfml_field_group_mode": "translation",
+    "modified": 1748355687
 }
