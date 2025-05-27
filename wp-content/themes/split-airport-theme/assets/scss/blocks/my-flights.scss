@@ -8,12 +8,13 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 5;
     display: flex;
     align-items: stretch;
     color: $primary-color;
     font-size: 15px;
     line-height: calc(20 / 15);
+    overflow: hidden;
 }
 
 .my-flights-svg-wrap {
@@ -25,7 +26,7 @@
         top: 0;
         left: 2px;
         width: 100%;
-        height: 100%;
+        height: calc(100% + 2px);
     }
 }
 
@@ -48,6 +49,10 @@
 
     @include max-mq($xs) {
         max-width: 266px;
+    }
+
+    div {
+        display: inline-block;
     }
 
     strong:not(:first-child) {
@@ -117,14 +122,19 @@
     position: relative;
 }
 
+// NOTE: first selector is for no results
+.my-flights-modal-wrapper__items p,
 .my-flight-item-btn {
-    cursor: pointer;
-    transition: $dur;
     border-top: 1px solid $gray;
     padding: 18px 26px;
     font-size: 15px;
     line-height: calc(20 / 15);
     color: $primary-color;
+}
+
+.my-flight-item-btn {
+    cursor: pointer;
+    transition: $dur;
     padding-right: 50px;
 
     strong:not(:first-child) {
