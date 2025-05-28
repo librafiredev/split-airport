@@ -521,6 +521,7 @@ $icon_data = [
                     'width' => 204,
                     'height' => 92,
                     'type' => 'area',
+                    'override_z_index' => 3,
                 ),
             ],
         ),
