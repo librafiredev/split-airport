@@ -18,31 +18,55 @@ if( function_exists('acf_add_options_page') ) {
 
 function custom_language_selector() {
     $languages = apply_filters('wpml_active_languages', null, array('skip_missing' => 0));
+
     if (!empty($languages)) {
         echo '<div class="language-menu">';
-        
+
         // Prikaz aktivnog jezika
         foreach ($languages as $language) {
             if ($language['active']) {
-                $name = $language['language_code'] === 'sr' ? 'Srpski' : $language['native_name'];
+                $flag_path = '';
+                switch ($language['language_code']) {
+                    case 'hr':
+                        $flag_path = 'croatia_flag.svg';
+                        break;
+                    case 'en':
+                        $flag_path = 'eng_flag.svg';
+                        break;
+                }
+
                 echo '<div class="current-lang">';
-                echo esc_html(substr($name, 0, 3));
+                echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/' . $flag_path) . '" alt="' . esc_attr($language['native_name']) . '" width="24" height="24">';
                 echo '</div>';
             }
         }
 
-        // Prikaz ostalih jezika
         echo '<ul>';
         foreach ($languages as $language) {
-            $name = $language['language_code'] === 'sr' ? 'Srpski' : $language['native_name'];
-            echo '<li><a href="' . esc_url($language['url']) . '" class="language">';
-            echo esc_html($name);
-            echo '</a></li>';
+            $flag_path = '';
+            switch ($language['language_code']) {
+                case 'hr':
+                    $flag_path = 'croatia_flag.svg';
+                    break;
+                case 'en':
+                    $flag_path = 'eng_flag.svg';
+                    break;
+            }
+
+            $background = $language['active'] ? '#f3f8fc' : '#ffffff';
+
+            echo '<li style="background-color: ' . $background . ';">';
+            echo '<a href="' . esc_url($language['url']) . '" class="language">';
+            echo '<img src="' . esc_url(get_template_directory_uri() . '/assets/images/' . $flag_path) . '" alt="' . esc_attr($language['native_name']) . '" width="24" height="24">';
+            echo '</a>';
+            echo '</li>';
         }
-        echo '</ul>'; // Zatvara dropdown
-        echo '</div>'; // Zatvara meni jezika
+        echo '</ul>';
+        echo '</div>';
     }
 }
+
+
 
 if ( ! function_exists( 'cpt_flexible_pagination' ) ) :
 
