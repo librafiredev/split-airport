@@ -6,7 +6,6 @@ import {
     styleDateSelect,
 } from "../../assets/components/searchUtils";
 import request from "../../assets/components/flightsUpdateRequest";
-import flightPopup from "../../assets/components/flightPopup";
 import "../../assets/components/searchEvents";
 
 $(function () {
@@ -116,10 +115,6 @@ $(function () {
         datesSelect.val(selectedDate.val()).change();
         dateSwitcherView.text(selectedDate.text());
     };
-
-    // Init Flight popup
-
-    flightPopup.init();
 
     // Call after search
 

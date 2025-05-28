@@ -116,6 +116,6 @@ else: ?>
             <?php if(in_array(get_the_ID(), $follow_flights_pages)) get_template_part('template-parts/blocks/my-flights'); ?>
         </section><!-- .home-hero-wrapper-->
     </div>
-    <?php get_template_part('template-parts/blocks/flight-popup'); ?>
+    
     
 <?php endif; ?>

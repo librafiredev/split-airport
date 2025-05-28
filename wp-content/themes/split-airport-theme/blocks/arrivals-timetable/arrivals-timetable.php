@@ -51,33 +51,33 @@ else:
                 <?php if ($search || $destination || $airline): ?>
 
                     <p class="search-notice">
-                    <?php
-                    $notices = [];
+                        <?php
+                        $notices = [];
 
-                    if ($search) {
-                        $notices[] = sprintf(__('Search term: <strong>%s</strong>', 'split-airport'), esc_html($search));
-                    }
-
-                    if ($destination) {
-                        $notices[] = sprintf(__('Flights for Destination: <strong>%s</strong>', 'split-airport'), esc_html($destination));
-                    }
-
-                    if ($airline) {
-                        $notices[] = sprintf(__('Filtered by Airline: <strong>%s</strong>', 'split-airport'), esc_html($airline));
-                    }
-
-                    echo implode(' &nbsp;|&nbsp; ', $notices);
-                    ?>.
-                    <a href="<?php echo Page::getSearchPage(); ?>">
-                        <?php 
-                        if ($currentLanguage === 'hr') {
-                            echo esc_html__('Započni novu pretragu', 'split-airport');
-                        } else {
-                            echo esc_html__('Start new search', 'split-airport');
+                        if ($search) {
+                            $notices[] = sprintf(__('Search term: <strong>%s</strong>', 'split-airport'), esc_html($search));
                         }
-                        ?>
-                    </a>
-                </p>
+
+                        if ($destination) {
+                            $notices[] = sprintf(__('Flights for Destination: <strong>%s</strong>', 'split-airport'), esc_html($destination));
+                        }
+
+                        if ($airline) {
+                            $notices[] = sprintf(__('Filtered by Airline: <strong>%s</strong>', 'split-airport'), esc_html($airline));
+                        }
+
+                        echo implode(' &nbsp;|&nbsp; ', $notices);
+                        ?>.
+                        <a href="<?php echo Page::getSearchPage(); ?>">
+                            <?php
+                            if ($currentLanguage === 'hr') {
+                                echo esc_html__('Započni novu pretragu', 'split-airport');
+                            } else {
+                                echo esc_html__('Start new search', 'split-airport');
+                            }
+                            ?>
+                        </a>
+                    </p>
 
                 <?php endif; ?>
 
@@ -166,6 +166,5 @@ else:
         </div>
     </section><!-- .arrivals-timetable-->
 
-    <?php get_template_part('template-parts/blocks/flight-popup'); ?>
 
 <?php endif; ?>

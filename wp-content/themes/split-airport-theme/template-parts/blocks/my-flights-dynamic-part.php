@@ -46,7 +46,7 @@ $myFlights = array_reverse($myFlights);
             foreach ($myFlights as $myFlight) :
                 $flight = Flight::getFlightByID($myFlight);
             ?>
-                <div class="my-flight-item">
+                <div data-id="<?php echo $myFlight; ?>" class="my-flight-item flight">
                     <div class="my-flight-item-btn">
                         <?php get_template_part('template-parts/blocks/my-flights-item', null, ['flight' => $flight]); ?>
                     </div>

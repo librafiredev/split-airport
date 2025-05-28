@@ -19,6 +19,7 @@ const _this = {
 
     followAction: async function (e) {
         e.preventDefault();
+        e.stopPropagation();
 
         try {
             const flightID = $(e.currentTarget).data("id");
@@ -36,7 +37,10 @@ const _this = {
             const response = await request.json();
 
             if (response.success === true) {
-                if ($(e.currentTarget).hasClass("my-flight-item-remove-btn")) {
+                if (
+                    $(e.currentTarget).hasClass("my-flight-item-remove-btn") ||
+                    $(e.currentTarget).text() === theme.unfollowButtonText
+                ) {
                     $(e.currentTarget).closest(".my-flight-item").remove();
 
                     $(".my-flights-btn-item").replaceWith(
@@ -49,6 +53,13 @@ const _this = {
                         viewItems.html(
                             `<p class="no-items-my-flight">${theme.noMyFlights}</p>`
                         );
+                    }
+
+                    if ($(e.currentTarget).text() === theme.unfollowButtonText) {
+                        $(e.currentTarget).text(theme.followButtonText);
+                        const flight = $(`.flight[data-id="${flightID}"]`);
+                        flight.remove();
+                        $('.flight-popup-close-btn').trigger('click');
                     }
                 } else {
                     const buttonText = $(e.currentTarget).text();
