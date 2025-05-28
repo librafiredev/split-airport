@@ -667,41 +667,25 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Restaurant'),
+            'label' => esc_html__('Restaurant Kupola'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/restaurant.svg',
-                    'x' => 517,
-                    'y' => 349,
+                    'x' => 654,
+                    'y' => 371,
                 ),
                 array(
-                    'shape_path' => '/assets/images/airport-map/rest-area-3.svg',
-                    'x' => 457,
+                    'shape_path' => '/assets/images/airport-map/kupola-area.svg',
+                    'x' => 297,
                     'y' => 277,
-                    'width' => 182,
-                    'height' => 215,
+                    'width' => 1256,
+                    'height' => 462,
                     'type' => 'area',
+                    'override_z_index' => 3,
                 ),
             ],
         ),
-        array(
-            'label' => esc_html__('Caffe Bar'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/coffe.svg',
-                    'x' => 345,
-                    'y' => 349,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/cafe-area-3.svg',
-                    'x' => 296,
-                    'y' => 277,
-                    'width' => 161,
-                    'height' => 215,
-                    'type' => 'area',
-                ),
-            ],
-        ),
+        
     ]
 ];
 $category_data = [
