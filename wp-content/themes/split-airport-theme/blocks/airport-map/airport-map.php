@@ -92,31 +92,23 @@ $icon_data = [
                 array(
                     'shape_path' => '/assets/images/airport-map/lost-n-found.svg',
                     'x' => 836,
-                    'y' => 911,
+                    'y' => 845,
                     'tooltip_side' => 'left',
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/lost-n-found.svg',
                     'x' => 1036,
-                    'y' => 911,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/lost-n-found-area.svg',
-                    'x' => 927,
-                    'y' => 920,
-                    'width' => 82,
-                    'height' => 40,
-                    'type' => 'area',
+                    'y' => 845,
                 ),
             ],
         ),
         array(
-            'label' => esc_html__('Info Pult'),
+            'label' => esc_html__('Information desk'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/info.svg',
-                    'x' => 2085,
-                    'y' => 437,
+                    'x' => 1720,
+                    'y' => 435,
                     'tooltip_side' => 'left',
                 ),
             ],
@@ -144,12 +136,6 @@ $icon_data = [
             'label' => esc_html__('Self check-in'),
             'items' => [
                 array(
-                    'shape_path' => '/assets/images/airport-map/self-check-in-1.svg',
-                    'x' => 1055,
-                    'y' => 409,
-                    
-                ),
-                array(
                     'shape_path' => '/assets/images/airport-map/self-check-in-2.svg',
                     'x' => 1602,
                     'y' => 398,
@@ -174,12 +160,6 @@ $icon_data = [
                     'shape_path' => '/assets/images/airport-map/plane-boarding-pass-1.svg',
                     'x' => 2370,
                     'y' => 361,
-                    'tooltip_side' => 'left',
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/plane-boarding-pass-1.svg',
-                    'x' => 2156,
-                    'y' => 437,
                     'tooltip_side' => 'left',
                 ),
             ],
@@ -218,9 +198,8 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/money-atm.svg',
-                    'x' => 1243,
-                    'y' => 1054,
-                    'tooltip_side' => 'left',
+                    'x' => 1049,
+                    'y' => 1035,
                 ),
             ],
         ),
@@ -282,8 +261,8 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/storefront.svg',
-                    'x' => 2370,
-                    'y' => 437,
+                    'x' => 2183,
+                    'y' => 357,
                     'tooltip_side' => 'left',
                 ),
             ],
@@ -390,8 +369,9 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/taxi-sign.svg',
-                    'x' => 1712,
-                    'y' => 934,
+                    'x' => 2401,
+                    'y' => 714,
+                    'tooltip_side' => 'left',
                 ),
             ],
         ),
@@ -400,13 +380,8 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/bus.svg',
-                    'x' => 1639,
-                    'y' => 934,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/bus.svg',
-                    'x' => 70,
-                    'y' => 797,
+                    'x' => 2075,
+                    'y' => 849,
                 ),
             ],
         ),
@@ -430,12 +405,22 @@ $icon_data = [
                 ),
             ],
         ),
+        array(
+            'label' => esc_html__('Arrivals gate'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/plane-landing.svg',
+                    'x' => 944,
+                    'y' => 651,
+                ),
+            ],
+        ),
         
     ],
     // FLOOR 1
     [
         array(
-            'label' => esc_html__('Info Pult'),
+            'label' => esc_html__('Information desk'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/info.svg',
@@ -841,14 +826,23 @@ $category_data = [
                 ]
             ),
             array(
-                'label' => esc_html__('International departure area'),
-                'group_index' => 5,
-                'floor' => 1,
+                'group_index' => 22,
+                'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Domestic departure area'),
-                'group_index' => 6,
-                'floor' => 1,
+                'label' => esc_html__('Departures'),
+                'children' => [
+                    array(
+                        'label' => esc_html__('International departure'),
+                        'group_index' => 5,
+                        'floor' => 1,
+                    ),
+                    array(
+                        'label' => esc_html__('Non-schengen departures'),
+                        'group_index' => 6,
+                        'floor' => 1,
+                    ),
+                ],
             ),
             array(
                 'group_index' => 11,
