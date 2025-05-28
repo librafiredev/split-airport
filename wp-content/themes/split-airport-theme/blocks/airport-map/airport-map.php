@@ -44,6 +44,11 @@ if( ! function_exists('recoursively_render_map_categories') ) :
                                 <?php echo file_get_contents(get_template_directory() . '/assets/images/arrow-down.svg'); ?>
                             </span>
                         <?php endif; ?>
+                        <?php if ( $level == 2 ) : ?>
+                            <span class="map-sidebar-floor">
+                                <?php echo $floor; ?>
+                            </span>
+                        <?php endif; ?>
                     </button>
 
                     <?php

@@ -735,3 +735,13 @@ $map-main-bp: $sm;
     transform: scale(1);
     z-index: 15;
 }
+
+.map-sidebar-floor {
+    color: $primary-color;
+    font-weight: bold;
+    margin-left: auto;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0.1em;
+}
