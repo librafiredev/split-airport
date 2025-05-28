@@ -435,12 +435,13 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Departure Passenger Assistance'),
+            'label' => esc_html__('Caffe bar Promenade'),
             'items' => [
                 array(
-                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
-                    'x' => 1342,
-                    'y' => 162,
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
+                    'x' => 2184,
+                    'y' => 236,
+                    'tooltip_side' => 'left',
                 ),
             ],
         ),
@@ -506,12 +507,20 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Business lounge'),
+            'label' => esc_html__('Restaurant Ikar'),
             'items' => [
                 array(
-                    'shape_path' => '/assets/images/airport-map/sofa-couch.svg',
-                    'x' => 448,
-                    'y' => 813,
+                    'shape_path' => '/assets/images/airport-map/restaurant.svg',
+                    'x' => 1518,
+                    'y' => 389,
+                ),
+                array(
+                    'shape_path' => '/assets/images/airport-map/rest-area-2.svg',
+                    'x' => 1447,
+                    'y' => 374,
+                    'width' => 204,
+                    'height' => 92,
+                    'type' => 'area',
                 ),
             ],
         ),
@@ -537,8 +546,8 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
-                    'x' => 246,
-                    'y' => 915,
+                    'x' => 250,
+                    'y' => 925,
                 ),
             ],
         ),
@@ -547,8 +556,8 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/passport-control.svg',
-                    'x' => 255,
-                    'y' => 689,
+                    'x' => 1577,
+                    'y' => 211,
                 ),
             ],
         ),
@@ -572,27 +581,23 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('European Union'),
+            'label' => esc_html__('Customs'),
             'items' => [
                 array(
-                    'shape_path' => '/assets/images/airport-map/eu.svg',
-                    'x' => 255,
-                    'y' => 492,
+                    'shape_path' => '/assets/images/airport-map/security-officer.svg',
+                    'x' => 1466,
+                    'y' => 226,
+                    'tooltip_side' => 'left',
                 ),
             ],
         ),
         array(
-            'label' => esc_html__('Restaurant'),
+            'label' => esc_html__('Bistro Jug'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/restaurant.svg',
                     'x' => 295,
                     'y' => 1204,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/restaurant.svg',
-                    'x' => 1518,
-                    'y' => 389,
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/rest-area-1.svg',
@@ -602,54 +607,22 @@ $icon_data = [
                     'height' => 196,
                     'type' => 'area',
                 ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/rest-area-2.svg',
-                    'x' => 1447,
-                    'y' => 374,
-                    'width' => 204,
-                    'height' => 92,
-                    'type' => 'area',
-                ),
             ],
         ),
         array(
-            'label' => esc_html__('Caffe Bar'),
+            'label' => esc_html__('Caffe bar Sjever'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/coffe.svg',
-                    'x' => 402,
-                    'y' => 279,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/coffe.svg',
-                    'x' => 1766,
-                    'y' => 236,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/coffe.svg',
-                    'x' => 1518,
-                    'y' => 490,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/coffe.svg',
-                    'x' => 2184,
-                    'y' => 236,
+                    'x' => 281,
+                    'y' => 227,
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/cafe-area-1.svg',
-                    'x' => 318,
-                    'y' => 233,
-                    'width' => 231,
-                    'height' => 168,
-                    'type' => 'area',
-                    'override_z_index' => 3,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/cafe-area-2.svg',
-                    'x' => 1447,
-                    'y' => 475,
-                    'width' => 204,
-                    'height' => 92,
+                    'x' => 125,
+                    'y' => 180,
+                    'width' => 325,
+                    'height' => 221,
                     'type' => 'area',
                     'override_z_index' => 3,
                 ),
@@ -793,19 +766,8 @@ $category_data = [
                 'floor' => 0,
             ),
             array(
-                'label' => esc_html__('Departure passenger assistance'),
-                'children' => [
-                    array(
-                        'label' => esc_html__('Assistance on floor 0'),
-                        'group_index' => 10,
-                        'floor' => 0,
-                    ),
-                    array(
-                        'label' => esc_html__('Assistance on floor 1'),
-                        'group_index' => 1,
-                        'floor' => 1,
-                    ),
-                ]
+                'group_index' => 10,
+                'floor' => 0,
             ),
             array(
                 'group_index' => 2,
@@ -816,19 +778,9 @@ $category_data = [
                 'floor' => 1,
             ),
             array(
-                'label' => esc_html__('Business lounges'),
-                'children' => [
-                    array(
-                        'label' => esc_html__('Lounge on floor 1'),
-                        'group_index' => 4,
-                        'floor' => 1,
-                    ),
-                    array(
-                        'label' => esc_html__('Lounges on floor 2'),
-                        'group_index' => 0,
-                        'floor' => 2,
-                    ),
-                ]
+                'label' => esc_html__('Business lounge'),
+                'group_index' => 0,
+                'floor' => 2,
             ),
             array(
                 'group_index' => 22,
@@ -893,25 +845,25 @@ $category_data = [
                 'floor' => 1,
             ),
             array(
-                'group_index' => 14,
-                'floor' => 0,
-            ),
-            array(
-                'label' => esc_html__('European Union'),
+                'label' => esc_html__('Customs'),
                 'children' => [
                     array(
-                        'label' => esc_html__('European Union on floor 0'),
-                        'group_index' => 16,
+                        'label' => esc_html__('Customs on floor 0'),
+                        'group_index' => 14,
                         'floor' => 0,
                     ),
                     array(
-                        'label' => esc_html__('European Union on floor 1'),
+                        'label' => esc_html__('Customs on floor 1'),
                         'group_index' => 9,
                         'floor' => 1,
                     ),
                 ]
             ),
-
+            
+            array(
+                'group_index' => 16,
+                'floor' => 0,
+            ),
         ],
     ),
     array(
@@ -949,14 +901,16 @@ $category_data = [
                 'label' => esc_html__('Restaurants'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Restaurants on floor 1'),
-                        'group_index' => 10,
+                        'group_index' => 4,
                         'floor' => 1,
                     ),
                     array(
-                        'label' => esc_html__('Restaurants on floor 2'),
                         'group_index' => 1,
                         'floor' => 2,
+                    ),
+                    array(
+                        'group_index' => 10,
+                        'floor' => 1,
                     ),
                 ]
             ),
@@ -964,14 +918,12 @@ $category_data = [
                 'label' => esc_html__('Caffe bars'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Caffe bars on floor 1'),
                         'group_index' => 11,
                         'floor' => 1,
                     ),
                     array(
-                        'label' => esc_html__('Caffe bars on floor 2'),
-                        'group_index' => 2,
-                        'floor' => 2,
+                        'group_index' => 1,
+                        'floor' => 1,
                     ),
                 ]
             ),
@@ -1141,7 +1093,7 @@ foreach ($floors_data as $key => $value) {
                         <div class="airport-map-pannable">
                             <?php foreach ($floors_data as $floor_idx => $floor) : ?>
                                 <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
-                                <div class="airport-map-floor <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
+                                <div class="airport-map-floor airport-map-floor-<?php echo $floor_idx; ?> <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
                         
                                     <div class="airport-map-wrap">
                                         <img src="<?php echo $floor['bg_path']; ?>" alt="" />
@@ -1153,8 +1105,14 @@ foreach ($floors_data as $key => $value) {
                                         <?php endif; ?>
                                         <?php $groups = $icon_data[$floor_idx]; ?>
                                         <?php foreach ($groups as $g_idx => $group) : ?>
+                                            <?php $items = $group['items']; 
+                                            
+                                            if ( empty($items) ) {
+                                                continue;
+                                            }
+                                            
+                                            ?>
                                             <div class="airport-map-group <?php echo $group_class_prefix; ?><?php echo $floor_idx; ?>-<?php echo $g_idx; ?>">
-                                                <?php $items = $group['items']; ?>
                                                 <?php foreach ($items as $i_key => $item) : ?>
                                                     <?php
                                                     $shape_type = $item['type'] ?: 'icon';
