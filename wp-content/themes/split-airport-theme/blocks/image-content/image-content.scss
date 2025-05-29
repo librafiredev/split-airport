@@ -2,6 +2,7 @@
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 @import "../../assets/scss/components/heading-third";
+@import "../../assets/scss/components/sticky-images";
 
 .image-content {
     padding: 10px 0 20px;
@@ -61,6 +62,7 @@
 }
 
 .image-content__right {
+    margin-left: auto;
     text-align: right;
 
     @include max-mq($sm) {
