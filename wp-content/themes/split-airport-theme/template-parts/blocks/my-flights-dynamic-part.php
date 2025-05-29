@@ -16,7 +16,7 @@ $myFlights = array_reverse($myFlights);
 
 ?>
 
-<div class="my-flights-btn view-trigger">
+<div data-id="<?php if(isset($newestFlight) && $newestFlight) echo $newestFlight['ID']; ?>" class="my-flights-btn <?php echo $total > 1 ? 'view-trigger' : 'flight' ?>">
     <div class="my-flights-svg-wrap"><?php echo file_get_contents(get_template_directory() . '/assets/images/my-flight-cutout.svg'); ?></div>
 
     <?php

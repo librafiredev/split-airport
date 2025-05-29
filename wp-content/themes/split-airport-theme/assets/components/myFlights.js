@@ -42,12 +42,19 @@ const _this = {
                     $(e.currentTarget).text() === theme.unfollowButtonText
                 ) {
                     $(e.currentTarget).closest(".my-flight-item").remove();
+                    const viewItems = $(".my-flights-modal-wrapper__items");
+                    const viewTrigger = $(".my-flights-btn");
+
+                    const total = viewItems.children().length;
+
+                    if (total === 1) {
+                        viewTrigger.removeClass("view-trigger");
+                        viewTrigger.addClass("flight");
+                    }
 
                     $(".my-flights-btn-item").replaceWith(
                         response.data.smallView
                     );
-
-                    const viewItems = $(".my-flights-modal-wrapper__items");
 
                     if (!response.data.smallView) {
                         viewItems.html(
@@ -55,11 +62,23 @@ const _this = {
                         );
                     }
 
-                    if ($(e.currentTarget).text() === theme.unfollowButtonText) {
+                    if (
+                        $(e.currentTarget).text() === theme.unfollowButtonText
+                    ) {
                         $(e.currentTarget).text(theme.followButtonText);
                         const flight = $(`.flight[data-id="${flightID}"]`);
                         flight.remove();
-                        $('.flight-popup-close-btn').trigger('click');
+                        const viewItems = $(".my-flights-modal-wrapper__items");
+                        const viewTrigger = $(".my-flights-btn");
+
+                        const total = viewItems.children().length;
+
+                        if (total === 1) {
+                            viewTrigger.removeClass("view-trigger");
+                            viewTrigger.addClass("flight");
+                        }
+
+                        $(".flight-popup-close-btn").trigger("click");
                     }
                 } else {
                     const buttonText = $(e.currentTarget).text();

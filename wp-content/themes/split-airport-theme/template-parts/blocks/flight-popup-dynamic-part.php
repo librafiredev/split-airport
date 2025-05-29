@@ -57,9 +57,15 @@ $myFligts = MyFlightsModel::getMyFlights();
                 </div>
             </div>
         </div>
+
+        <?php if($comment !== 'Landed' || in_array($ID, $myFligts)): ?>
+
         <div class="flight-popup-header__right">
             <a data-id="<?php echo $ID; ?>" class="flight-popup-header-btn follow-flight" href="#"><?php in_array($ID, $myFligts) ?  esc_html_e('Unfollow this flight', 'split-airport') : esc_html_e('Follow this flight', 'split-airport'); ?></a>
         </div>
+
+        <?php endif; ?>
+
         <div class="flight-popup-header-text <?php echo strtolower(str_replace(" ", "-", $comment)); ?>">
             <?php echo $comment; ?>
         </div>
