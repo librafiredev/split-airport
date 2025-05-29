@@ -435,7 +435,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Caffe bar Promenade'),
+            'label' => esc_html__('Caffe bar'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/coffe.svg',
@@ -526,7 +526,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('International Departure'),
+            'label' => esc_html__('International departure'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
@@ -535,20 +535,21 @@ $icon_data = [
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
+                    'x' => 250,
+                    'y' => 925,
+                ),
+                
+            ],
+        ),
+        array(
+            'label' => esc_html__('Non-Schengen'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
                     'x' => 2082,
                     'y' => 227,
                     'tooltip_side' => 'left',
                     'override_z_index' => 10,
-                ),
-            ],
-        ),
-        array(
-            'label' => esc_html__('Domestic Departure'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
-                    'x' => 250,
-                    'y' => 925,
                 ),
             ],
         ),
