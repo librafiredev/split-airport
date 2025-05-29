@@ -542,7 +542,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Non-Schengen'),
+            'label' => esc_html__('Non-Schengen departure'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
