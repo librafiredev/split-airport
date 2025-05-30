@@ -6,6 +6,12 @@
 @import "../../assets/scss/components/heading-third";
 @import "../../assets/scss/components/sticky-images";
 
+.image-accordion {
+    &:last-child {
+        margin-bottom: calc(140px - 88px);
+    }
+}
+
 .image-accordion__items {
     display: flex;
     flex-wrap: wrap;

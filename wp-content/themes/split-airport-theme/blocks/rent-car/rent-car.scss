@@ -8,7 +8,7 @@ $rent-car-shared-bp: $mb;
 
     @include min-mq($rent-car-shared-bp + 1px) {
         &:last-child {
-            margin-bottom: 90px;
+            margin-bottom: 140px;
         }
     }
 }
