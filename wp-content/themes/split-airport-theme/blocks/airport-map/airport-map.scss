@@ -9,6 +9,10 @@ $map-main-bp: $sm;
     padding-top: 85px;
     padding-bottom: 140px;
 
+    body:has(div.site-warning) & {
+        padding-top: 155px;
+    }
+
     button {
         font-family: $primary-font;
     }
