@@ -103,6 +103,7 @@
 }
 
 .image-box__right {
+    margin-left: auto;
     padding-top: 1px;
 
     @include max-mq($sm) {

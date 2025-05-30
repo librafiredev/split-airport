@@ -1,5 +1,3 @@
-import global from './global';
-
 const _this = {
     blocks: [],
     visibilityTreshholds: [],
@@ -7,9 +5,23 @@ const _this = {
     imgSelector: '.image-accordion__image img, .image-content__image img, .image-box__image img',
     innerSelector: '.image-accordion__left, .image-content__left, .image-box__left',
     heightCarrierItems: [],
-    scrollOffset: .3,
+    scrollOffset: .5,
+    isRendered: false,
+    isInitialized: false,
+
+    shouldHandleSticky: () => {
+        if ($(window).width() < 767) {
+            return false;
+        }
+
+        return true;
+    },
 
     updateCurrentImageVisibility: () => {
+        if (!_this.shouldHandleSticky()) {
+            return;
+        }
+
         _this.visibilityTreshholds.forEach(function (tresholds, i) {
             if (tresholds.length > 0) {
                 tresholds.forEach(function (treshold, j) {
@@ -23,23 +35,59 @@ const _this = {
         });
     },
 
-    setupStickyElements: () => {
+    updateStickyElementVariables: () => {
+        if (!_this.shouldHandleSticky()) {
+            return;
+        }
+
         _this.visibilityTreshholds = [];
 
         _this.blocks.forEach(function (block) {
             var tresholds = [];
-            var replacementImages = [];
 
             if (block.type != 'no-images') {
-                var imagesContainer = '';
+                var imagesContainer = block.imagesContainer;
+                var stickyCarrier = block.items[0].node;
+
                 var itemNum = block.items.length;
                 var lastItem = block.items[itemNum - 1];
 
+                var innerItem = lastItem.node.find(_this.innerSelector).eq(0);
+                var containerHeight = (innerItem.offset().top + innerItem.height()) - stickyCarrier.offset().top;
+
+                imagesContainer.css({ height: containerHeight + 'px' });
+
+                block.items.forEach(function (item) {
+                    var img = item.node.find(_this.imgSelector);
+                    tresholds.push(img.offset().top);
+                });
+            }
+
+            _this.visibilityTreshholds.push(tresholds);
+        });
+    },
+
+    renderStickyElements: () => {
+        if (!_this.shouldHandleSticky()) {
+            return;
+        }
+
+        if (_this.isRendered) {
+            return;
+        }
+
+        _this.isRendered = true;
+
+        _this.blocks.forEach(function (block, idx) {
+            var replacementImages = [];
+
+            if (block.type != 'no-images') {
                 var stickyCarrier = block.items[0].node;
 
                 stickyCarrier.addClass('has-sticky-images');
                 var imagesWrap = $('<div class="sticky-images-wrap"></div>');
-                imagesContainer = $('<div class="container"></div>');
+                var imagesContainer = $('<div class="container"></div>');
+                _this.blocks[idx].imagesContainer = imagesContainer;
                 var stickyWrapColumn = $('<div class="sticky-wrap-column ' + block.type + '"></div>');
                 var stickyImageWrap = $('<div class="sticky-image-wrap"></div>');
 
@@ -62,37 +110,39 @@ const _this = {
                 imagesContainer.append(stickyWrapColumn);
                 imagesWrap.append(imagesContainer);
                 stickyCarrier.append(imagesWrap);
-
-                var innerItem = lastItem.node.find(_this.innerSelector).eq(0);
-                var containerHeight = (innerItem.offset().top + innerItem.height()) - stickyCarrier.offset().top;
-
-                imagesContainer.css({ height: containerHeight + 'px' });
-
-                block.items.forEach(function (item) {
-                    var img = item.node.find(_this.imgSelector);
-                    tresholds.push(img.offset().top);
-                });
             }
 
-            _this.visibilityTreshholds.push(tresholds);
             _this.replacementImages.push(replacementImages);
 
         });
 
+        _this.updateStickyElementVariables();
+
         setTimeout(function () {
             _this.updateCurrentImageVisibility();
         }, 300);
-
     },
 
-    init: () => {
+    setupStickyBlocks: () => {
         var currentBlockType = 'no-images';
 
         var blocksContainer = $('section.image-accordion, section.image-content, section.image-box').eq(0).parent();
 
+        if (!_this.shouldHandleSticky()) {
+            return;
+        }
+
         if (blocksContainer.hasClass('sticky-images-initialized')) {
             return;
         }
+
+        if (_this.isInitialized) {
+            return;
+        }
+
+        _this.isInitialized = true;
+
+        _this.blocks = [];
 
         blocksContainer.addClass('sticky-images-initialized');
 
@@ -123,15 +173,22 @@ const _this = {
 
         });
 
-        _this.setupStickyElements();
+        _this.renderStickyElements();
+    },
+
+    init: () => {
+        _this.setupStickyBlocks();
 
         _this.bind();
-
     },
 
     bind: () => {
-        global.$dom.window.on('resize', global.functions.throttle(_this.setupStickyElements, 400));
-        global.$dom.window.on('scroll', _this.updateCurrentImageVisibility);
+        $(window).on('resize', function () {
+            _this.setupStickyBlocks();
+            _this.updateStickyElementVariables();
+            _this.updateCurrentImageVisibility();
+        });
+        $(window).on('scroll', _this.updateCurrentImageVisibility);
     }
 }
 
