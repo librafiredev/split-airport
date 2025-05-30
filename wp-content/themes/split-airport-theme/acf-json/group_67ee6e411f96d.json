@@ -112,6 +112,29 @@
                     "return_format": "array",
                     "allow_in_bindings": 0,
                     "parent_repeater": "field_67ee6e4af514f"
+                },
+                {
+                    "key": "field_68396b33628f3",
+                    "label": "Working Hours",
+                    "name": "working_hours",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67ee6e4af514f"
                 }
             ]
         }
@@ -134,6 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "localization",
-    "modified": 1746528742
+    "modified": 1748594612
 }

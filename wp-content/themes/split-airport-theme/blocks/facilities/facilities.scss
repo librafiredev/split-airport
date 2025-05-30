@@ -44,7 +44,6 @@
         letter-spacing: -0.04em;
         font-size: 26px;
         line-height: calc(30 / 26);
-        margin-bottom: 23px;
 
         @include max-mq($sm) {
             font-size: 19px;
@@ -62,11 +61,22 @@
 }
 
 .facilities__item-content {
-    padding: 15px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     flex-grow: 1;
+
+    .page-bank-exchanges-working-hours {
+        font-family: $primary-font;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 17px;
+        line-height: 24px;
+        letter-spacing: -3%;
+        color: #5b5b5b;
+        margin-top: 1px;
+    }
 }
 
 .parking__item-button {
@@ -94,6 +104,10 @@
 .facilities__item-description {
     min-height: 61px;
     margin-bottom: 30px;
+
+    p {
+        margin-top: 23px;
+    }
 
     @include max-mq($sm) {
         margin-bottom: 11px;
