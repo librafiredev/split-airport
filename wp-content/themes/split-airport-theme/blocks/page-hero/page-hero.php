@@ -7,6 +7,8 @@
 if (isset($block['data']['preview_image_help'])) :
     echo '<img src="' . $block['data']['preview_image_help'] . '" style="width:100%; height:auto;">';
 else:
+    $working_hours = get_field('working_hours');
+
       $follow_flights_pages = get_field('follow_flights_pages', 'options') ?? [];
 ?>
 
@@ -33,6 +35,12 @@ else:
                     </svg>
                 </button>
                 <h1 class="page-hero-title"><?php the_field('title'); ?></h1>
+
+            <?php endif; ?>
+
+            <?php if ($working_hours): ?>
+
+                <p class="page-hero-working-hours"><?php echo $working_hours; ?></p>
 
             <?php endif; ?>
         </div>
