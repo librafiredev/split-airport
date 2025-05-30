@@ -13,6 +13,17 @@ else:
     <section class="facilities">
         <div class="container">
             <div class="facilities__inner">
+                <?php if (get_field('title')) : ?>
+                    <h2 class="facilities__title">
+                        <?php the_field('title'); ?>
+                    </h2>
+                <?php endif; ?>
+                
+                <?php if (get_field('subtitle')) : ?>
+                    <div class="facilities__subtitle">
+                        <?php the_field('subtitle'); ?>
+                    </div>
+                <?php endif; ?>
 
                 <?php if ($facilities): ?>
 
