@@ -413,4 +413,13 @@ body {
     }
 }
 
+// NOTE: this prevents seeing original images before js for sticky images is executed
+.image-accordion__image img,
+.image-content__image img,
+.image-box__image img {
+    @include min-mq($sm + 1px) {
+        visibility: hidden;
+    }
+}
+
 /* critical:end */
