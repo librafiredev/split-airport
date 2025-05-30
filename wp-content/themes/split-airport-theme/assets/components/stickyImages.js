@@ -7,23 +7,20 @@ const _this = {
     imgSelector: '.image-accordion__image img, .image-content__image img, .image-box__image img',
     innerSelector: '.image-accordion__left, .image-content__left, .image-box__left',
     heightCarrierItems: [],
+    scrollOffset: .3,
 
-    updateCurrentImages: () => {
-
+    updateCurrentImageVisibility: () => {
         _this.visibilityTreshholds.forEach(function (tresholds, i) {
-
             if (tresholds.length > 0) {
                 tresholds.forEach(function (treshold, j) {
-                    if ($(window).scrollTop() > treshold || j == 0) {
+                    if (($(window).scrollTop() + $(window).height() * _this.scrollOffset) > treshold || j == 0) {
                         _this.replacementImages[i][j].addClass("visible-sticky");
                     } else {
                         _this.replacementImages[i][j].removeClass("visible-sticky");
                     }
                 });
             }
-
-        })
-
+        });
     },
 
     setupStickyElements: () => {
@@ -48,13 +45,14 @@ const _this = {
 
                 block.items.forEach(function (item, i) {
                     var img = item.node.find(_this.imgSelector);
-                    img.css({ visibility: 'hidden' });
                     var imgSrc = img.attr('src');
 
                     var rImg = $('<img class="sticky-image" />');
                     rImg.attr('src', imgSrc);
                     if (i == 0) {
-                        rImg.addClass("visible-sticky");
+                        setTimeout(function () {
+                            rImg.addClass("visible-sticky");
+                        }, 300);
                     }
                     replacementImages.push(rImg);
                     stickyImageWrap.append(rImg);
@@ -73,7 +71,6 @@ const _this = {
                 block.items.forEach(function (item) {
                     var img = item.node.find(_this.imgSelector);
                     tresholds.push(img.offset().top);
-
                 });
             }
 
@@ -81,6 +78,10 @@ const _this = {
             _this.replacementImages.push(replacementImages);
 
         });
+
+        setTimeout(function () {
+            _this.updateCurrentImageVisibility();
+        }, 300);
 
     },
 
@@ -130,7 +131,7 @@ const _this = {
 
     bind: () => {
         global.$dom.window.on('resize', global.functions.throttle(_this.setupStickyElements, 400));
-        global.$dom.window.on('scroll', _this.updateCurrentImages);
+        global.$dom.window.on('scroll', _this.updateCurrentImageVisibility);
     }
 }
 
