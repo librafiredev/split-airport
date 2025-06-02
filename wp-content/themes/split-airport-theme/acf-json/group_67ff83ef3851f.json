@@ -63,8 +63,8 @@
             "wpml_cf_preferences": 1,
             "layout": "block",
             "pagination": 0,
-            "min": 7,
-            "max": 7,
+            "min": 8,
+            "max": 8,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
@@ -167,5 +167,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746455368
+    "acfml_field_group_mode": "translation",
+    "modified": 1748605569
 }
