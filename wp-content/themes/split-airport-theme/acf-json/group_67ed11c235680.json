@@ -142,6 +142,28 @@
                     "new_lines": "wpautop"
                 },
                 {
+                    "key": "field_683ee7aa3a997",
+                    "label": "Document description",
+                    "name": "document_description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_67ed2c75a377f",
                     "label": "File",
                     "name": "file",
@@ -361,5 +383,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746455584
+    "acfml_field_group_mode": "advanced",
+    "modified": 1748953041
 }

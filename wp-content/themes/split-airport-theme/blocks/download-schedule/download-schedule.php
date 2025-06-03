@@ -29,23 +29,30 @@ else: ?>
                             $file_path = get_attached_file($file_id);
                             $file_url = wp_get_attachment_url($file_id);
                             $file_size = round(((filesize($file_path)) / 1024 / 1024), 2);
+                            $document_description = get_sub_field('document_description');
+                            $document_title = get_the_title($file_id);
                             ?>
 
-                            <div class="download-schedule-tr-item">
-                                <div class="download-schedule-tri-icon-wrap">
-                                    <?php echo file_get_contents(get_template_directory() . '/assets/images/fileIcon.svg'); ?>
-                                </div>
-
-                                <div class="download-schedule-tri-main">
-                                    <div class="download-schedule-tri-main-l">
-                                    <div class="download-schedule-tri-title"><?php echo get_the_title($file_id); ?></div>
-                                    <div class="download-schedule-tri-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
-                                    </div>
-                                    <a href="<?php echo esc_url($file_url); ?>" download class="download-schedule-item-dl">
-                                        <?php esc_html_e('Download', 'split-aritport'); ?>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="document-item">
+                                            <div class="document-item-icon-wrap">
+                                                <?php echo file_get_contents(get_template_directory() . '/assets/images/fileIcon.svg'); ?>
+                                            </div>
+                                        <div class="document-item-main">
+                                            <div class="document-item-main-l">
+                                                <div class="document-item-description">
+                                                    <?php
+                                                    echo esc_html(!empty($document_description) ? $document_description : $document_title);
+                                                    ?>
+                                                </div>
+                                                <div class="document-item-title"><?php echo get_the_title($file_id); ?></div>
+                                            </div>
+                                                <div class="document-item-main-c">
+                                                    <a href="<?php echo esc_url($file_url); ?>" download class="document-item-dl">
+                                                        <?php esc_html_e('Download', 'split-aritport'); ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                         <?php endif; ?>
 
                         <?php endwhile; ?>
