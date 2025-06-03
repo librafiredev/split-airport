@@ -128,7 +128,7 @@
     transition: $dur;
 
     @include max-mq($sm) {
-        padding: 16px 0;
+        padding: 13px 0;
     }
 
     &:not(:last-child) {
@@ -166,8 +166,7 @@
 }
 
 .airline__title {
-    color: $primary-color;
-    font-size: 15px;
+    font-size: $font-size-base;
     letter-spacing: -0.03em;
     font-weight: normal;
 }
@@ -184,13 +183,6 @@
     svg {
         margin-left: 10px;
     }
-}
-
-.airlline__subtitle {
-    font-size: 15px;
-    line-height: calc(20 / 15);
-    color: $gray-300;
-    letter-spacing: -0.02em;
 }
 
 .airlline__url-mobile {
@@ -295,33 +287,5 @@
 .airline-external {
     @include max-mq($sm) {
         display: none;
-    }
-}
-
-.airlline__subtitle-item {
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 4px;
-        height: 4px;
-        border-radius: 1px;
-        background-color: #213859;
-        margin-bottom: 0.15em;
-        margin-left: 0.3em;
-        margin-right: 0.3em;
-    }
-
-    &:last-child {
-        &::after {
-            content: none;
-        }
-    }
-
-    @include max-mq($sm) {
-        display: block;
-
-        &::after {
-            content: none;
-        }
     }
 }
