@@ -8,7 +8,7 @@
 .site-branding {
     a {
         display: block;
-        max-width: 250px;
+        margin-right: 15px;
     }
 }
 
@@ -68,14 +68,6 @@ body:has(div#wpadminbar) {
 
         @include max-mq($sm) {
             padding-top: 75px;
-        }
-    }
-
-    .site-branding {
-        a {
-            @include max-mq($responsive-toggle-breakpoint) {
-                max-width: 226px;
-            }
         }
     }
 
