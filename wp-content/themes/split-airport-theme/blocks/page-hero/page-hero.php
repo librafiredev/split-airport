@@ -10,6 +10,10 @@ else:
     $working_hours = get_field('working_hours');
 
       $follow_flights_pages = get_field('follow_flights_pages', 'options') ?? [];
+    
+    if ( !is_array($follow_flights_pages) ) {
+        $follow_flights_pages = [ $follow_flights_pages ];
+    }
 ?>
 
     <section class="page-hero-wrapper">

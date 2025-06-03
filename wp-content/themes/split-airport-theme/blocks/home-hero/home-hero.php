@@ -12,6 +12,10 @@ else: ?>
 
         $follow_flights_pages = get_field('follow_flights_pages', 'options') ?? [];
 
+        if ( !is_array($follow_flights_pages) ) {
+            $follow_flights_pages = [ $follow_flights_pages ];
+        }
+
         $title = get_field('title');
         
         $background_mobile = get_field('background_mobile');
