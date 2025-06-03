@@ -8,6 +8,12 @@
     @include max-mq($sm) {
         padding: 22px 0;
     }
+
+    .parking__inner {
+        h3 {
+            color: #5b5b5b;
+        }
+    }
 }
 
 .parking__item-top {
@@ -17,12 +23,15 @@
 
     @include max-mq($sm) {
         margin-bottom: 39px;
+        justify-content: space-between;
     }
 
     h2 {
         font-size: $font-size-h3;
         margin-right: 30px;
         letter-spacing: -0.04em;
+        font-weight: 400;
+        color: #213859;
 
         @include max-mq($sm) {
             margin-right: 5px;
@@ -34,6 +43,8 @@
     font-size: $font-size-h3;
     letter-spacing: -0.04em;
     margin-bottom: 22px;
+    color: #213859;
+    font-weight: 400;
 
     @include max-mq($sm) {
         font-size: 22px;
@@ -55,6 +66,20 @@
         @include max-mq($sm) {
             margin-top: 17px;
         }
+    }
+
+    .parking__item-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #dde5ed;
+        border-radius: 30px;
+        color: #084983;
+        font-size: 15px;
+        letter-spacing: -0.02em;
+        padding: 10px 16px;
+        transition: 0.4s;
+        font-weight: 400;
     }
 }
 
@@ -88,6 +113,12 @@
         margin-top: 15px;
         padding: 19px 3px;
     }
+
+    .parking__bottom-info-right {
+        font-weight: 400;
+        font-size: 17px;
+        color: #5b5b5b;
+    }
 }
 
 .parking__bottom-info-wrapper {
@@ -119,6 +150,7 @@
 }
 
 .parking__item-vehicle-rate-time {
+    color: #5b5b5b;
     @extend %heading-third;
 }
 
@@ -146,7 +178,7 @@
 .parking__download-text {
     flex: 0 0 calc(50% - 10px);
     max-width: calc(50% - 10px);
-    color: $gray-100;
+    color: #5b5b5b;
     font-size: 15px;
     line-height: calc(20 / 15);
     letter-spacing: -0.02em;

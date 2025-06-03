@@ -22,7 +22,7 @@ var config = {
         new BrowserSyncPlugin({
             host: "localhost",
             port: 3000,
-            proxy: "http://localhost:10033/" + projectName,
+            proxy: "http://localhost/" + projectName,
         }),
     ],
 };
