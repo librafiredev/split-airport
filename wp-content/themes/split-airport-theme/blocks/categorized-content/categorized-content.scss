@@ -56,10 +56,6 @@
         margin-bottom: 6px;
         @extend %heading-third;
     }
-
-    p {
-        margin-bottom: 20px;
-    }
 }
 
 .categorized-content-default {
@@ -122,4 +118,138 @@
     .categorized-content-alt-1 & {
         margin-bottom: 24px;
     }
+}
+
+.document-group-wrapper {
+    margin-top: 75px;
+
+    .sc-card {
+        max-width: initial;
+    }
+
+    & ~ .document-group-wrapper {
+        margin-top: 40px;
+    }
+
+    &:last-child {
+        margin-bottom: 140px;
+    }
+}
+
+.document-group-inner {
+    max-width: 490px;
+}
+
+.document-group-title {
+    color: $primary-color;
+    font-size: $font-size-h3;
+    letter-spacing: -0.04em;
+    margin-top: 70px;
+}
+
+.document-group-title,
+.document-group-content h2 {
+    color: $primary-color;
+    font-size: $font-size-h3;
+    letter-spacing: -0.03em;
+    margin-bottom: 25px;
+    line-height: calc(30 / 26);
+}
+
+.document-group-content {
+    p {
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        margin-top: 40px;
+    }
+
+    h3,
+    h4,
+    h5 {
+        margin-top: 40px;
+        @extend %heading-third;
+    }
+}
+
+.document-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0;
+
+    .document-item-icon-wrap {
+        flex-shrink: 0;
+        padding-right: 12px;
+
+        svg {
+            width: 32px;
+        }
+    }
+
+    .document-item-main {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid $gray;
+        padding: 0 0 15px;
+
+        @include max-mq($sm) {
+            flex-direction: column;
+        }
+    }
+
+    .document-item-main-l {
+        display: flex;
+        flex-direction: column;
+        gap: 10;
+        flex: 1;
+
+        .document-item-description {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -2%;
+            color: #5b5b5b;
+            max-width: 300px;
+            margin-bottom: 15px;
+        }
+
+        .document-item-title {
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 24px;
+            letter-spacing: -3%;
+            color: #084983;
+            text-transform: capitalize;
+
+            @include max-mq($sm) {
+                order: -1;
+            }
+        }
+    }
+
+    .document-item-dl {
+        margin-left: auto;
+        border-radius: 30px;
+        background-color: $footer-bgc;
+        color: $primary-color;
+        padding: 10px 30px;
+        letter-spacing: -0.02em;
+        font-size: 15px;
+        transition: $dur;
+
+        &:hover {
+            background-color: $gray;
+        }
+
+        @include max-mq($sm) {
+            margin-left: unset;
+        }
+    }
+}
+
+.document-item-main-c {
+    display: flex;
+    align-items: flex-end;
 }
