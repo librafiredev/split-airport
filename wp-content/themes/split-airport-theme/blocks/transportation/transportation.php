@@ -24,7 +24,6 @@ else:
                         <div class="transportation__main">
                             <?php
                             foreach ($boxes as $box):
-                                if($box['location'] !== 'default') continue;
                                 get_template_part('template-parts/blocks/transportation-item', null, ['box' => $box]);
                             endforeach; ?>
                         </div>
