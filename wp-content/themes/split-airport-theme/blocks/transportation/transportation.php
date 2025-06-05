@@ -30,20 +30,6 @@ else:
                         </div>
 
                     <?php endif; ?>
-
-                    <?php if ($boxes): ?>
-
-                        <div class="transportation__sidebar">
-                            <div class="transportation__sidebar-inner">
-                                <?php
-                                foreach ($boxes as $box):
-                                    if($box['location'] !== 'sidebar') continue;
-                                    get_template_part('template-parts/blocks/transportation-item', null, ['box' => $box]);
-                                endforeach; ?>
-                            </div>
-                        </div>
-
-                    <?php endif; ?>
                 </div>
             </div>
         </div>

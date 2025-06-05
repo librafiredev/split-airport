@@ -26,23 +26,18 @@
     }
 }
 
-.transportation__items {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding-top: 10px;
-}
-
 .transportation__main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding-left: 10px;
     padding-right: 10px;
     flex: 0 0 (100% / 3 * 2);
-    max-width: (100% / 3 * 2);
     column-gap: 20px;
     row-gap: 16px;
+
+    .full-width-image {
+        width: 100%;
+    }
 
     @include max-mq($sm) {
         flex: 0 0 100%;
@@ -51,7 +46,7 @@
         row-gap: 13px;
     }
 
-    @include max-mq($mb) {
+    @include max-mq($sm) {
         grid-template-columns: 1fr;
     }
 }
