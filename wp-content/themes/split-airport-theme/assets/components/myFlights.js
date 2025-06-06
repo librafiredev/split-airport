@@ -17,11 +17,6 @@ const _this = {
         _this.nextDayDeleteFlightsAction();
     },
 
-    closeFollowFlight: function () {
-        // NOTE: this is done the same way in the popup itself
-        history.go(-1);
-    },
-
     followAction: async function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -46,8 +41,6 @@ const _this = {
                     $(e.currentTarget).hasClass("my-flight-item-remove-btn") ||
                     $(e.currentTarget).text() === theme.unfollowButtonText
                 ) {
-                    _this.closeFollowFlight();
-
                     $(e.currentTarget).closest(".my-flight-item").remove();
                     const viewItems = $(".my-flights-modal-wrapper__items");
                     const viewTrigger = $(".my-flights-btn");
