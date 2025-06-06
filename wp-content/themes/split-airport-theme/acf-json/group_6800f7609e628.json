@@ -70,29 +70,6 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_68398c6af2afa",
-                    "label": "Document Description",
-                    "name": "document_description",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_6800f8ee7e093"
-                },
-                {
                     "key": "field_6800f8fd7e094",
                     "label": "Document",
                     "name": "document",
@@ -159,5 +136,5 @@
     "description": "",
     "show_in_rest": 0,
     "acfml_field_group_mode": "translation",
-    "modified": 1748601998
+    "modified": 1749206995
 }
