@@ -59,6 +59,9 @@ const _this = {
 
                 block.items.forEach(function (item) {
                     var img = item.node.find(_this.imgSelector);
+                    if (img.length == 0) {
+                        return;
+                    }
                     tresholds.push(img.offset().top);
                 });
             }
@@ -93,6 +96,9 @@ const _this = {
 
                 block.items.forEach(function (item, i) {
                     var img = item.node.find(_this.imgSelector);
+                    if (img.length == 0) {
+                        return;
+                    }
                     var imgSrc = img.attr('src');
 
                     var rImg = $('<img class="sticky-image" />');
@@ -150,9 +156,7 @@ const _this = {
             var prevBlockType = currentBlockType;
             currentBlockType = 'no-images';
 
-            if (!$(this).has(_this.imgSelector).length) {
-                currentBlockType = 'no-images';
-            } else if ($(this).hasClass('image-content')) {
+            if ($(this).hasClass('image-content')) {
                 currentBlockType = 'right-images';
             } else if ($(this).hasClass('image-accordion') || $(this).hasClass('image-box')) {
                 currentBlockType = 'left-images';
