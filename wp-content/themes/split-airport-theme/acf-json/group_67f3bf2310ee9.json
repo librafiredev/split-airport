@@ -50,9 +50,9 @@
             "wpml_cf_preferences": 1
         },
         {
-            "key": "field_6835c97222e1f",
-            "label": "Follow Flights Pages",
-            "name": "follow_flights_pages",
+            "key": "field_6847ee0d35dc0",
+            "label": "Business Homepage",
+            "name": "business_homepage",
             "aria-label": "",
             "type": "relationship",
             "instructions": "",
@@ -63,7 +63,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 1,
+            "wpml_cf_preferences": 2,
             "post_type": [
                 "page"
             ],
@@ -74,7 +74,7 @@
             "filters": [
                 "search"
             ],
-            "return_format": "id",
+            "return_format": "object",
             "min": "",
             "max": "",
             "allow_in_bindings": 0,
@@ -393,6 +393,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfml_field_group_mode": "translation",
-    "modified": 1748355687
+    "acfml_field_group_mode": "advanced",
+    "modified": 1749551040
 }
