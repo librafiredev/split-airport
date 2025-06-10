@@ -919,14 +919,14 @@ $category_data = [
 $guides_data = [
     [
         array(
-            'label' => esc_html__('Local arrival'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
-            'target_class' => 'map-guide-local-arrivals',
+            'label' => esc_html__('Arrivals'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-arrivals.svg",
+            'target_class' => 'map-guide-arrivals',
         ),
         array(
-            'label' => esc_html__('Local departure'),
+            'label' => esc_html__('Departures'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-departure.svg",
-            'target_class' => 'map-guide-local-departure',
+            'target_class' => 'map-guide-departures',
             'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
@@ -944,14 +944,9 @@ $guides_data = [
             ],
         ),
         array(
-            'label' => esc_html__('International arrival'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-arrivals.svg",
-            'target_class' => 'map-guide-international-arrivals',
-        ),
-        array(
-            'label' => esc_html__('International departure'),
+            'label' => esc_html__('Non-Schengen departures'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-international-departure.svg",
-            'target_class' => 'map-guide-international-departure',
+            'target_class' => 'map-guide-non-shengen',
             'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
@@ -982,14 +977,15 @@ $guides_data = [
         ),
     ],[
         array(
-            'label' => esc_html__('Local departure'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-local-departure.svg",
-            'target_class' => 'map-guide-local-departure',
+            'label' => esc_html__('Departures'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-departures.svg",
+            'target_class' => 'map-guide-departures',
+            'override_z_index' => 9999,
         ),
         array(
-            'label' => esc_html__('International departure'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-international-departure.svg",
-            'target_class' => 'map-guide-international-departure',
+            'label' => esc_html__('Non-Schengen departures'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-non-shengen.svg",
+            'target_class' => 'map-guide-non-shengen',
         ),
 
     ],
