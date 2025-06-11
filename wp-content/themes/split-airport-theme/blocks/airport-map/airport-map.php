@@ -46,7 +46,7 @@ if( ! function_exists('recoursively_render_map_categories') ) :
                         <?php endif; ?>
                         <?php if ( $level == 2 ) : ?>
                             <span class="map-sidebar-floor">
-                                <?php echo $floor; ?>
+                                <?php echo $options['floors_data'][$floor]['label']; ?>
                             </span>
                         <?php endif; ?>
                     </button>
@@ -69,6 +69,7 @@ endif;
 
 $floors_data = [
     array(
+        'label' => '0',
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0.svg",
         'width' => 2650,
         'height' => 1469,
@@ -76,16 +77,24 @@ $floors_data = [
         'top_overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-top-overlay.svg",
     ),
     array(
+        'label' => '1',
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1.svg",
         'width' => 2470,
         'height' => 1462,
         'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-overlay.svg",
     ),
     array(
+        'label' => '2',
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-2.svg",
         'width' => 2475,
         'height' => 1469,
         'overlay_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-2-overlay.svg",
+    ),
+    array(
+        'label' => 'P',
+        'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-p.svg",
+        'width' => 2475,
+        'height' => 1469,
     ),
 ];
 $icon_data = [
@@ -360,14 +369,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Rent-a-Car'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/car-key.svg',
-                    'x' => 1639,
-                    'y' => 1227,
-                ),
-            ],
+            // NOTE: DO NOT REMOVE because sidebar uses index in this array as a connection
         ),
         array(
             'label' => esc_html__('Taxi'),
@@ -391,22 +393,15 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Bus Terminal'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/bus.svg',
-                    'x' => 1639,
-                    'y' => 1297,
-                ),
-            ],
+            // NOTE: DO NOT REMOVE because sidebar uses index in this array as a connection
         ),
         array(
-            'label' => esc_html__('Parking'),
+            'label' => esc_html__('North parking'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/parking.svg',
-                    'x' => 1639,
-                    'y' => 1157,
+                    'x' => 2075,
+                    'y' => 930,
                 ),
             ],
         ),
@@ -688,6 +683,74 @@ $icon_data = [
             ],
         ),
         
+    ],
+    [
+        array(
+            'label' => esc_html__('Rent-a-Car'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/car-key.svg',
+                    'x' => 1611,
+                    'y' => 1195,
+                ),
+                array(
+                    'shape_path' => '/assets/images/airport-map/car-key.svg',
+                    'x' => 1535,
+                    'y' => 992,
+                ),
+                array(
+                    'shape_path' => '/assets/images/airport-map/car-key.svg',
+                    'x' => 1535,
+                    'y' => 619,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Bus Terminal'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/bus.svg',
+                    'x' => 1877,
+                    'y' => 1303,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Parking payment'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/receipt.svg',
+                    'x' => 1480,
+                    'y' => 1144,
+                ),
+                array(
+                    'shape_path' => '/assets/images/airport-map/receipt.svg',
+                    'x' => 1384,
+                    'y' => 1144,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('South parking'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/parking.svg',
+                    'x' => 916,
+                    'y' => 764,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Caffe bar Promenada'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/coffe.svg',
+                    'x' => 1535,
+                    'y' => 838,
+                ),
+            ],
+        ),
     ]
 ];
 $category_data = [
@@ -857,8 +920,8 @@ $category_data = [
         'icon_path' => get_template_directory_uri() . "/assets/images/airport-map/parking-icon.svg",
         'children' => [
             array(
-                'group_index' => 17,
-                'floor' => 0,
+                'group_index' => 0,
+                'floor' => 3,
             ),
             array(
                 'group_index' => 18,
@@ -869,12 +932,26 @@ $category_data = [
                 'floor' => 0,
             ),
             array(
-                'group_index' => 20,
-                'floor' => 0,
+                'group_index' => 1,
+                'floor' => 3,
             ),
             array(
-                'group_index' => 21,
-                'floor' => 0,
+                'label' => esc_html__('Parking'),
+                'children' => [
+                    array(
+                        'group_index' => 21,
+                        'floor' => 0,
+                    ),
+                    array(
+                        'group_index' => 3,
+                        'floor' => 3,
+                    ),
+
+                ],
+            ),
+            array(
+                'group_index' => 2,
+                'floor' => 3,
             ),
 
         ],
@@ -910,6 +987,10 @@ $category_data = [
                     array(
                         'group_index' => 1,
                         'floor' => 1,
+                    ),
+                    array(
+                        'group_index' => 4,
+                        'floor' => 3,
                     ),
                 ]
             ),
@@ -989,7 +1070,8 @@ $guides_data = [
         ),
 
     ],
-    []
+    [],
+    [],
 ];
 
 $max_aspect_ratio = null;
@@ -1016,7 +1098,7 @@ foreach ($floors_data as $key => $value) {
                     <input type="text" class="airport-map-search" placeholder="<?php esc_attr_e('Search airport map'); ?>" />
                 </div>
                 <div class="airport-map-sidebar-menu">
-                    <?php recoursively_render_map_categories($category_data, $icon_data, '', 0, array('group_class_prefix' => $group_class_prefix)); ?>
+                    <?php recoursively_render_map_categories($category_data, $icon_data, '', 0, array('group_class_prefix' => $group_class_prefix, 'floors_data' => $floors_data)); ?>
                     <div class="airport-map-no-results hidden-no-results"><?php esc_html_e('No results found for: ') ?>“<span class="airport-map-search-term"></span>”</div>
                 </div>
             </div>
@@ -1042,7 +1124,9 @@ foreach ($floors_data as $key => $value) {
                             <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
                                 <?php if (empty($guide_group)) : ?>
                                     <div class="airport-map-no-guide airport-guide-cb-<?php echo $g_floor_idx; ?> <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>">
-                                        <?php if($g_floor_idx == 2) : ?>
+                                        <?php if($g_floor_idx == 3) : ?>
+                                            <?php esc_html_e('No guides for parking'); ?>
+                                        <?php elseif($g_floor_idx == 2) : ?>
                                             <?php esc_html_e('No guides on floor 2'); ?>
                                         <?php else: ?>
                                             <?php esc_html_e('No guides on current floor'); ?>
@@ -1069,7 +1153,7 @@ foreach ($floors_data as $key => $value) {
                     <div class="airport-map-floors-inner">
                         <div class="airport-map-pannable">
                             <?php foreach ($floors_data as $floor_idx => $floor) : ?>
-                                <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor_idx.'</span></button>'; ?>
+                                <?php $floor_controls_html .= '<button type="button" class="airport-map-floor-btn ' . ($floor_idx == $initial_floor ? 'current-floor-btn' : '') . '" data-target-floor-idx="'.$floor_idx.'"><span>'.$floor['label'].'</span></button>'; ?>
                                 <div class="airport-map-floor airport-map-floor-<?php echo $floor_idx; ?> <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
                         
                                     <div class="airport-map-wrap">
