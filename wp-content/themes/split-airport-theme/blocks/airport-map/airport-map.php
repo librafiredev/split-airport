@@ -256,19 +256,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Departure Passenger Assistance'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
-                    'x' => 1528,
-                    'y' => 103,
-                ),
-                array(
-                    'shape_path' => '/assets/images/airport-map/wheelchair.svg',
-                    'x' => 1614,
-                    'y' => 597,
-                ),
-            ],
+            // NOTE: DO NOT REMOVE because sidebar uses index in this array as a connection
         ),
         array(
             'label' => esc_html__('Store'),
@@ -359,14 +347,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('European Union'),
-            'items' => [
-                array(
-                    'shape_path' => '/assets/images/airport-map/eu.svg',
-                    'x' => 476,
-                    'y' => 183,
-                ),
-            ],
+            // NOTE: DO NOT REMOVE because sidebar uses index in this array as a connection
         ),
         array(
             // NOTE: DO NOT REMOVE because sidebar uses index in this array as a connection
@@ -424,8 +405,13 @@ $icon_data = [
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/info.svg',
-                    'x' => 1979,
-                    'y' => 99,
+                    'x' => 1986,
+                    'y' => 227,
+                ),
+                array(
+                    'shape_path' => '/assets/images/airport-map/info.svg',
+                    'x' => 140,
+                    'y' => 710,
                 ),
             ],
         ),
@@ -521,7 +507,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('International departure'),
+            'label' => esc_html__('Departures'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
@@ -537,7 +523,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Non-Schengen departure'),
+            'label' => esc_html__('Non-schengen departures'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/airplane-takeoff.svg',
@@ -673,7 +659,7 @@ $icon_data = [
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/kupola-area.svg',
-                    'x' => 297,
+                    'x' => 296,
                     'y' => 277,
                     'width' => 1256,
                     'height' => 462,
@@ -682,7 +668,16 @@ $icon_data = [
                 ),
             ],
         ),
-        
+        array(
+            'label' => esc_html__('Viewpoint'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/viewpoint.svg',
+                    'x' => 234,
+                    'y' => 178,
+                ),
+            ],
+        ),
     ],
     [
         array(
@@ -815,10 +810,6 @@ $category_data = [
                 'floor' => 0,
             ),
             array(
-                'group_index' => 10,
-                'floor' => 0,
-            ),
-            array(
                 'group_index' => 2,
                 'floor' => 1,
             ),
@@ -839,12 +830,10 @@ $category_data = [
                 'label' => esc_html__('Departures'),
                 'children' => [
                     array(
-                        'label' => esc_html__('International departure'),
                         'group_index' => 5,
                         'floor' => 1,
                     ),
                     array(
-                        'label' => esc_html__('Non-schengen departures'),
                         'group_index' => 6,
                         'floor' => 1,
                     ),
@@ -853,6 +842,10 @@ $category_data = [
             array(
                 'group_index' => 11,
                 'floor' => 0,
+            ),
+            array(
+                'group_index' => 2,
+                'floor' => 2,
             ),
         ],
     ),
@@ -907,11 +900,6 @@ $category_data = [
                         'floor' => 1,
                     ),
                 ]
-            ),
-            
-            array(
-                'group_index' => 16,
-                'floor' => 0,
             ),
         ],
     ),
