@@ -142,7 +142,13 @@ else:
                     </a>
                     <div class="arrivals-timetable__table-header">
                         <span class="arrivals-timetable__table-name flight-info flight__flight"><?php esc_html_e('Flight', 'split-airport') ?></span>
-                        <span class="arrivals-timetable__table-name flight-type flight__arriving-from"><?php echo $flightType === 'arrival' ? __('Arriving from', 'split-airport') :  __('Going to', 'split-airport')  ?></span>
+                        <span class="arrivals-timetable__table-name flight-type flight__arriving-from">
+                        <?php 
+                            echo $flightType !== 'departure' 
+                            ? __('Arriving from', 'split-airport') 
+                            : __('Going to', 'split-airport'); 
+                        ?>
+                        </span>                        
                         <span class="arrivals-timetable__table-name flight__planned"><?php esc_html_e('Scheduled', 'split-airport') ?></span>
                         <span class="arrivals-timetable__table-name flight__expected"><?php esc_html_e('Estimated', 'split-airport') ?></span>
 
