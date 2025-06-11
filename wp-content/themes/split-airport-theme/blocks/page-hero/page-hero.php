@@ -9,8 +9,17 @@ if (isset($block['data']['preview_image_help'])) :
 else:
     $working_hours = get_field('working_hours');
 
-    $follow_flights_pages = get_field('business_homepage', 'options') ?? [];
+    $follow_flights_pages = get_field('business_homepage', 'options');
+    $hide_my_flight_button = get_field('hide_my_flights_button', 'options');
+
+    $follow_flights_pages = is_array($follow_flights_pages) ? $follow_flights_pages : [];
+    $hide_my_flight_button = is_array($hide_my_flight_button) ? $hide_my_flight_button : [];
+
     $excluded_pages = array_map(fn($post) => $post->ID, $follow_flights_pages);
+    $hidden_pages = array_map(fn($post) => $post->ID, $hide_my_flight_button);
+
+    $current_page_id = get_the_ID();
+    $should_hide_my_flights = in_array($current_page_id, $excluded_pages) || in_array($current_page_id, $hidden_pages);
 ?>
 
     <section class="page-hero-wrapper">
@@ -27,7 +36,7 @@ else:
             </div>
 
             <?php 
-            if (!in_array(get_the_ID(), $excluded_pages)) {
+            if (!$should_hide_my_flights) {
                 get_template_part('template-parts/blocks/my-flights'); 
             }
             ?>

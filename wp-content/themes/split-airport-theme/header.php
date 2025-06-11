@@ -28,24 +28,23 @@
 					<?php 
 						$logo = get_field('logo', 'option'); 
 						$business_homepages = get_field('business_homepage', 'option');
-						$current_page_id = get_queried_object_id();
+						$current_page = get_queried_object();
+						$current_page_id = $current_page ? $current_page->ID : 0;
 						$logo_link = home_url('/');
 						$currentLanguage = apply_filters('wpml_current_language', null);
-						$locale = $currentLanguage === 'hr' ? 'hr_HR.UTF-8' : 'en_US.UTF-8';
 
 						if ( is_array($business_homepages) ) {
 							foreach ( $business_homepages as $page ) {
-									if ( $page instanceof WP_Post && $page->ID === $current_page_id ) {
-											if ( $currentLanguage === 'hr' ) {
-													$logo_link = home_url('/hr/business/');
-											} else {
-													$logo_link = home_url('/business/');
-											}
-											break;
+								if ( $page instanceof WP_Post && $page->ID === $current_page_id ) {
+									if ( $currentLanguage === 'hr' ) {
+										$logo_link = home_url('/hr/business/');
+									} else {
+										$logo_link = home_url('/business/');
 									}
+									break;
+								}
 							}
-					}
-
+						}
 					?>
 
 					<?php if( $logo ): ?>
@@ -61,29 +60,21 @@
 				<?php endif; ?>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php if( function_exists('get_field') ): ?>
-						<?php 
-							$logo = get_field('logo', 'option'); 
-						?>
-
-						<?php if( $logo ): ?>
-							<div class="mobile-nav-logo">
-								<a href="<?php echo esc_url( $logo_link ); ?>" rel="home">
-									<img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"/>
-								</a>
-							</div>
-						<?php endif; ?>
+					<?php if( $logo ): ?>
+						<div class="mobile-nav-logo">
+							<a href="<?php echo esc_url( $logo_link ); ?>" rel="home">
+								<img src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>"/>
+							</a>
+						</div>
 					<?php endif; ?>
 
 					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' 		=> 	'primary',
-								'menu_id' 				=> 	'primary-menu',
-								'menu_class' 			=> 	'main-header-menu',
-								'container_class'		=>	'main-menu-container'
-							)
-						);
+						wp_nav_menu([
+							'theme_location'  => 'primary',
+							'menu_id'         => 'primary-menu',
+							'menu_class'      => 'main-header-menu',
+							'container_class' => 'main-menu-container'
+						]);
 					?>
 
 					<?php custom_language_selector(); ?>
@@ -104,8 +95,8 @@
 				<div class="container">
 					<div class="site-warning">
 						<?php 
-						$all_warnings = !empty(get_field('airport_warnings', 'option')) ? get_field('airport_warnings', 'option') : [];
-						$first_item_type = !empty($all_warnings[0]['type']) ? $all_warnings[0]['type'] : 'info';
+						$all_warnings = get_field('airport_warnings', 'option') ?: [];
+						$first_item_type = $all_warnings[0]['type'] ?? 'info';
 						?>
 						<div class="site-warning-icographics shared-warning" data-warning="<?php echo esc_attr($first_item_type); ?>">
 							<div class="site-warning-icon-wrap">
@@ -128,7 +119,6 @@
 							<div class="site-warning-items-inner">
 								<?php while ( have_rows('airport_warnings', 'option') ) : the_row(); ?>
 									<?php $type = get_sub_field('type'); ?>
-
 									<div class="site-warning-item current-warning" data-warning="<?php echo esc_attr($type); ?>">
 										<div class="site-warning-icographics warning-item-icon">
 											<div class="site-warning-icon-wrap">
