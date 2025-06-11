@@ -1051,7 +1051,7 @@ $guides_data = [
             'override_z_index' => 10,
         ),
         array(
-            'label' => esc_html__('Baggage drop-off'),
+            'label' => esc_html__('Baggage departure'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-departure.svg",
             'target_class' => 'map-guide-baggage-departure',
             'override_z_index' => 10,
