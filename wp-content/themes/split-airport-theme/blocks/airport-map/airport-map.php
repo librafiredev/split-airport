@@ -497,7 +497,7 @@ $icon_data = [
                 ),
                 array(
                     'shape_path' => '/assets/images/airport-map/rest-area-2.svg',
-                    'x' => 1447,
+                    'x' => 1445,
                     'y' => 374,
                     'width' => 204,
                     'height' => 92,
