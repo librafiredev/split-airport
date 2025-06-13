@@ -6,9 +6,7 @@
             "key": "field_subject_title",
             "label": "Naslov Linka",
             "name": "subject_title",
-            "aria-label": "",
             "type": "text",
-            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,7 +14,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 1,
@@ -28,7 +25,6 @@
             "key": "field_custom_table",
             "label": "Javne nabavke",
             "name": "procurement_custom_table",
-            "aria-label": "",
             "type": "repeater",
             "instructions": "Dodaj stavke postupaka nabave",
             "required": 0,
@@ -38,12 +34,10 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 2,
             "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
-            "collapsed": "",
             "button_label": "Dodaj stavku",
             "rows_per_page": 20,
             "sub_fields": [
@@ -51,34 +45,24 @@
                     "key": "field_procurement_number",
                     "label": "Broj nabave",
                     "name": "procurement_number",
-                    "aria-label": "",
                     "type": "text",
-                    "instructions": "npr. P-01-1\/27",
+                    "instructions": "npr. P-01-1/27",
                     "required": 0,
-                    "conditional_logic": false,
                     "wrapper": {
                         "width": "25",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0,
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_custom_table"
+                    "placeholder": ""
                 },
                 {
                     "key": "field_procurement_date",
                     "label": "Datum",
                     "name": "procurement_date",
-                    "aria-label": "",
                     "type": "date_picker",
                     "instructions": "Format: d.m.Y",
                     "required": 0,
-                    "conditional_logic": false,
                     "wrapper": {
                         "width": "25",
                         "class": "",
@@ -86,18 +70,15 @@
                     },
                     "display_format": "d.m.Y",
                     "return_format": "d.m.Y",
-                    "first_day": 1,
-                    "parent_repeater": "field_custom_table"
+                    "first_day": 1
                 },
                 {
                     "key": "field_deadline",
                     "label": "Rok",
                     "name": "deadline",
-                    "aria-label": "",
                     "type": "date_picker",
                     "instructions": "Format: d.m.Y - koristi se za automatsko sakrivanje",
                     "required": 0,
-                    "conditional_logic": false,
                     "wrapper": {
                         "width": "25",
                         "class": "",
@@ -105,33 +86,68 @@
                     },
                     "display_format": "d.m.Y",
                     "return_format": "d.m.Y",
-                    "first_day": 1,
-                    "parent_repeater": "field_custom_table"
+                    "first_day": 1
                 },
                 {
                     "key": "field_status",
                     "label": "Status",
                     "name": "status",
-                    "aria-label": "",
                     "type": "text",
                     "instructions": "npr. Dostava, U tijeku",
                     "required": 0,
-                    "conditional_logic": false,
                     "wrapper": {
                         "width": "25",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0,
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_custom_table"
+                    "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_documents",
+            "label": "Dokumenti",
+            "name": "documents",
+            "type": "repeater",
+            "instructions": "Dodaj jedan ili više dokumenata",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Dodaj dokument",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_document_file",
+                    "label": "Fajl dokumenta",
+                    "name": "document_file",
+                    "type": "file",
+                    "instructions": "Izaberi ili uploaduj fajl",
+                    "required": 0,
+                    "return_format": "array",
+                    "library": "all",
+                    "mime_types": "",
+                    "parent_repeater": "field_documents"
+                }
+            ]
+        },
+        {
+            "key": "field_request_log",
+            "label": "Lista korisnika koji su poslali dokument preko forme",
+            "name": "request_log",
+            "type": "textarea",
+            "instructions": "Automatski zapis zahteva korisnika",
+            "readonly": 1,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -150,8 +166,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "ACF blok za Public Procurement s repeaterom stavki",
-    "show_in_rest": 0,
-    "acfml_field_group_mode": "advanced",
-    "modified": 1749807592
+    "description": "ACF blok za Public Procurement s repeaterom stavki i posebnim dokumentima",
+    "show_in_rest": 0
 }

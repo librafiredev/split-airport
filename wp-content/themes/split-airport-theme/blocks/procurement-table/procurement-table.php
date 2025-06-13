@@ -105,6 +105,8 @@ else: ?>
                     $modal_post_id = intval(preg_replace('/\D/', '', $modal_id)); 
                     $subject_title = get_field('subject_title', $modal_post_id);
                     $items = get_field('procurement_custom_table', $post_id);
+                    $document_list = get_field('documents', $post_id);
+
                 ?>
                 <div id="<?php echo esc_attr($modal_id); ?>" class="request-doc-modal-wrapper custom-modal-wrapper">
                     <div class="custom-modal-close-area"></div>
@@ -147,7 +149,57 @@ else: ?>
                                 <?php endforeach; ?>
                             </div>
 
-                            <?php the_field('modal_form_content'); ?>
+                            
+
+                            <?php if (!empty($document_list)) : ?>
+                                <form method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="modal_post_id" value="<?php echo esc_attr($modal_post_id); ?>">
+                                    <div class="frm_form_fields">
+                                        <fieldset>
+                                            <legend class="frm_screen_reader">Documents Request</legend>
+
+                                            <div class="frm_fields_container">
+                                                <h4>Popis dokumenata koji ćete dobiti</h4>
+                                                <ul>
+                                                    <?php foreach ($document_list as $item) : 
+                                                        $title = $item['document_file']['title'] ?? 'Bez naslova'; ?>
+                                                        <li><?php echo esc_html($title); ?></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+
+                                            <div id="frm_field_8_container" class="frm_form_field form-field frm_required_field frm_top_container">
+                                                <label for="email" class="frm_primary_label">
+                                                    Email <span class="frm_required" aria-hidden="true">*</span>
+                                                </label>
+                                                <input type="email" id="email" name="email" value="" autocomplete="email" required>
+                                            </div>
+
+                                            <div id="frm_field_13_container" class="frm_form_field form-field frm_required_field frm_top_container">
+                                                <div class="frm_checkbox" role="group">
+                                                    <label for="consent">
+                                                        <input type="checkbox" name="consent" id="consent" value="1" required>
+                                                        Slažem se da se moji podaci koriste za ovu svrhu.
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div id="frm_field_7_container" class="frm_form_field form-field">
+                                                <div class="frm_submit frm_flex">
+                                                    <button class="frm_button_submit frm_final_submit" type="submit" name="send_documents">
+                                                        Pošalji
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </form>
+                            <?php else : ?>
+                                <p>Nema dokumenata.</p>
+                            <?php endif; ?>
+
+
+
                         </div>
                     </div>
                 </div>

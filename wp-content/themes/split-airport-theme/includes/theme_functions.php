@@ -205,4 +205,54 @@ add_action('auto_delete_expired_procurements', function() {
     }
 });
 
+
+
+add_action('init', 'custom_send_documents_handler');
+
+function custom_send_documents_handler() {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['send_documents'])) return;
+
+    $email = sanitize_email($_POST['email'] ?? '');
+    $post_id = intval($_POST['modal_post_id'] ?? 0);
+    $consent = isset($_POST['consent']);
+
+    if (!$email || !is_email($email) || !$post_id || !$consent) return;
+
+    $document_list = get_field('documents', $post_id);
+
+    if (empty($document_list)) return;
+
+    $attachments = [];
+    $document_titles = '';
+
+    foreach ($document_list as $item) {
+        $title = $item['document_file']['title'] ?? 'Dokument';
+        $file_id = $item['document_file']['ID'] ?? null;
+        $file_path = $file_id ? get_attached_file($file_id) : '';
+
+        $document_titles .= "• $title\n";
+
+        if ($file_path && file_exists($file_path)) {
+            $attachments[] = $file_path;
+        }
+    }
+
+    $subject = 'Zatraženi dokumenti';
+    $message = "Poštovani,\n\nU privitku se nalaze dokumenti koje ste zatražili:\n\n$document_titles\n\nLijep pozdrav";
+    $headers = ['Content-Type: text/plain; charset=UTF-8'];
+
+    wp_mail($email, $subject, $message, $headers, $attachments);
+
+    // 📌 Zapiši u ACF textarea (log zahteva)
+    $existing_log = get_field('request_log', $post_id); // ACF field name
+    $request_date = date('d.m.Y H:i');
+    $new_entry = "{$request_date} - {$email}";
+    $new_log = $existing_log ? $existing_log . "\n" . $new_entry : $new_entry;
+    update_field('request_log', $new_log, $post_id);
+
+    wp_redirect(add_query_arg('success', 'true', wp_get_referer()));
+    exit;
+}
+
+
 ?>
