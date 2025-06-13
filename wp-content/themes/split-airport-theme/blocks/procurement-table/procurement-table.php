@@ -36,8 +36,6 @@ else: ?>
             $post_id = $post->ID;
             $modal_id = 'modal-' . $post_id;
 
-            $public_procurement_info = get_field('public_procurement_info', $post_id);
-            $header_title = get_field('header_title', $post_id);
             $subject_title = get_field('subject_title', $post_id);
             $items = get_field('procurement_custom_table', $post_id);
 
@@ -59,11 +57,11 @@ else: ?>
                 $has_active = true;
                 ?>
                 <div class="procurement-table-inner">
-                    <h3 class="heading-third procurement-table-subtitle"><?php echo esc_html($public_procurement_info); ?></h3>
+                    <h3 class="heading-third procurement-table-subtitle">Postupci jednostavne nabave</h3>
                     <div class="procurement-table">
                         <div class="procurement-table-header">
                             <?php if ($subject_title): ?>
-                                <h3 class="heading-third"><?php echo esc_html($header_title); ?></h3>
+                                <h3 class="heading-third">Predmet</h3>
                                 <button type="button" class="request-doc-modal-btn" data-modal-id="<?php echo esc_attr($modal_id); ?>">
                                     <span><?php echo esc_html($subject_title); ?></span>
                                     <?php echo file_get_contents(get_template_directory() . '/assets/images/link-arrow.svg'); ?>
@@ -105,7 +103,6 @@ else: ?>
                 <!-- MODAL -->
                 <?php 
                     $modal_post_id = intval(preg_replace('/\D/', '', $modal_id)); 
-                    $header_title = get_field('header_title', $modal_post_id);
                     $subject_title = get_field('subject_title', $modal_post_id);
                     $items = get_field('procurement_custom_table', $post_id);
                 ?>
@@ -118,7 +115,7 @@ else: ?>
                             </button>
                         </div>
                         <div>
-                            <h3 class="request-doc-header heading-third"><?php echo esc_html($header_title); ?></h3>
+                            <h3 class="request-doc-header heading-third">Predmet</h3>
                             <h2 class="request-doc-title"><?php echo esc_html($subject_title); ?></h2>
 
                             <div class="request-doc-items">
