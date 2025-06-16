@@ -141,7 +141,7 @@
             "label": "Lista korisnika koji su poslali dokument preko forme",
             "name": "request_log",
             "type": "textarea",
-            "instructions": "Automatski zapis zahteva korisnika",
+            "instructions": "Automatski zapis zahtjeva korisnika",
             "readonly": 1,
             "wrapper": {
                 "width": "",
