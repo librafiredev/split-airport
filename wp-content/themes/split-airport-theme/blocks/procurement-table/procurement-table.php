@@ -162,7 +162,8 @@ else: ?>
                                                 <h4>Popis dokumenata koji ćete dobiti</h4>
                                                 <ul>
                                                     <?php foreach ($document_list as $item) : 
-                                                        $title = $item['document_file']['title'] ?? 'Bez naslova'; ?>
+                                                        $file_id = $item['document_file']['ID'] ?? null;
+                                                        $title = get_the_title($file_id) ?>
                                                         <li><?php echo esc_html($title); ?></li>
                                                     <?php endforeach; ?>
                                                 </ul>
