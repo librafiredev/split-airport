@@ -67,7 +67,7 @@ $map-main-bp: $sm;
     }
 
     &.guide-right-tooltip {
-        transform: translate(0, -50%);
+        transform: translate(0, -50%) translateX(10px);
     }
 
     &.right-tooltip {
@@ -85,7 +85,7 @@ $map-main-bp: $sm;
     }
 
     &.guide-left-tooltip {
-        transform: translate(-100%, -50%);
+        transform: translate(-100%, -50%) translateX(-10px);
     }
 
     &.left-tooltip {

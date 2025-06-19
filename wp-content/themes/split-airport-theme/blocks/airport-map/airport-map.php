@@ -987,44 +987,32 @@ $guides_data = [
             'label' => esc_html__('Arrivals'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-arrivals.svg",
             'target_class' => 'map-guide-arrivals',
-        ),
-        array(
-            'label' => esc_html__('Departures'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-local-departure.svg",
-            'target_class' => 'map-guide-departures',
-            'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
-                    'label' => esc_html__('2. Esclator to l2'),
-                    'x' => 1300,
-                    'y' => 500,
-                    'tooltip_side' => 'left',
-                ),
-                array(
-                    'label' => esc_html__('1. Check in'),
-                    'x' => 1525,
-                    'y' => 330,
+                    'label' => esc_html__('Arrivals gate'),
+                    'x' => 1028 + 5 - 26,
+                    'y' => 675 + 5,
                     'tooltip_side' => 'right',
                 ),
             ],
         ),
         array(
-            'label' => esc_html__('Non-Schengen departures'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-international-departure.svg",
-            'target_class' => 'map-guide-non-shengen',
+            'label' => esc_html__('Check-in'),
+            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-check-in.svg",
+            'target_class' => 'map-guide-check-in',
             'override_z_index' => 18,
             'guide_tooltips' => [
                 array(
-                    'label' => esc_html__('2. Esclator to l2'),
-                    'x' => 1300,
-                    'y' => 500,
-                    'tooltip_side' => 'left',
+                    'label' => esc_html__('Check-in counters'),
+                    'x' => 1480 - 26,
+                    'y' => 324,
+                    'tooltip_side' => 'right',
                 ),
                 array(
-                    'label' => esc_html__('1. Check in'),
-                    'x' => 1525,
-                    'y' => 330,
-                    'tooltip_side' => 'right',
+                    'label' => esc_html__('Self check-in'),
+                    'x' => 1575 + 26,
+                    'y' => 426,
+                    'tooltip_side' => 'left',
                 ),
             ],
         ),
@@ -1035,25 +1023,13 @@ $guides_data = [
             'override_z_index' => 10,
         ),
         array(
-            'label' => esc_html__('Baggage departure'),
+            'label' => esc_html__('Baggage drop-off'),
             'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-0-baggage-departure.svg",
             'target_class' => 'map-guide-baggage-departure',
             'override_z_index' => 10,
         ),
-    ],[
-        array(
-            'label' => esc_html__('Departures'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-departures.svg",
-            'target_class' => 'map-guide-departures',
-            'override_z_index' => 9999,
-        ),
-        array(
-            'label' => esc_html__('Non-Schengen departures'),
-            'image_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-1-non-shengen.svg",
-            'target_class' => 'map-guide-non-shengen',
-        ),
-
     ],
+    [],
     [],
     [],
 ];
@@ -1112,6 +1088,8 @@ foreach ($floors_data as $key => $value) {
                                             <?php esc_html_e('No guides for parking'); ?>
                                         <?php elseif($g_floor_idx == 2) : ?>
                                             <?php esc_html_e('No guides on floor 2'); ?>
+                                        <?php elseif($g_floor_idx == 1) : ?>
+                                            <?php esc_html_e('No guides on floor 1'); ?>
                                         <?php else: ?>
                                             <?php esc_html_e('No guides on current floor'); ?>
                                         <?php endif; ?>
