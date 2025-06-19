@@ -303,7 +303,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Customs'),
+            'label' => esc_html__('Arrivals customs'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/security-officer.svg',
@@ -323,7 +323,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Passport control'),
+            'label' => esc_html__('Arrivals passport control'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/passport-control.svg',
@@ -535,7 +535,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Passport Control'),
+            'label' => esc_html__('Departures passport control'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/passport-control.svg',
@@ -564,7 +564,7 @@ $icon_data = [
             ],
         ),
         array(
-            'label' => esc_html__('Customs'),
+            'label' => esc_html__('Departures customs'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/security-officer.svg',
@@ -871,12 +871,10 @@ $category_data = [
                 'label' => esc_html__('Passport control'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Passport control on floor 0'),
                         'group_index' => 15,
                         'floor' => 0,
                     ),
                     array(
-                        'label' => esc_html__('Passport control on floor 1'),
                         'group_index' => 7,
                         'floor' => 1,
                     ),
@@ -890,12 +888,10 @@ $category_data = [
                 'label' => esc_html__('Customs'),
                 'children' => [
                     array(
-                        'label' => esc_html__('Customs on floor 0'),
                         'group_index' => 14,
                         'floor' => 0,
                     ),
                     array(
-                        'label' => esc_html__('Customs on floor 1'),
                         'group_index' => 9,
                         'floor' => 1,
                     ),
