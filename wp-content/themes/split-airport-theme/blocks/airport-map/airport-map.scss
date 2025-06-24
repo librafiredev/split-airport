@@ -24,7 +24,7 @@ $map-main-bp: $sm;
     max-width: 0;
     padding-left: 0;
     padding-right: 0;
-    transition: 600ms;
+    transition: opacity 400ms;
 
     &.is-active-cbs {
         max-width: 100%;
@@ -510,9 +510,14 @@ $map-main-bp: $sm;
     left: 0;
     display: flex;
     align-items: center;
-    transition: $dur;
+    transition: opacity $dur;
     height: 100%;
     padding: 5px 20px;
+
+    &:has(div.airport-map-no-guide.is-active-cbs) {
+        pointer-events: none;
+        opacity: 0;
+    }
 
     @include max-mq($map-main-bp) {
         white-space: wrap;
@@ -574,11 +579,8 @@ $map-main-bp: $sm;
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
-
-    &.is-active-cbs {
-        padding: 5px 10px;
-        padding-right: 6px;
-    }
+    padding: 5px 10px;
+    padding-right: 6px;
 
     @include max-mq($map-main-bp) {
         flex-shrink: 0;

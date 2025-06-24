@@ -1083,17 +1083,7 @@ foreach ($floors_data as $key => $value) {
                             <?php $existing_guide_gr = []; ?>
                             <?php foreach ($guides_data as $g_floor_idx => $guide_group) : ?>
                                 <?php if (empty($guide_group)) : ?>
-                                    <div class="airport-map-no-guide airport-guide-cb-<?php echo $g_floor_idx; ?> <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>">
-                                        <?php if($g_floor_idx == 3) : ?>
-                                            <?php esc_html_e('No guides for parking'); ?>
-                                        <?php elseif($g_floor_idx == 2) : ?>
-                                            <?php esc_html_e('No guides on floor 2'); ?>
-                                        <?php elseif($g_floor_idx == 1) : ?>
-                                            <?php esc_html_e('No guides on floor 1'); ?>
-                                        <?php else: ?>
-                                            <?php esc_html_e('No guides on current floor'); ?>
-                                        <?php endif; ?>
-                                    </div>
+                                    <div class="airport-map-no-guide airport-guide-cb-<?php echo $g_floor_idx; ?> <?php echo $g_floor_idx == $initial_floor ? 'is-active-cbs' : '' ?>"></div>
                                 <?php else: ?>
                                     <?php foreach ($guide_group as $guide_index => $guide_item) : ?>
                                         <?php 
