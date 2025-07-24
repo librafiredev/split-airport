@@ -20,7 +20,15 @@ else: ?>
             $image_mobile = $image;
         }
 
-        $has_left_items = count(get_field('items_left') ?: []) > 0 ? true : false;
+        $left_item_count = count(get_field('items_left') ?: []);
+        $right_item_count = count(get_field('items') ?: []);
+        $item_height = 76;
+        # depends on how tall is the white area in the image
+        $max_img_sift = -228;
+
+        $image_shift = min(max(($left_item_count - $right_item_count) * $item_height, $max_img_sift), 0);
+
+        $has_left_items = $left_item_count > 0 ? true : false;
     
     ?>
 
@@ -129,7 +137,7 @@ else: ?>
 
         <?php if( !empty($image) && !empty($image_mobile) ): ?>
         
-            <div class="text-links-image">
+            <div class="text-links-image" style="margin-top: <?php echo $image_shift; ?>px;">
                 <picture>
                     <source srcset="<?php echo $image_mobile['url']; ?>" media="(max-width: 767px)">
                     <img src="<?php echo $image['url']; ?>" alt="Text links image">
