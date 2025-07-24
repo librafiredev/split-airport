@@ -84,7 +84,7 @@ $items-height: 294px;
     margin-top: auto;
 
     .hero-home-no-search & {
-        max-width: 430px;
+        max-width: 380px;
 
         @include max-mq($hero-res-switch) {
             margin-top: 100px;
