@@ -258,4 +258,50 @@ function custom_send_documents_handler() {
 // });
 
 
+if ( !function_exists('setup_global_sidebar_for_block') ) {
+
+    function setup_global_sidebar_for_block($title = '') {
+        if ( empty($title) ) {
+            return array();
+        }
+
+        if ( !get_field('include_sidebar_navigation', get_the_ID()) ) {
+            return array();
+        }
+
+        global $sa_sidebar_nav_index;
+        global $sa_sidebar_nav_items;
+        global $sa_sidebar_nav_content_wrapper_open;
+
+        $additional_class = '';
+
+        if ( $sa_sidebar_nav_index == 0 ) {
+            $additional_class = ' is-active';
+        }
+
+        $unique_class = 'sa-global-block-' . $sa_sidebar_nav_index;
+
+        $item_data = array(
+            'title' => $title,
+            'index_id' => $sa_sidebar_nav_index,
+            'unique_class' => $unique_class,
+            'block_class' => 'sa-global-block ' . $unique_class . ' ' . $additional_class,
+        );
+
+        $sa_sidebar_nav_items[] = $item_data;
+
+        $sa_sidebar_nav_index = $sa_sidebar_nav_index + 1;
+
+        if ( !$sa_sidebar_nav_content_wrapper_open ) {
+            echo '<div class="container sa-page-with-global-sidebar">';
+            echo '<div class="sa-global-blocks-wrap">';
+            
+            $sa_sidebar_nav_content_wrapper_open = true;
+        }
+
+        return $item_data;
+    }
+
+}
+
 ?>

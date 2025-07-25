@@ -9,9 +9,12 @@ if (isset($block['data']['preview_image_help'])) :
 else:
     $companies = get_field('companies');
     $should_prefix = get_field('should_add_prefixes');
+
+$item_data = setup_global_sidebar_for_block(get_field('title'));
+
 ?>
 
-    <section class="rent-car">
+    <section class="rent-car <?php if ( !empty($item_data['block_class']) ) { echo $item_data['block_class']; } ?>">
         <div class="container">
             <div class="rent-car__inner">
                 <?php if ( get_field('title') ) : ?>

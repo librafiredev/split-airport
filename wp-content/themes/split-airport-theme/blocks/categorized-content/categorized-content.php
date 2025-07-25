@@ -6,9 +6,13 @@
 
 if( isset( $block['data']['preview_image_help'] )  ) :
     echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
-else: ?>
+else: 
 
-    <section class="categorized-content-wrapper categorized-content-<?php echo get_field('styles') ?: 'default'; ?>">
+$item_data = setup_global_sidebar_for_block(get_field('title'));
+
+?>
+
+    <section class="categorized-content-wrapper categorized-content-<?php echo get_field('styles') ?: 'default'; ?> <?php if ( !empty($item_data['block_class']) ) { echo $item_data['block_class']; } ?>">
         <div class="container">
             <div class="categorized-content__inner">
                 <div class="categorized-content__left">

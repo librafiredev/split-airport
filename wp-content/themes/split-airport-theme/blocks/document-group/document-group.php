@@ -6,9 +6,13 @@
 
 if( isset( $block['data']['preview_image_help'] )  ) :
     echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
-else: ?>
+else: 
 
-    <section class="document-group-wrapper">
+$item_data = setup_global_sidebar_for_block(get_field('title'));
+
+?>
+
+    <section class="document-group-wrapper <?php if ( !empty($item_data['block_class']) ) { echo $item_data['block_class']; } ?>">
         <div class="container">
             <div class="document-group-inner">
                 <?php if ( get_field('title') ) : ?>

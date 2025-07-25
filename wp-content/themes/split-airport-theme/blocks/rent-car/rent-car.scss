@@ -26,6 +26,19 @@ $rent-car-shared-bp: $mb;
         grid-template-columns: 1fr;
         gap: 23px;
     }
+
+    .sa-global-blocks-wrap & {
+        grid-template-columns: repeat(3, 1fr);
+
+        @include max-mq($md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include max-mq($sm) {
+            grid-template-columns: 1fr;
+            gap: 23px;
+        }
+    }
 }
 
 .rent-car__item {
@@ -36,6 +49,10 @@ $rent-car-shared-bp: $mb;
         min-height: 320px;
         border: 1px solid $gray;
         padding: 19px 24px;
+
+        .sa-global-blocks-wrap & {
+            min-height: 230px;
+        }
     }
 
     @include max-mq($rent-car-shared-bp) {
@@ -48,9 +65,18 @@ $rent-car-shared-bp: $mb;
         max-width: 50px;
     }
 
+    .sa-global-blocks-wrap & {
+        margin-bottom: 45px;
+    }
+
     img {
         min-height: 24px;
         min-width: 24px;
+
+        .sa-global-blocks-wrap & {
+            min-height: 34px;
+            min-width: 34px;
+        }
     }
 }
 
