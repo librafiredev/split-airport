@@ -433,10 +433,20 @@ body {
     }
 }
 
+.sa-global-sidebar-items-wrap {
+    position: relative;
+}
+
 .sa-global-blocks-wrap {
     flex: 0 0 74%; // NOTE: this is mainly because of rent-a-care while other blocks are narrower anyway
     max-width: 74%;
     margin-bottom: 140px;
+
+    @include max-mq($global-sidebar-breakpoint) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 2;
+    }
 
     & > :last-child {
         margin-bottom: 0 !important;
@@ -447,6 +457,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include max-mq($global-sidebar-breakpoint) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $white;
+        box-shadow: 0 4px 40px 0 rgba(0 0 0 / 11%);
+        border-radius: 16px;
+
+        .is-open & {
+            display: flex;
+        }
+    }
 }
 
 .sa-global-sidebar {
@@ -455,6 +480,13 @@ body {
     max-width: 16%;
     padding-top: 75px;
     padding-left: 10px;
+
+    @include max-mq($global-sidebar-breakpoint) {
+        order: 1;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
 }
 
 .sa-global-block {
@@ -476,13 +508,48 @@ body {
     text-align: left;
     display: inline-block;
     letter-spacing: -0.02em;
+    font-family: $primary-font;
+
+    @include max-mq($global-sidebar-breakpoint) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: $font-size-base;
+        letter-spacing: -0.03em;
+        padding: 13px 10px;
+        color: $gray-300;
+        border-bottom: 1px solid #ededed;
+        gap: 10px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 
     &.is-active {
-        font-weight: bold;
+        @include min-mq($global-sidebar-breakpoint + 1px) {
+            font-weight: bold;
+        }
+
+        @include max-mq($global-sidebar-breakpoint) {
+            &::after {
+                content: "";
+                height: 0.9em;
+                width: 0.9em;
+                display: inline-block;
+                margin-left: auto;
+                background-image: url("/assets/images/checkmark.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+            }
+        }
     }
 
     &:hover {
-        opacity: 0.7;
+        @include min-mq($global-sidebar-breakpoint) {
+            opacity: 0.7;
+        }
     }
 }
 
@@ -492,9 +559,51 @@ body {
     padding: 6px;
     margin-bottom: 12px;
 
+    @include max-mq($global-sidebar-breakpoint) {
+        display: none;
+    }
+
     .heading-third {
         color: $primary-color;
         margin-bottom: 0;
+    }
+}
+
+.sa-global-current-block-mobile {
+    cursor: pointer;
+
+    @include min-mq($global-sidebar-breakpoint + 1px) {
+        display: none;
+    }
+
+    @include max-mq($global-sidebar-breakpoint) {
+        display: flex;
+        align-items: center;
+        background-color: $footer-bgc;
+        font-size: $font-size-base;
+        letter-spacing: -0.03em;
+        padding: 10px;
+        color: $gray-300;
+        z-index: 1;
+        position: relative;
+        gap: 10px;
+
+        &::after {
+            content: "";
+            height: 0.7em;
+            width: 0.7em;
+            display: inline-block;
+            margin-left: auto;
+            background-image: url("/assets/images/chevron-up.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            transform: rotate(180deg);
+
+            .is-open & {
+                transform: none;
+            }
+        }
     }
 }
 

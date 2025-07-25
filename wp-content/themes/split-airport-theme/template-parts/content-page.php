@@ -24,10 +24,15 @@ $sa_sidebar_nav_content_wrapper_open = false;
 				<div class="sa-global-sidebar">
 					<div class="sa-global-sidebar-title"><div class="heading-third"><?php the_field('sidebar_navigation_title'); ?></div></div>
 					
-					<div class="sa-global-sidebar-items">
-						<?php foreach ($sa_sidebar_nav_items as $index => $value) { ?>
-							<button type="button" class="sa-sidebar-item-btn<?php echo $index == 0 ? ' is-active' : ''; ?>" data-target-block="<?php echo $value['unique_class']; ?>"><?php echo $value['title']; ?></button>
-						<?php } ?>
+					<div class="sa-global-sidebar-items-wrap">
+						<?php if ( !empty($sa_sidebar_nav_items) ) : ?>
+							<div class="sa-global-current-block-mobile"><?php echo $sa_sidebar_nav_items[0]['title'] ?></div>
+						<?php endif; ?>
+						<div class="sa-global-sidebar-items">
+							<?php foreach ($sa_sidebar_nav_items as $index => $value) { ?>
+								<button type="button" class="sa-sidebar-item-btn<?php echo $index == 0 ? ' is-active' : ''; ?>" data-target-block="<?php echo $value['unique_class']; ?>"><?php echo $value['title']; ?></button>
+							<?php } ?>
+						</div>
 					</div>
 				</div>
 			
