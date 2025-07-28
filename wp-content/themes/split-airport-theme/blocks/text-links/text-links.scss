@@ -71,6 +71,30 @@
     }
 }
 
+.text-links-left-inner {
+    position: relative;
+
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        right: -10px;
+        top: 0;
+        background-color: $white;
+        height: calc(100% + 30px);
+        width: 100vw;
+
+        .text-links-left-items & {
+            right: -60px;
+        }
+    }
+}
+
 .text-links-left-items {
     flex: 0 0 50%;
     max-width: 50%;

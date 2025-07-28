@@ -38,6 +38,7 @@ else: ?>
                 <div class="text-links-top-inner">
 
                     <div class="<?php echo $has_left_items ? 'text-links-full' : 'text-links-left'; ?>">
+                        <?php if ( !$has_left_items ) { echo '<div class="text-links-left-inner">'; } ?>
 
                         <?php if( $title ): ?>
 
@@ -59,37 +60,40 @@ else: ?>
                             
                         <?php endif; ?>
 
+                        <?php if ( !$has_left_items ) { echo '</div>'; } ?>
                     </div>
 
                     <?php if( have_rows('items_left') ): ?>
                         <div class="text-links-left-items">
-                            <?php while ( have_rows('items_left') ) : the_row(); 
-                                $icon = get_sub_field('icon');
-                                    $link = get_sub_field('link');
-                                ?>
-                                <?php if( $link ):
-                                    $link_url = $link['url'];
-                                    $link_title = $link['title'];
-                                    $link_target = $link['target'] ? $link['target'] : '_self';
-                                ?>
-                                    <div class="text-links-item">
-                                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
-                                            
-                                            <?php if( !empty($icon) ): ?>
-                                                <div class="text-links-item-icon">
-                                                    <?php echo ( isset($icon['ID']) )? wp_get_attachment_image($icon['ID'], 'full'):''; ?>
-                                                </div>
-                                            <?php endif; ?>
-                                            <div class="text-links-item-text">
-                                                <span><?php echo esc_html($link_title); ?></span>
-                                            </div><!-- .text-links-item-text -->
-                                            <div class="text-links-item-arrow">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="arrow" />
-                                            </div><!-- .text-links-item-arrow -->
-                                        </a>
-                                    </div><!-- .text-links-item -->
-                                <?php endif; ?>
-                            <?php endwhile; ?>
+                            <div class="text-links-left-inner">
+                                <?php while ( have_rows('items_left') ) : the_row(); 
+                                    $icon = get_sub_field('icon');
+                                        $link = get_sub_field('link');
+                                    ?>
+                                    <?php if( $link ):
+                                        $link_url = $link['url'];
+                                        $link_title = $link['title'];
+                                        $link_target = $link['target'] ? $link['target'] : '_self';
+                                    ?>
+                                        <div class="text-links-item">
+                                            <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                                                
+                                                <?php if( !empty($icon) ): ?>
+                                                    <div class="text-links-item-icon">
+                                                        <?php echo ( isset($icon['ID']) )? wp_get_attachment_image($icon['ID'], 'full'):''; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <div class="text-links-item-text">
+                                                    <span><?php echo esc_html($link_title); ?></span>
+                                                </div><!-- .text-links-item-text -->
+                                                <div class="text-links-item-arrow">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="arrow" />
+                                                </div><!-- .text-links-item-arrow -->
+                                            </a>
+                                        </div><!-- .text-links-item -->
+                                    <?php endif; ?>
+                                <?php endwhile; ?>
+                            </div>
                         </div>
                     <?php endif; ?>
 
