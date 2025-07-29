@@ -529,16 +529,18 @@ body {
     &.is-active {
         @include min-mq($global-sidebar-breakpoint + 1px) {
             font-weight: bold;
+
+            .mobile-checkmark {
+                display: none;
+            }
         }
 
         @include max-mq($global-sidebar-breakpoint) {
-            &::after {
-                content: "";
+            .mobile-checkmark {
                 height: 0.9em;
                 width: 0.9em;
                 display: inline-block;
                 margin-left: auto;
-                background-image: url("/assets/images/checkmark.svg");
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center center;
@@ -588,13 +590,11 @@ body {
         position: relative;
         gap: 10px;
 
-        &::after {
-            content: "";
+        .mobile-chevron {
             height: 0.7em;
             width: 0.7em;
             display: inline-block;
             margin-left: auto;
-            background-image: url("/assets/images/chevron-up.svg");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center center;

@@ -26,11 +26,11 @@ $sa_sidebar_nav_content_wrapper_open = false;
 					
 					<div class="sa-global-sidebar-items-wrap">
 						<?php if ( !empty($sa_sidebar_nav_items) ) : ?>
-							<div class="sa-global-current-block-mobile"><?php echo $sa_sidebar_nav_items[0]['title'] ?></div>
+							<div class="sa-global-current-block-mobile"><?php echo $sa_sidebar_nav_items[0]['title'] ?><span class="mobile-chevron" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/chevron-up.svg);"></span></div>
 						<?php endif; ?>
 						<div class="sa-global-sidebar-items">
 							<?php foreach ($sa_sidebar_nav_items as $index => $value) { ?>
-								<button type="button" class="sa-sidebar-item-btn<?php echo $index == 0 ? ' is-active' : ''; ?>" data-target-block="<?php echo $value['unique_class']; ?>"><?php echo $value['title']; ?></button>
+								<button type="button" class="sa-sidebar-item-btn<?php echo $index == 0 ? ' is-active' : ''; ?>" data-target-block="<?php echo $value['unique_class']; ?>"><?php echo $value['title']; ?><span class="mobile-checkmark" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/checkmark.svg);"></span></button>
 							<?php } ?>
 						</div>
 					</div>
