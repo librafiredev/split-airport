@@ -466,7 +466,8 @@ body {
         width: 100%;
         background-color: $white;
         box-shadow: 0 4px 40px 0 rgba(0 0 0 / 11%);
-        border-radius: 16px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
 
         .is-open & {
             display: flex;
