@@ -7,6 +7,10 @@
 .document-group-wrapper {
     margin-top: 75px;
 
+    @include max-mq($sm) {
+        margin-top: 45px;
+    }
+
     .sc-card {
         max-width: initial;
     }
@@ -29,6 +33,12 @@
     font-size: $font-size-h3;
     letter-spacing: -0.04em;
     margin-top: 70px;
+
+    @include max-mq($sm) {
+        .sa-page-with-global-sidebar & {
+            margin-top: 40px;
+        }
+    }
 }
 
 .document-group-title,

@@ -80,6 +80,7 @@ $page-hero-back-btn-bp: 1330px;
     @include max-mq($crt) {
         font-size: $responsive-size-h2;
         letter-spacing: -0.07em;
+        padding-top: 13px;
     }
 }
 
