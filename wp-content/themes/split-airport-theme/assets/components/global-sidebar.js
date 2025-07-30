@@ -18,7 +18,7 @@ const _this = {
                 $('.sa-global-block').removeClass('is-active');
                 $(targetBlockSelector).addClass('is-active');
 
-                $(this).closest('.sa-global-sidebar-items-wrap').find('.sa-global-current-block-mobile').text(currentValueLabel);
+                $(this).closest('.sa-global-sidebar-items-wrap').find('.sa-global-current-block-mobile .sa-current-text').text(currentValueLabel);
                 $(this).closest('.sa-global-sidebar-items-wrap').removeClass('is-open');
             });
         });

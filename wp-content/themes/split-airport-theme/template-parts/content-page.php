@@ -26,7 +26,7 @@ $sa_sidebar_nav_content_wrapper_open = false;
 					
 					<div class="sa-global-sidebar-items-wrap">
 						<?php if ( !empty($sa_sidebar_nav_items) ) : ?>
-							<div class="sa-global-current-block-mobile"><?php echo $sa_sidebar_nav_items[0]['title'] ?><span class="mobile-chevron" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/chevron-up.svg);"></span></div>
+							<div class="sa-global-current-block-mobile"><span class="sa-current-text"><?php echo $sa_sidebar_nav_items[0]['title'] ?></span><span class="mobile-chevron" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/chevron-up.svg);"></span></div>
 						<?php endif; ?>
 						<div class="sa-global-sidebar-items">
 							<?php foreach ($sa_sidebar_nav_items as $index => $value) { ?>
