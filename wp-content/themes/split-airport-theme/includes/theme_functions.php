@@ -205,59 +205,6 @@ function custom_send_documents_handler() {
 }
 
 
-// ostavio sam zakomentarisano mozda ce trebati nekada kasnije
-
-// add_action('init', function() {
-//     if (!wp_next_scheduled('auto_delete_expired_procurements')) {
-//         wp_schedule_event(time(), 'daily', 'auto_delete_expired_procurements');
-//     }
-// });
-
-// // Funkcija koja briše postove sa isteklog roka
-
-// add_action('auto_delete_expired_procurements', function() {
-//     $today = date('Y-m-d');
-
-//     $args = [
-//         'post_type' => 'public-procurement',
-//         'posts_per_page' => -1,
-//         'post_status' => 'publish',
-//     ];
-
-//     $query = new WP_Query($args);
-
-//     if ($query->have_posts()) {
-//         while ($query->have_posts()) {
-//             $query->the_post();
-//             $post_id = get_the_ID();
-
-//             $items = get_field('procurement_custom_table', $post_id);
-//             if (!$items || !is_array($items)) {
-//                 continue; // Ako nema stavki, preskoči
-//             }
-
-//             $all_expired = true;
-
-//             foreach ($items as $item) {
-//                 $deadline_raw = trim($item['deadline']);
-//                 $deadline_raw = rtrim($deadline_raw, '.');
-//                 $deadline_date = DateTime::createFromFormat('d.m.Y', $deadline_raw);
-
-//                 if ($deadline_date && $deadline_date->format('Y-m-d') >= $today) {
-//                     $all_expired = false;
-//                     break;
-//                 }
-//             }
-
-//             if ($all_expired) {
-//                 wp_delete_post($post_id, true);
-//             }
-//         }
-//         wp_reset_postdata();
-//     }
-// });
-
-
 if ( !function_exists('setup_global_sidebar_for_block') ) {
 
     function setup_global_sidebar_for_block($title = '') {
