@@ -60,6 +60,19 @@ get_header();
                         }
                     }
 
+                    $current_language = apply_filters( 'wpml_current_language' , NULL );
+
+                    $hardcoded_no_result = array(
+                        'hr' => array(
+                            'natjecaji-za-zakup-poslovnog-prostora' => 'Trenutno nema otvorenih natječaja za najam poslovnih prostora',
+                            'natjecaji-za-zasnivanje-radnog-odnosa' => 'Trenutno nema otvorenih natječaja za zaposlenje',
+                        ),
+                        'en' => array(
+                            'tenders-for-the-lease-of-business-premises' => 'No results for this tender category',
+                            'tenders-for-jobs' => 'No results for this tender category',
+                        ),
+                    );
+
                     foreach ($categorized_posts as $category_id => $category) {
                         ?>
                         <div class="tenders-cat-wrap">
@@ -68,6 +81,12 @@ get_header();
                             foreach ($category['posts'] as $post) {
                                 setup_postdata( $post );
                                 get_template_part('template-parts/posts/tender');
+                            }
+
+                            if (empty($category['posts'])) {
+                                if (!empty($hardcoded_no_result[$current_language][$category['term']->slug])) {
+                                    echo $hardcoded_no_result[$current_language][$category['term']->slug];
+                                }
                             }
                             ?>
                             <?php if (!empty($category['term']->name)) : ?>
