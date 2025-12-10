@@ -20,6 +20,11 @@ get_header();
                 <div class="tenders-inner">
                     <?php
                     $categorized_posts = array();
+
+                    $all_tender_terms = get_terms(array(
+                        'taxonomy'   => 'tender-category',
+                        'hide_empty' => false,
+                    ));
                     ?>
                     <?php if (have_posts()): ?>
                         <?php
@@ -44,10 +49,16 @@ get_header();
                                 }
                             endforeach;
                         endwhile; ?>
-                    <?php else:
-                        echo __('There are no tenders matching this criteria.');
-                    endif; 
+                    <?php endif;
 
+                    foreach ($all_tender_terms as $t_term) {
+                        if (!isset($categorized_posts[$t_term->term_id])) {
+                            $categorized_posts[$t_term->term_id] = array(
+                                'posts' => [],
+                                'term' => $t_term,
+                            );
+                        }
+                    }
 
                     foreach ($categorized_posts as $category_id => $category) {
                         ?>
