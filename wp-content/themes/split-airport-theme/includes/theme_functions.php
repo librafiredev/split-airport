@@ -137,10 +137,9 @@ add_action( 'pre_get_posts', function( $query ) {
     $query->set('posts_per_page', -1);
     $query->set('meta_query', array(
         array(
-            'key'           => 'end_date',
-            'compare'       => '>=',
-            'value'         => $dateNow,
-            'type'          => 'DATE',
+            'key'     => 'is_active',
+            'value'   => '1',
+            'compare' => '=',
         ),
     ));
   }
