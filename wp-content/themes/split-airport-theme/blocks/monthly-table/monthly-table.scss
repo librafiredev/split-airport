@@ -1,0 +1,112 @@
+@import "../../assets/scss/global/variables";
+@import "../../assets/scss/global/mixins";
+
+.monthly-table-wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .heading-secondary {
+        color: $primary-color;
+        letter-spacing: -0.04em;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        margin-bottom: 1.22em;
+
+        @include max-mq($sm) {
+            font-size: 19px;
+            letter-spacing: -0.03em;
+            margin-bottom: 13px;
+        }
+    }
+}
+
+.monthly-table-inner {
+    overflow-x: auto;
+    scrollbar-color: $gray $footer-bgc;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $footer-bgc;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        box-shadow: inset 3px 0 0 $gray;
+        border-radius: 3px;
+    }
+
+    .container {
+        width: $container-width; // NOTE: this is needed to make sure padding on right side exists on smaller devices when parent becomes scrollable
+    }
+}
+
+.table-year {
+    width: 5%;
+}
+
+.table-month {
+    width: 7.12%;
+    min-width: 85px;
+}
+
+.table-total {
+    width: 20%;
+}
+
+.monthly-table {
+    color: $gray-300;
+    margin-bottom: 15px;
+
+    th {
+        font-size: $font-size-xsmall;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    td {
+        font-family: $secondary-font;
+        font-size: $font-size-small;
+    }
+
+    th,
+    td {
+        padding: 14px 6px;
+        border: 1px solid #ededed;
+
+        &.table-title {
+            padding: 12px 20px;
+        }
+
+        &.table-year {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
+    thead {
+        .table-year {
+            color: $gray-100;
+        }
+
+        th,
+        td {
+            border-color: $gray-50;
+        }
+    }
+}
+
+.table-title {
+    text-align: left;
+}
+
+.table-title,
+.table-total {
+    background-color: $footer-bgc;
+}
+
+.table-total,
+.table-month {
+    text-align: right;
+}

@@ -250,4 +250,10 @@ if ( !function_exists('setup_global_sidebar_for_block') ) {
 
 }
 
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+
+function load_admin_style() {
+    wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/admin-style.css', false, '1.0.0' );
+}
+
 ?>
