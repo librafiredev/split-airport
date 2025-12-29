@@ -70,14 +70,14 @@ $table_months = ['january','february','march','april','may','june','july','augus
                                             } catch (\Throwable $th) {
                                                 //throw $th;
                                             }
-                                            echo $month_value; ?>
+                                            echo number_format($month_value, 0, ',', ' '); ?>
                                         </td>
                 
                                         <?php
                                     }
                                     ?>
                                     <td class="table-total">
-                                        <?php echo $sum; ?>
+                                        <?php echo number_format($sum, 0, ',', ' '); ?>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
