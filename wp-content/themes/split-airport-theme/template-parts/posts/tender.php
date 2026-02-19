@@ -39,6 +39,6 @@ $documents = '';
     </div>
     <h3 class="tender-item-title" onclick="populateAndOpenModal(<?php echo esc_attr(json_encode(array('post' => array('title' => get_the_title(), 'content' => get_the_content()), 'acf' => array('full_date' => get_field('start_date') . ' - ' . get_field('end_date'), 'documents' => $documents, 'start_date' => get_field('start_date'), 'end_date' => get_field('end_date'))))); ?>)"><?php the_title(); ?></h3>
     <div class="tender-item-excerpt">
-        <?php the_excerpt() ?>
+        <?php the_content(); ?>
     </div>
 </div>

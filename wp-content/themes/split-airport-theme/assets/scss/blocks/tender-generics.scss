@@ -34,6 +34,18 @@
 .tender-modal-content,
 .tender-item-excerpt {
     line-height: calc(24 / 17);
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    a {
+        color: $primary-color-100;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .tender-modal-title,
