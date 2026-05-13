@@ -9,7 +9,7 @@ if( isset( $block['data']['preview_image_help'] )  ) :
 else:
 
 $initial_floor = 0;
-$icon_size = 62;
+$default_icon_size = 62;
 $group_class_prefix = 'airport-map-group-';
 $overlay_guide_class_prefix = 'airport-map-guide-';
 
@@ -95,6 +95,13 @@ $floors_data = [
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-p.svg",
         'width' => 2475,
         'height' => 1469,
+    ),
+    array(
+        'label' => 'UA',
+        'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-ua.svg",
+        'width' => 1095,
+        'height' => 553,
+        'icon_size_override' => 25,
     ),
 ];
 $icon_data = [
@@ -679,6 +686,7 @@ $icon_data = [
             ],
         ),
     ],
+    // FLOOR P
     [
         array(
             'label' => esc_html__('Rent-a-Car'),
@@ -746,7 +754,20 @@ $icon_data = [
                 ),
             ],
         ),
-    ]
+    ],
+    // FLOOR UA
+    [
+        array(
+            'label' => esc_html__('United CHECK-IN'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/plane-check-in.svg',
+                    'x' => 723,
+                    'y' => 288,
+                ),
+            ],
+        ),
+    ],
 ];
 $category_data = [
     array(
@@ -1032,6 +1053,7 @@ $guides_data = [
     [],
     [],
     [],
+    [],
 ];
 
 $max_aspect_ratio = null;
@@ -1132,6 +1154,10 @@ foreach ($floors_data as $key => $value) {
                                                     $shape_path = $item['shape_path'];
                                                     $pos_x = $item['x'];
                                                     $pos_y = $item['y'];
+                                                    $icon_size = $default_icon_size;
+                                                    if (!empty($floor['icon_size_override'])) {
+                                                        $icon_size = $floor['icon_size_override'];
+                                                    }
                                                     if ($shape_type != 'area') {
                                                         $pos_x += $icon_size * .5;
                                                         $pos_y += $icon_size * .5;

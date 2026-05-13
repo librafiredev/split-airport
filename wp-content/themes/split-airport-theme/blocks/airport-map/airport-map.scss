@@ -228,10 +228,19 @@ $map-main-bp: $sm;
     border-top: none;
     background-color: #fcfcfc;
 
+    &:has(.airport-map-floor-4.airport-map-active-floor) {
+        padding: 0;
+    }
+
     @include max-mq($map-main-bp) {
         padding: 79px 0 15px 15px;
         aspect-ratio: 1.2 !important;
         border: none;
+
+        &:has(.airport-map-floor-4.airport-map-active-floor) {
+            padding: 0;
+            padding-top: 79px;
+        }
     }
 }
 
@@ -480,10 +489,12 @@ $map-main-bp: $sm;
 
 .airport-map-floor-btn {
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px 0;
+    min-width: 40px;
     background-color: $white;
     border: 1px solid $gray;
     color: $gray-300;
+    text-align: center;
 
     &.current-floor-btn {
         background-color: $footer-bgc;
