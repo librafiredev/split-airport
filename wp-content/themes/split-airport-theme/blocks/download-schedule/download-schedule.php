@@ -6,60 +6,90 @@
 
 if( isset( $block['data']['preview_image_help'] )  ) :
     echo '<img src="'. $block['data']['preview_image_help'] .'" style="width:100%; height:auto;">';
-else: ?>
+else: 
+
+
+$placeholder_data = [
+    [
+        'destination' => 'London',
+        'date' => '23.04.2026 / Wednesday',
+        'time' => '13:55',
+        'number' => 'HA 521',
+        'carrier' => 'Croatia Airlines',
+        'code' => 'LH 6004',
+    ],
+    [
+        'destination' => 'New York',
+        'date' => '23.05.2026 / Someday',
+        'time' => '13:55',
+        'number' => 'HN 22',
+        'carrier' => 'Someline',
+        'code' => 'LH 6468',
+    ],
+];
+
+$flights = $placeholder_data;
+
+?>
 
     <section class="download-schedule-wrapper" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
 
         <div class="container">
-            <div class="download-schedule-top">
-                <div class="download-schedule-top-left">
+            <div class="download-schedule-header">
+                <div>
                     <h2><?php the_field('title'); ?></h2>
                 </div>
 
-                <?php if( have_rows('files') ): ?>
-                    <div class="download-schedule-top-right">
-                        <?php while ( have_rows('files') ) : the_row(); ?>
-                        <?php
-                        $file_id = get_sub_field('file');
-                        ?>
-                        
-                        <?php if ( $file_id ): ?>
-                            <?php
-
-                            $file_path = get_attached_file($file_id);
-                            $file_url = wp_get_attachment_url($file_id);
-                            $file_size = round(((filesize($file_path)) / 1024 / 1024), 2);
-                            ?>
-
-                            <div class="download-schedule-tr-item">
-                                <div class="download-schedule-tri-icon-wrap">
-                                    <?php echo file_get_contents(get_template_directory() . '/assets/images/fileIcon.svg'); ?>
-                                </div>
-
-                                <div class="download-schedule-tri-main">
-                                    <div class="download-schedule-tri-main-l">
-                                    <div class="download-schedule-tri-title"><?php echo get_the_title($file_id); ?></div>
-                                    <div class="download-schedule-tri-subtitle"><?php echo strtoupper(pathinfo($file_path, PATHINFO_EXTENSION)) . ', ' . $file_size . ' ' . 'MB'; ?></div>
-                                    </div>
-                                    <a href="<?php echo esc_url($file_url); ?>" download class="download-schedule-item-dl">
-                                        <?php esc_html_e('Download', 'split-aritport'); ?>
-                                    </a>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php endwhile; ?>
+                <div class="download-schedule-filters">
+                    <div class="js-dl-schedule-date-range" data-range-message="<?php echo __('Maximum search range is 3 months.', 'split-airport'); ?>">
+                        <div><div><?php echo __('From date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-from" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div></div>
+                        <div><div><?php echo __('To date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div></div>
                     </div>
-                <?php endif; ?>
+
+                    <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><input type="text" placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>" /></div></div>
+
+                    <div><div><?php echo __('Enter carrier', 'split-airport'); ?></div> <div><input type="text" placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>" /></div></div>
+
+                    <button type="submit"><?php echo __('Search', 'split-airport'); ?></button>
+                </div>
+            </div>
+            
+            <div class="download-schedule-btns content-button rounded-buttons">
+                <button type="button" class="js-download-pdf-schedule">
+                    <?php esc_html_e('Download as PDF', 'split-airport') ?>
+                </button>
+                <button type="button" class="js-download-csv-schedule">
+                    <?php esc_html_e('Download as CSV', 'split-airport') ?>
+                </button>
             </div>
 
-            <?php if ( get_field('text') ): ?>
-                <div class="download-schedule-bottom">
-                    <?php the_field('text'); ?>
+            <div class="basic-table download-schedule-table">
+                <div class="basic-table-header">
+                    <span class="basic-table-cell "><?php esc_html_e('Destination', 'split-airport') ?></span>
+                    <span class="basic-table-cell "><?php esc_html_e('Flight date', 'split-airport') ?></span>
+                    <span class="basic-table-cell "><?php esc_html_e('Flight time', 'split-airport') ?></span>
+                    <span class="basic-table-cell "><?php esc_html_e('Flight number & Carrier', 'split-airport') ?></span>
+                    <span class="basic-table-cell "><?php esc_html_e('Code share', 'split-airport') ?></span>
                 </div>
-            <?php endif; ?>
+
+                <div class="download-schedule-content">
+                    <?php foreach ($flights as $flight) {
+                        echo lf_get_download_schedule_row_html($flight);
+                    } ?>
+                </div>
+            </div>
         </div>
 
+        <div class="dls-spinner">
+            <div class="spinner"></div>
+        </div>
     </section><!-- .download-schedule-wrapper-->
     
 <?php endif; ?>
+
+<script>
+window.splitGlobalDLScheduleData = {
+    flights: <?php echo json_encode($flights); ?>,
+    filters: { from: '10.03.2026', to: '12.03.2026', destination: 'Any', carrier: 'Any', searchTime: '<?php echo date('c'); ?>', },
+}
+</script>

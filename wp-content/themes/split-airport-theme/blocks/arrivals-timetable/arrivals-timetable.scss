@@ -121,6 +121,8 @@
     }
 }
 
+.basic-table-header,
+.basic-table-row,
 .flight,
 .arrivals-timetable__table-header {
     display: flex;
@@ -136,7 +138,10 @@
     @include max-mq($xs) {
         grid-template-columns: 80px auto 74px;
     }
+}
 
+.flight,
+.arrivals-timetable__table-header {
     > span {
         &:not(:last-child) {
             padding-right: 10px;
@@ -186,6 +191,7 @@
     }
 }
 
+.basic-table-header,
 .arrivals-timetable__table-header {
     background-color: #f6f6f6;
     border-radius: 6px;
@@ -195,6 +201,7 @@
     }
 }
 
+.basic-table-row,
 .flight {
     cursor: pointer;
     padding-top: 14px;
@@ -224,6 +231,7 @@
     padding: 10px;
 }
 
+.download-schedule-content,
 .arrivals-timetable__table-flights {
     position: relative;
     padding-bottom: 50px;
@@ -353,5 +361,13 @@
 
     &:hover {
         color: $gray-300;
+    }
+}
+
+.basic-table-cell {
+    padding-right: 1em;
+
+    &:last-child {
+        padding-right: 0;
     }
 }

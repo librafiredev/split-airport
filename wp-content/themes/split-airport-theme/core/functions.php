@@ -1795,3 +1795,72 @@ function year_shortcode( $atts ){
 	return date("Y");
 }
 add_shortcode( 'year', 'year_shortcode' );
+
+function lf_get_download_schedule_row_html($data) {
+    $airline = lf_get_airline_by_title($data['airline']);
+
+    if ($airline) {
+        $airline_icon = get_the_post_thumbnail($airline['ID']);
+    }
+
+    $carrier_full = '<span>' . $airline_icon . '</span>
+<span>
+    <span>'.$data['number'].'</span>
+    <span>'.$data['carrier'].'</span>
+</span>';
+
+    return '<div class="basic-table-row">
+    <span class="basic-table-cell">'.$data['destination'].'</span>
+    <span class="basic-table-cell">'.$data['date'].'</span>
+    <span class="basic-table-cell">'.$data['time'].'</span>
+    <span class="basic-table-cell">'.$carrier_full.'</span>
+    <span class="basic-table-cell">'.$data['code'].'</span>
+</div>';
+}
+
+function lf_get_airline_by_title($title) {
+    global $wpdb;
+
+    $airline = $wpdb->get_row(
+        $wpdb->prepare(
+            "
+            SELECT *
+            FROM {$wpdb->prefix}posts
+            WHERE post_title = %s
+            AND post_type = 'airline'
+            AND post_status = 'publish'
+            LIMIT 1
+            ",
+            $title
+        ),
+        ARRAY_A
+    );
+
+    if (!empty($airline)) {
+        return $airline;
+    }
+
+    $partial = !empty($title) ? explode(' ', trim($title)) : '';
+
+    if (!empty($partial)) {
+        $airline = $wpdb->get_row(
+            $wpdb->prepare(
+                "
+                SELECT *
+                FROM {$wpdb->prefix}posts
+                WHERE UPPER(post_title) LIKE UPPER(%s)
+                AND post_type = 'airline'
+                AND post_status = 'publish'
+                LIMIT 1
+                ",
+                '%' . $wpdb->esc_like($partial[0] ?? '') . '%'
+            ),
+            ARRAY_A
+        );
+
+        return $airline;
+    }
+
+    return null;
+}
+

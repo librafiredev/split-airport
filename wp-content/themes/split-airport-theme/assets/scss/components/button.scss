@@ -8,7 +8,14 @@
         margin-top: 12px;
     }
 
+    button {
+        border: none;
+        appearance: none;
+    }
+
+    button,
     a {
+        cursor: pointer;
         display: flex;
         align-items: center;
         padding: 10px 15px;
@@ -31,5 +38,12 @@
 
     br {
         display: none;
+    }
+}
+
+.rounded-buttons {
+    button,
+    a {
+        border-radius: 100px;
     }
 }
