@@ -32,6 +32,23 @@ function global_js_object()
 		'unfollowButtonText'                	=> __('Unfollow this flight', 'split-airport'),
 		'followButtonText'                		=> __('Follow this flight', 'split-airport'),
 		'noMyFlights'							=> __('Your favorites list is empty.', 'split-airport'),
+		'downloadSchedule' => array(
+        'translations' => array(
+            'title'    => __("Flight schedule results", "split-airport"),
+            'from'     => __("From:", "split-airport"),
+            'to'       => __("To:", "split-airport"),
+            'dest'     => __("Destination:", "split-airport"),
+            'carrier'  => __("Carrier:", "split-airport"),
+            'searchTime' => __("Time of search:", "split-airport"),
+            'headers'  => array(
+                __("Destination", "split-airport"),
+                __("Flight Date", "split-airport"),
+                __("Flight Time", "split-airport"),
+                __("Flight Number & Carrier", "split-airport"),
+                __("Code Share", "split-airport"),
+            )
+        ),
+    )
 	);
 
 	$global_js_object = json_encode($global_js_object);
