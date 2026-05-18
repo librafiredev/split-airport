@@ -5,6 +5,14 @@ import "pdfmake/build/vfs_fonts";
 pdfMake.vfs = window.pdfMake.vfs;
 
 $(function () {
+    function clearErrors() {
+        $(".js-download-schedule-filters").removeClass("dls-generic-error");
+
+        $(".js-download-schedule-filters")
+            .find(".dls-with-error")
+            .removeClass("dls-with-error");
+    }
+
     function setupDLSSelect(selector, apiUrl) {
         $(selector).each(function () {
             const element = this;
@@ -14,6 +22,9 @@ $(function () {
                 allowClear: true,
                 ajax: {
                     url: apiUrl,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("X-WP-Nonce", theme.restNonce);
+                    },
                     dataType: "json",
                     delay: 250,
                     data: function (params) {
@@ -305,6 +316,8 @@ $(function () {
         .forEach((container) => {
             const fromInput = container.querySelector(".date-from");
             const toInput = container.querySelector(".date-to");
+            const fromDisplay = container.querySelector(".date-from-display");
+            const toDisplay = container.querySelector(".date-to-display");
             const dateWrap = container.querySelectorAll(".js-dls-date-wrap");
             const clearButton = container.querySelectorAll(".js-clear-range");
 
@@ -330,7 +343,7 @@ $(function () {
             const flatpickrInstance = flatpickr(container, {
                 mode: "range",
                 showMonths: 2,
-                dateFormat: format,
+                dateFormat: "Z",
                 closeOnSelect: false,
                 onOpen: function (selectedDates, dateStr, instance) {
                     if (
@@ -362,11 +375,20 @@ $(function () {
                     if (selectedDates.length > 0) {
                         fromInput.value = instance.formatDate(
                             selectedDates[0],
+                            "Z",
+                        );
+                        fromDisplay.innerText = instance.formatDate(
+                            selectedDates[0],
                             format,
                         );
+                        clearErrors();
                     }
                     if (selectedDates.length > 1) {
                         toInput.value = instance.formatDate(
+                            selectedDates[1],
+                            "Z",
+                        );
+                        toDisplay.innerText = instance.formatDate(
                             selectedDates[1],
                             format,
                         );
@@ -377,6 +399,8 @@ $(function () {
                     if (selectedDates.length == 0) {
                         fromInput.value = "";
                         toInput.value = "";
+                        fromDisplay.innerText = "";
+                        toDisplay.innerText = "";
                     }
 
                     updateValueIndicator();
@@ -390,4 +414,80 @@ $(function () {
                 });
             });
         });
+
+    $(".js-download-schedule-filters").on("submit", function (e) {
+        e.preventDefault();
+        const form = $(this);
+        const formData = form.serialize();
+
+        const apiUrl = theme.scheduleRestUrl;
+
+        const submitBtn = form.find('[type="submit"]');
+        submitBtn.prop("disabled", true);
+        clearErrors();
+        form.addClass("is-loading-dls");
+
+        $.ajax({
+            url: apiUrl + "?" + formData,
+            method: "GET",
+            dataType: "json",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-WP-Nonce", theme.restNonce);
+            },
+            success: function (response) {
+                clearErrors();
+
+                window.splitGlobalDLScheduleData.flights = response.flights;
+                window.splitGlobalDLScheduleData.filters = response.filters;
+
+                form.closest(".download-schedule-wrapper")
+                    .find(".download-schedule-content")
+                    .html(response.table_html);
+            },
+            error: function (xhr) {
+                try {
+                    var errorResponse = JSON.parse(xhr.responseText);
+
+                    if (errorResponse.data && errorResponse.data.params) {
+                        var missingParams = errorResponse.data.params;
+
+                        $.each(missingParams, function (fieldName, message) {
+                            var inputField = form.find(
+                                '[name="' + fieldName + '"]',
+                            );
+
+                            if (inputField.length) {
+                                inputField
+                                    .closest(".js-dls-date-wrap")
+                                    .addClass("is-invalid");
+                                inputField
+                                    .closest(".js-dls-date-wrap")
+                                    .attr("data-error", message);
+                            }
+                        });
+                    } else {
+                        $(".js-download-schedule-filters").addClass(
+                            "dls-generic-error",
+                        );
+                        $(".js-download-schedule-filters").attr(
+                            "data-generic-error",
+                            theme.genericError,
+                        );
+                    }
+                } catch (e) {
+                    $(".js-download-schedule-filters")
+                        .addClass("dls-generic-error")
+                        .addClass("dls-unknown-error");
+                    $(".js-download-schedule-filters").attr(
+                        "data-generic-error",
+                        theme.genericError,
+                    );
+                }
+            },
+            complete: function () {
+                submitBtn.prop("disabled", false);
+                form.removeClass("is-loading-dls");
+            },
+        });
+    });
 });

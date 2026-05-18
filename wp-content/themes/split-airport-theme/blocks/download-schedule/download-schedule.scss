@@ -64,3 +64,9 @@
         display: none;
     }
 }
+
+.js-dls-date-wrap.is-invalid {
+    &::after {
+        content: attr(data-error);
+    }
+}

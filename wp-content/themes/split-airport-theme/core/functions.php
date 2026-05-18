@@ -1864,31 +1864,36 @@ function lf_get_airline_by_title($title) {
     return null;
 }
 
+function lf_verify_nonce_header(WP_REST_Request $request) {
+    $nonce = $request->get_header('X-WP-Nonce');
+    return wp_verify_nonce($nonce, 'wp_rest');
+}
+
 add_action( 'rest_api_init', 'split_airport_register_autocomplete_endpoints' );
 
 function split_airport_register_autocomplete_endpoints() {
     register_rest_route( 'splitAirport/v1', '/destinations', array(
         'methods'             => WP_REST_Server::READABLE,
         'callback'            => 'split_airport_get_destinations',
-        'permission_callback' => '__return_true',
+        'permission_callback' => 'lf_verify_nonce_header',
     ) );
 
     register_rest_route( 'splitAirport/v1', '/carriers', array(
         'methods'             => WP_REST_Server::READABLE,
         'callback'            => 'split_airport_get_carriers',
-        'permission_callback' => '__return_true',
+        'permission_callback' => 'lf_verify_nonce_header',
     ) );
 }
 
 function split_airport_get_destinations( WP_REST_Request $request ) {
     // Placeholder data
     $destinations = array(
-        array( 'id' => 'JFK', 'text' => 'New York (JFK)' ),
-        array( 'id' => 'LAX', 'text' => 'Los Angeles (LAX)' ),
-        array( 'id' => 'LHR', 'text' => 'London Heathrow (LHR)' ),
-        array( 'id' => 'CDG', 'text' => 'Paris Charles de Gaulle (CDG)' ),
-        array( 'id' => 'HND', 'text' => 'Tokyo Haneda (HND)' ),
-        array( 'id' => 'DXB', 'text' => 'Dubai International (DXB)' ),
+        array( 'id' => 'New York', 'text' => 'New York' ),
+        array( 'id' => 'Los Angeles', 'text' => 'Los Angeles' ),
+        array( 'id' => 'London', 'text' => 'London' ),
+        array( 'id' => 'Paris Charles de Gaulle', 'text' => 'Paris Charles de Gaulle' ),
+        array( 'id' => 'Tokyo Haneda', 'text' => 'Tokyo Haneda' ),
+        array( 'id' => 'Dubai International', 'text' => 'Dubai International' ),
     );
 
     $search_term = sanitize_text_field( $request->get_param('q') );
@@ -1907,12 +1912,12 @@ function split_airport_get_destinations( WP_REST_Request $request ) {
 function split_airport_get_carriers( WP_REST_Request $request ) {
     // Placeholder data
     $carriers = array(
-        array( 'id' => 'AA', 'text' => 'American Airlines' ),
-        array( 'id' => 'DL', 'text' => 'Delta Air Lines' ),
-        array( 'id' => 'UA', 'text' => 'United Airlines' ),
-        array( 'id' => 'BA', 'text' => 'British Airways' ),
-        array( 'id' => 'LH', 'text' => 'Lufthansa' ),
-        array( 'id' => 'EK', 'text' => 'Emirates' ),
+        array( 'id' => 'American Airlines', 'text' => 'American Airlines' ),
+        array( 'id' => 'Delta Air Lines', 'text' => 'Delta Air Lines' ),
+        array( 'id' => 'United Airlines', 'text' => 'United Airlines' ),
+        array( 'id' => 'British Airways', 'text' => 'British Airways' ),
+        array( 'id' => 'Lufthansa', 'text' => 'Lufthansa' ),
+        array( 'id' => 'Emirates', 'text' => 'Emirates' ),
     );
 
     $search_term = sanitize_text_field( $request->get_param('q') );
@@ -1926,5 +1931,129 @@ function split_airport_get_carriers( WP_REST_Request $request ) {
     return new WP_REST_Response( array(
         'results' => array_values( $carriers )
     ), 200 );
+}
+
+function lf_rest_validate_required_field($param, $request, $key) {
+    if (empty($param)) {
+        return new WP_Error(
+            'rest_invalid_param',
+            __('This field is required.', 'split-airport'),
+            ['status' => 400]
+        );
+    }
+    
+    return true;
+}
+
+/**
+ * Register the Flight Schedule REST API Route
+ */
+add_action('rest_api_init', function () {
+    register_rest_route('splitAirport/v1', '/schedule', [
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => 'get_flight_schedule',
+        'permission_callback' => 'lf_verify_nonce_header',
+        'args'                => [
+            'from_date' => [
+                'required'          => true,
+                'validate_callback' => 'lf_rest_validate_required_field',
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
+            'to_date' => [
+                'required'          => true,
+                'validate_callback' => 'lf_rest_validate_required_field',
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
+            'destination' => [
+                'required'          => false,
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
+            'carrier' => [
+                'required'          => false,
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
+        ],
+    ]);
+});
+
+function get_flight_schedule(WP_REST_Request $request) {
+    $from_date   = $request->get_param('from_date');
+    $to_date     = $request->get_param('to_date');
+    $destination = $request->get_param('destination');
+    $carrier     = $request->get_param('carrier');
+
+    // 2. Placeholder Data (Using ISO dates internally for better manipulation)
+    $mock_flights = [
+        [
+            'destination' => 'London',
+            'iso_date'    => '2026-05-22T13:55:00', // Wednesday
+            'number'      => 'BA 3',
+            'carrier'     => 'British Airlines',
+            'code'        => 'ASD46',
+        ],
+        [
+            'destination' => 'New York',
+            'iso_date'    => '2026-05-24T08:30:00', // Friday
+            'number'      => 'AA 123',
+            'carrier'     => 'American Airlines',
+            'code'        => 'NYC99',
+        ],
+        [
+            'destination' => 'London',
+            'iso_date'    => '2026-06-01T18:00:00', 
+            'number'      => 'BA 5',
+            'carrier'     => 'Some Airlines',
+            'code'        => 'LND77',
+        ],
+    ];
+
+    $filtered_flights = [];
+
+    $flights_table_html = '';
+
+    foreach ($mock_flights as $flight) {
+        $flight_time = strtotime($flight['iso_date']);
+        
+        if ($flight_time < strtotime($from_date) || $flight_time > strtotime($to_date)) {
+            continue;
+        }
+
+        if (!empty($destination) && strtolower($flight['destination']) !== strtolower($destination)) {
+            continue;
+        }
+
+        if (!empty($carrier) && strtolower($flight['carrier']) !== strtolower($carrier)) {
+            continue;
+        }
+
+        $flight_data = [
+            'destination' => $flight['destination'],
+            'date'        => date('d.m.Y / l', $flight_time),
+            'time'        => date('H:i', $flight_time),
+            'number'      => $flight['number'],
+            'carrier'     => $flight['carrier'],
+            'code'        => $flight['code'],
+        ];
+
+        $flights_table_html .= lf_get_download_schedule_row_html($flight_data);
+
+        $filtered_flights[] = $flight_data;
+    }
+
+    if (empty($flights_table_html)) {
+        $flights_table_html = '<div>No flights</div>';
+    }
+
+    return new WP_REST_Response([
+        'flights' => $filtered_flights,
+        'filters' => [
+            'from' => date('d.m.Y', strtotime($from_date)),
+            'to' => date('d.m.Y', strtotime($to_date)),
+            'destination' => $destination ?: 'Any',
+            'carrier' => $carrier ?: 'Any',
+            'searchTime' => date('c'),
+        ],
+        'table_html' => $flights_table_html,
+    ], 200);
 }
 

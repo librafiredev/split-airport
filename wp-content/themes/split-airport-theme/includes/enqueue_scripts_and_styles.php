@@ -23,6 +23,7 @@ function global_js_object()
 		'checkMyFlightsRestUrl'						=> get_site_url() . '/wp-json/splitAirport/v1/check-my-flights',
 		'destinationsRestUrl' 						=> get_site_url() . '/wp-json/splitAirport/v1/destinations',
 		'carriersRestUrl' 						=> get_site_url() . '/wp-json/splitAirport/v1/carriers',
+		'scheduleRestUrl' 						=> get_site_url() . '/wp-json/splitAirport/v1/schedule',
 		'nonce'									=> wp_create_nonce('security'),
 		'restNonce' 							=> wp_create_nonce('wp_rest'),
 		'FlightTypeTableStingArrival'   		=> __('Arriving from', 'split-airport'),
@@ -34,6 +35,7 @@ function global_js_object()
 		'unfollowButtonText'                	=> __('Unfollow this flight', 'split-airport'),
 		'followButtonText'                		=> __('Follow this flight', 'split-airport'),
 		'noMyFlights'							=> __('Your favorites list is empty.', 'split-airport'),
+		'genericError'							=> __('Something went wrong.', 'split-airport'),
 		'downloadSchedule' => array(
         'translations' => array(
             'title'    => __("Flight schedule results", "split-airport"),
