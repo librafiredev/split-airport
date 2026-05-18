@@ -58,3 +58,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.js-clear-range {
+    .js-dls-date-wrap.is-empty & {
+        display: none;
+    }
+}

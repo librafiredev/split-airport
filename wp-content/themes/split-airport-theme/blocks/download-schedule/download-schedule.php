@@ -42,8 +42,8 @@ $flights = $placeholder_data;
 
                 <div class="download-schedule-filters">
                     <div class="js-dl-schedule-date-range" data-range-message="<?php echo __('Maximum search range is 3 months.', 'split-airport'); ?>">
-                        <div><div><?php echo __('From date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-from" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div></div>
-                        <div><div><?php echo __('To date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div></div>
+                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('From date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-from" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
+                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('To date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
                     </div>
 
                     <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><select class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"></select></div>

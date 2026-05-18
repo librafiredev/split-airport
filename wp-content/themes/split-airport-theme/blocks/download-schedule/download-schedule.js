@@ -11,6 +11,7 @@ $(function () {
             const placeholder = $(element).attr("data-placeholder");
             $(element).select2({
                 placeholder,
+                allowClear: true,
                 ajax: {
                     url: apiUrl,
                     dataType: "json",
@@ -304,8 +305,29 @@ $(function () {
         .forEach((container) => {
             const fromInput = container.querySelector(".date-from");
             const toInput = container.querySelector(".date-to");
+            const dateWrap = container.querySelectorAll(".js-dls-date-wrap");
+            const clearButton = container.querySelectorAll(".js-clear-range");
 
-            flatpickr(container, {
+            function updateValueIndicator() {
+                dateWrap.forEach(function (dateWrap) {
+                    const clInputField = dateWrap.querySelector(
+                        ".date-from, .date-to",
+                    );
+                    dateWrap.querySelectorAll(".js-clear-range");
+
+                    if (!clInputField.value) {
+                        dateWrap.classList.add("is-empty");
+                        dateWrap.classList.remove("has-value");
+                    } else {
+                        dateWrap.classList.add("has-value");
+                        dateWrap.classList.remove("is-empty");
+                    }
+                });
+            }
+
+            updateValueIndicator();
+
+            const flatpickrInstance = flatpickr(container, {
                 mode: "range",
                 showMonths: 2,
                 dateFormat: format,
@@ -351,7 +373,21 @@ $(function () {
                     } else {
                         toInput.value = "";
                     }
+
+                    if (selectedDates.length == 0) {
+                        fromInput.value = "";
+                        toInput.value = "";
+                    }
+
+                    updateValueIndicator();
                 },
+            });
+
+            clearButton.forEach(function (element) {
+                $(element).on("click", function (e) {
+                    e.stopPropagation();
+                    flatpickrInstance.clear();
+                });
             });
         });
 });
