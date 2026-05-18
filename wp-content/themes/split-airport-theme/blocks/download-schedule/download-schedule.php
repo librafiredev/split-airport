@@ -46,9 +46,9 @@ $flights = $placeholder_data;
                         <div><div><?php echo __('To date *', 'split-airport'); ?></div> <div><input type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div></div>
                     </div>
 
-                    <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><input type="text" placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>" /></div></div>
+                    <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><select class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"></select></div>
 
-                    <div><div><?php echo __('Enter carrier', 'split-airport'); ?></div> <div><input type="text" placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>" /></div></div>
+                    <div><div><?php echo __('Carrier', 'split-airport'); ?></div> <div><select class="js-dls-carrier-select" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>"></select></div>
 
                     <button type="submit"><?php echo __('Search', 'split-airport'); ?></button>
                 </div>

@@ -1864,3 +1864,67 @@ function lf_get_airline_by_title($title) {
     return null;
 }
 
+add_action( 'rest_api_init', 'split_airport_register_autocomplete_endpoints' );
+
+function split_airport_register_autocomplete_endpoints() {
+    register_rest_route( 'splitAirport/v1', '/destinations', array(
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => 'split_airport_get_destinations',
+        'permission_callback' => '__return_true',
+    ) );
+
+    register_rest_route( 'splitAirport/v1', '/carriers', array(
+        'methods'             => WP_REST_Server::READABLE,
+        'callback'            => 'split_airport_get_carriers',
+        'permission_callback' => '__return_true',
+    ) );
+}
+
+function split_airport_get_destinations( WP_REST_Request $request ) {
+    // Placeholder data
+    $destinations = array(
+        array( 'id' => 'JFK', 'text' => 'New York (JFK)' ),
+        array( 'id' => 'LAX', 'text' => 'Los Angeles (LAX)' ),
+        array( 'id' => 'LHR', 'text' => 'London Heathrow (LHR)' ),
+        array( 'id' => 'CDG', 'text' => 'Paris Charles de Gaulle (CDG)' ),
+        array( 'id' => 'HND', 'text' => 'Tokyo Haneda (HND)' ),
+        array( 'id' => 'DXB', 'text' => 'Dubai International (DXB)' ),
+    );
+
+    $search_term = sanitize_text_field( $request->get_param('q') );
+
+    if ( ! empty( $search_term ) ) {
+        $destinations = array_filter( $destinations, function( $item ) use ( $search_term ) {
+            return stripos( $item['text'], $search_term ) !== false || stripos( $item['id'], $search_term ) !== false;
+        } );
+    }
+
+    return new WP_REST_Response( array(
+        'results' => array_values( $destinations )
+    ), 200 );
+}
+
+function split_airport_get_carriers( WP_REST_Request $request ) {
+    // Placeholder data
+    $carriers = array(
+        array( 'id' => 'AA', 'text' => 'American Airlines' ),
+        array( 'id' => 'DL', 'text' => 'Delta Air Lines' ),
+        array( 'id' => 'UA', 'text' => 'United Airlines' ),
+        array( 'id' => 'BA', 'text' => 'British Airways' ),
+        array( 'id' => 'LH', 'text' => 'Lufthansa' ),
+        array( 'id' => 'EK', 'text' => 'Emirates' ),
+    );
+
+    $search_term = sanitize_text_field( $request->get_param('q') );
+
+    if ( ! empty( $search_term ) ) {
+        $carriers = array_filter( $carriers, function( $item ) use ( $search_term ) {
+            return stripos( $item['text'], $search_term ) !== false || stripos( $item['id'], $search_term ) !== false;
+        } );
+    }
+
+    return new WP_REST_Response( array(
+        'results' => array_values( $carriers )
+    ), 200 );
+}
+

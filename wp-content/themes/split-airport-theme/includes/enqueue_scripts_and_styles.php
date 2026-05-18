@@ -21,6 +21,8 @@ function global_js_object()
 		'flightRestUrl'							=> get_site_url() . '/wp-json/splitAirport/v1/flight',
 		'myFlightsRestUrl'						=> get_site_url() . '/wp-json/splitAirport/v1/myflights',
 		'checkMyFlightsRestUrl'						=> get_site_url() . '/wp-json/splitAirport/v1/check-my-flights',
+		'destinationsRestUrl' 						=> get_site_url() . '/wp-json/splitAirport/v1/destinations',
+		'carriersRestUrl' 						=> get_site_url() . '/wp-json/splitAirport/v1/carriers',
 		'nonce'									=> wp_create_nonce('security'),
 		'restNonce' 							=> wp_create_nonce('wp_rest'),
 		'FlightTypeTableStingArrival'   		=> __('Arriving from', 'split-airport'),

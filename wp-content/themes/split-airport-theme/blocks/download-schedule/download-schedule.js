@@ -5,6 +5,34 @@ import "pdfmake/build/vfs_fonts";
 pdfMake.vfs = window.pdfMake.vfs;
 
 $(function () {
+    function setupDLSSelect(selector, apiUrl) {
+        $(selector).each(function () {
+            const element = this;
+            const placeholder = $(element).attr("data-placeholder");
+            $(element).select2({
+                placeholder,
+                ajax: {
+                    url: apiUrl,
+                    dataType: "json",
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term,
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: data.results,
+                        };
+                    },
+                },
+            });
+        });
+    }
+
+    setupDLSSelect(".js-dls-destination-select", theme.destinationsRestUrl);
+    setupDLSSelect(".js-dls-carrier-select", theme.carriersRestUrl);
+
     function formatDate(isoString) {
         const d = new Date(isoString);
 
