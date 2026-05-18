@@ -1933,11 +1933,16 @@ function split_airport_get_carriers( WP_REST_Request $request ) {
     ), 200 );
 }
 
+function get_lf_rest_required_field_message() {
+    return  __('This field is required.', 'split-airport');
+}
+
+
 function lf_rest_validate_required_field($param, $request, $key) {
     if (empty($param)) {
         return new WP_Error(
             'rest_invalid_param',
-            __('This field is required.', 'split-airport'),
+            get_lf_rest_required_field_message(),
             ['status' => 400]
         );
     }
@@ -1954,21 +1959,21 @@ add_action('rest_api_init', function () {
         'callback'            => 'get_flight_schedule',
         'permission_callback' => 'lf_verify_nonce_header',
         'args'                => [
-            'from_date' => [
+            'dls_from_date' => [
                 'required'          => true,
                 'validate_callback' => 'lf_rest_validate_required_field',
                 'sanitize_callback' => 'sanitize_text_field',
             ],
-            'to_date' => [
+            'dls_to_date' => [
                 'required'          => true,
                 'validate_callback' => 'lf_rest_validate_required_field',
                 'sanitize_callback' => 'sanitize_text_field',
             ],
-            'destination' => [
+            'dls_destination' => [
                 'required'          => false,
                 'sanitize_callback' => 'sanitize_text_field',
             ],
-            'carrier' => [
+            'dls_carrier' => [
                 'required'          => false,
                 'sanitize_callback' => 'sanitize_text_field',
             ],
@@ -1977,10 +1982,10 @@ add_action('rest_api_init', function () {
 });
 
 function get_flight_schedule(WP_REST_Request $request) {
-    $from_date   = $request->get_param('from_date');
-    $to_date     = $request->get_param('to_date');
-    $destination = $request->get_param('destination');
-    $carrier     = $request->get_param('carrier');
+    $from_date   = $request->get_param('dls_from_date');
+    $to_date     = $request->get_param('dls_to_date');
+    $destination = $request->get_param('dls_destination');
+    $carrier     = $request->get_param('dls_carrier');
 
     // 2. Placeholder Data (Using ISO dates internally for better manipulation)
     $mock_flights = [
@@ -2040,11 +2045,14 @@ function get_flight_schedule(WP_REST_Request $request) {
         $filtered_flights[] = $flight_data;
     }
 
-    if (empty($flights_table_html)) {
-        $flights_table_html = '<div>No flights</div>';
+    $has_results = !empty($filtered_flights);
+
+    if (!$has_results) {
+        $flights_table_html = '<div class="dls-no-results"><span>'.__('No results for your search', 'split-airport').'</span></div>';
     }
 
     return new WP_REST_Response([
+        'has_results' => $has_results,
         'flights' => $filtered_flights,
         'filters' => [
             'from' => date('d.m.Y', strtotime($from_date)),

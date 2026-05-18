@@ -5,12 +5,21 @@ import "pdfmake/build/vfs_fonts";
 pdfMake.vfs = window.pdfMake.vfs;
 
 $(function () {
+    function markElementWithError(element, message) {
+        element.addClass("is-invalid");
+        element.attr("data-error", message);
+    }
+
     function clearErrors() {
         $(".js-download-schedule-filters").removeClass("dls-generic-error");
 
         $(".js-download-schedule-filters")
             .find(".dls-with-error")
             .removeClass("dls-with-error");
+
+        $(".js-download-schedule-filters")
+            .find(".is-invalid")
+            .removeClass("is-invalid");
     }
 
     function setupDLSSelect(selector, apiUrl) {
@@ -422,10 +431,30 @@ $(function () {
 
         const apiUrl = theme.scheduleRestUrl;
 
+        clearErrors();
+        let isEmpty = false;
+
+        form.find(".js-dls-date-wrap input").each(function () {
+            if (!$(this).val()) {
+                isEmpty = true;
+            }
+        });
+
+        if (isEmpty) {
+            setTimeout(function () {
+                markElementWithError(
+                    form
+                        .find(".js-dls-date-wrap input")
+                        .closest(".js-dl-schedule-date-range"),
+                    theme.requiredErrorMsg,
+                );
+            }, 300);
+            return;
+        }
+
         const submitBtn = form.find('[type="submit"]');
         submitBtn.prop("disabled", true);
-        clearErrors();
-        form.addClass("is-loading-dls");
+        form.closest(".download-schedule-wrapper").addClass("is-loading-dls");
 
         $.ajax({
             url: apiUrl + "?" + formData,
@@ -436,6 +465,16 @@ $(function () {
             },
             success: function (response) {
                 clearErrors();
+
+                if (!response.has_results) {
+                    form.closest(".download-schedule-wrapper").addClass(
+                        "dls-no-results",
+                    );
+                } else {
+                    form.closest(".download-schedule-wrapper").removeClass(
+                        "dls-no-results",
+                    );
+                }
 
                 window.splitGlobalDLScheduleData.flights = response.flights;
                 window.splitGlobalDLScheduleData.filters = response.filters;
@@ -457,12 +496,17 @@ $(function () {
                             );
 
                             if (inputField.length) {
-                                inputField
-                                    .closest(".js-dls-date-wrap")
-                                    .addClass("is-invalid");
-                                inputField
-                                    .closest(".js-dls-date-wrap")
-                                    .attr("data-error", message);
+                                const target =
+                                    fieldName === "dls_from_date" ||
+                                    fieldName === "dls_to_date"
+                                        ? inputField.closest(
+                                              ".js-dl-schedule-date-range",
+                                          )
+                                        : inputField.closest(
+                                              ".js-dls-date-wrap",
+                                          );
+
+                                markElementWithError(target, message);
                             }
                         });
                     } else {
@@ -486,7 +530,9 @@ $(function () {
             },
             complete: function () {
                 submitBtn.prop("disabled", false);
-                form.removeClass("is-loading-dls");
+                form.closest(".download-schedule-wrapper").removeClass(
+                    "is-loading-dls",
+                );
             },
         });
     });

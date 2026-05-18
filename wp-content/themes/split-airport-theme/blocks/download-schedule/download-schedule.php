@@ -42,13 +42,13 @@ $flights = $placeholder_data;
 
                 <form class="download-schedule-filters js-download-schedule-filters">
                     <div class="js-dl-schedule-date-range" data-range-message="<?php echo __('Maximum search range is 3 months.', 'split-airport'); ?>">
-                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('From date *', 'split-airport'); ?></div> <div><span class="date-from-display"></span> <input name="from_date" type="text" readonly class="date-from" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
-                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('To date *', 'split-airport'); ?></div> <div><span class="date-to-display"></span> <input name="to_date" type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
+                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('From date *', 'split-airport'); ?></div> <div><span class="date-from-display"></span> <input name="dls_from_date" type="text" readonly class="date-from" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
+                        <div class="js-dls-date-wrap is-empty"><div><?php echo __('To date *', 'split-airport'); ?></div> <div><span class="date-to-display"></span> <input name="dls_to_date" type="text" readonly class="date-to" placeholder="<?php echo __('Select', 'split-airport'); ?>" /></div><button type="button" class="js-clear-range">x</button></div>
                     </div>
 
-                    <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><select name="destination" class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"></select></div></div>
+                    <div><div><?php echo __('Destination', 'split-airport'); ?></div> <div><select name="dls_destination" class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"></select></div></div>
 
-                    <div><div><?php echo __('Carrier', 'split-airport'); ?></div> <div><select name="carrier" class="js-dls-carrier-select" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>"></select></div></div>
+                    <div><div><?php echo __('Carrier', 'split-airport'); ?></div> <div><select name="dls_carrier" class="js-dls-carrier-select" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>"></select></div></div>
 
                     <button type="submit"><?php echo __('Search', 'split-airport'); ?></button>
                 </form>
@@ -78,10 +78,10 @@ $flights = $placeholder_data;
                     } ?>
                 </div>
             </div>
-        </div>
 
-        <div class="dls-spinner">
-            <div class="spinner"></div>
+            <div class="lg-dls-loader">
+                <div class="spinner"></div>
+            </div>
         </div>
     </section><!-- .download-schedule-wrapper-->
     

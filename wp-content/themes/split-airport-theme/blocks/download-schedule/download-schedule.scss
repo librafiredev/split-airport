@@ -13,6 +13,13 @@
     padding-bottom: 210px;
     margin-bottom: 59px;
 
+    &.is-loading-dls,
+    &.dls-no-results {
+        .basic-table-header {
+            display: none;
+        }
+    }
+
     &.is-loading {
         pointer-events: none;
 
@@ -37,6 +44,17 @@
     justify-content: flex-end;
     gap: 12px;
     margin-bottom: 28px;
+
+    .download-schedule-wrapper.is-loading-dls &,
+    .download-schedule-wrapper.dls-no-results & {
+        display: none;
+    }
+}
+
+.download-schedule-content {
+    .download-schedule-wrapper.is-loading-dls & {
+        display: none;
+    }
 }
 
 .download-schedule-table {
@@ -65,6 +83,7 @@
     }
 }
 
+.js-dl-schedule-date-range.is-invalid,
 .js-dls-date-wrap.is-invalid {
     &::after {
         content: attr(data-error);

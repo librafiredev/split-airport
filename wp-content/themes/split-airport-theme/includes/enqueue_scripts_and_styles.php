@@ -36,6 +36,7 @@ function global_js_object()
 		'followButtonText'                		=> __('Follow this flight', 'split-airport'),
 		'noMyFlights'							=> __('Your favorites list is empty.', 'split-airport'),
 		'genericError'							=> __('Something went wrong.', 'split-airport'),
+		'requiredErrorMsg'							=> get_lf_rest_required_field_message(),
 		'downloadSchedule' => array(
         'translations' => array(
             'title'    => __("Flight schedule results", "split-airport"),
