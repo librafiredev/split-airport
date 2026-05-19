@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "../../assets/scss/global/variables";
 @import "../../assets/scss/global/mixins";
 @import "../arrivals-timetable/arrivals-timetable";
@@ -5,11 +6,28 @@
 @import "../../assets/scss/components/button";
 @import "../../node_modules/flatpickr/dist/flatpickr.min.css";
 
+.dls-no-results-content {
+    display: flex;
+}
+
+.dls-no-results-content,
+.lg-dls-loader {
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    min-height: 240px;
+    margin-top: 30px;
+}
+
+.lg-dls-loader {
+    display: none;
+}
+
 .download-schedule-wrapper {
     position: relative;
     background-repeat: repeat-x;
     background-position: center bottom;
-    padding-top: 39px;
+    padding-top: 120px;
     padding-bottom: 210px;
     margin-bottom: 59px;
 
@@ -64,8 +82,27 @@
 
     .basic-table-cell {
         &:nth-child(1) {
-            flex: 0 0 110px;
-            max-width: 110px;
+            flex-grow: 1;
+        }
+
+        &:nth-child(2) {
+            flex: 0 0 250px;
+            max-width: 250px;
+        }
+
+        &:nth-child(3) {
+            flex: 0 0 177px;
+            max-width: 177px;
+        }
+
+        &:nth-child(4) {
+            flex: 0 0 305px;
+            max-width: 305px;
+        }
+
+        &:nth-child(5) {
+            flex: 0 0 208px;
+            max-width: 208px;
         }
     }
 }
@@ -77,15 +114,192 @@
     transform: translate(-50%, -50%);
 }
 
+.js-dl-schedule-date-range.is-invalid,
+.js-dls-date-wrap.is-invalid {
+    &::after {
+        content: attr(data-error);
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        color: $red;
+    }
+}
+
+.download-schedule-header {
+    background-color: $footer-bgc;
+    border-radius: 10px;
+    padding: 30px 40px;
+
+    &:has(.js-dl-schedule-date-range.is-invalid),
+    &:has(.js-dls-date-wrap.is-invalid) {
+        padding-bottom: 60px;
+    }
+}
+
+.download-schedule-title-wrap {
+    max-width: 440px;
+    margin-bottom: 39px;
+
+    h2 {
+        color: $primary-color;
+        font-size: 40px;
+        letter-spacing: -0.05em;
+        line-height: 1;
+    }
+}
+
+.labeled-field-wrapper {
+    background-color: $white;
+    border: 2px solid #cdcdcd;
+    border-radius: 10px;
+    padding: 12px 13px;
+
+    .js-dl-schedule-date-range.is-invalid & {
+        border-color: $red;
+    }
+
+    .select2-container {
+        width: 100% !important;
+        position: relative;
+    }
+
+    &:not(:has(.select2)) {
+        select {
+            display: none;
+        }
+
+        .dls-select-wrap {
+            &::after {
+                content: attr(data-placeholder);
+            }
+        }
+    }
+}
+
+.dl-schedule-date-range,
+.download-schedule-filters {
+    position: relative;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 440fr 356fr 220fr 90fr;
+
+    @include max-mq($sm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dl-schedule-date-range {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dls-submit-button {
+    cursor: pointer;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: $primary-font !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+}
+
+.dls-hidden {
+    display: none;
+}
+
+.labeled-field-wrapper
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    pointer-events: none !important;
+    display: none !important;
+}
+
+.labeled-field-wrapper
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__clear,
 .js-clear-range {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    appearance: none;
+    border: none;
+    background: none !important;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 1em;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:hover {
+        color: $red;
+    }
+
     .js-dls-date-wrap.is-empty & {
         display: none;
     }
 }
 
-.js-dl-schedule-date-range.is-invalid,
-.js-dls-date-wrap.is-invalid {
-    &::after {
-        content: attr(data-error);
+.large-select-main {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.labeled-field-wrapper
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered,
+.dls-date-display,
+.dls-select-wrap::after {
+    font-family: $primary-font !important;
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    color: $gray-100;
+}
+
+.dls-date-display {
+    pointer-events: none;
+    border: none;
+    max-width: 130px;
+
+    &:focus {
+        outline: none;
     }
+}
+
+.labeled-field-label {
+    font-weight: bold;
+    letter-spacing: -0.03em;
+}
+
+.dls-airline-number {
+    display: block;
+}
+
+.dls-carrier-col {
+    display: flex;
+    align-items: center;
+}
+
+.dls-airline-icon {
+    img {
+        display: block;
+        margin-right: 12px;
+    }
+}
+
+.dls-entry-content {
+    font-weight: bold;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
 }

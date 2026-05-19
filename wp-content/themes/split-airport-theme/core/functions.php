@@ -1797,23 +1797,25 @@ function year_shortcode( $atts ){
 add_shortcode( 'year', 'year_shortcode' );
 
 function lf_get_download_schedule_row_html($data) {
-    $airline = lf_get_airline_by_title($data['airline']);
+    $airline = lf_get_airline_by_title($data['carrier']);
+    
+    $airline_icon = '';
 
     if ($airline) {
         $airline_icon = get_the_post_thumbnail($airline['ID']);
     }
 
-    $carrier_full = '<span>' . $airline_icon . '</span>
-<span>
-    <span>'.$data['number'].'</span>
-    <span>'.$data['carrier'].'</span>
+    $carrier_full = '<span class="dls-airline-icon">' . $airline_icon . '</span>
+<span class="dls-airline-info">
+    <span class="dls-airline-number">'.$data['number'].'</span>
+    <span class="dls-airline-name">'.$data['carrier'].'</span>
 </span>';
 
     return '<div class="basic-table-row">
     <span class="basic-table-cell">'.$data['destination'].'</span>
     <span class="basic-table-cell">'.$data['date'].'</span>
     <span class="basic-table-cell">'.$data['time'].'</span>
-    <span class="basic-table-cell">'.$carrier_full.'</span>
+    <span class="basic-table-cell dls-carrier-col">'.$carrier_full.'</span>
     <span class="basic-table-cell">'.$data['code'].'</span>
 </div>';
 }
@@ -1993,7 +1995,7 @@ function get_flight_schedule(WP_REST_Request $request) {
             'destination' => 'London',
             'iso_date'    => '2026-05-22T13:55:00', // Wednesday
             'number'      => 'BA 3',
-            'carrier'     => 'British Airlines',
+            'carrier'     => 'British Airways',
             'code'        => 'ASD46',
         ],
         [
@@ -2007,7 +2009,7 @@ function get_flight_schedule(WP_REST_Request $request) {
             'destination' => 'London',
             'iso_date'    => '2026-06-01T18:00:00', 
             'number'      => 'BA 5',
-            'carrier'     => 'Some Airlines',
+            'carrier'     => 'Lufthansa',
             'code'        => 'LND77',
         ],
     ];
@@ -2048,7 +2050,7 @@ function get_flight_schedule(WP_REST_Request $request) {
     $has_results = !empty($filtered_flights);
 
     if (!$has_results) {
-        $flights_table_html = '<div class="dls-no-results"><span>'.__('No results for your search', 'split-airport').'</span></div>';
+        $flights_table_html = '<div class="dls-no-results-content"><span>'.__('No results for your search', 'split-airport').'</span></div>';
     }
 
     return new WP_REST_Response([

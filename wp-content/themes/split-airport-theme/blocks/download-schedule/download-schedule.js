@@ -1,3 +1,4 @@
+import "select2";
 import flatpickr from "flatpickr";
 import pdfMake from "pdfmake";
 import "pdfmake/build/vfs_fonts";
@@ -26,7 +27,7 @@ $(function () {
         $(selector).each(function () {
             const element = this;
             const placeholder = $(element).attr("data-placeholder");
-            $(element).select2({
+            var dlsSelect = $(element).select2({
                 placeholder,
                 allowClear: true,
                 ajax: {
@@ -47,7 +48,23 @@ $(function () {
                         };
                     },
                 },
+                language: {
+                    searching: function () {
+                        return theme.genericSearching || "Searching...";
+                    },
+                },
             });
+
+            $(element)
+                .closest(".labeled-field-wrapper")
+                .find(".js-select2-lbl")
+                .on("click", function (e) {
+                    e.preventDefault();
+
+                    if (!$(element).data("select2").isOpen()) {
+                        dlsSelect.select2("open");
+                    }
+                });
         });
     }
 
@@ -386,7 +403,7 @@ $(function () {
                             selectedDates[0],
                             "Z",
                         );
-                        fromDisplay.innerText = instance.formatDate(
+                        fromDisplay.value = instance.formatDate(
                             selectedDates[0],
                             format,
                         );
@@ -397,7 +414,7 @@ $(function () {
                             selectedDates[1],
                             "Z",
                         );
-                        toDisplay.innerText = instance.formatDate(
+                        toDisplay.value = instance.formatDate(
                             selectedDates[1],
                             format,
                         );
@@ -408,8 +425,8 @@ $(function () {
                     if (selectedDates.length == 0) {
                         fromInput.value = "";
                         toInput.value = "";
-                        fromDisplay.innerText = "";
-                        toDisplay.innerText = "";
+                        fromDisplay.value = "";
+                        toDisplay.value = "";
                     }
 
                     updateValueIndicator();
