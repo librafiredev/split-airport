@@ -2067,3 +2067,44 @@ function get_flight_schedule(WP_REST_Request $request) {
     ], 200);
 }
 
+function get_airport_api_domain() {
+    $api_url = defined('AIRPORT_API_URL') ? AIRPORT_API_URL : "https://api-test.split-airport.hr";
+
+    return $api_url;
+}
+
+function get_schedule_carriers_from_api() {
+    $url = get_airport_api_domain() . "/as-frontend/schedule/carriers";
+
+    return fetch_select_data_from( $url );
+}
+
+function get_schedule_destinations_from_api() {
+    $url = get_airport_api_domain() . "/as-frontend/schedule/destinations";
+
+    return fetch_select_data_from( $url );
+}
+
+function fetch_select_data_from( $url ) {
+    $response = wp_remote_get( $url, array(
+        'timeout' => 15,
+        'headers' => array(
+            'Accept' => 'application/json',
+        ),
+    ));
+
+    if ( is_wp_error( $response ) ) {
+        return array();
+    }
+
+    $response_code = wp_remote_retrieve_response_code( $response );
+    if ( $response_code !== 200 ) {
+        return array();
+    }
+
+    $body = wp_remote_retrieve_body( $response );
+
+    $data = json_decode( $body, true );
+
+    return is_array( $data ) ? $data : array();
+}

@@ -23,36 +23,13 @@ $(function () {
             .removeClass("is-invalid");
     }
 
-    function setupDLSSelect(selector, apiUrl) {
+    function setupDLSSelect(selector) {
         $(selector).each(function () {
             const element = this;
             const placeholder = $(element).attr("data-placeholder");
             var dlsSelect = $(element).select2({
                 placeholder,
                 allowClear: true,
-                ajax: {
-                    url: apiUrl,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader("X-WP-Nonce", theme.restNonce);
-                    },
-                    dataType: "json",
-                    delay: 250,
-                    data: function (params) {
-                        return {
-                            q: params.term,
-                        };
-                    },
-                    processResults: function (data) {
-                        return {
-                            results: data.results,
-                        };
-                    },
-                },
-                language: {
-                    searching: function () {
-                        return theme.genericSearching || "Searching...";
-                    },
-                },
             });
 
             $(element)
