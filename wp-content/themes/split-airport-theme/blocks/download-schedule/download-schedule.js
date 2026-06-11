@@ -1,4 +1,4 @@
-import "select2";
+import autoComplete from "@tarekraafat/autocomplete.js";
 import flatpickr from "flatpickr";
 import pdfMake from "pdfmake";
 import "pdfmake/build/vfs_fonts";
@@ -25,28 +25,97 @@ $(function () {
 
     function setupDLSSelect(selector) {
         $(selector).each(function () {
-            const element = this;
-            const placeholder = $(element).attr("data-placeholder");
-            var dlsSelect = $(element).select2({
-                placeholder,
-                allowClear: true,
+            const $select = $(this);
+            const placeholder = $select.attr("data-placeholder");
+            const $wrapper = $select.closest(".labeled-field-wrapper");
+            const $selectWrap = $select.closest(".dls-select-wrap");
+
+            const data = [];
+            $select.find("option").each(function () {
+                const val = $(this).val();
+                if (val) {
+                    data.push({ label: $(this).text().trim(), value: val });
+                }
             });
 
-            $(element)
-                .closest(".labeled-field-wrapper")
-                .find(".js-select2-lbl")
-                .on("click", function (e) {
-                    e.preventDefault();
+            $select.addClass("dls-hidden");
 
-                    if (!$(element).data("select2").isOpen()) {
-                        dlsSelect.select2("open");
-                    }
-                });
+            const inputId = "dls-ac-" + $select.attr("name");
+            const $input = $("<input>", {
+                type: "text",
+                id: inputId,
+                class: "dls-ac-input",
+                placeholder,
+                autocomplete: "off",
+            });
+            const $clearBtn = $("<button>", {
+                type: "button",
+                class: "js-dls-ac-clear",
+            })
+                .text("×")
+                .hide();
+
+            $selectWrap.prepend($input);
+            $selectWrap.append($clearBtn);
+
+            new autoComplete({
+                selector: `#${inputId}`,
+                threshold: 0,
+                data: {
+                    src: data,
+                    keys: ["label"],
+                },
+                resultsList: {
+                    class: "dls-ac-results",
+                    noResults: false,
+                },
+                resultItem: {
+                    class: "dls-ac-result",
+                    highlight: true,
+                },
+                events: {
+                    input: {
+                        selection(event) {
+                            const selected = event.detail.selection.value;
+                            $input.val(selected.label);
+                            $select.val(selected.value);
+                            $clearBtn.show();
+                        },
+                    },
+                },
+            });
+
+            $input.on("focus", function () {
+                $(this).trigger("input");
+            });
+
+            $input.on("input", function () {
+                $select.val("");
+                $clearBtn.toggle(!!$(this).val());
+            });
+
+            $input.on("blur", function () {
+                if (!$select.val()) {
+                    $input.val("");
+                    $clearBtn.hide();
+                }
+            });
+
+            $clearBtn.on("click", function () {
+                $input.val("");
+                $select.val("");
+                $clearBtn.hide();
+            });
+
+            $wrapper.find(".js-select2-lbl").on("click", function (e) {
+                e.preventDefault();
+                $input.focus();
+            });
         });
     }
 
-    setupDLSSelect(".js-dls-destination-select", theme.destinationsRestUrl);
-    setupDLSSelect(".js-dls-carrier-select", theme.carriersRestUrl);
+    setupDLSSelect(".js-dls-destination-select");
+    setupDLSSelect(".js-dls-carrier-select");
 
     function formatDate(isoString) {
         const d = new Date(isoString);

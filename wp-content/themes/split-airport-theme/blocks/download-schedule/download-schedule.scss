@@ -158,22 +158,7 @@
         border-color: $red;
     }
 
-    .select2-container {
-        width: 100% !important;
-        position: relative;
-    }
-
-    &:not(:has(.select2)) {
-        select {
-            display: none;
-        }
-
-        .dls-select-wrap {
-            &::after {
-                content: attr(data-placeholder);
-            }
-        }
-    }
+    position: relative;
 }
 
 .dl-schedule-date-range,
@@ -210,19 +195,8 @@
     display: none;
 }
 
-.labeled-field-wrapper
-    .select2-container--default
-    .select2-selection--single
-    .select2-selection__arrow {
-    pointer-events: none !important;
-    display: none !important;
-}
-
-.labeled-field-wrapper
-    .select2-container--default
-    .select2-selection--single
-    .select2-selection__clear,
-.js-clear-range {
+.js-clear-range,
+.js-dls-ac-clear {
     cursor: pointer;
     width: 2em;
     height: 2em;
@@ -252,21 +226,13 @@
     gap: 10px;
 }
 
-.labeled-field-wrapper
-    .select2-container--default
-    .select2-selection--single
-    .select2-selection__rendered,
-.dls-date-display,
-.dls-select-wrap::after {
+.dls-date-display {
     font-family: $primary-font !important;
     font-size: 17px !important;
     line-height: 1.5 !important;
     text-align: left !important;
     padding-left: 0 !important;
     color: $gray-100;
-}
-
-.dls-date-display {
     pointer-events: none;
     border: none;
     max-width: 130px;
@@ -302,4 +268,70 @@
     padding-top: 40px;
     border-top: 1px solid #eee;
     margin-top: 40px;
+}
+
+.dls-select-wrap {
+    position: relative;
+
+    li {
+        .entry-content & {
+            font-family: $primary-font;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 17px;
+            line-height: calc(24 / 17);
+            letter-spacing: 0.03em;
+            color: $gray-300;
+
+            &::after,
+            &::before {
+                content: none;
+            }
+        }
+    }
+
+    .autoComplete_wrapper ul {
+        margin-left: -13px;
+        margin-right: -13px;
+    }
+}
+
+.dls-ac-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    font-family: $primary-font;
+    font-size: 17px;
+    line-height: 1.5;
+    color: $gray-100;
+
+    &::placeholder {
+        color: inherit;
+    }
+}
+
+.dls-ac-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 0 24px 0 rgba(0 0 0 / 10%);
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.dls-ac-result {
+    padding: 12px 16px;
+    cursor: pointer;
+
+    &:hover,
+    &[aria-selected="true"] {
+        background-color: #f5f5f5;
+    }
 }
