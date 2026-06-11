@@ -1983,87 +1983,89 @@ add_action('rest_api_init', function () {
     ]);
 });
 
+function fetch_flight_schedule($args = []) {
+    $args = array_merge([
+        'dateFrom'       => null,
+        'dateTo'         => null,
+        'destinationKey' => null,
+        'carrierKey'     => null,
+    ], $args);
+
+    $api_response = wp_remote_post(get_schedule_search_url(), [
+        'timeout' => 15,
+        'headers' => [
+            'Content-Type' => 'application/json',
+            'Accept'       => 'application/json',
+        ],
+        'body' => json_encode($args),
+    ]);
+
+
+    $api_flights = [];
+    if (!is_wp_error($api_response)) {
+        $api_data = json_decode(wp_remote_retrieve_body($api_response), true);
+        if (!empty($api_data['success']) && !empty($api_data['data'])) {
+            $api_flights = $api_data['data'];
+        }
+    }
+
+    $flights    = [];
+    $table_html = '';
+
+    foreach ($api_flights as $flight) {
+        $flight_time = strtotime($flight['flightDate'] . ' ' . $flight['flightTime']);
+
+        $flight_data = [
+            'destination' => $flight['destination'],
+            'date'        => date('d.m.Y', $flight_time) . ' / ' . $flight['flightDay'],
+            'time'        => $flight['flightTime'],
+            'number'      => $flight['flightNumber'],
+            'carrier'     => $flight['carrier'],
+            'code'        => $flight['codeShare'],
+        ];
+
+        $table_html .= lf_get_download_schedule_row_html($flight_data);
+        $flights[]   = $flight_data;
+    }
+
+    $has_results = !empty($flights);
+
+    if (!$has_results) {
+        $table_html = '<div class="dls-no-results-content"><span>' . __('No results for your search', 'split-airport') . '</span></div>';
+    }
+
+    return [
+        'has_results' => $has_results,
+        'flights'    => $flights,
+        'table_html' => $table_html,
+    ];
+}
+
 function get_flight_schedule(WP_REST_Request $request) {
     $from_date   = $request->get_param('dls_from_date');
     $to_date     = $request->get_param('dls_to_date');
     $destination = $request->get_param('dls_destination');
     $carrier     = $request->get_param('dls_carrier');
+    $seconds_in_day = 86399;
 
-    // 2. Placeholder Data (Using ISO dates internally for better manipulation)
-    $mock_flights = [
-        [
-            'destination' => 'London',
-            'iso_date'    => '2026-05-22T13:55:00', // Wednesday
-            'number'      => 'BA 3',
-            'carrier'     => 'British Airways',
-            'code'        => 'ASD46',
-        ],
-        [
-            'destination' => 'New York',
-            'iso_date'    => '2026-05-24T08:30:00', // Friday
-            'number'      => 'AA 123',
-            'carrier'     => 'American Airlines',
-            'code'        => 'NYC99',
-        ],
-        [
-            'destination' => 'London',
-            'iso_date'    => '2026-06-01T18:00:00', 
-            'number'      => 'BA 5',
-            'carrier'     => 'Lufthansa',
-            'code'        => 'LND77',
-        ],
-    ];
-
-    $filtered_flights = [];
-
-    $flights_table_html = '';
-
-    foreach ($mock_flights as $flight) {
-        $flight_time = strtotime($flight['iso_date']);
-        
-        if ($flight_time < strtotime($from_date) || $flight_time > strtotime($to_date)) {
-            continue;
-        }
-
-        if (!empty($destination) && strtolower($flight['destination']) !== strtolower($destination)) {
-            continue;
-        }
-
-        if (!empty($carrier) && strtolower($flight['carrier']) !== strtolower($carrier)) {
-            continue;
-        }
-
-        $flight_data = [
-            'destination' => $flight['destination'],
-            'date'        => date('d.m.Y / l', $flight_time),
-            'time'        => date('H:i', $flight_time),
-            'number'      => $flight['number'],
-            'carrier'     => $flight['carrier'],
-            'code'        => $flight['code'],
-        ];
-
-        $flights_table_html .= lf_get_download_schedule_row_html($flight_data);
-
-        $filtered_flights[] = $flight_data;
-    }
-
-    $has_results = !empty($filtered_flights);
-
-    if (!$has_results) {
-        $flights_table_html = '<div class="dls-no-results-content"><span>'.__('No results for your search', 'split-airport').'</span></div>';
-    }
+    $result      = fetch_flight_schedule([
+        'dateFrom'       => gmdate('Y-m-d\TH:i:s', strtotime($from_date)),
+        'dateTo'         => gmdate('Y-m-d\TH:i:s', strtotime($to_date) + $seconds_in_day),
+        'destinationKey' => !empty($destination) ? $destination : null,
+        'carrierKey'     => !empty($carrier) ? $carrier : null,
+    ]);
 
     return new WP_REST_Response([
-        'has_results' => $has_results,
-        'flights' => $filtered_flights,
-        'filters' => [
-            'from' => date('d.m.Y', strtotime($from_date)),
-            'to' => date('d.m.Y', strtotime($to_date)),
+        'has_results' => $result['has_results'],
+        'flights'     => $result['flights'],
+        'filters'     => [
+            'from'        => date('d.m.Y', strtotime($from_date)),
+            'to'          => date('d.m.Y', strtotime($to_date)),
             'destination' => $destination ?: 'Any',
-            'carrier' => $carrier ?: 'Any',
-            'searchTime' => date('c'),
+            'carrier'     => $carrier ?: 'Any',
+            'searchTime'  => date('c'),
         ],
-        'table_html' => $flights_table_html,
+        'table_html' => $result['table_html'],
     ], 200);
 }
 
@@ -2071,6 +2073,10 @@ function get_airport_api_domain() {
     $api_url = defined('AIRPORT_API_URL') ? AIRPORT_API_URL : "https://api-test.split-airport.hr";
 
     return $api_url;
+}
+
+function get_schedule_search_url() {
+    return get_airport_api_domain() . "/as-frontend/schedule/search";
 }
 
 function get_schedule_carriers_from_api() {

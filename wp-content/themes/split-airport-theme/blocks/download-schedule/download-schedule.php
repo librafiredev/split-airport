@@ -9,26 +9,11 @@ if( isset( $block['data']['preview_image_help'] )  ) :
 else: 
 
 
-$placeholder_data = [
-    [
-        'destination' => 'London',
-        'date' => '23.04.2026 / Wednesday',
-        'time' => '13:55',
-        'number' => 'HA 521',
-        'carrier' => 'Croatia Airlines',
-        'code' => 'LH 6004',
-    ],
-    [
-        'destination' => 'New York',
-        'date' => '23.05.2026 / Someday',
-        'time' => '13:55',
-        'number' => 'HN 22',
-        'carrier' => 'Someline',
-        'code' => 'LH 6468',
-    ],
-];
-
-$flights = $placeholder_data;
+$result  = fetch_flight_schedule([
+    'dateFrom' => null,
+    'dateTo'   => null,
+]);
+$flights = $result['flights'];
 
 ?>
 
@@ -87,9 +72,7 @@ $flights = $placeholder_data;
                 </div>
 
                 <div class="download-schedule-content">
-                    <?php foreach ($flights as $flight) {
-                        echo lf_get_download_schedule_row_html($flight);
-                    } ?>
+                    <?php echo $result['table_html']; ?>
                 </div>
             </div>
 
