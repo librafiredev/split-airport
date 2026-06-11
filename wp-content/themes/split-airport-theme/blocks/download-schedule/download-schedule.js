@@ -416,6 +416,7 @@ $(function () {
                 mode: "range",
                 showMonths: 2,
                 dateFormat: "Z",
+                minDate: "today",
                 closeOnSelect: false,
                 onOpen: function (selectedDates, dateStr, instance) {
                     if (
@@ -435,12 +436,34 @@ $(function () {
                     if (selectedDates.length === 2) {
                         const startDate = selectedDates[0];
                         const endDate = selectedDates[1];
+                        const MAX_RANGE_ADJUSTMENT_DAYS = 5; // NOTE: for whatever reason back end calculates this weirdly
                         const maxEndDate = new Date(startDate);
                         maxEndDate.setMonth(maxEndDate.getMonth() + 3);
+                        maxEndDate.setDate(
+                            maxEndDate.getDate() - MAX_RANGE_ADJUSTMENT_DAYS,
+                        );
 
                         if (endDate > maxEndDate) {
                             instance.setDate([startDate, maxEndDate]);
-                            alert("Maximum range is 3 months.");
+                            const msg =
+                                instance.calendarContainer.querySelector(
+                                    ".range-limit-msg",
+                                );
+                            if (msg) {
+                                msg.classList.remove("is-pulsing");
+                                void msg.offsetWidth;
+                                msg.classList.add("is-pulsing");
+                                msg.addEventListener(
+                                    "animationend",
+                                    function handler() {
+                                        msg.classList.remove("is-pulsing");
+                                        msg.removeEventListener(
+                                            "animationend",
+                                            handler,
+                                        );
+                                    },
+                                );
+                            }
                         }
                     }
 
