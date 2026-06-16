@@ -473,15 +473,7 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day {
-    &:not(.selected) {
-        &:not(.inRange) {
-            &:not(.flatpickr-disabled) {
-                color: #989898 !important;
-            }
-        }
-    }
-
     &.flatpickr-disabled {
-        color: $gray !important;
+        color: #adadad !important;
     }
 }
