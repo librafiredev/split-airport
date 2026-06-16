@@ -412,11 +412,18 @@ $(function () {
 
             updateValueIndicator();
 
+            const MAX_RANGE_ADJUSTMENT_DAYS = 5; // NOTE: back end has a weird month calculation
+            const MAX_DAYS_FROM_TODAY = 365;
+
+            const absoluteMaxDate = new Date();
+            absoluteMaxDate.setDate(absoluteMaxDate.getDate() + MAX_DAYS_FROM_TODAY);
+
             const flatpickrInstance = flatpickr(container, {
                 mode: "range",
                 showMonths: 2,
                 dateFormat: "Z",
                 minDate: "today",
+                maxDate: absoluteMaxDate,
                 closeOnSelect: false,
                 onOpen: function (selectedDates, dateStr, instance) {
                     if (
@@ -432,16 +439,26 @@ $(function () {
                     }
                 },
                 onChange: function (selectedDates, dateStr, instance) {
-                    // 1. Enforce the 3-month limit
+                    if (selectedDates.length === 1) {
+                        const startDate = selectedDates[0];
+                        const threeMonthsMax = new Date(startDate);
+                        threeMonthsMax.setMonth(threeMonthsMax.getMonth() + 3);
+                        threeMonthsMax.setDate(
+                            threeMonthsMax.getDate() - MAX_RANGE_ADJUSTMENT_DAYS,
+                        );
+                        instance.set("maxDate", new Date(Math.min(threeMonthsMax, absoluteMaxDate)));
+                    }
+
                     if (selectedDates.length === 2) {
                         const startDate = selectedDates[0];
                         const endDate = selectedDates[1];
-                        const MAX_RANGE_ADJUSTMENT_DAYS = 5; // NOTE: for whatever reason back end calculates this weirdly
                         const maxEndDate = new Date(startDate);
                         maxEndDate.setMonth(maxEndDate.getMonth() + 3);
                         maxEndDate.setDate(
                             maxEndDate.getDate() - MAX_RANGE_ADJUSTMENT_DAYS,
                         );
+
+                        instance.set("maxDate", absoluteMaxDate);
 
                         if (endDate > maxEndDate) {
                             instance.setDate([startDate, maxEndDate]);
@@ -496,6 +513,7 @@ $(function () {
                         toInput.value = "";
                         fromDisplay.value = "";
                         toDisplay.value = "";
+                        instance.set("maxDate", absoluteMaxDate);
                     }
 
                     updateValueIndicator();
