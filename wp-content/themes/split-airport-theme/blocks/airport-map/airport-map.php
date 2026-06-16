@@ -102,6 +102,7 @@ $floors_data = [
         'width' => 1095,
         'height' => 553,
         'icon_size_override' => 25,
+        'bg_label' => __("Check-in for United Airlines is located outside, to the right of the terminal", "split-airport"),
     ),
 ];
 $icon_data = [
@@ -1131,6 +1132,10 @@ foreach ($floors_data as $key => $value) {
                                 <div class="airport-map-floor airport-map-floor-<?php echo $floor_idx; ?> <?php echo $floor_idx == $initial_floor ? 'airport-map-active-floor' : ''; ?>" data-floor-idx="<?php echo $floor_idx; ?>">
                         
                                     <div class="airport-map-wrap">
+                                        <?php if (!empty($floor['bg_label'])) : ?>
+                                            <div class="airport-map-label"><?php echo $floor['bg_label']; ?></div>
+                                        <?php endif; ?>
+
                                         <img src="<?php echo $floor['bg_path']; ?>" alt="" />
                                         <?php if (!empty($floor['overlay_path'])) : ?>
                                             <img class="airport-map-fg-overlay" src="<?php echo $floor['overlay_path']; ?>" alt="" />

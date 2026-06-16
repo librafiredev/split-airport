@@ -770,3 +770,20 @@ $map-main-bp: $sm;
 .airport-map-floor-2 {
     max-width: 940px;
 }
+
+.airport-map-label {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: calc(18 / 12);
+    letter-spacing: 0.02em;
+    text-align: right;
+    text-transform: uppercase;
+    color: $gray-300;
+    border: 1px solid $gray;
+    background-color: $footer-bgc;
+    padding: 10px;
+    max-width: 222px;
+}
