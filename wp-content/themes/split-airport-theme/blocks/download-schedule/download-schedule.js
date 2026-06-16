@@ -412,7 +412,7 @@ $(function () {
 
             updateValueIndicator();
 
-            const MAX_RANGE_ADJUSTMENT_DAYS = 5; // NOTE: back end has a weird month calculation
+            const MAX_RANGE_ADJUSTMENT_DAYS = 7; // NOTE: back end has a weird month calculation
             const MAX_DAYS_FROM_TODAY = 365;
 
             const absoluteMaxDate = new Date();
