@@ -764,7 +764,7 @@ $icon_data = [
                 array(
                     'shape_path' => '/assets/images/airport-map/plane-check-in.svg',
                     'x' => 723,
-                    'y' => 288,
+                    'y' => 243,
                 ),
             ],
         ),
