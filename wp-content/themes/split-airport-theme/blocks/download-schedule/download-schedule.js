@@ -540,12 +540,15 @@ $(function () {
         let hasInvalidSelect = false;
         form.find(".dls-ac-input").each(function () {
             const $input = $(this);
+            const $fieldWrapper = $input.closest(".labeled-field-wrapper");
             const $select = $input.closest(".dls-select-wrap").find("select");
             if ($input.val() && !$select.val()) {
                 setTimeout(function () {
                     markElementWithError(
                         $input.closest(".labeled-field-wrapper"),
-                        theme.inavlidLocationErrorMsg,
+                        $fieldWrapper.find(".js-select2-lbl").text() +
+                            " " +
+                            theme.nonExistantErrorMsg,
                     );
                 }, validationDelay);
                 hasInvalidSelect = true;

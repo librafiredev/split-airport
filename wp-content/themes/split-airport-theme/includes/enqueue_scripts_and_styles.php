@@ -37,7 +37,7 @@ function global_js_object()
 		'noMyFlights'							=> __('Your favorites list is empty.', 'split-airport'),
 		'genericError'							=> __('Something went wrong.', 'split-airport'),
 		'requiredErrorMsg'							=> get_lf_rest_required_field_message(),
-		'inavlidLocationErrorMsg'							=> __('Destination does not exist.', 'split-airport'),
+		'nonExistantErrorMsg'							=> __(' does not exist.', 'split-airport'),
 		'genericSearching'							=> __('Searching...', 'split-airport'),
 		'downloadSchedule' => array(
         'translations' => array(
