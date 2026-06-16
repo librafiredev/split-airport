@@ -414,7 +414,7 @@ $(function () {
 
             const flatpickrInstance = flatpickr(container, {
                 mode: "range",
-                showMonths: 2,
+                showMonths: window.innerWidth < 767 ? 1 : 2,
                 dateFormat: "Z",
                 minDate: "today",
                 maxDate: absoluteMaxDate,
