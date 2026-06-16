@@ -424,6 +424,12 @@ span.flatpickr-weekday {
     border: none !important;
 }
 
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+    box-shadow: -10px 0 0 #213859 !important;
+}
+
 .flatpickr-day.inRange,
 .flatpickr-day.nextMonthDay.inRange,
 .flatpickr-day.nextMonthDay.today.inRange,
