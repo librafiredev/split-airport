@@ -94,13 +94,6 @@ $(function () {
                 $clearBtn.toggle(!!$(this).val());
             });
 
-            $input.on("blur", function () {
-                if (!$select.val()) {
-                    $input.val("");
-                    $clearBtn.hide();
-                }
-            });
-
             $clearBtn.on("click", function () {
                 $input.val("");
                 $select.val("");
@@ -416,7 +409,9 @@ $(function () {
             const MAX_DAYS_FROM_TODAY = 365;
 
             const absoluteMaxDate = new Date();
-            absoluteMaxDate.setDate(absoluteMaxDate.getDate() + MAX_DAYS_FROM_TODAY);
+            absoluteMaxDate.setDate(
+                absoluteMaxDate.getDate() + MAX_DAYS_FROM_TODAY,
+            );
 
             const flatpickrInstance = flatpickr(container, {
                 mode: "range",
@@ -444,9 +439,13 @@ $(function () {
                         const threeMonthsMax = new Date(startDate);
                         threeMonthsMax.setMonth(threeMonthsMax.getMonth() + 3);
                         threeMonthsMax.setDate(
-                            threeMonthsMax.getDate() - MAX_RANGE_ADJUSTMENT_DAYS,
+                            threeMonthsMax.getDate() -
+                                MAX_RANGE_ADJUSTMENT_DAYS,
                         );
-                        instance.set("maxDate", new Date(Math.min(threeMonthsMax, absoluteMaxDate)));
+                        instance.set(
+                            "maxDate",
+                            new Date(Math.min(threeMonthsMax, absoluteMaxDate)),
+                        );
                     }
 
                     if (selectedDates.length === 2) {
@@ -535,7 +534,25 @@ $(function () {
 
         const apiUrl = theme.scheduleRestUrl;
 
+        const validationDelay = 300;
+
         clearErrors();
+
+        let hasInvalidSelect = false;
+        form.find(".dls-ac-input").each(function () {
+            const $input = $(this);
+            const $select = $input.closest(".dls-select-wrap").find("select");
+            if ($input.val() && !$select.val()) {
+                setTimeout(function () {
+                    markElementWithError(
+                        $input.closest(".labeled-field-wrapper"),
+                        theme.inavlidLocationErrorMsg,
+                    );
+                }, validationDelay);
+                hasInvalidSelect = true;
+            }
+        });
+
         let isEmpty = false;
 
         form.find(".js-dls-date-wrap input").each(function () {
@@ -552,9 +569,11 @@ $(function () {
                         .closest(".js-dl-schedule-date-range"),
                     theme.requiredErrorMsg,
                 );
-            }, 300);
+            }, validationDelay);
             return;
         }
+
+        if (hasInvalidSelect) return;
 
         const submitBtn = form.find('[type="submit"]');
         submitBtn.prop("disabled", true);

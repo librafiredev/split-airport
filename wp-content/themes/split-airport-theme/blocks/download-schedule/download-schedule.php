@@ -35,14 +35,14 @@ $flights = $result['flights'];
                         </div></div>
                     </div>
 
-                    <div class="labeled-field-wrapper dls-select-destination"><div class="js-select2-lbl labeled-field-label"><?php echo __('Destination', 'split-airport'); ?></div> <div class="dls-select-wrap" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"><select name="dls_destination" class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>">
+                    <div class="labeled-field-wrapper labeled-single-field dls-select-destination"><div class="js-select2-lbl labeled-field-label"><?php echo __('Destination', 'split-airport'); ?></div> <div class="dls-select-wrap" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>"><select name="dls_destination" class="js-dls-destination-select" data-placeholder="<?php echo __('Country, city or airport', 'split-airport'); ?>">
                         <option></option>
                         <?php foreach (get_schedule_destinations_from_api() as $destinations) : ?>
                             <option value="<?php echo esc_attr($destinations['id']); ?>"><?php echo esc_html($destinations['name']); ?></option>
                         <?php endforeach; ?>
                     </select></div></div>
 
-                    <div class="labeled-field-wrapper dls-select-carrier"><div class="js-select2-lbl labeled-field-label"><?php echo __('Carrier', 'split-airport'); ?></div> <div class="dls-select-wrap" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>"><select name="dls_carrier" class="js-dls-carrier-select" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>">
+                    <div class="labeled-field-wrapper labeled-single-field dls-select-carrier"><div class="js-select2-lbl labeled-field-label"><?php echo __('Carrier', 'split-airport'); ?></div> <div class="dls-select-wrap" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>"><select name="dls_carrier" class="js-dls-carrier-select" data-placeholder="<?php echo __('Enter carrier', 'split-airport'); ?>">
                         <option></option>
                         <?php foreach (get_schedule_carriers_from_api() as $carrier) : ?>
                             <option value="<?php echo esc_attr($carrier['id']); ?>"><?php echo esc_html($carrier['name']); ?></option>
