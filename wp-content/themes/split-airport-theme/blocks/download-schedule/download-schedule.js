@@ -58,7 +58,7 @@ $(function () {
             $selectWrap.prepend($input);
             $selectWrap.append($clearBtn);
 
-            new autoComplete({
+            const ac = new autoComplete({
                 selector: `#${inputId}`,
                 threshold: 0,
                 data: {
@@ -81,12 +81,11 @@ $(function () {
                             $select.val(selected.value);
                             $clearBtn.show();
                         },
+                        focus() {
+                            ac.start();
+                        },
                     },
                 },
-            });
-
-            $input.on("focus", function () {
-                $(this).trigger("input");
             });
 
             $input.on("input", function () {
