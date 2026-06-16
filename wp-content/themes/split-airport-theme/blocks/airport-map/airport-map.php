@@ -759,7 +759,7 @@ $icon_data = [
     // FLOOR UA
     [
         array(
-            'label' => esc_html__('United CHECK-IN'),
+            'label' => esc_html__('United Check-in'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/plane-check-in.svg',
@@ -783,6 +783,10 @@ $category_data = [
                 'label' => esc_html__('Self check-in kiosks'),
                 'group_index' => 3,
                 'floor' => 0,
+            ),
+            array(
+                'group_index' => 0,
+                'floor' => 4,
             ),
             array(
                 'label' => esc_html__('Flight ticket purchase'),
