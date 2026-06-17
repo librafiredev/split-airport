@@ -9,9 +9,14 @@ if( isset( $block['data']['preview_image_help'] )  ) :
 else: 
 
 
+$tz          = wp_timezone();
+$defaultFrom = new DateTime('today', $tz);
+$defaultTo   = clone $defaultFrom;
+$defaultTo->modify('+1 month');
+
 $result  = fetch_flight_schedule([
-    'dateFrom' => null,
-    'dateTo'   => null,
+    'dateFrom' => $defaultFrom->format('c'),
+    'dateTo'   => $defaultTo->format('c'),
 ]);
 $flights = $result['flights'];
 
@@ -92,5 +97,7 @@ $flights = $result['flights'];
 window.splitGlobalDLScheduleData = {
     flights: <?php echo json_encode($flights); ?>,
     filters: { from: '', to: '', destination: 'Any', carrier: 'Any', searchTime: '<?php echo date('c'); ?>', },
+    defaultFrom: '<?php echo $defaultFrom->format('c'); ?>',
+    defaultTo: '<?php echo $defaultTo->format('c'); ?>',
 }
 </script>

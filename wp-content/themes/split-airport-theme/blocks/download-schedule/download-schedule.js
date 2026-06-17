@@ -412,6 +412,16 @@ $(function () {
                 absoluteMaxDate.getDate() + MAX_DAYS_FROM_TODAY,
             );
 
+            const phpDefaultFrom = new Date(
+                window.splitGlobalDLScheduleData.defaultFrom,
+            );
+            const phpDefaultTo = new Date(
+                window.splitGlobalDLScheduleData.defaultTo,
+            );
+
+            const defaultFrom = phpDefaultFrom;
+            const defaultTo = phpDefaultTo;
+
             const flatpickrInstance = flatpickr(container, {
                 mode: "range",
                 showMonths: window.innerWidth < 767 ? 1 : 2,
@@ -430,6 +440,10 @@ $(function () {
                         msg.innerText = $(container).attr("data-range-message");
 
                         instance.calendarContainer.appendChild(msg);
+                    }
+
+                    if (selectedDates.length > 0) {
+                        instance.jumpToDate(selectedDates[0]);
                     }
                 },
                 onChange: function (selectedDates, dateStr, instance) {
@@ -504,6 +518,7 @@ $(function () {
                         );
                     } else {
                         toInput.value = "";
+                        toDisplay.value = "";
                     }
 
                     if (selectedDates.length == 0) {
@@ -516,7 +531,23 @@ $(function () {
 
                     updateValueIndicator();
                 },
+                onClose: function (selectedDates, dateStr, instance) {
+                    if (selectedDates.length === 1) {
+                        const fromDate = selectedDates[0];
+                        const toDate = new Date(fromDate);
+                        toDate.setMonth(toDate.getMonth() + 1);
+                        instance.setDate(
+                            [
+                                fromDate,
+                                new Date(Math.min(toDate, absoluteMaxDate)),
+                            ],
+                            true,
+                        );
+                    }
+                },
             });
+
+            flatpickrInstance.setDate([defaultFrom, defaultTo], true);
 
             clearButton.forEach(function (element) {
                 $(element).on("click", function (e) {
@@ -555,6 +586,22 @@ $(function () {
             }
         });
 
+        form.find(".js-dl-schedule-date-range").each(function () {
+            const fromHidden = $(this).find(".date-from");
+            const toHidden = $(this).find(".date-to");
+            const toDisplay = $(this).find(".date-to-display");
+
+            if (fromHidden.val() && !toHidden.val()) {
+                const fromDate = new Date(fromHidden.val());
+                const toDate = new Date(fromDate);
+                toDate.setMonth(toDate.getMonth() + 1);
+                toHidden.val(toDate.toISOString());
+                const d = String(toDate.getDate()).padStart(2, "0");
+                const m = String(toDate.getMonth() + 1).padStart(2, "0");
+                toDisplay.val(`${d}.${m}.${toDate.getFullYear()}`);
+            }
+        });
+
         let isEmpty = false;
 
         form.find(".js-dls-date-wrap input").each(function () {
@@ -575,7 +622,9 @@ $(function () {
             return;
         }
 
-        if (hasInvalidSelect) return;
+        if (hasInvalidSelect) {
+            return;
+        }
 
         const submitBtn = form.find('[type="submit"]');
         submitBtn.prop("disabled", true);
