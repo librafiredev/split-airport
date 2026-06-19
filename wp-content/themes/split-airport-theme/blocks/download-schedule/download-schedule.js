@@ -58,7 +58,7 @@ $(function () {
             $selectWrap.prepend($input);
             $selectWrap.append($clearBtn);
 
-            const ac = new autoComplete({
+            new autoComplete({
                 selector: `#${inputId}`,
                 threshold: 0,
                 data: {
@@ -80,9 +80,6 @@ $(function () {
                             $input.val(selected.label);
                             $select.val(selected.value);
                             $clearBtn.show();
-                        },
-                        focus() {
-                            ac.start();
                         },
                     },
                 },
