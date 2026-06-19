@@ -1975,7 +1975,15 @@ add_action('rest_api_init', function () {
                 'required'          => false,
                 'sanitize_callback' => 'sanitize_text_field',
             ],
+            'dls_destination_label' => [
+                'required'          => false,
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
             'dls_carrier' => [
+                'required'          => false,
+                'sanitize_callback' => 'sanitize_text_field',
+            ],
+            'dls_carrier_label' => [
                 'required'          => false,
                 'sanitize_callback' => 'sanitize_text_field',
             ],
@@ -2045,7 +2053,9 @@ function get_flight_schedule(WP_REST_Request $request) {
     $from_date   = $request->get_param('dls_from_date');
     $to_date     = $request->get_param('dls_to_date');
     $destination = $request->get_param('dls_destination');
+    $destination_label = $request->get_param('dls_destination_label');
     $carrier     = $request->get_param('dls_carrier');
+    $carrier_label     = $request->get_param('dls_carrier_label');
     $seconds_in_day = 86399;
 
     $result      = fetch_flight_schedule([
@@ -2061,8 +2071,8 @@ function get_flight_schedule(WP_REST_Request $request) {
         'filters'     => [
             'from'        => date('d.m.Y', strtotime($from_date)),
             'to'          => date('d.m.Y', strtotime($to_date)),
-            'destination' => $destination ?: 'Any',
-            'carrier'     => $carrier ?: 'Any',
+            'destination' => $destination_label ?: 'Any',
+            'carrier'     => $carrier_label ?: 'Any',
             'searchTime'  => date('c'),
         ],
         'table_html' => $result['table_html'],

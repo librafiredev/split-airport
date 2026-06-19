@@ -39,14 +39,15 @@ $(function () {
             });
 
             $select.addClass("dls-hidden");
-
-            const inputId = "dls-ac-" + $select.attr("name");
+            const baseName = $select.attr("name");
+            const inputId = "dls-ac-" + baseName;
             const $input = $("<input>", {
                 type: "text",
                 id: inputId,
                 class: "dls-ac-input",
                 placeholder,
                 autocomplete: "off",
+                name: baseName + "_label",
             });
             const $clearBtn = $("<button>", {
                 type: "button",
