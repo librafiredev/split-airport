@@ -1802,10 +1802,10 @@ function lf_get_download_schedule_row_html($data) {
     $airline_icon = '';
 
     if ($airline) {
-        $airline_icon = get_the_post_thumbnail($airline['ID']);
+        $airline_icon = '<span class="dls-airline-icon">' .  get_the_post_thumbnail($airline['ID'])  . '</span>';
     }
 
-    $carrier_full = '<span class="dls-airline-icon">' . $airline_icon . '</span>
+    $carrier_full =  $airline_icon . '
 <span class="dls-airline-info">
     <span class="dls-airline-number">'.$data['number'].'</span>
     <span class="dls-airline-name">'.$data['carrier'].'</span>
@@ -2017,7 +2017,7 @@ function fetch_flight_schedule($args = []) {
 
         $flight_data = [
             'destination' => $flight['destination'],
-            'date'        => date('d.m.Y', $flight_time) . ' / ' . $flight['flightDay'],
+            'date'        => substr((string) $flight['flightDay'], 0, 3) . ' ' . date('d.m.Y', $flight_time),
             'time'        => $flight['flightTime'],
             'number'      => $flight['flightNumber'],
             'carrier'     => $flight['carrier'],
