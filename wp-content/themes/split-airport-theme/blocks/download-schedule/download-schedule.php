@@ -14,15 +14,9 @@ $defaultFrom = new DateTime('today', $tz);
 $defaultTo   = clone $defaultFrom;
 $defaultTo->modify('+1 month');
 
-$result  = fetch_flight_schedule([
-    'dateFrom' => $defaultFrom->format('c'),
-    'dateTo'   => $defaultTo->format('c'),
-]);
-$flights = $result['flights'];
-
 ?>
 
-    <section class="download-schedule-wrapper" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
+    <section class="download-schedule-wrapper initial-data" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/dots-pattern.svg);">
 
         <div class="container">
             <div class="download-schedule-header">
@@ -77,7 +71,6 @@ $flights = $result['flights'];
                 </div>
 
                 <div class="download-schedule-content">
-                    <?php echo $result['table_html']; ?>
                 </div>
             </div>
 
@@ -95,7 +88,7 @@ $flights = $result['flights'];
 
 <script>
 window.splitGlobalDLScheduleData = {
-    flights: <?php echo json_encode($flights); ?>,
+    flights: <?php echo json_encode([]); ?>,
     filters: { from: '', to: '', destination: 'Any', carrier: 'Any', searchTime: '<?php echo date('c'); ?>', },
     defaultFrom: '<?php echo $defaultFrom->format('c'); ?>',
     defaultTo: '<?php echo $defaultTo->format('c'); ?>',

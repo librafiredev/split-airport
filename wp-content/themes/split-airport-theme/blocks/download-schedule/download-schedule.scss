@@ -63,6 +63,7 @@
     gap: 12px;
     margin-bottom: 28px;
 
+    .download-schedule-wrapper.initial-data &,
     .download-schedule-wrapper.is-loading-dls &,
     .download-schedule-wrapper.dls-no-results & {
         display: none;
@@ -78,6 +79,10 @@
 .download-schedule-table {
     .basic-table-row {
         cursor: default !important;
+    }
+
+    .download-schedule-wrapper.initial-data & {
+        display: none;
     }
 
     .basic-table-cell {

@@ -707,6 +707,7 @@ $(function () {
                 form.closest(".download-schedule-wrapper").removeClass(
                     "is-loading-dls",
                 );
+                form.closest(".initial-data").removeClass("initial-data");
             },
         });
     });
