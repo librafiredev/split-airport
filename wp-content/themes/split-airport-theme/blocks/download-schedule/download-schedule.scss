@@ -255,6 +255,14 @@
     gap: 10px;
 }
 
+.lsm-input-wrap {
+    width: 100%;
+
+    input {
+        width: 100%;
+    }
+}
+
 .dls-date-display {
     font-family: $primary-font !important;
     font-size: 17px !important;
@@ -296,9 +304,12 @@
 
 .dls-entry-content {
     font-weight: bold;
-    padding-top: 40px;
     border-top: 1px solid #eee;
-    margin-top: 40px;
+    margin-bottom: 80px;
+
+    @include max-mq($sm) {
+        margin-bottom: 40px;
+    }
 }
 
 .dls-select-wrap {
