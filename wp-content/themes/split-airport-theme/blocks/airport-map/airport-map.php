@@ -100,7 +100,7 @@ $floors_data = [
         'label' => 'UA',
         'bg_path' => get_template_directory_uri() . "/assets/images/airport-map/floor-ua.svg",
         'width' => 1095,
-        'height' => 553,
+        'height' => 653,
         'icon_size_override' => 25,
         'bg_label' => __("Check-in for United Airlines is located outside, to the right of the terminal", "split-airport"),
     ),
@@ -759,12 +759,64 @@ $icon_data = [
     // FLOOR UA
     [
         array(
-            'label' => esc_html__('United Check-in'),
+            'label' => esc_html__('United Airlines Check-in'),
             'items' => [
                 array(
                     'shape_path' => '/assets/images/airport-map/plane-check-in.svg',
                     'x' => 723,
-                    'y' => 243,
+                    'y' => 289,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Taxi'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/taxi-sign.svg',
+                    'x' => 429,
+                    'y' => 381,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('flight tickets'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/plane-boarding-pass-1.svg',
+                    'x' => 453,
+                    'y' => 249,
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Store'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/storefront.svg',
+                    'x' => 391,
+                    'y' => 249,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Information desk'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/info.svg',
+                    'x' => 197,
+                    'y' => 283,
+                    'tooltip_side' => 'left',
+                ),
+            ],
+        ),
+        array(
+            'label' => esc_html__('Meeting point'),
+            'items' => [
+                array(
+                    'shape_path' => '/assets/images/airport-map/shrink.svg',
+                    'x' => 139,
+                    'y' => 397,
                 ),
             ],
         ),
