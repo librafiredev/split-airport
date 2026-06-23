@@ -378,8 +378,9 @@ $(function () {
         .forEach((container) => {
             const fromInput = container.querySelector(".date-from");
             const toInput = container.querySelector(".date-to");
-            const fromDisplay = container.querySelector(".date-from-display");
-            const toDisplay = container.querySelector(".date-to-display");
+            const fromToDisplay = container.querySelector(
+                ".date-from-to-display",
+            );
             const dateWrap = container.querySelectorAll(".js-dls-date-wrap");
             const clearButton = container.querySelectorAll(".js-clear-range");
 
@@ -499,10 +500,7 @@ $(function () {
                             selectedDates[0],
                             "Z",
                         );
-                        fromDisplay.value = instance.formatDate(
-                            selectedDates[0],
-                            format,
-                        );
+
                         clearErrors();
                     }
                     if (selectedDates.length > 1) {
@@ -510,21 +508,27 @@ $(function () {
                             selectedDates[1],
                             "Z",
                         );
-                        toDisplay.value = instance.formatDate(
-                            selectedDates[1],
-                            format,
-                        );
                     } else {
                         toInput.value = "";
-                        toDisplay.value = "";
                     }
 
                     if (selectedDates.length == 0) {
                         fromInput.value = "";
                         toInput.value = "";
-                        fromDisplay.value = "";
-                        toDisplay.value = "";
+                        fromToDisplay.value = "";
                         instance.set("maxDate", absoluteMaxDate);
+                    } else {
+                        fromToDisplay.value = `${instance.formatDate(
+                            selectedDates[0],
+                            format,
+                        )}${
+                            selectedDates.length > 1
+                                ? ` - ${instance.formatDate(
+                                      selectedDates[1],
+                                      format,
+                                  )}`
+                                : ""
+                        }`;
                     }
 
                     updateValueIndicator();
@@ -602,7 +606,7 @@ $(function () {
 
         let isEmpty = false;
 
-        form.find(".js-dls-date-wrap input").each(function () {
+        form.find(".js-dls-date-wrap input.dls-hidden").each(function () {
             if (!$(this).val()) {
                 isEmpty = true;
             }

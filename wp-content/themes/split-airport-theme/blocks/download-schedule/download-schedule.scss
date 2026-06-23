@@ -187,7 +187,10 @@
     position: relative;
 }
 
-.dl-schedule-date-range,
+.invisible-date {
+    display: none;
+}
+
 .download-schedule-filters {
     position: relative;
     display: grid;
@@ -261,7 +264,6 @@
     color: $gray-100;
     pointer-events: none;
     border: none;
-    max-width: 130px;
 
     &:focus {
         outline: none;

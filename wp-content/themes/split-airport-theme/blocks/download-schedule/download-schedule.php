@@ -27,9 +27,9 @@ $defaultTo->modify('+1 month');
                 <form class="download-schedule-filters js-download-schedule-filters">
                     <div class="dl-schedule-date-range js-dl-schedule-date-range" data-range-message="<?php echo __('Maximum search range is 3 months.', 'split-airport'); ?>">
                         <div class="labeled-field-wrapper js-dls-date-wrap is-empty"><div class="labeled-field-label"><?php echo __('From date *', 'split-airport'); ?></div> <div class="large-select-main">
-                            <div><input type="text" readonly class="dls-date-display date-from-display" placeholder="<?php echo __('Select date', 'split-airport'); ?>" /> <input name="dls_from_date" type="text" readonly class="dls-hidden date-from" /></div><button type="button" class="js-clear-range">×</button>
+                            <div><input type="text" readonly class="dls-date-display date-from-to-display" placeholder="<?php echo __('Select date', 'split-airport'); ?>" /> <input name="dls_from_date" type="text" readonly class="dls-hidden date-from" /></div><button type="button" class="js-clear-range">×</button>
                         </div></div>
-                        <div class="labeled-field-wrapper js-dls-date-wrap is-empty"><div class="labeled-field-label"><?php echo __('To date *', 'split-airport'); ?></div> <div class="large-select-main">
+                        <div class="labeled-field-wrapper js-dls-date-wrap is-empty invisible-date"><div class="labeled-field-label"><?php echo __('To date *', 'split-airport'); ?></div> <div class="large-select-main">
                             <div><input type="text" readonly class="dls-date-display date-to-display" placeholder="<?php echo __('Select date', 'split-airport'); ?>" /> <input name="dls_to_date" type="text" readonly class="dls-hidden date-to" /></div><button type="button" class="js-clear-range">×</button>
                         </div></div>
                     </div>
