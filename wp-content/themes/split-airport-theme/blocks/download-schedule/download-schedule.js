@@ -285,8 +285,8 @@ $(function () {
                                 hLineStyle: () => ({
                                     dash: { length: 2, space: 2 },
                                 }),
-                                paddingTop: () => 10,
-                                paddingBottom: () => 10,
+                                paddingTop: () => 7,
+                                paddingBottom: () => 7,
                                 fillColor: (i) => (i === 0 ? "#f6f6f6" : null),
                             },
                         },
