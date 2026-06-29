@@ -1997,6 +1997,7 @@ function fetch_flight_schedule($args = []) {
         'dateTo'         => null,
         'destinationKey' => null,
         'carrierKey'     => null,
+        'destinationLbl' => null,
     ], $args);
 
     $api_response = wp_remote_post(get_schedule_search_url(), [
@@ -2021,6 +2022,10 @@ function fetch_flight_schedule($args = []) {
     $table_html = '';
 
     foreach ($api_flights as $flight) {
+        if ($flight['destination'] != $args['destinationLbl']) {
+            continue;
+        }
+
         $flight_time = strtotime($flight['flightDate'] . ' ' . $flight['flightTime']);
 
         $flight_data = [
@@ -2063,6 +2068,7 @@ function get_flight_schedule(WP_REST_Request $request) {
         'dateTo'         => gmdate('Y-m-d\TH:i:s', strtotime($to_date) + $seconds_in_day),
         'destinationKey' => !empty($destination) ? $destination : null,
         'carrierKey'     => !empty($carrier) ? $carrier : null,
+        'destinationLbl' => !empty($destination_label) ? $destination_label : null,
     ]);
 
     return new WP_REST_Response([
