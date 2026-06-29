@@ -2025,7 +2025,7 @@ function fetch_flight_schedule($args = []) {
 
         $flight_data = [
             'destination' => $flight['destination'],
-            'date'        => substr((string) $flight['flightDay'], 0, 3) . ' ' . date('d.m.Y', $flight_time),
+            'date'        => date_i18n('D', $flight_time) . ' ' . date_i18n('d.m.Y', $flight_time),
             'time'        => $flight['flightTime'],
             'number'      => $flight['flightNumber'],
             'carrier'     => $flight['carrier'],
