@@ -1811,8 +1811,10 @@ function lf_get_download_schedule_row_html($data) {
     <span class="dls-airline-name">'.$data['carrier'].'</span>
 </span>';
 
+    $via_text = !empty($data['destinationVia']) ? '<span class="dls-dest-via">via '.$data['destinationVia'].'</span>' : '';
+
     return '<div class="basic-table-row">
-    <span class="basic-table-cell">'.$data['destination'].'</span>
+    <span class="basic-table-cell">'.$data['destination'].$via_text.'</span>
     <span class="basic-table-cell">'.$data['date'].'</span>
     <span class="basic-table-cell">'.$data['time'].'</span>
     <span class="basic-table-cell dls-carrier-col">'.$carrier_full.'</span>
@@ -2025,6 +2027,7 @@ function fetch_flight_schedule($args = []) {
 
         $flight_data = [
             'destination' => $flight['destination'],
+            'destinationVia' => $flight['destinationVia'],
             'date'        => date_i18n('D', $flight_time) . ' ' . date_i18n('d.m.Y', $flight_time),
             'time'        => $flight['flightTime'],
             'number'      => $flight['flightNumber'],
