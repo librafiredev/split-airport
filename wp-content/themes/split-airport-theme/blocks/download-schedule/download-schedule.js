@@ -167,7 +167,18 @@ $(function () {
 
         flightData.forEach((f) => {
             tableBody.push([
-                { text: f.destination, style: "tableCell" },
+                {
+                    stack: [
+                        { text: f.destination },
+                        {
+                            text: f.destinationVia
+                                ? "via " + f.destinationVia
+                                : "",
+                            fontSize: 9,
+                        },
+                    ],
+                    style: "tableCell",
+                },
                 { text: f.date, style: "tableCell" },
                 { text: f.time, style: "tableCell" },
                 {
@@ -345,7 +356,7 @@ $(function () {
         const tableHeaders = t.headers;
 
         const tableRows = flightData.map((f) => [
-            `"${f.destination}"`,
+            `"${f.destination}${f.destinationVia ? ` via ${f.destinationVia}` : ""}"`,
             `"${f.date}"`,
             `"${f.time}"`,
             `"${f.number} / ${f.carrier}"`,
