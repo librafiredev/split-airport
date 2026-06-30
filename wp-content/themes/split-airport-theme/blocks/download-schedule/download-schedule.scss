@@ -305,7 +305,8 @@
 .dls-entry-content {
     font-weight: bold;
     border-top: 1px solid #eee;
-    margin-bottom: 120px;
+    padding-top: 30px;
+    margin-bottom: 80px;
 
     @include max-mq($sm) {
         margin-bottom: 40px;
