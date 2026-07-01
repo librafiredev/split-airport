@@ -1796,7 +1796,7 @@ function year_shortcode( $atts ){
 }
 add_shortcode( 'year', 'year_shortcode' );
 
-function lf_get_download_schedule_row_html($data) {
+function lf_get_download_schedule_row_html($data, $filters) {
     $airline = lf_get_airline_by_title($data['carrier']);
     
     $airline_icon = '';
@@ -1811,10 +1811,11 @@ function lf_get_download_schedule_row_html($data) {
     <span class="dls-airline-name">'.$data['carrier'].'</span>
 </span>';
 
-    $via_text = !empty($data['destinationVia']) ? '<span class="dls-dest-via">via '.$data['destinationVia'].'</span>' : '';
+    $dest_merged_text = !empty($data['destinationVia']) ? '<span class="dls-dest-via">via '.$data['destinationVia'].'</span>' : '';
+    $dest = $filters['destinationLbl'] === $data['destinationVia'] ? $data['destinationVia'] : $data['destination'].$dest_merged_text;
 
     return '<div class="basic-table-row">
-    <span class="basic-table-cell">'.$data['destination'].$via_text.'</span>
+    <span class="basic-table-cell">'.$dest.'</span>
     <span class="basic-table-cell">'.$data['date'].'</span>
     <span class="basic-table-cell">'.$data['time'].'</span>
     <span class="basic-table-cell dls-carrier-col">'.$carrier_full.'</span>
@@ -1999,6 +2000,7 @@ function fetch_flight_schedule($args = []) {
         'dateTo'         => null,
         'destinationKey' => null,
         'carrierKey'     => null,
+        'destinationLbl' => null,
     ], $args);
 
     $api_response = wp_remote_post(get_schedule_search_url(), [
@@ -2035,7 +2037,7 @@ function fetch_flight_schedule($args = []) {
             'code'        => $flight['codeShare'],
         ];
 
-        $table_html .= lf_get_download_schedule_row_html($flight_data);
+        $table_html .= lf_get_download_schedule_row_html($flight_data, $args);
         $flights[]   = $flight_data;
     }
 
@@ -2066,6 +2068,7 @@ function get_flight_schedule(WP_REST_Request $request) {
         'dateTo'         => gmdate('Y-m-d\TH:i:s', strtotime($to_date) + $seconds_in_day),
         'destinationKey' => !empty($destination) ? $destination : null,
         'carrierKey'     => !empty($carrier) ? $carrier : null,
+        'destinationLbl' => !empty($destination_label) ? $destination_label : null,
     ]);
 
     return new WP_REST_Response([

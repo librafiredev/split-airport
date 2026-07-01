@@ -165,18 +165,23 @@ $(function () {
             t.headers.map((text) => ({ text: text, style: "tableHeader" })),
         ];
 
+        const destCol =
+            currentFilters.destination === f.destinationVia
+                ? [{ text: f.destinationVia }]
+                : [
+                      { text: f.destination },
+                      {
+                          text: f.destinationVia
+                              ? "via " + f.destinationVia
+                              : "",
+                          fontSize: 9,
+                      },
+                  ];
+
         flightData.forEach((f) => {
             tableBody.push([
                 {
-                    stack: [
-                        { text: f.destination },
-                        {
-                            text: f.destinationVia
-                                ? "via " + f.destinationVia
-                                : "",
-                            fontSize: 9,
-                        },
-                    ],
+                    stack: destCol,
                     style: "tableCell",
                 },
                 { text: f.date, style: "tableCell" },
@@ -356,7 +361,9 @@ $(function () {
         const tableHeaders = t.headers;
 
         const tableRows = flightData.map((f) => [
-            `"${f.destination}${f.destinationVia ? ` via ${f.destinationVia}` : ""}"`,
+            currentFilters.destination == f.destinationVia
+                ? `"${f.destinationVia}"`
+                : `"${f.destination}${f.destinationVia ? ` via ${f.destinationVia}` : ""}"`,
             `"${f.date}"`,
             `"${f.time}"`,
             `"${f.number} / ${f.carrier}"`,
