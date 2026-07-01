@@ -169,20 +169,19 @@ $(function () {
             t.headers.map((text) => ({ text: text, style: "tableHeader" })),
         ];
 
-        const destCol =
-            currentFilters.destination === f.destinationVia
-                ? [{ text: f.destinationVia }]
-                : [
-                      { text: f.destination },
-                      {
-                          text: f.destinationVia
-                              ? "via " + f.destinationVia
-                              : "",
-                          fontSize: 9,
-                      },
-                  ];
-
         flightData.forEach((f) => {
+            const destCol =
+                currentFilters.destination === f.destinationVia
+                    ? [{ text: f.destinationVia }]
+                    : [
+                          { text: f.destination },
+                          {
+                              text: f.destinationVia
+                                  ? "via " + f.destinationVia
+                                  : "",
+                              fontSize: 9,
+                          },
+                      ];
             tableBody.push([
                 {
                     stack: destCol,
