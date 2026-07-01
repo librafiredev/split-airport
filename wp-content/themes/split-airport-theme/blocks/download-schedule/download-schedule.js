@@ -30,12 +30,16 @@ $(function () {
             const $wrapper = $select.closest(".labeled-field-wrapper");
             const $selectWrap = $select.closest(".dls-select-wrap");
 
-            const data = [];
+            let data = [];
             $select.find("option").each(function () {
                 const val = $(this).val();
                 if (val) {
                     data.push({ label: $(this).text().trim(), value: val });
                 }
+            });
+
+            data.sort((a, b) => {
+                return a.label.localeCompare(b.label);
             });
 
             $select.addClass("dls-hidden");
