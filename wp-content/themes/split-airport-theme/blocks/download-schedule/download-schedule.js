@@ -580,6 +580,31 @@ $(function () {
             });
         });
 
+    function updateTableContent(contentHtmlEl, btnElement) {
+        const flightElements = contentHtmlEl.find(">*");
+        flightElements.each(function (index) {
+            if (
+                window.splitGlobalDLScheduleData.currentPage *
+                    window.splitGlobalDLScheduleData.paginationSize <
+                index + 1
+            ) {
+                $(this).addClass("dls-hidden-flght");
+            } else {
+                $(this).removeClass("dls-hidden-flght");
+            }
+        });
+
+        if (
+            flightElements.length <=
+            window.splitGlobalDLScheduleData.currentPage *
+                window.splitGlobalDLScheduleData.paginationSize
+        ) {
+            btnElement.addClass("btn-hidden");
+        } else {
+            btnElement.removeClass("btn-hidden");
+        }
+    }
+
     $(".js-download-schedule-filters").on("submit", function (e) {
         e.preventDefault();
         const form = $(this);
@@ -676,9 +701,19 @@ $(function () {
                 window.splitGlobalDLScheduleData.flights = response.flights;
                 window.splitGlobalDLScheduleData.filters = response.filters;
 
-                form.closest(".download-schedule-wrapper")
-                    .find(".download-schedule-content")
-                    .html(response.table_html);
+                const dlsContent = form
+                    .closest(".download-schedule-wrapper")
+                    .find(".download-schedule-content");
+
+                dlsContent.html(response.table_html);
+
+                window.splitGlobalDLScheduleData.currentPage = 1;
+                updateTableContent(
+                    dlsContent,
+                    form
+                        .closest(".download-schedule-wrapper")
+                        .find(".js-load-more-btn"),
+                );
             },
             error: function (xhr) {
                 try {
@@ -733,5 +768,15 @@ $(function () {
                 form.closest(".initial-data").removeClass("initial-data");
             },
         });
+    });
+
+    $(".js-load-more-btn").on("click", function () {
+        window.splitGlobalDLScheduleData.currentPage += 1;
+        updateTableContent(
+            $(this)
+                .closest(".download-schedule-wrapper")
+                .find(".download-schedule-content"),
+            $(this),
+        );
     });
 });

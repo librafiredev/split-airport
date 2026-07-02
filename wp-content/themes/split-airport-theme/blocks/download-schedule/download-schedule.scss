@@ -62,12 +62,41 @@
     justify-content: flex-end;
     gap: 12px;
     margin-bottom: 28px;
+}
 
+.download-schedule-btns,
+.js-load-more-btn {
     .download-schedule-wrapper.initial-data &,
     .download-schedule-wrapper.is-loading-dls &,
     .download-schedule-wrapper.dls-no-results & {
         display: none;
     }
+}
+
+.load-more-btn-wrap {
+    text-align: center;
+}
+
+.js-load-more-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    color: $primary-color;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    font-size: 15px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.btn-hidden {
+        display: none;
+    }
+}
+
+.load-more-btn-arrow {
+    margin-left: 6px;
 }
 
 .download-schedule-content {
@@ -530,4 +559,8 @@ span.flatpickr-weekday {
 .dls-dest-via {
     display: block;
     font-size: 14px;
+}
+
+.dls-hidden-flght {
+    display: none !important;
 }
